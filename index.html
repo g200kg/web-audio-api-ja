@@ -991,17 +991,17 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
     <dd><p>任意の倍音構成を表す<a href="#PeriodicWave-section"><code>PeriodicWave</code></a>を作成します。
       <code>real</code> および <code>imag</code>パラメータは<code>Float32Array</code>型で0より大きく4096以下の同じ長さでなくなはなりません。
       そうでない場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。
-      これらのパラメータは周期波形の<a href="http://en.wikipedia.org/wiki/Fourier_series">Fourier級数</a>のフーリエ係数の一部分を表します。
+      これらのパラメータは任意の周期波形を表す<a href="http://en.wikipedia.org/wiki/Fourier_series">フーリエ級数</a>の係数の一部分を表します。
       作成されたPeriodicWaveは<a href="#OscillatorNode-section"><code>OscillatorNode</code></a>と共に使用され、
       絶対値の最大が1となる<em>正規化</em>された時間領域の波形を表現します。
       別の言い方をするとこれは<a href="#OscillatorNode-section"><code>OscillatorNode</code></a>が発生する波形の最大ピークが0dBFSであるという事です。
       これは都合よくWeb Audio APIで使用される最大振幅の信号に対応します。
       PeriodicWaveは作成時に正規化されるため、<code>real</code>および <code>imag</code>パラメータは相対値を表します。
       </p>
-      <p><dfn id="dfn-real">real</dfn> パラメータは<code>コサイン</code>項(慣習的な言い方でA項)の配列を表します。
+      <p><dfn id="dfn-real">real</dfn>パラメータは<code>コサイン</code>項(慣習的な言い方でA項)の配列を表します。
       オーディオの用語では最初の要素(インデックス0)は周期波形のDCオフセットであり、通常は0に設定されます。
       2番目の要素(インデックス1)は基本周波数を表します。3番目の要素は最初の倍音を表し、それ以降も同様に続いてゆきます。</p>
-      <p><dfn id="dfn-imag">imag</dfn> パラメータは<code>サイン</code>項(慣習的な言い方でB項)の配列を表します。
+      <p><dfn id="dfn-imag">imag</dfn>パラメータは<code>サイン</code>項(慣習的な言い方でB項)の配列を表します。
       最初の要素(インデックス0)はフーリエ級数には存在しないため、0でなくてはなりません(そして無視されます)。
       2番目の要素(インデックス1)は基本周波数を表します。3番目の要素は最初の倍音を表し、それ以降も同様に続いてゆきます。</p>
     </dd>
@@ -3974,37 +3974,23 @@ gain.channelInterpretation = "speakers";
   OpenAL、FMOD、Creative社のEAX、マイクロソフトのXACT Audioなどのようなゲームオーディオ・エンジンはこの機能を持っています。
 </p>
 
-<p>Using an <code>PannerNode</code>, an audio stream can be spatialized or
-positioned in space relative to an <code>AudioListener</code>. An <a
-href="#AudioContext-section"><code>AudioContext</code></a> will contain a
-single <code>AudioListener</code>. Both panners and listeners have a position
-in 3D space using a right-handed cartesian coordinate system.
-The units used in the coordinate system are not defined, and do not need to be
-because the effects calculated with these coordinates are independent/invariant
-of any particular units such as meters or feet.  <code>PannerNode</code>
-objects (representing the source stream) have an <code>orientation</code>
-vector representing in which direction the sound is projecting. Additionally,
-they have a <code>sound cone</code> representing how directional the sound is.
-For example, the sound could be omnidirectional, in which case it would be
-heard anywhere regardless of its orientation, or it can be more directional and
-heard only if it is facing the listener. <code>AudioListener</code> objects
-(representing a person's ears) have an <code>orientation</code> and
-<code>up</code> vector representing in which direction the person is facing.
-Because both the source stream and the listener can be moving, they both have a
-<code>velocity</code> vector representing both the speed and direction of
-movement. Taken together, these two velocities can be used to generate a
-doppler shift effect which changes the pitch. </p>
+<p><code>PannerNode</code>を使って、オーディオストリームを<code>AudioListener</code>に対する相対的な空間位置に配置し、定位させる事ができます。
+  <a href="#AudioContext-section"><code>AudioContext</code></a>は単一の<code>AudioListener</code>を持っています。
+  パンナーとリスナーはどちらも右手系デカルト座標の3D空間内の位置を持っています。
+  エフェクトの計算で使われる座標系は、メートルやフィートのような特別な単位とは独立した不変の座標系になっているため、座標空間で使用される単位は定められておらず、その必要もありません。
+  (ソースストリームの)<code>PannerNode</code>オブジェクトは音が放出される方向を示す<code>orientation</code>ベクトルを持っています。
+  加えてそれらは音の指向性の強さを示す<code>サウンドコーン</code>を持っています。
+  例えば、音が無指向性であれば、方向には関係なくどこからでも聴こえますが、指向性が強い場合、それがリスナーの方向を向いている場合にだけ聴こえます。
+  (人間の耳を表す)<code>AudioListener</code>オブジェクトは人間が向いている方向を表すために<code>orientation</code>と<code>up</code>のベクトルを持っています。
+  音源ストリームとリスナーの両方が移動できるため、それらはどちらも移動の速度と方向を表す<code>velocity</code>ベクトルを持っています。
+  これらを基にした2つの速度から、ピッチが変動するドップラー効果を作り出す事ができます。</p>
 
-<p>
-During rendering, the <code>PannerNode</code> calculates an <em>azimuth</em>
-and <em>elevation</em>.  These values are used internally by the implementation in
-order to render the spatialization effect.  See the <a href="#Spatialization-panning-algorithm">Panning Algorithm</a> section
-for details of how these values are used.
+  <p>レンダリングの間、<code>PannerNode</code>は<em>azimuth</em>と<em>elevation</em>を計算します。
+  これらの値は空間配置をレンダリングするために実装によって内部的に使用されます。
+  これらの値がどのように使われるかの詳細については、<a href="#Spatialization-panning-algorithm">パンニング・アルゴリズム</a>を参照してください。
 </p>
 
-<p>
-The following algorithm must be used to calculate the <em>azimuth</em>
-and <em>elevation</em>:
+<p><em>azimuth</em>と<em>elevation</em>を計算するために、次のアルゴリズムが使用されなくてはなりません:
 </p>
 
 <div class="block">
@@ -4063,30 +4049,30 @@ else if (elevation &lt; -90)
 </div>
 </div>
 
-<h3 id="Spatialization-panning-algorithm">Panning Algorithm</h3>
+<h3 id="Spatialization-panning-algorithm">パンニングアルゴリズム</h3>
 
 <p>
-<em>mono->stereo</em> and <em>stereo->stereo</em>  panning must be supported.
-<em>mono->stereo</em> processing is used when all connections to the input are mono.
-Otherwise <em>stereo->stereo</em> processing is used.</p>
+<em>モノラル -> ステレオ</em>と<em>ステレオ -> ステレオ</em>のパンニングがサポートされなくてはなりません。
+<em>モノラル -> ステレオ</em>処理は入力への全ての接続がモノラルの場合に使用されます。
+そうでない場合、<em>ステレオ -> ステレオ</em>処理が使用されます。</p>
 
-<p>The following algorithms must be implemented: </p>
+<p>次のアルゴリズムが実装されなくてはなりません: </p>
 <ul>
-  <li>Equal-power (Vector-based) panning 
-    <p>This is a simple and relatively inexpensive algorithm which provides
-    basic, but reasonable results.  It is commonly used when panning musical sources.
+  <li>等価パワー(ベクトルベース)パンニング
+    <p>これは基本的な、簡単で比較的コストの低いアルゴリズムですが、妥当な結果が得られます。
+      これは音楽ソースに対するパンニングで良く用いられます。
     </p>
-    The <em>elevation</em> value is ignored in this panning algorithm.
+    このパンニング・アルゴリズムでは<em>elevation</em>値は無視されます。
 
     <p>
-    The following steps are used for processing:
+      処理のため、次のステップが使われます:
     </p>
     
     <ol>
 
     <li>
     <p>
-    The <em>azimuth</em> value is first contained to be within the range -90 &lt;= <em>azimuth</em> &lt;= +90 according to:
+    <em>azimuth</em>値はまず次の手順で、 -90 &lt;= <em>azimuth</em> &lt;= +90 の範囲内にされます:
     </p>
     <pre>
     // Clamp azimuth to allowed range of -180 -> +180.
@@ -4103,14 +4089,14 @@ Otherwise <em>stereo->stereo</em> processing is used.</p>
     
     <li>
     <p>
-    A 0 -> 1 normalized value <em>x</em> is calculated from <em>azimuth</em> for <em>mono->stereo</em> as:
+      <em>モノラル -> ステレオ</em>の場合、<em>azimuth</em>から 0 -> 1に正規化された値<em>x</em>が計算されます:
     </p>
     <pre>
     x = (azimuth + 90) / 180    
     </pre>
 
     <p>
-    Or for <em>stereo->stereo</em> as:
+    または<em>ステレオ -> ステレオ</em>の場合:
     </p>
     <pre>
     if (azimuth &lt;= 0) { // from -90 -> 0
@@ -4127,7 +4113,7 @@ Otherwise <em>stereo->stereo</em> processing is used.</p>
     
     <li>
     <p>
-    Left and right gain values are then calculated:
+      左右のチャンネルのゲインが計算されます:
     </p>
     <pre>
     gainL = cos(0.5 * PI * x);
@@ -4136,12 +4122,14 @@ Otherwise <em>stereo->stereo</em> processing is used.</p>
     </li>
     
     <li>
-    <p>For <em>mono->stereo</em>, the output is calculated as:</p>
+    <p>
+      <em>モノラル -> ステレオ</em>の場合、出力の計算は次のようになります:</p>
     <pre>
     outputL = input * gainL
     outputR = input * gainR
     </pre>
-    <p>Else for <em>stereo->stereo</em>, the output is calculated as:</p>
+    <p>
+      あるいは<em>ステレオ -> ステレオ</em>の場合、出力の計算は次のようになります:</p>
     <pre>
     if (azimuth &lt;= 0) { // from -90 -> 0
         outputL = inputL + inputR * gainL;
@@ -4158,14 +4146,11 @@ Otherwise <em>stereo->stereo</em> processing is used.</p>
     
     
   </li>
-  <li><a
-    href="http://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>
-    panning (stereo only) 
-    <p>This requires a set of HRTF impulse responses recorded at a variety of
-    azimuths and elevations. There are a small number of open/free impulse
-    responses available. The implementation requires a highly optimized
-    convolution function. It is somewhat more costly than "equal-power", but
-    provides a more spatialized sound. </p>
+  <li><a href="http://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>パンニング(ステレオの場合のみ)
+    <p>この処理には様々なazimuthsとelevationsで記録されたHRTFインパルスレスポンスのセットが必要です。
+      オープンでフリーなインパルスレスポンスが幾つか存在します。
+      実装には高度に最適化されたコンボリューション機能が必要になります。
+      これは"equal-power"よりも幾らかコストが必要ですが、より空間的な音を得る事ができます。</p>
     <img alt="HRTF panner" src="images/HRTF_panner.png" /></li>
 </ul>
 
