@@ -8,7 +8,7 @@ Web Audio APIの正式な文書は英語版のみであり、日本語訳には�
 
 なお、翻訳元の文書もまだドラフト(Working Draft)です。現状ではまだ説明が不足している部分があったり、今後も頻繁に更新される可能性がある事に注意してください。
 
-GutHub : [https://github.com/g200kg/web-audio-api-ja](https://github.com/g200kg/web-audio-api-ja)  
+GitHub : [https://github.com/g200kg/web-audio-api-ja](https://github.com/g200kg/web-audio-api-ja)  
 公開URL : [http://g200kg.github.io/web-audio-api-ja/](http://g200kg.github.io/web-audio-api-ja/)  
 
 ※まだ途中です...
