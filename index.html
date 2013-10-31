@@ -311,8 +311,8 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#ChannelLayouts">9.1. スピーカーチャンネル配置</a>
       <ul>
         <li><a href="#ChannelOrdering">9.1.1. チャンネルの順序</a></li>
-        <li><a href="#UpMix-sub">9.1.2. アップミックス</a></li>
-        <li><a href="#down-mix">9.1.3. ダウンミックス</a></li>
+        <li><a href="#UpMix-sub">9.1.2. アップミックスのスピーカー配置</a></li>
+        <li><a href="#down-mix">9.1.3. ダウンミックスのスピーカー配置</a></li>
       </ul>
       </li>
 
@@ -3802,24 +3802,22 @@ function playSound() {
 
 
 <div id="ChannelLayouts-section" class="section">
-<h3 id="ChannelLayouts">9.1. Speaker Channel Layouts</h3>
+<h3 id="ChannelLayouts">9.1. スピーカーチャンネル配置</h3>
 
-<p class="norm">This section is normative.</p>
+<p class="norm">このセクションは参考情報です。</p>
 
-<p>
-When <dfn>channelInterpretation</dfn> is "speakers" then the up-mixing and down-mixing
-is defined for specific channel layouts.
+<p><dfn>channelInterpretation</dfn>が"speakers"の場合、特定のチャンネル配置に対してのアップミックスおよびダウンミックスが定義されます。
 </p>
 
-<p>It's important to define the channel ordering (and define some
-abbreviations) for these speaker layouts.</p>
-
-<p>
-For now, only considers cases for mono, stereo, quad, 5.1. Later other channel
-layouts can be defined. 
+<p>これらのスピーカーの配置に対してチャンネルの順序(そして幾つかの省略)が重要になります。
 </p>
 
-<h4 id ="ChannelOrdering">9.1.1. Channel ordering</h4>
+<p>
+  ではまず、モノラル、ステレオ、クワド、5.1について考えてみます。
+  その他のチャンネル配置は後で定義します。
+</p>
+
+<h4 id ="ChannelOrdering">9.1.1. チャンネルの順序</h4>
 
 <pre>  Mono
     0: M: mono
@@ -3845,7 +3843,7 @@ layouts can be defined.
   </pre>
 </div>
 
-<h4 id="UpMix-sub">9.1.2. Up Mixing speaker layouts</h4>
+<h4 id="UpMix-sub">9.1.2. アップミックスのスピーカー配置</h4>
 
 <pre>Mono up-mix:
     
@@ -3893,10 +3891,9 @@ Quad up-mix:
         output.SL = input.SL;
         output.SR = input.SR;</pre>
 
-<h4 id="down-mix">9.1.3. Down Mixing speaker layouts</h4>
+<h4 id="down-mix">9.1.3. ダウンミックスのスピーカー配置</h4>
 
-<p>A down-mix will be necessary, for example, if processing 5.1 source
-material, but playing back stereo. </p>
+<p>ダウンミックスは例えば5.1チャンネルソースの素材を処理する場合に必要になりますが、ステレオで再生されます。</p>
 <pre>  
 Mono down-mix:
 
