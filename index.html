@@ -422,13 +422,11 @@ AppleのLogicがそのようなアプリケーションの1つであり、外部
 
 <p>このAPIは、これらの基本機能をサポートします: </p>
 <ul>
-  <li><a href="#MixerGainStructure-section">複数のセンド、サブミックス</a>を含む単純または複雑なミキシング/エフェクト・アーキテクチャのための
-    <a href="#ModularRouting-section">モジュラールーティング</a></li>
-  <li> 非常に高度なリズムの精度を必要とするドラムマシンやシーケンサーなどのアプリケーションのための
-    低<a href="#Latency-section">レイテンシー</a>な<a href="#AudioParam">サンプル単位の時間精度の音の再生</a>
+  <li><a href="#MixerGainStructure-section">複数のセンド、サブミックス</a>を含む単純または複雑なミキシング/エフェクト・アーキテクチャのための<a href="#ModularRouting-section">モジュラールーティング</a></li>
+  <li> 非常に高度なリズムの精度を必要とするドラムマシンやシーケンサーなどのアプリケーションのための、低<a href="#Latency-section">レイテンシー</a>な<a href="#AudioParam">サンプル単位の時間精度での音の再生</a>
     これはまた、エフェクトの<a href="#DynamicLifetime-section">動的生成</a>の可能性も含んでいます。</li>
   <li>エンベロープ、フェードイン/フェードアウト、グラニュラーエフェクト、フィルタースイープ、LFOなどのためのオーディオパラメータのオートメーション</li>
-  <li>分割や結合など、オーディオストリームのチャンネルの柔軟な扱い</li>
+  <li>分割や結合など、オーディオストリームのチャンネルに対する柔軟な扱い</li>
   <li><code>audio</code> または <code>video</code> <a href="#MediaElementAudioSourceNode">メディア要素</a>からのオーディオに対する処理</li>
   <li>getUserMedia()からの<a href="#MediaStreamAudioSourceNode">MediaStream</a>を使用したライブオーディオに対する処理</li>
   <li>WebRTCとの統合
@@ -448,8 +446,8 @@ AppleのLogicがそのようなアプリケーションの1つであり、外部
       <li>ソース / リスナーベース</li>
     </ul>
   </li>
-  <li>広範囲の線形エフェクト、特に超高品質のルーム・エフェクトに使用できる<a href="#Convolution-section">コンボリューション・エンジン</a>。
-    ここで使用できるエフェクトの例を以下に示します:
+  <li>広範囲の線形エフェクト、特に非常に高い品質のルーム・エフェクトに使用できる<a href="#Convolution-section">コンボリューション・エンジン</a>。
+    可能なエフェクトの例を以下に示します:
     <ul>
       <li>小さい / 大きい部屋 </li>
       <li>大聖堂 </li>
@@ -467,8 +465,8 @@ AppleのLogicがそのようなアプリケーションの1つであり、外部
   </li>
   <li>ミックス全体の制御やスウィートニング<span class="annotate">(訳注:ビデオに効果音などをつけるMA作業)</span>のためのダイナミック・コンプレッション </li>
   <li>効率的な<a href="#AnalyserNode">リアルタイムの時間領域および周波数領域解析 / ミュージックビジュアライザーのサポート</a></li>
-  <li>ローパス、ハイパス、およびその他の一般的なフィルタをつくるのに効率的な双2次フィルタ</li>
-  <li>ディストーションやその他の非線形エフェクトを掛けるためのウェーブシェイピング・エフェクト</li>
+  <li>効率的な双2次フィルタによる、ローパス、ハイパス、その他一般的なフィルタ</li>
+  <li>ディストーションやその他の非線形エフェクトのためのウェーブシェイピング・エフェクト</li>
   <li>オシレータ</li>
 
 </ul>
@@ -478,9 +476,9 @@ AppleのLogicがそのようなアプリケーションの1つであり、外部
 <h2 id="ModularRouting">1.2. モジュラー・ルーティング</h2>
 
 <p>モジュラー・ルーティングによって異なる <a href="#AudioNode-section"><code>AudioNode</code></a> オブジェクト同士を任意に接続できます。
-それぞれのノードは<dfn>入力</dfn> および<dfn>出力</dfn> を持っています。
+それぞれのノードは<dfn>入力</dfn>および<dfn>出力</dfn>を持っています。
 <dfn>ソースノード</dfn> は入力は持たず、1つの出力を持ちます。
-<dfn>デスティネーションノード</dfn> は1つの入力を持ち、出力は持っていません。この最も一般的な例が最終的なオーディオハードウェアに繋がる<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>です。
+<dfn>デスティネーションノード</dfn>は1つの入力を持ち、出力は持っていません。この最も一般的な例が最終的なオーディオハードウェアに繋がる<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>です。
 フィルタなどの他のノードはソースとデスティネーションの間に配置することができます。
 開発者は2つのオブジェクトが互いに接続している場合、低レベルのストリーム形式の詳細について煩わされる事なく、<a href="#UpMix-section">適正な処理が行われます</a>。
 例えばもしモノラルの音声ストリームがステレオの入力に接続されていても、左右のチャンネルに<a href="#UpMix-section">適正</a>にミックスされます。
@@ -3928,9 +3926,9 @@ Quad down-mix:
 </pre>
 </div>
 
-<h3 id="ChannelRules-section">9.2. Channel Rules Examples</h3>
+<h3 id="ChannelRules-section">9.2. チャンネル規則の例</h3>
 
-<p class="norm">This section is informative.</p>
+<p class="norm">このセクションは参考情報です。</p>
 
 <div class="block">
 <div class="blockTitleDiv">
@@ -3970,12 +3968,11 @@ gain.channelInterpretation = "speakers";
 <div id="Spatialization-section" class="section">
 <h2 id="Spatialization">11. 空間音響 / パンニング </h2>
 
-<h3 id="Spatialization-background">Background</h3>
+<h3 id="Spatialization-background">背景</h3>
 
-<p>A common feature requirement for modern 3D games is the ability to
-dynamically spatialize and move multiple audio sources in 3D space. Game audio
-engines such as OpenAL, FMOD, Creative's EAX, Microsoft's XACT Audio, etc. have
-this ability. </p>
+<p>最近の3Dゲームで良く要求される機能として、動的な空間音響と複数の音源の3D空間での移動があります。
+  OpenAL、FMOD、Creative社のEAX、マイクロソフトのXACT Audioなどのようなゲームオーディオ・エンジンはこの機能を持っています。
+</p>
 
 <p>Using an <code>PannerNode</code>, an audio stream can be spatialized or
 positioned in space relative to an <code>AudioListener</code>. An <a
