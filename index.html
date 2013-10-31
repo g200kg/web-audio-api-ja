@@ -456,7 +456,7 @@ AppleのLogicがそのようなアプリケーションの1つであり、外部
       <li>トンネル </li>
       <li>廊下 </li>
       <li>森 </li>
-      <li>円形競技場 </li>
+      <li>野外劇場 </li>
       <li>出入り口を経由した遠くの部屋 </li>
       <li>極端なフィルタ </li>
       <li>風変りな巻き戻し効果 </li>
@@ -3889,7 +3889,7 @@ Quad up-mix:
 
 <h4 id="down-mix">9.1.3. ダウンミックスのスピーカー配置</h4>
 
-<p>ダウンミックスは例えば5.1チャンネルソースの素材を処理する場合に必要になりますが、ステレオで再生されます。</p>
+<p>ダウンミックスは例えば5.1チャンネルソースの素材を処理する場合に必要になりますが、再生はステレオになります。</p>
 <pre>  
 Mono down-mix:
 
@@ -3969,7 +3969,7 @@ gain.channelInterpretation = "speakers";
 <h3 id="Spatialization-background">背景</h3>
 
 <p>最近の3Dゲームで良く要求される機能として、動的な空間音響と複数の音源の3D空間での移動があります。
-  OpenAL、FMOD、Creative社のEAX、マイクロソフトのXACT Audioなどのようなゲームオーディオ・エンジンはこの機能を持っています。
+  OpenAL、FMOD、クリエイティブ社のEAX、マイクロソフト社のXACT Audioなどのようなゲームオーディオ・エンジンはこの機能を持っています。
 </p>
 
 <p><code>PannerNode</code>を使って、オーディオストリームを<code>AudioListener</code>に対する相対的な空間位置に配置し、定位させる事ができます。
@@ -4293,43 +4293,31 @@ if (dopplerFactor > 0) {
 
 <h3 id="Convolution-background">背景</h3>
 
-<p><a href="http://en.wikipedia.org/wiki/Convolution">Convolution</a> is a
-mathematical process which can be applied to an audio signal to achieve many
-interesting high-quality linear effects. Very often, the effect is used to
-simulate an acoustic space such as a concert hall, cathedral, or outdoor
-amphitheater. It can also be used for complex filter effects, like a muffled
-sound coming from inside a closet, sound underwater, sound coming through a
-telephone, or playing through a vintage speaker cabinet. This technique is very
-commonly used in major motion picture and music production and is considered to
-be extremely versatile and of high quality. </p>
+<p><a href="http://en.wikipedia.org/wiki/Convolution">コンボリューション</a>はオーディオ信号に、興味深い多くの高品質な線形エフェクトを施すための数学的な処理です。
+  このエフェクトは、例えばコンサートホール、教会、屋外劇場のような音響空間をシミュレートするために、非常に頻繁に使われます。
+  それはまた例えば、クローゼットの中から聴こえるくぐもった音や、水中の音、電話を通した音、古いスピーカーキャビネットで演奏した音などのような複雑なフィルターエフェクトにも使用されます。
+  この技術は、主要な動画や音楽の制作で非常に一般的に使われ、極めて応用範囲が広く高品質なものです。
+</p>
 
-<p>Each unique effect is defined by an <code>impulse response</code>. An
-impulse response can be represented as an audio file and <a
-href="#recording-impulse-responses">can be recorded</a> from a real acoustic
-space such as a cave, or can be synthetically generated through a great variety
-of techniques. </p>
+<p>個別のエフェクトは<code>インパルスレスポンス</code>によって定義されます。インパルスレスポンスはオーディオファイルの形になっていて、
+  例えば洞窟などのような、実際の音響空間で<a href="#recording-impulse-responses">記録する事ができ</a>、あるいは様々な技術によって合成する事もできます。
+</p>
 
 <h3 id="Convolution-motivation">標準として使用する動機</h3>
 
-<p>A key feature of many game audio engines (OpenAL, FMOD, Creative's EAX,
-Microsoft's XACT Audio, etc.) is a reverberation effect for simulating the
-sound of being in an acoustic space. But the code used to generate the effect
-has generally been custom and algorithmic (generally using a hand-tweaked set
-of delay lines and allpass filters which feedback into each other). In nearly
-all cases, not only is the implementation custom, but the code is proprietary
-and closed-source, each company adding its own "black magic" to achieve its
-unique quality. Each implementation being custom with a different set of
-parameters makes it impossible to achieve a uniform desired effect. And the
-code being proprietary makes it impossible to adopt a single one of the
-implementations as a standard. Additionally, algorithmic reverberation effects
-are limited to a relatively narrow range of different effects, regardless of
-how the parameters are tweaked. </p>
+<p>多くのゲームオーディオ・エンジン(OpenAL、FMOD、クリエイティブ社のEAX、マイクロソフト社のXACTなど)の特徴的な機能として、音響空間での残響エフェクトのシミュレーションがあります。
+  しかしエフェクトを発生するためのコードは一般的に特殊で、アルゴリズム的です
+  (一般的には手作業での微調整が行われた、相互にフィードバックを掛けたディレイとオールパスフィルターの組み合わせです)。
+  ほとんどの場合、そのコードは特殊な実装であるだけでなく、プロプライエタリであり、ソースは公開されておらず、各社が唯一の品質を達成するための独自の"魔術"を加えています。
+  それぞれの実装は、異なるパラメータセットを持った特殊なものになり、欲しい効果を統一的に得る事が不可能になっています。
+  そしてそのコードはプロプライエタリであるため、どの実装も標準として採用する事が不可能です。
+  更に、アルゴリズム的な残響エフェクトは、パラメータにどのように手を加えても効果のバリエーションは比較的狭い範囲に限られます。
+</p>
 
-<p>A convolution effect solves these problems by using a very precisely defined
-mathematical algorithm as the basis of its processing. An impulse response
-represents an exact sound effect to be applied to an audio stream and is easily
-represented by an audio file which can be referenced by URL. The range of
-possible effects is enormous. </p>
+<p>コンボリューション・エフェクトはこれらの問題を、非常に正確に定義された数学的アルゴリズムを基本処理として使う事で解決します。
+  インパルスレスポンスはオーディオストリームに適用する音響効果を、URLで示す事ができるオーディオファイルによって正確に表現します。
+  可能なエフェクトの範囲は膨大です。
+</p>
 
 <h3 id="Convolution-implementation-guide">実装ガイド</h3>
 <p>
