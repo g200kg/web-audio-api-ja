@@ -50,7 +50,14 @@
   </p>
   <p>なお、翻訳元の文書もまだドラフト(Working Draft)です。現状ではまだ説明が不足している部分があったり、今後も頻繁に更新される可能性がある事に注意してください。
   </p>
-  <p>2013年10月29日</p>
+  <p>
+    GitHub : <b><a href="https://github.com/g200kg/web-audio-api-ja">https://github.com/g200kg/web-audio-api-ja</a></b><br/>
+    公開URL : <b><a href="http://g200kg.github.io/web-audio-api-ja/">http://g200kg.github.io/web-audio-api-ja/</a></b>
+  </p>
+  <p>Tatsuya Shinyagaito @ g200kg<br/>
+    <b><a href="http://www.g200kg.com/">http://www.g200kg.com/</a></b>
+  </p>
+  <p>2013年10月31日</p>
 </div>
 
 <hr/>
@@ -105,7 +112,7 @@ title="World Wide Web Consortium">W3C</acronym> Working Draft 10 October 2013
 実際の処理は基本的に基礎となる実装 (典型的には最適化されたアセンブリ言語/C/C++コード)で行われますが、
 <a href="#JavaScriptProcessing-section">JavaScriptによる直接的な処理と合成</a> もサポートされています。</p>
 
-<a href="#introduction">紹介</a>節ではこの仕様の背後にある動機についてもカバーします。
+<a href="#introduction">序文</a>節ではこの仕様の背後にある動機についてもカバーします。
 
 <p>このAPIは他のAPIやWebプラットフォームの要素、特に(<code>responseType</code> 、<code>response</code> 属性を使った)
 XMLHttpRequest と共に使われるように設計されています。
@@ -143,7 +150,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
 <h2 id="L13522">目次</h2>
 
 <ul>
-  <li><a href="#introduction">1. はじめ</a>
+  <li><a href="#introduction">1. 序文</a>
     <ul>
       <li><a href="#Features">1.1. 機能</a></li>
       <li><a href="#ModularRouting">1.2. モジュラー・ルーティング</a></li>
@@ -180,7 +187,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
           <li><a href="#attributes-AudioParam">4.5.1. 属性</a></li>
           <li><a href="#methodsandparams-AudioParam">4.5.2. メソッドとパラメータ</a></li>
           <li><a href="#computedValue-AudioParam-section">4.5.3. 値の計算</a></li>
-          <li><a href="#example1-AudioParam-section">4.5.4. AudioParam オートメーションサンプル</a></li>
+          <li><a href="#example1-AudioParam-section">4.5.4. AudioParam オートメーションの例</a></li>
         </ul>
       </li>
       <li><a href="#GainNode">4.7. GainNode インターフェース</a>
@@ -256,14 +263,14 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       </li>
       <li><a href="#BiquadFilterNode">4.21. BiquadFilterNode インターフェース</a> 
         <ul>
-          <li><a href="#BiquadFilterNode-description">4.21.1 ローパス</a></li>
-          <li><a href="#HIGHPASS">4.21.2 ハイパス</a></li>
-          <li><a href="#BANDPASS">4.21.3 バンドパス</a></li>
-          <li><a href="#LOWSHELF">4.21.4 ローシェルフ</a></li>
-          <li><a href="#L16352">4.21.5 ハイシェルフ</a></li>
-          <li><a href="#PEAKING">4.21.6 ピーキング</a></li>
-          <li><a href="#NOTCH">4.21.7 ノッチ</a></li>
-          <li><a href="#ALLPASS">4.21.8 オールパス</a></li>
+          <li><a href="#BiquadFilterNode-description">4.21.1 "lowpass"</a></li>
+          <li><a href="#HIGHPASS">4.21.2 "highpass"</a></li>
+          <li><a href="#BANDPASS">4.21.3 "bandpass"</a></li>
+          <li><a href="#LOWSHELF">4.21.4 "lowshelf"</a></li>
+          <li><a href="#L16352">4.21.5 "highshelf"</a></li>
+          <li><a href="#PEAKING">4.21.6 "peaking"</a></li>
+          <li><a href="#NOTCH">4.21.7 "notch"</a></li>
+          <li><a href="#ALLPASS">4.21.8 "allpass"</a></li>
           <li><a href="#Methods">4.21.9. メソッド</a></li>
         </ul>
       </li>
@@ -620,7 +627,7 @@ function setupRoutingGraph () {
 </div>
 
 <div id="APIOverview-section" class="section">
-<h2 id="APIOverview">1.3. API概要</h2>
+<h2 id="APIOverview">1.3. APIの概要</h2>
 </div>
 
 <p>定義されているインターフェースは次の通りです: </p>
@@ -721,6 +728,10 @@ function setupRoutingGraph () {
       レベルの基準を満足する実装がされているユーザーエージェントが、<a class="dfnref" href="#dfn-conforming-implementation">準拠した実装</a>と判断されます。</p>
     </dd>
 </dl>
+</div>
+
+<div id="API-section-section" class="section">
+<h2 id="API-section">4. The Audio API</h2>
 </div>
 
 <div id="AudioContext-section-section" class="section">
@@ -3470,7 +3481,7 @@ interface <dfn id="dfn-MediaStreamAudioDestinationNode">MediaStreamAudioDestinat
 </p>
 
 <div id="SummingJunction-section" class="section">
-<h3 id="SummingJunction">入力の加算</h3>
+<h3 id="SummingJunction">サミング入力</h3>
 </div>
 
 <p><a href="#AudioNode-section"><code>AudioNodes</code></a>の入力は複数の出力からの接続を受け付ける能力を持っています。
@@ -3481,7 +3492,7 @@ src="images/unity-gain-summing-junction.png" />
 <p>各出力のチャンネルレイアウトが一致しない場合は、<a href="#UpMix-section">ミキシング規則</a>に従ってミックス(通常はアップミックス)が行われます。
 </p>
 
-<h3 id="gain-Control">ゲインコントロール</h3>
+<h3 id="gain-Control">ゲイン・コントロール</h3>
 
 <p>しかし多くの場合、それぞれの出力信号のゲインを制御できる事が重要です。
   <a href="#GainNode-section"><code>GainNode</code></a>によってこのコントロールが可能です:
