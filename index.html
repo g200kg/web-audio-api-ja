@@ -335,7 +335,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#Convolution-motivation">標準として使用する動機</a></li>
       <li><a href="#Convolution-implementation-guide">実装ガイド</a></li>
       <li><a href="#Convolution-reverb-effect">リバーブ・エフェクト (マトリックス付き)</a></li>
-      <li><a href="#recording-impulse-responses">インパルスレスポントの記録</a></li>
+      <li><a href="#recording-impulse-responses">インパルスレスポンスの記録</a></li>
       <li><a href="#tools">ツール</a></li>
       <li><a href="#recording-setup">レコーディング・セットアップ</a></li>
       <li><a href="#warehouse">倉庫空間</a></li>
@@ -730,7 +730,7 @@ function setupRoutingGraph () {
 </div>
 
 <div id="API-section-section" class="section">
-<h2 id="API-section">4. The Audio API</h2>
+<h2 id="API-section">4. オーディオAPI</h2>
 </div>
 
 <div id="AudioContext-section-section" class="section">
@@ -908,7 +908,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
       もし、<code>bufferSize</code>または<code>numberOfInputChannels</code>または<code>numberOfOutputChannels</code>が範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
       <p><dfn id="dfn-bufferSize">bufferSize</dfn> パラメータはサンプルフレーム数でバッファのサイズを指定します。
         もしそれが渡されない場合、または値が0である場合、実装はノードのライフタイムを通して一定な2の累乗である、動作環境に最適なバッファサイズを選択します。
-        そうでなければ、明示的にバッファサイズを指定する。それは次の値のどれかでなければなりません:
+        そうでなければ、明示的にバッファサイズを指定します。それは次の値のどれかでなければなりません:
         256、512、1024、2048、4096、8192、16384。
         この値は<code>audioprocess</code>イベントが発生する頻度とそれぞれの呼び出しでどれだけのサンプルフレームを処理する必要があるかを制御します。
         <code>bufferSize</code>が小さい値ならば<a href="#Latency-section">レイテンシー</a>は低く(良く)なります。
@@ -1751,7 +1751,7 @@ interface <dfn id="dfn-GainNode">GainNode</dfn> : AudioNode {
 <div id="DelayNode-section" class="section">
 <h2 id="DelayNode">4.8. DelayNodeインターフェース</h2>
 
-<p>ディレイ機能はオーディオアプリケーションの基本的な構成要素である。このインターフェースは単一の入力と単一の出力を持つAudioNodeです。</p>
+<p>ディレイ機能はオーディオアプリケーションの基本的な構成要素です。このインターフェースは単一の入力と単一の出力を持つAudioNodeです。</p>
 <pre>
     numberOfInputs  : 1
     numberOfOutputs : 1
@@ -1803,9 +1803,9 @@ interface <dfn id="dfn-DelayNode">DelayNode</dfn> : AudioNode {
 
 <p>このインターフェースはメモリ上に保持されるオーディオのリソース(ワンショットの音やその他の短いオーディオクリップ)を表します。
   そのフォーマットは-1 ～ +1の名目上の範囲を持つ非インターリーブのIEEE 32ビット・リニアPCMです。
-  1またはそれ以上のチャンネルを持つ事ができます。
+  1つ以上のチャンネルを持つ事ができます。
   典型的には、そのPCMデータは適度に(通常1分以内程度に)短いと見込まれます。
-  音楽の1曲のような長時間の音に関しては<code>audio</code>要素と<code>MediaElementAudioSourceNode</code>によるストリーミングを使うべきです。</p>
+  音楽の1曲分のような長時間の音に関しては<code>audio</code>要素と<code>MediaElementAudioSourceNode</code>によるストリーミングを使うべきです。</p>
 
 <p>AudioBufferは1つ以上のAudioContextで使用される場合があります。
 </p>
@@ -1875,8 +1875,7 @@ interface <dfn id="dfn-AudioBuffer">AudioBuffer</dfn> {
 <div id="AudioBufferSourceNode-section" class="section">
 <h2 id="AudioBufferSourceNode">4.10. AudioBufferSourceNodeインターフェース</h2>
 
-<p>このインターフェースは<code>AudioBuffer</code>によってメモリ上に保持されているオーディオデータからの
-  オーディオソースを表します。
+<p>このインターフェースは<code>AudioBuffer</code>によってメモリ上に保持されているオーディオデータからのオーディオソースを表します。
   それは通常、(完全なリズムを刻むような)再生タイミングに高度な柔軟性が要求される短時間のオーディオのリソースです。
 start()メソッドはいつ再生されるかをスケジュールするために使用されます。
 再生は(もし<code>loop</code>属性が指定されていなければ)バッファのオーディオデータがすべて再生されると自動的に、
@@ -1928,7 +1927,7 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
 </dl>
 <dl>
   <dt id="dfn-playbackRate_AudioBufferSourceNode"><code>playbackRate</code></dt>
-    <dd><p>オーディオストリームを出力する再生速度です。デフォルトの<code>value</code>は1。このパラメータは<em>a-rate</em>です。</p>
+    <dd><p>オーディオストリームを出力する再生速度です。デフォルトの<code>value</code>は1です。このパラメータは<em>a-rate</em>です。</p>
     </dd>
 </dl>
 <dl>
@@ -1986,7 +1985,7 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
   <dt id="dfn-stop"><code>stop</code>メソッド</dt>
     <dd><p>指定の時刻に再生停止をスケジュールします。
       <dfn id="dfn-when_AudioBufferSourceNode_2">when</dfn>パラメータは再生を停止する時刻を(秒で)指定します。
-      これはAudioContext.currentTimeと同じ時間軸の時刻を使用する。
+      これはAudioContext.currentTimeと同じ時間軸の時刻を使用します。
       もしこの値に0、あるいは <b>currentTime</b>よりも小さな値を渡した場合、音の再生は即時に停止します。
       <code>stop</code>は<code>start</code>が呼ばれた後で一度だけ呼ばれなくてはなりません。
       そうでない場合、INVALID_STATE_ERR例外が発生しなくてはなりません(MUST)。</p>
@@ -2062,8 +2061,7 @@ interface <dfn id="dfn-MediaElementAudioSourceNode">MediaElementAudioSourceNode<
   もしそのHTMLMediaElementがオーディオを持っていない場合、1となります。
 </p>
 
-<p>HTMLMediaElementはMediaElementAudioSourceNodeが作成された後、オーディオが直接、音として再生されなくなる代わりにMediaElementAudioSourceNodeからルーティンググラフを通して再生されるようになる事を
-  <em>除けば</em>、MediaElementAudioSourceNodeを使わ<em>ない</em>場合と全く同じように振る舞わなくてはなりません。
+<p>HTMLMediaElementはMediaElementAudioSourceNodeが作成された後、オーディオが直接、音として再生されなくなる代わりにMediaElementAudioSourceNodeからルーティンググラフを通して再生されるようになる事を<em>除けば</em>、MediaElementAudioSourceNodeを使わ<em>ない</em>場合と全く同じように振る舞わなくてはなりません。
 </p>
 
 <div class="example">
@@ -4147,23 +4145,21 @@ else if (elevation &lt; -90)
     
   </li>
   <li><a href="http://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>パンニング(ステレオの場合のみ)
-    <p>この処理には様々なazimuthsとelevationsで記録されたHRTFインパルスレスポンスのセットが必要です。
+    <p>この処理には様々なazimuthとelevationで記録されたHRTFインパルスレスポンスのセットが必要です。
       オープンでフリーなインパルスレスポンスが幾つか存在します。
       実装には高度に最適化されたコンボリューション機能が必要になります。
       これは"equal-power"よりも幾らかコストが必要ですが、より空間的な音を得る事ができます。</p>
     <img alt="HRTF panner" src="images/HRTF_panner.png" /></li>
 </ul>
 
-<h3 id="Spatialization-distance-effects">Distance Effects</h3>
+<h3 id="Spatialization-distance-effects">距離効果</h3>
 <p>
-Sounds which are closer are louder, while sounds further away are quieter.
-Exactly <em>how</em> a sound's volume changes according to distance from the listener
-depends on the <em>distanceModel</em> attribute.
+  近くの音は大きく、遠くの音は小さくなります。
+  リスナーからの距離に対して、正確に<em>どれだけ</em>音量が変化するのかは、<em>distanceModel</em>属性に依存します。
 </p>
 
 
-<p>
-During audio rendering, a <em>distance</em> value will be calculated based on the panner and listener positions according to:
+<p>オーディオレンダリングの間、<em>distance</em>値がパンナーとリスナーの位置を基に次のように計算されます:
 </p>
 <pre>
 v = panner.position - listener.position
@@ -4173,29 +4169,25 @@ distance = sqrt(dot(v, v))
 </pre>
 
 <p>
-<em>distance</em> will then be used to calculate <em>distanceGain</em> which depends
-on the <em>distanceModel</em> attribute.  See the <a href="#dfn-distanceModel">distanceModel</a> section for details of
-how this is calculated for each distance model.
+  そして、<em>distance</em>を使って<em>distanceModel</em>属性に依存する<em>distanceGain</em>が計算されます。
+  それぞれの距離モデルについて、これがどのように計算されるかの詳細は<a href="#dfn-distanceModel">distanceModel</a>節を参照してください。
 </p>
-<p>As part of its processing, the <code>PannerNode</code> scales/multiplies the input audio signal by <em>distanceGain</em>
-to make distant sounds quieter and nearer ones louder.
+<p>
+  この処理の一部分として、<code>PannerNode</code>は入力されるオーディオ信号を<em>distanceGain</em>でスケーリング/増幅し、遠くの音は小さく近ければ大きくします。
 </p>
 
 
 
 
-<h3 id="Spatialization-sound-cones">Sound Cones</h3>
+<h3 id="Spatialization-sound-cones">サウンドコーン</h3>
 
-<p>The listener and each sound source have an orientation vector describing
-which way they are facing. Each sound source's sound projection characteristics
-are described by an inner and outer "cone" describing the sound intensity as a
-function of the source/listener angle from the source's orientation vector.
-Thus, a sound source pointing directly at the listener will be louder than if
-it is pointed off-axis. Sound sources can also be omni-directional. </p>
+<p>リスナーとそれぞれの音源はそれがどの方向を向いているかを表す方向ベクトルを持っています。
+  それぞれの音源の音の放射特性は、音源の方向ベクトルに対してソース/リスナー間の角度の関数で音の大きさを表した内部および外部の"コーン"で表現されます。
+  つまり、直接リスナーの方を向いた音源は、違う方向を向いた音源よりも大きく聴こえます。
+  音源はまた、無指向性に設定する事も可能です。</p>
 
 <p>
-The following algorithm must be used to calculate the gain contribution due
-to the cone effect, given the source (the <code>PannerNode</code>) and the listener:
+  あるソース(<code>PannerNode</code>)とリスナーに対して、コーン効果によるゲインへの影響を計算するためには、次のアルゴリズムを使用しなくてはなりません。
 </p>
 
 <div class="block">
@@ -4241,18 +4233,14 @@ return gain;
 </div>
 </div>
 
-<h3 id="Spatialization-doppler-shift">Doppler Shift</h3>
+<h3 id="Spatialization-doppler-shift">ドップラー効果</h3>
 <ul>
-  <li>Introduces a pitch shift which can realistically simulate moving
-  sources.</li>
-  <li>Depends on: source / listener velocity vectors, speed of sound, doppler
-    factor.</li>
+  <li>移動する音源を現実的にシミュレートしたピッチ変化をもたらします。</li>
+  <li>音源ととリスナーの移動ベクトル、音速、ドップラー係数に依存します。</li>
 </ul>
 
 <p>
-The following algorithm must be used to calculate the doppler shift value which is used
-as an additional playback rate scalar for all AudioBufferSourceNodes connecting directly or
-indirectly to the AudioPannerNode:
+  AudioPannerNodeに直接または間接的に接続されている全てのAudioBufferSourceNodeに対する付加的な再生速度係数として使用される、ドップラー効果の変化量を計算するため、次のアルゴリズムが使用されなくてはなりません。
 </p>
 
 <div class="block">
@@ -4303,7 +4291,7 @@ if (dopplerFactor > 0) {
 <div id="Convolution-section" class="section">
 <h2 id="Convolution">12. コンボリューションによる線形エフェクト</h2>
 
-<h3 id="Convolution-background">Background</h3>
+<h3 id="Convolution-background">背景</h3>
 
 <p><a href="http://en.wikipedia.org/wiki/Convolution">Convolution</a> is a
 mathematical process which can be applied to an audio signal to achieve many
@@ -4321,7 +4309,7 @@ href="#recording-impulse-responses">can be recorded</a> from a real acoustic
 space such as a cave, or can be synthetically generated through a great variety
 of techniques. </p>
 
-<h3 id="Convolution-motivation">Motivation for use as a Standard</h3>
+<h3 id="Convolution-motivation">標準として使用する動機</h3>
 
 <p>A key feature of many game audio engines (OpenAL, FMOD, Creative's EAX,
 Microsoft's XACT Audio, etc.) is a reverberation effect for simulating the
@@ -4343,14 +4331,14 @@ represents an exact sound effect to be applied to an audio stream and is easily
 represented by an audio file which can be referenced by URL. The range of
 possible effects is enormous. </p>
 
-<h3 id="Convolution-implementation-guide">Implementation Guide</h3>
+<h3 id="Convolution-implementation-guide">実装ガイド</h3>
 <p>
 Linear convolution can be implemented efficiently.
 Here are some <a href="convolution.html">notes</a>
 describing how it can be practically implemented.
 </p>
 
-<h3 id="Convolution-reverb-effect">Reverb Effect (with matrixing)</h3>
+<h3 id="Convolution-reverb-effect">リバーブ・エフェクト (マトリックス付き)</h3>
 
 <p class="norm">This section is normative.</p>
 
@@ -4376,7 +4364,7 @@ common cases for stereo playback where N and M are 1 or 2 and K is 1, 2, or 4.
 </p>
 <img alt="reverb matrixing" src="images/reverb-matrixing.png" /> 
 
-<h3 id="recording-impulse-responses">Recording Impulse Responses</h3>
+<h3 id="recording-impulse-responses">インパルスレスポンスの記録</h3>
 
 <p class="norm">This section is informative.</p>
 <img alt="impulse response" src="images/impulse-response.png" /> <br />
@@ -4399,7 +4387,7 @@ room with the corresponding microphone placement. These impulse responses are
 then ready to be loaded into the convolution reverb engine to re-create the
 sound of being in the room. </p>
 
-<h3 id="tools">Tools</h3>
+<h3 id="tools">ツール</h3>
 
 <p>Two command-line tools have been written: <br />
 <code>generate_testtones</code> generates an exponential sine-sweep test-tone
@@ -4420,7 +4408,7 @@ Usage: convolve input_file impulse_response_file output_file</pre>
 <br />
 
 
-<h3 id="recording-setup">Recording Setup</h3>
+<h3 id="recording-setup">レコーディング・セットアップ</h3>
 <img alt="recording setup" src="images/recording-setup.png" /> <br />
 <br />
 Audio Interface: Metric Halo Mobile I/O 2882 <br />
@@ -4437,7 +4425,7 @@ Microphones: AKG 414s, Speaker: Mackie HR824 <br />
 <br />
 
 
-<h3 id="warehouse">The Warehouse Space</h3>
+<h3 id="warehouse">倉庫空間</h3>
 <img alt="warehouse" src="images/warehouse.png" /> <br />
 <br />
 </div>
