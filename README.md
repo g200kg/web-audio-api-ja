@@ -1,5 +1,5 @@
 
-web-audio-api-ja
+Web Audio API 日本語訳
 ================
 
 この文書は、W3Cの文書 "Web Audio API」 W3C Working Draft 10 October 2013" の日本語訳です。
@@ -11,4 +11,7 @@ Web Audio APIの正式な文書は英語版のみであり、日本語訳には�
 GitHub : [https://github.com/g200kg/web-audio-api-ja](https://github.com/g200kg/web-audio-api-ja)  
 公開URL : [http://g200kg.github.io/web-audio-api-ja/](http://g200kg.github.io/web-audio-api-ja/)  
 
-※まだ途中です...
+Tatsuya Shinyagaito @ g200kg  
+
+誤りその他があればGitHubページ、下のサイト経由などで連絡をお願いいたします。  
+[http://www.g200kg.com/"](http://www.g200kg.com/)  
