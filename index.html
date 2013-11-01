@@ -32,6 +32,9 @@
     em {
       padding:4px;
     }
+    dfn {
+      padding:4px;
+    }
     .doc_en {
       background:#eec;
       color:#666;
@@ -477,7 +480,7 @@ AppleのLogicがそのようなアプリケーションの1つであり、外部
 
 <p>モジュラー・ルーティングによって異なる <a href="#AudioNode-section"><code>AudioNode</code></a> オブジェクト同士を任意に接続できます。
 それぞれのノードは<dfn>入力</dfn>および<dfn>出力</dfn>を持っています。
-<dfn>ソースノード</dfn> は入力は持たず、1つの出力を持ちます。
+<dfn>ソースノード</dfn>は入力は持たず、1つの出力を持ちます。
 <dfn>デスティネーションノード</dfn>は1つの入力を持ち、出力は持っていません。この最も一般的な例が最終的なオーディオハードウェアに繋がる<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>です。
 フィルタなどの他のノードはソースとデスティネーションの間に配置することができます。
 開発者は2つのオブジェクトが互いに接続している場合、低レベルのストリーム形式の詳細について煩わされる事なく、<a href="#UpMix-section">適正な処理が行われます</a>。
@@ -842,10 +845,10 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
   <dt id="dfn-createBuffer"><code>createBuffer</code> メソッド</dt>
     <dd><p>与えられたサイズのAudioBufferを作成します。バッファ内のデータは0(無音)で初期化されます。
       もし、<code>numberOfChannels</code>または<code>sampleRate</code>が範囲外の場合、またはlengthが0の場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。</p>
-      <p><dfn id="dfn-numberOfChannels">numberOfChannels</dfn> パラメータはバッファが持つチャンネル数を指定します。
+      <p><dfn id="dfn-numberOfChannels">numberOfChannels</dfn>パラメータはバッファが持つチャンネル数を指定します。
         実装は少なくとも32チャンネルをサポートしなくてはなりません。</p>
-      <p><dfn id="dfn-length">length</dfn> パラメータはバッファのサイズをサンプルフレーム数で指定します。</p>
-      <p><dfn id="dfn-sampleRate_2">sampleRate</dfn> パラメータはバッファ内のリニアPCMオーディオデータのサンプルレートを秒あたりのサンプルフレーム数で表します。
+      <p><dfn id="dfn-length">length</dfn>パラメータはバッファのサイズをサンプルフレーム数で指定します。</p>
+      <p><dfn id="dfn-sampleRate_2">sampleRate</dfn>パラメータはバッファ内のリニアPCMオーディオデータのサンプルレートを秒あたりのサンプルフレーム数で表します。
         実装は少なくとも22050から96000の範囲をサポートしなくてはなりません。</p>
     </dd>
 </dl>
@@ -855,26 +858,26 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
       ArrayBufferは、例えばXMLHttpRequestで<code>responseType</code>に"arraybuffer"を指定した場合の
       <code>response</code>属性としてロードされます。
       オーディオファイルデータは<code>audio</code>要素でサポートされるどのフォーマットでも構いません。</p>
-      <p><dfn id="dfn-audioData">audioData</dfn> はオーディオファイルのデータを含むArrayBufferです。</p>
-      <p><dfn id="dfn-successCallback">successCallback</dfn> は、デコードが終了した時に呼び出されるコールバック関数です。
+      <p><dfn id="dfn-audioData">audioData</dfn>はオーディオファイルのデータを含むArrayBufferです。</p>
+      <p><dfn id="dfn-successCallback">successCallback</dfn>は、デコードが終了した時に呼び出されるコールバック関数です。
         コールバック関数の引数はデコードされたPCMオーディオデータをあらわすAudioBufferになります。</p>
-      <p><dfn id="dfn-errorCallback">errorCallback</dfn> はオーディオファイルデータをデコード中にエラーが起こった場合に呼び出されるコールバック関数です。</p>
+      <p><dfn id="dfn-errorCallback">errorCallback</dfn>はオーディオファイルデータをデコード中にエラーが起こった場合に呼び出されるコールバック関数です。</p>
       
       <p>
       次のステップが実行されなくてはなりません:
       </p>
       <ol>
       
-      <li>JavaScriptからアクセスや変更ができないように<dfn>audioData</dfn> のArrayBufferを一時的に中立化します。</li>
+      <li>JavaScriptからアクセスや変更ができないように<dfn>audioData</dfn>のArrayBufferを一時的に中立化します。</li>
       <li>デコード処理が別のスレッドで実行されるようにキューに登録します。</li>
       <li>デコードスレッドが、エンコードされている<dfn>audioData</dfn>からリニアPCMへのデコードを試みます。
         もしオーディオフォーマットが認識できない、あるいはサポートされていない、あるいはデータが壊れている/想定していない/矛盾しているなどのためデコードエラーが発生した場合、
-        <dfn>audioData</dfn> の中立化状態は解除され、メインスレッドのイベントループで<dfn>errorCallback</dfn> 関数を呼び出すようにスケジュールされてこのステップを終了します。</li>
-      <li>デコードスレッドがリニアPCMオーディオデータのデコード結果を得て、その<dfn>audioData</dfn> のサンプルレートがもし異なっている場合、AudioContextのサンプルレートにリサンプリングされます。
+        <dfn>audioData</dfn>の中立化状態は解除され、メインスレッドのイベントループで<dfn>errorCallback</dfn>関数を呼び出すようにスケジュールされてこのステップを終了します。</li>
+      <li>デコードスレッドがリニアPCMオーディオデータのデコード結果を得て、その<dfn>audioData</dfn>のサンプルレートがもし異なっている場合、AudioContextのサンプルレートにリサンプリングされます。
         最終的な結果(必要ならサンプルレート変換の後)がAudioBufferに格納されます。
       </li>
-      <li><dfn>audioData</dfn> の中立化状態が解除されます。</li>
-      <li>ステップ(4)のAudioBufferを引数として<dfn>successCallback</dfn> 関数がメインスレッドのイベントループから呼び出されるようにスケジュールされます。</li>
+      <li><dfn>audioData</dfn>の中立化状態が解除されます。</li>
+      <li>ステップ(4)のAudioBufferを引数として<dfn>successCallback</dfn>関数がメインスレッドのイベントループから呼び出されるようにスケジュールされます。</li>
       </ol>
     </dd>
 </dl>
@@ -906,7 +909,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
   <dt id="dfn-createScriptProcessor"><code>createScriptProcessor</code>メソッド</dt>
     <dd><p>JavaScriptによるオーディオデータ直接処理のための<a href="#ScriptProcessorNode"><code>ScriptProcessorNode</code></a>を作成します。
       もし、<code>bufferSize</code>または<code>numberOfInputChannels</code>または<code>numberOfOutputChannels</code>が範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
-      <p><dfn id="dfn-bufferSize">bufferSize</dfn> パラメータはサンプルフレーム数でバッファのサイズを指定します。
+      <p><dfn id="dfn-bufferSize">bufferSize</dfn>パラメータはサンプルフレーム数でバッファのサイズを指定します。
         もしそれが渡されない場合、または値が0である場合、実装はノードのライフタイムを通して一定な2の累乗である、動作環境に最適なバッファサイズを選択します。
         そうでなければ、明示的にバッファサイズを指定します。それは次の値のどれかでなければなりません:
         256、512、1024、2048、4096、8192、16384。
@@ -1112,27 +1115,27 @@ interface <dfn id="dfn-OfflineAudioCompletionEvent">OfflineAudioCompletionEvent<
 <p>AudioNodeは<a href="#AudioContext-section"><code>AudioContext</code></a>の構成ブロックです。
   このインターフェースはオーディオのソース、出力先、中間の処理モジュールを表しています。これらのモジュールは互いに接続されて、
   音をオーディオハードウェアに出力するための<a href="#ModularRouting-section">処理グラフ</a>を形成します。
-  それぞれのノードは<dfn>入力</dfn> や<dfn>出力</dfn> を持つ事ができます。
-  <dfn>ソースノード</dfn> は入力を持たず、単一の出力を持ちます。
+  それぞれのノードは<dfn>入力</dfn>や<dfn>出力</dfn>を持つ事ができます。
+  <dfn>ソースノード</dfn>は入力を持たず、単一の出力を持ちます。
   <a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>は
   単一の入力を持ち、出力を持たず、オーディオハードウェアへの最終的な出力地点を表しています。
   それぞれのタイプの<code>AudioNode</code>はどのようにオーディオを処理したり合成したりするかの詳細が異なっています。
   しかし、一般的に<code>AudioNodes</code>は(持っていれば)その入力を処理し、(持っていれば)その出力にオーディオ信号を送り出します。
  </p>
  
-<p>それぞれの<dfn>出力</dfn> は1つ以上の <dfn>チャンネル</dfn> を持っています。正確なチャンネル数はそれぞれのAudioNodeの詳細に依存します。
+<p>それぞれの<dfn>出力</dfn>は1つ以上の<dfn>チャンネル</dfn>を持っています。正確なチャンネル数はそれぞれのAudioNodeの詳細に依存します。
 </p>
 
 <p>出力は1つ以上の<code>AudioNode</code>入力に接続でき、つまり<em>ファンアウト</em>がサポートされています。
 入力は初期時には接続されていません。しかし、1つ以上の<code>AudioNode</code>出力から接続する事ができ、即ち、<em>ファンイン</em>がサポートされています。
-AudioNodeの出力をAudioNodeの入力に接続するため<code>connect()</code>メソッドが呼ばれた時、それを、その入力への<dfn>接続</dfn> と呼びます。
+AudioNodeの出力をAudioNodeの入力に接続するため<code>connect()</code>メソッドが呼ばれた時、それを、その入力への<dfn>接続</dfn>と呼びます。
 </p>
 
-<p>各AudioNodeの<dfn>入力</dfn> はその時々で特定のチャンネル数を持ちます。この数はその入力への<dfn>接続</dfn> によって変化します。
+<p>各AudioNodeの<dfn>入力</dfn>はその時々で特定のチャンネル数を持ちます。この数はその入力への<dfn>接続</dfn>によって変化します。
   もし入力が接続を持っていない場合、チャンネル数は1で無音となります。
 </p>
 
-<p><code>AudioNode</code>はそれぞれの<dfn>入力</dfn> について、その入力への接続のミックス(通常はアップミックス)を行います。
+<p><code>AudioNode</code>はそれぞれの<dfn>入力</dfn>について、その入力への接続のミックス(通常はアップミックス)を行います。
   この詳細に関して参考情報としては<a href="#MixerGainStructure-section">ミキサーゲイン構成</a>、基準としての要件については<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>を参照してください。
 </p>
 
@@ -1192,7 +1195,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 </dl>
 <dl>
   <dt id="dfn-numberOfInputs_2"><code>numberOfInputs</code></dt>
-    <dd><p>このAudioNodeに信号を供給する入力の数です。<dfn>ソースノード</dfn> ではこれは0となります。</p>
+    <dd><p>このAudioNodeに信号を供給する入力の数です。<dfn>ソースノード</dfn>ではこれは0となります。</p>
     </dd>
 </dl>
 <dl>
@@ -1229,10 +1232,10 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 <dl>
   <dt id="dfn-connect-AudioNode">AudioNodeへの<code>connect</code>メソッド</dt>
     <dd><p>AudioNodeを他のAudioNodeに接続します。</p>
-      <p><dfn id="dfn-destination_2">destination</dfn> パラメータは接続先となるAudioNodeです。</p>
-      <p><dfn id="dfn-output_2">output</dfn> パラメータはAudioNodeのどの出力を接続するかを指定するインデックスです。
+      <p><dfn id="dfn-destination_2">destination</dfn>パラメータは接続先となるAudioNodeです。</p>
+      <p><dfn id="dfn-output_2">output</dfn>パラメータはAudioNodeのどの出力を接続するかを指定するインデックスです。
         もしこのパラメータが範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
-      <p><dfn id="dfn-input_2">input</dfn> パラメータは接続先のAudioNodeのどの入力に接続するかを指定するインデックスです。
+      <p><dfn id="dfn-input_2">input</dfn>パラメータは接続先のAudioNodeのどの入力に接続するかを指定するインデックスです。
         もしこのパラメータが範囲外の場合INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
       <p>connect()を複数回呼び出して、AudioNodeの出力を複数の入力に接続する事が可能です。
         つまり、"ファンアウト"がサポートされています。</p>
@@ -1262,9 +1265,9 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
     <dd><p>AudioNodeをAudioParamに接続し、パラメータの値をオーディオ信号レートで制御します。
       </p>
 
-      <p><dfn id="dfn-destination_3">destination</dfn> パラメータは接続先のAudioParamです。
+      <p><dfn id="dfn-destination_3">destination</dfn>パラメータは接続先のAudioParamです。
       </p>
-      <p><dfn id="dfn-output_3-destination">output</dfn> パラメータはAudioNodeのどの出力から接続するかを指定します。
+      <p><dfn id="dfn-output_3-destination">output</dfn>パラメータはAudioNodeのどの出力から接続するかを指定します。
         もしこのパラメータが範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。
       </p>
 
@@ -1296,7 +1299,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 <dl>
   <dt id="dfn-disconnect"><code>disconnect</code> メソッド</dt>
     <dd><p>AudioNodeの出力からの接続を切断します。</p>
-      <p><dfn id="dfn-output_3-disconnect">output</dfn> パラメータは接続を切るAudioNodeの出力のインデックスです。
+      <p><dfn id="dfn-output_3-disconnect">output</dfn>パラメータは接続を切るAudioNodeの出力のインデックスです。
         もしこのoutputパラメータが範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
     </dd>
 </dl>
@@ -1499,23 +1502,22 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 <li>もし、これらのイベントのどれかをある時刻に追加しようとした時、同じ時刻に異なる型のイベントが1つ以上存在している場合、新しいイベントはそれら既にあるイベントの後ろで、時刻がより後ろのイベントの前に追加されます。</li>
 <li>もし、setValueCurveAtTime()がtime T、duration Dで呼ばれた時、Tより後ろでT+Dより手前に何らかのイベントが既に存在している場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。
   別の言い方をすると、他のイベントを含んだ期間の値のカーブをスケジュールする事はできません。</li>
-<li>同様に、<em>SetValueCurve</em>イベントのtime Tとduration Dの期間内を指定して何らかの<em>オートメーション</em>メソッドを呼んだ場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。</li>
+<li>同様に、<em>SetValueCurve</em>イベントのtime Tとduration Dで示される期間内の時刻を指定して何らかの<em>オートメーション</em>メソッドを呼んだ場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。</li>
 </ul>
 <p>
 </p>
 
 <dl>
   <dt id="dfn-setValueAtTime"><code>setValueAtTime</code> メソッド</dt>
-    <dd><p>パラメータ値を指定の時刻に変更するようにスケジュールします。</p>
-      <p><dfn id="dfn-value_2">value</dfn> パラメータは指定の時刻に変更する値です。</p>
-      <p><dfn id="dfn-startTime_2">startTime</dfn> パラメータはAudioContext.currentTimeと同じ時間軸で指定される時刻です。</p>
+    <dd><p>指定の時刻になるとパラメータ値を変更するようにスケジュールします。</p>
+      <p><dfn id="dfn-value_2">value</dfn>パラメータは指定の時刻になると設定される値です。</p>
+      <p><dfn id="dfn-startTime_2">startTime</dfn>パラメータはAudioContext.currentTimeと同じ時間軸で指定される時刻です。</p>
       <p>
-        もし、<em>SetValue</em>イベント以降にもうイベントがない場合、 時刻 t >= startTime に対して v(t) = value となります。
+        もし<em>SetValue</em>イベント以降にこれ以上イベントがない場合、 時刻 t >= startTime に対して v(t) = value となります。
         別の言い方をすると、valueは定数値ののまま保持されます。
       </p>
       <p>
-        もしこの<em>SetValue</em>イベントの次のイベント(時刻T1)の型が<em>LinearRampToValue</em>または<em>ExponentialRampToValue</em>ではない場合、
-        時刻をtとして:
+        もしこの<em>SetValue</em>イベントの次のイベント(時刻T1)の型が<em>LinearRampToValue</em>または<em>ExponentialRampToValue</em>ではない場合、時刻をtとした場合:
         startTime &lt;= t &lt; T1 に対して v(t) = value となります。
         別の言い方をすると、valueはこの期間内だけ保持され、"ステップ"を作る事ができます。
       </p>
@@ -1527,8 +1529,8 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 <dl>
   <dt id="dfn-linearRampToValueAtTime"><code>linearRampToValueAtTime</code> メソッド</dt>
     <dd><p>前にスケジュールされているパラメータ値から指定された値まで、直線的に連続して値を変化させる事をスケジュールします。</p>
-      <p><dfn id="dfn-value_3">value</dfn> は直線的に変化して指定の時刻になった時の値です。</p>
-      <p><dfn id="dfn-endTime_3">endTime</dfn> はAudioCOntext.currentTimeと同じ時間軸で表された時刻です。</p>
+      <p><dfn id="dfn-value_3">value</dfn>は直線的に変化して指定の時刻になった時に到達する値です。</p>
+      <p><dfn id="dfn-endTime_3">endTime</dfn>はAudioContext.currentTimeと同じ時間軸で表された時刻です。</p>
 
       <p>
         T0 &lt;= t &lt; T1の期間における値 (T0は1つ前のイベントの時刻、T1はこのメソッドのendTimeで指定される時刻)は次のように計算されます:
@@ -1540,7 +1542,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
         ここでV0は時刻T0における値、V1はこのメソッドで指定された値です。
       </p>
       <p>
-        もしこのLinerRamptoValueイベント以降に、もうイベントが無い場合、時刻 t に対して v(t) = V1 となります。
+        もしこのLinerRamptoValueイベント以降にこれ以上イベントが無い場合、時刻 t に対して v(t) = V1 となります。
       </p>
 
     </dd>
@@ -1550,10 +1552,10 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
     <dd><p>前にスケジュールされているバラメータ値から指定された値まで、指数的に連続して値を変化させる事をスケジュールします。
       フィルターの周波数や再生スピードなどのパラメータは人間の聴覚特性のため、指数的変化が適しています。
       </p>
-      <p><dfn id="dfn-value_4">value</dfn> は指定された時刻における指数的変化の値です。
+      <p><dfn id="dfn-value_4">value</dfn>は指定された時刻に指数的変化で到達する値です。
         もし値が0かそれ以下、または前のイベントによる値が0かそれ以下の場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。
       </p>
-      <p><dfn id="dfn-endTime_4">endTime</dfn> はAudioCOntext.currentTimeと同じ時間軸で表された時刻です。</p>
+      <p><dfn id="dfn-endTime_4">endTime</dfn>はAudioContext.currentTimeと同じ時間軸で表された時刻です。</p>
       <p>
         T0 &lt;= t &lt; T1の期間における値 (T0は1つ前のイベントの時刻、T1はこのメソッドのendTimeで指定される時刻)は次のように計算されます:
       </p>
@@ -1564,7 +1566,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
         ここでV0は時刻T0における値、V1はこのメソッドで指定された値です。
       </p>
       <p>
-        もしこのExponentialRamptoValueイベント以降に、もうイベントが無い場合、時刻 t に対して v(t) = V1 となります。
+        もしこのExponentialRamptoValueイベント以降に、これ以上イベントが無い場合、時刻 t に対して v(t) = V1 となります。
       </p>
     </dd>
 </dl>
@@ -1573,14 +1575,16 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
     <dd><p>指定の時間から、指定の時定数によって指数的に目標の値に漸近を開始します。
       様々な使い方がありますが、これはADSRエンベロープの"ディケイ"および"リリース"を実装する際に役立ちます。
       値は指定の時間に即、目標値になるのではなく徐々に変化する事に注意してください。</p>
-      <p><dfn id="dfn-target">target</dfn> は与えられた時間に変化を<em>開始</em>する<span class="annotate">(訳注:目標の)</span>値を指定します。
+      <p><dfn id="dfn-target">target</dfn>は与えられた時刻になると<em>開始</em>する変化の目標値を指定します。
       </p>
-      <p><dfn id="dfn-startTime">startTime</dfn> はAudioContext.currentTimeと同じ時間軸の時刻です。</p>
-      <p><dfn id="dfn-timeConstant">timeConstant</dfn> は目標の値に(指数的に)漸近する一次フィルターの時定数です。
+      <p><dfn id="dfn-startTime">startTime</dfn>はAudioContext.currentTimeと同じ時間軸の時刻です。</p>
+      <p><dfn id="dfn-timeConstant">timeConstant</dfn>は目標の値に(指数的に)漸近する一次フィルターの時定数です。
         大きな値だと変化はゆっくりになります。
       </p>
       <p>
-        より正確には<em>timeConstant</em>は、ステップ状の入力(0から1に変化)が入力された場合、一次の線形時不変系によって値が、1 - 1/e (約63.2%) に到達するまでの時間です。
+        より正確には<em>timeConstant</em>は、ステップ状の入力(0から1に変化)が入力された場合、一次の線形時不変系によって値が1 - 1/e (約63.2%) に到達するまでの時間です。
+      </p>
+      <p>
         <em>T0</em> &lt;= t &lt; <em>T1</em> の期間: T0を<em>startTime</em>として、T1が次のイベントの時刻とした場合(あるいは次のイベントがなければ<em>無限</em>に):</p>
       <pre>
       v(t) = V1 + (V0 - V1) * exp(-(t - T0) / <em>timeConstant</em>)
@@ -1591,25 +1595,25 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 </dl>
 <dl>
   <dt id="dfn-setValueCurveAtTime"><code>setValueCurveAtTime</code> メソッド</dt>
-    <dd><p>指定の時刻と期間に対して、任意の値の配列を設定します。配列中の値の数は必要とされる期間に合うようにスケーリングされます。</p>
-      <p><dfn id="dfn-values">values</dfn> は値の曲線を表すFloat32Arrayの配列です。
-        これらの値は指定された時刻に開始し、指定の期間で終了するように適用されます。</p>
-      <p><dfn id="dfn-startTime_5">startTime</dfn> はAudioContext.currentTimeと同じ時間軸を使用する時刻です。</p>
-      <p><dfn id="dfn-duration_5">duration</dfn> は(<em>time</em><span class="annotate">(訳注:startTime)</span>以降の) 秒で表される期間の長さであり、
+    <dd><p>指定の時刻と期間に対して、任意の値の配列を設定します。配列の各値は必要とされる期間に合うように割り当てられます。</p>
+      <p><dfn id="dfn-values">values</dfn>は値の曲線を表すFloat32Arrayの配列です。
+        これらの値は指定された時刻に開始し、指定の期間で終了するように割り当てられます。</p>
+      <p><dfn id="dfn-startTime_5">startTime</dfn>はAudioContext.currentTimeと同じ時間軸を使用する時刻です。</p>
+      <p><dfn id="dfn-duration_5">duration</dfn>は(<em>time</em><span class="annotate">(訳注:startTime)</span>以降の) 秒で表される期間の長さであり、
         この期間、値は<em>values</em>に従って計算されます。</p>
       <p><em>startTime</em> &lt;= t &lt; <em>startTime</em> + <em>duration</em> の期間内、値は次のように計算されます:
       </p>
       <pre>
       v(t) = values[N * (t - startTime) / duration]、 ここで、<em>N</em>は<em>values</em>配列の長さです。
       </pre>
-      <p>曲線の期間の後(t >= <em>startTime</em> + <em>duration</em>)、値は(あれば)他のオートメーションイベントまで最後の曲線の値を保持します。
+      <p>曲線の期間の後(t >= <em>startTime</em> + <em>duration</em>)、値は(あれば)次のオートメーションイベントまで曲線の最後の値を保持します。
       </p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-cancelScheduledValues"><code>cancelScheduledValues</code> メソッド</dt>
     <dd><p>startTimeと同じかそれ以降にスケジュールされているすべてのパラメータ変化をキャンセルします。</p>
-      <p><dfn>startTime</dfn> はそれと同じかそれ以降に設定されていたパラメータ変化のスケジュールをキャンセルする時刻です。
+      <p><dfn>startTime</dfn>はそれと同じかそれ以降に設定されていたパラメータ変化のスケジュールをキャンセルする時刻です。
         これはAudioContext.currentTimeと同じ時間軸の時刻を使用します。</p>
     </dd>
 </dl>
@@ -1621,7 +1625,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 <h3>4.5.3. 値の計算</h3>
 
 <p>
-<dfn>computedValue</dfn> はオーディオDSPを制御する最終的な値であり、オーディオレンダリングスレッドがそれぞれのレンダリング時刻に計算します。
+<dfn>computedValue</dfn>はオーディオDSPを制御する最終的な値であり、オーディオレンダリングスレッドがそれぞれのレンダリング時刻に計算します。
 内部的には次のように計算されなくてはなりません:
 </p>
 
@@ -1864,7 +1868,7 @@ interface <dfn id="dfn-AudioBuffer">AudioBuffer</dfn> {
 <dl>
   <dt id="dfn-getChannelData"><code>getChannelData</code>メソッド</dt>
     <dd><p>指定されたチャンネルの<code>Float32Array</code>型のPCMオーディオデータを返します。
-      <dfn id="dfn-channel">channel</dfn> パラメータはデータを取得するチャンネルのインデックスを指定します。
+      <dfn id="dfn-channel">channel</dfn>パラメータはデータを取得するチャンネルのインデックスを指定します。
       インデックス値0は最初のチャンネルを表します。このインデックスは<code>numberOfChannels</code>未満でなくてはならず(MUST)、そうでない場合
       INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
     </dd>
@@ -1966,14 +1970,14 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
 <dl>
   <dt id="dfn-start"><code>start</code>メソッド</dt>
     <dd><p>指定の時刻に音の再生開始をスケジュールします。</p>
-      <p><dfn id="dfn-when">when</dfn> パラメータは、再生の開始時刻を(秒で)指定します。
+      <p><dfn id="dfn-when">when</dfn>パラメータは、再生の開始時刻を(秒で)指定します。
         これはAudioContext.currentTimeと同じ時間軸の時刻を使用します。
         もしこの値に0、あるいは<b>currentTime</b>よりも小さな値を渡した場合、音は即時に再生されます。
         <code>start</code>は<code>stop</code>よりも前に一度だけ呼ばれなくてはなりません。
         そうでない場合、INVALID_STATE_ERR例外が発生しなくてはなりません(MUST)。</p>
-      <p><dfn id="dfn-offset">offset</dfn> パラメータはバッファ中の再生開始位置を(秒で)指定します。
+      <p><dfn id="dfn-offset">offset</dfn>パラメータはバッファ中の再生開始位置を(秒で)指定します。
         もしこの値に0が渡された場合、再生はバッファの先頭から開始されます。</p>
-      <p><dfn id="dfn-duration">duration</dfn> パラメータは再生される部分の長さを(秒で)指定します。
+      <p><dfn id="dfn-duration">duration</dfn>パラメータは再生される部分の長さを(秒で)指定します。
         もしこの値が渡されなかった場合、再生の長さはAudioBuffer全体の長さから<code>offset</code>を引いたものになります。
         即ち、<code>offset</code> も <code>duration</code>も指定されなかった場合、暗黙的にdurationは
         AudioBuffer全体の長さとなります。
@@ -2380,7 +2384,7 @@ pow(distance / refDistance, -rolloffFactor)
   <dt id="dfn-setPosition"><code>setPosition</code> メソッド</dt>
     <dd><p><b>listener</b>属性に相対する音源の位置を設定します。
       3Dのデカルト座標系が使用されます。</p>
-      <p><dfn id="dfn-x">x, y, z</dfn> パラメータは3D空間中の座標を表します</p>
+      <p><dfn id="dfn-x">x, y, z</dfn>パラメータは3D空間中の座標を表します</p>
       <p>デフォルトの値は (0,0,0)です。
       </p>
     </dd>
@@ -2390,7 +2394,7 @@ pow(distance / refDistance, -rolloffFactor)
     <dd><p>3D空間のデカルト座標系で音源の向いている方向を表します。
       音がどれくらいの指向性(<b>cone</b>属性で制御されます)を持っているかによって音が
       リスナーからはずれると小さくなったり全く聴こえなくなったりします。</p>
-      <p><dfn id="dfn-x_2">x, y, z</dfn> パラメータは3D空間内での方向を表します。</p>
+      <p><dfn id="dfn-x_2">x, y, z</dfn>パラメータは3D空間内での方向を表します。</p>
       <p>デフォルトの値は(1,0,0)です。
       </p>
     </dd>
@@ -2401,7 +2405,7 @@ pow(distance / refDistance, -rolloffFactor)
       このベクトルは3D空間内での移動する方向と速度の両方を制御します。
       この速度とリスナーの速度の相対値によってどれくらいのドップラー効果(ピッチの変化)が適用されるかが決定します。
       このベクトルの単位は<em>メートル / 秒</em>で、位置や方向ベクトルで使われる単位とは独立しています。</p>
-      <p><dfn id="dfn-x_3">x, y, z</dfn> パラメータは移動の方向と大きさを表しています。</p>
+      <p><dfn id="dfn-x_3">x, y, z</dfn>パラメータは移動の方向と大きさを表しています。</p>
       <p>デフォルトの値は(0,0,0)です。
       </p>
     </dd>
@@ -2461,7 +2465,7 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
   <dt id="dfn-setPosition_2"><code>setPosition</code> メソッド</dt>
     <dd><p>3Dデカルト座標空間でのリスナーの位置を設定します。
       <code>PannerNode</code>オブジェクトはこの位置と音源との相対的な位置を空間音響のために使用します。</p>
-      <p><dfn id="dfn-x_AudioListener">x, y, z</dfn> パラメータは3D空間内の座標を表します。</p>
+      <p><dfn id="dfn-x_AudioListener">x, y, z</dfn>パラメータは3D空間内の座標を表します。</p>
       <p>デフォルトの値は(0,0,0)です。
       </p>
     </dd>
@@ -2475,9 +2479,9 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
       これらは線形独立(互いに90度)の関係になります。
       これらの値がどのように解釈されるかの基準としての要件は<a href="#Spatialization-section">空間音響</a>セクションを見てください。
       </p>
-      <p><dfn id="dfn-x_setOrientation">x, y, z</dfn> パラメータは3D空間中の<b>front</b>方向ベクトルであり、デフォルトの値は
+      <p><dfn id="dfn-x_setOrientation">x, y, z</dfn>パラメータは3D空間中の<b>front</b>方向ベクトルであり、デフォルトの値は
         (0,0,-1)です。</p>
-      <p><dfn id="dfn-x_setOrientation_2">xUp, yUp, zUp</dfn> パラメータは3D空間中の<b>up</b>方向ベクトルであり、デフォルトの値は
+      <p><dfn id="dfn-x_setOrientation_2">xUp, yUp, zUp</dfn>パラメータは3D空間中の<b>up</b>方向ベクトルであり、デフォルトの値は
         (0,1,0)になります。</p>
     </dd>
 </dl>
@@ -2488,7 +2492,7 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
       この速度と音源の速度との相対値がドップラー効果(ピッチ変化)がどれだけ起こるかの決定に使用されます。
       このベクトルの単位は<em>メートル / 秒</em>であり、位置と方向のベクトルの単位とは独立しています。
       </p>
-      <p><dfn id="dfn-x_setVelocity_5">x, y, z</dfn> パラメータは移動の方向と大きさの方向ベクトルを表します。</p>
+      <p><dfn id="dfn-x_setVelocity_5">x, y, z</dfn>パラメータは移動の方向と大きさの方向ベクトルを表します。</p>
       <p>デフォルトの値は(0,0,0)です。
       </p>
     </dd>
@@ -2716,7 +2720,7 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
     <dd><p>現在の周波数データを渡された浮動小数値配列にコピーします。
       もし配列の要素数がfrequencyBinCountよりも小さい場合、はみ出した部分は削られます。
       もし配列がfrequencyBinCountよりも大きい要素数を持つ場合、余分な要素は無視されます。</p>
-      <p><dfn id="dfn-array">array</dfn> パラメータは周波数領域の解析結果を格納する場所を示します。</p>
+      <p><dfn id="dfn-array">array</dfn>パラメータは周波数領域の解析結果を格納する場所を示します。</p>
     </dd>
 </dl>
 <dl>
@@ -2724,7 +2728,7 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
     <dd><p>現在の周波数データを渡されたunsigned byte配列にコピーします。
       もし配列の要素数がfrequencyBinCountよりも小さい場合、はみ出した部分は削られます。
       もし配列がfrequencyBinCountよりも大きい要素数を持つ場合、余分な要素は無視されます</p>
-      <p><dfn id="dfn-array_2">array</dfn> パラメータは周波数領域の解析結果の格納する場所を示します。</p>
+      <p><dfn id="dfn-array_2">array</dfn>パラメータは周波数領域の解析結果の格納する場所を示します。</p>
     </dd>
 </dl>
 <dl>
@@ -2732,7 +2736,7 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
     <dd><p>現在の時間領域データ(波形データ)を渡されたunsigned byte配列にコピーします。
       もし配列の要素数がfftSizeよりも小さい場合、はみ出た部分は削られます。
       もし配列がfftSizeよりも大きな要素数を持つ場合、余分な要素は無視されます。</p>
-      <p><dfn id="dfn-array_3">array</dfn> パラメータは時間領域解析データを格納する場所を示します。</p>
+      <p><dfn id="dfn-array_3">array</dfn>パラメータは時間領域解析データを格納する場所を示します。</p>
     </dd>
 </dl>
 
@@ -3143,9 +3147,9 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 <dl>
   <dt id="dfn-getFrequencyResponse"><code>getFrequencyResponse</code> メソッド</dt>
     <dd><p>現在のフィルターパラメータの設定から指定の周波数に対する応答特性を計算します。</p>
-      <p><dfn id="dfn-frequencyHz">frequencyHz</dfn> パラメータは応答特性を計算する周波数配列を指定します。</p>
-      <p><dfn id="dfn-magResponse">magResponse</dfn> パラメータはリニア振幅特性の値を受け取る配列を指定します。</p>
-      <p><dfn id="dfn-phaseResponse">phaseResponse</dfn> パラメータはラジアン単位の位相特性を受け取る配列を指定します。</p>
+      <p><dfn id="dfn-frequencyHz">frequencyHz</dfn>パラメータは応答特性を計算する周波数配列を指定します。</p>
+      <p><dfn id="dfn-magResponse">magResponse</dfn>パラメータはリニア振幅特性の値を受け取る配列を指定します。</p>
+      <p><dfn id="dfn-phaseResponse">phaseResponse</dfn>パラメータはラジアン単位の位相特性を受け取る配列を指定します。</p>
     </dd>
 </dl>
 </div>
@@ -3748,7 +3752,7 @@ function playSound() {
 </p>
 
 <ul>
-<li><dfn>channelCount</dfn> は<dfn>computedNumberOfChannels</dfn>を計算する補助として使用されます。</li>
+<li><dfn>channelCount</dfn>は<dfn>computedNumberOfChannels</dfn>を計算する補助として使用されます。</li>
 
 <li><dfn>channelCountMode</dfn>は<dfn>computedNumberOfChannels</dfn>がどのように計算されるかを決定します。
   この数が一度計算されると、その数のチャンネル数に全ての接続はアップまたはダウンミックスされます。
