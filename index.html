@@ -113,7 +113,7 @@ title="World Wide Web Consortium">W3C</acronym> Working Draft 10 October 2013
 実際の処理は基本的に基礎となる実装 (典型的には最適化されたアセンブリ言語/C/C++コード)で行われますが、
 <a href="#JavaScriptProcessing-section">JavaScriptによる直接的な処理と合成</a> もサポートされています。</p>
 
-<a href="#introduction">序文</a>節ではこの仕様の背後にある動機についてもカバーします。
+<a href="#introduction">序文</a>セクションではこの仕様の背後にある動機についてもカバーします。
 
 <p>このAPIは他のAPIやWebプラットフォームの要素、特に(<code>responseType</code> 、<code>response</code> 属性を使った)
 XMLHttpRequest と共に使われるように設計されています。
@@ -133,7 +133,7 @@ XMLHttpRequest と共に使われるように設計されています。
 
 <p>この文書に関するコメントは &lt;<a href="mailto:public-audio@w3.org">public-audio@w3.org</a>&gt; 
   (<a href="http://lists.w3.org/Archives/Public/public-audio/">public archives</a> of
-the W3C audio mailing list)で受け付けます。 ウェブコンテンツおよびブラウザ開発者はこのドラフトをレビューする事を勧めます。
+the W3C audio mailing list)で受け付けます。 Webコンテンツおよびブラウザ開発者はこのドラフトをレビューする事を勧めます。
 </p>
 
 <p>ワーキングドラフトとしての公開はW3Cメンバーによる承認を意味するものではありません。
@@ -355,15 +355,15 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#hardware-scalability">15.3. ハードウェアのスケーラビリティ</a> 
         <ul>
           <li><a href="#CPU-monitoring">15.3.1. CPU監視</a></li>
-          <li><a href="#Voice-dropping">15.3.2. ボイスドロップ</a></li>
+          <li><a href="#Voice-dropping">15.3.2. ボイスドロッピング</a></li>
           <li><a href="#Simplification-of-Effects-Processing">15.3.3. エフェクトの単純化</a></li>
           <li><a href="#Sample-rate">15.3.4. サンプルレート</a></li>
-          <li><a href="#pre-flighting">15.3.5. Pre-flighting</a></li>
+          <li><a href="#pre-flighting">15.3.5. プリフライト</a></li>
           <li><a href="#Authoring-for-different-user-agents">15.3.6. 異なるユーザーエージェントのためのオーサリング</a></li>
           <li><a href="#Scalability-of-Direct-JavaScript-Synthesis">15.3.7. JavaScriptによる直接合成/処理のスケーラビリティ</a></li>
         </ul>
       </li>
-      <li><a href="#JavaScriptPerformance">15.4. リアルタイム処理と合成に関するJavaScriptの問題: </a></li>
+      <li><a href="#JavaScriptPerformance">15.4. リアルタイム処理と合成に関するJavaScriptの課題: </a></li>
     </ul>
   </li>
   <li><a href="#ExampleApplications">16. アプリケーション例</a> 
@@ -371,9 +371,9 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#basic-sound-playback">基本的な音の再生</a></li>
       <li><a href="#threeD-environmentse-and-games">3D環境とゲーム</a></li>
       <li><a href="#musical-applications">音楽アプリケーション</a></li>
-      <li><a href="#music-visualizers">音楽視覚化</a></li>
+      <li><a href="#music-visualizers">ミュージック・ビジュアライザー</a></li>
       <li><a href="#educational-applications_2">教育アプリケーション</a></li>
-      <li><a href="#artistic-audio-exploration">芸術的な音の探索</a></li>
+      <li><a href="#artistic-audio-exploration">芸術的な音の探究</a></li>
     </ul>
   </li>
   <li><a href="#SecurityConsiderations">17. セキュリティに関する考察</a></li>
@@ -381,7 +381,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
   <li><a href="#requirements">19. 要求と使用例</a></li>
   <li><a href="#L17310">A.リファレンス</a> 
     <ul>
-      <li><a href="#Normative-references">A.1 引用リファレンス</a></li>
+      <li><a href="#Normative-references">A.1 基準リファレンス</a></li>
       <li><a href="#Informative-references">A.2 参考リファレンス</a></li>
     </ul>
   </li>
@@ -402,7 +402,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
 <p>Web上のオーディオはこれまではかなり原始的で、ごく最近までFlashやQuickTimeのようなプラグインを介して配信せざるを得ませんでした。
 HTML5での<code>audio</code>要素の導入は非常に重要であり、基本的なストリーミング・オーディオ再生を可能にしました。
 しかしそれはまだ、より複雑なオーディオ・アプリケーションを扱うには十分強力ではありません。
-洗練されたウェブベースのゲームやインタラクティブ・アプリケーションのためには別の解決策が必要です。
+洗練されたWebベースのゲームやインタラクティブ・アプリケーションのためには別の解決策が必要です。
 この仕様の目標は、近年のゲームのオーディオエンジンだけでなく、最近のデスクトップオーディオ制作アプリケーションに見られるミキシング、プロセッシング、フィルタリングの機能を含むことにあります。
 </p>
 
@@ -710,7 +710,7 @@ function setupRoutingGraph () {
 <div id="conformance-section" class="section">
 <h2 id="conformance">2. 準拠</h2>
 
-<p>この仕様中の全ては、例と節の最初に参考情報と書かれているものを除いて、基準となります。</p>
+<p>この仕様中の全ては、例とセクションの最初に参考情報と書かれているものを除いて、基準要件となります。</p>
 
 <p>この文書中のキーワード"<span class="rfc2119">MUST</span>"、 "<span class="rfc2119">MUST NOT</span>"、 
   "<span class="rfc2119">REQUIRED</span>"、"<span class="rfc2119">SHALL</span>"、
@@ -867,7 +867,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
       
       <li>JavaScriptからアクセスや変更ができないように<dfn>audioData</dfn> のArrayBufferを一時的に中立化します。</li>
       <li>デコード処理が別のスレッドで実行されるようにキューに登録します。</li>
-      <li>デコードスレッドが、エンコードされている<dfn>audioData</dfn> をリニアPCMへデコードを試みます。
+      <li>デコードスレッドが、エンコードされている<dfn>audioData</dfn>からリニアPCMへのデコードを試みます。
         もしオーディオフォーマットが認識できない、あるいはサポートされていない、あるいはデータが壊れている/想定していない/矛盾しているなどのためデコードエラーが発生した場合、
         <dfn>audioData</dfn> の中立化状態は解除され、メインスレッドのイベントループで<dfn>errorCallback</dfn> 関数を呼び出すようにスケジュールされてこのステップを終了します。</li>
       <li>デコードスレッドがリニアPCMオーディオデータのデコード結果を得て、その<dfn>audioData</dfn> のサンプルレートがもし異なっている場合、AudioContextのサンプルレートにリサンプリングされます。
@@ -1019,7 +1019,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 <div id="OfflineAudioContext-section-section" class="section">
 <h2 id="OfflineAudioContext-section">4.1b. OfflineAudioContextインターフェース</h2>
 <p>
-OfflineAudioContextは特殊なAudioCOntextであり、レンダリング/ミキシングで使用され、(可能性としては)リアルタイムよりも高速に動作します。
+OfflineAudioContextは特殊なAudioContextであり、レンダリング/ミキシングで使用され、(可能性としては)リアルタイムよりも高速に動作します。
 それはオーディオハードウェアに出力しない代わりに可能な限り高速に動作して、終了時にイベントハンドラを結果を格納したAudioBufferと共に呼び出します。
 </p>
 
@@ -1133,7 +1133,7 @@ AudioNodeの出力をAudioNodeの入力に接続するため<code>connect()</cod
 </p>
 
 <p><code>AudioNode</code>はそれぞれの<dfn>入力</dfn> について、その入力への接続のミックス(通常はアップミックス)を行います。
-  この詳細に関して参考情報として<a href="#MixerGainStructure-section">ミキサーゲイン構成</a>、標準的な要求については<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>を参照してください。
+  この詳細に関して参考情報としては<a href="#MixerGainStructure-section">ミキサーゲイン構成</a>、基準としての要件については<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>を参照してください。
 </p>
 
 <p>パフォーマンス的な理由から実際の実装ではそれぞれの<code>AudioNode</code>は決まった<em>ブロックサイズ</em>のサンプルフレームをブロック単位に処理する事が必要になると思われます。
@@ -1205,21 +1205,21 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
     <dd><p>チャンネル数です。このノードの入力の接続におけるアップミックスおよびダウンミックスで使用されます。値が別途定められている特定のノードを除いて、デフォルトは2です。
       この属性は入力を持たないノードでは意味を持ちません。
       もしこの値が0にセットされると、実装はNOT_SUPPORTED_ERR例外を発生しなくてはなりません(MUST)。</p>
-      <p>この属性の詳細ついては<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>節を参照してください。</p>
+      <p>この属性の詳細ついては<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>セクションを参照してください。</p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-channelCountMode"><code>channelCountMode</code></dt>
     <dd><p>このノードの入力のアップミックスおよびダウンミックス時のチャンネル数の数え方を決定します。
       この属性は入力を持たないノードでは意味を持ちません。</p>
-      <p>この属性の詳細ついては<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>節を参照してください。</p>
+      <p>この属性の詳細ついては<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>セクションを参照してください。</p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-channelInterpretation"><code>channelInterpretation</code></dt>
     <dd><p>このノードのアップミックスおよびダウンミックス時に各チャンネルをどのように扱うかを決定します。
       この属性は入力を持たないノードでは意味を持ちません。</p>
-      <p>この属性の詳細ついては<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>節を参照してください。</p>
+      <p>この属性の詳細ついては<a href="#UpMix-section">チャンネルのアップミックスとダウンミックス</a>セクションを参照してください。</p>
     </dd>
 </dl>
 </div>
@@ -2413,7 +2413,7 @@ pow(distance / refDistance, -rolloffFactor)
 <p>このインターフェースはオーディオシーンを聴く人の位置と方向を表します。
   全ての<a href="#PannerNode-section"><code>PannerNode</code></a>オブジェクトは
   AudioContextの<code>listener</code>との関係で空間に配置されます。
-  空間音響についての詳細は<a href="#Spatialization-section">この</a>節を見てください。
+  空間音響についての詳細は<a href="#Spatialization-section">この</a>セクションを見てください。
 </p>
 
 <div class="block">
@@ -2473,7 +2473,7 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
       単純に人間について言えば、<b>front</b>ベクトルはその人の鼻が向いている方向を表します。
       <b>up</b>ベクトルはその人の頭のてっぺんが向いている方向です。
       これらは線形独立(互いに90度)の関係になります。
-      これらの値がどのように解釈されるかの基準としての要求は<a href="#Spatialization-section">空間音響節</a>を見てください。
+      これらの値がどのように解釈されるかの基準としての要件は<a href="#Spatialization-section">空間音響</a>セクションを見てください。
       </p>
       <p><dfn id="dfn-x_setOrientation">x, y, z</dfn> パラメータは3D空間中の<b>front</b>方向ベクトルであり、デフォルトの値は
         (0,0,-1)です。</p>
@@ -2499,7 +2499,7 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
 
 <p>このインターフェースはインパルスレスポンスによって<a href="#Convolution-section">線形コンボリューションエフェクト</a>を
   適用する処理ノードを表すインターフェースです。
-  マルチチャンネルのコンボリューションマトリックスに対する基準としての要求は
+  マルチチャンネルのコンボリューションマトリックスに対する基準としての要件は
   <a href="#Convolution-reverb-effect">ここ</a>に記述されています。</p>
 <pre>
     numberOfInputs  : 1
@@ -2760,7 +2760,7 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
 <h3 id="example-1">例:</h3>
 <img alt="channel splitter" src="images/channel-splitter.png" /> 
 
-<p>この例ではスプリッターはチャンネルの(例えば左チャンネル、右チャンネルなど)識別はM<b>せず</b>、単純に入力チャンネルの順序に従って出力チャンネルを分割する事に注意してください。</p>
+<p>この例ではスプリッターはチャンネルの(例えば左チャンネル、右チャンネルなどの)識別は<b>せず</b>、単純に入力チャンネルの順序に従って出力チャンネルを分割する事に注意してください。</p>
 
 <p><code>ChannelSplitterNode</code>を使うアプリケーションの1つは個別のチャンネルのゲインの制御を必要とする"マトリックス・ミキシング"を行うものです。
 </p>
@@ -2800,12 +2800,12 @@ interface <dfn id="dfn-ChannelSplitterNode">ChannelSplitterNode</dfn> : AudioNod
   出力は1つでそのオーディオストリームは、接続された入力の全てのチャンネルの合計のチャンネル数を持ちます。
   例えば、<code>ChannelMergerNode</code>が2つの入力(どちらもステレオ)が接続された場合、出力は4チャンネルになり、
   最初の2つは最初の入力から、次の2つは2番目の入力からになります。
-  別の例として、2つの入力(どちらもモノラル)の場合は、出力は2チャンネル(ステレオ)で、左チャンネルが最初の入力から、右チャンネルは2番目の入力からになります。</p>
+  別の例として、2つの入力(どちらもモノラル)の場合は、出力は2チャンネル(ステレオ)で、左チャンネルが最初の入力から、右チャンネルは2番目の入力から取られます。</p>
 
 <h3 id="example-2">例:</h3>
 <img alt="channel merger" src="images/channel-merger.png" /> 
 
-<p>この例ではマージャーはチャンネルの(例えば左チャンネル、右チャンネルなど)識別は<b>せず</b>、単純に入力チャンネルの順序に従って出力チャンネルを結合する事に注意してください。</p>
+<p>この例ではマージャーはチャンネルの(例えば左チャンネル、右チャンネルなどの)識別は<b>せず</b>、単純に入力チャンネルの順序に従って出力チャンネルを結合する事に注意してください。</p>
 
 <p><code>ChannelMergerNode</code>はオーディオハードウェアがサポートする最大チャンネル数を超える多くのチャンネル数を持つ
   オーディオストリームを出力するように接続する事が可能な事に注意してください。
@@ -2981,7 +2981,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   我々はこれらのフィルターがオーディオ処理で非常に良く使われている事に気づきます。
   実装的に言えばこれらはすべて標準的なアナログフィルターのプロトタイプから派生したものです。
   より技術的な詳細については、我々はRobert Bristow-Johnsonによる素晴らしい解説文書を参照します。
-  <a href="http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt">reference</a>
+  <a href="http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt">参照</a>
 </p>
 
 <p>
@@ -3717,7 +3717,7 @@ function playSound() {
 <div id="UpMix-section" class="section">
 <h2 id="UpMix">9. チャンネルのアップミックスとダウンミックス</h2>
 
-<p class="norm">このセクションは参考情報です。</p>
+<p class="norm">このセクションは基準情報です。</p>
 
 <img src="images/unity-gain-summing-junction.png" alt="Graph: mixing sound from two sources into the AudioDestination" />
 
@@ -3800,7 +3800,7 @@ function playSound() {
 <div id="ChannelLayouts-section" class="section">
 <h3 id="ChannelLayouts">9.1. スピーカーチャンネル配置</h3>
 
-<p class="norm">このセクションは参考情報です。</p>
+<p class="norm">このセクションは基準情報です。</p>
 
 <p><dfn>channelInterpretation</dfn>が"speakers"の場合、特定のチャンネル配置に対してのアップミックスおよびダウンミックスが定義されます。
 </p>
@@ -4170,7 +4170,7 @@ distance = sqrt(dot(v, v))
 
 <p>
   そして、<em>distance</em>を使って<em>distanceModel</em>属性に依存する<em>distanceGain</em>が計算されます。
-  それぞれの距離モデルについて、これがどのように計算されるかの詳細は<a href="#dfn-distanceModel">distanceModel</a>節を参照してください。
+  それぞれの距離モデルについて、これがどのように計算されるかの詳細は<a href="#dfn-distanceModel">distanceModel</a>セクションを参照してください。
 </p>
 <p>
   この処理の一部分として、<code>PannerNode</code>は入力されるオーディオ信号を<em>distanceGain</em>でスケーリング/増幅し、遠くの音は小さく近ければ大きくします。
@@ -4321,69 +4321,56 @@ if (dopplerFactor > 0) {
 
 <h3 id="Convolution-implementation-guide">実装ガイド</h3>
 <p>
-Linear convolution can be implemented efficiently.
-Here are some <a href="convolution.html">notes</a>
-describing how it can be practically implemented.
+  線形コンボリューションは効率的に実装する事が可能です。
+実際にどう実装するかを記述した幾つかの<a href="convolution.html">メモが</a>ここにあります。
 </p>
 
 <h3 id="Convolution-reverb-effect">リバーブ・エフェクト (マトリックス付き)</h3>
 
-<p class="norm">This section is normative.</p>
+<p class="norm">このセクションは基準情報です。</p>
 
-<p>
-In the general case the source
-has N input channels, the impulse response has K channels, and the playback
-system has M output channels. Thus it's a matter of how to matrix these
-channels to achieve the final result.
+<p>一般的な状況として、ソースがN個の入力チャンネル、インパルスレスポンスがK個のチャンネル、再生システムがM個の出力チャンネルを持っています。
+  そのため、最終的な出力を得るためにこれらのチャンネルをどうマトリックスするかが問題になります。
 </p>
 
-<p>
-The subset of N, M, K below must be implemented (note that the first image in the diagram is just illustrating
-the general case and is not normative, while the following images are normative).
-Without loss of generality, developers desiring more complex and arbitrary matrixing can use multiple <code>ConvolverNode</code>
-objects in conjunction with an <code>ChannelMergerNode</code>.
+<p>N、M、Kの集合に対して以下の実装がされなくてはなりません(最初の図は単に一般的なケースを図示したもので基準ではなく、それ以降の図は基準になります)。
+より複雑で自由なマトリックスを望む開発者は、一般性を失う事なく複数の<code>ConvolverNode</code>オブジェクトを<code>ChannelMergerNode</code>と組み合わせて使う事ができます。
 </p>
 
-
-<p>Single channel convolution operates on a mono audio input, using a mono
-impulse response, and generating a mono output. But to achieve a more spacious sound, 2 channel audio
-inputs and 1, 2, or 4 channel impulse responses will be considered. The following diagram, illustrates the
-common cases for stereo playback where N and M are 1 or 2 and K is 1, 2, or 4.
+<p>モノラルのオーディオ入力に対し、モノラルのインパルスレスポンスを使った1チャンネルのコンボリューション演算を行う事で、モノラルの出力を得る事ができます。
+  しかし、より広がりのある音を得るためには、2チャンネルのオーディオ入力と1、2、または4チャンネルのインパルスレスポンスの使用考えなくてはなりません。
+  次の図は、NとMが1、2、4の場合のステレオ再生の一般的なケースです。
 </p>
 <img alt="reverb matrixing" src="images/reverb-matrixing.png" /> 
 
 <h3 id="recording-impulse-responses">インパルスレスポンスの記録</h3>
 
-<p class="norm">This section is informative.</p>
+<p class="norm">このセクションは参考情報です。</p>
 <img alt="impulse response" src="images/impulse-response.png" /> <br />
 <br />
 
 
-<p>The most <a
-href="http://pcfarina.eng.unipr.it/Public/Papers/226-AES122.pdf">modern</a> and
-accurate way to record the impulse response of a real acoustic space is to use
-a long exponential sine sweep. The test-tone can be as long as 20 or 30
-seconds, or longer. <br />
-Several recordings of the test tone played through a speaker can be made with
-microphones placed and oriented at various positions in the room. It's
-important to document speaker placement/orientation, the types of microphones,
-their settings, placement, and orientations for each recording taken. </p>
+<p>実際の音響空間でインパルスレスポンスを記録する<a href="http://pcfarina.eng.unipr.it/Public/Papers/226-AES122.pdf">最新</a>で精密な手段は、
+  長い指数的サインスイープを用いる方法です。
+  テスト用のトーンは20から30秒あるいはもっと長くする事もできます。
+  <br />
+  スピーカーを通したテストトーンの再生は、部屋の様々な位置と方向にセットされたマイクで幾つか録音されます。
+  それぞれの録音について、スピーカーの配置と方向、マイクの種類、それらの設定、配置、方向を記録する事が重要です。
+</p>
 
-<p>Post-processing is required for each of these recordings by performing an
-inverse-convolution with the test tone, yielding the impulse response of the
-room with the corresponding microphone placement. These impulse responses are
-then ready to be loaded into the convolution reverb engine to re-create the
-sound of being in the room. </p>
+<p>これらの録音に対し、テストトーンとの逆コンボリューション演算を行う事で、そのマイクの配置に対応した、部屋のインパルスレスポンスを作り出すという後処理が必要です。
+  これらのインパルスレスポンスをコンボリューションリバーブ・エンジンにロードすると、その部屋にいる時の音を再現する事ができます。</p>
 
 <h3 id="tools">ツール</h3>
 
-<p>Two command-line tools have been written: <br />
-<code>generate_testtones</code> generates an exponential sine-sweep test-tone
-and its inverse. Another tool <code>convolve</code> was written for
-post-processing. With these tools, anybody with recording equipment can record
-their own impulse responses. To test the tools in practice, several recordings
-were made in a warehouse space with interesting acoustics. These were later
-post-processed with the command-line tools. </p>
+<p>2つのコマンドラインツールが書かれました:<br />
+
+  <code>generate_testtones</code>は指数的サインスイープのテストトーンおよびその反転を生成します。
+  もう一つのツール<code>convolve</code>は後処理用です。
+  これらのツールによって、録音機材があれば誰でも独自のインパルスレスポンスを記録する事が可能です。
+  ツールを実際にテストするために、幾つかの録音は面白い音の響きがある倉庫の空間で行われました。
+  これらは後で、コマンドラインツールによって後処理が行われました。</p>
+
 <pre>% generate_testtones -h
 Usage: generate_testtone
 	[-o /Path/To/File/To/Create] Two files will be created: .tone and .inverse
@@ -4399,7 +4386,7 @@ Usage: convolve input_file impulse_response_file output_file</pre>
 <h3 id="recording-setup">レコーディング・セットアップ</h3>
 <img alt="recording setup" src="images/recording-setup.png" /> <br />
 <br />
-Audio Interface: Metric Halo Mobile I/O 2882 <br />
+オーディオインータフェース: Metric Halo Mobile I/O 2882 <br />
 <br />
 <br />
 <br />
@@ -4408,7 +4395,7 @@ Audio Interface: Metric Halo Mobile I/O 2882 <br />
 <img alt="microphone" src="images/microphone.png" /> <img alt="speaker"
 src="images/speaker.png" /> <br />
 <br />
-Microphones: AKG 414s, Speaker: Mackie HR824 <br />
+マイクロフォン: AKG 414s, スピーカー: Mackie HR824 <br />
 <br />
 <br />
 
@@ -4421,276 +4408,201 @@ Microphones: AKG 414s, Speaker: Mackie HR824 <br />
 <div id="JavaScriptProcessing-section" class="section">
 <h2 id="JavaScriptProcessing">13. JavaScript による合成と処理</h2>
 
-<p class="norm">This section is informative.</p>
+<p class="norm">このセクションは参考情報です。</p>
 
-<p>The Mozilla project has conducted <a
-href="https://wiki.mozilla.org/Audio_Data_API">Experiments</a> to synthesize
-and process audio directly in JavaScript. This approach is interesting for a
-certain class of audio processing and they have produced a number of impressive
-demos. This specification includes a means of synthesizing and processing
-directly using JavaScript by using a special subtype of <a
-href="#AudioNode-section"><code>AudioNode</code></a> called <a
-href="#ScriptProcessorNode-section"><code>ScriptProcessorNode</code></a>. </p>
+<p>Mozillaプロジェクトは、JavaScriptによる直接的なオーディオの合成と処理を<a href="https://wiki.mozilla.org/Audio_Data_API">実験</a>的に実施してきました。
+このアプローチは、ある程度のクラスのオーディオ処理に関して興味深いもので、彼らは多くの印象的なデモを産み出しました。
+この仕様は、JavaScriptによる直接的な合成と処理を行う手段を、<a href="#ScriptProcessorNode-section"><code>ScriptProcessorNode</code></a>と呼ばれる<a href="#AudioNode-section"><code>AudioNode</code></a>の特別なサブタイプを使う事で包含しています。
+</p>
 
-<p>Here are some interesting examples where direct JavaScript processing can be
-useful: </p>
+<p>ここにJavaScriptの直接処理が有用であるというる幾つかの興味深い例があります:</p>
 
-<h3 id="custom-DSP-effects">Custom DSP Effects</h3>
+<h3 id="custom-DSP-effects">カスタムDSPエフェクト</h3>
 
-<p>Unusual and interesting custom audio processing can be done directly in JS.
-It's also a good test-bed for prototyping new algorithms. This is an extremely
-rich area. </p>
+<p>普通ではない面白いカスタムオーディオ処理をJSで直接行う事ができます。
+  それはまた、新しいアルゴリズムのプロトタイプの良いテスト環境になります。
+  これは極めて贅沢な事です。
+</p>
 
-<h3 id="educational-applications">Educational Applications</h3>
+<h3 id="educational-applications">教育アプリケーション</h3>
 
-<p>JS processing is ideal for illustrating concepts in computer music synthesis
-and processing, such as showing the de-composition of a square wave into its
-harmonic components, FM synthesis techniques, etc. </p>
+<p>JSによる処理は、例えば矩形波の倍音への分解やFMシンセシス技術など、コンピュータでの音楽合成と処理の概念を図示するのに理想的です。
+</p>
 
-<h3 id="javaScript-performance">JavaScript Performance</h3>
+<h3 id="javaScript-performance">JavaScript パフォーマンス</h3>
 
-<p>JavaScript has a variety of <a
-href="#JavaScriptPerformance-section">performance issues</a> so it is not
-suitable for all types of audio processing. The approach proposed in this
-document includes the ability to perform computationally intensive aspects of
-the audio processing (too expensive for JavaScript to compute in real-time)
-such as multi-source 3D spatialization and convolution in optimized C++ code.
-Both direct JavaScript processing and C++ optimized code can be combined due to
-the APIs <a href="#ModularRouting-section">modular approach</a>. </p>
+<p>JavaScriptは様々な<a href="#JavaScriptPerformance-section">パフォーマンスの問題</a>を持っているため、全てのタイプのオーディオ処理に適しているわけではありません。
+この文書で提案されているアプローチは、例えばマルチソースの3D空間音響やC++コードで最適化されたコンボリューションなど、オーディオ処理のために計算上の負荷がかかる(JavaScriptによってリアルタイムで実行するにはコストがかかりすぎる)側面のある機能を含んでいます。
+<a href="#ModularRouting-section">モジュラー方式</a>のAPIは、JavaScriptによる直接処理とC++で最適化されたコードの両方を組み合わせる事を可能にします。
+</p>
 
 <div id="Performance-section" class="section">
 <h2 id="Performance">15. パフォーマンスについての考察</h2>
 
 <div id="Latency-section" class="section">
-<h3 id="Latency">15.1. Latency: What it is and Why it's Important</h3>
+<h3 id="Latency">15.1. レイテンシー: それは何で何故重要なのか</h3>
 </div>
 <img alt="latency" src="images/latency.png" /> 
 
-<p>For web applications, the time delay between mouse and keyboard events
-(keydown, mousedown, etc.) and a sound being heard is important. </p>
-
-<p>This time delay is called latency and is caused by several factors (input
-device latency, internal buffering latency, DSP processing latency, output
-device latency, distance of user's ears from speakers, etc.), and is
-cummulative. The larger this latency is, the less satisfying the user's
-experience is going to be. In the extreme, it can make musical production or
-game-play impossible. At moderate levels it can affect timing and give the
-impression of sounds lagging behind or the game being non-responsive. For
-musical applications the timing problems affect rhythm. For gaming, the timing
-problems affect precision of gameplay. For interactive applications, it
-generally cheapens the users experience much in the same way that very low
-animation frame-rates do. Depending on the application, a reasonable latency
-can be from as low as 3-6 milliseconds to 25-50 milliseconds. </p>
-
-<div id="Glitching-section" class="section">
-<h3 id="audio-glitching">15.2. Audio Glitching</h3>
-</div>
-
-<p>Audio glitches are caused by an interruption of the normal continuous audio
-stream, resulting in loud clicks and pops. It is considered to be a
-catastrophic failure of a multi-media system and must be avoided. It can be
-caused by problems with the threads responsible for delivering the audio stream
-to the hardware, such as scheduling latencies caused by threads not having the
-proper priority and time-constraints. It can also be caused by the audio DSP
-trying to do more work than is possible in real-time given the CPU's speed. </p>
-
-<h3 id="hardware-scalability">15.3. Hardware Scalability</h3>
-
-<p>The system should gracefully degrade to allow audio processing under
-resource constrained conditions without dropping audio frames. </p>
-
-<p>First of all, it should be clear that regardless of the platform, the audio
-processing load should never be enough to completely lock up the machine.
-Second, the audio rendering needs to produce a clean, un-interrupted audio
-stream without audible <a href="#Glitching-section">glitches</a>. </p>
-
-<p>The system should be able to run on a range of hardware, from mobile phones
-and tablet devices to laptop and desktop computers. But the more limited
-compute resources on a phone device make it necessary to consider techniques to
-scale back and reduce the complexity of the audio rendering. For example,
-voice-dropping algorithms can be implemented to reduce the total number of
-notes playing at any given time. </p>
-
-<p>Here's a list of some techniques which can be used to limit CPU usage: </p>
-
-<h4 id="CPU-monitoring">15.3.1. CPU monitoring</h4>
-
-<p>In order to avoid audio breakup, CPU usage must remain below 100%. </p>
-
-<p>The relative CPU usage can be dynamically measured for each AudioNode (and
-chains of connected nodes) as a percentage of the rendering time quantum. In a
-single-threaded implementation, overall CPU usage must remain below 100%. The
-measured usage may be used internally in the implementation for dynamic
-adjustments to the rendering. It may also be exposed through a
-<code>cpuUsage</code> attribute of <code>AudioNode</code> for use by
-JavaScript. </p>
-
-<p>In cases where the measured CPU usage is near 100% (or whatever threshold is
-considered too high), then an attempt to add additional <code>AudioNodes</code>
-into the rendering graph can trigger voice-dropping. </p>
-
-<h4 id="Voice-dropping">15.3.2. Voice Dropping</h4>
-
-<p>Voice-dropping is a technique which limits the number of voices (notes)
-playing at the same time to keep CPU usage within a reasonable range. There can
-either be an upper threshold on the total number of voices allowed at any given
-time, or CPU usage can be dynamically monitored and voices dropped when CPU
-usage exceeds a threshold. Or a combination of these two techniques can be
-applied. When CPU usage is monitored for each voice, it can be measured all the
-way from a source node through any effect processing nodes which apply
-uniquely to that voice. </p>
-
-<p>When a voice is "dropped", it needs to happen in such a way that it doesn't
-introduce audible clicks or pops into the rendered audio stream. One way to
-achieve this is to quickly fade-out the rendered audio for that voice before
-completely removing it from the rendering graph. </p>
-
-<p>When it is determined that one or more voices must be dropped, there are
-various strategies for picking which voice(s) to drop out of the total ensemble
-of voices currently playing. Here are some of the factors which can be used in
-combination to help with this decision: </p>
-<ul>
-  <li>Older voices, which have been playing the longest can be dropped instead
-    of more recent voices. </li>
-  <li>Quieter voices, which are contributing less to the overall mix may be
-    dropped instead of louder ones. </li>
-  <li>Voices which are consuming relatively more CPU resources may be dropped
-    instead of less "expensive" voices.</li>
-  <li>An AudioNode can have a <code>priority</code> attribute to help determine
-    the relative importance of the voices.</li>
-</ul>
-
-<h4 id="Simplification-of-Effects-Processing">15.3.3. Simplification of Effects
-Processing</h4>
-
-<p>Most of the effects described in this document are relatively inexpensive
-and will likely be able to run even on the slower mobile devices. However, the
-<a href="#ConvolverNode-section">convolution effect</a> can be configured with
-a variety of impulse responses, some of which will likely be too heavy for
-mobile devices. Generally speaking, CPU usage scales with the length of the
-impulse response and the number of channels it has. Thus, it is reasonable to
-consider that impulse responses which exceed a certain length will not be
-allowed to run. The exact limit can be determined based on the speed of the
-device. Instead of outright rejecting convolution with these long responses, it
-may be interesting to consider truncating the impulse responses to the maximum
-allowed length and/or reducing the number of channels of the impulse response.
+<p>Webアプリケーションでは、マウスとキーボードのイベント(keydown、mousedown等)と聴こえる音の間のディレイタイムは重要です。
 </p>
 
-<p>In addition to the convolution effect. The <a
-href="#PannerNode-section"><code>PannerNode</code></a> may also be
-expensive if using the HRTF panning model. For slower devices, a cheaper
-algorithm such as EQUALPOWER can be used to conserve compute resources. </p>
+<p>この時間の遅れはレイテンシーと呼ばれ、幾つかの要因(入力デバイスのレイテンシー、内部バッファのレイテンシー、DSP処理のレイテンシー、出力デバイスのレイテンシー、スピーカーとユーザーの耳の距離、など)によって引き起こされ、累積されてゆきます。
+レイテンシーが大きいとユーザー体験の満足度は下がります。
+極端な場合、それは音楽制作やゲームプレイを不可能にする事もあります。
+ある程度のレベルになるとそれはタイミングに影響し、音が遅れている、あるいはゲームが反応しないなどの印象を与えます。
+音楽アプリケーションではタイミングの問題はリズムに影響します。
+ゲームではタイミングの問題はゲームプレイの精度に影響します。
+インタラクティプなアプリケーションでは、それは一般的にアニメーションのフレームレートがとても低いのと同じようにユーザー体験を非常に安っぽくします。
+満足できるレイテンシーはアプリケーションによって異なり、3～6ミリ秒から25～50ミリ秒程度です。
+</p>
 
-<h4 id="Sample-rate">15.3.4. Sample Rate</h4>
+<div id="Glitching-section" class="section">
+<h3 id="audio-glitching">15.2. オーディオグリッジ</h3>
+</div>
 
-<p>For very slow devices, it may be worth considering running the rendering at
-a lower sample-rate than normal. For example, the sample-rate can be reduced
-from 44.1KHz to 22.05KHz. This decision must be made when the
-<code>AudioContext</code> is created, because changing the sample-rate
-on-the-fly can be difficult to implement and will result in audible glitching
-when the transition is made. </p>
+<p>オーディオグリッジは正常な連続したオーディオストリームが途切れる事で発生し、大きなクリックノイズやポップノイズを引き起こします。
+それはマルチメディアシステムでは最悪の失敗と考えられ、絶対に避けなければなりません。
+それは適切な優先度を持っていなかったり時間的制約から起こるスケジューリングの遅延のような事が原因で、オーディオストリームをハードウェアに供給するスレッドの反応速度の問題によって引き起こされる事があります。
+また、それはオーディオDSPが与えられたCPUの速度ではリアルタイムで処理できないような多量の仕事をしようとする事で起こる場合もあります。
+</p>
 
-<h4 id="pre-flighting">15.3.5. Pre-flighting</h4>
+<h3 id="hardware-scalability">15.3. ハードウェアのスケーラビリティ</h3>
 
-<p>It should be possible to invoke some kind of "pre-flighting" code (through
-JavaScript) to roughly determine the power of the machine. The JavaScript code
-can then use this information to scale back any more intensive processing it
-may normally run on a more powerful machine. Also, the underlying
-implementation may be able to factor in this information in the voice-dropping
-algorithm. </p>
+<p>システムはオーディオフレームの欠落を起こさないように、リソースに制約のある状況下では潔くオーディオ処理の品質を下げるべきです。</p>
+
+<p>まず最初に、プラットフォームによらず明確であるのは、オーディオ処理の負荷によってマシンを完全にロックアップさせてはならないという事です。
+次に、オーディオのレンダリングは、耳に聴こえるような<a href="#Glitching-section">グリッジ</a>のないクリーンで途切れないオーディオストリームを作り出す必要があると言う事です。</p>
+
+<p>システムはモバイルフォンやタブレットデバイスからラップトップ、デスクトップコンピュータまで広い範囲のハードウェアで動作しなくてはなりません。
+しかし、よりコンピューティングリソースに制限のある電話デバイスでは、規模を縮小してオーディオレンダリングの複雑さを減少させる技術について考慮する必要があります。
+例えば、ある時間に同時に発音するノートの合計数を減らすため、ボイス・ドロッピング・アルゴリズムを実装する事もできます。</p>
+
+<p>ここにCPU消費を抑えるための幾つかの技術をあげます:
+</p>
+
+<h4 id="CPU-monitoring">15.3.1. CPU監視</h4>
+
+<p>オーディオが途切れる事を避けるため、CPU消費は100%以下に留まらなければなりません。</p>
+
+<p>それぞれのAudioNode(そして繋がれたノードのチェーン)に関する相対的なCPU消費はレンダリングの時間単位に対するパーセンテージとして動的に計測可能です。
+  シングルスレッドの実装では、全体のCPU消費が100%以下でなくてはなりません。
+  計測された消費量は、レンダリングに対する動的な調整のために実装が内部的に使用しても良いでしょう。
+  またそれは、JavaScriptからの使用のため<code>AudioNode</code>の<code>cpuUsage</code>属性を通して見えるようにする事もできます。
+</p>
+
+<p>計測されたCPU消費が100%に近く(あるいは高すぎると考えられるどんなスレッショルドでも)になった時、レンダリンググラフに更に<code>AudioNodes</code>を追加しようとするとボイス・ドロッピングをトリガーする事もできます。</p>
+
+<h4 id="Voice-dropping">15.3.2. ボイス・ドロッピング</h4>
+
+<p>ボイス・ドロッピングはCPU消費を適度な範囲に維持するため、同時に発音するボイス(ノート)の数を制限する技術です。
+  許されるボイスの合計数に上限のスレッショルドを設定するか、または、動的にCPU消費を監視しCPU消費がスレッショルドを超えたらボイスをドロップする事もできます。
+  あるいは、それら2つの技術の組み合わせにする事も可能です。
+  各ボイスについてのCPU消費を監視する場合、それはソースノードから経由するエフェクトでの、そのボイスに対する処理の全体について計測する事も可能です。
+</p>
+
+<p>ボイスが"ドロップ"される時、それはレンダリングするオーディオストリームに耳に聴こえるクリックノイズやポップノイズを引き起こさないようにする事が必要です。
+  このための方法の1つは、そのボイスが完全にレンダリンググラフから除去される前にそのオーディオレンダリングを素早くフェードアウトする事です。</p>
+
+<p>1つ以上のボイスをドロップする事が必要になった時、現在再生中のトータルのアンサンブルの中でどのボイスをドロップするかについて、様々な戦略があります。
+  この決定の助けになる、組み合わせで使っても良い幾つかの要素として次のものがあります:</p>
+<ul>
+  <li>新しいボイスではなく、もっとも長く再生している古いボイス</li>
+  <li>音の大きいボイスではなく、全体のミックスへの寄与が少ない音量の小さいボイス</li>
+  <li>CPU消費の低いボイスではなく、相対的によりCPUリソースを消費するボイス</li>
+  <li>AudioNodeに<code>priority</code>属性を持たせて相対的なボイスの重要性を決定に使用するのも良いでしょう</li>
+</ul>
+
+<h4 id="Simplification-of-Effects-Processing">15.3.3. エフェクトの単純化</h4>
+
+<p>この文書で記述されているエフェクトのほとんどは比較的コストが低く、低速のモバイル機器でも動作させる事ができそうなものです。
+  しかしながら、<a href="#ConvolverNode-section">コンボリューション・エフェクト</a>では様々なインパルスレスポンスが設定でき、その幾つかはモバイル機器では重すぎる事もあります。
+  一般的に言えば、CPU消費はインパルスレスポンスの長さとチャンネル数で変わります。
+  そのため、インパルスレスポンスがある程度の長さを超える場合には、実行させないという考え方も合理的です。
+  正確なリミットは機器の速度から決定する事もできます。
+  これらの長いレスポンスのコンボリューションを完全に排除する代わりにインパルスレスポンスの長さを許される最大値まで短縮する、あるいはインパルスレスポンスのチャンネル数を削減するのも面白いかも知れません。
+</p>
+
+<p>コンボリューション・エフェクトに加え、<a href="#PannerNode-section"><code>PannerNode</code></a>もまた、HRTFパンニングモデルを使う場合には、コストが高くなるかも知れません。
+  より低速な機器では、コンピューティング・リソースを節約するためにEQUALPOWERのようなコストの低いアルゴリズムを使う事もできます。</p>
+
+<h4 id="Sample-rate">15.3.4. サンプルレート</h4>
+
+<p>非常に低速なデバイスでは、通常よりも低いサンプルレートでレンダリングする事を考慮する価値があるかも知れません。
+  例えば、サンプルレートを44.1kHzから22.05kHzに下げる事も可能です。
+  サンプルレートをオンザフライで変更する事は実装が困難で、変更の際に耳に聴こえるグリッジを引き起こすため、この判断は<code>AudioContext</code>が作成される時になされる必要があります。</p>
+
+<h4 id="pre-flighting">15.3.5. プリフライト</h4>
+
+<p>マシンパワーを大まかに決定するため、(JavaScriptを通して)ある種の"プリフライト"コードを呼び出す事が可能です。
+  そしてJavaScriptコードはこの情報を、それ以上処理が集中しないよう、パワフルなマシンでは通常動作する処理を縮小するために使用できます。
+  また、下層にある実装がボイス・ドロッピングアルゴリズムの中でこの情報を要素として使用しても良いでしょう。</p>
 
 <p><span class="ednote">TODO: add specification and more detail here </span></p>
 
-<h4 id="Authoring-for-different-user-agents">15.3.6. Authoring for different
-user agents</h4>
-JavaScript code can use information about user-agent to scale back any more
-intensive processing it may normally run on a more powerful machine. 
+<h4 id="Authoring-for-different-user-agents">15.3.6. 異なるユーザーエージェントのためのオーサリング</h4>
+JavaScriptコードはユーザーエージェント情報を、処理が集中しないよう、パワフルなマシンでは通常動作する処理を縮小するために使用する事もできます。
 
-<h4 id="Scalability-of-Direct-JavaScript-Synthesis">15.3.7. Scalability of
-Direct JavaScript Synthesis / Processing</h4>
+<h4 id="Scalability-of-Direct-JavaScript-Synthesis">15.3.7. JavaScriptによる直接合成/処理のスケーラビリティ</h4>
 
-<p>Any audio DSP / processing code done directly in JavaScript should also be
-concerned about scalability. To the extent possible, the JavaScript code itself
-needs to monitor CPU usage and scale back any more ambitious processing when
-run on less powerful devices. If it's an "all or nothing" type of processing,
-then user-agent check or pre-flighting should be done to avoid generating an
-audio stream with audio breakup. </p>
+<p>JavaScriptで直接行われるどんなオーディオDSP処理もスケーラビリティと関わってきます。
+  可能な範囲でJavaScriptコード自身がCPU消費を監視し、非力なデバイスで動作する時は大掛かりな処理を縮小します。
+  もしそれが"オール・オア・ナッシング"型の処理の場合は、オーディオストリームの破綻を避けるために、ユーザーエージェントチェックかプリフライトが必要でしょう。</p>
 
 <div id="JavaScriptPerformance-section" class="section">
-<h3 id="JavaScriptPerformance">15.4. JavaScript Issues with real-time
-Processing and Synthesis: </h3>
+<h3 id="JavaScriptPerformance">15.4. リアルタイム処理と合成に関するJavaScriptの課題: </h3>
 </div>
-While processing audio in JavaScript, it is extremely challenging to get
-reliable, glitch-free audio while achieving a reasonably low-latency,
-especially under heavy processor load. 
+  JavsScriptでオーディオを処理する際に、妥当な低レイテンシーでオーディオにグリッジが無く、信頼性を確保するのは、特にCPU負荷が高い状況においては極めてチャレンジングな事です。
 <ul>
-  <li>JavaScript is very much slower than heavily optimized C++ code and is not
-    able to take advantage of SSE optimizations and multi-threading which is
-    critical for getting good performance on today's processors. Optimized
-    native code can be on the order of twenty times faster for processing FFTs
-    as compared with JavaScript. It is not efficient enough for heavy-duty
-    processing of audio such as convolution and 3D spatialization of large
-    numbers of audio sources. </li>
-  <li>setInterval() and XHR handling will steal time from the audio processing.
-    In a reasonably complex game, some JavaScript resources will be needed for
-    game physics and graphics. This creates challenges because audio rendering
-    is deadline driven (to avoid glitches and get low enough latency).</li>
-  <li>JavaScript does not run in a real-time processing thread and thus can be
-    pre-empted by many other threads running on the system.</li>
-  <li>Garbage Collection (and autorelease pools on Mac OS X) can cause
-    unpredictable delay on a JavaScript thread. </li>
-  <li>Multiple JavaScript contexts can be running on the main thread, stealing
-    time from the context doing the processing. </li>
-  <li>Other code (other than JavaScript) such as page rendering runs on the
-    main thread. </li>
-  <li>Locks can be taken and memory is allocated on the JavaScript thread. This
-    can cause additional thread preemption. </li>
+  <li>JavaScriptは良く最低化されたC++コードに比べると非常に低速であり、近年のプロセッサではSSEとマルチスレッディングを使う事ができないのは致命的です。
+    最適化されたネイティブコードはJavaScriptに比べ、FFTを20倍高速に実行できます。
+    コンボリューションや3D空間音響や大量のオーディオソースのようなオーディオのヘビーデューティーな処理を行えるほど効率的ではありません。</li>
+  <li>setInterval()とXHRハンドリングはオーディオ処理から時間を奪います。
+    ある程度複雑なゲームでは、ゲームの物理モデルとグラフィックスのために幾つかのJavaScriptのリソースが必要になります。
+    オーディオレングリングは、(グリッジを避けつつ充分にレイテンシーを低くするため)デッドライン・ドリブンであるため、これが課題になります。</li>
+  <li>JavaScriptはリアルタイム処理スレッドでは動作せず、そのためシステム中で走っている他の多くのスレッドによってプリエンプトされます。</li>
+  <li>ガベージコレクション(そしてMac OS Xのオートリリースプールも)は、JavaScriptスレッドに予測不能な遅延を引き起こします。</li>
+  <li>複数のJavaScriptコンテキストがメインスレッド上で走る事が可能で、処理を行うコンテキストから時間を奪います。</li>
+  <li>ページレンダリングのような(JavaScript以外の)他のコードがメインスレッド上で動作します。</li>
+  <li>JavaScriptスレッドで割り当てられたメモリのロックを取る事ができます。これは余計なスレッドのプリエンプションを引き起こします。</li>
 </ul>
-The problems are even more difficult with today's generation of mobile devices
-which have processors with relatively poor performance and power consumption /
-battery-life issues. <br />
+比較的非力なパフォーマンスと消費電力/バッテリー寿命問題を抱える今日のモバイルデバイスでは、問題はさらに難しくなります。
+<br />
 <br />
 
 
 <div id="ExampleApplications-section" class="section">
 <h2 id="ExampleApplications">16. アプリケーション例</h2>
 
-<p class="norm">This section is informative.</p>
+<p class="norm">このセクションは参考情報です。</p>
 
-<p>Please see the <a
-href="http://chromium.googlecode.com/svn/trunk/samples/audio/index.html">demo</a>
-page for working examples. </p>
+<p>動作の例は<a href="http://chromium.googlecode.com/svn/trunk/samples/audio/index.html">デモ</a>ページを参照してください。</p>
 
-<p>Here are some of the types of applications a web audio system should be able
-to support: </p>
+<p>ここにWebオーディオシステムでサポート可能にするべき幾つかのタイプのアプリケーションがあります:</p>
 
-<h3 id="basic-sound-playback">Basic Sound Playback</h3>
+<h3 id="basic-sound-playback">基本的な音の再生</h3>
 
-<p>Simple and <a href="#Latency-section"><strong>low-latency</strong></a>
-playback of sound effects in response to simple user actions such as mouse
-click, roll-over, key press. </p>
+<p>マウスクリックやロールオーバー、キープレスのようなユーザーアクションに反応して、シンプルで<a href="#Latency-section"><strong>低レイテンシー</strong></a>な効果音が再生されます。
+</p>
 <br />
 
 
-<h3 id="threeD-environmentse-and-games">3D Environments and Games</h3>
+<h3 id="threeD-environmentse-and-games">3D環境とゲーム</h3>
 <img alt="quake" src="images/redteam_680.jpg" />
 <br />
 <br />
 
 
-<p>Electronic Arts has produced an impressive immersive game called
- <a href="http://sophie-lu.com/Strike-Fortress-EA">Strike Fortress</a>,
-taking advantage of 3D spatialization and convolution for room simulation.</p>
+<p>エレクトロニックアーツは3D空間音響とコンボリューションによるルームシミュレーションを活かした<a href="http://sophie-lu.com/Strike-Fortress-EA">Strike Fortress</a>という、印象的な没入型のゲームを開発しました。
+</p>
 
 <img alt="beach demo" src="images/beach-demo.png" />
 
-<p>3D environments with audio are common in games made for desktop applications
-and game consoles. Imagine a 3D island environment with spatialized audio,
-seagulls flying overhead, the waves crashing against the shore, the crackling
-of the fire, the creaking of the bridge, and the rustling of the trees in the
-wind. The sounds can be positioned naturally as one moves through the scene.
-Even going underwater, low-pass filters can be tweaked for just the right
-underwater sound. </p>
+<p>音を伴った3D環境はデスクトップアプリケーションとゲームコンソールのゲームでは一般的です。
+  空間音響を持った3Dの島の環境で、カモメが頭上を飛び、波が海岸に打ち付け、火が爆ぜ、橋が軋み、木々が風にざわつくのを想像してみてください。
+  人がそのシーン中を移動すると音も自然な位置に移動します。
+  更に水中に潜ると、ローパスフィルターによって手が加えられ、まさに水中にいるような音になります。
+</p>
 <br />
 <br />
 <img alt="box2d" src="images/box2d.png" /> <img alt="8-ball"
@@ -4698,83 +4610,75 @@ src="images/8-ball.png" /> <br />
 <br />
 
 
-<p><a href="http://box2d.org/">Box2D</a> is an interesting open-source
-library for 2D game physics. It has various implementations, including one
-based on Canvas 2D. A demo has been created with dynamic sound effects for each
-of the object collisions, taking into account the velocities vectors and
-positions to spatialize the sound events, and modulate audio effect parameters
-such as filter cutoff. </p>
+<p><a href="http://box2d.org/">Box2D</a>は興味深いオープンソースの2Dゲーム用物理エンジンです。
+これは様々な実装を持っていますが、その1つにCanvas 2Dを基にしたものがあります。
+速度ベクトルを考慮した音の空間への配置、フィルターカットオフなどのオーディオエフェクトのバラメータのモジュレーションを使い、オブジェクトの衝突に対する動的な効果音を持ったデモが作られました。
+</p>
 
-<p>A virtual pool game with multi-sampled sound effects has also been created.
+<p>マルチサンプルの効果音を使ったバーチャル・プールゲームも作られています。
 </p>
 <br />
 
 
-<h3 id="musical-applications">Musical Applications</h3>
+<h3 id="musical-applications">音楽アプリケーション</h3>
 <img alt="garageband" src="images/garage-band.png" /> <img
 alt="shiny drum machine" src="images/shiny-drum-machine.png" /> <img
 alt="tonecraft" src="images/tonecraft.png" /> <br />
 <br />
-Many music composition and production applications are possible. Applications
-requiring tight scheduling of audio events can be implemented and can be both
-educational and entertaining. Drum machines, digital DJ applications, and even
-timeline-based digital music production software with some of the features of
-<a href="http://en.wikipedia.org/wiki/GarageBand">GarageBand</a> can be
-written. <br />
+多くの作曲および音楽制作アプリケーションが作れるようになります。
+オーディオイベントのタイトなスケジューリングが必要なアプリケーションも実装でき、教育的なものとエンターテインメント的なものの両方が可能です。
+ドラムマシン、デジタルDJアプリ、<a href="http://en.wikipedia.org/wiki/GarageBand">GarageBand</a>にある機能の幾つかを持ったタイムラインベースのデジタルミュージック・プロダクションソフトウェアさえ書くことができます。<br />
 <br />
 
 
-<h3 id="music-visualizers">Music Visualizers</h3>
+<h3 id="music-visualizers">ミュージック・ビジュアライザー</h3>
 <img alt="music visualizer" src="images/music-visualizer.png" /> <br />
 <br />
-When combined with WebGL GLSL shaders, realtime analysis data can be presented
-in entertaining ways. These can be as advanced as any found in iTunes. <br />
+WebGLのGLSLシェーダーと組み合わせる事で、リアルタイム解析データをエンターテインメント的に表示する事ができます。
+これらはiTunesに見られるような先進的なものにできます。<br />
 <br />
 
 
-<h3 id="educational-applications_2">Educational Applications</h3>
+<h3 id="educational-applications_2">教育アプリケーション</h3>
 <img alt="javascript processing" src="images/javascript-processing.png" /> 
 
-<p>A variety of educational applications can be written, illustrating concepts
-in music theory and computer music synthesis and processing. </p>
+<p>様々な教育アプリケーションを書く事ができます。
+  図示しているのは音楽理論とコンピュータミュージック合成と処理分野でのコンセプトです。
+</p>
 <br />
 
 
-<h3 id="artistic-audio-exploration">Artistic Audio Exploration</h3>
+<h3 id="artistic-audio-exploration">芸術的な音の探究</h3>
 
-<p>There are many creative possibilites for artistic sonic environments for
-installation pieces. </p>
+<p>インスタレーションのための芸術的な音環境には多くの創造的な可能性があります。
+</p>
 <br />
 </div>
 
 <div id="SecurityConsiderations-section" class="section">
 <h2 id="SecurityConsiderations">17. セキュリティに関する考察</h2>
 
-<p>This section is <em>informative.</em> </p>
+<p>このセクションは<em>参考情報</em>です。 </p>
 </div>
 
 <div id="PrivacyConsiderations-section" class="section">
 <h2 id="PrivacyConsiderations">18. プライバシーに関する考察</h2>
 
-<p>This section is <em>informative</em>. When giving various information on
-available AudioNodes, the Web Audio API potentially exposes information on
-characteristic features of the client (such as audio hardware sample-rate) to
-any page that makes use of the AudioNode interface. Additionally, timing
-information can be collected through the RealtimeAnalyzerNode or
-ScriptProcessorNode interface. The information could subsequently be used to
-create a fingerprint of the client. </p>
+<p>このセクションは<em>参考情報</em>です。
+AudioNodeが持っている様々な情報から、Web Audio APIは潜在的に(オーディオハードウェアのサンプルレートのような)クライアントの特徴的な機能の情報をAudioNodeインータフェースを使うどんなページにでもさらけ出します。
+更に、RealtimeAnalyzerNodeやScriptProcessorNodeのインターフェースからタイミングに関する情報も得られます。
+情報はその後クライアントのフィンガープリントを作成するために使われるかも知れません。
+</p>
 
-<p>Currently audio input is not specified in this document, but it will involve
-gaining access to the client machine's audio input or microphone. This will
-require asking the user for permission in an appropriate way, probably via the
-<a href="http://developers.whatwg.org/">getUserMedia()
-API</a>. </p>
+<p>現在の所オーディオ入力についてはこの文書では規定していませんが、それはクライアント機器のオーディオ入力やマイクへのアクセスを得る事ができます。
+  これにはおそらく<a href="http://developers.whatwg.org/">getUserMedia()API</a>が使われますが、ユーザーからの許可を適切に得る事が必要になります。
+</p>
 </div>
 
 <div id="requirements-section" class="section">
 <h2 id="requirements">19. 要求と使用例</h2>
 
-<p>Please see <a href="#ExampleApplications-section">Example Applications</a>
+<p><a href="#ExampleApplications-section">アプリケーション例</a>を参照してください。
 </p>
 </div>
 
@@ -4786,7 +4690,7 @@ API</a>. </p>
 <h2 id="L17310">A.リファレンス</h2>
 
 <div class="section" id="normative-references">
-<h3 id="Normative-references">A.1 Normative references</h3>
+<h3 id="Normative-references">A.1 基準リファレンス</h3>
 <dl>
   <dt id="DOM">[DOM] </dt>
   <dd><a href="http://dom.spec.whatwg.org/">DOM</a>,
@@ -4805,19 +4709,18 @@ API</a>. </p>
 </div>
 
 <div class="section" id="informative-references">
-<h3 id="Informative-references">A.2 Informative references</h3>
+<h3 id="Informative-references">A.2 参考リファレンス</h3>
 
-<p>No informative references.</p>
+<p>参考リファレンスはありません。</p>
 </div>
 </div>
 
 <div class="section" id="acknowledgements">
 <h2 id="L17335">B.謝辞</h2>
 
-<p>This specification is the collective work of the W3C <a href="http://www.w3.org/2011/audio/">Audio
-Working Group</a>.</p>
+<p>この仕様は<a href="http://www.w3.org/2011/audio/">Audioワーキンググループ</a>が共同で作成したものです。</p>
 
-<p>Members of the Working Group are (at the time of writing, and by alphabetical order): <br />
+<p>ワーキンググループのメンバーは以下の通りです(執筆時点、アルファベット順):<br />
 Adenot, Paul (Mozilla Foundation);
 Akhgari, Ehsan (Mozilla Foundation);
 Berkovitz, Joe (Invited Expert);
@@ -4845,7 +4748,7 @@ Wilson, Chris (Google,Inc.);
 ZERGAOUI, Mohamed (INNOVIMAX)
 </p>
 
-<p>Former members of the Working Group and contributors to the specification include:<br />
+<p>仕様作成に貢献したワーキンググループの元メンバーは以下の通りです:<br />
 Caceres, Marcos (Invited Expert);
 Cardoso, Gabriel (INRIA);
 Chen, Bin (Baidu, Inc.);
