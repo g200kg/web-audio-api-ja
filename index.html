@@ -1,8 +1,5 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Web Audio API</title>
@@ -35,16 +32,15 @@
     dfn {
       padding:4px;
     }
-    .doc_en {
-      background:#eec;
-      color:#666;
-      display:none;
-      padding:10px;
-    }
     </style>
+<script type="text/javascript">
+function OpenOriginal(x) {
+  var url="http://www.w3.org/TR/2013/WD-webaudio-20131010/#"+x;
+  window.open(url, "waapioriginal", "width=1000, height=600, toolbar=1,location=1,resizable=1,scrollbars=1,status=1");
+}
+</script>
 </head>
 <body>
-
 <div style="background-color: #ddf; border: 1px solid #668; padding:10px 20px">
   <p>この文書は、W3Cの文書 "Web Audio API」 W3C Working Draft 10 October 2013" の日本語訳です。
   </p>
@@ -66,7 +62,7 @@
 
 <hr/>
 
-  <div class="head">
+<div class="head">
 <p><a href="http://www.w3.org/"><img width="72" height="48" alt="W3C"
 src="http://www.w3.org/Icons/w3c_home" /></a> </p>
 
@@ -107,9 +103,8 @@ title="World Wide Web Consortium">W3C</acronym> Working Draft 10 October 2013
 <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2013 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p>
 <hr />
 </div>
-
 <div id="abstract-section" class="section">
-<h2 id="abstract">要約</h2>
+<h2 id="abstract">要約 <button onclick="OpenOriginal('abstract')">原文</button></h2>
 
 <p>この仕様はWebアプリケーションにおけるオーディオの処理および合成に関する高レベルの JavaScript <acronym title="Application Programming Interface">API</acronym> について記述します。
 その基本的な枠組みは、最終的なオーディオ出力を決定するために数多くの<a href="#AudioNode-section"><code>AudioNode</code></a>オブジェクトが互いに接続されるオーディオのルーティンググラフです。
@@ -124,8 +119,9 @@ XMLHttpRequest と共に使われるように設計されています。
 </p>
 </div>
 
+
 <div id="sotd-section" class="section">
-<h2 id="sotd">この文書の位置づけ</h2>
+<h2 id="sotd">この文書の位置づけ <button onclick="OpenOriginal('sotd')">原文</button></h2>
 
 <p><em>このセクションは、この文書の公開時における状況を記述したものです。 他の文書がこの文書に取って代わるかもしれません。
 現在のW3Cの刊行物およびこの技術レポートの最新改訂版のリストは、<a href="http://www.w3.org/TR/">W3C技術レポート</a>http://www.w3.org/TR/の索引から見つけることができます。</em></p>
@@ -149,10 +145,12 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
 特許について実際の知識を持ち、それが<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">基本的な請求事項を含む</a>を含むと考える者は、
 <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C Patent Policy 6節</a>に従って情報を開示しなくてはなりません。
 </p>
+</div>
 
 <div id="toc">
-<h2 id="L13522">目次</h2>
+<h2 id="L13522">目次 <button onclick="OpenOriginal('toc')">原文</button></h2>
 
+<div class="toc">
 <ul>
   <li><a href="#introduction">1. 序文</a>
     <ul>
@@ -398,7 +396,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
 <div id="sections">
 
 <div id="div-introduction" class="section">
-<h2 id="introduction">1. 序文</h2>
+<h2 id="introduction">1. 序文 <button onclick="OpenOriginal('introduction')">原文</button></h2>
 
 <p class="norm">このセクションは参考情報です</p>
 
@@ -413,14 +411,12 @@ HTML5での<code>audio</code>要素の導入は、基本的なストリーミン
 理想的には<i>全ての</i>使用例は、JavaScriptから制御される最適化されたC++エンジンを使って無理なく実装でき、ブラウザで動作しなくてはなりません。
 とは言うものの近年のデスクトップ・オーディオソフトウェアは極めて高度な機能を持ち、それらの一部はこのシステムを使ったとしても構築する事が困難か不可能と考えられます。
 Apple社のLogic Audioがそのようなアプリケーションの1つであり、外部MIDIコントローラー、任意のプラグイン・オーディオ・エフェクトやシンセサイザー、高度に最適化されたオーディオファイルのディスクへの読み込み/書き出し、密に統合されたタイムストレッチなどなどをサポートしています。
-それでもなお、ここで提案するシステムはかなり複雑なゲームやインタラクティブ・アプリケーションを音楽に関するものを含めて、広い範囲を充分にサポートする事が可能です。
+それでもなおここで提案するシステムは、音楽に関するものを含めて、かなり複雑なゲームやインタラクティブ・アプリケーションの広い範囲を充分にサポートする事が可能です。
 またそれは、WebGLによってもたらされるより高度なグラフィックスの機能をよく引き立たせる事が可能です。
 このAPIはより高度な機能を後から追加できるように設計されています。
 </p>
-
 <div id="Features-section" class="section">
-<h2 id="Features">1.1. 機能</h2>
-</div>
+<h2 id="Features">1.1. 機能 <button onclick="OpenOriginal('Features')">原文</button></h2>
 
 <p>このAPIは、これらの基本機能をサポートします: </p>
 <ul>
@@ -472,10 +468,10 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
   <li>オシレータ</li>
 
 </ul>
-
+</div>
 
 <div id="ModularRouting-section">
-<h2 id="ModularRouting">1.2. モジュラー・ルーティング</h2>
+<h2 id="ModularRouting">1.2. モジュラー・ルーティング <button onclick="OpenOriginal('ModularRouting')">原文</button></h2>
 
 <p>モジュラー・ルーティングによって異なる <a href="#AudioNode-section"><code>AudioNode</code></a> オブジェクト同士を任意に接続できます。
 それぞれのノードは<dfn>入力</dfn>および<dfn>出力</dfn>を持っています。
@@ -625,11 +621,8 @@ function setupRoutingGraph () {
 </div>
 </div>
 
-</div>
-
 <div id="APIOverview-section" class="section">
-<h2 id="APIOverview">1.3. APIの概要</h2>
-</div>
+<h2 id="APIOverview">1.3. APIの概要 <button onclick="OpenOriginal('APIOverview')">原文</button></h2>
 
 <p>定義されているインターフェースは次の通りです: </p>
 <ul>
@@ -707,10 +700,12 @@ function setupRoutingGraph () {
   <li><a class="dfnref" href="#dfn-OscillatorNode">OscillatorNode</a>インターフェースは、周期的な波形を発生するオーディオソースとなります。
   </li>
 </ul>
+
+</div>
 </div>
 
 <div id="conformance-section" class="section">
-<h2 id="conformance">2. 準拠</h2>
+<h2 id="conformance">2. 準拠 <button onclick="OpenOriginal('conformance')">原文</button></h2>
 
 <p>この仕様中の全ては、例とセクションの最初に参考情報と書かれているものを除いて、基準要件となります。</p>
 
@@ -729,14 +724,15 @@ function setupRoutingGraph () {
       レベルの基準を満足する実装がされているユーザーエージェントが、<a class="dfnref" href="#dfn-conforming-implementation">準拠した実装</a>と判断されます。</p>
     </dd>
 </dl>
+
 </div>
 
 <div id="API-section-section" class="section">
-<h2 id="API-section">4. オーディオAPI</h2>
-</div>
+
+<h2 id="API-section">4. オーディオAPI <button onclick="OpenOriginal('API-section')">原文</button></h2>
 
 <div id="AudioContext-section-section" class="section">
-<h2 id="AudioContext-section">4.1. AudioContextインターフェイス</h2>
+<h2 id="AudioContext-section">4.1. AudioContextインターフェイス <button onclick="OpenOriginal('AudioContext-section')">原文</button></h2>
 
 <p>このインターフェースは<a href="#AudioNode-section"><code>AudioNode</code></a>の集合やそれらの接続を表すインターフェースです。
 それは(最終的にユーザーが聴く事になる)<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>までの信号を任意に接続する事ができます。
@@ -804,7 +800,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 </div>
 
 <div id="attributes-AudioContext-section" class="section">
-<h3 id="attributes-AudioContext">4.1.1. 属性</h3>
+<h3 id="attributes-AudioContext">4.1.1. 属性 <button onclick="OpenOriginal('attributes-AudioContext')">原文</button></h3>
 <dl>
   <dt id="dfn-destination"><code>destination</code></dt>
     <dd><p><a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>
@@ -839,7 +835,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 </div>
 
 <div id="methodsandparams-AudioContext-section" class="section">
-<h3 id="methodsandparams-AudioContext">4.1.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-AudioContext">4.1.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-AudioContext')">原文</button></h3>
 <dl>
   <dt id="dfn-createBuffer"><code>createBuffer</code> メソッド</dt>
     <dd><p>与えられたサイズのAudioBufferを作成します。バッファ内のデータは0(無音)で初期化されます。
@@ -1009,17 +1005,17 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
     </dd>
 </dl>
 </div>
-</div>
 
-<h3 id="lifetime-AudioContext">4.1.3. ライフタイム</h3>
+<h3 id="lifetime-AudioContext">4.1.3. ライフタイム <button onclick="OpenOriginal('lifetime-AudioContext')">原文</button></h3>
 <p class="norm">このセクションは参考情報です。</p>
 
 <p>
 <code>AudioContext</code>は一度作成されると、再生される音がなくなるかそのページを離れるまで音の再生を続けます。
 </p>
+</div>
 
 <div id="OfflineAudioContext-section-section" class="section">
-<h2 id="OfflineAudioContext-section">4.1b. OfflineAudioContextインターフェース</h2>
+<h2 id="OfflineAudioContext-section">4.1b. OfflineAudioContextインターフェース <button onclick="OpenOriginal('OfflineAudioContext-section')">原文</button></h2>
 <p>
 OfflineAudioContextは特殊なAudioContextであり、レンダリング/ミキシングで使用され、(可能性としては)リアルタイムよりも高速に動作します。
 それはオーディオハードウェアに出力しない代わりに可能な限り高速に動作して、終了時にイベントハンドラを結果を格納したAudioBufferと共に呼び出します。
@@ -1047,9 +1043,8 @@ interface <dfn id="dfn-OfflineAudioContext">OfflineAudioContext</dfn> : AudioCon
 </div>
 </div>
 
-
 <div id="attributes-OfflineAudioContext-section" class="section">
-<h3 id="attributes-OfflineAudioContext">4.1b.1. 属性</h3>
+<h3 id="attributes-OfflineAudioContext">4.1b.1. 属性 <button onclick="OpenOriginal('attributes-OfflineAudioContext')">原文</button></h3>
 <dl>
   <dt id="dfn-oncomplete"><code>oncomplete</code></dt>
     <dd><p><a href="#OfflineAudioCompletionEvent-section">OfflineAudioCompletionEvent</a>型のイベントハンドラです。</p>
@@ -1059,7 +1054,7 @@ interface <dfn id="dfn-OfflineAudioContext">OfflineAudioContext</dfn> : AudioCon
 
 
 <div id="methodsandparams-OfflineAudioContext-section" class="section">
-<h3 id="methodsandparams-OfflineAudioContext">4.1b.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-OfflineAudioContext">4.1b.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-OfflineAudioContext')">原文</button></h3>
 <dl>
   <dt id="dfn-startRendering"><code>startRendering</code>メソッド</dt>
     <dd><p>
@@ -1070,9 +1065,10 @@ interface <dfn id="dfn-OfflineAudioContext">OfflineAudioContext</dfn> : AudioCon
     </dd>
 </dl>
 </div>
+</div>
 
 <div id="OfflineAudioCompletionEvent-section" class="section">
-<h2 id="OfflineAudioCompletionEvent">4.1c. OfflineAudioCompletionEventインターフェース</h2>
+<h2 id="OfflineAudioCompletionEvent">4.1c. OfflineAudioCompletionEventインターフェース <button onclick="OpenOriginal('OfflineAudioCompletionEvent')">原文</button></h2>
 
 <p>これは<a href="#OfflineAudioContext-section"><code>OfflineAudioContext</code></a>にディスパッチされる
   <code>Event</code>オブジェクトです。
@@ -1097,7 +1093,7 @@ interface <dfn id="dfn-OfflineAudioCompletionEvent">OfflineAudioCompletionEvent<
 </div>
 
 <div id="attributes-OfflineAudioCompletionEvent-section" class="section">
-<h3 id="attributes-OfflineAudioCompletionEvent">4.1c.1. 属性</h3>
+<h3 id="attributes-OfflineAudioCompletionEvent">4.1c.1. 属性 <button onclick="OpenOriginal('attributes-OfflineAudioCompletionEvent')">原文</button></h3>
 <dl>
   <dt id="dfn-renderedBuffer"><code>renderedBuffer</code></dt>
     <dd><p>OfflineAudioContextがレンダリングを完了した後の、レンダリングされたオーディオデータを含むAudioBufferです。
@@ -1107,9 +1103,8 @@ interface <dfn id="dfn-OfflineAudioCompletionEvent">OfflineAudioCompletionEvent<
 </div>
 </div>
 
-
 <div id="AudioNode-section-section" class="section">
-<h2 id="AudioNode-section">4.2. AudioNode インターフェース</h2>
+<h2 id="AudioNode-section">4.2. AudioNode インターフェース <button onclick="OpenOriginal('AudioNode-section')">原文</button></h2>
 
 <p>AudioNodeは<a href="#AudioContext-section"><code>AudioContext</code></a>の構成ブロックです。
   このインターフェースはオーディオのソース、出力先、中間の処理モジュールを表しています。これらのモジュールは互いに接続されて、
@@ -1186,7 +1181,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 </div>
 
 <div id="attributes-AudioNode-section" class="section">
-<h3 id="attributes-AudioNode">4.2.1. 属性</h3>
+<h3 id="attributes-AudioNode">4.2.1. 属性 <button onclick="OpenOriginal('attributes-AudioNode')">原文</button></h3>
 <dl>
   <dt id="dfn-context"><code>context</code></dt>
     <dd><p>このAudioNodeを所有するAudioContextです。</p>
@@ -1227,7 +1222,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 </div>
 
 <div id="methodsandparams-AudioNode-section" class="section">
-<h3 id="methodsandparams-AudioNode">4.2.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-AudioNode">4.2.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-AudioNode')">原文</button></h3>
 <dl>
   <dt id="dfn-connect-AudioNode">AudioNodeへの<code>connect</code>メソッド</dt>
     <dd><p>AudioNodeを他のAudioNodeに接続します。</p>
@@ -1303,9 +1298,8 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
     </dd>
 </dl>
 </div>
-</div>
-
-<h3 id="lifetime-AudioNode">4.2.3. ライフタイム</h3>
+<div id="lifetime-AudioNode-section" class="section">
+<h3 id="lifetime-AudioNode">4.2.3. ライフタイム <button onclick="OpenOriginal('lifetime-AudioNode')">原文</button></h3>
 
 <p class="norm">このセクションは参考情報です。</p>
 
@@ -1339,10 +1333,11 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 
 <p>上記の参照の種類に関わらず、ノードの<code>AudioContext</code>が削除された時には、もちろん<code>AudioNode</code>は削除されます。
 </p>
-
+</div>
+</div>
 
 <div id="AudioDestinationNode-section" class="section">
-<h2 id="AudioDestinationNode">4.4. AudioDestinationNode インターフェース</h2>
+<h2 id="AudioDestinationNode">4.4. AudioDestinationNode インターフェース <button onclick="OpenOriginal('AudioDestinationNode')">原文</button></h2>
 
 <p>これはユーザーが聴く事になる最終的な音の出力地点を表す<a href="#AudioNode-section"><code>AudioNode</code></a>です。
   それは多くの場合、スピーカーが接続されているオーディオ出力デバイスと考えられます。
@@ -1378,7 +1373,7 @@ interface <dfn id="dfn-AudioDestinationNode">AudioDestinationNode</dfn> : AudioN
 </div>
 
 <div id="attributes-AudioDestinationNode-section" class="section">
-<h3 id="attributes-AudioDestinationNode">4.4.1. 属性</h3>
+<h3 id="attributes-AudioDestinationNode">4.4.1. 属性 <button onclick="OpenOriginal('attributes-AudioDestinationNode')">原文</button></h3>
 <dl>
   <dt id="dfn-maxChannelCount"><code>maxChannelCount</code></dt>
     <dd><p><code>channelCount</code>属性で設定できるチャンネル数の最大値です。
@@ -1402,7 +1397,7 @@ interface <dfn id="dfn-AudioDestinationNode">AudioDestinationNode</dfn> : AudioN
 </div>
 
 <div id="AudioParam-section" class="section">
-<h2 id="AudioParam">4.5. AudioParamインターフェース</h2>
+<h2 id="AudioParam">4.5. AudioParamインターフェース <button onclick="OpenOriginal('AudioParam')">原文</button></h2>
 
 <p>AudioParam は<a href="#AudioNode-section"><code>AudioNode</code></a>の例えば音量のような個別の機能をコントロールします。
 パラメータは<code>value</code>属性を使って特定の値に即時にセットする事ができます。
@@ -1460,7 +1455,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 
 
 <div id="attributes-AudioParam-section" class="section">
-<h3 id="attributes-AudioParam">4.5.1. 属性</h3>
+<h3 id="attributes-AudioParam">4.5.1. 属性 <button onclick="OpenOriginal('attributes-AudioParam')">原文</button></h3>
 
 <dl>
   <dt id="dfn-value"><code>value</code></dt>
@@ -1477,7 +1472,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 </div>
 
 <div id="methodsandparams-AudioParam-section" class="section">
-<h3 id="methodsandparams-AudioParam">4.5.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-AudioParam">4.5.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-AudioParam')">原文</button></h3>
 
 <p><code>AudioParam</code>は時間軸に沿ったイベントリストを保持し、その初期値は空になっています。
   この時間はAudioContext.currentTimeによる時間軸を使用します。
@@ -1617,11 +1612,10 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
     </dd>
 </dl>
 </div>
-</div>
 
 
 <div id="computedValue-AudioParam-section" class="section">
-<h3>4.5.3. 値の計算</h3>
+<h3>4.5.3. 値の計算 <button onclick="OpenOriginal('computedValue-AudioParam-section')">原文</button></h3>
 
 <p>
 <dfn>computedValue</dfn>はオーディオDSPを制御する最終的な値であり、オーディオレンダリングスレッドがそれぞれのレンダリング時刻に計算します。
@@ -1649,7 +1643,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 
 
 <div id="example1-AudioParam-section" class="section">
-<h3 id="example1-AudioParam">4.5.4. AudioParam オートメーションの例</h3>
+<h3 id="example1-AudioParam">4.5.4. AudioParam オートメーションの例 <button onclick="OpenOriginal('example1-AudioParam')">原文</button></h3>
 
 
 
@@ -1693,9 +1687,10 @@ param.setValueCurveAtTime(curve, t6, t7 - t6);
 </div>
 </div>
 </div>
+</div>
 
 <div id="GainNode-section" class="section">
-<h2 id="GainNode">4.7. GainNodeインターフェース</h2>
+<h2 id="GainNode">4.7. GainNodeインターフェース <button onclick="OpenOriginal('GainNode')">原文</button></h2>
 
 <p>オーディオ信号のゲインを変える事はオーディオアプリケーションでは基本的な処理です。
   <code>GainNode</code>は<a href="#MixerGainStructure-section">ミキサー</a>の構成ブロックの1つとなります。
@@ -1741,7 +1736,7 @@ interface <dfn id="dfn-GainNode">GainNode</dfn> : AudioNode {
 </div>
 
 <div id="attributes-GainNode-section" class="section">
-<h3 id="attributes-GainNode">4.7.1. 属性</h3>
+<h3 id="attributes-GainNode">4.7.1. 属性 <button onclick="OpenOriginal('attributes-GainNode')">原文</button></h3>
 <dl>
   <dt id="dfn-gain"><code>gain</code></dt>
     <dd><p>適用されるゲインの量を表します。デフォルトの<code>value</code>は1です(ゲイン変更なし)。名目上の<code>minValue</code>は0ですが、位相反転のために負の値に設定する事もできます。
@@ -1752,7 +1747,7 @@ interface <dfn id="dfn-GainNode">GainNode</dfn> : AudioNode {
 </div>
 
 <div id="DelayNode-section" class="section">
-<h2 id="DelayNode">4.8. DelayNodeインターフェース</h2>
+<h2 id="DelayNode">4.8. DelayNodeインターフェース <button onclick="OpenOriginal('DelayNode')">原文</button></h2>
 
 <p>ディレイ機能はオーディオアプリケーションの基本的な構成要素です。このインターフェースは単一の入力と単一の出力を持つAudioNodeです。</p>
 <pre>
@@ -1789,7 +1784,7 @@ interface <dfn id="dfn-DelayNode">DelayNode</dfn> : AudioNode {
 </div>
 
 <div id="attributes-GainNode-section_2" class="section">
-<h3 id="attributes-GainNode_2">4.8.1. 属性</h3>
+<h3 id="attributes-GainNode_2">4.8.1. 属性 <button onclick="OpenOriginal('attributes-GainNode_2')">原文</button></h3>
 <dl>
   <dt id="dfn-delayTime_2"><code>delayTime</code></dt>
     <dd><p>遅延の量(単位は秒)を表すAudioParamオブジェクトです。
@@ -1802,7 +1797,7 @@ interface <dfn id="dfn-DelayNode">DelayNode</dfn> : AudioNode {
 </div>
 
 <div id="AudioBuffer-section" class="section">
-<h2 id="AudioBuffer">4.9. AudioBufferインターフェース</h2>
+<h2 id="AudioBuffer">4.9. AudioBufferインターフェース <button onclick="OpenOriginal('AudioBuffer')">原文</button></h2>
 
 <p>このインターフェースはメモリ上に保持されるオーディオのリソース(ワンショットの音やその他の短いオーディオクリップ)を表します。
   そのフォーマットは-1 ～ +1の名目上の範囲を持つ非インターリーブのIEEE 32ビット・リニアPCMです。
@@ -1839,7 +1834,7 @@ interface <dfn id="dfn-AudioBuffer">AudioBuffer</dfn> {
 </div>
 
 <div id="attributes-AudioBuffer-section" class="section">
-<h3 id="attributes-AudioBuffer">4.9.1. 属性</h3>
+<h3 id="attributes-AudioBuffer">4.9.1. 属性 <button onclick="OpenOriginal('attributes-AudioBuffer')">原文</button></h3>
 <dl>
   <dt id="dfn-sampleRate_AudioBuffer"><code>sampleRate</code></dt>
     <dd><p>1秒あたりのサンプル数で表されるPCMオーディオデータのサンプルレートです。</p>
@@ -1863,7 +1858,7 @@ interface <dfn id="dfn-AudioBuffer">AudioBuffer</dfn> {
 </div>
 
 <div id="methodsandparams-AudioBuffer-section" class="section">
-<h3 id="methodsandparams-AudioBuffer">4.9.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-AudioBuffer">4.9.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-AudioBuffer')">原文</button></h3>
 <dl>
   <dt id="dfn-getChannelData"><code>getChannelData</code>メソッド</dt>
     <dd><p>指定されたチャンネルの<code>Float32Array</code>型のPCMオーディオデータを返します。
@@ -1876,7 +1871,7 @@ interface <dfn id="dfn-AudioBuffer">AudioBuffer</dfn> {
 </div>
 
 <div id="AudioBufferSourceNode-section" class="section">
-<h2 id="AudioBufferSourceNode">4.10. AudioBufferSourceNodeインターフェース</h2>
+<h2 id="AudioBufferSourceNode">4.10. AudioBufferSourceNodeインターフェース <button onclick="OpenOriginal('AudioBufferSourceNode')">原文</button></h2>
 
 <p>このインターフェースは<code>AudioBuffer</code>によってメモリ上に保持されているオーディオデータからのオーディオソースを表します。
   それは通常、(完全なリズムを刻むような)再生タイミングに高度な柔軟性が要求される短時間のオーディオのリソースです。
@@ -1922,7 +1917,7 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
 </div>
 
 <div id="attributes-AudioBufferSourceNode-section" class="section">
-<h3 id="attributes-AudioBufferSourceNode">4.10.1. 属性</h3>
+<h3 id="attributes-AudioBufferSourceNode">4.10.1. 属性 <button onclick="OpenOriginal('attributes-AudioBufferSourceNode')">原文</button></h3>
 <dl>
   <dt id="dfn-buffer_AudioBufferSourceNode"><code>buffer</code></dt>
     <dd><p>再生されるオーディオのリソースを指定します。</p>
@@ -1962,10 +1957,9 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
 
 
 </div>
-</div>
 
 <div id="methodsandparams-AudioBufferSourceNode-section" class="section">
-<h3 id="methodsandparams-AudioBufferSourceNode">4.10.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-AudioBufferSourceNode">4.10.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-AudioBufferSourceNode')">原文</button></h3>
 <dl>
   <dt id="dfn-start"><code>start</code>メソッド</dt>
     <dd><p>指定の時刻に音の再生開始をスケジュールします。</p>
@@ -1997,7 +1991,7 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
 </div>
 
 <div id="looping-AudioBufferSourceNode-section" class="section">
-<h3 id="looping-AudioBufferSourceNode">4.10.3. ループ再生</h3>
+<h3 id="looping-AudioBufferSourceNode">4.10.3. ループ再生 <button onclick="OpenOriginal('looping-AudioBufferSourceNode')">原文</button></h3>
 <p>
 もし<code>start()</code>が呼ばれた時に<code>loop</code>属性がtrueであれば、再生は<code>stop()</code>が呼ばれて停止時刻になるまで無限に継続します。
 これを"ループ"モードと呼びます。
@@ -2028,9 +2022,10 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
 </p>
 
 </div>
+</div>
 
 <div id="MediaElementAudioSourceNode-section" class="section">
-<h2 id="MediaElementAudioSourceNode">4.11. MediaElementAudioSourceNodeインターフェース</h2>
+<h2 id="MediaElementAudioSourceNode">4.11. MediaElementAudioSourceNodeインターフェース <button onclick="OpenOriginal('MediaElementAudioSourceNode')">原文</button></h2>
 
 <p>このインターフェースは<code>audio</code>または<code>video</code>要素からの音声ソースを表します。</p>
 <pre>    numberOfInputs  : 0
@@ -2054,7 +2049,6 @@ interface <dfn id="dfn-MediaElementAudioSourceNode">MediaElementAudioSourceNode<
 
 };
 </code></pre>
-</div>
 </div>
 </div>
 
@@ -2090,7 +2084,7 @@ sourceNode.connect(filterNode);
 
 
 <div id="ScriptProcessorNode-section" class="section">
-<h2 id="ScriptProcessorNode">4.12. ScriptProcessorNodeインターフェース</h2>
+<h2 id="ScriptProcessorNode">4.12. ScriptProcessorNodeインターフェース <button onclick="OpenOriginal('ScriptProcessorNode')">原文</button></h2>
 
 <p>このインターフェースはJavaScriptによってオーディオを直接、合成、加工、分析する事ができるAudioNodeです。</p>
 <pre>
@@ -2139,7 +2133,7 @@ interface <dfn id="dfn-ScriptProcessorNode">ScriptProcessorNode</dfn> : AudioNod
 </div>
 
 <div id="attributes-ScriptProcessorNode-section" class="section">
-<h3 id="attributes-ScriptProcessorNode">4.12.1. 属性</h3>
+<h3 id="attributes-ScriptProcessorNode">4.12.1. 属性 <button onclick="OpenOriginal('attributes-ScriptProcessorNode')">原文</button></h3>
 <dl>
   <dt id="dfn-onaudioprocess"><code>onaudioprocess</code></dt>
     <dd><p><a href="#ScriptProcessorNode-section"><code>ScriptProcessorNode</code></a>にディスパッチされるオーディオプロセスイベントの
@@ -2159,7 +2153,7 @@ interface <dfn id="dfn-ScriptProcessorNode">ScriptProcessorNode</dfn> : AudioNod
 </div>
 
 <div id="AudioProcessingEvent-section" class="section">
-<h2 id="AudioProcessingEvent">4.13. AudioProcessingEvent インターフェース</h2>
+<h2 id="AudioProcessingEvent">4.13. AudioProcessingEvent インターフェース <button onclick="OpenOriginal('AudioProcessingEvent')">原文</button></h2>
 
 <p>これは<a href="#ScriptProcessorNode-section"><code>ScriptProcessorNode</code></a>ノードにディスパッチされる
   <code>Event</code>オブジェクトです。</p>
@@ -2187,7 +2181,7 @@ interface <dfn id="dfn-AudioProcessingEvent">AudioProcessingEvent</dfn> : Event 
 </div>
 
 <div id="attributes-AudioProcessingEvent-section" class="section">
-<h3 id="attributes-AudioProcessingEvent">4.13.1. 属性</h3>
+<h3 id="attributes-AudioProcessingEvent">4.13.1. 属性 <button onclick="OpenOriginal('attributes-AudioProcessingEvent')">原文</button></h3>
 <dl>
   <dt id="dfn-playbackTime"><code>playbackTime</code></dt>
     <dd><p>AudioContext.currentTimeと同じ時間軸で表された、そのオーディオが再生される時刻です。
@@ -2216,7 +2210,7 @@ interface <dfn id="dfn-AudioProcessingEvent">AudioProcessingEvent</dfn> : Event 
 </div>
 
 <div id="PannerNode-section" class="section">
-<h2 id="PannerNode">4.14. PannerNode インターフェース</h2>
+<h2 id="PannerNode">4.14. PannerNode インターフェース <button onclick="OpenOriginal('PannerNode')">原文</button></h2>
 
 <p>このインターフェースは入力されるオーディオストリームの3D空間での<a href="#Spatialization-section">定位 / 空間音響</a>を処理するためのノードを表します。
   空間音響は<a href="#AudioContext-section"><code>AudioContext</code></a>の
@@ -2284,10 +2278,9 @@ interface <dfn id="dfn-PannerNode">PannerNode</dfn> : AudioNode {
 </code></pre>
 </div>
 </div>
-</div>
 
 <div id="attributes-PannerNode_attributes-section" class="section">
-<h3 id="attributes-PannerNode_attributes">4.14.2. 属性</h3>
+<h3 id="attributes-PannerNode_attributes">4.14.2. 属性 <button onclick="OpenOriginal('attributes-PannerNode_attributes')">原文</button></h3>
 <dl>
   <dt id="dfn-panningModel"><code>panningModel</code></dt>
     <dd><p>オーディオを3D空間に定位させるために使用する空間音響アルゴリズムを指定します。
@@ -2378,7 +2371,7 @@ pow(distance / refDistance, -rolloffFactor)
 </dl>
 </div>
 
-<h3 id="Methods_and_Parameters">4.14.3. メソッドとパラメータ</h3>
+<h3 id="Methods_and_Parameters">4.14.3. メソッドとパラメータ <button onclick="OpenOriginal('Methods_and_Parameters')">原文</button></h3>
 <dl>
   <dt id="dfn-setPosition"><code>setPosition</code> メソッド</dt>
     <dd><p><b>listener</b>属性に相対する音源の位置を設定します。
@@ -2409,9 +2402,10 @@ pow(distance / refDistance, -rolloffFactor)
       </p>
     </dd>
 </dl>
+</div>
 
 <div id="AudioListener-section" class="section">
-<h2 id="AudioListener">4.15. AudioListener インターフェース</h2>
+<h2 id="AudioListener">4.15. AudioListener インターフェース <button onclick="OpenOriginal('AudioListener')">原文</button></h2>
 
 <p>このインターフェースはオーディオシーンを聴く人の位置と方向を表します。
   全ての<a href="#PannerNode-section"><code>PannerNode</code></a>オブジェクトは
@@ -2441,10 +2435,9 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
 </code></pre>
 </div>
 </div>
-</div>
 
 <div id="attributes-AudioListener-section" class="section">
-<h3 id="attributes-AudioListener">4.15.1. 属性</h3>
+<h3 id="attributes-AudioListener">4.15.1. 属性 <button onclick="OpenOriginal('attributes-AudioListener')">原文</button></h3>
 <dl>
   <dt id="dfn-dopplerFactor"><code>dopplerFactor</code></dt>
     <dd><p>ドップラー効果をレンダリングする際に使用するピッチ偏移の量を決定する定数です。
@@ -2496,9 +2489,10 @@ interface <dfn id="dfn-AudioListener">AudioListener</dfn> {
       </p>
     </dd>
 </dl>
+</div>
 
 <div id="ConvolverNode-section" class="section">
-<h2 id="ConvolverNode">4.16. ConvolverNode インターフェース</h2>
+<h2 id="ConvolverNode">4.16. ConvolverNode インターフェース <button onclick="OpenOriginal('ConvolverNode')">原文</button></h2>
 
 <p>このインターフェースはインパルスレスポンスによって<a href="#Convolution-section">線形コンボリューションエフェクト</a>を
   適用する処理ノードを表すインターフェースです。
@@ -2530,10 +2524,9 @@ interface <dfn id="dfn-ConvolverNode">ConvolverNode</dfn> : AudioNode {
 </code></pre>
 </div>
 </div>
-</div>
 
 <div id="attributes-ConvolverNode-section" class="section">
-<h3 id="attributes-ConvolverNode">4.16.1. 属性</h3>
+<h3 id="attributes-ConvolverNode">4.16.1. 属性 <button onclick="OpenOriginal('attributes-ConvolverNode')">原文</button></h3>
 <dl>
   <dt id="dfn-buffer_ConvolverNode"><code>buffer</code></dt>
     <dd><p>ConvolverNodeで使用される(マルチチャンネルの場合もある)インパルスレスポンスを含む
@@ -2629,9 +2622,10 @@ float calculateNormalizationScale(buffer)
 </p>
 
 </div>
+</div>
 
 <div id="AnalyserNode-section" class="section">
-<h2 id="AnalyserNode">4.17. AnalyserNode インターフェース</h2>
+<h2 id="AnalyserNode">4.17. AnalyserNode インターフェース <button onclick="OpenOriginal('AnalyserNode')">原文</button></h2>
 
 <p>このインターフェースはリアルタイムの周波数領域および時間領域の<a href="#AnalyserNode">解析</a>を行う事ができるノードを表しています。
   オーディオストリームは入力から出力にそのまま渡されます。
@@ -2674,10 +2668,9 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
 </code></pre>
 </div>
 </div>
-</div>
 
 <div id="attributes-ConvolverNode-section_2" class="section">
-<h3 id="attributes-ConvolverNode_2">4.17.1. 属性</h3>
+<h3 id="attributes-ConvolverNode_2">4.17.1. 属性 <button onclick="OpenOriginal('attributes-ConvolverNode_2')">原文</button></h3>
 <dl>
   <dt id="dfn-fftSize"><code>fftSize</code></dt>
     <dd><p>周波数領域の解析で使用されるFFTのサイズです。2の累乗(0を除く)で32から2048の範囲でなくてはなりません。
@@ -2713,7 +2706,7 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
 </dl>
 </div>
 
-<h3 id="methods-and-parameters">4.17.2. メソッドとパラメータ</h3>
+<h3 id="methods-and-parameters">4.17.2. メソッドとパラメータ <button onclick="OpenOriginal('methods-and-parameters')">原文</button></h3>
 <dl>
   <dt id="dfn-getFloatFrequencyData"><code>getFloatFrequencyData</code> メソッド</dt>
     <dd><p>現在の周波数データを渡された浮動小数値配列にコピーします。
@@ -2738,9 +2731,10 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
       <p><dfn id="dfn-array_3">array</dfn>パラメータは時間領域解析データを格納する場所を示します。</p>
     </dd>
 </dl>
+</div>
 
 <div id="ChannelSplitterNode-section" class="section">
-<h2 id="ChannelSplitterNode">4.18. ChannelSplitterNode インターフェース</h2>
+<h2 id="ChannelSplitterNode">4.18. ChannelSplitterNode インターフェース <button onclick="OpenOriginal('ChannelSplitterNode')">原文</button></h2>
 
 <p><code>ChannelSplitterNode</code>は高度なアプリケーションで、<a href="#ChannelMergerNode-section"><code>ChannelMergerNode</code></a>
   と組み合わせて使われます。</p>
@@ -2785,11 +2779,10 @@ interface <dfn id="dfn-ChannelSplitterNode">ChannelSplitterNode</dfn> : AudioNod
 </div>
 
 <div id="ChannelMergerNode-section" class="section">
-<h2 id="ChannelMergerNode">4.19. ChannelMergerNode インターフェース</h2>
+<h2 id="ChannelMergerNode">4.19. ChannelMergerNode インターフェース <button onclick="OpenOriginal('ChannelMergerNode')">原文</button></h2>
 
 <p><code>ChannelMergerNode</code>は高度なアプリケーションで、<a href="#ChannelSplitterNode-section"><code>ChannelSplitterNode</code></a>
   と組み合わせて使われます。</p>
-</p>
 <pre>
     numberOfInputs  : Variable N (default to 6)  // number of connected inputs may be less than this
     numberOfOutputs : 1
@@ -2831,9 +2824,8 @@ interface <dfn id="dfn-ChannelMergerNode">ChannelMergerNode</dfn> : AudioNode {
 </div>
 </div>
 </div>
-
 <div id="DynamicsCompressorNode-section" class="section">
-<h2 id="DynamicsCompressorNode">4.20. DynamicsCompressorNode インターフェース</h2>
+<h2 id="DynamicsCompressorNode">4.20. DynamicsCompressorNode インターフェース <button onclick="OpenOriginal('DynamicsCompressorNode')">原文</button></h2>
 
 <p>DynamicsCompressorNodeはダイナミック・コンプレッション・エフェクトを実装したAudioNodeです。</p>
 
@@ -2875,7 +2867,7 @@ interface <dfn id="dfn-DynamicsCompressorNode">DynamicsCompressorNode</dfn> : Au
 </div>
 
 <div id="attributes-DynamicsCompressorNode-section" class="section">
-<h3 id="attributes-DynamicsCompressorNode">4.20.1. 属性</h3>
+<h3 id="attributes-DynamicsCompressorNode">4.20.1. 属性 <button onclick="OpenOriginal('attributes-DynamicsCompressorNode')">原文</button></h3>
 <p>
 全てのパラメータは<em>k-rate</em>です。
 </p>
@@ -2922,7 +2914,7 @@ interface <dfn id="dfn-DynamicsCompressorNode">DynamicsCompressorNode</dfn> : Au
 </div>
 
 <div id="BiquadFilterNode-section" class="section">
-<h2 id="BiquadFilterNode">4.21. BiquadFilterNode インターフェース</h2>
+<h2 id="BiquadFilterNode">4.21. BiquadFilterNode インターフェース <button onclick="OpenOriginal('BiquadFilterNode')">原文</button></h2>
 
 <p>BiquadFilterNodeは一般的な低次フィルターを実装したAudioNodeです。</p>
 
@@ -2978,7 +2970,6 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 </code></pre>
 </div>
 </div>
-</div>
 
 <p>フィルターの型について以下で簡単に説明します。
   我々はこれらのフィルターがオーディオ処理で非常に良く使われている事に気づきます。
@@ -3006,7 +2997,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 
 <div id="BiquadFilterNode-description-section" class="section">
-<h3 id="BiquadFilterNode-description">4.21.1 "lowpass"</h3>
+<h3 id="BiquadFilterNode-description">4.21.1 "lowpass" <button onclick="OpenOriginal('BiquadFilterNode-description')">原文</button></h3>
 
 <p><a href="http://en.wikipedia.org/wiki/Low-pass_filter">ローパスフィルター</a>は
   カットオフ周波数より低い周波数をそのまま通し、カットオフよりも高い周波数を減衰させます。これは標準的な2次の
@@ -3026,7 +3017,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="HIGHPASS">4.21.2 "highpass"</h3>
+<h3 id="HIGHPASS">4.21.2 "highpass" <button onclick="OpenOriginal('HIGHPASS')">原文</button></h3>
 
 <p><a href="http://en.wikipedia.org/wiki/High-pass_filter">ハイパスフィルター</a>は
   ローパスフィルターの反対の機能を持ちます。カットオフ周波数よりも高い周波数をそのまま通し、カットオフよりも低い
@@ -3045,7 +3036,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="BANDPASS">4.21.3 "bandpass"</h3>
+<h3 id="BANDPASS">4.21.3 "bandpass" <button onclick="OpenOriginal('BANDPASS')">原文</button></h3>
 
 <p>A <a href="http://en.wikipedia.org/wiki/Band-pass_filter">バンドパスフィルター</a>は
   ある範囲の周波数をそのまま通し、この周波数範囲より上または下の周波数を減衰させます。
@@ -3062,7 +3053,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="LOWSHELF">4.21.4 "lowshelf"</h3>
+<h3 id="LOWSHELF">4.21.4 "lowshelf" <button onclick="OpenOriginal('LOWSHELF')">原文</button></h3>
 
 <p>ローシェルフフィルターは全ての周波数を通しますが、低い周波数だけを増幅(または減衰)させます。
   これは2次のローシェルフフィルターを実装しています。</p>
@@ -3078,7 +3069,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="L16352">4.21.5 "highshelf"</h3>
+<h3 id="L16352">4.21.5 "highshelf" <button onclick="OpenOriginal('L16352')">原文</button></h3>
 
 <p>ハイシェルフフィルターはローシェルフフィルターの反対に、すべての周波数を通しますが高い周波数だけを増幅します。
   これは2次のハイシェルフフィルターを実装しています。</p>
@@ -3094,7 +3085,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="PEAKING">4.21.6 "peaking"</h3>
+<h3 id="PEAKING">4.21.6 "peaking" <button onclick="OpenOriginal('PEAKING')">原文</button></h3>
 
 <p>ピーキングフィルターは全ての周波数を通しますが、ある周波数の範囲だけが増幅(または減衰)されます。</p>
 
@@ -3109,7 +3100,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="NOTCH">4.21.7 "notch"</h3>
+<h3 id="NOTCH">4.21.7 "notch" <button onclick="OpenOriginal('NOTCH')">原文</button></h3>
 
 <p>ノッチフィルター(<a href="http://en.wikipedia.org/wiki/Band-stop_filter">バンドストップまたはバンドリジェクション・フィルター</a>とも呼ばれます)は、
   バンドパスフィルターの反対です。ある周波数を除く全ての周波数を通します。</p>
@@ -3125,7 +3116,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="ALLPASS">4.21.8 "allpass"</h3>
+<h3 id="ALLPASS">4.21.8 "allpass" <button onclick="OpenOriginal('ALLPASS')">原文</button></h3>
 
 <p><a href="http://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">オールパスフィルター</a>
   は全ての周波数を通しますが、周波数との関係で位相が変化します。
@@ -3142,7 +3133,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
   </dl>
 </blockquote>
 
-<h3 id="Methods">4.21.9. メソッド</h3>
+<h3 id="Methods">4.21.9. メソッド <button onclick="OpenOriginal('Methods')">原文</button></h3>
 <dl>
   <dt id="dfn-getFrequencyResponse"><code>getFrequencyResponse</code> メソッド</dt>
     <dd><p>現在のフィルターパラメータの設定から指定の周波数に対する応答特性を計算します。</p>
@@ -3152,9 +3143,10 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
     </dd>
 </dl>
 </div>
+</div>
 
 <div id="WaveShaperNode-section" class="section">
-<h2 id="WaveShaperNode">4.22. WaveShaperNode インターフェース</h2>
+<h2 id="WaveShaperNode">4.22. WaveShaperNode インターフェース <button onclick="OpenOriginal('WaveShaperNode')">原文</button></h2>
 
 <p>WaveShaperNode は非線形のディストーションエフェクトを実装したAudioNodeプロセッサです。</p>
 
@@ -3198,7 +3190,7 @@ interface <dfn id="dfn-WaveShaperNode">WaveShaperNode</dfn> : AudioNode {
 </div>
 
 <div id="attributes-WaveShaperNode-section" class="section">
-<h3 id="attributes-WaveShaperNode">4.22.1. 属性</h3>
+<h3 id="attributes-WaveShaperNode">4.22.1. 属性 <button onclick="OpenOriginal('attributes-WaveShaperNode')">原文</button></h3>
 <dl>
   <dt id="dfn-curve"><code>curve</code></dt>
     <dd><p>ウェーブシェイピング・エフェクトで使用されるシェイピング曲線です。
@@ -3235,7 +3227,7 @@ interface <dfn id="dfn-WaveShaperNode">WaveShaperNode</dfn> : AudioNode {
 </div>
 
 <div id="OscillatorNode-section" class="section">
-<h2 id="OscillatorNode">4.23. OscillatorNode インターフェース</h2>
+<h2 id="OscillatorNode">4.23. OscillatorNode インターフェース <button onclick="OpenOriginal('OscillatorNode')">原文</button></h2>
 
 <p>OscillatorNodeは周期的な波形を発生するオーディオソースを表しています。これは一般的に使われる幾つかの波形に設定する事ができます。
   更に、これは<a href="#PeriodicWave-section"><code>PeriodicWave</code></a>オブジェクトを使って任意の周期波形に設定する事が可能です。
@@ -3309,7 +3301,7 @@ interface <dfn id="dfn-OscillatorNode">OscillatorNode</dfn> : AudioNode {
 </div>
 
 <div id="attributes-OscillatorNode-section" class="section">
-<h3 id="attributes-OscillatorNode">4.23.1. 属性</h3>
+<h3 id="attributes-OscillatorNode">4.23.1. 属性 <button onclick="OpenOriginal('attributes-OscillatorNode')">原文</button></h3>
 <dl>
   <dt id="dfn-type"><code>type</code></dt>
     <dd><p>周期波形の形状です。これは"custom"を除いて、定数値を直接設定する事ができます。
@@ -3341,10 +3333,9 @@ interface <dfn id="dfn-OscillatorNode">OscillatorNode</dfn> : AudioNode {
     </dd>
 </dl>
 </div>
-</div>
 
 <div id="methodsandparams-OscillatorNode-section" class="section">
-<h3 id="methodsandparams-OscillatorNode">4.23.2. メソッドとパラメータ</h3>
+<h3 id="methodsandparams-OscillatorNode">4.23.2. メソッドとパラメータ <button onclick="OpenOriginal('methodsandparams-OscillatorNode')">原文</button></h3>
 <dl>
   <dt id="dfn-setPeriodicWave"><code>setPeriodicWave</code> メソッド</dt>
     <dd><p>
@@ -3362,10 +3353,11 @@ interface <dfn id="dfn-OscillatorNode">OscillatorNode</dfn> : AudioNode {
     </dd>
 </dl>
 </div>
+</div>
 
 
 <div id="PeriodicWave-section" class="section">
-<h2 id="PeriodicWave">4.24. PeriodicWave インターフェース</h2>
+<h2 id="PeriodicWave">4.24. PeriodicWave インターフェース <button onclick="OpenOriginal('PeriodicWave')">原文</button></h2>
 
 <p>PeriodicWaveは<a href="#OscillatorNode-section"><code>OscillatorNode</code></a>で使用される任意の周期波形を表します。
   詳細は<a href="#dfn-createPeriodicWave">createPeriodicWave()</a>、および<a href="#dfn-setPeriodicWave">setPeriodicWave()</a>を見てください。
@@ -3388,7 +3380,7 @@ interface <dfn id="dfn-PeriodicWave">PeriodicWave</dfn> {
 </div>
 
 <div id="MediaStreamAudioSourceNode-section" class="section">
-<h2 id="MediaStreamAudioSourceNode">4.25. MediaStreamAudioSourceNode インターフェース</h2>
+<h2 id="MediaStreamAudioSourceNode">4.25. MediaStreamAudioSourceNode インターフェース <button onclick="OpenOriginal('MediaStreamAudioSourceNode')">原文</button></h2>
 
 <p>このインターフェースは<code>MediaStream</code>からのオーディオソースを表します。
   <code>MediaStream</code>からの最初の<code>AudioMediaStreamTrack</code>がオーディオソースとして使用されます。</p>
@@ -3418,7 +3410,7 @@ interface <dfn id="dfn-MediaStreamAudioSourceNode">MediaStreamAudioSourceNode</d
 </div>
 
 <div id="MediaStreamAudioDestinationNode-section" class="section">
-<h2 id="MediaStreamAudioDestinationNode">4.26. MediaStreamAudioDestinationNode インターフェース</h2>
+<h2 id="MediaStreamAudioDestinationNode">4.26. MediaStreamAudioDestinationNode インターフェース <button onclick="OpenOriginal('MediaStreamAudioDestinationNode')">原文</button></h2>
 
 <p>このインターフェースは1つの<code>AudioMediaStreamTrack</code>を持つ<code>MediaStream</code>を表すオーディオの出力地点となります。
   このMediaStreamはノードが作成された時点で作られ、<dfn>stream</dfn>属性からアクセスする事ができます。
@@ -3457,7 +3449,7 @@ interface <dfn id="dfn-MediaStreamAudioDestinationNode">MediaStreamAudioDestinat
 </div>
 
 <div id="attributes-MediaStreamAudioDestinationNode-section" class="section">
-<h3 id="attributes-MediaStreamAudioDestinationNode">4.26.1. 属性</h3>
+<h3 id="attributes-MediaStreamAudioDestinationNode">4.26.1. 属性 <button onclick="OpenOriginal('attributes-MediaStreamAudioDestinationNode')">原文</button></h3>
 <dl>
   <dt id="dfn-stream"><code>stream</code></dt>
     <dd><p>ノードと同じチャンネル数の1つのAudioMediaStreamTrackを持つMediaStreamです。</p>
@@ -3466,9 +3458,9 @@ interface <dfn id="dfn-MediaStreamAudioDestinationNode">MediaStreamAudioDestinat
 </div>
 
 </div>
-
+</div>
 <div id="MixerGainStructure-section" class="section">
-<h2 id="MixerGainStructure">6. ミキサーゲイン構成</h2>
+<h2 id="MixerGainStructure">6. ミキサーゲイン構成 <button onclick="OpenOriginal('MixerGainStructure')">原文</button></h2>
 
 <p class="norm">このセクションは参考情報です</p>
 
@@ -3617,7 +3609,7 @@ function setupRoutingGraph() {
 
 
 <div id="DynamicLifetime-section">
-<h2 id="DynamicLifetime">7.  動的ライフタイム</h2>
+<h2 id="DynamicLifetime">7.  動的ライフタイム <button onclick="OpenOriginal('DynamicLifetime')">原文</button></h2>
 
 <h3 id="DynamicLifetime-background">背景</h3>
 
@@ -3718,7 +3710,7 @@ function playSound() {
 
 
 <div id="UpMix-section" class="section">
-<h2 id="UpMix">9. チャンネルのアップミックスとダウンミックス</h2>
+<h2 id="UpMix">9. チャンネルのアップミックスとダウンミックス <button onclick="OpenOriginal('UpMix')">原文</button></h2>
 
 <p class="norm">このセクションは基準情報です。</p>
 
@@ -3801,7 +3793,7 @@ function playSound() {
 
 
 <div id="ChannelLayouts-section" class="section">
-<h3 id="ChannelLayouts">9.1. スピーカーチャンネル配置</h3>
+<h3 id="ChannelLayouts">9.1. スピーカーチャンネル配置 <button onclick="OpenOriginal('ChannelLayouts')">原文</button></h3>
 
 <p class="norm">このセクションは基準情報です。</p>
 
@@ -3840,7 +3832,6 @@ function playSound() {
     4: SL:  surround left
     5: SR:  surround right
   </pre>
-</div>
 
 <h4 id="UpMix-sub">9.1.2. アップミックスのスピーカー配置</h4>
 
@@ -3927,7 +3918,7 @@ Quad down-mix:
 </pre>
 </div>
 
-<h3 id="ChannelRules-section">9.2. チャンネル規則の例</h3>
+<h3 id="ChannelRules-section">9.2. チャンネル規則の例 <button onclick="OpenOriginal('ChannelRules-section')">原文</button></h3>
 
 <p class="norm">このセクションは参考情報です。</p>
 
@@ -3964,10 +3955,11 @@ gain.channelInterpretation = "speakers";
 </div>
 </div>
 </div>
+</div>
 
 
 <div id="Spatialization-section" class="section">
-<h2 id="Spatialization">11. 空間音響 / パンニング </h2>
+<h2 id="Spatialization">11. 空間音響 / パンニング <button onclick="OpenOriginal('Spatialization')">原文</button></h2>
 
 <h3 id="Spatialization-background">背景</h3>
 
@@ -4050,7 +4042,7 @@ else if (elevation &lt; -90)
 </div>
 </div>
 
-<h3 id="Spatialization-panning-algorithm">パンニングアルゴリズム</h3>
+<h3 id="Spatialization-panning-algorithm">パンニングアルゴリズム <button onclick="OpenOriginal('Spatialization-panning-algorithm')">原文</button></h3>
 
 <p>
 <em>モノラル -> ステレオ</em>と<em>ステレオ -> ステレオ</em>のパンニングがサポートされなくてはなりません。
@@ -4155,7 +4147,7 @@ else if (elevation &lt; -90)
     <img alt="HRTF panner" src="images/HRTF_panner.png" /></li>
 </ul>
 
-<h3 id="Spatialization-distance-effects">距離効果</h3>
+<h3 id="Spatialization-distance-effects">距離効果 <button onclick="OpenOriginal('Spatialization-distance-effects')">原文</button></h3>
 <p>
   近くの音は大きく、遠くの音は小さくなります。
   リスナーからの距離に対して、正確に<em>どれだけ</em>音量が変化するのかは、<em>distanceModel</em>属性に依存します。
@@ -4182,7 +4174,7 @@ distance = sqrt(dot(v, v))
 
 
 
-<h3 id="Spatialization-sound-cones">サウンドコーン</h3>
+<h3 id="Spatialization-sound-cones">サウンドコーン <button onclick="OpenOriginal('Spatialization-sound-cones')">原文</button></h3>
 
 <p>リスナーとそれぞれの音源はそれがどの方向を向いているかを表す方向ベクトルを持っています。
   それぞれの音源の音の放射特性は、音源の方向ベクトルに対してソース/リスナー間の角度の関数で音の大きさを表した内部および外部の"コーン"で表現されます。
@@ -4236,10 +4228,10 @@ return gain;
 </div>
 </div>
 
-<h3 id="Spatialization-doppler-shift">ドップラー効果</h3>
+<h3 id="Spatialization-doppler-shift">ドップラー効果 <button onclick="OpenOriginal('Spatialization-doppler-shift')">原文</button></h3>
 <ul>
   <li>移動する音源を現実的にシミュレートしたピッチ変化をもたらします。</li>
-  <li>音源ととリスナーの移動ベクトル、音速、ドップラー係数に依存します。</li>
+  <li>音源とリスナーの移動ベクトル、音速、ドップラー係数に依存します。</li>
 </ul>
 
 <p>
@@ -4292,7 +4284,7 @@ if (dopplerFactor > 0) {
 </div>
 
 <div id="Convolution-section" class="section">
-<h2 id="Convolution">12. コンボリューションによる線形エフェクト</h2>
+<h2 id="Convolution">12. コンボリューションによる線形エフェクト <button onclick="OpenOriginal('Convolution')">原文</button></h2>
 
 <h3 id="Convolution-background">背景</h3>
 
@@ -4322,7 +4314,7 @@ if (dopplerFactor > 0) {
   可能なエフェクトの範囲は膨大です。
 </p>
 
-<h3 id="Convolution-implementation-guide">実装ガイド</h3>
+<h3 id="Convolution-implementation-guide">実装ガイド <button onclick="OpenOriginal('Convolution-implementation-guide')">原文</button></h3>
 <p>
   線形コンボリューションは効率的に実装する事が可能です。
 実際にどう実装するかを記述した幾つかの<a href="convolution.html">メモが</a>ここにあります。
@@ -4346,7 +4338,7 @@ if (dopplerFactor > 0) {
 </p>
 <img alt="reverb matrixing" src="images/reverb-matrixing.png" /> 
 
-<h3 id="recording-impulse-responses">インパルスレスポンスの記録</h3>
+<h3 id="recording-impulse-responses">インパルスレスポンスの記録 <button onclick="OpenOriginal('recording-impulse-responses')">原文</button></h3>
 
 <p class="norm">このセクションは参考情報です。</p>
 <img alt="impulse response" src="images/impulse-response.png" /> <br />
@@ -4386,7 +4378,7 @@ Usage: convolve input_file impulse_response_file output_file</pre>
 <br />
 
 
-<h3 id="recording-setup">レコーディング・セットアップ</h3>
+<h3 id="recording-setup">レコーディング・セットアップ <button onclick="OpenOriginal('recording-setup')">原文</button></h3>
 <img alt="recording setup" src="images/recording-setup.png" /> <br />
 <br />
 オーディオインータフェース: Metric Halo Mobile I/O 2882 <br />
@@ -4409,7 +4401,7 @@ src="images/speaker.png" /> <br />
 </div>
 
 <div id="JavaScriptProcessing-section" class="section">
-<h2 id="JavaScriptProcessing">13. JavaScript による合成と処理</h2>
+<h2 id="JavaScriptProcessing">13. JavaScript による合成と処理 <button onclick="OpenOriginal('JavaScriptProcessing')">原文</button></h2>
 
 <p class="norm">このセクションは参考情報です。</p>
 
@@ -4438,9 +4430,10 @@ src="images/speaker.png" /> <br />
 この文書で提案されているアプローチは、例えばマルチソースの3D空間音響やC++コードで最適化されたコンボリューションなど、オーディオ処理のために計算上の負荷がかかる(JavaScriptによってリアルタイムで実行するにはコストがかかりすぎる)側面のある機能を含んでいます。
 <a href="#ModularRouting-section">モジュラー方式</a>のAPIは、JavaScriptによる直接処理とC++で最適化されたコードの両方を組み合わせる事を可能にします。
 </p>
+</div>
 
 <div id="Performance-section" class="section">
-<h2 id="Performance">15. パフォーマンスについての考察</h2>
+<h2 id="Performance">15. パフォーマンスについての考察 <button onclick="OpenOriginal('Performance')">原文</button></h2>
 
 <div id="Latency-section" class="section">
 <h3 id="Latency">15.1. レイテンシー: それは何で何故重要なのか</h3>
@@ -4461,7 +4454,7 @@ src="images/speaker.png" /> <br />
 </p>
 
 <div id="Glitching-section" class="section">
-<h3 id="audio-glitching">15.2. オーディオグリッジ</h3>
+<h3 id="audio-glitching">15.2. オーディオグリッジ <button onclick="OpenOriginal('audio-glitching')">原文</button></h3>
 </div>
 
 <p>オーディオグリッジは正常な連続したオーディオストリームが途切れる事で発生し、大きなクリックノイズやポップノイズを引き起こします。
@@ -4470,7 +4463,7 @@ src="images/speaker.png" /> <br />
 また、それはオーディオDSPが与えられたCPUの速度ではリアルタイムで処理できないような多量の仕事をしようとする事で起こる場合もあります。
 </p>
 
-<h3 id="hardware-scalability">15.3. ハードウェアのスケーラビリティ</h3>
+<h3 id="hardware-scalability">15.3. ハードウェアのスケーラビリティ <button onclick="OpenOriginal('hardware-scalability')">原文</button></h3>
 
 <p>システムはオーディオフレームの欠落を起こさないように、リソースに制約のある状況下では潔くオーディオ処理の品質を下げるべきです。</p>
 
@@ -4553,7 +4546,7 @@ JavaScriptコードはユーザーエージェント情報を、処理が集中�
   もしそれが"オール・オア・ナッシング"型の処理の場合は、オーディオストリームの破綻を避けるために、ユーザーエージェントチェックかプリフライトが必要でしょう。</p>
 
 <div id="JavaScriptPerformance-section" class="section">
-<h3 id="JavaScriptPerformance">15.4. リアルタイム処理と合成に関するJavaScriptの課題: </h3>
+<h3 id="JavaScriptPerformance">15.4. リアルタイム処理と合成に関するJavaScriptの課題: <button onclick="OpenOriginal('JavaScriptPerformance')">原文</button></h3>
 </div>
   JavsScriptでオーディオを処理する際に、妥当な低レイテンシーでオーディオにグリッジが無く、信頼性を確保するのは、特にCPU負荷が高い状況においては極めてチャレンジングな事です。
 <ul>
@@ -4570,12 +4563,13 @@ JavaScriptコードはユーザーエージェント情報を、処理が集中�
   <li>JavaScriptスレッドで割り当てられたメモリのロックを取る事ができます。これは余計なスレッドのプリエンプションを引き起こします。</li>
 </ul>
 比較的非力なパフォーマンスと消費電力/バッテリー寿命問題を抱える今日のモバイルデバイスでは、問題はさらに難しくなります。
+</div>
 <br />
 <br />
 
 
 <div id="ExampleApplications-section" class="section">
-<h2 id="ExampleApplications">16. アプリケーション例</h2>
+<h2 id="ExampleApplications">16. アプリケーション例 <button onclick="OpenOriginal('ExampleApplications')">原文</button></h2>
 
 <p class="norm">このセクションは参考情報です。</p>
 
@@ -4659,13 +4653,13 @@ WebGLのGLSLシェーダーと組み合わせる事で、リアルタイム解�
 </div>
 
 <div id="SecurityConsiderations-section" class="section">
-<h2 id="SecurityConsiderations">17. セキュリティに関する考察</h2>
+<h2 id="SecurityConsiderations">17. セキュリティに関する考察 <button onclick="OpenOriginal('SecurityConsiderations')">原文</button></h2>
 
 <p>このセクションは<em>参考情報</em>です。 </p>
 </div>
 
 <div id="PrivacyConsiderations-section" class="section">
-<h2 id="PrivacyConsiderations">18. プライバシーに関する考察</h2>
+<h2 id="PrivacyConsiderations">18. プライバシーに関する考察 <button onclick="OpenOriginal('PrivacyConsiderations')">原文</button></h2>
 
 <p>このセクションは<em>参考情報</em>です。
 AudioNodeが持っている様々な情報から、Web Audio APIは潜在的に(オーディオハードウェアのサンプルレートのような)クライアントの特徴的な機能の情報をAudioNodeインータフェースを使うどんなページにでもさらけ出します。
@@ -4679,7 +4673,7 @@ AudioNodeが持っている様々な情報から、Web Audio APIは潜在的に(
 </div>
 
 <div id="requirements-section" class="section">
-<h2 id="requirements">19. 要求と使用例</h2>
+<h2 id="requirements">19. 要求と使用例 <button onclick="OpenOriginal('requirements')">原文</button></h2>
 
 <p><a href="#ExampleApplications-section">アプリケーション例</a>を参照してください。
 </p>
@@ -4687,10 +4681,9 @@ AudioNodeが持っている様々な情報から、Web Audio APIは潜在的に(
 
 
 </div>
-</div>
 
 <div class="appendix section" id="references">
-<h2 id="L17310">A.リファレンス</h2>
+<h2 id="L17310">A.リファレンス <button onclick="OpenOriginal('L17310')">原文</button></h2>
 
 <div class="section" id="normative-references">
 <h3 id="Normative-references">A.1 基準リファレンス</h3>
