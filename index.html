@@ -3019,9 +3019,9 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="HIGHPASS">4.21.2 "highpass" <button onclick="OpenOriginal('HIGHPASS')">原文</button></h3>
 
-<p><a href="http://en.wikipedia.org/wiki/High-pass_filter">ハイパスフィルター</a>は
-  ローパスフィルターの反対の機能を持ちます。カットオフ周波数よりも高い周波数をそのまま通し、カットオフよりも低い
-  周波数を減衰させます。これは標準的な2次レゾナントハイパスフィルターの実装で、12dB/オクターブのロールオフを持ちます。</p>
+<p><a href="http://en.wikipedia.org/wiki/High-pass_filter">ハイパスフィルター</a>はローパスフィルターの反対の機能を持ちます。
+  カットオフ周波数よりも高い周波数をそのまま通し、カットオフよりも低い周波数を減衰させます。
+  これは標準的な2次レゾナントハイパスフィルターの実装で、12dB/オクターブのロールオフを持ちます。</p>
 
 <blockquote>
   <dl>
@@ -3038,8 +3038,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="BANDPASS">4.21.3 "bandpass" <button onclick="OpenOriginal('BANDPASS')">原文</button></h3>
 
-<p>A <a href="http://en.wikipedia.org/wiki/Band-pass_filter">バンドパスフィルター</a>は
-  ある範囲の周波数をそのまま通し、この周波数範囲より上または下の周波数を減衰させます。
+<p>A <a href="http://en.wikipedia.org/wiki/Band-pass_filter">バンドパスフィルター</a>はある範囲の周波数をそのまま通し、この周波数範囲より上または下の周波数を減衰させます。
   これは2次のバンドパスフィルターを実装しています。</p>
 
 <blockquote>
@@ -3071,7 +3070,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="L16352">4.21.5 "highshelf" <button onclick="OpenOriginal('L16352')">原文</button></h3>
 
-<p>ハイシェルフフィルターはローシェルフフィルターの反対に、すべての周波数を通しますが高い周波数だけを増幅します。
+<p>ハイシェルフフィルターはローシェルフフィルターとは反対に、すべての周波数を通しますが高い周波数だけを増幅します。
   これは2次のハイシェルフフィルターを実装しています。</p>
 
 <blockquote>
@@ -3102,8 +3101,8 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="NOTCH">4.21.7 "notch" <button onclick="OpenOriginal('NOTCH')">原文</button></h3>
 
-<p>ノッチフィルター(<a href="http://en.wikipedia.org/wiki/Band-stop_filter">バンドストップまたはバンドリジェクション・フィルター</a>とも呼ばれます)は、
-  バンドパスフィルターの反対です。ある周波数を除く全ての周波数を通します。</p>
+<p>ノッチフィルター(<a href="http://en.wikipedia.org/wiki/Band-stop_filter">バンドストップまたはバンドリジェクション・フィルター</a>とも呼ばれます)は、バンドパスフィルターの逆です。
+  ある周波数を除く全ての周波数を通します。</p>
 
 <blockquote>
   <dl>
@@ -3118,8 +3117,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="ALLPASS">4.21.8 "allpass" <button onclick="OpenOriginal('ALLPASS')">原文</button></h3>
 
-<p><a href="http://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">オールパスフィルター</a>
-  は全ての周波数を通しますが、周波数との関係で位相が変化します。
+<p><a href="http://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">オールパスフィルター</a>は全ての周波数を通しますが、周波数の変化に対して位相が変化します。
   これは2次のオールパスフィルターを実装しています。</p>
 
 <blockquote>
@@ -3137,7 +3135,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 <dl>
   <dt id="dfn-getFrequencyResponse"><code>getFrequencyResponse</code> メソッド</dt>
     <dd><p>現在のフィルターパラメータの設定から指定の周波数に対する応答特性を計算します。</p>
-      <p><dfn id="dfn-frequencyHz">frequencyHz</dfn>パラメータは応答特性を計算する周波数配列を指定します。</p>
+      <p><dfn id="dfn-frequencyHz">frequencyHz</dfn>パラメータは応答特性を計算する周波数の配列を指定します。</p>
       <p><dfn id="dfn-magResponse">magResponse</dfn>パラメータはリニア振幅特性の値を受け取る配列を指定します。</p>
       <p><dfn id="dfn-phaseResponse">phaseResponse</dfn>パラメータはラジアン単位の位相特性を受け取る配列を指定します。</p>
     </dd>
@@ -3148,7 +3146,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 <div id="WaveShaperNode-section" class="section">
 <h2 id="WaveShaperNode">4.22. WaveShaperNode インターフェース <button onclick="OpenOriginal('WaveShaperNode')">原文</button></h2>
 
-<p>WaveShaperNode は非線形のディストーションエフェクトを実装したAudioNodeプロセッサです。</p>
+<p>WaveShaperNodeは非線形のディストーションエフェクトを実装したAudioNodeプロセッサです。</p>
 
 <p>非線形ウェーブシェイピング歪みは微妙な非線形ウォーミングやはっきりしたディストーションの両方のエフェクトで一般的に使用されています。
   任意の非線形シェイピング曲線を指定する事ができます。
@@ -3208,19 +3206,19 @@ interface <dfn id="dfn-WaveShaperNode">WaveShaperNode</dfn> : AudioNode {
   <dt id="dfn-oversample"><code>oversample</code></dt>
     <dd><p>シェイピング曲線を適用する際に(もし必要なら)使用するオーバーサンプリングのタイプを指定します。
       デフォルトの値は"none"で、曲線はそのまま入力サンプルに適用されます。
-      "2x"または"4x"の指定すると幾らかのエイリアスを避けて品質を向上する事ができ、"4x"の場合にもっとも高い品質になります。
-      アプリケーションによっては非常に高精度のシェイピング曲線を使うためにオーバーサンプリングを使用しない方が良い場合があります。
+      "2x"または"4x"を指定すると、ある程度エイリアスを避けて品質を向上する事ができ、"4x"の場合にもっとも高い品質になります。
+      アプリケーションによっては非常に高精度のシェイピング曲線を使うため、オーバーサンプリングを使用しない方が良い場合があります。
     </p>
     <p>
       "2x"または"4x"の値は次のステップが行われなくてはならない事を意味します:
     </p>
     <ol>
     <li>入力サンプルをAudioContextのサンプルレートの2倍または4倍にアップサンプリングします。
-      つまりそれぞれの128サンプルブロックは、256(2xの時)または512(4xの時)サンプルになります。</li>
+      つまりそれぞれの128サンプルのブロックは、256(2xの時)または512(4xの時)サンプルになります。</li>
     <li>シェイピング曲線を適用します。</li>
     <li>結果をAudioContextのサンプルレートにダウンサンプリングします。
       つまり処理された256(あるいは512)サンプルは最終的な結果として128サンプルを生成します。</li>
-    </ol>アップサンプリングとダウンサンプリングフィルターの詳細、音の品質向上のためのチューニング(エイリアス低減など)、低レイテンシー性、パフォーマンスについては定められていません。
+    </ol>アップサンプリングとダウンサンプリングフィルターの詳細は定められておらず、(エイリアス低減などの)音の品質向上、低レイテンシー性、パフォーマンス面でのチューニングが可能です。
     </dd>
 </dl>
 </div>
@@ -3233,25 +3231,25 @@ interface <dfn id="dfn-WaveShaperNode">WaveShaperNode</dfn> : AudioNode {
   更に、これは<a href="#PeriodicWave-section"><code>PeriodicWave</code></a>オブジェクトを使って任意の周期波形に設定する事が可能です。
 </p>
 
-<p>オシレーターはオーディオ合成の一般的な基本構成ブロックです。
-  OscillatorNodeは<code>start()</code>メソッドで指定された時刻に音をの発生を開始します。</p>
+<p>オシレーターは音の合成において一般的な基本構成ブロックです。
+  OscillatorNodeは<code>start()</code>メソッドで指定された時刻に音の発生を開始します。</p>
 
 <p>数学的に言えば、<em>連続した時間</em>の周期波形は周波数領域で考えた場合、非常に高い(あるいは無限に高い)周波数情報を持つ事ができます。
-  この波形があるサンプルレートの離散時間のデジタルオーディオ信号である場合、波形をデジタル化する前に、<em>ナイキスト</em>周波数(サンプリング周波数の半分)よりも高い高周波数成分の除去(フィルターで取り除く事)を考慮しなくてはなりません。
+  この波形があるサンプルレートの離散時間のデジタルオーディオ信号としてサンプリングされる場合、波形をデジタル化する前に<em>ナイキスト</em>周波数(サンプリング周波数の半分)よりも高い高周波数成分の除去(フィルターで取り除く事)を考慮しなくてはなりません。
   これを行わない場合、(ナイキスト周波数よりも)高い周波数の<em>エイリアス</em>がナイキスト周波数よりも低い周波数に鏡像として折り返されます。
   多くの場合、これは音として聴こえる好ましくないノイズを引き起こします。
   これはオーディオDSPにおける基本的で良く知られている原理です。
 </p>
 
-<p>このエイリアスを避けるため、実装に使う事のできる幾つかの実践的な手段があります。しかし、これらの手段によらず<em>理想的な</em>離散時間のデジタルオーディオ信号は数学的には完全に定義されます。
-(CPUの負荷という意味で)実装のコスト対、理想への忠実性というトレードオフが問題になります。
+<p>このエイリアスを避けるため、実装に使う事のできる幾つかの実践的な手段があります。しかし、これらの手段によらず、<em>理想的な</em>離散時間のデジタルオーディオ信号は数学的には完全に定義されます。
+(CPUの負荷という意味で)実装のコスト対、理想への忠実性というトレードオフが実装上の問題になります。
 </p>
 
-<p>実装はこの理想を達成するためにいくらかの考慮をする事が期待されますが、低品質ローコストなローエンド・ハードウェアを考慮する事も合理的です。
+<p>実装はこの理想を達成するためにいくらかの考慮をする事が期待されますが、ローエンド・ハードウェアでは低品質ローコストな手段を考慮する事も合理的です。
 </p>
 
 <p>
-  .frequencyと.detuneはどちらも<em>a-rate</em>パラメータで、<em>computedFrequency</em>の値を決定するための一緒に使われます:
+  .frequencyと.detuneはどちらも<em>a-rate</em>パラメータで、<em>computedFrequency</em>の値を決定するために一緒に使われます:
 </p>
 
 <pre>
@@ -3304,7 +3302,7 @@ interface <dfn id="dfn-OscillatorNode">OscillatorNode</dfn> : AudioNode {
 <h3 id="attributes-OscillatorNode">4.23.1. 属性 <button onclick="OpenOriginal('attributes-OscillatorNode')">原文</button></h3>
 <dl>
   <dt id="dfn-type"><code>type</code></dt>
-    <dd><p>周期波形の形状です。これは"custom"を除いて、定数値を直接設定する事ができます。
+    <dd><p>周期波形の形状です。これは"custom"を除いて、波形の定数値を直接設定する事ができます。
       <a href="#dfn-setPeriodicWave"><code>setPeriodicWave()</code></a>メソッドはカスタム波形を設定するために使われ、それによってこの属性は"custom"に設定されます。
       デフォルトの値は"sine"です。</p>
     </dd>
@@ -3312,7 +3310,7 @@ interface <dfn id="dfn-OscillatorNode">OscillatorNode</dfn> : AudioNode {
 
 <dl>
   <dt id="dfn-frequency"><code>frequency</code></dt>
-    <dd><p>(Hz:ヘルツで表される)周期波形の周波数です。そのデフォルト<code>value</code>は440です。このパラメータは<em>a-rate</em>です。</p>
+    <dd><p>(Hz:ヘルツで表される)周期波形の周波数で、そのデフォルトの<code>value</code>は440です。このパラメータは<em>a-rate</em>です。</p>
     </dd>
 </dl>
 <dl>
@@ -4550,17 +4548,17 @@ JavaScriptコードはユーザーエージェント情報を、処理が集中�
 </div>
   JavsScriptでオーディオを処理する際に、妥当な低レイテンシーでオーディオにグリッジが無く、信頼性を確保するのは、特にCPU負荷が高い状況においては極めてチャレンジングな事です。
 <ul>
-  <li>JavaScriptは良く最低化されたC++コードに比べると非常に低速であり、近年のプロセッサではSSEとマルチスレッディングを使う事ができないのは致命的です。
-    最適化されたネイティブコードはJavaScriptに比べ、FFTを20倍高速に実行できます。
-    コンボリューションや3D空間音響や大量のオーディオソースのようなオーディオのヘビーデューティーな処理を行えるほど効率的ではありません。</li>
+  <li>JavaScriptは良く最適化されたC++コードに比べると非常に低速であり、近年のプロセッサで高いパフォーマンスを得るために必須のSSEとマルチスレッディングを利用する事ができません。
+    最適化されたネイティブコードはJavaScriptに比べ、FFTを20倍程度高速に実行できます。
+    それはコンボリューションや3D空間音響や大量のオーディオソースのようなオーディオのヘビーデューティーな処理を行えるほど効率的ではありません。</li>
   <li>setInterval()とXHRハンドリングはオーディオ処理から時間を奪います。
     ある程度複雑なゲームでは、ゲームの物理モデルとグラフィックスのために幾つかのJavaScriptのリソースが必要になります。
     オーディオレングリングは、(グリッジを避けつつ充分にレイテンシーを低くするため)デッドライン・ドリブンであるため、これが課題になります。</li>
-  <li>JavaScriptはリアルタイム処理スレッドでは動作せず、そのためシステム中で走っている他の多くのスレッドによってプリエンプトされます。</li>
-  <li>ガベージコレクション(そしてMac OS Xのオートリリースプールも)は、JavaScriptスレッドに予測不能な遅延を引き起こします。</li>
-  <li>複数のJavaScriptコンテキストがメインスレッド上で走る事が可能で、処理を行うコンテキストから時間を奪います。</li>
+  <li>JavaScriptはリアルタイム処理スレッドでは動作せず、そのためシステム中で走っている他の多くのスレッドによってプリエンプトされる事があります。</li>
+  <li>ガベージコレクション(そしてMac OS Xのオートリリースプールも)は、JavaScriptスレッドに予測不能な遅延を引き起こす事があります。</li>
+  <li>複数のJavaScriptコンテキストがメインスレッド上で走る事が可能で、処理を行っているコンテキストから時間を奪います。</li>
   <li>ページレンダリングのような(JavaScript以外の)他のコードがメインスレッド上で動作します。</li>
-  <li>JavaScriptスレッドで割り当てられたメモリのロックを取る事ができます。これは余計なスレッドのプリエンプションを引き起こします。</li>
+  <li>JavaScriptスレッド上で、ロックを取り、メモリをアロケーションする事ができます。これは余計なスレッドのプリエンプションを引き起こす事があります。</li>
 </ul>
 比較的非力なパフォーマンスと消費電力/バッテリー寿命問題を抱える今日のモバイルデバイスでは、問題はさらに難しくなります。
 </div>
