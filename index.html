@@ -155,14 +155,14 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
   <li><a href="#introduction">1. 序文</a>
     <ul>
       <li><a href="#Features">1.1. 機能</a></li>
-      <li><a href="#ModularRouting">1.2. モジュラー・ルーティング</a></li>
+      <li><a href="#ModularRouting">1.2. モジュラールーティング</a></li>
       <li><a href="#APIOverview">1.3. APIの概要</a></li>
     </ul>
   </li>
   <li><a href="#conformance">2. 準拠</a></li>
   <li><a href="#API-section">4. オーディオAPI</a>
     <ul>
-      <li><a href="#AudioContext-section">4.1. AudioContext インタフェース</a>
+      <li><a href="#AudioContext-section">4.1. AudioContext インターフェース</a>
         <ul>
           <li><a href="#attributes-AudioContext">4.1.1. 属性</a></li>
           <li><a href="#methodsandparams-AudioContext">4.1.2. メソッドとパラメータ</a></li>
@@ -297,7 +297,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
     <ul>
       <li><a href="#background">背景</a></li>
       <li><a href="#SummingJunction">サミング入力</a></li>
-      <li><a href="#gain-Control">ゲイン・コントロール</a></li>
+      <li><a href="#gain-Control">ゲインコントロール</a></li>
       <li><a href="#Example-mixer-with-send-busses">例: センドバス付ミキサー</a></li>
     </ul>
   </li>
@@ -372,7 +372,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#basic-sound-playback">基本的な音の再生</a></li>
       <li><a href="#threeD-environmentse-and-games">3D環境とゲーム</a></li>
       <li><a href="#musical-applications">音楽アプリケーション</a></li>
-      <li><a href="#music-visualizers">ミュージック・ビジュアライザー</a></li>
+      <li><a href="#music-visualizers">ミュージックビジュアライザー</a></li>
       <li><a href="#educational-applications_2">教育アプリケーション</a></li>
       <li><a href="#artistic-audio-exploration">芸術的な音の探究</a></li>
     </ul>
@@ -402,15 +402,15 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
 
 <p>これまでのWeb上のオーディオはかなり未発達なもので、ごく最近までFlashやQuickTimeのようなプラグインを通して配信しなくてはなりませんでした。
 HTML5での<code>audio</code>要素の導入は、基本的なストリーミング・オーディオ再生を可能にする重要なものでした。
-しかし、より複雑なオーディオ・アプリケーションを扱うには、それだけではまだ充分ではありません。
+しかし、より複雑なオーディオアプリケーションを扱うには、それだけではまだ充分ではありません。
 洗練されたWebベースのゲームやインタラクティブ・アプリケーションのためには別の解決策が必要とされます。
-この仕様では、近年のデスクトップ・オーディオ制作アプリケーションに見られるミキシング、プロセシング、フィルタリング処理に加え、近年のゲームオーディオ・エンジンに見られるような機能も持たせる事を目標とします。
+この仕様では、近年のデスクトップ・オーディオ制作アプリケーションに見られるミキシング、プロセシング、フィルタリング処理に加え、近年のゲームオーディオエンジンに見られるような機能も持たせる事を目標とします。
 </p>
 
 <p>APIはさまざまな<a href="#ExampleApplications-section">使用例</a>を考慮して設計されています。
 理想的には<i>全ての</i>使用例は、JavaScriptから制御される最適化されたC++エンジンを使って無理なく実装でき、ブラウザで動作しなくてはなりません。
 とは言うものの近年のデスクトップ・オーディオソフトウェアは極めて高度な機能を持ち、それらの一部はこのシステムを使ったとしても構築する事が困難か不可能と考えられます。
-Apple社のLogic Audioがそのようなアプリケーションの1つであり、外部MIDIコントローラー、任意のプラグイン・オーディオ・エフェクトやシンセサイザー、高度に最適化されたオーディオファイルのディスクへの読み込み/書き出し、密に統合されたタイムストレッチなどなどをサポートしています。
+Apple社のLogic Audioがそのようなアプリケーションの1つであり、外部MIDIコントローラー、任意のプラグイン・オーディオエフェクトやシンセサイザー、高度に最適化されたオーディオファイルのディスクへの読み込み/書き出し、密に統合されたタイムストレッチなどなどをサポートしています。
 それでもなおここで提案するシステムは、音楽に関するものを含めて、かなり複雑なゲームやインタラクティブ・アプリケーションの広い範囲を充分にサポートする事が可能です。
 またそれは、WebGLによってもたらされるより高度なグラフィックスの機能をよく引き立たせる事が可能です。
 このAPIはより高度な機能を後から追加できるように設計されています。
@@ -423,7 +423,7 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
   <li>単純な、または<a href="#MixerGainStructure-section">複数のセンド、サブミックス</a>を含む複雑なミキシング/エフェクト・アーキテクチャのための<a href="#ModularRouting-section">モジュラールーティング</a></li>
   <li> 非常に高度なリズムの精度を必要とするドラムマシンやシーケンサーなどのアプリケーションのための、低<a href="#Latency-section">レイテンシー</a>な<a href="#AudioParam">サンプル単位の時間精度での音の再生</a>
     これはまた、エフェクトの<a href="#DynamicLifetime-section">動的生成</a>の可能性も含んでいます。</li>
-  <li>エンベロープ、フェードイン/フェードアウト、グラニュラーエフェクト、フィルタースイープ、LFOなどのためのオーディオパラメータのオートメーション</li>
+  <li>エンベロープ、フェードイン/フェードアウト、グラニュラーエフェクト、フィルタスイープ、LFOなどのためのオーディオパラメータのオートメーション</li>
   <li>分割や結合など、オーディオストリームのチャンネルに対する柔軟な扱い</li>
   <li><code>audio</code> または <code>video</code> <a href="#MediaElementAudioSourceNode">メディア要素</a>からのオーディオに対する処理</li>
   <li>getUserMedia()からの<a href="#MediaStreamAudioSourceNode">MediaStream</a>を使用したライブオーディオに対する処理</li>
@@ -436,7 +436,7 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
   <li><a href="#JavaScriptProcessing-section">JavaScriptでの直接的な</a>オーディオストリームの合成および加工</li>
   <li>3Dゲームや没入環境を幅広くサポートする<a href="#Spatialization-section">空間音響</a>:
     <ul>
-      <li>パンニング・モデル: 等価パワー, HRTF, パススルー </li>
+      <li>パンニングモデル: 等価パワー, HRTF, パススルー </li>
       <li>距離減衰 </li>
       <li>サウンドコーン </li>
       <li>障害物 / 遮蔽物 </li>
@@ -444,7 +444,7 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
       <li>ソース / リスナーベース</li>
     </ul>
   </li>
-  <li>広範囲の線形エフェクト、特に非常に高い品質のルーム・エフェクトに使用できる<a href="#Convolution-section">コンボリューション・エンジン</a>。
+  <li>広範囲の線形エフェクト、特に非常に高い品質のルーム・エフェクトに使用できる<a href="#Convolution-section">コンボリューションエンジン</a>。
     可能なエフェクトの例を以下に示します:
     <ul>
       <li>小さい / 大きい部屋 </li>
@@ -471,9 +471,9 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
 </div>
 
 <div id="ModularRouting-section">
-<h2 id="ModularRouting">1.2. モジュラー・ルーティング <button onclick="OpenOriginal('ModularRouting')">原文</button></h2>
+<h2 id="ModularRouting">1.2. モジュラールーティング <button onclick="OpenOriginal('ModularRouting')">原文</button></h2>
 
-<p>モジュラー・ルーティングによって異なる <a href="#AudioNode-section"><code>AudioNode</code></a> オブジェクト同士を任意に接続できます。
+<p>モジュラールーティングによって異なる <a href="#AudioNode-section"><code>AudioNode</code></a> オブジェクト同士を任意に接続できます。
 それぞれのノードは<dfn>入力</dfn>および<dfn>出力</dfn>を持っています。
 <dfn>ソースノード</dfn>は入力は持たず、1つの出力を持ちます。
 <dfn>デスティネーションノード</dfn>は1つの入力を持ち、出力は持っていません。この最も一般的な例が最終的なオーディオハードウェアに繋がる<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>です。
@@ -661,7 +661,7 @@ function setupRoutingGraph () {
     GainNodeを使う事でミキサーが<a href="#MixerGainStructure-section">簡単に構成</a>できます。
   </li>
   <li><a class="dfnref" href="#BiquadFilterNode-section">BiquadFilterNode</a>インターフェースは、
-    次のような一般的な低次のフィルターのAudioNodeです。:
+    次のような一般的な低次のフィルタのAudioNodeです。:
     <ul>
       <li>ローパス </li>
       <li>ハイパス </li>
@@ -682,10 +682,10 @@ function setupRoutingGraph () {
   <li><a class="dfnref" href="#ConvolverNode-section">ConvolverNode</a>インターフェースは、
     (例えばコンサートホールでの残響効果のような)<a href="#Convolution-section">リアルタイム線形エフェクト</a>を加えるAudioNodeです。
   </li>
-  <li><a class="dfnref" href="#AnalyserNode-section">AnalyserNode</a>インターフェースは、ミュージック・ビジュアライザーやその他の視覚化アプリケーションで使用されます。
+  <li><a class="dfnref" href="#AnalyserNode-section">AnalyserNode</a>インターフェースは、ミュージックビジュアライザーやその他の視覚化アプリケーションで使用されます。
   </li>
   <li><a class="dfnref" href="#ChannelSplitterNode-section">ChannelSplitterNode</a>インターフェースは、
-    ルーティンググラフ内のオーディオトスリームの個別のチャンネルにアクセスするために使用します。
+    ルーティンググラフ内のオーディオストリームの個別のチャンネルにアクセスするために使用します。
   </li>
   <li><a class="dfnref" href="#ChannelMergerNode-section">ChannelMergerNode</a>インターフェースは、
     複数のオーディオストリームから1つのオーディオストリームにチャンネルの結合を行います。
@@ -732,7 +732,7 @@ function setupRoutingGraph () {
 <h2 id="API-section">4. オーディオAPI <button onclick="OpenOriginal('API-section')">原文</button></h2>
 
 <div id="AudioContext-section-section" class="section">
-<h2 id="AudioContext-section">4.1. AudioContextインターフェイス <button onclick="OpenOriginal('AudioContext-section')">原文</button></h2>
+<h2 id="AudioContext-section">4.1. AudioContextインターフェース <button onclick="OpenOriginal('AudioContext-section')">原文</button></h2>
 
 <p>このインターフェースは<a href="#AudioNode-section"><code>AudioNode</code></a>の集合やそれらの接続を表すインターフェースです。
 それは(最終的にユーザーが聴く事になる)<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>までの信号を任意に接続する事ができます。
@@ -940,7 +940,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 </dl>
 <dl>
   <dt id="dfn-createBiquadFilter"><code>createBiquadFilter</code>メソッド</dt>
-    <dd><p>幾つかのフィルタータイプに設定可能な2次フィルターを表す<a href="#BiquadFilterNode-section"><code>BiquadFilterNode</code></a>を作成します。</p>
+    <dd><p>幾つかのフィルタタイプに設定可能な2次フィルタを表す<a href="#BiquadFilterNode-section"><code>BiquadFilterNode</code></a>を作成します。</p>
     </dd>
 </dl>
 <dl>
@@ -1317,7 +1317,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 <li><em>接続</em>参照。別の<code>AudioNode</code>から接続されている場合に発生します。</li>
 <li><em>tail-time</em>参照。何かしらの内部プロセスで未解放のステートになっている場合は、その間、自分自身を維持します。
   例えば、<code>ConvolverNode</code>は無音の入力を受けた後でも再生し続ける tail を持ちます。
-  (大きいコンサート・ホールで柏手を打つと、ホール中で響きわたる音が聞こえるのをイメージして下さい)。
+  (大きいコンサートホールで柏手を打つと、ホール中で響きわたる音が聞こえるのをイメージして下さい)。
   いくつかの<code>AudioNode</code>は、この特性を持ちます。
   各ノードの詳細を見てください。
 </li>
@@ -1401,7 +1401,7 @@ interface <dfn id="dfn-AudioDestinationNode">AudioDestinationNode</dfn> : AudioN
 
 <p>AudioParam は<a href="#AudioNode-section"><code>AudioNode</code></a>の例えば音量のような個別の機能をコントロールします。
 パラメータは<code>value</code>属性を使って特定の値に即時にセットする事ができます。
-あるいは(AudioContext.currentTimeと連動した)非常に高い時間精度で値の変化のスケジュールを組む事ができ、エンベロープ、音量のフェード、LFO、フィルタースイープ、グレイン窓、などに応用する事ができます。
+あるいは(AudioContext.currentTimeと連動した)非常に高い時間精度で値の変化のスケジュールを組む事ができ、エンベロープ、音量のフェード、LFO、フィルタスイープ、グレイン窓、などに応用する事ができます。
 このような方法で任意のタイムラインベースのオートメーション曲線をすべてのAudioParamに対して設定する事が可能です。
 また更に、<code>AudioNode</code>からの出力の音声信号を<code>AudioParam</code>に接続する事ができ、
 <em>個別</em>に持っているパラメータの値に加算する事ができます。</p>
@@ -1544,7 +1544,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 <dl>
   <dt id="dfn-exponentialRampToValueAtTime"><code>exponentialRampToValueAtTime</code> メソッド</dt>
     <dd><p>前にスケジュールされているバラメータ値から指定された値まで、指数的に連続して値を変化させる事をスケジュールします。
-      フィルターの周波数や再生スピードなどのパラメータは人間の聴覚特性のため、指数的変化が適しています。
+      フィルタの周波数や再生スピードなどのパラメータは人間の聴覚特性のため、指数的変化が適しています。
       </p>
       <p><dfn id="dfn-value_4">value</dfn>は指定された時刻に指数的変化で到達する値です。
         もし値が0かそれ以下、または前のイベントによる値が0かそれ以下の場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。
@@ -1572,7 +1572,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
       <p><dfn id="dfn-target">target</dfn>は与えられた時刻になると<em>開始</em>する変化の目標値を指定します。
       </p>
       <p><dfn id="dfn-startTime">startTime</dfn>はAudioContext.currentTimeと同じ時間軸の時刻です。</p>
-      <p><dfn id="dfn-timeConstant">timeConstant</dfn>は目標の値に(指数的に)漸近する一次フィルターの時定数です。
+      <p><dfn id="dfn-timeConstant">timeConstant</dfn>は目標の値に(指数的に)漸近する一次フィルタの時定数です。
         大きな値だと変化はゆっくりになります。
       </p>
       <p>
@@ -1951,7 +1951,7 @@ interface <dfn id="dfn-AudioBufferSourceNode">AudioBufferSourceNode</dfn> : Audi
     <dd><p><a href="#AudioBufferSourceNode-section"><code>AudioBufferSourceNode</code></a>ノードにディスパッチされる終了イベントに対する
       (<cite><a href="http://www.whatwg.org/specs/web-apps/current-work/#eventhandler">HTML</a></cite>で記述されている)<code>EventHandler</code>を設定するための属性です。
       <code>AudioBufferSourceNode</code>のバッファの再生が終わった時、(<cite><a href="http://www.whatwg.org/specs/web-apps/current-work/#event">HTML</a></cite>で記述されている)
-      イベントタイプ<code>Event</code>がイベントハンドラーにディスパッチされます。</p>
+      イベントタイプ<code>Event</code>がイベントハンドラにディスパッチされます。</p>
     </dd>
 </dl>
 
@@ -2139,7 +2139,7 @@ interface <dfn id="dfn-ScriptProcessorNode">ScriptProcessorNode</dfn> : AudioNod
     <dd><p><a href="#ScriptProcessorNode-section"><code>ScriptProcessorNode</code></a>にディスパッチされるオーディオプロセスイベントの
       (<cite><a href="http://www.whatwg.org/specs/web-apps/current-work/#eventhandler">HTML</a></cite>で記述されている)<code>EventHandler</code>
       を設定するための属性です。
-      <a href="#AudioProcessingEvent-section"><code>AudioProcessingEvent</code></a>型のイベントがイベントハンドラーにディスパッチされます。</p>
+      <a href="#AudioProcessingEvent-section"><code>AudioProcessingEvent</code></a>型のイベントがイベントハンドラにディスパッチされます。</p>
     </dd>
 </dl>
 <dl>
@@ -2158,7 +2158,7 @@ interface <dfn id="dfn-ScriptProcessorNode">ScriptProcessorNode</dfn> : AudioNod
 <p>これは<a href="#ScriptProcessorNode-section"><code>ScriptProcessorNode</code></a>ノードにディスパッチされる
   <code>Event</code>オブジェクトです。</p>
 
-<p>イベントハンドラーは(もしあれば)入力からのオーディオを<code>inputBuffer</code>属性からデータにアクセスして処理します。
+<p>イベントハンドラは(もしあれば)入力からのオーディオを<code>inputBuffer</code>属性からデータにアクセスして処理します。
   処理結果(あるいは入力がなければ合成した)オーディオデータは<code>outputBuffer</code>に出力します。</p>
 
 <div class="block">
@@ -2916,13 +2916,13 @@ interface <dfn id="dfn-DynamicsCompressorNode">DynamicsCompressorNode</dfn> : Au
 <div id="BiquadFilterNode-section" class="section">
 <h2 id="BiquadFilterNode">4.21. BiquadFilterNode インターフェース <button onclick="OpenOriginal('BiquadFilterNode')">原文</button></h2>
 
-<p>BiquadFilterNodeは一般的な低次フィルターを実装したAudioNodeです。</p>
+<p>BiquadFilterNodeは非常に一般的な低次フィルタを実装したAudioNodeです。</p>
 
-<p>低次フィルターは基本的なトーンコントロール(バス、ミドル、トレブル)やグラフィックイコライザーやより高度なフィルターを構成するブロックです。
-  複数のBiquadFilterNodeフィルターを組み合わせてより複雑なフィルターを作る事もできます。
-  フィルターのパラメータの"frequency"などを時間と共に変化させてフィルタースイープやその他の効果を得る事もできます。
-  それぞれのBiquadFilterNodeは下のIDLで紹介する一般的なフィルターの型のうちの1つに設定する事ができます。
-  デフォルトのフィルターの型は"lowpass"です。</p>
+<p>低次フィルタは基本的なトーンコントロール(バス、ミドル、トレブル)やグラフィックイコライザーやより高度なフィルタを構成するブロックです。
+  複数のBiquadFilterNodeフィルタを組み合わせてより複雑なフィルタを作る事もできます。
+  フィルタのパラメータの"frequency"などを時間と共に変化させてフィルタスイープやその他の効果を得る事もできます。
+  それぞれのBiquadFilterNodeは下のIDLで紹介する一般的なフィルタの型のうちの1つに設定する事ができます。
+  デフォルトのフィルタの型は"lowpass"です。</p>
 
 <pre>    
     numberOfInputs  : 1
@@ -2971,9 +2971,9 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 </div>
 </div>
 
-<p>フィルターの型について以下で簡単に説明します。
-  我々はこれらのフィルターがオーディオ処理で非常に良く使われている事に気づきます。
-  実装的に言えばこれらはすべて標準的なアナログフィルターのプロトタイプから派生したものです。
+<p>フィルタの型について以下で簡単に説明します。
+  我々はこれらのフィルタがオーディオ処理で非常に良く使われている事に気づきます。
+  実装的に言えばこれらはすべて標準的なアナログフィルタのプロトタイプから派生したものです。
   より技術的な詳細については、我々はRobert Bristow-Johnsonによる素晴らしい解説文書を参照します。
   <a href="http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt">参照</a>
 </p>
@@ -2999,9 +2999,9 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 <div id="BiquadFilterNode-description-section" class="section">
 <h3 id="BiquadFilterNode-description">4.21.1 "lowpass" <button onclick="OpenOriginal('BiquadFilterNode-description')">原文</button></h3>
 
-<p><a href="http://en.wikipedia.org/wiki/Low-pass_filter">ローパスフィルター</a>は
+<p><a href="http://en.wikipedia.org/wiki/Low-pass_filter">ローパスフィルタ</a>は
   カットオフ周波数より低い周波数をそのまま通し、カットオフよりも高い周波数を減衰させます。これは標準的な2次の
-  レゾナントローパスフィルターの実装で、12dB/オクターブのロールオフを持ちます。
+  レゾナントローパスフィルタの実装で、12dB/オクターブのロールオフを持ちます。
 </p>
 
 <blockquote>
@@ -3011,17 +3011,17 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
     <dt>Q</dt>
       <dd>カットオフ周波数にどれだけピークを付けて共振させるかを制御します。
         大きな値はより強く共振させます。
-        このフィルタータイプではこの値は伝統的な従来のQではなく、デシベルで表される共振の値である事に注意してください。</dd>
+        このフィルタタイプではこの値は伝統的な従来のQではなく、デシベルで表される共振の値である事に注意してください。</dd>
     <dt>gain</dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
   </dl>
 </blockquote>
 
 <h3 id="HIGHPASS">4.21.2 "highpass" <button onclick="OpenOriginal('HIGHPASS')">原文</button></h3>
 
-<p><a href="http://en.wikipedia.org/wiki/High-pass_filter">ハイパスフィルター</a>はローパスフィルターの反対の機能を持ちます。
+<p><a href="http://en.wikipedia.org/wiki/High-pass_filter">ハイパスフィルタ</a>はローパスフィルタの反対の機能を持ちます。
   カットオフ周波数よりも高い周波数をそのまま通し、カットオフよりも低い周波数を減衰させます。
-  これは標準的な2次レゾナントハイパスフィルターの実装で、12dB/オクターブのロールオフを持ちます。</p>
+  これは標準的な2次レゾナントハイパスフィルタの実装で、12dB/オクターブのロールオフを持ちます。</p>
 
 <blockquote>
   <dl>
@@ -3030,16 +3030,16 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
     <dt>Q</dt>
       <dd>カットオフ周波数にどれだけピークを付けて共振させるかを制御します。
         大きな値はより強く共振させます。
-        このフィルタータイプではこの値は伝統的な従来のQではなく、デシベルで表される共振の値である事に注意してください。</dd>
+        このフィルタタイプではこの値は伝統的な従来のQではなく、デシベルで表される共振の値である事に注意してください。</dd>
     <dt>gain</dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
   </dl>
 </blockquote>
 
 <h3 id="BANDPASS">4.21.3 "bandpass" <button onclick="OpenOriginal('BANDPASS')">原文</button></h3>
 
-<p>A <a href="http://en.wikipedia.org/wiki/Band-pass_filter">バンドパスフィルター</a>はある範囲の周波数をそのまま通し、この周波数範囲より上または下の周波数を減衰させます。
-  これは2次のバンドパスフィルターを実装しています。</p>
+<p>A <a href="http://en.wikipedia.org/wiki/Band-pass_filter">バンドパスフィルタ</a>はある範囲の周波数をそのまま通し、この周波数範囲より上または下の周波数を減衰させます。
+  これは2次のバンドパスフィルタを実装しています。</p>
 
 <blockquote>
   <dl>
@@ -3048,21 +3048,21 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
     <dt><a href="http://en.wikipedia.org/wiki/Q_factor">Q</a></dt>
       <dd>周波数範囲の幅を制御します。この幅はQが増加すると狭くなります。</dd>
     <dt>gain</dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
   </dl>
 </blockquote>
 
 <h3 id="LOWSHELF">4.21.4 "lowshelf" <button onclick="OpenOriginal('LOWSHELF')">原文</button></h3>
 
-<p>ローシェルフフィルターは全ての周波数を通しますが、低い周波数だけを増幅(または減衰)させます。
-  これは2次のローシェルフフィルターを実装しています。</p>
+<p>ローシェルフフィルタは全ての周波数を通しますが、低い周波数だけを増幅(または減衰)させます。
+  これは2次のローシェルフフィルタを実装しています。</p>
 
 <blockquote>
   <dl>
     <dt>frequency</dt>
       <dd>増幅(または減衰)させる上限の周波数です。</dd>
     <dt><a href="http://en.wikipedia.org/wiki/Q_factor">Q</a></dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
     <dt>gain</dt>
       <dd>dBで表した増幅率です。もしこの値が負ならばその周波数は減衰されます。</dd>
   </dl>
@@ -3070,15 +3070,15 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="L16352">4.21.5 "highshelf" <button onclick="OpenOriginal('L16352')">原文</button></h3>
 
-<p>ハイシェルフフィルターはローシェルフフィルターとは反対に、すべての周波数を通しますが高い周波数だけを増幅します。
-  これは2次のハイシェルフフィルターを実装しています。</p>
+<p>ハイシェルフフィルタはローシェルフフィルタとは反対に、すべての周波数を通しますが高い周波数だけを増幅します。
+  これは2次のハイシェルフフィルタを実装しています。</p>
 
 <blockquote>
   <dl>
     <dt>frequency</dt>
       <dd>増幅(または減衰)させる下限の周波数です。</dd>
     <dt><a href="http://en.wikipedia.org/wiki/Q_factor">Q</a></dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
     <dt>gain</dt>
       <dd>dBで表した増幅率です。もしこの値が負ならばその周波数は減衰されます。</dd>
   </dl>
@@ -3086,7 +3086,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="PEAKING">4.21.6 "peaking" <button onclick="OpenOriginal('PEAKING')">原文</button></h3>
 
-<p>ピーキングフィルターは全ての周波数を通しますが、ある周波数の範囲だけが増幅(または減衰)されます。</p>
+<p>ピーキングフィルタは全ての周波数を通しますが、ある周波数の範囲だけが増幅(または減衰)されます。</p>
 
 <blockquote>
   <dl>
@@ -3101,7 +3101,7 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
 
 <h3 id="NOTCH">4.21.7 "notch" <button onclick="OpenOriginal('NOTCH')">原文</button></h3>
 
-<p>ノッチフィルター(<a href="http://en.wikipedia.org/wiki/Band-stop_filter">バンドストップまたはバンドリジェクション・フィルター</a>とも呼ばれます)は、バンドパスフィルターの逆です。
+<p>ノッチフィルタ(<a href="http://en.wikipedia.org/wiki/Band-stop_filter">バンドストップまたはバンドリジェクション・フィルタ</a>とも呼ばれます)は、バンドパスフィルタの逆です。
   ある周波数を除く全ての周波数を通します。</p>
 
 <blockquote>
@@ -3111,14 +3111,14 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
     <dt><a href="http://en.wikipedia.org/wiki/Q_factor">Q</a></dt>
       <dd>減衰させる周波数の幅を制御します。大きな値は幅が狭い事を意味します。</dd>
     <dt>gain</dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
   </dl>
 </blockquote>
 
 <h3 id="ALLPASS">4.21.8 "allpass" <button onclick="OpenOriginal('ALLPASS')">原文</button></h3>
 
-<p><a href="http://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">オールパスフィルター</a>は全ての周波数を通しますが、周波数の変化に対して位相が変化します。
-  これは2次のオールパスフィルターを実装しています。</p>
+<p><a href="http://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">オールパスフィルタ</a>は全ての周波数を通しますが、周波数の変化に対して位相が変化します。
+  これは2次のオールパスフィルタを実装しています。</p>
 
 <blockquote>
   <dl>
@@ -3127,14 +3127,14 @@ interface <dfn id="dfn-BiquadFilterNode">BiquadFilterNode</dfn> : AudioNode {
     <dt><a href="http://en.wikipedia.org/wiki/Q_factor">Q</a></dt>
       <dd>中心周波数での位相変化がどれくらい急峻であるかを制御します。値が大きいと、より急峻な位相変化で大きな群遅延である事を意味します。</dd>
     <dt>gain</dt>
-      <dd>このフィルターのタイプでは使用しません。</dd>
+      <dd>このフィルタのタイプでは使用しません。</dd>
   </dl>
 </blockquote>
 
 <h3 id="Methods">4.21.9. メソッド <button onclick="OpenOriginal('Methods')">原文</button></h3>
 <dl>
   <dt id="dfn-getFrequencyResponse"><code>getFrequencyResponse</code> メソッド</dt>
-    <dd><p>現在のフィルターパラメータの設定から指定の周波数に対する応答特性を計算します。</p>
+    <dd><p>現在のフィルタパラメータの設定から指定の周波数に対する応答特性を計算します。</p>
       <p><dfn id="dfn-frequencyHz">frequencyHz</dfn>パラメータは応答特性を計算する周波数の配列を指定します。</p>
       <p><dfn id="dfn-magResponse">magResponse</dfn>パラメータはリニア振幅特性の値を受け取る配列を指定します。</p>
       <p><dfn id="dfn-phaseResponse">phaseResponse</dfn>パラメータはラジアン単位の位相特性を受け取る配列を指定します。</p>
@@ -3218,7 +3218,7 @@ interface <dfn id="dfn-WaveShaperNode">WaveShaperNode</dfn> : AudioNode {
     <li>シェイピング曲線を適用します。</li>
     <li>結果をAudioContextのサンプルレートにダウンサンプリングします。
       つまり処理された256(あるいは512)サンプルは最終的な結果として128サンプルを生成します。</li>
-    </ol>アップサンプリングとダウンサンプリングフィルターの詳細は定められておらず、(エイリアス低減などの)音の品質向上、低レイテンシー性、パフォーマンス面でのチューニングが可能です。
+    </ol>アップサンプリングとダウンサンプリングフィルタの詳細は定められておらず、(エイリアス低減などの)音の品質向上、低レイテンシー性、パフォーマンス面でのチューニングが可能です。
     </dd>
 </dl>
 </div>
@@ -3235,7 +3235,7 @@ interface <dfn id="dfn-WaveShaperNode">WaveShaperNode</dfn> : AudioNode {
   OscillatorNodeは<code>start()</code>メソッドで指定された時刻に音の発生を開始します。</p>
 
 <p>数学的に言えば、<em>連続した時間</em>の周期波形は周波数領域で考えた場合、非常に高い(あるいは無限に高い)周波数情報を持つ事ができます。
-  この波形があるサンプルレートの離散時間のデジタルオーディオ信号としてサンプリングされる場合、波形をデジタル化する前に<em>ナイキスト</em>周波数(サンプリング周波数の半分)よりも高い高周波数成分の除去(フィルターで取り除く事)を考慮しなくてはなりません。
+  この波形があるサンプルレートの離散時間のデジタルオーディオ信号としてサンプリングされる場合、波形をデジタル化する前に<em>ナイキスト</em>周波数(サンプリング周波数の半分)よりも高い高周波数成分の除去(フィルタで取り除く事)を考慮しなくてはなりません。
   これを行わない場合、(ナイキスト周波数よりも)高い周波数の<em>エイリアス</em>がナイキスト周波数よりも低い周波数に鏡像として折り返されます。
   多くの場合、これは音として聴こえる好ましくないノイズを引き起こします。
   これはオーディオDSPにおける基本的で良く知られている原理です。
@@ -3327,7 +3327,7 @@ interface <dfn id="dfn-OscillatorNode">OscillatorNode</dfn> : AudioNode {
       を設定するために使われる属性です。
       <code>OscillatorNode</code>のバッファ再生が終了した時、
       (<cite><a href="http://www.whatwg.org/specs/web-apps/current-work/#event">HTML</a></cite>で記述される)イベントタイプ<code>Event</code>が
-      イベントハンドラーにディスパッチされます。<span class="annotate">(訳注:この部分の記述はAudioBufferSourceNodeとの混同があります)</span></p>
+      イベントハンドラにディスパッチされます。<span class="annotate">(訳注:この部分の記述はAudioBufferSourceNodeとの混同があります)</span></p>
     </dd>
 </dl>
 </div>
@@ -3482,7 +3482,7 @@ src="images/unity-gain-summing-junction.png" />
 <p>各出力のチャンネルレイアウトが一致しない場合は、<a href="#UpMix-section">ミキシング規則</a>に従ってミックス(通常はアップミックス)が行われます。
 </p>
 
-<h3 id="gain-Control">ゲイン・コントロール</h3>
+<h3 id="gain-Control">ゲインコントロール</h3>
 
 <p>しかし多くの場合、それぞれの出力信号のゲインを制御できる事が重要です。
   <a href="#GainNode-section"><code>GainNode</code></a>によってこのコントロールが可能です:
@@ -3642,7 +3642,7 @@ function setupRoutingGraph() {
 Example</div>
 <img alt="dynamic allocation" src="images/dynamic-allocation.png" /> 
 
-<p>ローパスフィルター、パンナー、2番目のゲインノードがワンショットの音から直接接続されています。
+<p>ローパスフィルタ、パンナー、2番目のゲインノードがワンショットの音から直接接続されています。
   そのため再生が終わった時、コンテキストは自動的にそれら(点線内の全て)を解放します。
   もしJavaScriptからワンショットの音とそれに接続されているノードへの参照がもう無ければ、それらは
   すぐにグラフから外され、破棄されます。
@@ -3802,7 +3802,7 @@ function playSound() {
 </p>
 
 <p>
-  ではまず、モノラル、ステレオ、クワド、5.1について考えてみます。
+  ではまず、モノラル、ステレオ、クワッド、5.1について考えてみます。
   その他のチャンネル配置は後で定義します。
 </p>
 
@@ -3962,7 +3962,7 @@ gain.channelInterpretation = "speakers";
 <h3 id="Spatialization-background">背景</h3>
 
 <p>最近の3Dゲームで良く要求される機能として、動的な空間音響と複数の音源の3D空間での移動があります。
-  OpenAL、FMOD、クリエイティブ社のEAX、マイクロソフト社のXACT Audioなどのようなゲームオーディオ・エンジンはこの機能を持っています。
+  OpenAL、FMOD、クリエイティブ社のEAX、マイクロソフト社のXACT Audioなどのようなゲームオーディオエンジンはこの機能を持っています。
 </p>
 
 <p><code>PannerNode</code>を使って、オーディオストリームを<code>AudioListener</code>に対する相対的な空間位置に配置し、定位させる事ができます。
@@ -3978,7 +3978,7 @@ gain.channelInterpretation = "speakers";
 
   <p>レンダリングの間、<code>PannerNode</code>は<em>azimuth</em>と<em>elevation</em>を計算します。
   これらの値は空間配置をレンダリングするために実装によって内部的に使用されます。
-  これらの値がどのように使われるかの詳細については、<a href="#Spatialization-panning-algorithm">パンニング・アルゴリズム</a>を参照してください。
+  これらの値がどのように使われるかの詳細については、<a href="#Spatialization-panning-algorithm">パンニングアルゴリズム</a>を参照してください。
 </p>
 
 <p><em>azimuth</em>と<em>elevation</em>を計算するために、次のアルゴリズムが使用されなくてはなりません:
@@ -4053,7 +4053,7 @@ else if (elevation &lt; -90)
     <p>これは基本的な、簡単で比較的コストの低いアルゴリズムですが、妥当な結果が得られます。
       これは音楽ソースに対するパンニングで良く用いられます。
     </p>
-    このパンニング・アルゴリズムでは<em>elevation</em>値は無視されます。
+    このパンニングアルゴリズムでは<em>elevation</em>値は無視されます。
 
     <p>
       処理のため、次のステップが使われます:
@@ -4288,7 +4288,7 @@ if (dopplerFactor > 0) {
 
 <p><a href="http://en.wikipedia.org/wiki/Convolution">コンボリューション</a>はオーディオ信号に、興味深い多くの高品質な線形エフェクトを施すための数学的な処理です。
   このエフェクトは、例えばコンサートホール、教会、屋外劇場のような音響空間をシミュレートするために、非常に頻繁に使われます。
-  それはまた例えば、クローゼットの中から聴こえるくぐもった音や、水中の音、電話を通した音、古いスピーカーキャビネットで演奏した音などのような複雑なフィルターエフェクトにも使用されます。
+  それはまた例えば、クローゼットの中から聴こえるくぐもった音や、水中の音、電話を通した音、古いスピーカーキャビネットで演奏した音などのような複雑なフィルタエフェクトにも使用されます。
   この技術は、主要な動画や音楽の制作で非常に一般的に使われ、極めて応用範囲が広く高品質なものです。
 </p>
 
@@ -4298,16 +4298,16 @@ if (dopplerFactor > 0) {
 
 <h3 id="Convolution-motivation">標準として使用する動機</h3>
 
-<p>多くのゲームオーディオ・エンジン(OpenAL、FMOD、クリエイティブ社のEAX、マイクロソフト社のXACTなど)の特徴的な機能として、音響空間での残響エフェクトのシミュレーションがあります。
+<p>多くのゲームオーディオエンジン(OpenAL、FMOD、クリエイティブ社のEAX、マイクロソフト社のXACTなど)の特徴的な機能として、音響空間での残響エフェクトのシミュレーションがあります。
   しかしエフェクトを発生するためのコードは一般的に特殊で、アルゴリズム的です
-  (一般的には手作業での微調整が行われた、相互にフィードバックを掛けたディレイとオールパスフィルターの組み合わせです)。
+  (一般的には手作業での微調整が行われた、相互にフィードバックを掛けたディレイとオールパスフィルタの組み合わせです)。
   ほとんどの場合、そのコードは特殊な実装であるだけでなく、プロプライエタリであり、ソースは公開されておらず、各社が唯一の品質を達成するための独自の"魔術"を加えています。
   それぞれの実装は、異なるパラメータセットを持った特殊なものになり、欲しい効果を統一的に得る事が不可能になっています。
   そしてそのコードはプロプライエタリであるため、どの実装も標準として採用する事が不可能です。
   更に、アルゴリズム的な残響エフェクトは、パラメータにどのように手を加えても効果のバリエーションは比較的狭い範囲に限られます。
 </p>
 
-<p>コンボリューション・エフェクトはこれらの問題を、非常に正確に定義された数学的アルゴリズムを基本処理として使う事で解決します。
+<p>コンボリューションエフェクトはこれらの問題を、非常に正確に定義された数学的アルゴリズムを基本処理として使う事で解決します。
   インパルスレスポンスはオーディオストリームに適用する音響効果を、URLで示す事ができるオーディオファイルによって正確に表現します。
   可能なエフェクトの範囲は膨大です。
 </p>
@@ -4379,7 +4379,7 @@ Usage: convolve input_file impulse_response_file output_file</pre>
 <h3 id="recording-setup">レコーディング・セットアップ <button onclick="OpenOriginal('recording-setup')">原文</button></h3>
 <img alt="recording setup" src="images/recording-setup.png" /> <br />
 <br />
-オーディオインータフェース: Metric Halo Mobile I/O 2882 <br />
+オーディオインターフェース: Metric Halo Mobile I/O 2882 <br />
 <br />
 <br />
 <br />
@@ -4447,7 +4447,7 @@ src="images/speaker.png" /> <br />
 ある程度のレベルになるとそれはタイミングに影響し、音が遅れている、あるいはゲームが反応しないなどの印象を与えます。
 音楽アプリケーションではタイミングの問題はリズムに影響します。
 ゲームではタイミングの問題はゲームプレイの精度に影響します。
-インタラクティプなアプリケーションでは、それは一般的にアニメーションのフレームレートがとても低いのと同じようにユーザー体験を非常に安っぽくします。
+インタラクティブなアプリケーションでは、それは一般的にアニメーションのフレームレートがとても低いのと同じようにユーザー体験を非常に安っぽくします。
 満足できるレイテンシーはアプリケーションによって異なり、3～6ミリ秒から25～50ミリ秒程度です。
 </p>
 
@@ -4470,7 +4470,7 @@ src="images/speaker.png" /> <br />
 
 <p>システムはモバイルフォンやタブレットデバイスからラップトップ、デスクトップコンピュータまで広い範囲のハードウェアで動作しなくてはなりません。
 しかし、よりコンピューティングリソースに制限のある電話デバイスでは、規模を縮小してオーディオレンダリングの複雑さを減少させる技術について考慮する必要があります。
-例えば、ある時間に同時に発音するノートの合計数を減らすため、ボイス・ドロッピング・アルゴリズムを実装する事もできます。</p>
+例えば、ある時間に同時に発音するノートの合計数を減らすため、ボイスドロッピング・アルゴリズムを実装する事もできます。</p>
 
 <p>ここにCPU消費を抑えるための幾つかの技術をあげます:
 </p>
@@ -4485,11 +4485,11 @@ src="images/speaker.png" /> <br />
   またそれは、JavaScriptからの使用のため<code>AudioNode</code>の<code>cpuUsage</code>属性を通して見えるようにする事もできます。
 </p>
 
-<p>計測されたCPU消費が100%に近く(あるいは高すぎると考えられるどんなスレッショルドでも)になった時、レンダリンググラフに更に<code>AudioNodes</code>を追加しようとするとボイス・ドロッピングをトリガーする事もできます。</p>
+<p>計測されたCPU消費が100%に近く(あるいは高すぎると考えられるどんなスレッショルドでも)になった時、レンダリンググラフに更に<code>AudioNodes</code>を追加しようとするとボイスドロッピングをトリガーする事もできます。</p>
 
-<h4 id="Voice-dropping">15.3.2. ボイス・ドロッピング</h4>
+<h4 id="Voice-dropping">15.3.2. ボイスドロッピング</h4>
 
-<p>ボイス・ドロッピングはCPU消費を適度な範囲に維持するため、同時に発音するボイス(ノート)の数を制限する技術です。
+<p>ボイスドロッピングはCPU消費を適度な範囲に維持するため、同時に発音するボイス(ノート)の数を制限する技術です。
   許されるボイスの合計数に上限のスレッショルドを設定するか、または、動的にCPU消費を監視しCPU消費がスレッショルドを超えたらボイスをドロップする事もできます。
   あるいは、それら2つの技術の組み合わせにする事も可能です。
   各ボイスについてのCPU消費を監視する場合、それはソースノードから経由するエフェクトでの、そのボイスに対する処理の全体について計測する事も可能です。
@@ -4510,15 +4510,15 @@ src="images/speaker.png" /> <br />
 <h4 id="Simplification-of-Effects-Processing">15.3.3. エフェクトの単純化</h4>
 
 <p>この文書で記述されているエフェクトのほとんどは比較的コストが低く、低速のモバイル機器でも動作させる事ができそうなものです。
-  しかしながら、<a href="#ConvolverNode-section">コンボリューション・エフェクト</a>では様々なインパルスレスポンスが設定でき、その幾つかはモバイル機器では重すぎる事もあります。
+  しかしながら、<a href="#ConvolverNode-section">コンボリューションエフェクト</a>では様々なインパルスレスポンスが設定でき、その幾つかはモバイル機器では重すぎる事もあります。
   一般的に言えば、CPU消費はインパルスレスポンスの長さとチャンネル数で変わります。
   そのため、インパルスレスポンスがある程度の長さを超える場合には、実行させないという考え方も合理的です。
   正確なリミットは機器の速度から決定する事もできます。
   これらの長いレスポンスのコンボリューションを完全に排除する代わりにインパルスレスポンスの長さを許される最大値まで短縮する、あるいはインパルスレスポンスのチャンネル数を削減するのも面白いかも知れません。
 </p>
 
-<p>コンボリューション・エフェクトに加え、<a href="#PannerNode-section"><code>PannerNode</code></a>もまた、HRTFパンニングモデルを使う場合には、コストが高くなるかも知れません。
-  より低速な機器では、コンピューティング・リソースを節約するためにEQUALPOWERのようなコストの低いアルゴリズムを使う事もできます。</p>
+<p>コンボリューションエフェクトに加え、<a href="#PannerNode-section"><code>PannerNode</code></a>もまた、HRTFパンニングモデルを使う場合には、コストが高くなるかも知れません。
+  より低速な機器では、コンピューティングリソースを節約するためにEQUALPOWERのようなコストの低いアルゴリズムを使う事もできます。</p>
 
 <h4 id="Sample-rate">15.3.4. サンプルレート</h4>
 
@@ -4530,7 +4530,7 @@ src="images/speaker.png" /> <br />
 
 <p>マシンパワーを大まかに決定するため、(JavaScriptを通して)ある種の"プリフライト"コードを呼び出す事が可能です。
   そしてJavaScriptコードはこの情報を、それ以上処理が集中しないよう、パワフルなマシンでは通常動作する処理を縮小するために使用できます。
-  また、下層にある実装がボイス・ドロッピングアルゴリズムの中でこの情報を要素として使用しても良いでしょう。</p>
+  また、下層にある実装がボイスドロッピング・アルゴリズムの中でこの情報を要素として使用しても良いでしょう。</p>
 
 <p><span class="ednote">TODO: add specification and more detail here </span></p>
 
@@ -4596,7 +4596,7 @@ JavaScriptコードはユーザーエージェント情報を、処理が集中�
 <p>音を伴った3D環境はデスクトップアプリケーションとゲームコンソールのゲームでは一般的です。
   空間音響を持った3Dの島の環境で、カモメが頭上を飛び、波が海岸に打ち付け、火が爆ぜ、橋が軋み、木々が風にざわつくのを想像してみてください。
   人がそのシーン中を移動すると音も自然な位置に移動します。
-  更に水中に潜ると、ローパスフィルターによって手が加えられ、まさに水中にいるような音になります。
+  更に水中に潜ると、ローパスフィルタによって手が加えられ、まさに水中にいるような音になります。
 </p>
 <br />
 <br />
@@ -4607,7 +4607,7 @@ src="images/8-ball.png" /> <br />
 
 <p><a href="http://box2d.org/">Box2D</a>は興味深いオープンソースの2Dゲーム用物理エンジンです。
 これは様々な実装を持っていますが、その1つにCanvas 2Dを基にしたものがあります。
-速度ベクトルを考慮した音の空間への配置、フィルターカットオフなどのオーディオエフェクトのバラメータのモジュレーションを使い、オブジェクトの衝突に対する動的な効果音を持ったデモが作られました。
+速度ベクトルを考慮した音の空間への配置、フィルタカットオフなどのオーディオエフェクトのバラメータのモジュレーションを使い、オブジェクトの衝突に対する動的な効果音を持ったデモが作られました。
 </p>
 
 <p>マルチサンプルの効果音を使ったバーチャル・プールゲームも作られています。
@@ -4626,7 +4626,7 @@ alt="tonecraft" src="images/tonecraft.png" /> <br />
 <br />
 
 
-<h3 id="music-visualizers">ミュージック・ビジュアライザー</h3>
+<h3 id="music-visualizers">ミュージックビジュアライザー</h3>
 <img alt="music visualizer" src="images/music-visualizer.png" /> <br />
 <br />
 WebGLのGLSLシェーダーと組み合わせる事で、リアルタイム解析データをエンターテインメント的に表示する事ができます。
