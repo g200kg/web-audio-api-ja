@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Web Audio API</title>
+  <title>Web Audio API (日本語訳)</title>
   <meta name="revision"
   content="$Id: index.html,v 1.3 2013-10-07 20:39:19 schepers Exp $" />
   <link rel="stylesheet" href="style.css" type="text/css" />
@@ -41,8 +41,9 @@ function OpenOriginal(x) {
 </script>
 </head>
 <body>
+<h1>Web Audio API (日本語訳)</h1>
 <div style="background-color: #ddf; border: 1px solid #668; padding:10px 20px">
-  <p>この文書は、W3Cの文書 "Web Audio API」 W3C Working Draft 10 October 2013" の日本語訳です。
+  <p>この文書は、W3Cの文書 "「Web Audio API」 W3C Working Draft 10 October 2013" の日本語訳です。
   </p>
   <p>Web Audio APIの正式な文書は英語版のみであり、日本語訳には翻訳に起因する誤りが含まれている場合があります。<br/>
     正式な文書はW3Cのサイト : <a href="http://www.w3.org/TR/webaudio/">http://www.w3.org/TR/webaudio/</a>にあります。
@@ -50,8 +51,8 @@ function OpenOriginal(x) {
   <p>なお、翻訳元の文書もまだドラフト(Working Draft)です。現状ではまだ説明が不足している部分があったり、今後も頻繁に更新される可能性がある事に注意してください。
   </p>
   <p>
-    GitHub : <b><a href="https://github.com/g200kg/web-audio-api-ja">https://github.com/g200kg/web-audio-api-ja</a></b><br/>
-    公開URL : <b><a href="http://g200kg.github.io/web-audio-api-ja/">http://g200kg.github.io/web-audio-api-ja/</a></b>
+    日本語訳GitHub : <b><a href="https://github.com/g200kg/web-audio-api-ja">https://github.com/g200kg/web-audio-api-ja</a></b><br/>
+    日本語訳公開URL : <b><a href="http://g200kg.github.io/web-audio-api-ja/">http://g200kg.github.io/web-audio-api-ja/</a></b>
   </p>
   <p>Tatsuya Shinyagaito @ g200kg<br/>
     誤りその他があればGitHubページ、下のサイト経由などで連絡をお願いいたします。<br/>
@@ -411,8 +412,8 @@ HTML5での<code>audio</code>要素の導入は、基本的なストリーミン
 理想的には<i>全ての</i>使用例は、JavaScriptから制御される最適化されたC++エンジンを使って無理なく実装でき、ブラウザで動作しなくてはなりません。
 とは言うものの近年のデスクトップ・オーディオソフトウェアは極めて高度な機能を持ち、それらの一部はこのシステムを使ったとしても構築する事が困難か不可能と考えられます。
 Apple社のLogic Audioがそのようなアプリケーションの1つであり、外部MIDIコントローラー、任意のプラグイン・オーディオエフェクトやシンセサイザー、高度に最適化されたオーディオファイルのディスクへの読み込み/書き出し、密に統合されたタイムストレッチなどなどをサポートしています。
-それでもなおここで提案するシステムは、音楽に関するものを含めて、かなり複雑なゲームやインタラクティブ・アプリケーションの広い範囲を充分にサポートする事が可能です。
-またそれは、WebGLによってもたらされるより高度なグラフィックスの機能をよく引き立たせる事が可能です。
+それでもなお、ここで提案するシステムは、音楽に関するものを含めて、かなり複雑なゲームやインタラクティブ・アプリケーションの広い範囲を充分にサポートする事が可能です。
+またそれは、WebGLによってもたらされる、より高度なグラフィックスの機能をよく引き立たせる事が可能です。
 このAPIはより高度な機能を後から追加できるように設計されています。
 </p>
 <div id="Features-section" class="section">
@@ -420,9 +421,8 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
 
 <p>このAPIは、これらの基本機能をサポートします: </p>
 <ul>
-  <li>単純な、または<a href="#MixerGainStructure-section">複数のセンド、サブミックス</a>を含む複雑なミキシング/エフェクト・アーキテクチャのための<a href="#ModularRouting-section">モジュラールーティング</a></li>
-  <li> 非常に高度なリズムの精度を必要とするドラムマシンやシーケンサーなどのアプリケーションのための、低<a href="#Latency-section">レイテンシー</a>な<a href="#AudioParam">サンプル単位の時間精度での音の再生</a>
-    これはまた、エフェクトの<a href="#DynamicLifetime-section">動的生成</a>の可能性も含んでいます。</li>
+  <li>単純な、または<a href="#MixerGainStructure-section">複数のセンド、サブミックス</a>を含む複雑なミキシング/エフェクト・アーキテクチャーのための<a href="#ModularRouting-section">モジュラールーティング</a></li>
+  <li> 非常に高度なリズムの精度を必要とするドラムマシンやシーケンサーなどのアプリケーションのための、低<a href="#Latency-section">レイテンシー</a>な<a href="#AudioParam">サンプル単位の時間精度での音の再生</a>。これには、エフェクトを<a href="#DynamicLifetime-section">動的に生成</a>できるようにする事も含まれます</li>
   <li>エンベロープ、フェードイン/フェードアウト、グラニュラーエフェクト、フィルタスイープ、LFOなどのためのオーディオパラメータのオートメーション</li>
   <li>分割や結合など、オーディオストリームのチャンネルに対する柔軟な扱い</li>
   <li><code>audio</code> または <code>video</code> <a href="#MediaElementAudioSourceNode">メディア要素</a>からのオーディオに対する処理</li>
@@ -441,11 +441,11 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
       <li>サウンドコーン </li>
       <li>障害物 / 遮蔽物 </li>
       <li>ドップラー効果 </li>
-      <li>ソース / リスナーベース</li>
+      <li>ソース / リスナー</li>
     </ul>
   </li>
   <li>広範囲の線形エフェクト、特に非常に高い品質のルーム・エフェクトに使用できる<a href="#Convolution-section">コンボリューションエンジン</a>。
-    可能なエフェクトの例を以下に示します:
+    これによって可能なエフェクトの例を以下に示します:
     <ul>
       <li>小さい / 大きい部屋 </li>
       <li>大聖堂 </li>
@@ -478,7 +478,7 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
 <dfn>ソースノード</dfn>は入力は持たず、1つの出力を持ちます。
 <dfn>デスティネーションノード</dfn>は1つの入力を持ち、出力は持っていません。この最も一般的な例が最終的なオーディオハードウェアに繋がる<a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>です。
 フィルタなどの他のノードはソースとデスティネーションの間に配置することができます。
-開発者は2つのオブジェクトが互いに接続している場合、低レベルのストリーム形式の詳細について煩わされる事なく、<a href="#UpMix-section">適正な処理が行われます</a>。
+2つのオブジェクトが互いに接続している場合、低レベルのストリーム形式の詳細について開発者が煩わされる事なく、<a href="#UpMix-section">適正な処理が行われます</a>。
 例えばもしモノラルの音声ストリームがステレオの入力に接続されていても、左右のチャンネルに<a href="#UpMix-section">適正</a>にミックスされます。
 </p>
 
@@ -630,7 +630,7 @@ function setupRoutingGraph () {
   </li>
   <li><a class="dfnref" href="#AudioNode-section">AudioNode</a>インターフェースは、オーディオのソース、オーディオの出力、その間にある処理モジュールを表します。
     AudioNodeは<a href="#ModularRouting-section">モジュラー方式</a>で動的に互いに接続されます。
-     <code>AudioNodes</code>は<code>AudioContext</code>のコンテキスト内に存在します。
+     <code>AudioNode</code>は<code>AudioContext</code>のコンテキスト内に存在します。
   </li>
   <li><a class="dfnref" href="#AudioDestinationNode-section">AudioDestinationNode</a>インターフェースは、AudioNodeのサブクラスでオーディオの最終的な出力地点を表します。
   </li>
@@ -812,15 +812,15 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 <dl>
   <dt id="dfn-sampleRate"><code>sampleRate</code></dt>
     <dd><p>AudioContextが扱うオーディオのサンプルレート(1秒あたりのサンプルフレーム数)。
-      コンテキスト内のすべてのAudioNodesはこのレートで動作する事を想定しています。
+      コンテキスト内のすべてのAudioNodeはこのレートで動作する事を想定しています。
       これを想定するため、サンプレートコンバータや"可変速"処理はリアルタイム処理内ではサポートされません。</p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-currentTime"><code>currentTime</code></dt>
-    <dd><p>これはコンテキストが作成された時点を0として実時間で増加してゆく、秒であらわされる時刻です。
+    <dd><p>これはコンテキストが作成された時点を0として実時間で増加してゆく、秒で表される時刻です。
       全てのスケジュールされた時刻はこれに対する相対値となります。
-      これは再生、ポーズ、位置指定などが可能な"トランスポート"の時刻ではなく、
+      これは再生、ポーズ、位置指定などが可能な"トランスポート"<span class="annotate">(訳注:テープレコーダーなどの再生/巻き戻しなどの機構の事)</span>の時刻ではなく、
       常に増加する方向に進んでゆきます。GarageBandのようなタイムライン"トランスポート"型の
       システムはこの上に非常に簡単に(JavaScriptで)構築できます。
       この時刻は常に増加してゆくハードウェアのタイムスタンプに対応しています。
@@ -884,13 +884,13 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 <dl>
   <dt id="dfn-createMediaElementSource"><code>createMediaElementSource</code>メソッド</dt>
     <dd><p>与えられたHTMLMediaElementから<a href="#MediaElementAudioSourceNode-section"><code>MediaElementAudioSourceNode</code></a>を作成します。
-      このメソッドを呼び出すとHTMLMediaElementからのオーディオの再生はAudioContextの処理グラフ内の処理にルートを再設定されます。</p>
+      このメソッドを呼び出すとHTMLMediaElementからのオーディオの再生はAudioContextの処理グラフ内で処理されるようにルートを再設定されます。</p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-createMediaStreamSource"><code>createMediaStreamSource</code>メソッド</dt>
     <dd><p>与えられたMediaStreamから<a href="#MediaStreamAudioSourceNode-section"><code>MediaStreamAudioSourceNode</code></a>を作成します。
-      このメソッドを呼ぶとMediaStreamからのオーディオ再生はAudioContextの処理グラフ内の処理にルートを再設定されます。</p>
+      このメソッドを呼ぶとMediaStreamからのオーディオの再生はAudioContextの処理グラフ内で処理されるようにルートを再設定されます。</p>
     </dd>
 </dl>
 
@@ -905,8 +905,8 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
     <dd><p>JavaScriptによるオーディオデータ直接処理のための<a href="#ScriptProcessorNode"><code>ScriptProcessorNode</code></a>を作成します。
       もし、<code>bufferSize</code>または<code>numberOfInputChannels</code>または<code>numberOfOutputChannels</code>が範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
       <p><dfn id="dfn-bufferSize">bufferSize</dfn>パラメータはサンプルフレーム数でバッファのサイズを指定します。
-        もしそれが渡されない場合、または値が0である場合、実装はノードのライフタイムを通して一定な2の累乗である、動作環境に最適なバッファサイズを選択します。
-        そうでなければ、明示的にバッファサイズを指定します。それは次の値のどれかでなければなりません:
+        もしそれが渡されない場合、または値が0である場合、実装はノードのライフタイムを通して一定な、動作環境に最適な2の累乗のバッファサイズを選択します。
+        それ以外の場合、明示的にバッファサイズを指定します。それは次の値のどれかでなければなりません:
         256、512、1024、2048、4096、8192、16384。
         この値は<code>audioprocess</code>イベントが発生する頻度とそれぞれの呼び出しでどれだけのサンプルフレームを処理する必要があるかを制御します。
         <code>bufferSize</code>が小さい値ならば<a href="#Latency-section">レイテンシー</a>は低く(良く)なります。
@@ -933,19 +933,19 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 <dl>
   <dt id="dfn-createDelay"><code>createDelay</code>メソッド</dt>
     <dd><p>様々な遅延機能を表す<a href="#DelayNode-section"><code>DelayNode</code></a>を作成します。
-      初期のデフォルト遅延時間は0秒です。</p>
+      初期化時のデフォルト遅延時間は0秒です。</p>
       <p><dfn id="dfn-maxDelayTime">maxDelayTime</dfn>パラメータはオプションであり、その遅延機能の遅延時間の最大値を秒で指定します。
         もし指定する場合は、その値は0よりも大きく3分よりも小さくなければなりません(MUST)。そうでなければ NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。</p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-createBiquadFilter"><code>createBiquadFilter</code>メソッド</dt>
-    <dd><p>幾つかのフィルタタイプに設定可能な2次フィルタを表す<a href="#BiquadFilterNode-section"><code>BiquadFilterNode</code></a>を作成します。</p>
+    <dd><p>幾つかのタイプのフィルタに設定可能な2次フィルタを表す<a href="#BiquadFilterNode-section"><code>BiquadFilterNode</code></a>を作成します。</p>
     </dd>
 </dl>
 <dl>
   <dt id="dfn-createWaveShaper"><code>createWaveShaper</code>メソッド</dt>
-    <dd><p>非線形な歪みを表す<a href="#WaveShaperNode-section"><code>WaveShaperNode</code></a>を作成します。</p>
+    <dd><p>非線形な歪み効果を表す<a href="#WaveShaperNode-section"><code>WaveShaperNode</code></a>を作成します。</p>
     </dd>
 </dl>
 <dl>
@@ -987,7 +987,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
 <dl>
   <dt id="dfn-createPeriodicWave"><code>createPeriodicWave</code>メソッド</dt>
     <dd><p>任意の倍音構成を表す<a href="#PeriodicWave-section"><code>PeriodicWave</code></a>を作成します。
-      <code>real</code> および <code>imag</code>パラメータは<code>Float32Array</code>型で0より大きく4096以下の同じ長さでなくなはなりません。
+      <code>real</code> および <code>imag</code>パラメータは<code>Float32Array</code>型で0より大きく4096以下の同じ長さでなくてはなりません。
       そうでない場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。
       これらのパラメータは任意の周期波形を表す<a href="http://en.wikipedia.org/wiki/Fourier_series">フーリエ級数</a>の係数の一部分を表します。
       作成されたPeriodicWaveは<a href="#OscillatorNode-section"><code>OscillatorNode</code></a>と共に使用され、
@@ -1000,7 +1000,7 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
       オーディオの用語では最初の要素(インデックス0)は周期波形のDCオフセットであり、通常は0に設定されます。
       2番目の要素(インデックス1)は基本周波数を表します。3番目の要素は最初の倍音を表し、それ以降も同様に続いてゆきます。</p>
       <p><dfn id="dfn-imag">imag</dfn>パラメータは<code>サイン</code>項(慣習的な言い方でB項)の配列を表します。
-      最初の要素(インデックス0)はフーリエ級数には存在しないため、0でなくてはなりません(そして無視されます)。
+      最初の要素(インデックス0)はフーリエ級数には存在しないため、0でなくてはなりません(これは無視されます)。
       2番目の要素(インデックス1)は基本周波数を表します。3番目の要素は最初の倍音を表し、それ以降も同様に続いてゆきます。</p>
     </dd>
 </dl>
@@ -1059,7 +1059,7 @@ interface <dfn id="dfn-OfflineAudioContext">OfflineAudioContext</dfn> : AudioCon
   <dt id="dfn-startRendering"><code>startRendering</code>メソッド</dt>
     <dd><p>
       現在の接続とスケジュールされたパラメータ変化を与えて、オーディオのレンダリングを開始します。
-      レンダリング終了時に<code>oncomplete</code>ハンドラーが一度だけ呼び出されます。
+      レンダリング終了時に<code>oncomplete</code>ハンドラが一度だけ呼び出されます。
       このメソッドを呼び出すのは一度だけでなくてはなりません。
       そうでない場合、INVALID_STATE_ERR例外が発生します(MUST)。</p>
     </dd>
@@ -1114,14 +1114,14 @@ interface <dfn id="dfn-OfflineAudioCompletionEvent">OfflineAudioCompletionEvent<
   <a href="#AudioDestinationNode-section"><code>AudioDestinationNode</code></a>は
   単一の入力を持ち、出力を持たず、オーディオハードウェアへの最終的な出力地点を表しています。
   それぞれのタイプの<code>AudioNode</code>はどのようにオーディオを処理したり合成したりするかの詳細が異なっています。
-  しかし、一般的に<code>AudioNodes</code>は(持っていれば)その入力を処理し、(持っていれば)その出力にオーディオ信号を送り出します。
+  しかし、一般的に<code>AudioNode</code>は(持っていれば)その入力を処理し、(持っていれば)その出力にオーディオ信号を送り出します。
  </p>
  
 <p>それぞれの<dfn>出力</dfn>は1つ以上の<dfn>チャンネル</dfn>を持っています。正確なチャンネル数はそれぞれのAudioNodeの詳細に依存します。
 </p>
 
 <p>出力は1つ以上の<code>AudioNode</code>入力に接続でき、つまり<em>ファンアウト</em>がサポートされています。
-入力は初期時には接続されていません。しかし、1つ以上の<code>AudioNode</code>出力から接続する事ができ、即ち、<em>ファンイン</em>がサポートされています。
+入力は初期化時には接続されていません。しかし、1つ以上の<code>AudioNode</code>出力から接続する事ができ、即ち、<em>ファンイン</em>がサポートされています。
 AudioNodeの出力をAudioNodeの入力に接続するため<code>connect()</code>メソッドが呼ばれた時、それを、その入力への<dfn>接続</dfn>と呼びます。
 </p>
 
@@ -1303,11 +1303,11 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 
 <p class="norm">このセクションは参考情報です。</p>
 
-<p>実装では、必要のないリソース利用や、未使用または終了しているノードが際限なくメモリを使うのを避ける為に、何らかの方法を選ぶでしょう。
-続く説明は、一般的に期待されるノードライフタイムの管理の仕方を案内するものです。
+<p>実装では、必要のないリソース利用や、未使用または終了しているノードが際限なくメモリを使うのを避ける為の何らかの方法を選ぶでしょう。
+以降の説明は、一般的に期待されるノードのライフタイムの管理の仕方を案内するものです。
 </p>
 
-<p>何かしら参照される限り、<code>AudioNode</code>は生き続けるでしょう。参照には何種類かのタイプがあります。:
+<p>何かしら参照される限り、<code>AudioNode</code>は存在し続けるでしょう。参照には何種類かのタイプがあります。:
 </p>
 
 <ol>
@@ -1315,9 +1315,9 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 <li><code>AudioBufferSourceNodes</code>と<code>OscillatorNodes</code>の<em>再生中</em>の参照。
   再生している間これらのノードは、自分自身への<em>再生中</em>参照を維持します。</li>
 <li><em>接続</em>参照。別の<code>AudioNode</code>から接続されている場合に発生します。</li>
-<li><em>tail-time</em>参照。何かしらの内部プロセスで未解放のステートになっている場合は、その間、自分自身を維持します。
-  例えば、<code>ConvolverNode</code>は無音の入力を受けた後でも再生し続ける tail を持ちます。
-  (大きいコンサートホールで柏手を打つと、ホール中で響きわたる音が聞こえるのをイメージして下さい)。
+<li><em>余韻時間</em>参照。何かしらの内部プロセスで未解放のステートになっている場合は、その間、自分自身を維持します。
+  例えば、<code>ConvolverNode</code>は無音の入力を受けた後でも再生し続ける余韻を持ちます。
+  (大きなコンサートホールで柏手を打つと、ホール中に響きわたる音が聞こえるのをイメージして下さい)。
   いくつかの<code>AudioNode</code>は、この特性を持ちます。
   各ノードの詳細を見てください。
 </li>
@@ -1403,10 +1403,9 @@ interface <dfn id="dfn-AudioDestinationNode">AudioDestinationNode</dfn> : AudioN
 パラメータは<code>value</code>属性を使って特定の値に即時にセットする事ができます。
 あるいは(AudioContext.currentTimeと連動した)非常に高い時間精度で値の変化のスケジュールを組む事ができ、エンベロープ、音量のフェード、LFO、フィルタスイープ、グレイン窓、などに応用する事ができます。
 このような方法で任意のタイムラインベースのオートメーション曲線をすべてのAudioParamに対して設定する事が可能です。
-また更に、<code>AudioNode</code>からの出力の音声信号を<code>AudioParam</code>に接続する事ができ、
-<em>個別</em>に持っているパラメータの値に加算する事ができます。</p>
+また更に、<code>AudioNode</code>からの出力の音声信号を<code>AudioParam</code>に接続する事ができ、<em>個別</em>に持っているパラメータの値に加算する事ができます。</p>
 
-<p>幾つかの合成や処理の<code>AudioNode</code>は<code>AudioParam</code>型の属性を持ち、その値はオーディオサンプル単位で反映されなくてはなりません。
+<p>幾つかの合成や処理の<code>AudioNode</code>は、オーディオサンプル単位で反映されなくてはならない<code>AudioParam</code>型の属性を持っています。
 その他の<code>AudioParam</code>はサンプル単位の精度は重要ではなく、その値の変化はより粗く取り込まれます。
 それぞれの<code>AudioParam</code>は<em>a-rate</em>パラメータつまりサンプル単位で反映されるか、それ以外の<em>k-rate</em>パラメータかが指定されます。
 </p>
@@ -1536,7 +1535,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
         ここでV0は時刻T0における値、V1はこのメソッドで指定された値です。
       </p>
       <p>
-        もしこのLinerRamptoValueイベント以降にこれ以上イベントが無い場合、時刻 t に対して v(t) = V1 となります。
+        もしこのLinerRamptoValueイベント以降にこれ以上イベントが無い場合、時刻 t &gt;= T1 に対して v(t) = V1 となります。
       </p>
 
     </dd>
@@ -1560,7 +1559,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
         ここでV0は時刻T0における値、V1はこのメソッドで指定された値です。
       </p>
       <p>
-        もしこのExponentialRamptoValueイベント以降に、これ以上イベントが無い場合、時刻 t に対して v(t) = V1 となります。
+        もしこのExponentialRamptoValueイベント以降に、これ以上イベントが無い場合、時刻 t &gt;= T1 に対して v(t) = V1 となります。
       </p>
     </dd>
 </dl>
@@ -1579,7 +1578,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
         より正確には<em>timeConstant</em>は、ステップ状の入力(0から1に変化)が入力された場合、一次の線形時不変系によって値が1 - 1/e (約63.2%) に到達するまでの時間です。
       </p>
       <p>
-        <em>T0</em> &lt;= t &lt; <em>T1</em> の期間: T0を<em>startTime</em>として、T1が次のイベントの時刻とした場合(あるいは次のイベントがなければ<em>無限</em>に):</p>
+        <em>T0</em> &lt;= t &lt; <em>T1</em> の期間: T0を<em>startTime</em>として、T1が次のイベントの時刻とした場合(次のイベントがなければ<em>無限</em>になります):</p>
       <pre>
       v(t) = V1 + (V0 - V1) * exp(-(t - T0) / <em>timeConstant</em>)
       </pre>
@@ -3467,14 +3466,14 @@ interface <dfn id="dfn-MediaStreamAudioDestinationNode">MediaStreamAudioDestinat
 <p>オーディオ処理グラフについて考える時に重要な事の1つが、各ポイントにおけるゲイン(音量)をどのように調整するかです。
   例えば、標準的なミキサー卓モデルの場合、それぞれの入力バスは、プリゲイン、ポストゲイン、センドゲインを持っています。
   サブミックスとマスター出力バスもまたゲインコントロールを持っています。
-  ここで述べるゲインコントロールは他のアーキテクチャと同じように標準的なミキサー卓に使用する事ができます。
+  ここで述べるゲインコントロールは他のアーキテクチャーと同じように標準的なミキサー卓に使用する事ができます。
 </p>
 
 <div id="SummingJunction-section" class="section">
 <h3 id="SummingJunction">サミング入力</h3>
 </div>
 
-<p><a href="#AudioNode-section"><code>AudioNodes</code></a>の入力は複数の出力からの接続を受け付ける能力を持っています。
+<p><a href="#AudioNode-section"><code>AudioNode</code></a>の入力は複数の出力からの接続を受け付ける能力を持っています。
   入力はそれぞれの出力を他と足し合わせる、ユニティ・ゲインのサミング接続として振舞います<span class="annotate">(訳注:複数の信号をそのまま足し合わせる事を指します)</span>。:</p>
 <img alt="unity gain summing junction"
 src="images/unity-gain-summing-junction.png" /> 
@@ -4485,7 +4484,7 @@ src="images/speaker.png" /> <br />
   またそれは、JavaScriptからの使用のため<code>AudioNode</code>の<code>cpuUsage</code>属性を通して見えるようにする事もできます。
 </p>
 
-<p>計測されたCPU消費が100%に近く(あるいは高すぎると考えられるどんなスレッショルドでも)になった時、レンダリンググラフに更に<code>AudioNodes</code>を追加しようとするとボイスドロッピングをトリガーする事もできます。</p>
+<p>計測されたCPU消費が100%に近く(あるいは高すぎると考えられるどんなスレッショルドでも)になった時、レンダリンググラフに更に<code>AudioNode</code>を追加しようとするとボイスドロッピングをトリガーする事もできます。</p>
 
 <h4 id="Voice-dropping">15.3.2. ボイスドロッピング</h4>
 
