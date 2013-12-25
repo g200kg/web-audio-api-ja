@@ -14,4 +14,4 @@ GitHub : [https://github.com/g200kg/web-audio-api-ja](https://github.com/g200kg/
 Tatsuya Shinyagaito @ g200kg  
 
 誤りその他があればGitHubページ、下のサイト経由などで連絡をお願いいたします。  
-[http://www.g200kg.com/"](http://www.g200kg.com/)  
+[http://www.g200kg.com/](http://www.g200kg.com/)  
