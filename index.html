@@ -7,8 +7,8 @@
   content="$Id: index.html,v 1.3 2013-10-07 20:39:19 schepers Exp $" />-->
   <link rel="stylesheet" href="style.css" type="text/css" />
   <!--
-          <script src="section-links.js" type="application/ecmascript"></script> 
-          <script src="dfn.js" type="application/ecmascript"></script> 
+          <script src="section-links.js" type="application/ecmascript"></script>
+          <script src="dfn.js" type="application/ecmascript"></script>
           -->
   <!--[if IE]>
           <style type='text/css'>
@@ -59,6 +59,29 @@ function OpenOriginal(x) {
     <b><a href="http://www.g200kg.com/">http://www.g200kg.com/</a></b><br/>
   </p>
   <p>2013年11月01日</p>
+  <hr/>
+  <p>
+    Working Draftはまだ2013年10月10日版のままですが、最新のエディターズドラフトでは既に
+    かなり多くの変更が入っています。主なところは次のようなものです。
+    <ul style="line-height:100%">
+      <li>AudioContextの処理を一時停止/再開させるsuspend()/resume()/close()が追加されました</li>
+      <li>AudioContextのdecodeAudioData()はPromiseを使用するようになりました</li>
+      <li>offlineAudioContextのstartRendering()はPromiseを使用するようになりました</li>
+      <li>WebWorkerを使用してオーディオデータを処理するAudioWorkerが追加されました</li>
+      <li>AudioWorkerの追加に伴いScriptProcessorノードはDEPRECATED扱いになりました</li>
+      <li>2chステレオ音声向けのStereoPannerノードが追加されました</li>
+      <li>AudioBufferSourceノードにdetuneパラメータが追加されました</li>
+      <li>AudioNodeのdisconnect()はノードをまとめてではなくコネクション毎に切断できるようになりました</li>
+      <li>AudioBufferにデータの直接読出し/書き込みをサポートするcopyFromChannel()/copyToChannle()が追加されました</li>
+      <li>AnalyserノードにFloat32Arrayで波形データを取得するgetFloatTimeDomainData()が追加されました</li>
+      <li>AnalyserのFFTやbiquadFilterなどの処理内容が明確に定義されました</li>
+    </ul>
+    内容の詳細は最新版エディターズドラフトを参照ください。
+    <a
+    href="http://webaudio.github.io/web-audio-api/">http://webaudio.github.io/web-audio-api/</a>
+  </p>
+
+  <p>2015年7月11日</p>
 </div>
 
 <hr/>
@@ -70,7 +93,7 @@ src="http://www.w3.org/Icons/w3c_home" /></a> </p>
 <h1 id="title" class="title">Web Audio API </h1>
 
 <h2 id="w3c-date-document"><acronym
-title="World Wide Web Consortium">W3C</acronym> Working Draft 10 October 2013 
+title="World Wide Web Consortium">W3C</acronym> Working Draft 10 October 2013
 </h2>
 
 <dl>
@@ -96,9 +119,9 @@ title="World Wide Web Consortium">W3C</acronym> Working Draft 10 October 2013
   <dt>編集者: </dt>
     <dd>Paul Adenot, Mozilla Foundation</dd>
     <dd>Chris Wilson, Google</dd>
-    <dd>Chris Rogers, Google (until August 2013)</dd>    
+    <dd>Chris Rogers, Google (until August 2013)</dd>
     <dt>執筆者: </dt>
-    <dd>See <a href="#L17335">Acknowledgements</a></dd>  	
+    <dd>See <a href="#L17335">Acknowledgements</a></dd>
 </dl>
 
 <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2013 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p>
@@ -131,7 +154,7 @@ XMLHttpRequest と共に使われるように設計されています。
 これはW3C WebApps活動の一部である<a href="http://www.w3.org/2011/audio/"><b>W3C Audio Working Group</b></a>によって策定されました。</p>
 <p></p>
 
-<p>この文書に関するコメントは &lt;<a href="mailto:public-audio@w3.org">public-audio@w3.org</a>&gt; 
+<p>この文書に関するコメントは &lt;<a href="mailto:public-audio@w3.org">public-audio@w3.org</a>&gt;
   (<a href="http://lists.w3.org/Archives/Public/public-audio/">public archives</a> of
 the W3C audio mailing list)で受け付けます。 Webコンテンツおよびブラウザ開発者はこのドラフトをレビューする事を勧めます。
 </p>
@@ -198,73 +221,73 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
           <li><a href="#attributes-GainNode">4.7.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#DelayNode">4.8. DelayNode インターフェース</a> 
+      <li><a href="#DelayNode">4.8. DelayNode インターフェース</a>
         <ul>
           <li><a href="#attributes-GainNode_2">4.8.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#AudioBuffer">4.9. AudioBuffer インターフェース</a> 
+      <li><a href="#AudioBuffer">4.9. AudioBuffer インターフェース</a>
         <ul>
           <li><a href="#attributes-AudioBuffer">4.9.1. 属性</a></li>
           <li><a href="#methodsandparams-AudioBuffer">4.9.2. メソッドとパラメータ</a></li>
         </ul>
       </li>
-      <li><a href="#AudioBufferSourceNode">4.10. AudioBufferSourceNode インターフェース</a> 
+      <li><a href="#AudioBufferSourceNode">4.10. AudioBufferSourceNode インターフェース</a>
         <ul>
           <li><a href="#attributes-AudioBufferSourceNode">4.10.1. 属性</a></li>
           <li><a href="#methodsandparams-AudioBufferSourceNode">4.10.2. メソッドとパラメータ</a></li>
         </ul>
       </li>
       <li><a href="#MediaElementAudioSourceNode">4.11. MediaElementAudioSourceNode インターフェース</a></li>
-      <li><a href="#ScriptProcessorNode">4.12. ScriptProcessorNode インターフェース</a> 
+      <li><a href="#ScriptProcessorNode">4.12. ScriptProcessorNode インターフェース</a>
         <ul>
           <li><a href="#attributes-ScriptProcessorNode">4.12.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#AudioProcessingEvent">4.13. AudioProcessingEvent インターフェース</a> 
+      <li><a href="#AudioProcessingEvent">4.13. AudioProcessingEvent インターフェース</a>
         <ul>
           <li><a href="#attributes-AudioProcessingEvent">4.13.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#PannerNode">4.14. PannerNode インターフェース</a> 
+      <li><a href="#PannerNode">4.14. PannerNode インターフェース</a>
         <ul>
           <li><a href="#attributes-PannerNode_attributes">4.14.2. 属性</a></li>
           <li><a href="#Methods_and_Parameters">4.14.3. メソッドとパラメータ</a></li>
         </ul>
       </li>
-      <li><a href="#AudioListener">4.15. AudioListener インターフェース</a> 
+      <li><a href="#AudioListener">4.15. AudioListener インターフェース</a>
         <ul>
           <li><a href="#attributes-AudioListener">4.15.1. 属性</a></li>
           <li><a href="#L15842">4.15.2. メソッドとパラメータ</a></li>
         </ul>
       </li>
-      <li><a href="#ConvolverNode">4.16. ConvolverNode インターフェース</a> 
+      <li><a href="#ConvolverNode">4.16. ConvolverNode インターフェース</a>
         <ul>
           <li><a href="#attributes-ConvolverNode">4.16.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#AnalyserNode">4.17. AnalyserNode インターフェース</a> 
+      <li><a href="#AnalyserNode">4.17. AnalyserNode インターフェース</a>
         <ul>
           <li><a href="#attributes-ConvolverNode_2">4.17.1. 属性</a></li>
           <li><a href="#methods-and-parameters">4.17.2. メソッドとパラメータ</a></li>
         </ul>
       </li>
-      <li><a href="#ChannelSplitterNode">4.18. ChannelSplitterNode インターフェース</a> 
+      <li><a href="#ChannelSplitterNode">4.18. ChannelSplitterNode インターフェース</a>
         <ul>
           <li><a href="#example-1">例:</a></li>
         </ul>
       </li>
-      <li><a href="#ChannelMergerNode">4.19. ChannelMergerNode インターフェース</a> 
+      <li><a href="#ChannelMergerNode">4.19. ChannelMergerNode インターフェース</a>
         <ul>
           <li><a href="#example-2">例:</a></li>
         </ul>
       </li>
-      <li><a href="#DynamicsCompressorNode">4.20. DynamicsCompressorNode インターフェース</a> 
+      <li><a href="#DynamicsCompressorNode">4.20. DynamicsCompressorNode インターフェース</a>
         <ul>
           <li><a href="#attributes-DynamicsCompressorNode">4.20.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#BiquadFilterNode">4.21. BiquadFilterNode インターフェース</a> 
+      <li><a href="#BiquadFilterNode">4.21. BiquadFilterNode インターフェース</a>
         <ul>
           <li><a href="#BiquadFilterNode-description">4.21.1 "lowpass"</a></li>
           <li><a href="#HIGHPASS">4.21.2 "highpass"</a></li>
@@ -277,24 +300,24 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
           <li><a href="#Methods">4.21.9. メソッド</a></li>
         </ul>
       </li>
-      <li><a href="#WaveShaperNode">4.22. WaveShaperNode インターフェース</a> 
+      <li><a href="#WaveShaperNode">4.22. WaveShaperNode インターフェース</a>
         <ul>
           <li><a href="#attributes-WaveShaperNode">4.22.1. 属性</a></li>
         </ul>
       </li>
-      <li><a href="#OscillatorNode">4.23. OscillatorNode インターフェース</a> 
+      <li><a href="#OscillatorNode">4.23. OscillatorNode インターフェース</a>
         <ul>
           <li><a href="#attributes-OscillatorNode">4.23.1. 属性</a></li>
             <li><a href="#methodsandparams-OscillatorNode-section">4.23.2. メソッドとパラメータ</a></li>
         </ul>
       </li>
-      <li><a href="#PeriodicWave">4.24. PeriodicWave インターフェース</a> 
+      <li><a href="#PeriodicWave">4.24. PeriodicWave インターフェース</a>
       </li>
       <li><a href="#MediaStreamAudioSourceNode">4.25. MediaStreamAudioSourceNode インターフェース</a></li>
       <li><a href="#MediaStreamAudioDestinationNode">4.26. MediaStreamAudioDestinationNode インターフェース</a></li>
     </ul>
   </li>
-  <li><a href="#MixerGainStructure">6. ミキサーゲイン構成</a> 
+  <li><a href="#MixerGainStructure">6. ミキサーゲイン構成</a>
     <ul>
       <li><a href="#background">背景</a></li>
       <li><a href="#SummingJunction">サミング入力</a></li>
@@ -302,13 +325,13 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#Example-mixer-with-send-busses">例: センドバス付ミキサー</a></li>
     </ul>
   </li>
-  <li><a href="#DynamicLifetime">7. 動的ライフタイム</a> 
+  <li><a href="#DynamicLifetime">7. 動的ライフタイム</a>
     <ul>
       <li><a href="#DynamicLifetime-background">背景</a></li>
       <li><a href="#Example-DynamicLifetime">例</a></li>
     </ul>
   </li>
-  <li><a href="#UpMix">9. チャンネルのアップミックスとダウンミックス</a> 
+  <li><a href="#UpMix">9. チャンネルのアップミックスとダウンミックス</a>
     <ul>
       <li><a href="#ChannelLayouts">9.1. スピーカーチャンネル配置</a>
       <ul>
@@ -322,7 +345,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
 
     </ul>
   </li>
-  <li><a href="#Spatialization">11. 空間音響 / バンニング </a> 
+  <li><a href="#Spatialization">11. 空間音響 / バンニング </a>
     <ul>
       <li><a href="#Spatialization-background">背景</a></li>
       <li><a href="#Spatialization-panning-algorithm">パンニングアルゴリズム</a></li>
@@ -331,7 +354,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#Spatialization-doppler-shift">ドップラー効果</a></li>
     </ul>
   </li>
-  <li><a href="#Convolution">12. コンボリューションによる線形エフェクト</a> 
+  <li><a href="#Convolution">12. コンボリューションによる線形エフェクト</a>
     <ul>
       <li><a href="#Convolution-background">背景</a></li>
       <li><a href="#Convolution-motivation">標準として使用する動機</a></li>
@@ -343,18 +366,18 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#warehouse">倉庫空間</a></li>
     </ul>
   </li>
-  <li><a href="#JavaScriptProcessing">13. JavaScript による合成と処理</a> 
+  <li><a href="#JavaScriptProcessing">13. JavaScript による合成と処理</a>
     <ul>
       <li><a href="#custom-DSP-effects">カスタムDSPエフェクト</a></li>
       <li><a href="#educational-applications">教育アプリケーション</a></li>
       <li><a href="#javaScript-performance">JavaScript パフォーマンス</a></li>
     </ul>
   </li>
-  <li><a href="#Performance">15. パフォーマンスについての考察</a> 
+  <li><a href="#Performance">15. パフォーマンスについての考察</a>
     <ul>
       <li><a href="#Latency">15.1. レイテンシー: それは何で何故重要なのか</a></li>
       <li><a href="#audio-glitching">15.2. オーディオグリッジ</a></li>
-      <li><a href="#hardware-scalability">15.3. ハードウェアのスケーラビリティ</a> 
+      <li><a href="#hardware-scalability">15.3. ハードウェアのスケーラビリティ</a>
         <ul>
           <li><a href="#CPU-monitoring">15.3.1. CPU監視</a></li>
           <li><a href="#Voice-dropping">15.3.2. ボイスドロッピング</a></li>
@@ -368,7 +391,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
       <li><a href="#JavaScriptPerformance">15.4. リアルタイム処理と合成に関するJavaScriptの課題: </a></li>
     </ul>
   </li>
-  <li><a href="#ExampleApplications">16. アプリケーション例</a> 
+  <li><a href="#ExampleApplications">16. アプリケーション例</a>
     <ul>
       <li><a href="#basic-sound-playback">基本的な音の再生</a></li>
       <li><a href="#threeD-environmentse-and-games">3D環境とゲーム</a></li>
@@ -381,7 +404,7 @@ W3Cはグループの成果物から作成された<a rel="disclosure" href="htt
   <li><a href="#SecurityConsiderations">17. セキュリティに関する考察</a></li>
   <li><a href="#PrivacyConsiderations">18. プライバシーに関する考察</a></li>
   <li><a href="#requirements">19. 要求と使用例</a></li>
-  <li><a href="#L17310">A.リファレンス</a> 
+  <li><a href="#L17310">A.リファレンス</a>
     <ul>
       <li><a href="#Normative-references">A.1 基準リファレンス</a></li>
       <li><a href="#Informative-references">A.2 参考リファレンス</a></li>
@@ -487,7 +510,7 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
 </p>
 
 
-<img alt="modular routing" src="images/modular-routing1.png" /> 
+<img alt="modular routing" src="images/modular-routing1.png" />
 
 <p>この単純なルーティングを図示します。この例では単一の音を再生しています: </p>
 
@@ -497,7 +520,7 @@ Apple社のLogic Audioがそのようなアプリケーションの1つであり
 <span class="blockTitle">ECMAScript</span> </div>
 
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 
 var context = new AudioContext();
 
@@ -512,7 +535,7 @@ function playSound() {
 </div>
 
 <p>これはもっと複雑な例で、3つのソースとコンボリューションリバーブが最終出力段にあるダイナミックコンプレッサーを介して送られます:</p>
-<img alt="modular routing2" src="images/modular-routing2.png" /> 
+<img alt="modular routing2" src="images/modular-routing2.png" />
 
 <div class="example">
 
@@ -525,7 +548,7 @@ Example</div>
 <span class="blockTitle">ECMAScript</span></div>
 
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 
 var context = 0;
 var compressor = 0;
@@ -609,7 +632,7 @@ function setupRoutingGraph () {
     panner.connect(wet3);
     dry3.connect(masterDry);
     wet3.connect(reverb);
-    
+
     // Start the sources now.
     source1.start(0);
     source2.start(0);
@@ -709,7 +732,7 @@ function setupRoutingGraph () {
 
 <p>この仕様中の全ては、例とセクションの最初に参考情報と書かれているものを除いて、基準要件となります。</p>
 
-<p>この文書中のキーワード"<span class="rfc2119">MUST</span>"、 "<span class="rfc2119">MUST NOT</span>"、 
+<p>この文書中のキーワード"<span class="rfc2119">MUST</span>"、 "<span class="rfc2119">MUST NOT</span>"、
   "<span class="rfc2119">REQUIRED</span>"、"<span class="rfc2119">SHALL</span>"、
   "<span class="rfc2119">SHALL NOT</span>"、"<span class="rfc2119">RECOMMENDED</span>"、"<span class="rfc2119">MAY</span>"、
   "<span class="rfc2119">OPTIONAL</span>"
@@ -753,7 +776,7 @@ callback DecodeErrorCallback = void ();
 
 [Constructor]
 interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
- 
+
     readonly attribute AudioDestinationNode destination;
     readonly attribute float sampleRate;
     readonly attribute double currentTime;
@@ -857,12 +880,12 @@ interface <dfn id="dfn-AudioContext">AudioContext</dfn> : EventTarget {
       <p><dfn id="dfn-successCallback">successCallback</dfn>は、デコードが終了した時に呼び出されるコールバック関数です。
         コールバック関数の引数はデコードされたPCMオーディオデータをあらわすAudioBufferになります。</p>
       <p><dfn id="dfn-errorCallback">errorCallback</dfn>はオーディオファイルデータをデコード中にエラーが起こった場合に呼び出されるコールバック関数です。</p>
-      
+
       <p>
       次のステップが実行されなくてはなりません:
       </p>
       <ol>
-      
+
       <li>JavaScriptからアクセスや変更ができないように<dfn>audioData</dfn>のArrayBufferを一時的に中立化します。</li>
       <li>デコード処理が別のスレッドで実行されるようにキューに登録します。</li>
       <li>デコードスレッドが、エンコードされている<dfn>audioData</dfn>からリニアPCMへのデコードを試みます。
@@ -1035,7 +1058,7 @@ OfflineAudioContextは特殊なAudioContextであり、レンダリング/ミキ
 interface <dfn id="dfn-OfflineAudioContext">OfflineAudioContext</dfn> : AudioContext {
 
     void startRendering();
-    
+
     attribute EventHandler oncomplete;
 
 };
@@ -1116,7 +1139,7 @@ interface <dfn id="dfn-OfflineAudioCompletionEvent">OfflineAudioCompletionEvent<
   それぞれのタイプの<code>AudioNode</code>はどのようにオーディオを処理したり合成したりするかの詳細が異なっています。
   しかし、一般的に<code>AudioNode</code>は(持っていれば)その入力を処理し、(持っていれば)その出力にオーディオ信号を送り出します。
  </p>
- 
+
 <p>それぞれの<dfn>出力</dfn>は1つ以上の<dfn>チャンネル</dfn>を持っています。正確なチャンネル数はそれぞれのAudioNodeの詳細に依存します。
 </p>
 
@@ -1238,7 +1261,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
         ただしこれは<em>循環</em>の中に少なくとも1つの<a class="dfnref" href="#DelayNode-section">DelayNode</a>を
         含んでいる場合のみ可能です。そうでない場合、NOT_SUPPORTED_ERR例外が発生しなくてはなりません(MUST)。
       </p>
-      
+
       <p>特定のノードの出力と特定のノードの入力の間には接続は1つのみ存在できます。
         同じ終端点を持つ複数の接続は無視されます。例えば:
       </p>
@@ -1251,7 +1274,7 @@ interface <dfn id="dfn-AudioNode">AudioNode</dfn> : EventTarget {
 
       nodeA.connect(nodeB);
       </pre>
-      
+
     </dd>
 </dl>
 <dl>
@@ -1386,10 +1409,10 @@ interface <dfn id="dfn-AudioDestinationNode">AudioDestinationNode</dfn> : AudioN
       値が有効な範囲外の場合、INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。
       具体的な例をあげれば、もしオーディオハードウェアが8チャンネル出力をサポートしている場合、<code>numberOfChannels</code>を8に設定でき、8チャンネルの出力が得られます。
     </p>
-    
+
     <p>OfflineAudioContextのAudioDestinationNodeについては、<code>channelCount</code>はOfflineAudioContextが作成された時点で決定され、この値は変更できません。
     </p>
-    
+
     </dd>
 </dl>
 
@@ -1650,7 +1673,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 
 <div class="exampleHeader">
 例</div>
-<img alt="AudioParam automation" src="images/audioparam-automation1.png" /> 
+<img alt="AudioParam automation" src="images/audioparam-automation1.png" />
 
 <div class="block">
 
@@ -1658,7 +1681,7 @@ interface <dfn id="dfn-AudioParam">AudioParam</dfn> {
 <span class="blockTitle">ECMAScript</span></div>
 
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 var t0 = 0;
 var t1 = 0.1;
 var t2 = 0.2;
@@ -2071,7 +2094,7 @@ Example</div>
 <span class="blockTitle">ECMAScript</span></div>
 
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 var mediaElement = document.getElementById('mediaElementID');
 var sourceNode = context.createMediaElementSource(mediaElement);
 sourceNode.connect(filterNode);
@@ -2560,14 +2583,14 @@ interface <dfn id="dfn-ConvolverNode">ConvolverNode</dfn> : AudioNode {
       <div class="blockTitleDiv">
 
       <div class="blockContent">
-      <pre class="code"><code class="es-code"> 
+      <pre class="code"><code class="es-code">
 
 float calculateNormalizationScale(buffer)
 {
     const float GainCalibration = 0.00125;
     const float GainCalibrationSampleRate = 44100;
     const float MinPower = 0.000125;
-  
+
     // Normalize by RMS power.
     size_t numberOfChannels = buffer->numberOfChannels();
     size_t length = buffer->length();
@@ -2754,7 +2777,7 @@ interface <dfn id="dfn-AnalyserNode">AnalyserNode</dfn> : AudioNode {
   "アクティブ"でないどの出力も無音を出力し、通常はどこにも接続されません。</p>
 
 <h3 id="example-1">例:</h3>
-<img alt="channel splitter" src="images/channel-splitter.png" /> 
+<img alt="channel splitter" src="images/channel-splitter.png" />
 
 <p>この例ではスプリッターはチャンネルの(例えば左チャンネル、右チャンネルなどの)識別は<b>せず</b>、単純に入力チャンネルの順序に従って出力チャンネルを分割する事に注意してください。</p>
 
@@ -2798,7 +2821,7 @@ interface <dfn id="dfn-ChannelSplitterNode">ChannelSplitterNode</dfn> : AudioNod
   別の例として、2つの入力(どちらもモノラル)の場合は、出力は2チャンネル(ステレオ)で、左チャンネルが最初の入力から、右チャンネルは2番目の入力から取られます。</p>
 
 <h3 id="example-2">例:</h3>
-<img alt="channel merger" src="images/channel-merger.png" /> 
+<img alt="channel merger" src="images/channel-merger.png" />
 
 <p>この例ではマージャーはチャンネルの(例えば左チャンネル、右チャンネルなどの)識別は<b>せず</b>、単純に入力チャンネルの順序に従って出力チャンネルを結合する事に注意してください。</p>
 
@@ -2833,7 +2856,7 @@ interface <dfn id="dfn-ChannelMergerNode">ChannelMergerNode</dfn> : AudioNode {
   全体として、より大きく、豊かで隙間のない音を作る事ができます。
   これは特に、多くの個別サウンドを同時に再生するゲームと音楽アプリケーションで、全体の信号レベルを制御してスピーカーへの出力のクリッピング(歪み)を避けるために重要です。
 </p>
-<pre>    
+<pre>
     numberOfInputs  : 1
     numberOfOutputs : 1
 
@@ -2923,7 +2946,7 @@ interface <dfn id="dfn-DynamicsCompressorNode">DynamicsCompressorNode</dfn> : Au
   それぞれのBiquadFilterNodeは下のIDLで紹介する一般的なフィルタの型のうちの1つに設定する事ができます。
   デフォルトのフィルタの型は"lowpass"です。</p>
 
-<pre>    
+<pre>
     numberOfInputs  : 1
     numberOfOutputs : 1
 
@@ -3476,7 +3499,7 @@ interface <dfn id="dfn-MediaStreamAudioDestinationNode">MediaStreamAudioDestinat
 <p><a href="#AudioNode-section"><code>AudioNode</code></a>の入力は複数の出力からの接続を受け付ける能力を持っています。
   入力はそれぞれの出力を他と足し合わせる、ユニティ・ゲインのサミング接続として振舞います<span class="annotate">(訳注:複数の信号をそのまま足し合わせる事を指します)</span>。:</p>
 <img alt="unity gain summing junction"
-src="images/unity-gain-summing-junction.png" /> 
+src="images/unity-gain-summing-junction.png" />
 
 <p>各出力のチャンネルレイアウトが一致しない場合は、<a href="#UpMix-section">ミキシング規則</a>に従ってミックス(通常はアップミックス)が行われます。
 </p>
@@ -3486,7 +3509,7 @@ src="images/unity-gain-summing-junction.png" />
 <p>しかし多くの場合、それぞれの出力信号のゲインを制御できる事が重要です。
   <a href="#GainNode-section"><code>GainNode</code></a>によってこのコントロールが可能です:
 </p>
-<img alt="mixer architecture new" src="images/mixer-architecture-new.png" /> 
+<img alt="mixer architecture new" src="images/mixer-architecture-new.png" />
 
 <p>ユニティ・ゲイン・サミング接続とGainNodeという2つの概念を使う事で、簡単な、あるいは複雑なミキシングのシナリオを構成する事が可能です。</p>
 
@@ -3498,7 +3521,7 @@ src="images/unity-gain-summing-junction.png" />
 <p>これは2つのセンド・ミキサーと1つののメインミキサーの例です。
   可能ではありますが、単純化のため、プリゲインコントロールとインサート・エフェクトは図示していません。:
 </p>
-<img alt="mixer gain structure" src="images/mixer-gain-structure.png" /> 
+<img alt="mixer gain structure" src="images/mixer-gain-structure.png" />
 
 <p>この図では省略した書き方を使っています。"send 1"、"send 2"、"main bus"は実際にはAudioNodeに入力されますがここではサミングバスとして書かれており、交点にある g2_1、g3_1、などが
   あるミキサー上のあるソースの"gain"または音量を表します。
@@ -3518,7 +3541,7 @@ Example</div>
 <span class="blockTitle">ECMAScript</span></div>
 
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 
 var context = 0;
 var compressor = 0;
@@ -3556,7 +3579,7 @@ function setupRoutingGraph() {
     s1 = context.createGain();
     reverb.connect(s1);
     s1.connect(compressor);
-    
+
     s2 = context.createGain();
     delay.connect(s2);
     s2.connect(compressor);
@@ -3639,7 +3662,7 @@ function setupRoutingGraph() {
 
 <div class="exampleHeader">
 Example</div>
-<img alt="dynamic allocation" src="images/dynamic-allocation.png" /> 
+<img alt="dynamic allocation" src="images/dynamic-allocation.png" />
 
 <p>ローパスフィルタ、パンナー、2番目のゲインノードがワンショットの音から直接接続されています。
   そのため再生が終わった時、コンテキストは自動的にそれら(点線内の全て)を解放します。
@@ -3655,14 +3678,14 @@ Example</div>
 <span class="blockTitle">ECMAScript</span></div>
 
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 
 var context = 0;
 var compressor = 0;
 var gainNode1 = 0;
 var streamingAudioSource = 0;
 
-<span class="comment">// Initial setup of the "long-lived" part of the routing graph </span> 
+<span class="comment">// Initial setup of the "long-lived" part of the routing graph </span>
 function setupAudioContext() {
     context = new AudioContext();
 
@@ -3809,7 +3832,7 @@ function playSound() {
 
 <pre>  Mono
     0: M: mono
-    
+
   Stereo
     0: L: left
     1: R: right
@@ -3833,7 +3856,7 @@ function playSound() {
 <h4 id="UpMix-sub">9.1.2. アップミックスのスピーカー配置</h4>
 
 <pre>Mono up-mix:
-    
+
     1 -&gt; 2 : up-mix from mono to stereo
         output.L = input;
         output.R = input;
@@ -3881,7 +3904,7 @@ Quad up-mix:
 <h4 id="down-mix">9.1.3. ダウンミックスのスピーカー配置</h4>
 
 <p>ダウンミックスは例えば5.1チャンネルソースの素材を処理する場合に必要になりますが、再生はステレオになります。</p>
-<pre>  
+<pre>
 Mono down-mix:
 
     2 -&gt; 1 : stereo to mono
@@ -3922,7 +3945,7 @@ Quad down-mix:
 <div class="block">
 <div class="blockTitleDiv">
 <div class="blockContent">
-<pre class="code"><code class="idl-code"> 
+<pre class="code"><code class="idl-code">
 // Set gain node to explicit 2-channels (stereo).
 gain.channelCount = 2;
 gain.channelCountMode = "explicit";
@@ -3986,7 +4009,7 @@ gain.channelInterpretation = "speakers";
 <div class="block">
 <div class="blockTitleDiv">
 <div class="blockContent">
-<pre class="code"><code class="es-code"> 
+<pre class="code"><code class="es-code">
 // Calculate the source-listener vector.
 vec3 sourceListener = source.position - listener.position;
 
@@ -4057,7 +4080,7 @@ else if (elevation &lt; -90)
     <p>
       処理のため、次のステップが使われます:
     </p>
-    
+
     <ol>
 
     <li>
@@ -4076,13 +4099,13 @@ else if (elevation &lt; -90)
         azimuth = 180 - azimuth;
     </pre>
     </li>
-    
+
     <li>
     <p>
       <em>モノラル -> ステレオ</em>の場合、<em>azimuth</em>から 0 -> 1に正規化された値<em>x</em>が計算されます:
     </p>
     <pre>
-    x = (azimuth + 90) / 180    
+    x = (azimuth + 90) / 180
     </pre>
 
     <p>
@@ -4100,17 +4123,17 @@ else if (elevation &lt; -90)
     }
     </pre>
     </li>
-    
+
     <li>
     <p>
       左右のチャンネルのゲインが計算されます:
     </p>
     <pre>
     gainL = cos(0.5 * PI * x);
-    gainR = sin(0.5 * PI * x);    
+    gainR = sin(0.5 * PI * x);
     </pre>
     </li>
-    
+
     <li>
     <p>
       <em>モノラル -> ステレオ</em>の場合、出力の計算は次のようになります:</p>
@@ -4130,11 +4153,11 @@ else if (elevation &lt; -90)
     }
     </pre>
     </li>
-    
+
     </ol>
-    
-    
-    
+
+
+
   </li>
   <li><a href="http://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>パンニング(ステレオの場合のみ)
     <p>この処理には様々なazimuthとelevationで記録されたHRTFインパルスレスポンスのセットが必要です。
@@ -4185,7 +4208,7 @@ distance = sqrt(dot(v, v))
 <div class="block">
 <div class="blockTitleDiv">
 <div class="blockContent">
-<pre class="code"><code class="idl-code"> 
+<pre class="code"><code class="idl-code">
 if (source.orientation.isZero() || ((source.coneInnerAngle == 360) &amp;&amp; (source.coneOuterAngle == 360)))
     return 1; // no cone specified - unity gain
 
@@ -4238,7 +4261,7 @@ return gain;
 <div class="block">
 <div class="blockTitleDiv">
 <div class="blockContent">
-<pre class="code"><code class="idl-code"> 
+<pre class="code"><code class="idl-code">
 double dopplerShift = 1; // Initialize to default value
 double dopplerFactor = listener.dopplerFactor;
 
@@ -4333,7 +4356,7 @@ if (dopplerFactor > 0) {
   しかし、より広がりのある音を得るためには、2チャンネルのオーディオ入力と1、2、または4チャンネルのインパルスレスポンスの使用考えなくてはなりません。
   次の図は、NとMが1、2、4の場合のステレオ再生の一般的なケースです。
 </p>
-<img alt="reverb matrixing" src="images/reverb-matrixing.png" /> 
+<img alt="reverb matrixing" src="images/reverb-matrixing.png" />
 
 <h3 id="recording-impulse-responses">インパルスレスポンスの記録 <button onclick="OpenOriginal('recording-impulse-responses')">原文</button></h3>
 
@@ -4435,7 +4458,7 @@ src="images/speaker.png" /> <br />
 <div id="Latency-section" class="section">
 <h3 id="Latency">15.1. レイテンシー: それは何で何故重要なのか</h3>
 </div>
-<img alt="latency" src="images/latency.png" /> 
+<img alt="latency" src="images/latency.png" />
 
 <p>Webアプリケーションでは、マウスとキーボードのイベント(keydown、mousedown等)と聴こえる音の間のディレイタイムは重要です。
 </p>
@@ -4634,7 +4657,7 @@ WebGLのGLSLシェーダーと組み合わせる事で、リアルタイム解�
 
 
 <h3 id="educational-applications_2">教育アプリケーション</h3>
-<img alt="javascript processing" src="images/javascript-processing.png" /> 
+<img alt="javascript processing" src="images/javascript-processing.png" />
 
 <p>様々な教育アプリケーションを書く事ができます。
   図示しているのは音楽理論とコンピュータミュージック合成と処理分野でのコンセプトです。
@@ -4717,7 +4740,7 @@ AudioNodeが持っている様々な情報から、Web Audio APIは潜在的に(
 Adenot, Paul (Mozilla Foundation);
 Akhgari, Ehsan (Mozilla Foundation);
 Berkovitz, Joe (Invited Expert);
-Bossart, Pierre (Intel Corporation); 
+Bossart, Pierre (Intel Corporation);
 Carlson, Eric (Apple, Inc.);
 Geelnard, Marcus (Opera Software);
 Goode, Adam (Google, Inc.);
