@@ -68,7 +68,7 @@ function OpenOriginal(x) {
       <li>2chステレオ音声向けのStereoPannerノードが追加されました</li>
       <li>AudioBufferSourceノードにdetuneパラメータが追加されました</li>
       <li>AudioNodeのdisconnect()はノードをまとめてではなくコネクション毎に切断できるようになりました</li>
-      <li>AudioBufferにデータの直接読出し/書き込みをサポートするcopyFromChannel()/copyToChannle()が追加されました</li>
+      <li>AudioBufferにサンプルデータの部分的な読出し/書き込みを行うcopyFromChannel()/copyToChannel()が追加されました。データを読み出してチャンクとして扱うような場合、パフォーマンス面からgetChannelData()よりもcopyFromChannel()が推奨されます</li>
       <li>AnalyserノードにFloat32Arrayで波形データを取得するgetFloatTimeDomainData()が追加されました</li>
       <li>AnalyserのFFTやbiquadFilterなどの処理内容が明確に定義されました</li>
     </ul>
@@ -1888,6 +1888,9 @@ interface <dfn id="dfn-AudioBuffer">AudioBuffer</dfn> {
       <dfn id="dfn-channel">channel</dfn>パラメータはデータを取得するチャンネルのインデックスを指定します。
       インデックス値0は最初のチャンネルを表します。このインデックスは<code>numberOfChannels</code>未満でなくてはならず(MUST)、そうでない場合
       INDEX_SIZE_ERR例外が発生しなくてはなりません(MUST)。</p>
+      <div class="annotate">(最新仕様では同様の機能を持つcopyFromChannel()が定められました。大きなデータの一部として複数回読み出すような場合、パフォーマンス面からgetChannelData()よりもcopyFromChannel()が推奨されます。
+        <a href="http://webaudio.github.io/web-audio-api/#the-audiobuffer-interface" target="_blank">Editor's Draft : AudioBuffer Interface</a>
+        )</div>
     </dd>
 </dl>
 </div>
@@ -2108,7 +2111,7 @@ sourceNode.connect(filterNode);
 
 <div id="ScriptProcessorNode-section" class="section">
 <h2 id="ScriptProcessorNode">4.12. ScriptProcessorNodeインターフェース <button onclick="OpenOriginal('ScriptProcessorNode')">原文</button></h2>
-
+<div class="annotate">(最新仕様ではScriptProcessorはDEPRECATEDとなりました。AudioWorkerが代替となります。<a href="http://webaudio.github.io/web-audio-api/#the-audioworker-interface" target="_blank">Editor's Draft : AudioWorker</a>)</div>
 <p>このインターフェースはJavaScriptによってオーディオを直接、合成、加工、分析する事ができるAudioNodeです。</p>
 <pre>
     numberOfInputs  : 1
@@ -2234,7 +2237,7 @@ interface <dfn id="dfn-AudioProcessingEvent">AudioProcessingEvent</dfn> : Event 
 
 <div id="PannerNode-section" class="section">
 <h2 id="PannerNode">4.14. PannerNode インターフェース <button onclick="OpenOriginal('PannerNode')">原文</button></h2>
-
+<div class="annotate">(最新仕様では2chステレオ用にはStereoPannerが新たに定められています。<a href="http://webaudio.github.io/web-audio-api/#the-stereopannernode-interface" target="_blank">Editor's Draft: StereoPanner</a>)</div>
 <p>このインターフェースは入力されるオーディオストリームの3D空間での<a href="#Spatialization-section">定位 / 空間音響</a>を処理するためのノードを表します。
   空間音響は<a href="#AudioContext-section"><code>AudioContext</code></a>の
   <a href="#AudioListener-section"><code>AudioListener</code></a>(<code>listener</code> 属性)
