@@ -68,7 +68,7 @@ function OpenOriginal(x) {
       <li>2chステレオ音声向けのStereoPannerノードが追加されました</li>
       <li>AudioBufferSourceノードにdetuneパラメータが追加されました</li>
       <li>AudioNodeのdisconnect()はノードをまとめてではなくコネクション毎に切断できるようになりました</li>
-      <li>AudioBufferにサンプルデータの部分的な読出し/書き込みを行うcopyFromChannel()/copyToChannel()が追加されました。データを読み出してチャンクとして扱うような場合、パフォーマンス面からgetChannelData()よりもcopyFromChannel()が推奨されます</li>
+      <li>AudioBufferにサンプルデータの部分的な読出し/書き込みを行うcopyFromChannel()/copyToChannel()が追加されました。大きなデータの一部として複数回読み出しを行うような場合、パフォーマンス面からgetChannelData()よりもcopyFromChannel()が推奨されます</li>
       <li>AnalyserノードにFloat32Arrayで波形データを取得するgetFloatTimeDomainData()が追加されました</li>
       <li>AnalyserのFFTやbiquadFilterなどの処理内容が明確に定義されました</li>
     </ul>
