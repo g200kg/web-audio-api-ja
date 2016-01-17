@@ -1551,7 +1551,7 @@ table.exceptions table {
           an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> which is the audio destination to a
           MediaStream sent to a remote peer.
         </li>-->
-          <li><li>A <a class="idlType" href="#idl-def-MediaStreamAudioDestinationNode"><code>MediaStreamAudioDestinationNode</code></a> インターフェースは、 リモート・ピアに送信する MediaStream へ出力する <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
+          <li><a class="idlType" href="#idl-def-MediaStreamAudioDestinationNode"><code>MediaStreamAudioDestinationNode</code></a> インターフェースは、 リモート・ピアに送信する MediaStream へ出力する <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
           </li>
           <!--<li>An <a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a> interface representing a
           factory for creating custom nodes that can process audio directly in
@@ -4102,14 +4102,17 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#GainNode" typeof="bibo:Chapter">
         <h3 resource="#GainNode" id="GainNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.7 </span>
-          The GainNode Interface
+          GainNode インターフェース
         </span></h3>
-        <p>
+<!--        <p>
           Changing the gain of an audio signal is a fundamental operation in
           audio applications. The <code>GainNode</code> is one of the building
           blocks for creating <a href="#mixer-gain-structure">mixers</a>. This
           interface is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> with a single input and
           single output:
+        </p>-->
+        <p>
+        オーディオ信号のゲインを変える事はオーディオアプリケーションでは基本的な処理です。 <code>GainNode</code> は<a href="#mixer-gain-structure">ミキサー</a>の構成ブロックの1つとなります。 このインターフェースは1つの信号入力と1つの信号出力を持つ <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です:
         </p>
         <pre>  numberOfInputs  : 1
   numberOfOutputs : 1
@@ -4117,31 +4120,39 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
   channelCountMode = "max";
   channelInterpretation = "speakers";
 </pre>
-        <p>
+<!--        <p>
           Each sample of each channel of the input data of the
           <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> <em title="MUST" class="rfc2119">MUST</em> be multiplied by the
           <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> of the <a href="#widl-GainNode-gain"><code>gain</code></a>
           <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.
+        </p>-->
+        <p>
+          <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> の入力データの各チャンネルの各サンプルは <a href="#widl-GainNode-gain"><code>gain</code></a></a>
+          <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> が乗じられます (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-GainNode">interface <span class="idlInterfaceID">GainNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-GainNode-gain">gain</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-6" typeof="bibo:Chapter" id="attributes-6"><h4 resource="#h-attributes-6" id="h-attributes-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.7.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-GainNode-gain"><code>gain</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Represents the amount of gain to apply. Its default
+};</span></pre><section property="bibo:hasPart" resource="#attributes-6" typeof="bibo:Chapter" id="attributes-6"><h4 resource="#h-attributes-6" id="h-attributes-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.7.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-GainNode-gain"><code>gain</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Represents the amount of gain to apply. Its default
             <code>value</code> is 1 (no gain change). The nominal
             <code>minValue</code> is 0, but may be set negative for phase
             inversion. The nominal <code>maxValue</code> is 1, but higher
             values are allowed (no exception thrown).This parameter is
-            <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>
+            <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>-->
+            適用されるゲインの量を表します。デフォルトの <code>value</code> は1です(ゲイン変更なし)。名目上の <code>minValue</code> は 0 ですが、位相反転のために負の値に設定する事もできます。 名目上の <code>maxValue</code> は1ですが (例外が発生する事なく) より大きな値を設定する事もできます。このパラメータは <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> です。
           </dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#DelayNode" typeof="bibo:Chapter">
         <h3 resource="#DelayNode" id="DelayNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.8 </span>
-          The DelayNode Interface
+          DelayNode インターフェース
         </span></h3>
-        <p>
+<!--0        <p>
           A delay-line is a fundamental building block in audio applications.
           This interface is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> with a single
           input and single output:
+        </p>-->
+        <p>
+          ディレイ機能はオーディオアプリケーションの基本的な構成要素です。このインターフェースは単一の入力と単一の出力を持つ <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
@@ -4149,19 +4160,25 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
     channelCountMode = "max";
     channelInterpretation = "speakers";
 </pre>
-        <p>
+<!--        <p>
           The number of channels of the output always equals the number of
           channels of the input.
-        </p>
+        </p>-->
         <p>
+          出力のチャンネル数は常に入力のチャンネル数と同じになります。
+        </p>
+<!--        <p>
           It delays the incoming audio signal by a certain amount.
           Specifically, at each time <em>t</em>, input signal
           <em>input(t)</em>, delay time <em>delayTime(t)</em> and output signal
           <em>output(t)</em>, the output will be <em>output(t) = input(t -
           delayTime(t))</em>. The default <code>delayTime</code> is 0 seconds
           (no delay).
-        </p>
+        </p>-->
         <p>
+          これは入力されるオーディオ信号を一定の量だけ遅延させます。 具体的には各時刻 <em>t</em> において、入力信号 <em>input(t)</em> に対して、遅延時間 <em>delayTime(t)</em>、出力信号 <em>output(t)</em> とすると 出力は <em>output(t) = input(t - delayTime(t)) </em> となります。 デフォルトの <code>delayTime</code> は0秒(遅延なし)です。
+        </p>
+<!--        <p>
           When the number of channels in a <a class="idlType" href="#idl-def-DelayNode"><code>DelayNode</code></a>'s input changes
           (thus changing the output channel count also), there may be delayed
           audio samples which have not yet been output by the node and are part
@@ -4170,24 +4187,41 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
           being combined with newly received input so that all internal
           delay-line mixing takes place using the single prevailing channel
           layout.
+        </p>-->
+        <p>
+          <a class="idlType" href="#idl-def-DelayNode"><code>DelayNode</code></a>の入力のチャンネル数を変えた時 (つまり出力チャンネル数もまた変化します)、ノードからまだ出力されておらず内部状態にあるサンプルが残っているかも知れません。
+          全ての内部のディレイ機能のミキシングは単一のチャンネルレイアウトで動作しているため、
+          もしこのような変更前の異なるチャンネル数のサンプルを受け取った場合、
+          それらは新しく受け取られた入力と結合される前にアップミックスまたはダウンミックスされなくてはなりません。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-DelayNode">interface <span class="idlInterfaceID">DelayNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-DelayNode-delayTime">delayTime</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-7" typeof="bibo:Chapter" id="attributes-7"><h4 resource="#h-attributes-7" id="h-attributes-7"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.8.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-DelayNode-delayTime"><code>delayTime</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            <p>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-7" typeof="bibo:Chapter" id="attributes-7"><h4 resource="#h-attributes-7" id="h-attributes-7"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.8.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-DelayNode-delayTime"><code>delayTime</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            <p>
               An <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> object representing the amount
               of delay (in seconds) to apply. Its default <code>value</code> is
               0 (no delay). The minimum value is 0 and the maximum value is
               determined by the <code>maxDelayTime</code> argument to the
               <code>AudioContext</code> method <code>createDelay</code>.
-            </p>
+            </p>-->
             <p>
+              適用する遅延(単位は秒)の量を表す<a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>オブジェクトです。
+              デフォルト<code>値</code>は 0 (遅延なし) です。
+              最小の値は 0 で最大の値は <code>AudioContext</code> の <code>createDelay</code> メソッドの引数、 <code>maxDelayTime</code> で決定されます。
+            </p>
+<!--            <p>
               If <a class="idlType" href="#idl-def-DelayNode"><code>DelayNode</code></a> is part of a <a data-link-type="dfn" class="internalDFN" href="#dfn-cycle">cycle</a>, then
               the value of the <code>delayTime</code> attribute is
               clamped to a minimum of 128 frames (one block).
-            </p>
+            </p>-->
             <p>
+               もし <a class="idlType" href="#idl-def-DelayNode"><code>DelayNode</code></a> が <a data-link-type="dfn" class="internalDFN" href="#dfn-cycle">循環</a>の一部になっている場合、<code>delayTime</code> 属性の最小値は 128 フレーム (1ブロック)にクランプされます。
+            </p>
+<!--            <p>
               This parameter is <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>.
+            </p>-->
+            <p>
+              このパラメータは <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> です。
             </p>
           </dd></dl></section>
       </section>
@@ -5433,14 +5467,19 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-scriptprocessornode-interface---deprecated" typeof="bibo:Chapter" id="the-scriptprocessornode-interface---deprecated" class="informative">
         <h3 resource="#h-the-scriptprocessornode-interface---deprecated" id="h-the-scriptprocessornode-interface---deprecated"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.13 </span>
-          The ScriptProcessorNode Interface - DEPRECATED
-        </span></h3><p><em>This section is non-normative.</em></p>
-        <p>
+          ScriptProcessorNode インターフェース - 廃止予定
+        </span></h3>
+        <!--<p><em>This section is non-normative.</em></p>-->
+        <p><em>このセクションは参考情報です</em></p>
+<!--        <p>
           This interface is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> which can
           generate, process, or analyse audio directly using JavaScript. This
           node type is deprecated, to be replaced by the
           <a class="idlType" href="#idl-def-AudioWorkerNode"><code>AudioWorkerNode</code></a>; this text is only here for informative
           purposes until implementations remove this node type.
+        </p>-->
+        <p>このインターフェースはJavaScriptによってオーディオを直接、合成、加工、分析する事ができる <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
+          このノードタイプは廃止予定で、<a class="idlType" href="#idl-def-AudioWorkerNode"><code>AudioWorkerNode</code></a> で置き換えられます -- この文章は実装がこのノードタイプを削除するまでの参考として置いてあります。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
@@ -5449,18 +5488,22 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     channelCountMode = "explicit";
     channelInterpretation = "speakers";
 </pre>
-        <p>
+<!--        <p>
           The <code>channelCountMode</code> cannot be changed from "explicit"
           and the <code>channelCount</code> cannot be changed. An attempt to
           change either of these <em title="MUST" class="rfc2119">MUST</em> throw an InvalidStateError exception.
-        </p>
+        </p>-->
         <p>
+          <code>channelCountMode</code> は "explicit" からの変更はできず、<code>channelCount</code> は変更する事ができません。
+          どちらかを変更しようとすると InvalidStateError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+        </p>
+<!--        <p>
           The <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> is constructed with a
           <dfn id="dfn-buffersize" data-dfn-type="dfn">bufferSize</dfn> which must be one of the following values: 256,
           512, 1024, 2048, 4096, 8192, 16384. This value controls how
-          frequently the <!--a href="#audioprocess-spnode"--><a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker">audioprocess</a> event
+          frequently the <a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker">audioprocess</a> event
           is dispatched and how many sample-frames need to be processed each
-          call. <!--a href="#audioprocess-spnode"--><a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker"><code>audioprocess</code></a>
+          call. <a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker"><code>audioprocess</code></a>
           events are only dispatched if the
           <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> has at least one input or one
           output connected. Lower numbers for <a href="#widl-ScriptProcessorNode-bufferSize">bufferSize</a> will result in
@@ -5468,30 +5511,47 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           be necessary to avoid audio breakup and <a href="#audio-glitching">glitches</a>. This value will be picked by the
           implementation if the bufferSize argument to
           <code>createScriptProcessor</code> is not passed in, or is set to 0.
-        </p>
+        </p>-->
         <p>
+          <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> は <dfn id="dfn-buffersize" data-dfn-type="dfn">bufferSize</dfn> として次の値のどれかで作成されます: 256、512、1024、2048、4096、8192、16384。
+          この値は <a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker">audioprocess</a> イベントがディスパッチされる周期とそれぞれの呼び出しで処理が必要なサンプルフレームの数を制御します。
+          <a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker"><code>audioprocess</code></a> イベントは <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> が少なくとも1つの入力か1つの出力が接続されている場合にのみディスパッチされます。
+          <a href="#widl-ScriptProcessorNode-bufferSize">bufferSize</a> が小さいと、<a href="#latency">latency</a> は低く(良く)なります。
+          オーディオの途切れや <a href="#audio-glitching">グリッジ</a> を避けるには大きい値が必要になります。
+          <code>createScriptProcessor</code> に渡される bufferSize 引数がない、または 0 の場合、実装によって自動的に選択されます。
+        </p>
+<!--        <p>
           <dfn id="dfn-numberofinputchannels" data-dfn-type="dfn">numberOfInputChannels</dfn> and
           <dfn id="dfn-numberofoutputchannels" data-dfn-type="dfn">numberOfOutputChannels</dfn> determine the number of input and
           output channels. It is invalid for both
           <code>numberOfInputChannels</code> and
           <code>numberOfOutputChannels</code> to be zero.
+        </p>-->
+        <p>
+          <dfn id="dfn-numberofinputchannels" data-dfn-type="dfn">numberOfInputChannels</dfn> と <dfn id="dfn-numberofoutputchannels" data-dfn-type="dfn">numberOfOutputChannels</dfn> は入力と出力のチャンネル数を決定します。
+          <code>numberOfInputChannels</code> と <code>numberOfOutputChannels</code> の両方が 0 になるのは不正になります。
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> node </span><span class="pun">=</span><span class="pln"> context</span><span class="pun">.</span><span class="pln">createScriptProcessor</span><span class="pun">(</span><span class="pln">bufferSize</span><span class="pun">,</span><span class="pln"> numberOfInputChannels</span><span class="pun">,</span><span class="pln"> numberOfOutputChannels</span><span class="pun">);</span></pre>
         <pre class="idl"><span class="idlInterface" id="idl-def-ScriptProcessorNode">interface <span class="idlInterfaceID">ScriptProcessorNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span> <span class="idlAttrName"><a href="#widl-ScriptProcessorNode-onaudioprocess">onaudioprocess</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">long</span>         <span class="idlAttrName"><a href="#widl-ScriptProcessorNode-bufferSize">bufferSize</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-15" typeof="bibo:Chapter" id="attributes-15"><h4 resource="#h-attributes-15" id="h-attributes-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.13.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-ScriptProcessorNode-bufferSize"><code>bufferSize</code> of type <span class="idlAttrType">long</span>, readonly       </dt><dd>
-            The size of the buffer (in sample-frames) which needs to be
+};</span></pre><section property="bibo:hasPart" resource="#attributes-15" typeof="bibo:Chapter" id="attributes-15"><h4 resource="#h-attributes-15" id="h-attributes-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.13.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-ScriptProcessorNode-bufferSize"><code>bufferSize</code> <span class="idlAttrType">long</span> 型, readonly       </dt><dd>
+<!--            The size of the buffer (in sample-frames) which needs to be
             processed each time <code>onaudioprocess</code> is called. Legal
-            values are (256, 512, 1024, 2048, 4096, 8192, 16384).
-          </dd><dt id="widl-ScriptProcessorNode-onaudioprocess"><code>onaudioprocess</code> of type <span class="idlAttrType">EventHandler</span></dt><dd>
-            A property used to set the <code>EventHandler</code> (described in
+            values are (256, 512, 1024, 2048, 4096, 8192, 16384).-->
+            <code>onaudioprocess</code> が呼ばれる毎に処理が必要なバッファのサイズ(サンプルフレーム数)です。
+            使用可能な値は (256、 512、 1024、 2048、 4096、 8192、 16384) です。
+          </dd><dt id="widl-ScriptProcessorNode-onaudioprocess"><code>onaudioprocess</code> <span class="idlAttrType">EventHandler</span> 型</dt><dd>
+<!--            A property used to set the <code>EventHandler</code> (described in
             <cite><a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">
-            HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]) for the <!--a href=
-            "#audioprocess-spnode"--><a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker"><code>audioprocess</code></a> event that is
+            HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]) for the <a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker"><code>audioprocess</code></a> event that is
             dispatched to <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> node types.
             An event of type <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a> will be
-            dispatched to the event handler.
+            dispatched to the event handler.-->
+            <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> ノードにディスパッチされる
+            <a data-link-type="dfn" class="internalDFN" href="#audioprocess-worker"><code>audioprocess</code></a> イベントに対する
+            (<cite><a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">HTML</a></cite> [<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>] で説明される) <code>EventHandler</code> です。
+            <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a> 型のイベントがイベントハンドラーにディスパッチされます。
           </dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-audioworkernodecreationevent-interface" typeof="bibo:Chapter" id="the-audioworkernodecreationevent-interface">
@@ -6108,41 +6168,51 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             <code>up</code> ベクトルは人の頭頂が指している方向になります。
             これらの値は(お互いに直角であり)線形独立と期待され、そうでなければ予期できない結果をもたらします。
             これらの値をどのように解釈するかの基準要件については、<a href="#Spatialization">空間音響セクション</a>を参照してください。
-          </dd><dt id="widl-SpatialListener-forwardY"><code>forwardY</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the y coordinate component of the forward direction the
+          </dd><dt id="widl-SpatialListener-forwardY"><code>forwardY</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the y coordinate component of the forward direction the
             listener is pointing in 3D Cartesian coordinate space. The default
-            value is 0. This parameter is a-rate.
-          </dd><dt id="widl-SpatialListener-forwardZ"><code>forwardZ</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the z coordinate component of the forward direction the
+            value is 0. This parameter is a-rate.-->
+            3D デカルト空間でリスナーが向いている方向の y 成分を表します。デフォルトは 0 です。このパラメータは a-rate です。
+          </dd><dt id="widl-SpatialListener-forwardZ"><code>forwardZ</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the z coordinate component of the forward direction the
             listener is pointing in 3D Cartesian coordinate space. The default
-            value is 0. This parameter is a-rate.
-          </dd><dt id="widl-SpatialListener-positionX"><code>positionX</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the x coordinate position of the audio listener in a 3D
+            value is 0. This parameter is a-rate.-->
+            3D デカルト空間でリスナーが向いている方向の z 成分を表します。デフォルトは 0 です。このパラメータは a-rate です。
+          </dd><dt id="widl-SpatialListener-positionX"><code>positionX</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the x coordinate position of the audio listener in a 3D
             Cartesian coordinate space. <a class="idlType" href="#idl-def-SpatialPannerNode"><code>SpatialPannerNode</code></a>
             objects use this position relative to individual audio sources for
-            spatialization. The default value is 0. This parameter is a-rate.
-          </dd><dt id="widl-SpatialListener-positionY"><code>positionY</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the y coordinate position of the audio listener in a 3D
+            spatialization. The default value is 0. This parameter is a-rate.-->
+            3D デカルト空間でリスナーの位置の x 座標を表します。<a class="idlType" href="#idl-def-SpatialPannerNode"><code>SpatialPannerNode</code></a> オブジェクトはこの位置と個々の音源の相対的な位置関係を空間音響処理に使用します。
+            デフォルト値は 0 です。このパラメータは a-rate です。
+          </dd><dt id="widl-SpatialListener-positionY"><code>positionY</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the y coordinate position of the audio listener in a 3D
             Cartesian coordinate space. The default value is 0. This parameter
-            is a-rate.
-          </dd><dt id="widl-SpatialListener-positionZ"><code>positionZ</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the z coordinate position of the audio listener in a 3D
+            is a-rate.-->
+            3D デカルト空間でリスナーの位置の y 座標を表します。デフォルト値は 0 です。このパラメータは a-rate です。
+          </dd><dt id="widl-SpatialListener-positionZ"><code>positionZ</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the z coordinate position of the audio listener in a 3D
             Cartesian coordinate space. The default value is 0. This parameter
-            is a-rate.
-          </dd><dt id="widl-SpatialListener-upX"><code>upX</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The <code>upX, upY, upZ</code> parameters represent a direction
+            is a-rate.-->
+            3D デカルト空間でリスナーの位置の z 座標を表します。デフォルト値は 0 です。このパラメータは a-rate です。
+          </dd><dt id="widl-SpatialListener-upX"><code>upX</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The <code>upX, upY, upZ</code> parameters represent a direction
             vector in 3D space, indicating the direction of "up" to the
             listener. For normative requirements of how these values are to be
             interpreted, see the <a href="#Spatialization">spatialization
-            section</a>.
-          </dd><dt id="widl-SpatialListener-upY"><code>upY</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the y coordinate component of the up direction the listener is
+            section</a>.-->
+            <code>upX, upY, upZ</code> パラメータは 3D 空間でのリスナーの "up" 方向を指示する方向ベクトルを表します。
+            この値がどのように解釈されるかの基準要件については、<a href="#Spatialization">空間音響セクション</a>を参照してください。
+          </dd><dt id="widl-SpatialListener-upY"><code>upY</code> span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the y coordinate component of the up direction the listener is
             pointing in 3D Cartesian coordinate space. The default value is 0.
-            This parameter is a-rate.
-          </dd><dt id="widl-SpatialListener-upZ"><code>upZ</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            Sets the z coordinate component of the up direction the listener is
+            This parameter is a-rate.-->
+            3D デカルト空間でリスナーの up 方向の y 成分を表します。デフォルト値は 0 です。このパラメータは a-rate です。
+          </dd><dt id="widl-SpatialListener-upZ"><code>upZ</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            Sets the z coordinate component of the up direction the listener is
             pointing in 3D Cartesian coordinate space. The default value is 0.
-            This parameter is a-rate.
+            This parameter is a-rate.-->
+            3D デカルト空間でリスナーの up 方向の z 成分を表します。デフォルト値は 0 です。このパラメータは a-rate です。
           </dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-stereopannernode-interface" typeof="bibo:Chapter" id="the-stereopannernode-interface">
@@ -7450,29 +7520,47 @@ $$
       </section>
       <section property="bibo:hasPart" resource="#the-iirfilternode-interface" typeof="bibo:Chapter" id="the-iirfilternode-interface">
         <h3 resource="#h-the-iirfilternode-interface" id="h-the-iirfilternode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28 </span>
-          The IIRFilterNode Interface
+          IIRFilterNode インターフェース
         </span></h3>
-        <p>
+<!--        <p>
           <a class="idlType" href="#idl-def-IIRFilterNode"><code>IIRFilterNode</code></a> is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>
           processor implementing a general IIR Filter. In general, it is best
           to use <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>'s to implement
           higher-order filters for the following reasons:
-        </p>
-        <ul>
-          <li>Generally less sensitive to numeric issues
-          </li>
-          <li>Filter parameters can be automated
-          </li>
-          <li>Can be used to create all even-ordered IIR filters
-          </li>
-        </ul>
+        </p>-->
         <p>
+        <a class="idlType" href="#idl-def-IIRFilterNode"><code>IIRFilterNode</code></a> は汎用の IIR フィルターを実装した <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>です。
+        一般的には高次のフィルターについては次のような理由で <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> を利用するのが最善です。</p>
+        <!--        <ul>
+                  <li>Generally less sensitive to numeric issues
+                  </li>
+                  <li>Filter parameters can be automated
+                  </li>
+                  <li>Can be used to create all even-ordered IIR filters
+                  </li>
+                </ul>-->
+        <ul>
+        <li>一般的に数値問題に関して敏感ではありません
+        </li>
+        <li>フィルターのパラメータがオートメーションできます
+        </li>
+        <li>全ての偶数次 IIR フィルターの作成に使用できます
+        </li>
+        </ul>
+
+<!--        <p>
           However, odd-ordered filters cannot be created, so if such filters
           are needed or automation is not needed, then IIR filters may be
           appropriate.
-        </p>
+        </p>-->
         <p>
-          Once created, the coefficients of the IIR filter cannot be changed.
+          しかしながら奇数次フィルターは作成できないため、もしそのようなフィルターが必要でオートメーションが不要ならば IIR フィルターが適切かもしれません。
+          <p>
+<!--          </p>
+            Once created, the coefficients of the IIR filter cannot be changed.
+          </p>-->
+        </p>
+          一度作成された後、 IIR フィルターの係数は変更する事ができません。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
@@ -7480,78 +7568,107 @@ $$
     channelCountMode = "max";
     channelInterpretation = "speakers";
 </pre>
-        <p>
-          The number of channels of the output always equals the number of
-          channels of the input.
-        </p>
+<!--<p>
+  The number of channels of the output always equals the number of
+  channels of the input.
+</p>-->
+<p>
+  出力のチャンネル数は常に入力のチャンネル数と同じになります。
+</p>
         <pre class="idl"><span class="idlInterface" id="idl-def-IIRFilterNode">interface <span class="idlInterfaceID">IIRFilterNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-IIRFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse">getFrequencyResponse</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">frequencyHz</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">magResponse</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">phaseResponse</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#methods-15" typeof="bibo:Chapter" id="methods-15"><h4 resource="#h-methods-15" id="h-methods-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28.1 </span>Methods</span></h4><dl class="methods"><dt id="widl-IIRFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
-            <p>
-              Given the current filter parameter settings, calculates the
-              frequency response for the specified frequencies.
-            </p>
+};</span></pre><section property="bibo:hasPart" resource="#methods-15" typeof="bibo:Chapter" id="methods-15"><h4 resource="#h-methods-15" id="h-methods-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28.1 </span>メソッド</span></h4><dl class="methods"><dt id="widl-IIRFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
+<!--  <p>
+    Given the current filter parameter settings, calculates the
+    frequency response for the specified frequencies.
+  </p>-->
+  <p>
+    与えられた現在のフィルターの設定で、指定の周波数における周波数応答を計算します。
+  </p>
 
           <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                This parameter specifies an array of frequencies at which the
-                response values will be calculated.
+<!--                This parameter specifies an array of frequencies at which the
+                response values will be calculated.-->
+                このパラメータは応答を計算する周波数の配列を指定します。
               </td></tr><tr><td class="prmName">magResponse</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                This parameter specifies an output array receiving the linear
+<!--                This parameter specifies an output array receiving the linear
                 magnitude response values. If this array is shorter than
-                <code>frequencyHz</code> a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be signaled.
+                <code>frequencyHz</code> a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be signaled.-->
+                このパラメータはリニア振幅応答の出力結果を受け取る配列を指定します。
+                もしこの配列が <code>frequencyHz</code> よりも小さい場合、NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
               </td></tr><tr><td class="prmName">phaseResponse</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                This parameter specifies an output array receiving the phase
+<!--                This parameter specifies an output array receiving the phase
                 response values in radians. If this array is shorter than
-                <code>frequencyHz</code> a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be signaled.
-              </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
+                <code>frequencyHz</code> a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be signaled.-->
+                このパラメータはラジアンでの位相応答の出力結果を受け取る配列を指定します。
+                もしこの配列が <code>frequencyHz</code> よりも小さい場合、NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+              </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#filter-definition" typeof="bibo:Chapter" id="filter-definition">
           <h4 resource="#h-filter-definition" id="h-filter-definition"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28.2 </span>
-            Filter Definition
+            Filter 定義
           </span></h4>
-          <p>
+<!--          <p>
             Let \(b_m\) be the <code>feedforward</code> coefficients and
             \(a_n\) be the <code>feedback</code> coefficients specified by
-            <!--a href=
-            "#widl-BaseAudioContext-createIIRFilter-IIRFilterNode-Float32Array-feedforward-Float32Array-feedback"-->
             <code>createIIRFilter</code>. Then the transfer function of the
             general IIR filter is given by
+          </p>-->
+          <p>
+            <code>createIIRFilter</code>で指定される <code>feedforward</code> 係数を\(b_m\)、
+            <code>feedback</code> を\(a_n\)とします。
+            すると一般的な IIR フィルターの 伝達関数は次のように与えられます
           </p>
           <pre>            $$
               H(z) = \frac{\sum_{m=0}^{M} b_m z^{-m}}{\sum_{n=0}^{N} a_n z^{-n}}
             $$
 
 </pre>
-          <p>
+<!--          <p>
             where \(M + 1\) is the length of the \(b\) array and \(N + 1\) is
             the length of the \(a\) array. The coefficient \(a_0\) cannot be 0.
             At least one of \(b_m\) must be non-zero.
-          </p>
+          </p>-->
           <p>
+            ここで、\(M + 1\) は \(b\) 配列の長さで、 \(N + 1\) は \(a\) 配列の長さです。
+            係数 \(a_0\) は 0 にはできません。
+            少なくとも1つの \(b_m\) が非0 でなくてはなりません。
+          </p>
+<!--          <p>
             Equivalently, the time-domain equation is:
+          </p>-->
+          <p>同じように、時間領域の式については:
           </p>
           <pre>            $$
               \sum_{k=0}^{N} a_k y(n-k) = \sum_{k=0}^{M} b_k x(n-k)
             $$
 
 </pre>
-          <p>
-            The initial filter state is the all-zeroes state.
-          </p>
+<!--<p>
+  The initial filter state is the all-zeroes state.
+</p>-->
+<p>
+  フィルターの初期状態は全て 0 になっています。
+</p>
         </section>
       </section>
       <section property="bibo:hasPart" resource="#WaveShaperNode" typeof="bibo:Chapter">
         <h3 resource="#WaveShaperNode" id="WaveShaperNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.29 </span>
-          The WaveShaperNode Interface
+          WaveShaperNode インターフェース
         </span></h3>
-        <p>
+<!--        <p>
           <a class="idlType" href="#idl-def-WaveShaperNode"><code>WaveShaperNode</code></a> is an
           <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> processor implementing non-linear
           distortion effects.
+        </p>-->
+        <p><a class="idlType" href="#idl-def-WaveShaperNode"><code>WaveShaperNode</code></a> は非線形の歪み効果を実装した<a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
         </p>
-        <p>
+<!--        <p>
           Non-linear waveshaping distortion is commonly used for both subtle
           non-linear warming, or more obvious distortion effects. Arbitrary
           non-linear shaping curves may be specified.
+        </p>-->
+        <p>
+          非線形ウェーブシェイピング歪みは微妙な非線形ウォーミングやはっきりしたディストーションの両方のエフェクトで一般的に使用されています。 任意の非線形シェイピング曲線を指定する事ができます
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
@@ -7559,16 +7676,21 @@ $$
     channelCountMode = "max";
     channelInterpretation = "speakers";
 </pre>
-        <p>
-          The number of channels of the output always equals the number of
-          channels of the input.
-        </p>
-        <table class="simple"><tbody><tr><th colspan="2">Enumeration description</th></tr><tr><td><code id="idl-def-OverSampleType.none">none</code></td><td>
-            Don't oversample
+<!--<p>
+  The number of channels of the output always equals the number of
+  channels of the input.
+</p>-->
+<p>出力のチャンネル数は常に入力のチャンネル数に同じです。
+</p>
+        <table class="simple"><tbody><tr><th colspan="2">列挙値の説明</th></tr><tr><td><code id="idl-def-OverSampleType.none">none</code></td><td>
+<!--            Don't oversample-->
+          オーバーサンプリングを行いません
           </td></tr><tr><td><code id="idl-def-OverSampleType.x2x">2x</code></td><td>
-            Oversample two times
+<!--            Oversample two times-->
+          2 倍オーバーサンプリングを行います
           </td></tr><tr><td><code id="idl-def-OverSampleType.x4x">4x</code></td><td>
-            Oversample four times
+<!--            Oversample four times-->
+          4 倍オーバーサンプリングを行います
           </td></tr></tbody></table>
         <pre class="idl"><span class="idlInterface" id="idl-def-WaveShaperNode"><span class="idlEnum" id="idl-def-OverSampleType">enum <span class="idlEnumID">OverSampleType</span> {
     "<a href="#idl-def-OverSampleType.none" class="idlEnumItem">none</a>",
@@ -7577,8 +7699,8 @@ $$
 };</span><br><br>interface <span class="idlInterfaceID">WaveShaperNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType">Float32Array?</span>  <span class="idlAttrName"><a href="#widl-WaveShaperNode-curve">curve</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-OverSampleType"><code>OverSampleType</code></a></span> <span class="idlAttrName"><a href="#widl-WaveShaperNode-oversample">oversample</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-27" typeof="bibo:Chapter" id="attributes-27"><h4 resource="#h-attributes-27" id="h-attributes-27"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.29.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-WaveShaperNode-curve"><code>curve</code> of type <span class="idlAttrType">Float32Array</span>, nullable</dt><dd>
-            <p>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-27" typeof="bibo:Chapter" id="attributes-27"><h4 resource="#h-attributes-27" id="h-attributes-27"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.29.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-WaveShaperNode-curve"><code>curve</code> <span class="idlAttrType">Float32Array</span> 型, nullable</dt><dd>
+<!--            <p>
               The shaping curve used for the waveshaping effect. The input
               signal is nominally within the range [-1; 1]. Each input sample
               within this range will index into the shaping curve, with a
@@ -7589,34 +7711,55 @@ $$
               -1 will correspond to the first value in the curve array. Any
               sample value greater than +1 will correspond to the last value in
               the curve array.
-            </p>
+            </p>-->
             <p>
+              ウェーブシェイピング・エフェクトで使用されるシェイピング曲線です。 入力信号は名目上 [-1 ; +1] の範囲になります。 この範囲内のそれぞれの入力サンプルはシェイピング曲線にインデックスされ、信号レベル0が配列の要素が奇数個の場合は中央の値、そうでなく要素が偶数個の場合はもっとも中心に近い2つの値が補間された値になります。
+              -1よりも小さい全てのサンプルは曲線配列の最初の値に対応します。 +1よりも大きい全てのサンプルは曲線配列の最後の値に対応します。
+            </p>
+<!--            <p>
               The implementation must perform linear interpolation between
               adjacent points in the curve. Initially the curve attribute is
               null, which means that the WaveShaperNode will pass its input to
               its output without modification.
-            </p>
+            </p>-->
             <p>
+              実装は曲線の配列の隣接した値から直線補間を行わなくてはなりません。
+              curve 属性の初期値はnullで、これは WaveShaperNode は入力を変更せずにそのまま出力する事を意味します。
+            </p>
+<!--            <p>
               Values of the curve are spread with equal spacing in the [-1; 1]
               range. This means that a <code>curve</code> with a even
               number of value will not have a value for a signal at zero, and a
               <code>curve</code> with an odd number of value will have a
               value for a signal at zero.
-            </p>
+            </p>-->
             <p>
+              曲線の値は [-1; 1] の範囲に広がっています。
+              これは <code>curve</code> の値が偶数個の場合は信号 0 に対応する値を持っていない事を意味し、<code>curve</code> が奇数個の値の場合は信号 0 に対応する値を持っている事を意味します。
+            </p>
+<!--            <p>
               A <code>InvalidStateError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown if this attribute
               is set with a <code>Float32Array</code> that has a
               <code>length</code> less than 2.
-            </p>
+            </p>-->
             <p>
+              もしこの属性が<code>長さ</code>が 2 より小さい <code>Float32Array</code> に設定されると
+              <code>InvalidStateError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+            </p>
+<!--            <p>
               When this attribute is set, an internal copy of the curve is
               created by the <a class="idlType" href="#idl-def-WaveShaperNode"><code>WaveShaperNode</code></a>. Subsequent
               modifications of the contents of the array used to set the
               attribute therefore have no effect: the attribute must be set
               again in order to change the curve.
-            </p>
-          </dd><dt id="widl-WaveShaperNode-oversample"><code>oversample</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-OverSampleType"><code>OverSampleType</code></a></span></dt><dd>
+            </p>-->
             <p>
+              この属性が設定された時、<a class="idlType" href="#idl-def-WaveShaperNode"><code>WaveShaperNode</code></a> によって曲線の内部的なコピーが作成されます。
+              それ以降の属性の設定に使用した配列の変更は効果が反映されません:
+                曲線を変更するには属性を再度設定する必要があります。
+            </p>
+          </dd><dt id="widl-WaveShaperNode-oversample"><code>oversample</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-OverSampleType"><code>OverSampleType</code></a></span> 型</dt><dd>
+<!--            <p>
               Specifies what type of oversampling (if any) should be used when
               applying the shaping curve. The default value is "none", meaning
               the curve will be applied directly to the input samples. A value
@@ -7624,28 +7767,47 @@ $$
               avoiding some aliasing, with the "4x" value yielding the highest
               quality. For some applications, it's better to use no
               oversampling in order to get a very precise shaping curve.
-            </p>
+            </p>-->
             <p>
+              シェイピング曲線に(行うならば)どのようなオーバーサンプリングを行うかを指定します。
+              デフォルト値は "none" で、曲線は直接入力サンプルに適用される事を意味します。
+              値、"2x" または "4x" は幾らかのエイリアシングを避けて処理の品質を向上させ、"4x" が最も良い品質となります。
+              アプリケーションによっては非常に高精度なシェイピング曲線を得るためにオーバーサンプリングを使用しない方が良い場合もあります。
+            </p>
+<!--            <p>
               A value of "2x" or "4x" means that the following steps must be
               performed:
+            </p>-->
+            <p>
+              "2x" または "4x" の値は次のステップを実行しなくてはならない事を意味します:
             </p>
             <ol>
-              <li>Up-sample the input samples to 2x or 4x the sample-rate of
+<!--              <li>Up-sample the input samples to 2x or 4x the sample-rate of
               the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>. Thus for each processing
               block of 128 samples, generate 256 (for 2x) or 512 (for 4x)
               samples.
-              </li>
-              <li>Apply the shaping curve.
-              </li>
-              <li>Down-sample the result back to the sample-rate of the
+            </li>-->
+            <li>
+              入力のサンプルを <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> のサンプルレートの 2x または 4x にアップサンプリングします。そのため、それぞれの処理ブロックは 128 サンプルから 256 (2x の場合) または 512 (4x の場合) サンプルになります。
+            </li>
+<!--              <li>Apply the shaping curve.
+</li>-->
+            <li>シェイピング曲線を適用します。
+            </li>
+<!--              <li>Down-sample the result back to the sample-rate of the
               <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>. Thus taking the 256 (or 512)
               processed samples, generating 128 as the final result.
-              </li>
+            </li>-->
+            <li>
+              結果を <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> のサンプルレートにダウンサンプリングして戻します。つまり処理された 256 (または 512)のサンプルから 最終的な結果の 128 サンプルを生成します。
+            </li>
             </ol>
-            <p>
+<!--            <p>
               The exact up-sampling and down-sampling filters are not
               specified, and can be tuned for sound quality (low aliasing,
               etc.), low latency, and performance.
+            </p>-->
+            <p>正確なアップサンプリングおよびダウンサンプリングフィルターは定められておらず、(低エイリアシング等の)音の品質、低レイテンシー、パフォーマンス等をチューニングする事もできます。
             </p>
           </dd></dl></section>
       </section>
