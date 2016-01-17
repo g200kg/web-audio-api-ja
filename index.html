@@ -962,7 +962,7 @@ table.exceptions table {
           </a></li></ul></li><li class="tocline"><a class="tocxref" href="#the-analysernode-interface"><span class="secno">2.23 </span>
           AnalyserNode インターフェース
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#attributes-24"><span class="secno">2.23.1 </span>属性</a></li><li class="tocline"><a class="tocxref" href="#methods-13"><span class="secno">2.23.2 </span>メソッド</a></li><li class="tocline"><a class="tocxref" href="#fft-windowing-and-smoothing-over-time"><span class="secno">2.23.3 </span>
-            FFT ウィンドウイングと時間的スムージング
+            FFT 窓関数と時間的スムージング
           </a></li></ul></li><li class="tocline"><a class="tocxref" href="#the-channelsplitternode-interface"><span class="secno">2.24 </span>
           ChannelSplitterNode インターフェース
         </a></li><li class="tocline"><a class="tocxref" href="#the-channelmergernode-interface"><span class="secno">2.25 </span>
@@ -1990,7 +1990,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </p>-->
             <p>state が "closed" の時、これ以上の状態の遷移はできません。
             </p>
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods" typeof="bibo:Chapter" id="methods"><h4 resource="#h-methods" id="h-methods"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-BaseAudioContext-close-Promise-void"><code>close</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods" typeof="bibo:Chapter" id="methods"><h4 resource="#h-methods" id="h-methods"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.2 </span>メソッド  <button onclick="OpenOriginal('h-methods')">原文</button></span></h4><dl class="methods"><dt id="widl-BaseAudioContext-close-Promise-void"><code>close</code></dt><dd>
 <!--            <p>
             Closes the audio context, releasing any system audio resources used
             by the <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a>. This will not
@@ -2638,12 +2638,12 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             <p>
               システムがサスペンドされている間、 MediaStream は出力が無視されます---つまりメディアストリームのリアルタイム性によってデータが失われる事になります。 HTMLMediaElement も同様にシステムが resume されるまで出力が無視されます。
               AudioWorker と ScriptProcessorNode は単純に onaudioprocess イベントが発行されなくなりますが、resume された時には復帰します。
-              AnalyserNode ではウィンドウ関数の目的から、データは継続的に流れているものとみなされます - つまり resume() / suspend() は AnalyserNode のデータストリームに無音状態を作りません。
+              AnalyserNode では窓関数の目的から、データは継続的に流れているものとみなされます - つまり resume() / suspend() は AnalyserNode のデータストリームに無音状態を作りません。
             </p>
           <div><em>パラメータなし</em></div><div><em>戻り値: </em><code>Promise&lt;void&gt;</code></div>
         </dd>
       </dl></section>
-        <section property="bibo:hasPart" resource="#callback-decodesuccesscallback-parameters" typeof="bibo:Chapter" id="callback-decodesuccesscallback-parameters"><h4 resource="#h-callback-decodesuccesscallback-parameters" id="h-callback-decodesuccesscallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Callback <a href="#idl-def-DecodeSuccessCallback" class="idlType"><code>DecodeSuccessCallback</code></a> パラメータ</span></h4><dl class="callback-members"><dt id="widl-DecodeSuccessCallback-decodedData"><code>decodedData</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>型</dt>
+        <section property="bibo:hasPart" resource="#callback-decodesuccesscallback-parameters" typeof="bibo:Chapter" id="callback-decodesuccesscallback-parameters"><h4 resource="#h-callback-decodesuccesscallback-parameters" id="h-callback-decodesuccesscallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Callback <a href="#idl-def-DecodeSuccessCallback" class="idlType"><code>DecodeSuccessCallback</code></a> パラメータ <button onclick="OpenOriginal('h-callback-decodesuccesscallback-parameters')">原文</button></span></h4><dl class="callback-members"><dt id="widl-DecodeSuccessCallback-decodedData"><code>decodedData</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>型</dt>
 <!--          <dd>
             The AudioBuffer containing the decoded audio data.
           </dd>-->
@@ -2651,7 +2651,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             デコードされたオーディオデータを保持する AudioBuffer です。
           </dd>
         </dl></section>
-        <section property="bibo:hasPart" resource="#callback-decodeerrorcallback-parameters" typeof="bibo:Chapter" id="callback-decodeerrorcallback-parameters"><h4 resource="#h-callback-decodeerrorcallback-parameters" id="h-callback-decodeerrorcallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.4 </span>Callback <a href="#idl-def-DecodeErrorCallback" class="idlType"><code>DecodeErrorCallback</code></a> パラメータ</span></h4><dl class="callback-members"><dt id="widl-DecodeErrorCallback-error"><code>error</code> <span class="idlMemberType">DOMException　型</span></dt>
+        <section property="bibo:hasPart" resource="#callback-decodeerrorcallback-parameters" typeof="bibo:Chapter" id="callback-decodeerrorcallback-parameters"><h4 resource="#h-callback-decodeerrorcallback-parameters" id="h-callback-decodeerrorcallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.4 </span>Callback <a href="#idl-def-DecodeErrorCallback" class="idlType"><code>DecodeErrorCallback</code></a> パラメータ <button onclick="OpenOriginal('callback-decodeerrorcallback-parameters')">原文</button></span></h4><dl class="callback-members"><dt id="widl-DecodeErrorCallback-error"><code>error</code> <span class="idlMemberType">DOMException　型</span></dt>
 <!--          <dd>
             The error that occurred while decoding.
           </dd>-->
@@ -2659,7 +2659,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             デコード中に発生したエラーです。
           </dd>
         </dl></section>
-        <section property="bibo:hasPart" resource="#dictionary-audiocontextoptions-members" typeof="bibo:Chapter" id="dictionary-audiocontextoptions-members"><h4 resource="#h-dictionary-audiocontextoptions-members" id="h-dictionary-audiocontextoptions-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.5 </span>ディレクトリ <a href="#idl-def-AudioContextOptions" class="idlType"><code>AudioContextOptions</code></a> メンバー</span></h4><dl class="dictionary-members"><dt id="widl-AudioContextOptions-playbackCategory"><code>playbackCategory</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioContextPlaybackCategory"><code>AudioContextPlaybackCategory　型</code></a></span>, デフォルトは <code>"interactive"</code></dt>
+        <section property="bibo:hasPart" resource="#dictionary-audiocontextoptions-members" typeof="bibo:Chapter" id="dictionary-audiocontextoptions-members"><h4 resource="#h-dictionary-audiocontextoptions-members" id="h-dictionary-audiocontextoptions-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.5 </span>ディレクトリ <a href="#idl-def-AudioContextOptions" class="idlType"><code>AudioContextOptions</code></a> メンバー <button onclick="OpenOriginal('dictionary-audiocontextoptions-members')">原文</button></span></h4><dl class="dictionary-members"><dt id="widl-AudioContextOptions-playbackCategory"><code>playbackCategory</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioContextPlaybackCategory"><code>AudioContextPlaybackCategory　型</code></a></span>, デフォルトは <code>"interactive"</code></dt>
 <!--          <dd>
             Identify the type of playback, which affects tradeoffs between
             audio output latency and power consumption.
@@ -2670,7 +2670,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
         </dl></section>
         <section property="bibo:hasPart" resource="#lifetime-AudioContext" typeof="bibo:Chapter">
           <h4 resource="#lifetime-AudioContext" id="lifetime-AudioContext" class="informative"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.6 </span>
-            ライフタイム
+            ライフタイム <button onclick="OpenOriginal('lifetime-AudioContext')">原文</button>
           </span></h4>
 <!--          <p>
             Once created, an <code>AudioContext</code> will continue to play
@@ -2682,7 +2682,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
         </section>
         <section property="bibo:hasPart" resource="#lack-of-introspection-or-serialization-primitives" typeof="bibo:Chapter" id="lack-of-introspection-or-serialization-primitives" class="informative">
           <h4 resource="#h-lack-of-introspection-or-serialization-primitives" id="h-lack-of-introspection-or-serialization-primitives"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.7 </span>
-            内部検査やシリアライゼーションの基本機能の欠如
+            内部検査やシリアライゼーションの基本機能の欠如 <button onclick="OpenOriginal('lack-of-introspection-or-serialization-primitives')">原文</button>
           </span></h4><p><em>このセクションは参考情報です</em></p>
 <!--          <p>
             The Web Audio <abbr title="Application Programming Interface">API</abbr> takes a <em>fire-and-forget</em> approach to
@@ -2706,7 +2706,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
       </section>
       <section property="bibo:hasPart" resource="#AudioContext" typeof="bibo:Chapter">
         <h3 resource="#AudioContext" id="AudioContext"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>
-          AudioContext インターフェース
+          AudioContext インターフェース <button onclick="OpenOriginal('AudioContext')">原文</button>
         </span></h3>
 <!--        <p>
           This interface represents an audio graph whose
@@ -2722,7 +2722,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a></span>     <span class="idlMethName"><a href="#widl-AudioContext-createMediaElementSource-MediaElementAudioSourceNode-HTMLMediaElement-mediaElement">createMediaElementSource</a></span> (<span class="idlParam"><span class="idlParamType">HTMLMediaElement</span> <span class="idlParamName">mediaElement</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-MediaStreamAudioSourceNode"><code>MediaStreamAudioSourceNode</code></a></span>      <span class="idlMethName"><a href="#widl-AudioContext-createMediaStreamSource-MediaStreamAudioSourceNode-MediaStream-mediaStream">createMediaStreamSource</a></span> (<span class="idlParam"><span class="idlParamType">MediaStream</span> <span class="idlParamName">mediaStream</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-MediaStreamAudioDestinationNode"><code>MediaStreamAudioDestinationNode</code></a></span> <span class="idlMethName"><a href="#widl-AudioContext-createMediaStreamDestination-MediaStreamAudioDestinationNode">createMediaStreamDestination</a></span> ();</span>
-};</span></pre><section property="bibo:hasPart" resource="#methods-1" typeof="bibo:Chapter" id="methods-1"><h4 resource="#h-methods-1" id="h-methods-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.1 </span>メソッド</span></h4><dl class="methods"><dt id="widl-AudioContext-createMediaElementSource-MediaElementAudioSourceNode-HTMLMediaElement-mediaElement"><code>createMediaElementSource</code></dt>
+};</span></pre><section property="bibo:hasPart" resource="#methods-1" typeof="bibo:Chapter" id="methods-1"><h4 resource="#h-methods-1" id="h-methods-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2.1 </span>メソッド <button onclick="OpenOriginal('methods-1')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioContext-createMediaElementSource-MediaElementAudioSourceNode-HTMLMediaElement-mediaElement"><code>createMediaElementSource</code></dt>
 <!--  <dd>
     Creates a <a href="#MediaElementAudioSourceNode">MediaElementAudioSourceNode</a>
     given an HTMLMediaElement. As a consequence of calling this method,
@@ -2760,7 +2760,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
       </section>
       <section property="bibo:hasPart" resource="#OfflineAudioContext" typeof="bibo:Chapter">
         <h3 resource="#OfflineAudioContext" id="OfflineAudioContext"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3 </span>
-          OfflineAudioContext インターフェース
+          OfflineAudioContext インターフェース <button onclick="OpenOriginal('OfflineAudioContext')">原文</button>
         </span></h3>
 <!--        <p>
           <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a> is a particular type of
@@ -2825,14 +2825,14 @@ interface <span class="idlInterfaceID">OfflineAudioContext</span> : <span class=
 <span class="idlMethod">    <span class="idlMethType">Promise&lt;void&gt;</span>        <span class="idlMethName"><a href="#widl-OfflineAudioContext-resume-Promise-void">resume</a></span> ();</span>
 <span class="idlMethod">    <span class="idlMethType">Promise&lt;void&gt;</span>        <span class="idlMethName"><a href="#widl-OfflineAudioContext-suspend-Promise-void--double-suspendTime">suspend</a></span> (<span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">suspendTime</span></span>);</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span> <span class="idlAttrName"><a href="#widl-OfflineAudioContext-oncomplete">oncomplete</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-1" typeof="bibo:Chapter" id="attributes-1"><h4 resource="#h-attributes-1" id="h-attributes-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-OfflineAudioContext-oncomplete"><code>oncomplete</code> <span class="idlAttrType">EventHandler　型</span></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-1" typeof="bibo:Chapter" id="attributes-1"><h4 resource="#h-attributes-1" id="h-attributes-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.1 </span>属性  <button onclick="OpenOriginal('attributes-1')">原文</button></span></h4><dl class="attributes"><dt id="widl-OfflineAudioContext-oncomplete"><code>oncomplete</code> <span class="idlAttrType">EventHandler　型</span></dt><dd>
 <!--  <p>
     An EventHandler of type <a href="#OfflineAudioCompletionEvent">OfflineAudioCompletionEvent</a>.
   </p>-->
   <p>
     <a href="#OfflineAudioCompletionEvent">OfflineAudioCompletionEvent</a> 型のイベントハンドラーです。
   </p>
-</dd></dl></section><section property="bibo:hasPart" resource="#methods-2" typeof="bibo:Chapter" id="methods-2"><h4 resource="#h-methods-2" id="h-methods-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-OfflineAudioContext-resume-Promise-void"><code>resume</code></dt><dd>
+</dd></dl></section><section property="bibo:hasPart" resource="#methods-2" typeof="bibo:Chapter" id="methods-2"><h4 resource="#h-methods-2" id="h-methods-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.2 </span>メソッド <button onclick="OpenOriginal('methods-2')">原文</button></span></h4><dl class="methods"><dt id="widl-OfflineAudioContext-resume-Promise-void"><code>resume</code></dt><dd>
 <!--  <p>
     Resumes the progression of time in an audio context that has been
     suspended. The promise resolves immediately because the
@@ -3001,7 +3001,7 @@ interface <span class="idlInterfaceID">AudioContext</span> : <span class="idlSup
 };</span></pre>
         <section property="bibo:hasPart" resource="#OfflineAudioCompletionEvent" typeof="bibo:Chapter">
           <h4 resource="#OfflineAudioCompletionEvent" id="OfflineAudioCompletionEvent"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.3 </span>
-            OfflineAudioCompletionEvent インターフェース
+            OfflineAudioCompletionEvent インターフェース <button onclick="OpenOriginal('OfflineAudioCompletionEvent')">原文</button>
           </span></h4>
 <!--          <p>
             This is an <code>Event</code> object which is dispatched to
@@ -3011,7 +3011,7 @@ interface <span class="idlInterfaceID">AudioContext</span> : <span class="idlSup
           </p>
           <pre class="idl"><span class="idlInterface" id="idl-def-OfflineAudioCompletionEvent">interface <span class="idlInterfaceID">OfflineAudioCompletionEvent</span> : <span class="idlSuperclass">Event</span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> <span class="idlAttrName"><a href="#widl-OfflineAudioCompletionEvent-renderedBuffer">renderedBuffer</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-2" typeof="bibo:Chapter" id="attributes-2"><h5 resource="#h-attributes-2" id="h-attributes-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.3.1 </span>属性</span></h5><dl class="attributes"><dt id="widl-OfflineAudioCompletionEvent-renderedBuffer"><code>renderedBuffer</code>  <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer　型</code></a></span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-2" typeof="bibo:Chapter" id="attributes-2"><h5 resource="#h-attributes-2" id="h-attributes-2"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.3.3.1 </span>属性 <button onclick="OpenOriginal('attributes-2')">原文</button></span></h5><dl class="attributes"><dt id="widl-OfflineAudioCompletionEvent-renderedBuffer"><code>renderedBuffer</code>  <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer　型</code></a></span>, readonly       </dt><dd>
 <!--  <p>
     An <code>AudioBuffer</code> containing the rendered audio data.
   </p>-->
@@ -3023,7 +3023,7 @@ interface <span class="idlInterfaceID">AudioContext</span> : <span class="idlSup
       </section>
       <section property="bibo:hasPart" resource="#the-audionode-interface" typeof="bibo:Chapter" id="the-audionode-interface">
         <h3 resource="#h-the-audionode-interface" id="h-the-audionode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4 </span>
-          <dfn id="dfn-audionode" data-dfn-type="dfn">AudioNode</dfn> インターフェース
+          <dfn id="dfn-audionode" data-dfn-type="dfn">AudioNode</dfn> インターフェース <button onclick="OpenOriginal('the-audionode-interface')">原文</button>
         </span></h3>
 <!--        <p>
           AudioNodes are the building blocks of an <a href="#AudioContext"><code>AudioContext</code></a>. This interface
@@ -3179,7 +3179,7 @@ interface <span class="idlInterfaceID">AudioContext</span> : <span class="idlSup
 <span class="idlAttribute">                    attribute <span class="idlAttrType">unsigned long</span>         <span class="idlAttrName"><a href="#widl-AudioNode-channelCount">channelCount</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-ChannelCountMode"><code>ChannelCountMode</code></a></span>      <span class="idlAttrName"><a href="#widl-AudioNode-channelCountMode">channelCountMode</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-ChannelInterpretation"><code>ChannelInterpretation</code></a></span> <span class="idlAttrName"><a href="#widl-AudioNode-channelInterpretation">channelInterpretation</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-3" typeof="bibo:Chapter" id="attributes-3"><h4 resource="#h-attributes-3" id="h-attributes-3"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-AudioNode-channelCount"><code>channelCount</code> <span class="idlAttrType">unsigned long</span>型</dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-3" typeof="bibo:Chapter" id="attributes-3"><h4 resource="#h-attributes-3" id="h-attributes-3"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4.1 </span>属性 <button onclick="OpenOriginal('attributes-3')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioNode-channelCount"><code>channelCount</code> <span class="idlAttrType">unsigned long</span>型</dt><dd>
 <!--            <p>
               The number of channels used when up-mixing and down-mixing
               connections to any inputs to the node. The default value is 2
@@ -3271,7 +3271,7 @@ interface <span class="idlInterfaceID">AudioContext</span> : <span class="idlSup
           <dd>
             この <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> から出る出力の数です。この属性は幾つかの <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> では固定の値ですが、 <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a> や <a class="idlType" href="#idl-def-AudioWorkerNode"><code>AudioWorkerNode</code></a> などでは可変になります。
           </dd>
-        </dl></section><section property="bibo:hasPart" resource="#methods-3" typeof="bibo:Chapter" id="methods-3"><h4 resource="#h-methods-3" id="h-methods-3"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-AudioNode-connect-AudioNode-AudioNode-destination-unsigned-long-output-unsigned-long-input"><code>connect</code></dt><dd>
+        </dl></section><section property="bibo:hasPart" resource="#methods-3" typeof="bibo:Chapter" id="methods-3"><h4 resource="#h-methods-3" id="h-methods-3"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4.2 </span>メソッド <button onclick="OpenOriginal('methods-3')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioNode-connect-AudioNode-AudioNode-destination-unsigned-long-output-unsigned-long-input"><code>connect</code></dt><dd>
 
           <!--<p>
             There can only be one connection between a given output of one
@@ -3536,35 +3536,45 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
                </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#lifetime-AudioNode" typeof="bibo:Chapter">
           <h4 resource="#lifetime-AudioNode" id="lifetime-AudioNode" class="informative"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4.3 </span>
-            Lifetime
+            ライフタイム
           </span></h4>
           <p>
-            <i>This section is informative.</i>
+            <i>このセクションは参考情報です。</i>
           </p>
           <p>
-            An implementation may choose any method to avoid unnecessary
+<!--            An implementation may choose any method to avoid unnecessary
             resource usage and unbounded memory growth of unused/finished
             nodes. The following is a description to help guide the general
-            expectation of how node lifetime would be managed.
+            expectation of how node lifetime would be managed.-->
+            実装では、必要のないリソース利用や未使用または終了しているノードが際限なくメモリを使うのを避ける為の何らかの方法を選ぶでしょう。 以降の説明は、一般的に期待されるノードのライフタイムの管理の仕方を案内するものです。
           </p>
           <p>
-            An <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> will live as long as there are any
-            references to it. There are several types of references:
+<!--            An <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> will live as long as there are any
+            references to it. There are several types of references:-->
+            何かしら参照される限り、<a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は存在し続けるでしょう。参照には何種類かのタイプがあります。:
           </p>
           <ol>
-            <li>A <em>normal</em> JavaScript reference obeying normal garbage
-            collection rules.
+            <li>
+<!--              A <em>normal</em> JavaScript reference obeying normal garbage
+            collection rules.-->
+            <em>通常</em>のJavaScript参照。通常のガベージコレクションのルールに従います。
             </li>
-            <li>A <em>playing</em> reference for both
+            <li>
+<!--              A <em>playing</em> reference for both
             <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>s and
             <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a>s. These nodes maintain a
             <em>playing</em> reference to themselves while they are currently
-            playing.
+            playing.-->
+
+            <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>　と <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> の<em>再生中</em>の参照。 再生している間これらのノードは、自分自身への<em>再生中</em>参照を維持します。
             </li>
-            <li>A <em>connection</em> reference which occurs if another
-            <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> is connected to it.
+            <li>
+<!--              A <em>connection</em> reference which occurs if another
+            <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> is connected to it.-->
+            <em>接続</em>参照。別の <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> から接続されている場合に発生します。
             </li>
-            <li>A <em>tail-time</em> reference which an
+            <li>
+<!--              A <em>tail-time</em> reference which an
             <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> maintains on itself as long as it has
             any internal processing state which has not yet been emitted. For
             example, a <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> has a tail which
@@ -3572,46 +3582,55 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
             clapping your hands in a large concert hall and continuing to hear
             the sound reverberate throughout the hall). Some
             <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s have this property. Please see
-            details for specific nodes.
+            details for specific nodes.-->
+            <em>余韻時間</em>参照。<a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は何かしらの内部プロセスで未解放のステートになっている場合は、その間、自分自身を維持します。 例えば、<a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> は無音の入力を受けた後でも再生し続ける余韻を持ちます。 (大きなコンサートホールで柏手を打つと、ホール中に響きわたる音が聞こえるのをイメージして下さい)。 いくつかの <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は、この特性を持ちます。 各ノードの詳細を見てください。
             </li>
           </ol>
           <p>
-            Any <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s which are connected in a cycle
+<!--            Any <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s which are connected in a cycle
             <em>and</em> are directly or indirectly connected to the
             <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> of the
             <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> will stay alive as long as the
-            <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> is alive.
+            <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> is alive.-->
+
+            環状に接続され、且つ直接または間接的に <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> に接続されるすべての <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> はその <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> が存在している間は存在したままになります。
           </p>
-          <div class="note"><div id="h-note1" role="heading" aria-level="5" class="note-title"><span>Note</span></div><p class="">
-            The uninterrupted operation of <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s implies that as
+          <div class="note"><div id="h-note1" role="heading" aria-level="5" class="note-title"><span>注</span></div><p class="">
+<!--            The uninterrupted operation of <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s implies that as
             long as live references exist to a node, the node will continue
             processing its inputs and evolving its internal state even if it is
             disconnected from the audio graph. Since this processing will
             consume CPU and power, developers should carefully consider the
             resource usage of disconnected nodes. In particular, it is a good
             idea to minimize resource consumption by explicitly putting
-            disconnected nodes into a stopped state when possible.
+            disconnected nodes into a stopped state when possible.-->
+            <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の継続的な動作はそのノードへの暗黙的に参照が存在しているという事を意味し、たとえオーディオグラフから切断されていても、ノードは入力を処理し続け、内部状態を更新し続けます。
+            この処理はCPUと電力を消費し続けるため、開発者は注意深くリソースの使用について考慮しなくてはなりません。
+            特に、可能な時には明示的に切断されたノードを停止状態にする事でリソースの消費を最小化するのは良い考えです。
           </p></div>
           <p>
-            When an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> has no references it will be
+<!--            When an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> has no references it will be
             deleted. Before it is deleted, it will disconnect itself from any
             other <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s which it is connected to. In
             this way it releases all connection references (3) it has to other
-            nodes.
+            nodes.-->
+
+            参照を全く持たなくなった時、<a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は削除されます。 しかしそれが削除される前に、他の <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> から自分への接続を切断します。 同様にこのノードから他のノードに対するすべての接続参照(3)を解放します。
           </p>
           <p>
-            Regardless of any of the above references, it can be assumed that
+<!--            Regardless of any of the above references, it can be assumed that
             the <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> will be deleted when its
-            <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> is deleted.
+            <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> is deleted.-->
+            上記の参照の種類に関わらず、ノードの <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> が削除された時には、もちろん <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は削除されます。
           </p>
         </section>
       </section>
       <section property="bibo:hasPart" resource="#AudioDestinationNode" typeof="bibo:Chapter">
         <h3 resource="#AudioDestinationNode" id="AudioDestinationNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5 </span>
-          The AudioDestinationNode Interface
+          AudioDestinationNode インターフェース
         </span></h3>
         <p>
-          This is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> representing the final audio
+<!--          This is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> representing the final audio
           destination and is what the user will ultimately hear. It can often
           be considered as an audio output device which is connected to
           speakers. All rendered audio to be heard will be routed to this node,
@@ -3619,7 +3638,9 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
           graph. There is only a single AudioDestinationNode per
           <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>, provided through the
           <code>destination</code> attribute of
-          <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>.
+          <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>.-->
+
+          これはユーザーが聴く事になる最終的な音の出力地点を表す <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。 それは多くの場合、スピーカーが接続されているオーディオ出力デバイスと考えられます。 聴こえるべきすべてのレンダリングされた音は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> のルーティンググラフの"終端点"であるこのノードに導かれます。 AudioDestinationNode は1つの <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> に付き、<a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <code>destination</code> 属性を介して 1つだけ存在します。
         </p>
         <pre>      numberOfInputs  : 1
       numberOfOutputs : 0
@@ -3630,9 +3651,9 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 </pre>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioDestinationNode">interface <span class="idlInterfaceID">AudioDestinationNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">unsigned long</span> <span class="idlAttrName"><a href="#widl-AudioDestinationNode-maxChannelCount">maxChannelCount</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-4" typeof="bibo:Chapter" id="attributes-4"><h4 resource="#h-attributes-4" id="h-attributes-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioDestinationNode-maxChannelCount"><code>maxChannelCount</code> of type <span class="idlAttrType">unsigned long</span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-4" typeof="bibo:Chapter" id="attributes-4"><h4 resource="#h-attributes-4" id="h-attributes-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioDestinationNode-maxChannelCount"><code>maxChannelCount</code>  <span class="idlAttrType">unsigned long</span> 型, readonly       </dt><dd>
             <p>
-              The maximum number of channels that the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
+<!--              The maximum number of channels that the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
               attribute can be set to. An
               <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> representing the audio
               hardware end-point (the normal case) can potentially output more
@@ -3643,10 +3664,15 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               changed. This will be the case for an
               <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> in an
               <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a> and also for basic
-              implementations with hardware support for stereo output only.
+              implementations with hardware support for stereo output only.-->
+              <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> 属性で設定できるチャンネル数の最大値です。
+              <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> (通常は)オーディオハードウェアの終端点を表し、マルチチャンネル対応のハードウェアならば2チャンネル以上の音を出力する事ができます。
+              <code>maxChannelCount</code> はハードウェアがサポートできるチャンネル数の最大値です。
+              もしこの値が 0 ならば <a href="#widl-AudioNode-channelCount">channelCount</a> は変更できない事を表します。
+              これは <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a> の <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> やハードウェアの基本実装がステレオ出力のみに対応している場合です。
             </p>
             <p>
-              <a href="#widl-AudioNode-channelCount">channelCount</a> defaults
+<!--              <a href="#widl-AudioNode-channelCount">channelCount</a> defaults
               to 2 for a destination in a normal
               <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>, and may be set to any non-zero
               value less than or equal to <code>maxChannelCount</code>. An
@@ -3654,13 +3680,16 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               this value is not within the valid range. Giving a concrete
               example, if the audio hardware supports 8-channel output, then we
               may set <a href="#widl-AudioNode-channelCount">channelCount</a>
-              to 8, and render 8-channels of output.
+              to 8, and render 8-channels of output.-->
+              通常の <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の destination では、<a href="#widl-AudioNode-channelCount">channelCount</a> のデフォルト値は 2 であり、0 以外で <code>maxChannelCount</code> と同じか小さい値に設定する事ができます。
+              値が有効な範囲外の場合、<code>IndexSizeError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。 具体的な例をあげれば、もしオーディオハードウェアが8チャンネル出力をサポートしている場合、<a href="#widl-AudioNode-channelCount">channelCount</a> を 8 に設定でき、8 チャンネルの出力が得られます。
             </p>
             <p>
-              For an<a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> in an
+<!--              For an<a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> in an
               <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a>, the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> is
               determined when the offline context is created and this value may
-              not be changed.
+              not be changed.-->
+              <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a> の <a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a> については、 <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> は OfflineAudioContext が作成された時点で決定され、この値は変更できません。
             </p>
           </dd></dl></section>
       </section>
@@ -4102,7 +4131,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#GainNode" typeof="bibo:Chapter">
         <h3 resource="#GainNode" id="GainNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.7 </span>
-          GainNode インターフェース
+          GainNode インターフェース <button onclick="OpenOriginal('GainNode')">原文</button>
         </span></h3>
 <!--        <p>
           Changing the gain of an audio signal is a fundamental operation in
@@ -4132,7 +4161,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-GainNode">interface <span class="idlInterfaceID">GainNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-GainNode-gain">gain</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-6" typeof="bibo:Chapter" id="attributes-6"><h4 resource="#h-attributes-6" id="h-attributes-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.7.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-GainNode-gain"><code>gain</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-6" typeof="bibo:Chapter" id="attributes-6"><h4 resource="#h-attributes-6" id="h-attributes-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.7.1 </span>属性 <button onclick="OpenOriginal('attributes-6')">原文</button></span></h4><dl class="attributes"><dt id="widl-GainNode-gain"><code>gain</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
 <!--            Represents the amount of gain to apply. Its default
             <code>value</code> is 1 (no gain change). The nominal
             <code>minValue</code> is 0, but may be set negative for phase
@@ -4144,7 +4173,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#DelayNode" typeof="bibo:Chapter">
         <h3 resource="#DelayNode" id="DelayNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.8 </span>
-          DelayNode インターフェース
+          DelayNode インターフェース <button onclick="OpenOriginal('DelayNode')">原文</button>
         </span></h3>
 <!--0        <p>
           A delay-line is a fundamental building block in audio applications.
@@ -4196,7 +4225,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-DelayNode">interface <span class="idlInterfaceID">DelayNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-DelayNode-delayTime">delayTime</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-7" typeof="bibo:Chapter" id="attributes-7"><h4 resource="#h-attributes-7" id="h-attributes-7"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.8.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-DelayNode-delayTime"><code>delayTime</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-7" typeof="bibo:Chapter" id="attributes-7"><h4 resource="#h-attributes-7" id="h-attributes-7"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.8.1 </span>属性 <button onclick="OpenOriginal('attributes-7')">原文</button></span></h4><dl class="attributes"><dt id="widl-DelayNode-delayTime"><code>delayTime</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
 <!--            <p>
               An <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> object representing the amount
               of delay (in seconds) to apply. Its default <code>value</code> is
@@ -4227,23 +4256,27 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#AudioBuffer" typeof="bibo:Chapter">
         <h3 resource="#AudioBuffer" id="AudioBuffer"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9 </span>
-          The AudioBuffer Interface
+          AudioBuffer インターフェース
         </span></h3>
         <p>
-          This interface represents a memory-resident audio asset (for one-shot
+<!--          This interface represents a memory-resident audio asset (for one-shot
           sounds and other short audio clips). Its format is non-interleaved
           IEEE 32-bit linear PCM with a nominal range of -1 -&gt; +1. It can
           contain one or more channels. Typically, it would be expected that
           the length of the PCM data would be fairly short (usually somewhat
           less than a minute). For longer sounds, such as music soundtracks,
           streaming should be used with the <code>audio</code> element and
-          <code>MediaElementAudioSourceNode</code>.
+          <code>MediaElementAudioSourceNode</code>.-->
+          このインターフェースはメモリ上に保持されるオーディオのリソース(ワンショットの音やその他の短いオーディオクリップ)を表します。 そのフォーマットは-1 ～ +1の名目上の範囲を持つ非インターリーブのIEEE 32ビット・リニアPCMです。
+          1つ以上のチャンネルを持つ事ができます。
+          典型的には、そのPCMデータは適度に(通常1分以内程度に)短いと見込まれます。 音楽の1曲分のような長時間の音に関しては <code>audio</code> 要素と <code>MediaElementAudioSourceNode</code> によるストリーミングを使うべきです。
         </p>
         <p>
-          An <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> may be used by one or more
+<!--          An <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> may be used by one or more
           <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>s, and can be shared between an
           <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a> and an
-          <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>.
+          <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>.-->
+          <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> は1つ以上の <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> で使用される場合があり、また <a class="idlType" href="#idl-def-OfflineAudioContext"><code>OfflineAudioContext</code></a> と <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> で共有する事もできます。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioBuffer">interface <span class="idlInterfaceID">AudioBuffer</span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">float</span>  <span class="idlAttrName"><a href="#widl-AudioBuffer-sampleRate">sampleRate</a></span>;</span>
@@ -4255,70 +4288,98 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
               </span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType">void</span>         <span class="idlMethName"><a href="#widl-AudioBuffer-copyToChannel-void-Float32Array-source-unsigned-long-channelNumber-unsigned-long-startInChannel">copyToChannel</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">source</span></span>, <span class="idlParam"><span class="idlParamType">unsigned long</span> <span class="idlParamName">channelNumber</span></span>, <span class="idlParam">optional <span class="idlParamType">unsigned long</span> <span class="idlParamName">startInChannel</span> = <span class="idlDefaultValue">0
               </span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-8" typeof="bibo:Chapter" id="attributes-8"><h4 resource="#h-attributes-8" id="h-attributes-8"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioBuffer-duration"><code>duration</code> of type <span class="idlAttrType">double</span>, readonly       </dt><dd>
-            Duration of the PCM audio data in seconds.
-          </dd><dt id="widl-AudioBuffer-length"><code>length</code> of type <span class="idlAttrType">long</span>, readonly       </dt><dd>
-            Length of the PCM audio data in sample-frames.
-          </dd><dt id="widl-AudioBuffer-numberOfChannels"><code>numberOfChannels</code> of type <span class="idlAttrType">long</span>, readonly       </dt><dd>
-            The number of discrete audio channels.
-          </dd><dt id="widl-AudioBuffer-sampleRate"><code>sampleRate</code> of type <span class="idlAttrType">float</span>, readonly       </dt><dd>
-            The sample-rate for the PCM audio data in samples per second.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-5" typeof="bibo:Chapter" id="methods-5"><h4 resource="#h-methods-5" id="h-methods-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.2 </span>Methods</span></h4><dl class="methods"><dt id="widl-AudioBuffer-copyFromChannel-void-Float32Array-destination-unsigned-long-channelNumber-unsigned-long-startInChannel"><code>copyFromChannel</code></dt><dd>
-            The <code>copyFromChannel</code> method copies the samples from the
+};</span></pre><section property="bibo:hasPart" resource="#attributes-8" typeof="bibo:Chapter" id="attributes-8"><h4 resource="#h-attributes-8" id="h-attributes-8"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.1 </span>属性　</span></h4><dl class="attributes"><dt id="widl-AudioBuffer-duration"><code>duration</code> <span class="idlAttrType">double</span> 型, readonly       </dt>
+  <dd>
+<!--            Duration of the PCM audio data in seconds.-->
+  PCM オーディオデータの秒で表現された長さです。
+  </dd>
+  <dt id="widl-AudioBuffer-length"><code>length</code> <span class="idlAttrType">long</span> 型, readonly       </dt>
+  <dd>
+<!--            Length of the PCM audio data in sample-frames.-->
+    PCM オーディオデータのサンプルフレーム数で表現された長さです。
+  </dd>
+  <dt id="widl-AudioBuffer-numberOfChannels"><code>numberOfChannels</code> <span class="idlAttrType">long</span> 型, readonly       </dt>
+  <dd>
+<!--            The number of discrete audio channels.-->
+    オーディオのチャンネル数です。
+  </dd>
+  <dt id="widl-AudioBuffer-sampleRate"><code>sampleRate</code> <span class="idlAttrType">float</span> 型, readonly       </dt>
+  <dd>
+<!--            The sample-rate for the PCM audio data in samples per second.-->
+    PCM オーディオデータの秒あたりのサンプル数で表現されたサンプルレートです。
+  </dd>
+</dl></section><section property="bibo:hasPart" resource="#methods-5" typeof="bibo:Chapter" id="methods-5"><h4 resource="#h-methods-5" id="h-methods-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-AudioBuffer-copyFromChannel-void-Float32Array-destination-unsigned-long-channelNumber-unsigned-long-startInChannel"><code>copyFromChannel</code></dt>
+  <dd>
+<!--            The <code>copyFromChannel</code> method copies the samples from the
             specified channel of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> to the
-            <code>destination</code> array.
+            <code>destination</code> array.-->
+            <code>copyFromChannel</code> メソッドは <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の指定されたチャンネルから <code>destination</code> で示される配列にサンプルをコピーします。
 
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The array the channel data will be copied to.
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+
+<!--                The array the channel data will be copied to.-->
+              チャンネルデータをコピーする先の配列です。
               </td></tr><tr><td class="prmName">channelNumber</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The index of the channel to copy the data from. If
+<!--                The index of the channel to copy the data from. If
                 <code>channelNumber</code> is greater or equal than the number
                 of channel of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, an
-                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.
+                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+                データをコピーするチャンネルのインデックスです。
+                もし <code>channelNumber</code> が <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> のチャンネル数よりも大きいまたは等しい場合、<code>IndexSizeError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
               </td></tr><tr><td class="prmName">startInChannel</td><td class="prmType"><code>unsigned long = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
-                An optional offset to copy the data from. If
+<!--                An optional offset to copy the data from. If
                 <code>startInChannel</code> is greater than the
                 <code>length</code> of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, an
-                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.
-              </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-AudioBuffer-copyToChannel-void-Float32Array-source-unsigned-long-channelNumber-unsigned-long-startInChannel"><code>copyToChannel</code></dt><dd>
-            The <code>copyToChannel</code> method copies the samples to the
+                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+                オプションのオフセットで、コピーをどこから行うかを指定します。もし <code>startInChannel</code> が <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の <code>length</code> より大きい場合、<code>IndexSizeError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+              </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioBuffer-copyToChannel-void-Float32Array-source-unsigned-long-channelNumber-unsigned-long-startInChannel"><code>copyToChannel</code></dt><dd>
+<!--            The <code>copyToChannel</code> method copies the samples to the
             specified channel of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, from the
-            <code>source</code> array.
-
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">source</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The array the channel data will be copied from.
+            <code>source</code> array.-->
+            <code>copyToChannel</code> メソッドは <code>source</code> で示される配列から <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の指定されたチャンネルにサンプルをコピーします。
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">source</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                The array the channel data will be copied from.-->
+            チャンネルデータをコピーする元の配列です。
               </td></tr><tr><td class="prmName">channelNumber</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The index of the channel to copy the data to. If
+<!--                The index of the channel to copy the data to. If
                 <code>channelNumber</code> is greater or equal than the number
                 of channel of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, an
-                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.
+                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+                データをコピーする先のチャンネルのインデックスです。もし、 <code>channelNumber</code> が <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> のチャンネル数よりも大きいまたは等しい場合、<code>IndexSizeError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
               </td></tr><tr><td class="prmName">startInChannel</td><td class="prmType"><code>unsigned long = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
-                An optional offset to copy the data to. If
+<!--                An optional offset to copy the data to. If
                 <code>startInChannel</code> is greater than the
                 <code>length</code> of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, an
-                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.
-              </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel"><code>getChannelData</code></dt><dd>
-            Returns the <code>Float32Array</code> representing the PCM audio
-            data for the specific channel.
-
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">channel</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                This parameter is an index representing the particular channel
+                <code>IndexSizeError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+                オプションのオフセットで、コピーをどこへ行うかを指定します。もし <code>startInChannel</code> が <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の <code>length</code> より大きい場合、<code>IndexSizeError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+              </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel"><code>getChannelData</code></dt><dd>
+<!--            Returns the <code>Float32Array</code> representing the PCM audio
+            data for the specific channel.-->
+              指定のチャンネルの PCM オーディオデータが格納された <code>Float32Array</code> を返します。
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">channel</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                This parameter is an index representing the particular channel
                 to get data for. An index value of 0 represents the first
                 channel. This index value <em title="MUST" class="rfc2119">MUST</em> be less than
                 <code>numberOfChannels</code> or an IndexSizeError exception
-                <em title="MUST" class="rfc2119">MUST</em> be thrown.
-              </td></tr></tbody></table><div><em>Return type: </em><code>Float32Array</code></div></dd></dl></section>
-        <div class="note"><div id="h-note2" role="heading" aria-level="4" class="note-title"><span>Note</span></div><p class="">
-          The methods <code>copyToChannel</code> and
+                <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+                このパラメータはデータを取得するチャンネルのインデックスです。
+               インデックス値0は最初のチャンネルを表します。
+               このインデックスは <code>numberOfChannels</code> より小さくなくてはならず(<em title="MUST" class="rfc2119">MUST</em>)、そうでない場合 IndexSizeError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
+
+             </td></tr></tbody></table><div><em>戻り値: </em><code>Float32Array</code></div></dd></dl></section>
+        <div class="note"><div id="h-note2" role="heading" aria-level="4" class="note-title"><span>注</span></div><p class="">
+<!--          The methods <code>copyToChannel</code> and
           <code>copyFromChannel</code> can be used to fill part of an array by
           passing in a <code>Float32Array</code> that's a view onto the larger
           array. When reading data from an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>'s channels, and
           the data can be processed in chunks, <code>copyFromChannel</code>
           should be preferred to calling <code>getChannelData</code> and
           accessing the resulting array, because it may avoid unnecessary
-          memory allocation and copying.
+          memory allocation and copying.-->
+          <code>copyToChannel</code> および <code>copyFromChannel</code> メソッドは より大きな配列に対する view である <code>Float32Array</code> を渡す事で配列の一部だけを埋める事ができます。
+           <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> のチャンネルから一塊として処理できるデータを読み出す場合、<code>getChannelData</code> を呼び出して結果の配列にアクセスするよりも 不必要なメモリー割り当てとコピーを避けられるため、<code>copyFromChannel</code> を使用するべきです。
         </p></div>
         <p>
           An internal operation <a href="#acquire-the-content">acquire the
@@ -4377,33 +4438,40 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#AudioBufferSourceNode" typeof="bibo:Chapter">
         <h3 resource="#AudioBufferSourceNode" id="AudioBufferSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10 </span>
-          The AudioBufferSourceNode Interface
+          AudioBufferSourceNode インターフェース
         </span></h3>
         <p>
-          This interface represents an audio source from an in-memory audio
+<!--          This interface represents an audio source from an in-memory audio
           asset in an <code>AudioBuffer</code>. It is useful for playing audio
           assets which require a high degree of scheduling flexibility, for
           instance, playing back in rhythmically-perfect ways. If
           sample-accurate playback of network- or disk-backed assets is
           required, an implementer should use <a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a>
-          to implement playback.
+          to implement playback.-->
+          このインターフェースは <code>AudioBuffer</code> によってメモリ上に保持されているオーディオデータからのオーディオソースを表します。
+          これはオーディオデータの再生に高度なスケジューリングの柔軟性が要求される場合、例えば完全なリズムを刻むように再生する、ような場合に役立ちます。
+          もしネットワークからあるいはディスクからのデータをサンプル精度で再生する必要がある場合、実装する人は再生のために <a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a> を使用しなくてはなりません。
         </p>
         <p>
-          The start() method is used to schedule when sound playback will
+<!--          The start() method is used to schedule when sound playback will
           happen. The start() method may not be issued multiple times. The
           playback will stop automatically when the buffer's audio data has
           been completely played (if the <code>loop</code> attribute is false),
           or when the stop() method has been called and the specified time has
           been reached. Please see more details in the start() and stop()
-          description.
+          description.-->
+          start() メソッドはいつ再生されるかをスケジュールするために使用されます。
+          start() メソッドを複数回呼び出す事はできません。
+          再生は(もし <code>loop</code> 属性が指定されていなければ)バッファのオーディオデータがすべて再生されると自動的に、 あるいは stop() メソッドが呼び出されて指定された時刻になると停止します。
         </p>
         <pre>  numberOfInputs  : 0
   numberOfOutputs : 1
 </pre>
         <p>
-          The number of channels of the output always equals the number of
+<!--          The number of channels of the output always equals the number of
           channels of the AudioBuffer assigned to the .buffer attribute, or is
-          one channel of silence if .buffer is NULL.
+          one channel of silence if .buffer is NULL.-->
+          出力のチャンネル数は常に .buffer 属性に指定された AudioBuffer のチャンネル数と同じになります。 もし .buffer が NULL の場合、チャンネルは無音の1チャンネルとなります。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioBufferSourceNode">interface <span class="idlInterfaceID">AudioBufferSourceNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>?</span> <span class="idlAttrName"><a href="#widl-AudioBufferSourceNode-buffer">buffer</a></span>;</span>
@@ -4418,20 +4486,26 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-AudioBufferSourceNode-stop-void-double-when">stop</a></span> (<span class="idlParam">optional <span class="idlParamType">double</span> <span class="idlParamName">when</span> = <span class="idlDefaultValue">0
               </span></span>);</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span> <span class="idlAttrName"><a href="#widl-AudioBufferSourceNode-onended">onended</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-9" typeof="bibo:Chapter" id="attributes-9"><h4 resource="#h-attributes-9" id="h-attributes-9"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioBufferSourceNode-buffer"><code>buffer</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>, nullable</dt><dd>
-            Represents the audio asset to be played. This attribute can only be
-            set once, or a <code>InvalidStateError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.
-          </dd><dt id="widl-AudioBufferSourceNode-detune"><code>detune</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            An aditional parameter to modulate the speed at which is rendered
+};</span></pre><section property="bibo:hasPart" resource="#attributes-9" typeof="bibo:Chapter" id="attributes-9"><h4 resource="#h-attributes-9" id="h-attributes-9"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-AudioBufferSourceNode-buffer"><code>buffer</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> 型, nullable</dt><dd>
+<!--            Represents the audio asset to be played. This attribute can only be
+            set once, or a <code>InvalidStateError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+            再生されるオーディオのリソースを指定します。この属性は1回のみ設定できます。そうでない場合は <code>InvalidStateError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+          </dd><dt id="widl-AudioBufferSourceNode-detune"><code>detune</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            An aditional parameter to modulate the speed at which is rendered
             the audio stream. Its default value is 0. Its nominal range is
-            [-1200; 1200]. This parameter is <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>.
-          </dd><dt id="widl-AudioBufferSourceNode-loop"><code>loop</code> of type <span class="idlAttrType">boolean</span></dt><dd>
-            Indicates if the audio data should play in a loop. The default
+            [-1200; 1200]. This parameter is <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>.-->
+            オーディオストリームをレンダリングするスピードを変調する追加のパラメータです。
+            このデフォルト値は 0 です。名目上の範囲は [-1200; 1200] になります。
+            このパラメータは <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a> です。
+          </dd><dt id="widl-AudioBufferSourceNode-loop"><code>loop</code> <span class="idlAttrType">boolean</span> 型</dt><dd>
+<!--            Indicates if the audio data should play in a loop. The default
             value is false. If <code>loop</code> is dynamically modified during
             playback, the new value will take effect on the next processing
-            block of audio.
-          </dd><dt id="widl-AudioBufferSourceNode-loopEnd"><code>loopEnd</code> of type <span class="idlAttrType">double</span></dt><dd>
-            An optional value in seconds where looping should end if the
+            block of audio.-->
+            オーディオデータをループ再生する事を指定します。デフォルト値は false です。
+            もし <code>loop</code> が再生の途中で動的に変更された場合、新しい値は次のオーディオ処理ブロックで効果が表れます。
+          </dd><dt id="widl-AudioBufferSourceNode-loopEnd"><code>loopEnd</code> <span class="idlAttrType">double</span> 型</dt><dd>
+<!--            An optional value in seconds where looping should end if the
             <code>loop</code> attribute is true. Its value is exclusive of the
             content of the loop: the sample frames comprising the loop run from
             the values <code>loopStart</code> to
@@ -4444,9 +4518,18 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
             frame offset within the buffer by multiplying by the buffer's
             sample rate and rounding to the nearest integer value. Thus its
             behavior is independent of the value of the <a href="#widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code></a>
-            parameter.
-          </dd><dt id="widl-AudioBufferSourceNode-loopStart"><code>loopStart</code> of type <span class="idlAttrType">double</span></dt><dd>
-            An optional value in seconds where looping should begin if the
+            parameter.-->
+
+            <code>loop</code> 属性が true の場合、ループの終了位置を秒で表すオプションの値です。
+            この値はループの設定にのみ使用されます:
+            ループを構成するサンプルフレームは
+            <code>loopStart</code> から <code>loopEnd-(1.0/sampleRate)</code>となります。
+            デフォルト値は 0 で、通常は 0 からバッファの長さの任意の値に設定されます。
+            <code>loopEnd</code> が 0 より小さい場合ループは 0 で終了します。
+            もし、<code>loopEnd</code> がバッファの長さよりも大きい場合、ループはバッファの最後で終了します。
+            この属性は、バッファのサンプルレートと乗算され、最も近い整数値に丸められる事でバッファ中の正確なサンプルフレームのオフセットに変換されます。そのため動作は <a href="#widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code></a> パラメータの値に影響されません。
+          </dd><dt id="widl-AudioBufferSourceNode-loopStart"><code>loopStart</code> <span class="idlAttrType">double</span> 型</dt><dd>
+<!--            An optional value in seconds where looping should begin if the
             <code>loop</code> attribute is true. Its default <code>value</code>
             is 0, and it may usefully be set to any value between 0 and the
             duration of the buffer. If <code>loopStart</code> is less than 0,
@@ -4456,38 +4539,55 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
             within the buffer by multiplying by the buffer's sample rate and
             rounding to the nearest integer value. Thus its behavior is
             independent of the value of the <a href="#widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code></a>
-            parameter.
-          </dd><dt id="widl-AudioBufferSourceNode-onended"><code>onended</code> of type <span class="idlAttrType">EventHandler</span></dt><dd>
-            A property used to set the <code>EventHandler</code> (described in
+            parameter.-->
+            <code>loop</code> 属性が true の場合、ループの開始位置を秒で表すオプションの値です。
+            デフォルト値は 0 で、通常は 0 からバッファの長さの任意の値に設定されます。
+            もし <code>loopStart</code> が 0 より小さい場合、ループは 0 から開始します。
+            もし <code>loopEnd</code> がバッファの長さよりも大きい場合、ループはバッファの最後から開始します。
+            この属性は、バッファのサンプルレートと乗算され、最も近い整数値に丸められる事でバッファ中の正確なサンプルフレームのオフセットに変換されます。
+            そのため動作は <a href="#widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code></a> パラメータの値に影響されません。
+          </dd><dt id="widl-AudioBufferSourceNode-onended"><code>onended</code> <span class="idlAttrType">EventHandler</span> 型</dt>
+          <dd>
+<!--            A property used to set the <code>EventHandler</code> (described in
             <cite><a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">
             HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]) for the ended event that is dispatched to
             <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> node types. When the
             playback of the buffer for an
             <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> is finished, an event of
             type <code>Event</code> (described in <cite><a href="https://html.spec.whatwg.org/multipage/infrastructure.html#event">HTML</a></cite>
-            [<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]) will be dispatched to the event handler.
-          </dd><dt id="widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The speed at which to render the audio stream. Its default
-            <code>value</code> is 1. This parameter is <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-6" typeof="bibo:Chapter" id="methods-6"><h4 resource="#h-methods-6" id="h-methods-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.2 </span>Methods</span></h4><dl class="methods"><dt id="widl-AudioBufferSourceNode-start-void-double-when-double-offset-double-duration"><code>start</code></dt><dd>
-            Schedules a sound to playback at an exact time. <code>start</code>
+            [<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]) will be dispatched to the event handler.-->
+            <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> ノードにディスパッチされる ended イベントに対する (<cite><a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">
+            HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]で記述されている) <code>EventHandler</code>を設定するための属性です。
+              <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> がバッファの再生を終えた時、(<cite><a href="https://html.spec.whatwg.org/multipage/infrastructure.html#event">HTML</a></cite>
+              [<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]で記述されている) イベントタイプ <code>Event</code> がイベントハンドラにディスパッチされます。
+          </dd>
+          <dt id="widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The speed at which to render the audio stream. Its default
+            <code>value</code> is 1. This parameter is <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>.-->
+            オーディオストリームの再生速度です。デフォルトの <code>value</code> は 1 です。このパラメータは<a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>です。
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-6" typeof="bibo:Chapter" id="methods-6"><h4 resource="#h-methods-6" id="h-methods-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-AudioBufferSourceNode-start-void-double-when-double-offset-double-duration"><code>start</code></dt><dd>
+<!--            Schedules a sound to playback at an exact time. <code>start</code>
             may only be called one time and must be called before
             <code>stop</code> is called or an InvalidStateError exception <em title="MUST" class="rfc2119">MUST</em>
-            be thrown.
-
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
+            be thrown.-->
+            指定の時刻に音の再生開始をスケジュールします。
+            <code>start</code> は1回のみ呼びだす事ができ、呼び出すのは <code>stop</code> が呼ばれる前でなくてはなりません。
+            そうでない場合、InvalidStateError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
-                The <code>when</code> parameter describes at what time
+<!--                The <code>when</code> parameter describes at what time
                 (in seconds) the sound should start playing. It is in the same
                 time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute.
                 If 0 is passed in for this value or if the value is less than
                 <b>currentTime</b>, then the sound will start playing
                 immediately. A TypeError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if
-                <code>when</code> is negative.
+                <code>when</code> is negative.-->
+                <code>when</code> パラメータは、再生の開始時刻を(秒で)指定します。 これは <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸の時刻を使用します。 もしこの値に 0 、あるいは <b>currentTime</b> よりも小さな値を渡した場合、音は即時に再生されます。
+                もし <code>when</code> が負の値の場合、TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
               </td></tr><tr><td class="prmName">offset</td><td class="prmType"><code>double = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
-                The <dfn data-dfn-type="dfn" id="dfn-offset">offset</dfn> parameter describes the
+<!--                The <dfn data-dfn-type="dfn" id="dfn-offset">offset</dfn> parameter describes the
                 offset time in the buffer (in seconds) where playback will
                 begin. If 0 is passed in for this value, then playback will
                 start from the beginning of the buffer. A TypeError exception
@@ -4499,22 +4599,32 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
                 by the buffer's sample rate and rounding to the nearest integer
                 value. Thus its behavior is independent of the value of the
                 <a href="#widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code></a>
-                parameter.
+                parameter.-->
+                <dfn data-dfn-type="dfn" id="dfn-offset">offset</dfn> パラメータはバッファ中の再生開始位置を(秒で)指定します。
+                 もしこの値に 0 が渡された場合、再生はバッファの先頭から開始されます。
+                 もし <code>offset</code> が負の値の場合 TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+                 もし <code>offset</code> が <code>loopEnd</code> より大きい場合、再生は <code>loopEnd</code> から始まり (そして即時に <code>loopStart</code> にループし) ます。
+                 このパラメータはバッファのサンプルレートと乗算され、最も近い整数値に丸められる事でバッファ中の正確なサンプルフレームのオフセットに変換されます。
+                 そのため動作は <a href="#widl-AudioBufferSourceNode-playbackRate"><code>playbackRate</code></a> パラメータの値に影響されません。
               </td></tr><tr><td class="prmName">duration</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
-                The <code>duration</code> parameter describes the
+<!--                The <code>duration</code> parameter describes the
                 duration of the portion (in seconds) to be played. If this
                 parameter is not passed, the duration will be equal to the
                 total duration of the AudioBuffer minus the <code>offset</code>
                 parameter. Thus if neither <code>offset</code> nor
                 <code>duration</code> are specified then the implied duration
                 is the total duration of the AudioBuffer. An TypeError
-                exception <em title="MUST" class="rfc2119">MUST</em> be thrown if <code>duration</code> is negative.
-              </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-AudioBufferSourceNode-stop-void-double-when"><code>stop</code></dt><dd>
-            Schedules a sound to stop playback at an exact time.
+                exception <em title="MUST" class="rfc2119">MUST</em> be thrown if <code>duration</code> is negative.-->
+                <code>duration</code> パラメータは再生される部分の長さを(秒で)指定します。 もしこの値が渡されなかった場合、再生の長さは AudioBuffer 全体の長さから <code>offset</code> を引いたものになります。
+                つまり、<code>offset</code> も <code>duration</code> も指定されなかった場合、暗黙的に duration は AudioBuffer 全体の長さとなります。
+                もし <code>duration</code> が負の値の場合、TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
 
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
+              </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioBufferSourceNode-stop-void-double-when"><code>stop</code></dt><dd>
+<!--            Schedules a sound to stop playback at an exact time.-->
+                指定の時刻に再生停止をスケジュールします。
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
-                The <code>when</code> parameter describes at what time
+<!--                The <code>when</code> parameter describes at what time
                 (in seconds) the sound should stop playing. It is in the same
                 time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute.
@@ -4528,23 +4638,30 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
                 any subsequent calls. If the buffer has already stopped,
                 further calls to <code>stop</code> will have no effect. If a
                 stop time is reached prior to the scheduled start time, the
-                sound will not play.
-              </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
+                sound will not play.-->
+                <code>when</code> パラメータは、再生の停止時刻を(秒で)指定します。 これは <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸の時刻を使用します。 もしこの値に 0 、あるいは <b>currentTime</b> よりも小さな値を渡した場合、音は即時に停止されます。
+                もし <code>when</code> が負の値の場合、TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+                もし <code>stop</code> が一度呼ばれた後に再度呼ばれた場合、呼び出しの前に既にバッファが停止しているのでなければ、最後の呼び出しのみが適用されて以前の呼び出しで設定された停止時刻は適用されません。
+                もしバッファが既に停止している時に更に <code>stop</code> を呼び出しても効果はありません。もしスケジュールされている開始時刻より前に停止時刻に到達した場合、再生は開始されません。
+              </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <p>
-          Both <code>playbackRate</code> and <code>detune</code> are
+<!--          Both <code>playbackRate</code> and <code>detune</code> are
           <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a> parameters and are used together to determine a
-          <em>computedPlaybackRate</em> value:
+          <em>computedPlaybackRate</em> value:-->
+          <code>playbackRate</code> および <code>detune</code> はどちらも <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a> パラメータであり、共に <em>computedPlaybackRate</em> の計算に使用されます。
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  computedPlaybackRate</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> playbackRate</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> pow</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> detune</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">1200</span><span class="pun">)</span></pre>
         <p>
-          The <code>computedPlaybackRate</code> is the effective speed at which
+<!--          The <code>computedPlaybackRate</code> is the effective speed at which
           the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> of this
-          <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> <em title="MUST" class="rfc2119">MUST</em> be played.
+          <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> <em title="MUST" class="rfc2119">MUST</em> be played.-->
+          <code>computedPlaybackRate</code> はこの <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> の <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> が再生されるべき速度になります (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <p>
-          This <em title="MUST" class="rfc2119">MUST</em> be implemented by <em>resampling</em> the input data using
+<!--          This <em title="MUST" class="rfc2119">MUST</em> be implemented by <em>resampling</em> the input data using
           a resampling ratio of 1 / <code>computedPlaybackRate</code>, hence
-          changing both the pitch and speed of the audio.
+          changing both the pitch and speed of the audio.-->
+          これは入力データを　1 / <code>computedPlaybackRate</code> の率でリサンプリングし、音高と速度を変化させるように実装しなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <section property="bibo:hasPart" resource="#looping-AudioBufferSourceNode" typeof="bibo:Chapter">
           <h4 resource="#looping-AudioBufferSourceNode" id="looping-AudioBufferSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.3 </span>
@@ -5467,7 +5584,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-scriptprocessornode-interface---deprecated" typeof="bibo:Chapter" id="the-scriptprocessornode-interface---deprecated" class="informative">
         <h3 resource="#h-the-scriptprocessornode-interface---deprecated" id="h-the-scriptprocessornode-interface---deprecated"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.13 </span>
-          ScriptProcessorNode インターフェース - 廃止予定
+          ScriptProcessorNode インターフェース - 廃止予定 <button onclick="OpenOriginal('the-scriptprocessornode-interface---deprecated')">原文</button>
         </span></h3>
         <!--<p><em>This section is non-normative.</em></p>-->
         <p><em>このセクションは参考情報です</em></p>
@@ -5535,7 +5652,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
         <pre class="idl"><span class="idlInterface" id="idl-def-ScriptProcessorNode">interface <span class="idlInterfaceID">ScriptProcessorNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span> <span class="idlAttrName"><a href="#widl-ScriptProcessorNode-onaudioprocess">onaudioprocess</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">long</span>         <span class="idlAttrName"><a href="#widl-ScriptProcessorNode-bufferSize">bufferSize</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-15" typeof="bibo:Chapter" id="attributes-15"><h4 resource="#h-attributes-15" id="h-attributes-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.13.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-ScriptProcessorNode-bufferSize"><code>bufferSize</code> <span class="idlAttrType">long</span> 型, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-15" typeof="bibo:Chapter" id="attributes-15"><h4 resource="#h-attributes-15" id="h-attributes-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.13.1 </span>属性 <button onclick="OpenOriginal('attributes-15')">原文</button></span></h4><dl class="attributes"><dt id="widl-ScriptProcessorNode-bufferSize"><code>bufferSize</code> <span class="idlAttrType">long</span> 型, readonly       </dt><dd>
 <!--            The size of the buffer (in sample-frames) which needs to be
             processed each time <code>onaudioprocess</code> is called. Legal
             values are (256, 512, 1024, 2048, 4096, 8192, 16384).-->
@@ -5959,7 +6076,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-spatialpannernode-interface" typeof="bibo:Chapter" id="the-spatialpannernode-interface">
         <h3 resource="#h-the-spatialpannernode-interface" id="h-the-spatialpannernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.19 </span>
-          SpatialPannerNode インターフェース
+          SpatialPannerNode インターフェース <button onclick="OpenOriginal('the-spatialpannernode-interface')">原文</button>
         </span></h3>
 <!--        <p>
           This interface represents a processing node which <a href="#Spatialization">positions</a> an incoming audio stream in
@@ -6060,7 +6177,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-SpatialPannerNode-coneInnerAngle">coneInnerAngle</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-SpatialPannerNode-coneOuterAngle">coneOuterAngle</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-SpatialPannerNode-coneOuterGain">coneOuterGain</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-20" typeof="bibo:Chapter" id="attributes-20"><h4 resource="#h-attributes-20" id="h-attributes-20"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.19.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-SpatialPannerNode-coneInnerAngle"><code>coneInnerAngle</code> <span class="idlAttrType">float</span>型</dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-20" typeof="bibo:Chapter" id="attributes-20"><h4 resource="#h-attributes-20" id="h-attributes-20"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.19.1 </span>属性 <button onclick="OpenOriginal('attributes-20')">原文</button></span></h4><dl class="attributes"><dt id="widl-SpatialPannerNode-coneInnerAngle"><code>coneInnerAngle</code> <span class="idlAttrType">float</span>型</dt><dd>
 <!--            A parameter for directional audio sources, this is an angle, in
             degrees, inside of which there will be no volume reduction. The
             default value is 360.-->
@@ -6128,7 +6245,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#SpatialListener" typeof="bibo:Chapter">
         <h3 resource="#SpatialListener" id="SpatialListener"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.20 </span>
-          SpatialListener インターフェース
+          SpatialListener インターフェース <button onclick="OpenOriginal('SpatialListener')">原文</button>
         </span></h3>
         <p>
 <!--          This interface represents the position and orientation of the person
@@ -6151,7 +6268,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-SpatialListener-upX">upX</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-SpatialListener-upY">upY</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-SpatialListener-upZ">upZ</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-21" typeof="bibo:Chapter" id="attributes-21"><h4 resource="#h-attributes-21" id="h-attributes-21"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.20.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-SpatialListener-forwardX"><code>forwardX</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-21" typeof="bibo:Chapter" id="attributes-21"><h4 resource="#h-attributes-21" id="h-attributes-21"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.20.1 </span>属性 <button onclick="OpenOriginal('attributes-21')">原文</button></span></h4><dl class="attributes"><dt id="widl-SpatialListener-forwardX"><code>forwardX</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
 <!--            The <code>forwardX, forwardY, forwardZ</code> parameters represent
             a direction vector in 3D space. Both a <code>forward</code> vector
             and an <code>up</code> vector are used to determine the orientation
@@ -6217,7 +6334,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-stereopannernode-interface" typeof="bibo:Chapter" id="the-stereopannernode-interface">
         <h3 resource="#h-the-stereopannernode-interface" id="h-the-stereopannernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.21 </span>
-          StereoPannerNode インターフェース
+          StereoPannerNode インターフェース <button onclick="OpenOriginal('the-stereopannernode-interface')">原文</button>
         </span></h3>
 <!--        <p>
           This interface represents a processing node which positions an
@@ -6256,7 +6373,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-StereoPannerNode">interface <span class="idlInterfaceID">StereoPannerNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-StereoPannerNode-pan">pan</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-22" typeof="bibo:Chapter" id="attributes-22"><h4 resource="#h-attributes-22" id="h-attributes-22"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.21.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-StereoPannerNode-pan"><code>pan</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>型, readonly       </dt>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-22" typeof="bibo:Chapter" id="attributes-22"><h4 resource="#h-attributes-22" id="h-attributes-22"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.21.1 </span>属性 <button onclick="OpenOriginal('attributes-22')">原文</button></span></h4><dl class="attributes"><dt id="widl-StereoPannerNode-pan"><code>pan</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>型, readonly       </dt>
 <!--  <dd>
             The position of the input in the output's stereo image. -1
             represents full left, +1 represents full right. Its default value
@@ -6269,7 +6386,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
         </dl></section>
         <section property="bibo:hasPart" resource="#channel-limitations" typeof="bibo:Chapter" id="channel-limitations" class="informative">
           <h4 resource="#h-channel-limitations" id="h-channel-limitations"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.21.2 </span>
-            チャンネルの制限
+            チャンネルの制限 <button onclick="OpenOriginal('channel-limitations')">原文</button>
           </span></h4><p><em>このセクションは参考情報です。</em></p>
 <!--          <p>
             Because its processing is constrained by the above definitions,
@@ -6290,12 +6407,13 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#ConvolverNode" typeof="bibo:Chapter">
         <h3 resource="#ConvolverNode" id="ConvolverNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22 </span>
-          The ConvolverNode Interface
+          ConvolverNode インターフェース
         </span></h3>
         <p>
-          This interface represents a processing node which applies a linear
-          convolution effect given an impulse response.
-        </p>
+<!--          This interface represents a processing node which applies a linear
+          convolution effect given an impulse response.-->
+          このインターフェースはインパルスレスポンスによって線形コンボリューションエフェクトを 適用する処理ノードを表すインターフェースです。
+       </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
 
@@ -6304,18 +6422,20 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     channelInterpretation = "speakers";
 </pre>
         <p>
-          The input of this node is either mono (1 channel) or stereo (2
+<!--          The input of this node is either mono (1 channel) or stereo (2
           channels) and cannot be increased. Connections from nodes with fewer
           or more channels will be <a href="#channel-up-mixing-and-down-mixing">up-mixed or down-mixed
           appropriately</a>, but a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be thrown if an
           attempt is made to set channelCount to a value great than 2 or if
-          channelCountMode is set to "max".
+          channelCountMode is set to "max".-->
+          このノードの入力はモノラル (1 チャンネル) またはステレオ (2 チャンネル) であり増やす事はできません。
+          より少ないチャンネル数または多いチャンネル数のノードからの接続は、<a href="#channel-up-mixing-and-down-mixing">適宜アップミックスまたはダウンミックス</a>されますが、channelCount を 2 以上の値、あるいは channelCountMode を "max" に設定しようとすると NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-ConvolverNode">interface <span class="idlInterfaceID">ConvolverNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>?</span> <span class="idlAttrName"><a href="#widl-ConvolverNode-buffer">buffer</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">boolean</span>      <span class="idlAttrName"><a href="#widl-ConvolverNode-normalize">normalize</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-23" typeof="bibo:Chapter" id="attributes-23"><h4 resource="#h-attributes-23" id="h-attributes-23"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-ConvolverNode-buffer"><code>buffer</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>, nullable</dt><dd>
-            A mono, stereo, or 4-channel <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-23" typeof="bibo:Chapter" id="attributes-23"><h4 resource="#h-attributes-23" id="h-attributes-23"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-ConvolverNode-buffer"><code>buffer</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> 型, nullable</dt><dd>
+<!--            A mono, stereo, or 4-channel <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>
             containing the (possibly multi-channel) impulse response used by
             the <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>. The <code>AudioBuffer</code>
             must have 1, 2, or 4 channels or a NotSupportedError exception <em title="MUST" class="rfc2119">MUST</em>
@@ -6326,10 +6446,16 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             <em>normalize</em> attribute will be used to configure the
             <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> with this impulse response having
             the given normalization. The initial value of this attribute is
-            null.
-          </dd><dt id="widl-ConvolverNode-normalize"><code>normalize</code> of type <span class="idlAttrType">boolean</span></dt><dd>
+            null.-->
+            <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>　で使用される(マルチチャンネルの場合もある)インパルスレスポンスを保持する モノラル、ステレオ、または4チャンネルの<a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>です。
+            <code>AudioBuffer</code> は 1、2、または 4チャンネルでなくてはならずそうでない場合は NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+            この <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> と同じサンプルレートでなくてはなりません。
+            そうでない場合は NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+            この属性が設定される際に、<em>buffer</em> と <em>normalize</em> 属性によってこのインパルスレスポンスが与えられた正規化の後、<a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>の構成に使われます。
+            この属性の初期値はnullです。
+          </dd><dt id="widl-ConvolverNode-normalize"><code>normalize</code> <span class="idlAttrType">boolean</span> 型</dt><dd>
             <p>
-              Controls whether the impulse response from the buffer will be
+<!--              Controls whether the impulse response from the buffer will be
               scaled by an equal-power normalization when the
               <code>buffer</code> atttribute is set. Its default value is
               <code>true</code> in order to achieve a more uniform output level
@@ -6337,22 +6463,27 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               <code>normalize</code> is set to <code>false</code>, then the
               convolution will be rendered with no pre-processing/scaling of
               the impulse response. Changes to this value do not take effect
-              until the next time the <em>buffer</em> attribute is set.
+              until the next time the <em>buffer</em> attribute is set.-->
+              <code>buffer</code> 属性がセットされた時に等価パワーで正規化してインパルスレスポンスをスケーリングされるかどうかを制御します。
+               このデフォルトの値は <code>true</code> で、様々なインパルスレスポンスをロードした時にコンボルバーからの出力レベルを均一化するようになっています。
+                もし <code>normalize</code> が <code>false</code> に設定された場合、インパルスレスポンスの前処理/スケーリングなしでコンボリューションが行われます。 この値を変更した場合、次回に <em>buffer</em> 属性をセットするまで効果は現れません。
             </p>
             <p>
-              If the <em>normalize</em> attribute is false when the
+<!--              If the <em>normalize</em> attribute is false when the
               <em>buffer</em> attribute is set then the
               <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> will perform a linear
               convolution given the exact impulse response contained within the
-              <em>buffer</em>.
+              <em>buffer</em>.-->
+              もし <em>buffer</em> 属性が設定された時に <em>normalize</em> 属性が false の場合 <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> は <em>buffer</em> 内のインパルスレスポンスをそのまま使用して線形コンボリューションを行います。
             </p>
             <p>
-              Otherwise, if the <em>normalize</em> attribute is true when the
+<!--              Otherwise, if the <em>normalize</em> attribute is true when the
               <em>buffer</em> attribute is set then the
               <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> will first perform a scaled
               RMS-power analysis of the audio data contained within
               <em>buffer</em> to calculate a <em>normalizationScale</em> given
-              this algorithm:
+              this algorithm:-->
+              そうでなく、<em>buffer</em> 属性を設定した時に <em>normalize</em> 属性が true であれば、<a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> は次のアルゴリズムによって、 まず <em>buffer</em> 内のデータのスケールドRMS-パワー解析を行い、<em>normalizationScale</em> を計算します:
             </p>
             <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">
 </span><span class="kwd">function</span><span class="pln"> calculateNormalizationScale</span><span class="pun">(</span><span class="pln">buffer</span><span class="pun">)</span><span class="pln">
@@ -6402,7 +6533,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 </span><span class="pun">}</span><span class="pln">
       </span></pre>
             <p>
-              During processing, the ConvolverNode will then take this
+<!--              During processing, the ConvolverNode will then take this
               calculated <em>normalizationScale</em> value and multiply it by
               the result of the linear convolution resulting from processing
               the input with the impulse response (represented by the
@@ -6410,7 +6541,9 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               mathematically equivalent operation may be used, such as
               pre-multiplying the input by <em>normalizationScale</em>, or
               pre-multiplying a version of the impulse-response by
-              <em>normalizationScale</em>.
+              <em>normalizationScale</em>.-->
+
+              処理の間 ConvolverNode はこの計算された <em>normalizationScale</em> 値を 最終出力を得るために入力と( <em>buffer</em> で表される)インパルスレスポンスを処理した線形コンボリューションの結果と掛け合わせます。 あるいは、例えば入力に事前に <em>normalizationScale</em> をかけ合わせたり、<em>normalizationScale</em> を掛け合わせたバージョンのインパルスレスポンスを作るなど、 何らかの数学的に等価な演算が使用されるかも知れません。
             </p>
           </dd></dl></section>
         <section property="bibo:hasPart" resource="#Convolution-channel-configurations" typeof="bibo:Chapter">
@@ -6558,7 +6691,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             </p>-->
             <p>
                 unsigned byte 配列に格納される値は次のように計算されます。
-                <a href="#fft-windowing-and-smoothing-over-time"> FFT ウインドウとスムージング</a>で説明されているように \(Y[k]\) を<a data-link-type="dfn" class="internalDFN" href="#current-frequency-data">現在の周波数データ</a>とします。
+                <a href="#fft-windowing-and-smoothing-over-time"> FFT 窓関数とスムージング</a>で説明されているように \(Y[k]\) を<a data-link-type="dfn" class="internalDFN" href="#current-frequency-data">現在の周波数データ</a>とします。
                 バイトの値は、
             </p>
 
@@ -6659,11 +6792,13 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#fft-windowing-and-smoothing-over-time" typeof="bibo:Chapter" id="fft-windowing-and-smoothing-over-time">
           <h4 resource="#h-fft-windowing-and-smoothing-over-time" id="h-fft-windowing-and-smoothing-over-time"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.23.3 </span>
-            FFT Windowing and smoothing over time
-          </span></h4>When the <dfn data-dfn-type="dfn" id="current-frequency-data">current frequency
+            FFT 窓関数と時間的スムージング <button onclick="OpenOriginal('fft-windowing-and-smoothing-over-time')">原文</button>
+          </span></h4>
+<!--          When the <dfn data-dfn-type="dfn" id="current-frequency-data">current frequency
           data</dfn> are computed, the following operations are to be
-          performed:
-          <ol>
+          performed:-->
+          <dfn data-dfn-type="dfn" id="current-frequency-data">現在の周波数データ</dfn>が計算された時、次の処理が行われます:
+<!--          <ol>
             <li>Down-mix all channels of the time domain input data to mono.
             </li>
             <li>
@@ -6683,15 +6818,39 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               <a href="#conversion-to-db">Conversion to dB</a>.
             </li>
           </ol>
-          <p>
+        -->
+        <ol>
+          <li>時間領域の入力の全てのチャンネルをモノラルにダウンミックスします
+          </li>
+          <li>
+            時間領域の入力データに<a href="#blackman-window">ブラックマン窓</a>を適用します
+          </li>
+          <li>
+            窓関数を通した時間領域の入力データからイマジナリとリアルの周波数データを得るため、<a href="#fourier-transform">フーリエ変換</a>を適用します
+          </li>
+          <li>
+            周波数領域データに<a href="#smoothing-over-time">時間的スムージング</a>の処理を行います
+          </li>
+          <li>
+            <a href="#conversion-to-db">dBへの変換を行います</a>.
+          </li>
+        </ol>
+<!--          <p>
             In the following, let \(N\) be the value of the
             <code>.fftSize</code> attribute of this <code>AnalyserNode</code>.
-          </p>
+          </p>-->
           <p>
+            次の式では \(N\) をこの <code>AnalyserNode</code> の <code>.fftSize</code> 属性とします
+          </p>
+<!--          <p>
             <dfn data-dfn-type="dfn" id="blackman-window">Applying a Blackman window</dfn> consists
             in the following operation on the input time domain data. Let
             \(x[n]\) for \(n = 0, \ldots, N - 1\) be the time domain data. The
             Blackman window is defined by
+          </p>-->
+          <p>
+            <dfn data-dfn-type="dfn" id="blackman-window">ブラックマン窓の適用</dfn>は時間領域の入力に対して次の処理を行います。
+            \(n = 0, \ldots, N - 1\) に対する \(x[n]\) は時間領域のデータです。
           </p>
           <pre>          $$
           \begin{align*}
@@ -6704,7 +6863,8 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
           <p>
-            The windowed signal \(\hat{x}[n]\) is
+<!--            The windowed signal \(\hat{x}[n]\) is-->
+            窓関数を通した信号 \(\hat{x}[n]\) は
           </p>
           <pre>            $$
               \hat{x}[n] = x[n] w[n], \mbox{ for } n = 0, \ldots, N - 1
@@ -6712,11 +6872,14 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
           <p>
-            <dfn data-dfn-type="dfn" id="fourier-transform">Applying a Fourier tranform</dfn>
+<!--            <dfn data-dfn-type="dfn" id="fourier-transform">Applying a Fourier tranform</dfn>
             consists of computing the Fourier transform in the following way.
             Let \(X[k]\) be the complex frequency domain data and
             \(\hat{x}[n]\) be the windowed time domain data computed above.
-            Then
+            Then-->
+            <dfn data-dfn-type="dfn" id="fourier-transform">フーリエ変換の適用</dfn> は次のようなフーリエ変換の計算から成ります。
+            \(X[k]\) は周波数領域の複素数データで \(\hat{x}[n]\) は上で計算された窓関数を通した時間領域のデータです。そして、
+
           </p>
           <pre>            $$
               X[k] = \sum_{n = 0}^{N - 1} \hat{x}[n] e^{\frac{-2\pi i k n}{N}}
@@ -6724,27 +6887,40 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
           <p>
-            for \(k = 0, \dots, N/2-1\).
+<!--            for \(k = 0, \dots, N/2-1\).-->
+              ただし \(k = 0, \dots, N/2-1\)
           </p>
           <p>
-            <dfn data-dfn-type="dfn" id="smoothing-over-time">Smoothing over time</dfn> frequency
-            data consists in the following operation:
+<!--            <dfn data-dfn-type="dfn" id="smoothing-over-time">Smoothing over time</dfn> frequency
+            data consists in the following operation:-->
+            周波数データの<dfn data-dfn-type="dfn" id="smoothing-over-time">時間軸のスムージング</dfn> は次のように処理されます:
           </p>
           <ul>
-            <li>Let \(\hat{X}_{-1}[k]\) be the result of this operation on the
+<!--            <li>Let \(\hat{X}_{-1}[k]\) be the result of this operation on the
             <a data-link-type="dfn" class="internalDFN" href="#dfn-previous-block">previous block</a>. The <dfn id="dfn-previous-block" data-dfn-type="dfn">previous block</dfn> is defined as
             being the buffer computed by the previous <a href="#smoothing-over-time">smoothing over time</a> operation, or an
             array of \(N\) zeros if this is the first time we are <a href="#smoothing-over-time">smoothing over time</a>.
-            </li>
-            <li>Let \(\tau\) be the value of the <a href="#widl-AnalyserNode-smoothingTimeConstant"><code>smoothingTimeConstant</code></a>
+          </li>-->
+          <li>
+            \(\hat{X}_{-1}[k]\) を<a data-link-type="dfn" class="internalDFN" href="#dfn-previous-block">前回のブロック</a>とします。
+            <dfn id="dfn-previous-block" data-dfn-type="dfn">前回のブロック</dfn>は前回の<a href="#smoothing-over-time">時間的スムージング</a>処理で計算されたバッファとして定義され、もし<a href="#smoothing-over-time">時間的スムージング</a>処理が最初の1回目の場合は \(N\) 個の0からなる配列になります。
+          </li>
+<!--            <li>Let \(\tau\) be the value of the <a href="#widl-AnalyserNode-smoothingTimeConstant"><code>smoothingTimeConstant</code></a>
             attribute for this <a class="idlType" href="#idl-def-AnalyserNode"><code>AnalyserNode</code></a>.
-            </li>
-            <li>Let \(X[k]\) be the result of <a href="#fourier-transform">applying a Fourier transform</a> of the
+          </li>-->
+          <li>
+            \(\tau\) を この <a class="idlType" href="#idl-def-AnalyserNode"><code>AnalyserNode</code></a> の <a href="#widl-AnalyserNode-smoothingTimeConstant"><code>smoothingTimeConstant</code></a> 属性とします。
+          </li>
+<!--            <li>Let \(X[k]\) be the result of <a href="#fourier-transform">applying a Fourier transform</a> of the
             current block.
-            </li>
+          </li>-->
+          <li>
+            \(X[k]\) を 現在のブロックの<a href="#fourier-transform">フーリエ変換の適用</a>の結果とします。
+          </li>
           </ul>
           <p>
-            Then the smoothed value, \(\hat{X}[k]\), is computed by
+<!--            Then the smoothed value, \(\hat{X}[k]\), is computed by-->
+              そしてスムージングされた値、\(\hat{X}[k]\) は次の式で計算されます
           </p>
           <pre>            $$
               \hat{X}[k] = \tau\, \hat{X}_{-1}[k] + (1 - \tau)\, |X[k]|
@@ -6752,11 +6928,14 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
           <p>
-            for \(k = 0, \ldots, N - 1\).
+<!--            for \(k = 0, \ldots, N - 1\).-->
+            ただし \(k = 0, \ldots, N - 1\)
           </p>
           <p>
-            <dfn data-dfn-type="dfn" id="conversion-to-db">Conversion to dB</dfn> consists of the
-            following operation, where \(\hat{X}[k]\) is computed in <a href="#smoothing-over-time">smoothing over time</a>:
+<!--            <dfn data-dfn-type="dfn" id="conversion-to-db">Conversion to dB</dfn> consists of the
+            following operation, where \(\hat{X}[k]\) is computed in <a href="#smoothing-over-time">smoothing over time</a>:-->
+            <dfn data-dfn-type="dfn" id="conversion-to-db">dBへの変換</dfn>は次の処理で行われます。
+            \(\hat{X}[k]\) を<a href="#smoothing-over-time">時間的スムージング</a>で計算された値として:
           </p>
           <pre>          $$
             Y[k] = 20\log_{10}\hat{X}[k]
@@ -6764,17 +6943,21 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
           <p>
-            for \(k = 0, \ldots, N-1\).
+<!--            for \(k = 0, \ldots, N-1\).-->
+              ただし \(k = 0, \ldots, N-1\)
           </p>
           <p>
-            This array, \(Y[k]\), is copied to the output array for
+<!--            This array, \(Y[k]\), is copied to the output array for
             <code>getFloatFrequencyData</code>. For
             <code>getByteFrequencyData</code>, the \(Y[k]\) is clipped to lie
             between <code><a data-link-type="dfn" class="internalDFN" href="#minDecibels">minDecibels</a></code> and
             <code><a data-link-type="dfn" class="internalDFN" href="#maxDecibels">maxDecibels</a></code> and then scaled to fit in an
             unsigned byte such that <code><a data-link-type="dfn" class="internalDFN" href="#minDecibels">minDecibels</a></code> is
             represented by the value 0 and <code><a data-link-type="dfn" class="internalDFN" href="#maxDecibels">maxDecibels</a></code> is
-            represented by the value 255.
+            represented by the value 255.-->
+            この配列、\(Y[k]\) は <code>getFloatFrequencyData</code> によって出力の配列にコピーされます。
+            <code>getByteFrequencyData</code> に対しては、\(Y[k]\) は <code><a data-link-type="dfn" class="internalDFN" href="#minDecibels">minDecibels</a></code> と <code><a data-link-type="dfn" class="internalDFN" href="#maxDecibels">maxDecibels</a></code>の範囲内にクリップされ、
+            <code><a data-link-type="dfn" class="internalDFN" href="#minDecibels">minDecibels</a></code> が 0、<code><a data-link-type="dfn" class="internalDFN" href="#maxDecibels">maxDecibels</a></code> が 255 になるようにスケーリングされます。
           </p>
         </section>
       </section>
