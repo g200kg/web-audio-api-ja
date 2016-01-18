@@ -768,7 +768,7 @@ table.exceptions table {
          および WebGL [<cite><a href="#bib-WEBGL" class="bibref">WEBGL</a></cite>]3D グラフィックスAPIと共に使われる事が予想されます。
       <p>
       </p>
-    </section><section id="sotd" class="introductory"><!--OddPage--><h2 resource="#h-sotd" id="h-sotd"><span property="xhv:role" resource="xhv:heading">この文書の位置付け</span></h2>
+    </section><section id="sotd" class="introductory"><!--OddPage--><h2 resource="#h-sotd" id="h-sotd"><span property="xhv:role" resource="xhv:heading">この文書の位置付け <button onclick="OpenOriginal('sotd')">原文</button></span></h2>
 
 
 
@@ -867,7 +867,7 @@ table.exceptions table {
 
 
 
-</section><section id="toc"><h2 resource="#h-toc" id="h-toc" class="introductory"><span property="xhv:role" resource="xhv:heading">目次</span></h2><ul role="directory" class="toc"><li class="tocline"><a class="tocxref" href="#abstract">概要</a></li><li class="tocline"><a class="tocxref" href="#sotd">この文書の位置付け</a></li><li class="tocline"><a class="tocxref" href="#introduction">
+</section><section id="toc"><h2 resource="#h-toc" id="h-toc" class="introductory"><span property="xhv:role" resource="xhv:heading">目次 <button onclick="OpenOriginal('toc')">原文</button></span></h2><ul role="directory" class="toc"><li class="tocline"><a class="tocxref" href="#abstract">概要</a></li><li class="tocline"><a class="tocxref" href="#sotd">この文書の位置付け</a></li><li class="tocline"><a class="tocxref" href="#introduction">
         序文
       </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#Features"><span class="secno">0.1 </span>
           機能
@@ -5674,43 +5674,51 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-audioworkernodecreationevent-interface" typeof="bibo:Chapter" id="the-audioworkernodecreationevent-interface">
         <h3 resource="#h-the-audioworkernodecreationevent-interface" id="h-the-audioworkernodecreationevent-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.14 </span>
-          The AudioWorkerNodeCreationEvent Interface <button onclick="OpenOriginal('the-audioworkernodecreationevent-interface')">原文</button>
+          AudioWorkerNodeCreationEvent インターフェース <button onclick="OpenOriginal('the-audioworkernodecreationevent-interface')">原文</button>
         </span></h3>
         <p>
-          This is an <code>Event</code> object which is dispatched to
+<!--          This is an <code>Event</code> object which is dispatched to
           <a class="idlType" href="#idl-def-AudioWorkerGlobalScope"><code>AudioWorkerGlobalScope</code></a> objects when a new node
           instance is created. This allows AudioWorkers to initialize any
           node-local data (e.g. allocating a delay or initializing local
-          variables).
+          variables).-->
+          これは新しいノードオブジェクトが作成された時に <a class="idlType" href="#idl-def-AudioWorkerGlobalScope"><code>AudioWorkerGlobalScope</code></a>　オブジェクトにディスパッチされる <code>Event</code>オブジェクトです。
+          これにより、 AudioWorkerは ノード・ローカルな (例えばディレイを割り当てたり、ローカル変数を初期化する等の) データの初期化ができます。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioWorkerNodeCreationEvent">interface <span class="idlInterfaceID">AudioWorkerNodeCreationEvent</span> : <span class="idlSuperclass">Event</span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span> <span class="idlAttrName"><a href="#widl-AudioWorkerNodeCreationEvent-node">node</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Array</span>                    <span class="idlAttrName"><a href="#widl-AudioWorkerNodeCreationEvent-inputs">inputs</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Array</span>                    <span class="idlAttrName"><a href="#widl-AudioWorkerNodeCreationEvent-outputs">outputs</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-16" typeof="bibo:Chapter" id="attributes-16"><h4 resource="#h-attributes-16" id="h-attributes-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.14.1 </span>Attributes <button onclick="OpenOriginal('attributes-16')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioWorkerNodeCreationEvent-inputs"><code>inputs</code> of type <span class="idlAttrType">Array</span>, readonly       </dt><dd>
-            An array of channelCounts for the inputs.
-          </dd><dt id="widl-AudioWorkerNodeCreationEvent-node"><code>node</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span>, readonly       </dt><dd>
-            The new node being created. Any node-local data storage (e.g., the
-            buffer for a delay node) should be created on this object.
-          </dd><dt id="widl-AudioWorkerNodeCreationEvent-outputs"><code>outputs</code> of type <span class="idlAttrType">Array</span>, readonly       </dt><dd>
-            An array of channelCounts for the outputs.
+};</span></pre><section property="bibo:hasPart" resource="#attributes-16" typeof="bibo:Chapter" id="attributes-16"><h4 resource="#h-attributes-16" id="h-attributes-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.14.1 </span>属性 <button onclick="OpenOriginal('attributes-16')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioWorkerNodeCreationEvent-inputs"><code>inputs</code> <span class="idlAttrType">Array</span> 型, readonly       </dt><dd>
+<!--            An array of channelCounts for the inputs.-->
+            入力の channelCount の配列です。
+          </dd><dt id="widl-AudioWorkerNodeCreationEvent-node"><code>node</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span> 型, readonly       </dt><dd>
+<!--            The new node being created. Any node-local data storage (e.g., the
+            buffer for a delay node) should be created on this object.-->
+            新しく作成されたノードです。全てのノードローカルなデータストレージ (例えば、ディレイノードのバッファ等) はこのオブジェクト上に作成されなくてはなりません。
+          </dd><dt id="widl-AudioWorkerNodeCreationEvent-outputs"><code>outputs</code> <span class="idlAttrType">Array</span> 型, readonly       </dt><dd>
+<!--            An array of channelCounts for the outputs.-->
+            出力の channelCount の配列です。
           </dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-audioprocessevent-interface" typeof="bibo:Chapter" id="the-audioprocessevent-interface">
         <h3 resource="#h-the-audioprocessevent-interface" id="h-the-audioprocessevent-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.15 </span>
-          The AudioProcessEvent Interface <button onclick="OpenOriginal('the-audioprocessevent-interface')">原文</button>
+          AudioProcessEvent インターフェース <button onclick="OpenOriginal('the-audioprocessevent-interface')">原文</button>
         </span></h3>
         <p>
-          This is an <code>Event</code> object which is dispatched to
+<!--          This is an <code>Event</code> object which is dispatched to
           <a class="idlType" href="#idl-def-AudioWorkerGlobalScope"><code>AudioWorkerGlobalScope</code></a> objects to perform
-          processing.
+          processing.-->
+          これは処理を実行するために <a class="idlType" href="#idl-def-AudioWorkerGlobalScope"><code>AudioWorkerGlobalScope</code></a> オブジェクトにディスパッチされる <code>Event</code> オブジェクトです。
         </p>
         <p>
-          The event handler processes audio from the input (if any) by
+<!--          The event handler processes audio from the input (if any) by
           accessing the audio data from the <code>inputBuffers</code>
           attribute. The audio data which is the result of the processing (or
           the synthesized data if there are no inputs) is then placed into the
-          <code>outputBuffers</code>.
+          <code>outputBuffers</code>.-->
+          イベントハンドラーは(もしあれば) <code>inputBuffers</code> 属性からオーディオデータにアクセスし、入力からのオーディオを処理します。
+          処理結果の (あるいは入力を使わずに合成された) オーディオデータは <code>outputBuffers</code> に格納されます。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioProcessEvent">interface <span class="idlInterfaceID">AudioProcessEvent</span> : <span class="idlSuperclass">Event</span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">double</span>                   <span class="idlAttrName"><a href="#widl-AudioProcessEvent-playbackTime">playbackTime</a></span>;</span>
@@ -5718,9 +5726,9 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Float32Array[][]</span>         <span class="idlAttrName"><a href="#widl-AudioProcessEvent-inputs">inputs</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Float32Array[][]</span>         <span class="idlAttrName"><a href="#widl-AudioProcessEvent-outputs">outputs</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">object</span>                   <span class="idlAttrName"><a href="#widl-AudioProcessEvent-parameters">parameters</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-17" typeof="bibo:Chapter" id="attributes-17"><h4 resource="#h-attributes-17" id="h-attributes-17"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.15.1 </span>Attributes <button onclick="OpenOriginal('attributes-17')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioProcessEvent-inputs"><code>inputs</code> of type array of array of <span class="idlAttrType">Float32Array</span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-17" typeof="bibo:Chapter" id="attributes-17"><h4 resource="#h-attributes-17" id="h-attributes-17"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.15.1 </span>属性 <button onclick="OpenOriginal('attributes-17')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioProcessEvent-inputs"><code>inputs</code> array of array of <span class="idlAttrType">Float32Array</span> 型, readonly       </dt><dd>
             <p>
-              A readonly Array of Arrays of Float32Arrays. The top-level Array
+<!--              A readonly Array of Arrays of Float32Arrays. The top-level Array
               is organized by input; each input may contain multiple channels;
               each channel contains a Float32Array of sample data. The initial
               size of the channel array will be determined by the number of
@@ -5731,19 +5739,27 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               (by reducing the Array.length or by using Array.pop() or
               Array.slice(). The event object, the Array and the Float32Arrays
               will be reused by the processing system, in order to minimize
-              memory churn.
+              memory churn.-->
+
+              リードオンリーの Float32Array の配列の配列です。トップレベルの配列は入力をまとめたものです。
+              それぞれの入力は複数のチャンネルを持っている場合があります。それぞれのチャンネルは Float32Array のサンプルデータを保持しています。
+              チャンネル配列の初期サイズは createAudioWorkerNode() メソッドでその入力に指定されたチャンネル数で決定されます。
+              しかしながら、 onprocess ハンドラーは動的に入力のチャンネル数を変更できます。あるいは ブロック長 (128) の Float32Array を追加したり、配列を (Array.lenth を減らしたり Array.pop() や Array.slice() を使用して) 減少させる事もできます。
+              処理システムはメモリーの動きを最小化するためにイベントオブジェクト、配列、 Float32Array を再利用します。
             </p>
             <p>
-              Any reordering performed on the Array for an input will not
-              reorganize the connections to the channels for subsequent events.
+<!--              Any reordering performed on the Array for an input will not
+              reorganize the connections to the channels for subsequent events.-->
+              入力の配列の並べ替えを行っても以降のイベントでのチャンネルとの関係として認識されません。
             </p>
-          </dd><dt id="widl-AudioProcessEvent-node"><code>node</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span>, readonly       </dt><dd>
-            The node to which this processing event is being dispatched. Any
+          </dd><dt id="widl-AudioProcessEvent-node"><code>node</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span> 型, readonly       </dt><dd>
+<!--            The node to which this processing event is being dispatched. Any
             node-local data storage (e.g., the buffer for a delay node) should
-            be maintained on this object.
-          </dd><dt id="widl-AudioProcessEvent-outputs"><code>outputs</code> of type array of array of <span class="idlAttrType">Float32Array</span>, readonly       </dt><dd>
+            be maintained on this object.-->
+            この処理イベントがディスパッチされるノードです。全てのノードローカルなデータストレージ (例えばディレイノードのバッファ等) はこのオブジェクト上で維持されなくてはなりません。
+          </dd><dt id="widl-AudioProcessEvent-outputs"><code>outputs</code> array of array of <span class="idlAttrType">Float32Array</span> 型, readonly       </dt><dd>
             <p>
-              A readonly Array of Arrays of Float32Arrays. The top-level Array
+<!--              A readonly Array of Arrays of Float32Arrays. The top-level Array
               is organized by output; each output may contain multiple
               channels; each channel contains a Float32Array of sample data.
               The initial size of the channel array will be determined by the
@@ -5754,26 +5770,38 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               the Array (by reducing the Array.length or by using Array.pop()
               or Array.slice(). The event object, the Array and the
               Float32Arrays will be reused by the processing system, in order
-              to minimize memory churn.
+              to minimize memory churn.-->
+              リードオンリーの Float32Array の配列の配列です。トップレベルの配列は出力をまとめたものです。
+              それぞれの出力は複数のチャンネルを持っている場合があります。それぞれのチャンネルは Float32Array のサンプルデータを保持しています。
+              チャンネル配列の初期サイズは createAudioWorkerNode() メソッドでその出力に指定されたチャンネル数で決定されます。
+              しかしながら、 onprocess ハンドラーは動的に入力のチャンネル数を変更できます。あるいは ブロック長 (128) の Float32Array を追加したり、配列を (Array.lenth を減らしたり Array.pop() や Array.slice() を使用して) 減少させる事もできます。
+              処理システムはメモリーの動きを最小化するためにイベントオブジェクト、配列、 Float32Array を再利用します。
             </p>
             <p>
-              Any reordering performed on the Array for an output will not
-              reorganize the connections to the channels for subsequent events.
+<!--              Any reordering performed on the Array for an output will not
+              reorganize the connections to the channels for subsequent events.-->
+              出力の配列の並べ替えを行っても以降のイベントでのチャンネルとの関係として認識されません。
             </p>
-          </dd><dt id="widl-AudioProcessEvent-parameters"><code>parameters</code> of type <span class="idlAttrType">object</span>, readonly       </dt><dd>
-            This object attribute exposes a correspondingly-named read-only
+          </dd><dt id="widl-AudioProcessEvent-parameters"><code>parameters</code> <span class="idlAttrType">object</span> 型, readonly       </dt><dd>
+<!--            This object attribute exposes a correspondingly-named read-only
             Float32Array for each parameter that has been added via
             addParameter. As this is dynamic, this cannot be captured in
             IDL. The length of this Float32Array will correspond to the length
             of the inputBuffer. The contents of this Float32Array will be the
             values to be used for the AudioParam at the corresponding points in
             time. It is expected that this Float32Array will be reused by the
-            audio engine.
-          </dd><dt id="widl-AudioProcessEvent-playbackTime"><code>playbackTime</code> of type <span class="idlAttrType">double</span>, readonly       </dt><dd>
-            The starting time of the block of audio being processed in response
+            audio engine.-->
+            addParameter で追加されたそれぞれのパラメータに対応して、名前に対応づけられたリードオンリーの Float32Array を持つ属性を表すオブジェクトです。
+            これは動的に処理されるため IDL には表現されません。
+            Float32Array の長さは inputBuffer の長さに対応します。
+            この Float32Array の内容は時間に対応した各点での AudioParam の値として使用されます。この Float32Array はオーディオエンジンによって再利用される事が期待されます。
+          </dd><dt id="widl-AudioProcessEvent-playbackTime"><code>playbackTime</code> <span class="idlAttrType">double</span> 型, readonly       </dt><dd>
+<!--            The starting time of the block of audio being processed in response
             to this event. By definition this will be equal to the value of
             <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute that
-            was most recently observable in the control thread.
+            was most recently observable in the control thread.-->
+            このイベントで処理されるオーディオのブロックの開始時刻です。
+            定義としては、これはコントロールスレッド側で読み取れる最も最近の <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じです。
           </dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-audioprocessingevent-interface---deprecated" typeof="bibo:Chapter" id="the-audioprocessingevent-interface---deprecated" class="informative">
@@ -6408,7 +6436,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#ConvolverNode" typeof="bibo:Chapter">
         <h3 resource="#ConvolverNode" id="ConvolverNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22 </span>
-          ConvolverNode インターフェース
+          ConvolverNode インターフェース <button onclick="OpenOriginal('ConvolverNode')">原文</button>
         </span></h3>
         <p>
 <!--          This interface represents a processing node which applies a linear
@@ -6549,36 +6577,43 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           </dd></dl></section>
         <section property="bibo:hasPart" resource="#Convolution-channel-configurations" typeof="bibo:Chapter">
           <h4 resource="#Convolution-channel-configurations" id="Convolution-channel-configurations"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22.2 </span>
-            Channel Configurations for Input, Impulse Response and Output <button onclick="OpenOriginal('Convolution-channel-configurations')">原文</button>
+            入力、インパルスレスポンス、出力のチャンネル構成 <button onclick="OpenOriginal('Convolution-channel-configurations')">原文</button>
           </span></h4>
           <p>
-            Implementations <em title="MUST" class="rfc2119">MUST</em> support the following allowable configurations
+<!--            Implementations <em title="MUST" class="rfc2119">MUST</em> support the following allowable configurations
             of impulse response channels in a <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>
-            to achieve various reverb effects with 1 or 2 channels of input.
+            to achieve various reverb effects with 1 or 2 channels of input.-->
+            実装は 1 または 2 チャンネルの入力に対する様々なリバーブエフェクトを実現するために次のような <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> のインパルスレスポンスのチャンネル構成をサポートしなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
           </p>
           <p>
-            The first image in the diagram illustrates the general case, where
+<!--            The first image in the diagram illustrates the general case, where
             the source has N input channels, the impulse response has K
             channels, and the playback system has M output channels. Because
             <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> is limited to 1 or 2 channels of
-            input, not every case can be handled.
+            input, not every case can be handled.-->
+            図示されている最初の図は一般的なケースで、音源が N 個の入力チャンネル、インパルスレスポンスは K 個のチャンネル、再生システムは M 個の出力チャンネルを持っています。
+            <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> は 1 または 2 チャンネルの入力に限られていますので、全てのケースについて対処できるわけではありません。
           </p>
           <p>
-            Single channel convolution operates on a mono audio input, using a
+<!--            Single channel convolution operates on a mono audio input, using a
             mono impulse response, and generating a mono output. The remaining
             images in the diagram illustrate the supported cases for mono and
             stereo playback where N and M are 1 or 2 and K is 1, 2, or 4.
             Developers desiring more complex and arbitrary matrixing can use a
             <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a>, multiple single-channel
             <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>s and a
-            <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a>.
+            <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a>.-->
+            単一チャンネルのコンポリューションはモノラルオーディオ入力に対してモノラルインパルスレスポンスを使用してモノラル出力を得ます。
+            残りの図はモノラルおよびステレオ再生で N と M は 1 または 2、 K は 1 または 2 または 4 の場合です。
+            開発者がより複雑で任意のマトリックスを必要とするなら <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a> と 複数の単一チャンネルの <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> および <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> を使用して構成する事もできます。
           </p>
           <figure id="fig-a-graphical-representation-of-supported-input-and-output-channel-count-possibilities-when-using-a-convolvernode.x">
             <img alt="reverb matrixing" src="images/reverb-matrixing.png">
-            <figcaption>Fig. <span class="figno">5</span> <span class="fig-title">
-              A graphical representation of supported input and output channel
+            <figcaption>図. <span class="figno">5</span> <span class="fig-title">
+<!--              A graphical representation of supported input and output channel
               count possibilities when using a
-              <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>.
+              <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>.-->
+              <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> を使用する際にサポートされる入出力チャンネル数
             </span></figcaption>
           </figure>
         </section>
@@ -6964,7 +6999,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-channelsplitternode-interface" typeof="bibo:Chapter" id="the-channelsplitternode-interface">
         <h3 resource="#h-the-channelsplitternode-interface" id="h-the-channelsplitternode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.24 </span>
-          ChannelSplitterNode インターフェース
+          ChannelSplitterNode インターフェース <button onclick="OpenOriginal('the-channelsplitternode-interface')">原文</button>
         </span></h3>
         <p>
 <!--          The <code>ChannelSplitterNode</code> is for use in more advanced
@@ -7021,12 +7056,13 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-channelmergernode-interface" typeof="bibo:Chapter" id="the-channelmergernode-interface">
         <h3 resource="#h-the-channelmergernode-interface" id="h-the-channelmergernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.25 </span>
-          The ChannelMergerNode Interface <button onclick="OpenOriginal('the-channelmergernode-interface')">原文</button>
+          ChannelMergerNode インターフェース <button onclick="OpenOriginal('the-channelmergernode-interface')">原文</button>
         </span></h3>
         <p>
-          The <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> is for use in more advanced
+<!--          The <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> is for use in more advanced
           applications and would often be used in conjunction with
-          <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a>.
+          <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a>.-->
+          <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> は高度なアプリケーションで、<a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a> と組み合わせて使われます。
         </p>
         <pre>  numberOfInputs  : Variable N (default to 6)
   numberOfOutputs : 1
@@ -7036,26 +7072,31 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
   channelInterpretation = "speakers";
 </pre>
         <p>
-          This interface represents an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> for
+<!--          This interface represents an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> for
           combining channels from multiple audio streams into a single audio
           stream. It has a variable number of inputs (defaulting to 6), but not
           all of them need be connected. There is a single output whose audio
-          stream has a number of channels equal to the number of inputs.
+          stream has a number of channels equal to the number of inputs.-->
+          このインターフェースは複数のオーディオストリームからチャンネルを結合して1つのオーディオストリームにする <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> を表します。 これは可変数の入力 (デフォルトは 6 ) の入力を持ちますが、全ての入力を接続する必要はありません。 出力は 1 つでそのオーディオストリームは、接続された入力の数のチャンネル数を持ちます。
         </p>
         <p>
-          To merge multiple inputs into one stream, each input gets downmixed
+<!--          To merge multiple inputs into one stream, each input gets downmixed
           into one channel (mono) based on the specified mixing rule. An
           unconnected input still counts as <b>one silent channel</b> in the
           output. Changing input streams does <b>not</b> affect the order of
-          output channels.
+          output channels.-->
+          複数の入力を１つの出力にまとめる時、それぞれの入力は指定のミキシングルールによって１チャンネル(モノラル)にダウンミックスされます。
+          接続されていない入力も<b>１チャンネルの無音</b>としてカウントされて出力されます。
+          入力ストリームを変える事は出力のチャンネルの順序に影響しません。
         </p>
         <p>
-          For <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a>, <code>channelCount</code>
+<!--          For <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a>, <code>channelCount</code>
           and <code>channelCountMode</code> properties cannot be changed.
-          <code>InvalidState</code> error <em title="MUST" class="rfc2119">MUST</em> be thrown when they changed.
+          <code>InvalidState</code> error <em title="MUST" class="rfc2119">MUST</em> be thrown when they changed.-->
+          <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> の <code>channelCount</code> および <code>channelCountMode</code> を変更する事はできません。変更しようとした場合、<code>InvalidState</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <h3 id="example-2">
-          Example:
+          例:
         </h3>
         <p>
           For example, if a default <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> has
