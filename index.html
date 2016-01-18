@@ -2521,7 +2521,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
                   </li>
                 </ol>
               </li>
-              <li>これ以降 JavaScript からアクセスや変更ができないように audioData の ArrayBuffer を中立化します。
+              <li>これ以降 JavaScript からアクセスや変更ができないように audioData の ArrayBuffer を無力化します。
               </li>
               <li>デコード処理が別のスレッドで実行されるようにキューに登録します。
               </li>
@@ -3651,7 +3651,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 </pre>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioDestinationNode">interface <span class="idlInterfaceID">AudioDestinationNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">unsigned long</span> <span class="idlAttrName"><a href="#widl-AudioDestinationNode-maxChannelCount">maxChannelCount</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-4" typeof="bibo:Chapter" id="attributes-4"><h4 resource="#h-attributes-4" id="h-attributes-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5.1 </span>Attributes <button onclick="OpenOriginal('attributes-4')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioDestinationNode-maxChannelCount"><code>maxChannelCount</code>  <span class="idlAttrType">unsigned long</span> 型, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-4" typeof="bibo:Chapter" id="attributes-4"><h4 resource="#h-attributes-4" id="h-attributes-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5.1 </span>属性 <button onclick="OpenOriginal('attributes-4')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioDestinationNode-maxChannelCount"><code>maxChannelCount</code>  <span class="idlAttrType">unsigned long</span> 型, readonly       </dt><dd>
             <p>
 <!--              The maximum number of channels that the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
               attribute can be set to. An
@@ -4382,50 +4382,70 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
            <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> のチャンネルから一塊として処理できるデータを読み出す場合、<code>getChannelData</code> を呼び出して結果の配列にアクセスするよりも 不必要なメモリー割り当てとコピーを避けられるため、<code>copyFromChannel</code> を使用するべきです。
         </p></div>
         <p>
-          An internal operation <a href="#acquire-the-content">acquire the
+<!--          An internal operation <a href="#acquire-the-content">acquire the
           contents of an <code>AudioBuffer</code></a> is invoked when the
           contents of an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> are needed by some <abbr title="Application Programming Interface">API</abbr>
           implementation. This operation returns immutable channel data to the
-          invoker.
+          invoker.-->
+          <abbr title="Application Programming Interface">API</abbr>の実装が <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の内容が必要になった時、<a href="#acquire-the-content">「<code>AudioBuffer</code> の内容の取得」</a>の内部処理が起動されます。
+          この処理は呼び出し元に変更不能なチャンネルデータを返します。
         </p>
         <p>
-          When an <dfn data-dfn-type="dfn" id="acquire-the-content">acquire the content</dfn>
-          operation occurs on an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, run the following steps:
+<!--          When an <dfn data-dfn-type="dfn" id="acquire-the-content">acquire the content</dfn>
+          operation occurs on an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, run the following steps:-->
+          <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の<a href="#acquire-the-content">「<code>AudioBuffer</code> の内容の取得」</a>処理は次のステップで実行されます:
         </p>
         <ol>
-          <li>If any of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>'s <code>ArrayBuffer</code> have
+          <li>
+<!--            If any of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>'s <code>ArrayBuffer</code> have
           been neutered, abort these steps, and return a zero-length channel
-          data buffers to the invoker.
+          data buffers to the invoker.-->
+            もし <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の <code>ArrayBuffer</code> のどれかが無力化されている場合はこれらのステップを中止し、長さ 0 のチャンネルデータを呼び出し元に返します。
           </li>
-          <li>Neuter all <code>ArrayBuffer</code>s for arrays previously
-          returned by <code>getChannelData</code> on this <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>.
+          <li>
+<!--            Neuter all <code>ArrayBuffer</code>s for arrays previously
+          returned by <code>getChannelData</code> on this <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>.-->
+          この <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> であらかじめ <code>getChannelData</code> によって返されている全ての <code>ArrayBuffer</code> を無力化します。
           </li>
-          <li>Retain the underlying data buffers from those
+          <li>
+<!--            Retain the underlying data buffers from those
           <code>ArrayBuffer</code>s and return references to them to the
-          invoker.
+          invoker.-->
+            それらの <code>ArrayBuffer</code> の下層のデータバッファを保持して、呼び出し元(<span class="annotate">訳注:API の実装側</span>)に参照を返します。
           </li>
-          <li>Attach <code>ArrayBuffer</code>s containing copies of the data to
+          <li>
+<!--            Attach <code>ArrayBuffer</code>s containing copies of the data to
           the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, to be returned by the next call to
-          <code>getChannelData</code>.
+          <code>getChannelData</code>.-->
+          次回の <code>getChannelData</code> の呼び出しでは、
+            データのコピーを持っている <code>ArrayBuffer</code> を <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> に割り当てて返します。
           </li>
-        </ol>The <a href="#acquire-the-content">acquire the contents of an
-        AudioBuffer</a> operation is invoked in the following cases:
+        </ol>
+<!--        The <a href="#acquire-the-content">acquire the contents of an
+        AudioBuffer</a> operation is invoked in the following cases:-->
+        <a href="#acquire-the-content">「<code>AudioBuffer</code> の内容の取得」</a>処理は以下の場合に呼び出されます:
         <ul>
-          <li>When <code>AudioBufferSourceNode.start</code> is called, it
+          <li>
+<!--          When <code>AudioBufferSourceNode.start</code> is called, it
           <a href="#acquire-the-content">acquires the contents</a> of the
           node's <code>buffer</code>. If the operation fails, nothing is
-          played.
+          played.-->
+          <code>AudioBufferSourceNode.start</code> が呼び出された時、ノードの <code>buffer</code> の<a href="#acquire-the-content">「内容の取得」</a>が行われます。もしこの処理に失敗した場合再生は行われません。
           </li>
-          <li>When a <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>'s <code>buffer</code> is set to an
+          <li>
+<!--            When a <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>'s <code>buffer</code> is set to an
           <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> while the node is connected to an output node, or
           a <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> is connected to an output node while the
           <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>'s <code>buffer</code> is set to an
           <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, it <a href="#acquire-the-content">acquires the
-          content</a> of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>.
+          content</a> of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>.-->
+          <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> で、 node が出力ノードに接続されている状態で <code>buffer</code> に <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> が設定された時、あるいは <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> の <code>buffer</code> に <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> が設定されている状態で出力ノードに接続された時、 <a href="#acquire-the-content">「<code>AudioBuffer</code> の内容の取得」</a>が行われます。
           </li>
-          <li>When the dispatch of an <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a> completes, it
+          <li>
+<!--            When the dispatch of an <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a> completes, it
           <a href="#acquire-the-content">acquires the contents</a> of its
-          <code>outputBuffer</code>.
+          <code>outputBuffer</code>.-->
+          <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a> のディスパッチが完了した時、 <code>outputBuffer</code> の <a href="#acquire-the-content">「内容の取得」</a> が行われます。
           </li>
         </ul>
         <div class="note"><div id="h-note3" role="heading" aria-level="4" class="note-title"><span>注</span></div><p class="">
@@ -7198,28 +7218,31 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-biquadfilternode-interface" typeof="bibo:Chapter" id="the-biquadfilternode-interface">
         <h3 resource="#h-the-biquadfilternode-interface" id="h-the-biquadfilternode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27 </span>
-          The BiquadFilterNode Interface <button onclick="OpenOriginal('the-biquadfilternode-interface')">原文</button>
+          BiquadFilterNode インターフェース <button onclick="OpenOriginal('the-biquadfilternode-interface')">原文</button>
         </span></h3>
         <p>
-          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> is an
+<!--          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> is an
           <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> processor implementing very common
-          low-order filters.
+          low-order filters.-->
+          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> は非常に一般的な低次フィルタを実装した <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
         </p>
         <p>
-          Low-order filters are the building blocks of basic tone controls
+<!--          Low-order filters are the building blocks of basic tone controls
           (bass, mid, treble), graphic equalizers, and more advanced filters.
           Multiple <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> filters can be combined
           to form more complex filters. The filter parameters such as <a href="#widl-BiquadFilterNode-frequency"><code>frequency</code></a> can be
           changed over time for filter sweeps, etc. Each
           <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> can be configured as one of a
           number of common filter types as shown in the IDL below. The default
-          filter type is <code>"lowpass"</code>.
+          filter type is <code>"lowpass"</code>.-->
+          低次フィルタは基本的なトーンコントロール(バス、ミドル、トレブル)やグラフィックイコライザーやより高度なフィルタを構成するブロックです。 複数の <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> フィルタを組み合わせてより複雑なフィルタを作る事もできます。 フィルタのパラメータの <a href="#widl-BiquadFilterNode-frequency"><code>frequency</code></a> などを時間と共に変化させてフィルタスイープやその他の効果を得る事もできます。 それぞれの <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> は下のIDLで紹介する一般的なフィルタの型のうちの1つに設定する事ができます。 デフォルトのフィルタの型は <code>"lowpass"</code> です。
         </p>
         <p>
-          Both <a href="#widl-BiquadFilterNode-frequency"><code>frequency</code></a> and
+<!--          Both <a href="#widl-BiquadFilterNode-frequency"><code>frequency</code></a> and
           <a href="#widl-BiquadFilterNode-detune"><code>detune</code></a> are
           <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> parameters and are used together to determine a
-          <dfn data-dfn-type="dfn" id="computedFreq-biquad">computedFrequency</dfn> value:
+          <dfn data-dfn-type="dfn" id="computedFreq-biquad">computedFrequency</dfn> value:-->
+          <a href="#widl-BiquadFilterNode-frequency"><code>frequency</code></a> と <a href="#widl-BiquadFilterNode-detune"><code>detune</code></a> はどちらも <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> パラメータで <dfn data-dfn-type="dfn" id="computedFreq-biquad">computedFrequency</dfn> の値を決定するために一緒に使用されます:
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  computedFrequency</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> frequency</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> pow</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> detune</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">1200</span><span class="pun">)</span></pre>
         <pre>    numberOfInputs  : 1
@@ -7229,8 +7252,9 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     channelInterpretation = "speakers";
 </pre>
         <p>
-          The number of channels of the output always equals the number of
-          channels of the input.
+<!--          The number of channels of the output always equals the number of
+          channels of the input.-->
+          出力のチャンネル数は常に入力のチャンネル数と同じになります。
         </p>
         <pre class="idl"><span class="idlEnum" id="idl-def-BiquadFilterType">enum <span class="idlEnumID">BiquadFilterType</span> {
     "<a href="#idl-def-BiquadFilterType.lowpass" class="idlEnumItem">lowpass</a>",
@@ -7241,7 +7265,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     "<a href="#idl-def-BiquadFilterType.peaking" class="idlEnumItem">peaking</a>",
     "<a href="#idl-def-BiquadFilterType.notch" class="idlEnumItem">notch</a>",
     "<a href="#idl-def-BiquadFilterType.allpass" class="idlEnumItem">allpass</a>"
-};</span></pre><table class="simple"><tbody><tr><th colspan="2">Enumeration description</th></tr><tr><td><code id="idl-def-BiquadFilterType.lowpass">lowpass</code></td><td>
+};</span></pre><table class="simple"><tbody><tr><th colspan="2">列挙値の説明</th></tr><tr><td><code id="idl-def-BiquadFilterType.lowpass">lowpass</code></td><td>
             <p>
               A <a href="https://en.wikipedia.org/wiki/Low-pass_filter">lowpass
               filter</a> allows frequencies below the cutoff frequency to pass
@@ -8059,22 +8083,26 @@ $$
       </section>
       <section property="bibo:hasPart" resource="#the-oscillatornode-interface" typeof="bibo:Chapter" id="the-oscillatornode-interface">
         <h3 resource="#h-the-oscillatornode-interface" id="h-the-oscillatornode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30 </span>
-          The OscillatorNode Interface <button onclick="OpenOriginal('the-oscillatornode-interface')">原文</button>
+          OscillatorNode インターフェース <button onclick="OpenOriginal('the-oscillatornode-interface')">原文</button>
         </span></h3>
         <p>
-          <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> represents an audio source
+<!--          <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> represents an audio source
           generating a periodic waveform. It can be set to a few commonly used
           waveforms. Additionally, it can be set to an arbitrary periodic
           waveform through the use of a <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>
-          object.
+          object.-->
+          <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> は周期的な波形を発生するオーディオソースを表しています。
+          これは一般的に使われる幾つかの波形に設定する事ができます。 更にこれは <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a> オブジェクトを使って任意の周期波形に設定する事が可能です。
         </p>
         <p>
-          Oscillators are common foundational building blocks in audio
+<!--          Oscillators are common foundational building blocks in audio
           synthesis. An OscillatorNode will start emitting sound at the time
-          specified by the <code>start()</code> method.
+          specified by the <code>start()</code> method.-->
+          オシレーターは音の合成において一般的な基本構成ブロックです。
+          OscillatorNode は <code>start()</code> メソッドで指定された時刻に音の発生を開始します。
         </p>
         <p>
-          Mathematically speaking, a <em>continuous-time</em> periodic waveform
+<!--          Mathematically speaking, a <em>continuous-time</em> periodic waveform
           can have very high (or infinitely high) frequency information when
           considered in the frequency domain. When this waveform is sampled as
           a discrete-time digital audio signal at a particular sample-rate,
@@ -8085,29 +8113,39 @@ $$
           the Nyquist frequency) will fold back as mirror images into
           frequencies lower than the Nyquist frequency. In many cases this will
           cause audibly objectionable artifacts. This is a basic and well
-          understood principle of audio DSP.
+          understood principle of audio DSP.-->
+          数学的に言えば、<em>連続した時間</em>の周期波形は周波数領域で考えた場合、非常に高い (あるいは無限に高い) 周波数情報を持つ事ができます。
+           この波形があるサンプルレートの離散時間のデジタルオーディオ信号としてサンプリングされる場合、波形をデジタル化する前に<em>ナイキスト</em>周波数 (サンプリング周波数の半分) よりも高い高周波数成分の除去 (フィルタで取り除く事) を考慮しなくてはなりません。 これを行わない場合、 (ナイキスト周波数よりも) 高い周波数の<em>エイリアス</em>がナイキスト周波数よりも低い周波数に鏡像として折り返されます。
+           多くの場合、これは音として聴こえる好ましくないノイズを引き起こします。
+           これはオーディオ DSP における基本的で良く知られている原理です。
         </p>
         <p>
-          There are several practical approaches that an implementation may
+<!--          There are several practical approaches that an implementation may
           take to avoid this aliasing. Regardless of approach, the
           <em>idealized</em> discrete-time digital audio signal is well defined
           mathematically. The trade-off for the implementation is a matter of
           implementation cost (in terms of CPU usage) versus fidelity to
-          achieving this ideal.
+          achieving this ideal.-->
+          このエイリアスを避けるため、実装に使う事のできる幾つかの実践的な手段があります。
+          しかしこれらの手段によらず、<em>理想的</em>な離散時間のデジタルオーディオ信号は数学的には完全に定義されます。
+           ( CPU の負荷という意味で) 実装のコスト対、理想への忠実性というトレードオフが実装上の問題になります。
         </p>
         <p>
-          It is expected that an implementation will take some care in
+<!--          It is expected that an implementation will take some care in
           achieving this ideal, but it is reasonable to consider lower-quality,
-          less-costly approaches on lower-end hardware.
+          less-costly approaches on lower-end hardware.-->
+          実装はこの理想を達成するためにいくらかの考慮をする事が期待されますが、ローエンド・ハードウェアでは低品質ローコストな手段を考慮する事も合理的です。
         </p>
         <p>
-          Both .frequency and .detune are <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> parameters and are used
-          together to determine a <em>computedFrequency</em> value:
+<!--          Both .frequency and .detune are <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> parameters and are used
+          together to determine a <em>computedFrequency</em> value:-->
+          .frequency と .detune はどちらも <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> パラメータで、 <em>computedFrequency</em> の値を決定するために一緒に使われます:
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  computedFrequency</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> frequency</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> pow</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> detune</span><span class="pun">(</span><span class="pln">t</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">1200</span><span class="pun">)</span></pre>
         <p>
-          The OscillatorNode's instantaneous phase at each time is the time
-          integral of <em>computedFrequency</em>.
+<!--          The OscillatorNode's instantaneous phase at each time is the time
+          integral of <em>computedFrequency</em>.-->
+          OscillatorNode の各時刻での瞬間的な位相は <em>computedFrequency</em> を時間で積分したものになります。
         </p>
         <pre>  numberOfInputs  : 0
   numberOfOutputs : 1 (mono output)
@@ -8118,16 +8156,21 @@ $$
     "<a href="#idl-def-OscillatorType.sawtooth" class="idlEnumItem">sawtooth</a>",
     "<a href="#idl-def-OscillatorType.triangle" class="idlEnumItem">triangle</a>",
     "<a href="#idl-def-OscillatorType.custom" class="idlEnumItem">custom</a>"
-};</span></pre><table class="simple"><tbody><tr><th colspan="2">Enumeration description</th></tr><tr><td><code id="idl-def-OscillatorType.sine">sine</code></td><td>
-            A sine wave
+};</span></pre><table class="simple"><tbody><tr><th colspan="2">列挙値の説明</th></tr><tr><td><code id="idl-def-OscillatorType.sine">sine</code></td><td>
+<!--            A sine wave-->
+            サイン波
           </td></tr><tr><td><code id="idl-def-OscillatorType.square">square</code></td><td>
-            A square wave of duty period 0.5
+<!--            A square wave of duty period 0.5-->
+            デューティ比 0.5 の矩形波
           </td></tr><tr><td><code id="idl-def-OscillatorType.sawtooth">sawtooth</code></td><td>
-            A sawtooth wave
+<!--            A sawtooth wave-->
+            鋸歯状波
           </td></tr><tr><td><code id="idl-def-OscillatorType.triangle">triangle</code></td><td>
-            A triangle wave
+<!--            A triangle wave-->
+            三角波
           </td></tr><tr><td><code id="idl-def-OscillatorType.custom">custom</code></td><td>
-            A custom periodic wave
+<!--            A custom periodic wave-->
+            カスタム周期波形
           </td></tr></tbody></table>
         <pre class="idl"><span class="idlInterface" id="idl-def-OscillatorNode">interface <span class="idlInterfaceID">OscillatorNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-OscillatorType"><code>OscillatorType</code></a></span> <span class="idlAttrName"><a href="#widl-OscillatorNode-type">type</a></span>;</span>
@@ -8137,56 +8180,72 @@ $$
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-OscillatorNode-stop-void-double-when">stop</a></span> (<span class="idlParam">optional <span class="idlParamType">double</span> <span class="idlParamName">when</span> = <span class="idlDefaultValue">0</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave">setPeriodicWave</a></span> (<span class="idlParam"><span class="idlParamType"><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></span> <span class="idlParamName">periodicWave</span></span>);</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span>   <span class="idlAttrName"><a href="#widl-OscillatorNode-onended">onended</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-28" typeof="bibo:Chapter" id="attributes-28"><h4 resource="#h-attributes-28" id="h-attributes-28"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.1 </span>Attributes <button onclick="OpenOriginal('attributes-28')">原文</button></span></h4><dl class="attributes"><dt id="widl-OscillatorNode-detune"><code>detune</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            A detuning value (in Cents) which will offset the
+};</span></pre><section property="bibo:hasPart" resource="#attributes-28" typeof="bibo:Chapter" id="attributes-28"><h4 resource="#h-attributes-28" id="h-attributes-28"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.1 </span>属性 <button onclick="OpenOriginal('attributes-28')">原文</button></span></h4><dl class="attributes"><dt id="widl-OscillatorNode-detune"><code>detune</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            A detuning value (in Cents) which will offset the
             <code>frequency</code> by the given amount. Its default
-            <code>value</code> is 0. This parameter is <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>.
-          </dd><dt id="widl-OscillatorNode-frequency"><code>frequency</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The frequency (in Hertz) of the periodic waveform. Its default
-            <code>value</code> is 440. This parameter is <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>.
-          </dd><dt id="widl-OscillatorNode-onended"><code>onended</code> of type <span class="idlAttrType">EventHandler</span></dt><dd>
-            A property used to set the <code>EventHandler</code> (described in
+            <code>value</code> is 0. This parameter is <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>.-->
+            (セントで表される) デチューン値で、これは <code>frequency</code> を与えられた量だけオフセットします。 デフォルトの <code>value</code> は 0 です。 このパラメータは <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> です。
+          </dd><dt id="widl-OscillatorNode-frequency"><code>frequency</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The frequency (in Hertz) of the periodic waveform. Its default
+            <code>value</code> is 440. This parameter is <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>.-->
+            (Hz:ヘルツで表される) 周期波形の周波数で、そのデフォルトの <code>value</code> は 440 です。このパラメータは <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> です。
+          </dd><dt id="widl-OscillatorNode-onended"><code>onended</code> <span class="idlAttrType">EventHandler</span> 型</dt><dd>
+<!--            A property used to set the <code>EventHandler</code> (described in
             <cite><a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">
             HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]) for the ended event that is dispatched to
             <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> node types. When the
             <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> has finished playing (i.e. its
             stop time has been reached), an event of type <code>Event</code>
             (described in <cite><a href="https://html.spec.whatwg.org/multipage/infrastructure.html#event">HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>])
-            will be dispatched to the event handler.
-          </dd><dt id="widl-OscillatorNode-type"><code>type</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-OscillatorType"><code>OscillatorType</code></a></span></dt><dd>
-            The shape of the periodic waveform. It may directly be set to any
+            will be dispatched to the event handler.-->
+            <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> にディスパッチされる ended イベントに対する (<cite><a href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler">
+            HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]で記述される) <code>EventHandler</code> を設定するために使われる属性です。   <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> が再生を終了した時 (例えば停止時刻に到達した時)、 (<cite><a href="https://html.spec.whatwg.org/multipage/infrastructure.html#event">HTML</a></cite>[<cite><a href="#bib-HTML" class="bibref">HTML</a></cite>]で記述される) イベントタイプ <code>Event</code> が イベントハンドラにディスパッチされます。
+          </dd><dt id="widl-OscillatorNode-type"><code>type</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-OscillatorType"><code>OscillatorType</code></a></span> 型</dt><dd>
+<!--            The shape of the periodic waveform. It may directly be set to any
             of the type constant values except for "custom". Doing so <em title="MUST" class="rfc2119">MUST</em>
             throw an InvalidStateError exception. The <a href="#widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave">
             <code>setPeriodicWave()</code></a> method can be used to set a
             custom waveform, which results in this attribute being set to
             "custom". The default value is "sine". When this attribute is set,
-            the phase of the oscillator <em title="MUST" class="rfc2119">MUST</em> be conserved.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-16" typeof="bibo:Chapter" id="methods-16"><h4 resource="#h-methods-16" id="h-methods-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.2 </span>Methods <button onclick="OpenOriginal('methods-16')">原文</button></span></h4><dl class="methods"><dt id="widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave"><code>setPeriodicWave</code></dt><dd>
-            Sets an arbitrary custom periodic waveform given a
-            <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>.
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">periodicWave</td><td class="prmType"><code><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-start-void-double-when"><code>start</code></dt><dd>
-            Defined the same as the <code>when</code> parameter of the
-            <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-stop-void-double-when"><code>stop</code></dt><dd>
-            Defined as in <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>.
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
+            the phase of the oscillator <em title="MUST" class="rfc2119">MUST</em> be conserved.-->
+            周期波形の形状です。 "custom" 以外の波形の定数値は直接設定する事ができます。(<span class="annotate">訳注: "custom" を直接設定しようとすると</span>)そうすると InvalidStateError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+            カスタム波形を設定するには <a href="#widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave">
+            <code>setPeriodicWave()</code></a> メソッドを使用する事ができ、それによってこの属性は "custom" に設定されます。
+            デフォルト値は "sine" です。属性が設定された時、オシレータの位相は保存されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-16" typeof="bibo:Chapter" id="methods-16"><h4 resource="#h-methods-16" id="h-methods-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.2 </span>メソッド <button onclick="OpenOriginal('methods-16')">原文</button></span></h4><dl class="methods"><dt id="widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave"><code>setPeriodicWave</code></dt><dd>
+<!--            Sets an arbitrary custom periodic waveform given a
+            <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>.-->
+            <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a> で与えられる任意のカスタム周期波形を設定します。
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">periodicWave</td><td class="prmType"><code><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-start-void-double-when"><code>start</code></dt><dd>
+<!--            Defined the same as the <code>when</code> parameter of the
+            <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>-->
+            <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> で定義されている <code>when</code> と同じです。(<span class="annotate">訳注:少し文章がおかしいですが、メソッドの機能自体も<a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>と同じです</span>)
+
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-stop-void-double-when"><code>stop</code></dt><dd>
+<!--            Defined as in <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>.-->
+            <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> で定義されているものと同じです。
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#basic-waveform-phase" typeof="bibo:Chapter" id="basic-waveform-phase">
           <h4 resource="#h-basic-waveform-phase" id="h-basic-waveform-phase"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.3 </span>
-            Basic Waveform Phase <button onclick="OpenOriginal('basic-waveform-phase')">原文</button>
+            基本波形の位相 <button onclick="OpenOriginal('basic-waveform-phase')">原文</button>
           </span></h4>
           <p>
-            The idealized mathematical waveforms for the various oscillator
+<!--            The idealized mathematical waveforms for the various oscillator
             types are defined here. In summary, all waveforms are defined
             mathematically to be an odd function with a positive slope at time
             0. The actual waveforms produced by the oscillator may differ to
-            prevent aliasing affects.
+            prevent aliasing affects.-->
+            様々なオシレータのタイプのための理想的な数学的波形をここで定義します。
+            概要としては全ての波形は時間 0 の時に正の傾きを持つ奇関数として数学的に定義されます。
+            実際にオシレータで生成される波形はエイリアシングの影響を避けるため少し異なったものになります。
           </p>
           <dl>
             <dt>
               "sine"
             </dt>
             <dd>
-              The waveform for sine oscillator is:
+<!--              The waveform for sine oscillator is:-->
+                サイン波のオシレータ波形は:
               <pre>                $$
                   x(t) = \sin t
                 $$.
@@ -8197,7 +8256,8 @@ $$
               "square"
             </dt>
             <dd>
-              The waveform for the square wave oscillator is:
+<!--              The waveform for the square wave oscillator is:-->
+                矩形波のオシレータ波形は:
               <pre>                $$
                   x(t) = \begin{cases}
                          1 &amp; \mbox{for } 0≤ t &lt; \pi \\
@@ -8211,7 +8271,8 @@ $$
               "sawtooth"
             </dt>
             <dd>
-              The waveform for the sawtooth oscillator is the ramp:
+<!--              The waveform for the sawtooth oscillator is the ramp:-->
+                  鋸歯状波オシレータの波形は上昇波形です:
               <pre>                $$
                   x(t) = \frac{t}{\pi} \mbox{ for } -\pi &lt; t ≤ \pi;
                 $$
@@ -8222,7 +8283,8 @@ $$
               "triangle"
             </dt>
             <dd>
-              The waveform for the triangle oscillator is:
+<!--              The waveform for the triangle oscillator is:-->
+                三角波オシレータの波形は:
               <pre>                $$
                   x(t) = \begin{cases}
                            \frac{2}{\pi} t &amp; \mbox{for } 0 ≤ t ≤ \frac{\pi}{2} \\
@@ -8231,8 +8293,11 @@ $$
                          \end{cases}
                 $$
 
-</pre>This is extended to all \(t\) by using the fact that the waveform is an
-odd function with period \(2\pi\).
+</pre>
+<!--This is extended to all \(t\) by using the fact that the waveform is an
+odd function with period \(2\pi\).-->
+
+波形は周期 \(2\pi\) の奇関数である事を使用して、これを全ての \(t\) に拡張します。
             </dd>
           </dl>
         </section>
