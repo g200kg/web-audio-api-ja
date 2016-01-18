@@ -594,7 +594,7 @@ table.exceptions table {
     <h1>Web Audio API (日本語訳)</h1>
     <h1>---まだ翻訳作業中です---</h1>
     <h1>翻訳が完了している前の版(2013年10月10日版)はこちらです</h1>
-    <b><a href="index131010.html">Web Audio API」 W3C Working Draft 10 October 2013(日本語訳)</a></b><br/><br/>
+    <b><a href="131010/index.html">Web Audio API」 W3C Working Draft 10 October 2013(日本語訳)</a></b><br/><br/>
     <div style="background-color: #ddf; border: 1px solid #668; padding:10px 20px">
       <p>この文書は、W3Cの文書 "「Web Audio API」 W3C Working Draft 08 December 2015" の日本語訳です。
       </p>
@@ -1782,7 +1782,7 @@ table.exceptions table {
     </section>
     <section property="bibo:hasPart" resource="#audioapi" typeof="bibo:Chapter" id="audioapi">
       <!--OddPage--><h2 resource="#API" id="API"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>
-        オーディオ <abbr title="Application Programming Interface">API</abbr>
+        オーディオ <abbr title="Application Programming Interface">API</abbr> <button onclick="OpenOriginal('audioapi')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#BaseAudioContext" typeof="bibo:Chapter">
         <h3 resource="#BaseAudioContext" id="BaseAudioContext"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>
@@ -3536,7 +3536,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
                </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#lifetime-AudioNode" typeof="bibo:Chapter">
           <h4 resource="#lifetime-AudioNode" id="lifetime-AudioNode" class="informative"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.4.3 </span>
-            ライフタイム
+            ライフタイム <button onclick="OpenOriginal('lifetime-AudioNode')">原文</button>
           </span></h4>
           <p>
             <i>このセクションは参考情報です。</i>
@@ -3627,7 +3627,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
       </section>
       <section property="bibo:hasPart" resource="#AudioDestinationNode" typeof="bibo:Chapter">
         <h3 resource="#AudioDestinationNode" id="AudioDestinationNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5 </span>
-          AudioDestinationNode インターフェース
+          AudioDestinationNode インターフェース <button onclick="OpenOriginal('AudioDestinationNode')">原文</button>
         </span></h3>
         <p>
 <!--          This is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> representing the final audio
@@ -3651,7 +3651,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 </pre>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioDestinationNode">interface <span class="idlInterfaceID">AudioDestinationNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">unsigned long</span> <span class="idlAttrName"><a href="#widl-AudioDestinationNode-maxChannelCount">maxChannelCount</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-4" typeof="bibo:Chapter" id="attributes-4"><h4 resource="#h-attributes-4" id="h-attributes-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioDestinationNode-maxChannelCount"><code>maxChannelCount</code>  <span class="idlAttrType">unsigned long</span> 型, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-4" typeof="bibo:Chapter" id="attributes-4"><h4 resource="#h-attributes-4" id="h-attributes-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.5.1 </span>Attributes <button onclick="OpenOriginal('attributes-4')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioDestinationNode-maxChannelCount"><code>maxChannelCount</code>  <span class="idlAttrType">unsigned long</span> 型, readonly       </dt><dd>
             <p>
 <!--              The maximum number of channels that the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
               attribute can be set to. An
@@ -3695,7 +3695,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
       </section>
       <section property="bibo:hasPart" resource="#AudioParam" typeof="bibo:Chapter">
         <h3 resource="#AudioParam" id="AudioParam"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6 </span>
-          The AudioParam Interface
+          The AudioParam Interface <button onclick="OpenOriginal('AudioParam')">原文</button>
         </span></h3>
         <p>
           <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> controls an individual aspect of an
@@ -3799,7 +3799,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlMethName"><a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">setTargetAtTime</a></span> (<span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">target</span></span>, <span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">startTime</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">timeConstant</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlMethName"><a href="#widl-AudioParam-setValueCurveAtTime-AudioParam-Float32Array-values-double-startTime-double-duration">setValueCurveAtTime</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">values</span></span>, <span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">startTime</span></span>, <span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">duration</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlMethName"><a href="#widl-AudioParam-cancelScheduledValues-AudioParam-double-startTime">cancelScheduledValues</a></span> (<span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">startTime</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-5" typeof="bibo:Chapter" id="attributes-5"><h4 resource="#h-attributes-5" id="h-attributes-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioParam-defaultValue"><code>defaultValue</code> of type <span class="idlAttrType">float</span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-5" typeof="bibo:Chapter" id="attributes-5"><h4 resource="#h-attributes-5" id="h-attributes-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.1 </span>Attributes  <button onclick="OpenOriginal('attributes-5')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioParam-defaultValue"><code>defaultValue</code> of type <span class="idlAttrType">float</span>, readonly       </dt><dd>
             Initial value for the <code>value</code> attribute.
           </dd><dt id="widl-AudioParam-value"><code>value</code> of type <span class="idlAttrType">float</span></dt><dd>
             <p>
@@ -3816,7 +3816,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               requested value. Subsequent accesses to this attribute's getter
               will return the same value.
             </p>
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-4" typeof="bibo:Chapter" id="methods-4"><h4 resource="#h-methods-4" id="h-methods-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.2 </span>Methods</span></h4><dl class="methods"><dt id="widl-AudioParam-cancelScheduledValues-AudioParam-double-startTime"><code>cancelScheduledValues</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-4" typeof="bibo:Chapter" id="methods-4"><h4 resource="#h-methods-4" id="h-methods-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.2 </span>Methods <button onclick="OpenOriginal('methods-4')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioParam-cancelScheduledValues-AudioParam-double-startTime"><code>cancelScheduledValues</code></dt><dd>
             <p>
               Cancels all scheduled parameter changes with times greater than
               or equal to <code>startTime</code>. Active
@@ -4048,7 +4048,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#computation-of-value" typeof="bibo:Chapter" id="computation-of-value">
           <h4 resource="#h-computation-of-value" id="h-computation-of-value"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.3 </span>
-            Computation of Value
+            Computation of Value <button onclick="OpenOriginal('computation-of-value')">原文</button>
           </span></h4>
           <p>
             <dfn id="dfn-computedvalue" data-dfn-type="dfn">computedValue</dfn> is the final value controlling the audio
@@ -4085,7 +4085,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
         </section>
         <section property="bibo:hasPart" resource="#example1-AudioParam" typeof="bibo:Chapter">
           <h4 resource="#example1-AudioParam" id="example1-AudioParam"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.4 </span>
-            AudioParam Automation Example
+            AudioParam Automation Example <button onclick="OpenOriginal('example1-AudioParam')">原文</button>
           </span></h4>
           <figure id="fig-an-example-of-parameter-automation.x">
             <!-- The image here was created from
@@ -4256,7 +4256,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#AudioBuffer" typeof="bibo:Chapter">
         <h3 resource="#AudioBuffer" id="AudioBuffer"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9 </span>
-          AudioBuffer インターフェース
+          AudioBuffer インターフェース <button onclick="OpenOriginal('AudioBuffer')">原文</button>
         </span></h3>
         <p>
 <!--          This interface represents a memory-resident audio asset (for one-shot
@@ -4288,7 +4288,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
               </span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType">void</span>         <span class="idlMethName"><a href="#widl-AudioBuffer-copyToChannel-void-Float32Array-source-unsigned-long-channelNumber-unsigned-long-startInChannel">copyToChannel</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">source</span></span>, <span class="idlParam"><span class="idlParamType">unsigned long</span> <span class="idlParamName">channelNumber</span></span>, <span class="idlParam">optional <span class="idlParamType">unsigned long</span> <span class="idlParamName">startInChannel</span> = <span class="idlDefaultValue">0
               </span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-8" typeof="bibo:Chapter" id="attributes-8"><h4 resource="#h-attributes-8" id="h-attributes-8"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.1 </span>属性　</span></h4><dl class="attributes"><dt id="widl-AudioBuffer-duration"><code>duration</code> <span class="idlAttrType">double</span> 型, readonly       </dt>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-8" typeof="bibo:Chapter" id="attributes-8"><h4 resource="#h-attributes-8" id="h-attributes-8"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.1 </span>属性　 <button onclick="OpenOriginal('attributes-8')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioBuffer-duration"><code>duration</code> <span class="idlAttrType">double</span> 型, readonly       </dt>
   <dd>
 <!--            Duration of the PCM audio data in seconds.-->
   PCM オーディオデータの秒で表現された長さです。
@@ -4308,7 +4308,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
 <!--            The sample-rate for the PCM audio data in samples per second.-->
     PCM オーディオデータの秒あたりのサンプル数で表現されたサンプルレートです。
   </dd>
-</dl></section><section property="bibo:hasPart" resource="#methods-5" typeof="bibo:Chapter" id="methods-5"><h4 resource="#h-methods-5" id="h-methods-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-AudioBuffer-copyFromChannel-void-Float32Array-destination-unsigned-long-channelNumber-unsigned-long-startInChannel"><code>copyFromChannel</code></dt>
+</dl></section><section property="bibo:hasPart" resource="#methods-5" typeof="bibo:Chapter" id="methods-5"><h4 resource="#h-methods-5" id="h-methods-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.9.2 </span>メソッド <button onclick="OpenOriginal('methods-5')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioBuffer-copyFromChannel-void-Float32Array-destination-unsigned-long-channelNumber-unsigned-long-startInChannel"><code>copyFromChannel</code></dt>
   <dd>
 <!--            The <code>copyFromChannel</code> method copies the samples from the
             specified channel of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> to the
@@ -4428,17 +4428,18 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
           <code>outputBuffer</code>.
           </li>
         </ul>
-        <div class="note"><div id="h-note3" role="heading" aria-level="4" class="note-title"><span>Note</span></div><p class="">
-          This means that <code>copyToChannel</code> cannot be used to change
+        <div class="note"><div id="h-note3" role="heading" aria-level="4" class="note-title"><span>注</span></div><p class="">
+<!--          This means that <code>copyToChannel</code> cannot be used to change
           the content of an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> currently in use by an
           <code>AudioNode</code> that has <a href="#acquire-the-content">acquired the content of an AudioBuffer</a>,
           since the <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> will continue to use the data previously
-          acquired.
+          acquired.-->
+          これは <code>copyToChannel</code> は <code>AudioNode</code> が <a href="#acquire-the-content">AudioBuffer の内容を取得して</a>現在使用状態にある <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の内容を変更できない事を意味します。<a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は以前に取得したデータを使い続けます。
         </p></div>
       </section>
       <section property="bibo:hasPart" resource="#AudioBufferSourceNode" typeof="bibo:Chapter">
         <h3 resource="#AudioBufferSourceNode" id="AudioBufferSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10 </span>
-          AudioBufferSourceNode インターフェース
+          AudioBufferSourceNode インターフェース <button onclick="OpenOriginal('AudioBufferSourceNode')">原文</button>
         </span></h3>
         <p>
 <!--          This interface represents an audio source from an in-memory audio
@@ -4486,7 +4487,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-AudioBufferSourceNode-stop-void-double-when">stop</a></span> (<span class="idlParam">optional <span class="idlParamType">double</span> <span class="idlParamName">when</span> = <span class="idlDefaultValue">0
               </span></span>);</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span> <span class="idlAttrName"><a href="#widl-AudioBufferSourceNode-onended">onended</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-9" typeof="bibo:Chapter" id="attributes-9"><h4 resource="#h-attributes-9" id="h-attributes-9"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-AudioBufferSourceNode-buffer"><code>buffer</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> 型, nullable</dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-9" typeof="bibo:Chapter" id="attributes-9"><h4 resource="#h-attributes-9" id="h-attributes-9"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.1 </span>属性 <button onclick="OpenOriginal('attributes-9')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioBufferSourceNode-buffer"><code>buffer</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> 型, nullable</dt><dd>
 <!--            Represents the audio asset to be played. This attribute can only be
             set once, or a <code>InvalidStateError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
             再生されるオーディオのリソースを指定します。この属性は1回のみ設定できます。そうでない場合は <code>InvalidStateError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
@@ -4565,7 +4566,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
 <!--            The speed at which to render the audio stream. Its default
             <code>value</code> is 1. This parameter is <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>.-->
             オーディオストリームの再生速度です。デフォルトの <code>value</code> は 1 です。このパラメータは<a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>です。
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-6" typeof="bibo:Chapter" id="methods-6"><h4 resource="#h-methods-6" id="h-methods-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.2 </span>メソッド</span></h4><dl class="methods"><dt id="widl-AudioBufferSourceNode-start-void-double-when-double-offset-double-duration"><code>start</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-6" typeof="bibo:Chapter" id="methods-6"><h4 resource="#h-methods-6" id="h-methods-6"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.2 </span>メソッド <button onclick="OpenOriginal('methods-6')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioBufferSourceNode-start-void-double-when-double-offset-double-duration"><code>start</code></dt><dd>
 <!--            Schedules a sound to playback at an exact time. <code>start</code>
             may only be called one time and must be called before
             <code>stop</code> is called or an InvalidStateError exception <em title="MUST" class="rfc2119">MUST</em>
@@ -4665,7 +4666,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
         </p>
         <section property="bibo:hasPart" resource="#looping-AudioBufferSourceNode" typeof="bibo:Chapter">
           <h4 resource="#looping-AudioBufferSourceNode" id="looping-AudioBufferSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.3 </span>
-            Looping
+            Looping <button onclick="OpenOriginal('looping-AudioBufferSourceNode')">原文</button>
           </span></h4>
           <p>
             If the <code>loop</code> attribute is true when
@@ -4717,7 +4718,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
       </section>
       <section property="bibo:hasPart" resource="#MediaElementAudioSourceNode" typeof="bibo:Chapter">
         <h3 resource="#MediaElementAudioSourceNode" id="MediaElementAudioSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.11 </span>
-          The MediaElementAudioSourceNode Interface
+          The MediaElementAudioSourceNode Interface <button onclick="OpenOriginal('MediaElementAudioSourceNode')">原文</button>
         </span></h3>
         <p>
           This interface represents an audio source from an <code>audio</code>
@@ -4764,7 +4765,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
         <section property="bibo:hasPart" resource="#security-with-mediaelementaudiosourcenode-and-cross-origin-resources" typeof="bibo:Chapter" id="security-with-mediaelementaudiosourcenode-and-cross-origin-resources">
           <h4 resource="#h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources" id="h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.11.1 </span>
             Security with MediaElementAudioSourceNode and cross-origin
-            resources
+            resources <button onclick="OpenOriginal('h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources')">原文</button>
           </span></h4>
           <p>
             <code>HTMLMediaElement</code> allows the playback of cross-origin
@@ -5673,7 +5674,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-audioworkernodecreationevent-interface" typeof="bibo:Chapter" id="the-audioworkernodecreationevent-interface">
         <h3 resource="#h-the-audioworkernodecreationevent-interface" id="h-the-audioworkernodecreationevent-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.14 </span>
-          The AudioWorkerNodeCreationEvent Interface
+          The AudioWorkerNodeCreationEvent Interface <button onclick="OpenOriginal('the-audioworkernodecreationevent-interface')">原文</button>
         </span></h3>
         <p>
           This is an <code>Event</code> object which is dispatched to
@@ -5686,7 +5687,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span> <span class="idlAttrName"><a href="#widl-AudioWorkerNodeCreationEvent-node">node</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Array</span>                    <span class="idlAttrName"><a href="#widl-AudioWorkerNodeCreationEvent-inputs">inputs</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Array</span>                    <span class="idlAttrName"><a href="#widl-AudioWorkerNodeCreationEvent-outputs">outputs</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-16" typeof="bibo:Chapter" id="attributes-16"><h4 resource="#h-attributes-16" id="h-attributes-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.14.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioWorkerNodeCreationEvent-inputs"><code>inputs</code> of type <span class="idlAttrType">Array</span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-16" typeof="bibo:Chapter" id="attributes-16"><h4 resource="#h-attributes-16" id="h-attributes-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.14.1 </span>Attributes <button onclick="OpenOriginal('attributes-16')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioWorkerNodeCreationEvent-inputs"><code>inputs</code> of type <span class="idlAttrType">Array</span>, readonly       </dt><dd>
             An array of channelCounts for the inputs.
           </dd><dt id="widl-AudioWorkerNodeCreationEvent-node"><code>node</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioWorkerNodeProcessor"><code>AudioWorkerNodeProcessor</code></a></span>, readonly       </dt><dd>
             The new node being created. Any node-local data storage (e.g., the
@@ -5697,7 +5698,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-audioprocessevent-interface" typeof="bibo:Chapter" id="the-audioprocessevent-interface">
         <h3 resource="#h-the-audioprocessevent-interface" id="h-the-audioprocessevent-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.15 </span>
-          The AudioProcessEvent Interface
+          The AudioProcessEvent Interface <button onclick="OpenOriginal('the-audioprocessevent-interface')">原文</button>
         </span></h3>
         <p>
           This is an <code>Event</code> object which is dispatched to
@@ -5717,7 +5718,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Float32Array[][]</span>         <span class="idlAttrName"><a href="#widl-AudioProcessEvent-inputs">inputs</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">Float32Array[][]</span>         <span class="idlAttrName"><a href="#widl-AudioProcessEvent-outputs">outputs</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">object</span>                   <span class="idlAttrName"><a href="#widl-AudioProcessEvent-parameters">parameters</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-17" typeof="bibo:Chapter" id="attributes-17"><h4 resource="#h-attributes-17" id="h-attributes-17"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.15.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioProcessEvent-inputs"><code>inputs</code> of type array of array of <span class="idlAttrType">Float32Array</span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-17" typeof="bibo:Chapter" id="attributes-17"><h4 resource="#h-attributes-17" id="h-attributes-17"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.15.1 </span>Attributes <button onclick="OpenOriginal('attributes-17')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioProcessEvent-inputs"><code>inputs</code> of type array of array of <span class="idlAttrType">Float32Array</span>, readonly       </dt><dd>
             <p>
               A readonly Array of Arrays of Float32Arrays. The top-level Array
               is organized by input; each input may contain multiple channels;
@@ -5777,7 +5778,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-audioprocessingevent-interface---deprecated" typeof="bibo:Chapter" id="the-audioprocessingevent-interface---deprecated" class="informative">
         <h3 resource="#h-the-audioprocessingevent-interface---deprecated" id="h-the-audioprocessingevent-interface---deprecated"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.16 </span>
-          The AudioProcessingEvent Interface - DEPRECATED
+          The AudioProcessingEvent Interface - DEPRECATED <button onclick="OpenOriginal('the-audioprocessingevent-interface---deprecated')">原文</button>
         </span></h3><p><em>This section is non-normative.</em></p>
         <p>
           This is an <code>Event</code> object which is dispatched to
@@ -5796,7 +5797,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">double</span>      <span class="idlAttrName"><a href="#widl-AudioProcessingEvent-playbackTime">playbackTime</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> <span class="idlAttrName"><a href="#widl-AudioProcessingEvent-inputBuffer">inputBuffer</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> <span class="idlAttrName"><a href="#widl-AudioProcessingEvent-outputBuffer">outputBuffer</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-18" typeof="bibo:Chapter" id="attributes-18"><h4 resource="#h-attributes-18" id="h-attributes-18"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.16.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-AudioProcessingEvent-inputBuffer"><code>inputBuffer</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-18" typeof="bibo:Chapter" id="attributes-18"><h4 resource="#h-attributes-18" id="h-attributes-18"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.16.1 </span>Attributes <button onclick="OpenOriginal('attributes-18')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioProcessingEvent-inputBuffer"><code>inputBuffer</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>, readonly       </dt><dd>
             An AudioBuffer containing the input audio data. It will have a
             number of channels equal to the <code>numberOfInputChannels</code>
             parameter of the createScriptProcessor() method. This AudioBuffer
@@ -5818,7 +5819,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-pannernode-interface" typeof="bibo:Chapter" id="the-pannernode-interface">
         <h3 resource="#h-the-pannernode-interface" id="h-the-pannernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17 </span>
-          The PannerNode Interface
+          The PannerNode Interface <button onclick="OpenOriginal('the-pannernode-interface')">原文</button>
         </span></h3>
         <p>
           This interface represents a processing node which <a href="#Spatialization">positions / spatializes</a> an incoming audio
@@ -5932,7 +5933,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-PannerNode-coneInnerAngle">coneInnerAngle</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-PannerNode-coneOuterAngle">coneOuterAngle</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-PannerNode-coneOuterGain">coneOuterGain</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-19" typeof="bibo:Chapter" id="attributes-19"><h4 resource="#h-attributes-19" id="h-attributes-19"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-PannerNode-coneInnerAngle"><code>coneInnerAngle</code> of type <span class="idlAttrType">float</span></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-19" typeof="bibo:Chapter" id="attributes-19"><h4 resource="#h-attributes-19" id="h-attributes-19"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.1 </span>Attributes <button onclick="OpenOriginal('attributes-19')">原文</button></span></h4><dl class="attributes"><dt id="widl-PannerNode-coneInnerAngle"><code>coneInnerAngle</code> of type <span class="idlAttrType">float</span></dt><dd>
             A parameter for directional audio sources, this is an angle, in
             degrees, inside of which there will be no volume reduction. The
             default value is 360, and the value is used modulo 360.
@@ -5964,7 +5965,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           </dd><dt id="widl-PannerNode-rolloffFactor"><code>rolloffFactor</code> of type <span class="idlAttrType">float</span></dt><dd>
             Describes how quickly the volume is reduced as source moves away
             from listener. The default value is 1.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-11" typeof="bibo:Chapter" id="methods-11"><h4 resource="#h-methods-11" id="h-methods-11"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.2 </span>Methods</span></h4><dl class="methods"><dt id="widl-PannerNode-setOrientation-void-float-x-float-y-float-z"><code>setOrientation</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-11" typeof="bibo:Chapter" id="methods-11"><h4 resource="#h-methods-11" id="h-methods-11"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.2 </span>Methods <button onclick="OpenOriginal('methods-11')">原文</button></span></h4><dl class="methods"><dt id="widl-PannerNode-setOrientation-void-float-x-float-y-float-z"><code>setOrientation</code></dt><dd>
             <p>
               Describes which direction the audio source is pointing in the 3D
               cartesian coordinate space. Depending on how directional the
@@ -6012,7 +6013,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#panner-channel-limitations" typeof="bibo:Chapter" class="informative">
           <h4 resource="#panner-channel-limitations" id="panner-channel-limitations"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.3 </span>
-            Channel Limitations
+            Channel Limitations <button onclick="OpenOriginal('panner-channel-limitations')">原文</button>
           </span></h4><p><em>This section is non-normative.</em></p>
           <p>
             The set of <a href="#panner-channel-limitations">channel
@@ -6023,7 +6024,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#AudioListener" typeof="bibo:Chapter">
         <h3 resource="#AudioListener" id="AudioListener"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.18 </span>
-          The AudioListener Interface
+          The AudioListener Interface <button onclick="OpenOriginal('AudioListener')">原文</button>
         </span></h3>
         <p>
           This interface is DEPRECATED, as it will be replaced by the
@@ -6037,7 +6038,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioListener">interface <span class="idlInterfaceID">AudioListener</span> {
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-AudioListener-setPosition-void-float-x-float-y-float-z">setPosition</a></span> (<span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">x</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">y</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">z</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-AudioListener-setOrientation-void-float-x-float-y-float-z-float-xUp-float-yUp-float-zUp">setOrientation</a></span> (<span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">x</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">y</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">z</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">xUp</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">yUp</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">zUp</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#methods-12" typeof="bibo:Chapter" id="methods-12"><h4 resource="#h-methods-12" id="h-methods-12"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.18.1 </span>Methods</span></h4><dl class="methods"><dt id="widl-AudioListener-setOrientation-void-float-x-float-y-float-z-float-xUp-float-yUp-float-zUp"><code>setOrientation</code></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#methods-12" typeof="bibo:Chapter" id="methods-12"><h4 resource="#h-methods-12" id="h-methods-12"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.18.1 </span>Methods <button onclick="OpenOriginal('methods-12')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioListener-setOrientation-void-float-x-float-y-float-z-float-xUp-float-yUp-float-zUp"><code>setOrientation</code></dt><dd>
             <p>
               Describes which direction the listener is pointing in the 3D
               cartesian coordinate space. Both a <b>front</b> vector and an
@@ -6434,7 +6435,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
         <pre class="idl"><span class="idlInterface" id="idl-def-ConvolverNode">interface <span class="idlInterfaceID">ConvolverNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>?</span> <span class="idlAttrName"><a href="#widl-ConvolverNode-buffer">buffer</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">boolean</span>      <span class="idlAttrName"><a href="#widl-ConvolverNode-normalize">normalize</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-23" typeof="bibo:Chapter" id="attributes-23"><h4 resource="#h-attributes-23" id="h-attributes-23"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-ConvolverNode-buffer"><code>buffer</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> 型, nullable</dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-23" typeof="bibo:Chapter" id="attributes-23"><h4 resource="#h-attributes-23" id="h-attributes-23"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22.1 </span>属性 <button onclick="OpenOriginal('attributes-23')">原文</button></span></h4><dl class="attributes"><dt id="widl-ConvolverNode-buffer"><code>buffer</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span> 型, nullable</dt><dd>
 <!--            A mono, stereo, or 4-channel <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>
             containing the (possibly multi-channel) impulse response used by
             the <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>. The <code>AudioBuffer</code>
@@ -6548,7 +6549,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           </dd></dl></section>
         <section property="bibo:hasPart" resource="#Convolution-channel-configurations" typeof="bibo:Chapter">
           <h4 resource="#Convolution-channel-configurations" id="Convolution-channel-configurations"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.22.2 </span>
-            Channel Configurations for Input, Impulse Response and Output
+            Channel Configurations for Input, Impulse Response and Output <button onclick="OpenOriginal('Convolution-channel-configurations')">原文</button>
           </span></h4>
           <p>
             Implementations <em title="MUST" class="rfc2119">MUST</em> support the following allowable configurations
@@ -6963,12 +6964,13 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-channelsplitternode-interface" typeof="bibo:Chapter" id="the-channelsplitternode-interface">
         <h3 resource="#h-the-channelsplitternode-interface" id="h-the-channelsplitternode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.24 </span>
-          The ChannelSplitterNode Interface
+          ChannelSplitterNode インターフェース
         </span></h3>
         <p>
-          The <code>ChannelSplitterNode</code> is for use in more advanced
+<!--          The <code>ChannelSplitterNode</code> is for use in more advanced
           applications and would often be used in conjunction with
-          <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a>.
+          <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a>.-->
+          <code>ChannelSplitterNode</code> は高度なアプリケーションで、 <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> と組み合わせて使われます。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : Variable N (defaults to 6) // number of "active" (non-silent) outputs is determined by number of channels in the input
@@ -6977,7 +6979,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     channelInterpretation = "speakers";
 </pre>
         <p>
-          This interface represents an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> for
+<!--          This interface represents an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> for
           accessing the individual channels of an audio stream in the routing
           graph. It has a single input, and a number of "active" outputs which
           equals the number of channels in the input audio stream. For example,
@@ -6989,33 +6991,37 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> method <a href="#widl-BaseAudioContext-createChannelSplitter-ChannelSplitterNode-unsigned-long-numberOfOutputs">
           <code>createChannelSplitter()</code></a>), The default number is 6 if
           this value is not provided. Any outputs which are not "active" will
-          output silence and would typically not be connected to anything.
+          output silence and would typically not be connected to anything.-->
+          このインターフェースはルーティンググラフ中のオーディオストリームの個別のチャンネルにアクセスする <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> を表しています。 これは1つの入力と入力のオーディオストリームのチャンネル数と同じ数の"アクティブ"な出力を持ちます。 例えば、ステレオの入力ストリームが <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a> に接続された場合、アクティブな出力は 2  (1つは左チャンネルから、もう1つは右チャンネルから) になります。 常に合計 N 個の出力 ( <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-createChannelSplitter-ChannelSplitterNode-unsigned-long-numberOfOutputs">
+          <code>createChannelSplitter()</code></a> の <code>numberOfOutputs</code> パラメータで決まります) があり、 この値が渡されない場合のデフォルトの数は 6 になります。 "アクティブ"でないどの出力も無音を出力し、通常はどこにも接続されません。
         </p>
         <h3 id="example-1">
-          Example:
+          例:
         </h3>
         <figure id="fig-a-diagram-of-a-channelsplitter">
           <img alt="channel splitter" src="images/channel-splitter.png">
           <figcaption>Fig. <span class="figno">6</span> <span class="fig-title">
-            A diagram of a ChannelSplitter
+            チャンネルスプリッターの構成図
           </span></figcaption>
         </figure>
         <p>
-          Please note that in this example, the splitter does <b>not</b>
+<!--          Please note that in this example, the splitter does <b>not</b>
           interpret the channel identities (such as left, right, etc.), but
-          simply splits out channels in the order that they are input.
+          simply splits out channels in the order that they are input.-->
+          この例ではスプリッターはチャンネルの(例えば左チャンネル、右チャンネルなどの)<b>識別はせず</b>、単純に入力チャンネルの順序に従って出力チャンネルを分割する事に注意してください。
         </p>
         <p>
-          One application for <code>ChannelSplitterNode</code> is for doing
+<!--          One application for <code>ChannelSplitterNode</code> is for doing
           "matrix mixing" where individual gain control of each channel is
-          desired.
+          desired.-->
+          <code>ChannelSplitterNode</code> を使うアプリケーションの1つは個別のチャンネルのゲインの制御を必要とする "マトリックス・ミキシング" を行うものです。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-ChannelSplitterNode">interface <span class="idlInterfaceID">ChannelSplitterNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 };</span></pre>
       </section>
       <section property="bibo:hasPart" resource="#the-channelmergernode-interface" typeof="bibo:Chapter" id="the-channelmergernode-interface">
         <h3 resource="#h-the-channelmergernode-interface" id="h-the-channelmergernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.25 </span>
-          The ChannelMergerNode Interface
+          The ChannelMergerNode Interface <button onclick="OpenOriginal('the-channelmergernode-interface')">原文</button>
         </span></h3>
         <p>
           The <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> is for use in more advanced
@@ -7076,7 +7082,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-dynamicscompressornode-interface" typeof="bibo:Chapter" id="the-dynamicscompressornode-interface">
         <h3 resource="#h-the-dynamicscompressornode-interface" id="h-the-dynamicscompressornode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.26 </span>
-          The DynamicsCompressorNode Interface
+          The DynamicsCompressorNode Interface <button onclick="OpenOriginal('the-dynamicscompressornode-interface')">原文</button>
         </span></h3>
         <p>
           <a class="idlType" href="#idl-def-DynamicsCompressorNode"><code>DynamicsCompressorNode</code></a> is an
@@ -7107,7 +7113,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">float</span>      <span class="idlAttrName"><a href="#widl-DynamicsCompressorNode-reduction">reduction</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-DynamicsCompressorNode-attack">attack</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-DynamicsCompressorNode-release">release</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-25" typeof="bibo:Chapter" id="attributes-25"><h4 resource="#h-attributes-25" id="h-attributes-25"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.26.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-DynamicsCompressorNode-attack"><code>attack</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-25" typeof="bibo:Chapter" id="attributes-25"><h4 resource="#h-attributes-25" id="h-attributes-25"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.26.1 </span>Attributes <button onclick="OpenOriginal('attributes-25')">原文</button></span></h4><dl class="attributes"><dt id="widl-DynamicsCompressorNode-attack"><code>attack</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
             The amount of time (in seconds) to reduce the gain by 10dB. Its
             default <code>value</code> is 0.003, with a nominal range of 0 to
             1.
@@ -7135,7 +7141,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-biquadfilternode-interface" typeof="bibo:Chapter" id="the-biquadfilternode-interface">
         <h3 resource="#h-the-biquadfilternode-interface" id="h-the-biquadfilternode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27 </span>
-          The BiquadFilterNode Interface
+          The BiquadFilterNode Interface <button onclick="OpenOriginal('the-biquadfilternode-interface')">原文</button>
         </span></h3>
         <p>
           <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> is an
@@ -7439,7 +7445,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>       <span class="idlAttrName"><a href="#widl-BiquadFilterNode-Q">Q</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>       <span class="idlAttrName"><a href="#widl-BiquadFilterNode-gain">gain</a></span>;</span>
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-BiquadFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse">getFrequencyResponse</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">frequencyHz</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">magResponse</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">phaseResponse</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-26" typeof="bibo:Chapter" id="attributes-26"><h4 resource="#h-attributes-26" id="h-attributes-26"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-BiquadFilterNode-Q"><code>Q</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-26" typeof="bibo:Chapter" id="attributes-26"><h4 resource="#h-attributes-26" id="h-attributes-26"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.1 </span>Attributes <button onclick="OpenOriginal('attributes-26')">原文</button></span></h4><dl class="attributes"><dt id="widl-BiquadFilterNode-Q"><code>Q</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
             The <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a> factor
             has a default value of 1, with a nominal range of 0.0001 to 1000.
           </dd><dt id="widl-BiquadFilterNode-detune"><code>detune</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
@@ -7456,7 +7462,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             The type of this <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>. The exact
             meaning of the other parameters depend on the value of the
             <code>type</code> attribute.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-14" typeof="bibo:Chapter" id="methods-14"><h4 resource="#h-methods-14" id="h-methods-14"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.2 </span>Methods</span></h4><dl class="methods"><dt id="widl-BiquadFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-14" typeof="bibo:Chapter" id="methods-14"><h4 resource="#h-methods-14" id="h-methods-14"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.2 </span>Methods <button onclick="OpenOriginal('methods-14')">原文</button></span></h4><dl class="methods"><dt id="widl-BiquadFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
             <p>
               Given the current filter parameter settings, calculates the
               frequency response for the specified frequencies. The three
@@ -7503,7 +7509,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#filters-characteristics" typeof="bibo:Chapter" id="filters-characteristics">
           <h4 resource="#h-filters-characteristics" id="h-filters-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.3 </span>
-            Filters characteristics
+            Filters characteristics <button onclick="OpenOriginal('filters-characteristics')">原文</button>
           </span></h4>
           <p>
             There are multiple ways of implementing the type of filters
@@ -7703,7 +7709,7 @@ $$
       </section>
       <section property="bibo:hasPart" resource="#the-iirfilternode-interface" typeof="bibo:Chapter" id="the-iirfilternode-interface">
         <h3 resource="#h-the-iirfilternode-interface" id="h-the-iirfilternode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28 </span>
-          IIRFilterNode インターフェース
+          IIRFilterNode インターフェース <button onclick="OpenOriginal('the-iirfilternode-interface')">原文</button>
         </span></h3>
 <!--        <p>
           <a class="idlType" href="#idl-def-IIRFilterNode"><code>IIRFilterNode</code></a> is an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>
@@ -7760,7 +7766,7 @@ $$
 </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-IIRFilterNode">interface <span class="idlInterfaceID">IIRFilterNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-IIRFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse">getFrequencyResponse</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">frequencyHz</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">magResponse</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">phaseResponse</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#methods-15" typeof="bibo:Chapter" id="methods-15"><h4 resource="#h-methods-15" id="h-methods-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28.1 </span>メソッド</span></h4><dl class="methods"><dt id="widl-IIRFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#methods-15" typeof="bibo:Chapter" id="methods-15"><h4 resource="#h-methods-15" id="h-methods-15"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28.1 </span>メソッド <button onclick="OpenOriginal('methods-15')">原文</button></span></h4><dl class="methods"><dt id="widl-IIRFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
 <!--  <p>
     Given the current filter parameter settings, calculates the
     frequency response for the specified frequencies.
@@ -7788,7 +7794,7 @@ $$
               </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#filter-definition" typeof="bibo:Chapter" id="filter-definition">
           <h4 resource="#h-filter-definition" id="h-filter-definition"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.28.2 </span>
-            Filter 定義
+            Filter 定義 <button onclick="OpenOriginal('filter-definition')">原文</button>
           </span></h4>
 <!--          <p>
             Let \(b_m\) be the <code>feedforward</code> coefficients and
@@ -7836,7 +7842,7 @@ $$
       </section>
       <section property="bibo:hasPart" resource="#WaveShaperNode" typeof="bibo:Chapter">
         <h3 resource="#WaveShaperNode" id="WaveShaperNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.29 </span>
-          WaveShaperNode インターフェース
+          WaveShaperNode インターフェース <button onclick="OpenOriginal('WaveShaperNode')">原文</button>
         </span></h3>
 <!--        <p>
           <a class="idlType" href="#idl-def-WaveShaperNode"><code>WaveShaperNode</code></a> is an
@@ -7882,7 +7888,7 @@ $$
 };</span><br><br>interface <span class="idlInterfaceID">WaveShaperNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType">Float32Array?</span>  <span class="idlAttrName"><a href="#widl-WaveShaperNode-curve">curve</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-OverSampleType"><code>OverSampleType</code></a></span> <span class="idlAttrName"><a href="#widl-WaveShaperNode-oversample">oversample</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-27" typeof="bibo:Chapter" id="attributes-27"><h4 resource="#h-attributes-27" id="h-attributes-27"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.29.1 </span>属性</span></h4><dl class="attributes"><dt id="widl-WaveShaperNode-curve"><code>curve</code> <span class="idlAttrType">Float32Array</span> 型, nullable</dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-27" typeof="bibo:Chapter" id="attributes-27"><h4 resource="#h-attributes-27" id="h-attributes-27"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.29.1 </span>属性 <button onclick="OpenOriginal('attributes-27')">原文</button></span></h4><dl class="attributes"><dt id="widl-WaveShaperNode-curve"><code>curve</code> <span class="idlAttrType">Float32Array</span> 型, nullable</dt><dd>
 <!--            <p>
               The shaping curve used for the waveshaping effect. The input
               signal is nominally within the range [-1; 1]. Each input sample
@@ -7996,7 +8002,7 @@ $$
       </section>
       <section property="bibo:hasPart" resource="#the-oscillatornode-interface" typeof="bibo:Chapter" id="the-oscillatornode-interface">
         <h3 resource="#h-the-oscillatornode-interface" id="h-the-oscillatornode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30 </span>
-          The OscillatorNode Interface
+          The OscillatorNode Interface <button onclick="OpenOriginal('the-oscillatornode-interface')">原文</button>
         </span></h3>
         <p>
           <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> represents an audio source
@@ -8074,7 +8080,7 @@ $$
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-OscillatorNode-stop-void-double-when">stop</a></span> (<span class="idlParam">optional <span class="idlParamType">double</span> <span class="idlParamName">when</span> = <span class="idlDefaultValue">0</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave">setPeriodicWave</a></span> (<span class="idlParam"><span class="idlParamType"><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></span> <span class="idlParamName">periodicWave</span></span>);</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">EventHandler</span>   <span class="idlAttrName"><a href="#widl-OscillatorNode-onended">onended</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-28" typeof="bibo:Chapter" id="attributes-28"><h4 resource="#h-attributes-28" id="h-attributes-28"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-OscillatorNode-detune"><code>detune</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-28" typeof="bibo:Chapter" id="attributes-28"><h4 resource="#h-attributes-28" id="h-attributes-28"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.1 </span>Attributes <button onclick="OpenOriginal('attributes-28')">原文</button></span></h4><dl class="attributes"><dt id="widl-OscillatorNode-detune"><code>detune</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
             A detuning value (in Cents) which will offset the
             <code>frequency</code> by the given amount. Its default
             <code>value</code> is 0. This parameter is <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a>.
@@ -8098,7 +8104,7 @@ $$
             custom waveform, which results in this attribute being set to
             "custom". The default value is "sine". When this attribute is set,
             the phase of the oscillator <em title="MUST" class="rfc2119">MUST</em> be conserved.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-16" typeof="bibo:Chapter" id="methods-16"><h4 resource="#h-methods-16" id="h-methods-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.2 </span>Methods</span></h4><dl class="methods"><dt id="widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave"><code>setPeriodicWave</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-16" typeof="bibo:Chapter" id="methods-16"><h4 resource="#h-methods-16" id="h-methods-16"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.2 </span>Methods <button onclick="OpenOriginal('methods-16')">原文</button></span></h4><dl class="methods"><dt id="widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave"><code>setPeriodicWave</code></dt><dd>
             Sets an arbitrary custom periodic waveform given a
             <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>.
           <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">periodicWave</td><td class="prmType"><code><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-start-void-double-when"><code>start</code></dt><dd>
@@ -8109,7 +8115,7 @@ $$
           <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#basic-waveform-phase" typeof="bibo:Chapter" id="basic-waveform-phase">
           <h4 resource="#h-basic-waveform-phase" id="h-basic-waveform-phase"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.3 </span>
-            Basic Waveform Phase
+            Basic Waveform Phase <button onclick="OpenOriginal('basic-waveform-phase')">原文</button>
           </span></h4>
           <p>
             The idealized mathematical waveforms for the various oscillator
@@ -8176,7 +8182,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#the-periodicwave-interface" typeof="bibo:Chapter" id="the-periodicwave-interface">
         <h3 resource="#h-the-periodicwave-interface" id="h-the-periodicwave-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31 </span>
-          The PeriodicWave Interface
+          The PeriodicWave Interface <button onclick="OpenOriginal('the-periodicwave-interface')">原文</button>
         </span></h3>
         <p>
           PeriodicWave represents an arbitrary periodic waveform to be used
@@ -8189,12 +8195,12 @@ odd function with period \(2\pi\).
 };</span></pre>
         <section property="bibo:hasPart" resource="#periodicwaveconstraints" typeof="bibo:Chapter" id="periodicwaveconstraints">
           <h4 resource="#h-periodicwaveconstraints" id="h-periodicwaveconstraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.1 </span>
-            PeriodicWaveConstraints
+            PeriodicWaveConstraints <button onclick="OpenOriginal('periodicwaveconstraints')">原文</button>
           </span></h4>The <code>PeriodicWaveConstraints</code> dictionary is used to
           specify how the waveform is normalized.
           <pre class="idl"><span class="idlDictionary" id="idl-def-PeriodicWaveConstraints">dictionary <span class="idlDictionaryID">PeriodicWaveConstraints</span> {
 <span class="idlMember">             <span class="idlMemberType">boolean</span> <span class="idlMemberName"><a href="#widl-PeriodicWaveConstraints-disableNormalization">disableNormalization</a></span> = <span class="idlMemberValue">false</span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#dictionary-periodicwaveconstraints-members" typeof="bibo:Chapter" id="dictionary-periodicwaveconstraints-members"><h5 resource="#h-dictionary-periodicwaveconstraints-members" id="h-dictionary-periodicwaveconstraints-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.1.1 </span>Dictionary <a href="#idl-def-PeriodicWaveConstraints" class="idlType"><code>PeriodicWaveConstraints</code></a> Members</span></h5><dl class="dictionary-members"><dt id="widl-PeriodicWaveConstraints-disableNormalization"><code>disableNormalization</code> of type <span class="idlMemberType">boolean</span>, defaulting to <code>false</code></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#dictionary-periodicwaveconstraints-members" typeof="bibo:Chapter" id="dictionary-periodicwaveconstraints-members"><h5 resource="#h-dictionary-periodicwaveconstraints-members" id="h-dictionary-periodicwaveconstraints-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.1.1 </span>Dictionary <a href="#idl-def-PeriodicWaveConstraints" class="idlType"><code>PeriodicWaveConstraints</code></a> Members </span></h5><dl class="dictionary-members"><dt id="widl-PeriodicWaveConstraints-disableNormalization"><code>disableNormalization</code> of type <span class="idlMemberType">boolean</span>, defaulting to <code>false</code></dt><dd>
               Controls whether the periodic wave is normalized or not. If
               <code>true</code>, the waveform is not normalized; otherwise, the
               waveform is normalized.
@@ -8202,7 +8208,7 @@ odd function with period \(2\pi\).
         </section>
         <section property="bibo:hasPart" resource="#waveform-generation" typeof="bibo:Chapter" id="waveform-generation">
           <h4 resource="#h-waveform-generation" id="h-waveform-generation"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.2 </span>
-            Waveform Generation
+            Waveform Generation <button onclick="OpenOriginal('waveform-generation')">原文</button>
           </span></h4>
           <p>
             The <!--a href=
@@ -8223,7 +8229,7 @@ odd function with period \(2\pi\).
         </section>
         <section property="bibo:hasPart" resource="#waveform-normalization" typeof="bibo:Chapter" id="waveform-normalization">
           <h4 resource="#h-waveform-normalization" id="h-waveform-normalization"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.3 </span>
-            Waveform Normalization
+            Waveform Normalization <button onclick="OpenOriginal('waveform-normalization')">原文</button>
           </span></h4>
           <p>
             By default, the waveform defined in the previous section is
@@ -8263,7 +8269,7 @@ odd function with period \(2\pi\).
         </section>
         <section property="bibo:hasPart" resource="#oscillator-coefficients" typeof="bibo:Chapter" id="oscillator-coefficients">
           <h4 resource="#h-oscillator-coefficients" id="h-oscillator-coefficients"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.4 </span>
-            Oscillator Coefficients
+            Oscillator Coefficients <button onclick="OpenOriginal('oscillator-coefficients')">原文</button>
           </span></h4>
           <p>
             The builtin oscillator types are created using <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>
@@ -8330,7 +8336,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#MediaStreamAudioSourceNode" typeof="bibo:Chapter">
         <h3 resource="#MediaStreamAudioSourceNode" id="MediaStreamAudioSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.32 </span>
-          The MediaStreamAudioSourceNode Interface
+          The MediaStreamAudioSourceNode Interface <button onclick="OpenOriginal('MediaStreamAudioSourceNode')">原文</button>
         </span></h3>
         <p>
           This interface represents an audio source from a
@@ -8353,7 +8359,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#the-mediastreamaudiodestinationnode-interface" typeof="bibo:Chapter" id="the-mediastreamaudiodestinationnode-interface">
         <h3 resource="#h-the-mediastreamaudiodestinationnode-interface" id="h-the-mediastreamaudiodestinationnode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.33 </span>
-          The MediaStreamAudioDestinationNode Interface
+          The MediaStreamAudioDestinationNode Interface <button onclick="OpenOriginal('the-mediastreamaudiodestinationnode-interface')">原文</button>
         </span></h3>
         <p>
           This interface is an audio destination representing a
@@ -8380,7 +8386,7 @@ odd function with period \(2\pi\).
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-MediaStreamAudioDestinationNode">interface <span class="idlInterfaceID">MediaStreamAudioDestinationNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">MediaStream</span> <span class="idlAttrName"><a href="#widl-MediaStreamAudioDestinationNode-stream">stream</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-29" typeof="bibo:Chapter" id="attributes-29"><h4 resource="#h-attributes-29" id="h-attributes-29"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.33.1 </span>Attributes</span></h4><dl class="attributes"><dt id="widl-MediaStreamAudioDestinationNode-stream"><code>stream</code> of type <span class="idlAttrType">MediaStream</span>, readonly       </dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-29" typeof="bibo:Chapter" id="attributes-29"><h4 resource="#h-attributes-29" id="h-attributes-29"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.33.1 </span>Attributes <button onclick="OpenOriginal('attributes-29')">原文</button></span></h4><dl class="attributes"><dt id="widl-MediaStreamAudioDestinationNode-stream"><code>stream</code> of type <span class="idlAttrType">MediaStream</span>, readonly       </dt><dd>
             A MediaStream containing a single AudioMediaStreamTrack with the
             same number of channels as the node itself.
           </dd></dl></section>
@@ -8388,7 +8394,7 @@ odd function with period \(2\pi\).
     </section>
     <section property="bibo:hasPart" resource="#mixer-gain-structure" typeof="bibo:Chapter" id="mixer-gain-structure" class="informative">
       <!--OddPage--><h2 resource="#h-mixer-gain-structure" id="h-mixer-gain-structure"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>
-        Mixer Gain Structure
+        Mixer Gain Structure <button onclick="OpenOriginal('mixer-gain-structure')">原文</button>
       </span></h2><p><em>This section is non-normative.</em></p>
       <h2 id="background">
         Background
@@ -8403,7 +8409,7 @@ odd function with period \(2\pi\).
       </p>
       <section property="bibo:hasPart" resource="#SummingJunction" typeof="bibo:Chapter">
         <h3 resource="#SummingJunction" id="SummingJunction"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>
-          Summing Inputs
+          Summing Inputs <button onclick="OpenOriginal('SummingJunction')">原文</button>
         </span></h3>
         <p>
           The inputs to <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s have the ability to
@@ -8430,7 +8436,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#gain-control" typeof="bibo:Chapter" id="gain-control">
         <h3 resource="#h-gain-control" id="h-gain-control"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>
-          Gain Control
+          Gain Control <button onclick="OpenOriginal('gain-control')">原文</button>
         </span></h3>
         <p>
           In many scenarios, it's important to be able to control the gain for
@@ -8451,7 +8457,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#Example-mixer-with-send-busses" typeof="bibo:Chapter">
         <h3 resource="#Example-mixer-with-send-busses" id="Example-mixer-with-send-busses"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>
-          Example: Mixer with Send Busses
+          Example: Mixer with Send Busses <button onclick="OpenOriginal('Example-mixer-with-send-busses')">原文</button>
         </span></h3>
         <p>
           In a routing scenario involving multiple sends and submixes, explicit
@@ -8562,11 +8568,11 @@ odd function with period \(2\pi\).
     </section>
     <section property="bibo:hasPart" resource="#DynamicLifetime" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#DynamicLifetime" id="DynamicLifetime"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>
-        Dynamic Lifetime
+        Dynamic Lifetime <button onclick="OpenOriginal('DynamicLifetime')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#background-1" typeof="bibo:Chapter" id="background-1">
         <h3 resource="#h-background-1" id="h-background-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>
-          Background
+          Background <button onclick="OpenOriginal('background-1')">原文</button>
         </span></h3>
         <p class="norm">
           <em>This section is non-normative. Please see <a href="#lifetime-AudioContext">AudioContext lifetime</a> and <a href="#lifetime-AudioNode">AudioNode lifetime</a> for normative
@@ -8613,7 +8619,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#example" typeof="bibo:Chapter" id="example">
         <h3 resource="#h-example" id="h-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>
-          Example
+          Example <button onclick="OpenOriginal('example')">原文</button>
         </span></h3>
         <figure id="fig-a-graph-featuring-a-subgraph-that-will-be-releases-early.x">
           <img alt="dynamic allocation" src="images/dynamic-allocation.png">
@@ -8676,7 +8682,7 @@ odd function with period \(2\pi\).
     </section>
     <section property="bibo:hasPart" resource="#channel-up-mixing-and-down-mixing" typeof="bibo:Chapter" id="channel-up-mixing-and-down-mixing">
       <!--OddPage--><h2 resource="#h-channel-up-mixing-and-down-mixing" id="h-channel-up-mixing-and-down-mixing"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>
-        Channel up-mixing and down-mixing
+        Channel up-mixing and down-mixing <button onclick="OpenOriginal('channel-up-mixing-and-down-mixing')">原文</button>
       </span></h2>
       <p class="norm">
         This section is normative.
@@ -8795,7 +8801,7 @@ odd function with period \(2\pi\).
       </ol>
       <section property="bibo:hasPart" resource="#ChannelLayouts" typeof="bibo:Chapter">
         <h3 resource="#ChannelLayouts" id="ChannelLayouts"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>
-          Speaker Channel Layouts
+          Speaker Channel Layouts <button onclick="OpenOriginal('ChannelLayouts')">原文</button>
         </span></h3>
         <p>
           When <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>
@@ -8811,7 +8817,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#ChannelOrdering" typeof="bibo:Chapter">
         <h3 resource="#ChannelOrdering" id="ChannelOrdering"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2 </span>
-          Channel ordering
+          Channel ordering <button onclick="OpenOriginal('ChannelOrdering')">原文</button>
         </span></h3>
         <pre>    Mono
       0: M: mono
@@ -8839,7 +8845,7 @@ odd function with period \(2\pi\).
       </section>
       <section property="bibo:hasPart" resource="#UpMix-sub" typeof="bibo:Chapter">
         <h3 resource="#UpMix-sub" id="UpMix-sub"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>
-          Up Mixing speaker layouts
+          Up Mixing speaker layouts <button onclick="OpenOriginal('UpMix-sub')">原文</button>
         </span></h3>
         <pre>Mono up-mix:
 
@@ -8890,7 +8896,7 @@ Quad up-mix:
       </section>
       <section property="bibo:hasPart" resource="#down-mix" typeof="bibo:Chapter">
         <h3 resource="#down-mix" id="down-mix"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>
-          Down Mixing speaker layouts
+          Down Mixing speaker layouts <button onclick="OpenOriginal('down-mix')">原文</button>
         </span></h3>
         <p>
           A down-mix will be necessary, for example, if processing 5.1 source
@@ -8931,7 +8937,7 @@ Quad up-mix:
       </section>
       <section property="bibo:hasPart" resource="#ChannelRules-section" typeof="bibo:Chapter" class="informative">
         <h3 resource="#ChannelRules-section" id="ChannelRules-section"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5 </span>
-          Channel Rules Examples
+          Channel Rules Examples <button onclick="OpenOriginal('ChannelRules-section')">原文</button>
         </span></h3><p><em>This section is non-normative.</em></p>
         <div class="example"><div class="example-title"><span>Example 10</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="com">// Set gain node to explicit 2-channels (stereo).</span><span class="pln">
 gain</span><span class="pun">.</span><span class="pln">channelCount </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
@@ -8962,7 +8968,7 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
     </section>
     <section property="bibo:hasPart" resource="#audio-sample-values" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#audio-sample-values" id="audio-sample-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>
-        Audio Signal Values
+        Audio Signal Values <button onclick="OpenOriginal('audio-sample-values')">原文</button>
       </span></h2>
       <p>
         The nominal range of all audio signals at a destination node of any
@@ -8973,11 +8979,11 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
     </section>
     <section property="bibo:hasPart" resource="#Spatialization" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#Spatialization" id="Spatialization"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>
-        Spatialization / Panning
+        Spatialization / Panning <button onclick="OpenOriginal('Spatialization')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#Spatialization-background" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-background" id="Spatialization-background"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.1 </span>
-          Background
+          Background <button onclick="OpenOriginal('Spatialization-background')">原文</button>
         </span></h3>
         <p>
           A common feature requirement for modern 3D games is the ability to
@@ -9020,7 +9026,7 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
       </section>
       <section property="bibo:hasPart" resource="#azimuth-elevation" typeof="bibo:Chapter" id="azimuth-elevation">
         <h3 resource="#h-azimuth-elevation" id="h-azimuth-elevation"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.2 </span>
-          Azimuth and Elevation
+          Azimuth and Elevation <button onclick="OpenOriginal('azimuth-elevation')">原文</button>
         </span></h3>
         <p>
           The following algorithm must be used to calculate the
@@ -9078,7 +9084,7 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-panning-algorithm" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-panning-algorithm" id="Spatialization-panning-algorithm"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3 </span>
-          Panning Algorithm
+          Panning Algorithm <button onclick="OpenOriginal('Spatialization-panning-algorithm')">原文</button>
         </span></h3>
         <p>
           <em>Mono-to-stereo</em> and <em>stereo-to-stereo</em> panning must be
@@ -9088,7 +9094,7 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
         </p>
         <section property="bibo:hasPart" resource="#Spatialzation-equal-power-panning" typeof="bibo:Chapter">
           <h4 resource="#Spatialzation-equal-power-panning" id="Spatialzation-equal-power-panning"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3.1 </span>
-            Equal-power panning
+            Equal-power panning <button onclick="OpenOriginal('Spatialzation-equal-power-panning')">原文</button>
           </span></h4>
           <p>
             This is a simple and relatively inexpensive algorithm which
@@ -9218,7 +9224,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
         </section>
         <section property="bibo:hasPart" resource="#hrtf-panning-stereo-only" typeof="bibo:Chapter" id="hrtf-panning-stereo-only">
           <h4 resource="#h-hrtf-panning-stereo-only" id="h-hrtf-panning-stereo-only"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3.2 </span>
-            HRTF panning (stereo only)
+            HRTF panning (stereo only) <button onclick="OpenOriginal('hrtf-panning-stereo-only')">原文</button>
           </span></h4>
           <p>
             This requires a set of <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>
@@ -9238,7 +9244,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-distance-effects" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-distance-effects" id="Spatialization-distance-effects"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.4 </span>
-          Distance Effects
+          Distance Effects <button onclick="OpenOriginal('Spatialization-distance-effects')">原文</button>
         </span></h3>
         <p>
           Sounds which are closer are louder, while sounds further away are
@@ -9275,7 +9281,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-sound-cones" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-sound-cones" id="Spatialization-sound-cones"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.5 </span>
-          Sound Cones
+          Sound Cones <button onclick="OpenOriginal('Spatialization-sound-cones')">原文</button>
         </span></h3>
         <p>
           The listener and each sound source have an orientation vector
@@ -9343,7 +9349,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-doppler-shift" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-doppler-shift" id="Spatialization-doppler-shift"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.6 </span>
-          Doppler Shift
+          Doppler Shift <button onclick="OpenOriginal('Spatialization-doppler-shift')">原文</button>
         </span></h3>
         <ul>
           <li>Introduces a pitch shift which can realistically simulate moving
@@ -9395,11 +9401,11 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#Performance" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#Performance" id="Performance"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>
-        Performance Considerations
+        Performance Considerations <button onclick="OpenOriginal('Performance')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#latency" typeof="bibo:Chapter" id="latency" class="informative">
         <h3 resource="#h-latency" id="h-latency"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.1 </span>
-          Latency
+          Latency <button onclick="OpenOriginal('latency')">原文</button>
         </span></h3><p><em>This section is non-normative.</em></p>
         <figure id="fig-use-cases-in-which-the-latency-can-be-important">
           <img alt="latency" src="images/latency.png">
@@ -9441,7 +9447,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#audio-buffer-copying" typeof="bibo:Chapter" id="audio-buffer-copying">
         <h3 resource="#h-audio-buffer-copying" id="h-audio-buffer-copying"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.2 </span>
-          Audio Buffer Copying
+          Audio Buffer Copying <button onclick="OpenOriginal('audio-buffer-copying')">原文</button>
         </span></h3>
         <p>
           When an <a href="#acquire-the-content">acquire the content</a>
@@ -9470,7 +9476,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#audioparam-transitions" typeof="bibo:Chapter" id="audioparam-transitions" class="informative">
         <h3 resource="#h-audioparam-transitions" id="h-audioparam-transitions"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.3 </span>
-          AudioParam Transitions
+          AudioParam Transitions <button onclick="OpenOriginal('audioparam-transitions')">原文</button>
         </span></h3><p><em>This section is non-normative.</em></p>
         <p>
           While no automatic smoothing is done when directly setting the
@@ -9487,7 +9493,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#audio-glitching" typeof="bibo:Chapter" id="audio-glitching">
         <h3 resource="#h-audio-glitching" id="h-audio-glitching"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.4 </span>
-          Audio Glitching
+          Audio Glitching <button onclick="OpenOriginal('audio-glitching')">原文</button>
         </span></h3>
         <p>
           Audio glitches are caused by an interruption of the normal continuous
@@ -9502,7 +9508,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#JavaScriptPerformance" typeof="bibo:Chapter">
         <h3 resource="#JavaScriptPerformance" id="JavaScriptPerformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.5 </span>
-          JavaScript Issues with Real-Time Processing and Synthesis:
+          JavaScript Issues with Real-Time Processing and Synthesis: <button onclick="OpenOriginal('JavaScriptPerformance')">原文</button>
         </span></h3>While processing audio in JavaScript, it is extremely challenging
         to get reliable, glitch-free audio while achieving a reasonably
         low-latency, especially under heavy processor load.
@@ -9543,12 +9549,12 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#SecurityConsiderations" typeof="bibo:Chapter" class="informative">
       <!--OddPage--><h2 resource="#SecurityConsiderations" id="SecurityConsiderations"><span property="xhv:role" resource="xhv:heading"><span class="secno">9. </span>
-        Security Considerations
+        Security Considerations <button onclick="OpenOriginal('SecurityConsiderations')">原文</button>
       </span></h2><p><em>This section is non-normative.</em></p>
     </section>
     <section property="bibo:hasPart" resource="#PrivacyConsiderations" typeof="bibo:Chapter" class="informative">
       <!--OddPage--><h2 resource="#PrivacyConsiderations" id="PrivacyConsiderations"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>
-        Privacy Considerations
+        Privacy Considerations <button onclick="OpenOriginal('PrivacyConsiderations')">原文</button>
       </span></h2><p><em>This section is non-normative.</em></p>
       <p>
         When giving various information on available
@@ -9571,7 +9577,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#requirements" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#requirements" id="requirements"><span property="xhv:role" resource="xhv:heading"><span class="secno">11. </span>
-        Requirements and Use Cases
+        Requirements and Use Cases <button onclick="OpenOriginal('requirements')">原文</button>
       </span></h2>
       <p>
         Please see [<cite><a href="#bib-webaudio-usecases" class="bibref">webaudio-usecases</a></cite>].
@@ -9579,7 +9585,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#acknowledgements" typeof="bibo:Chapter" id="acknowledgements">
       <!--OddPage--><h2 resource="#h-acknowledgements" id="h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">12. </span>
-        Acknowledgements
+        Acknowledgements <button onclick="OpenOriginal('acknowledgements')">原文</button>
       </span></h2>
       <p>
         This specification is the collective work of the <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/2011/audio/">Audio Working Group</a>.
@@ -9618,7 +9624,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#ChangeLog" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#ChangeLog" id="ChangeLog"><span property="xhv:role" resource="xhv:heading"><span class="secno">13. </span>
-        Web Audio <abbr title="Application Programming Interface">API</abbr> Change Log
+        Web Audio <abbr title="Application Programming Interface">API</abbr> Change Log <button onclick="OpenOriginal('ChangeLog')">原文</button>
       </span></h2>
       <p>
         See <a href="changelog.html">changelog.html</a>.
@@ -9626,7 +9632,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
 
 
-<section property="bibo:hasPart" resource="#references" typeof="bibo:Chapter" id="references" class="appendix"><!--OddPage--><h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>References</span></h2><section property="bibo:hasPart" resource="#normative-references" typeof="bibo:Chapter" id="normative-references"><h3 resource="#h-normative-references" id="h-normative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Normative references</span></h3><dl resource="" class="bibliography"><dt id="bib-DOM">[DOM]</dt><dd>Anne van Kesteren; Aryeh Gregor; Ms2ger; Alex Russell; Robin Berjon. <a property="dc:requires" href="http://www.w3.org/TR/dom/"><cite>W3C DOM4</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:requires" href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a>
+<section property="bibo:hasPart" resource="#references" typeof="bibo:Chapter" id="references" class="appendix"><!--OddPage--><h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>References <button onclick="OpenOriginal('references')">原文</button></span></h2><section property="bibo:hasPart" resource="#normative-references" typeof="bibo:Chapter" id="normative-references"><h3 resource="#h-normative-references" id="h-normative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Normative references <button onclick="OpenOriginal('normative-references')">原文</button></span></h3><dl resource="" class="bibliography"><dt id="bib-DOM">[DOM]</dt><dd>Anne van Kesteren; Aryeh Gregor; Ms2ger; Alex Russell; Robin Berjon. <a property="dc:requires" href="http://www.w3.org/TR/dom/"><cite>W3C DOM4</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:requires" href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a>
 </dd><dt id="bib-HTML">[HTML]</dt><dd>Ian Hickson. <a property="dc:requires" href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a property="dc:requires" href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
 </dd><dt id="bib-RFC2119">[RFC2119]</dt><dd>S. Bradner. <a property="dc:requires" href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a property="dc:requires" href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
 </dd><dt id="bib-TYPED-ARRAYS">[TYPED-ARRAYS]</dt><dd>David Herman; Kenneth Russell. <a property="dc:requires" href="https://www.khronos.org/registry/typedarray/specs/latest/"><cite>Typed Array Specification</cite></a>. 26 June 2013. Khronos Working Draft. URL: <a property="dc:requires" href="https://www.khronos.org/registry/typedarray/specs/latest/">https://www.khronos.org/registry/typedarray/specs/latest/</a>
@@ -9634,7 +9640,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
 </dd><dt id="bib-Workers">[Workers]</dt><dd>Ian Hickson. <a property="dc:requires" href="http://www.w3.org/TR/workers/"><cite>Web Workers</cite></a>. 24 September 2015. W3C Working Draft. URL: <a property="dc:requires" href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a>
 </dd><dt id="bib-mediacapture-streams">[mediacapture-streams]</dt><dd>Daniel Burnett; Adam Bergkvist; Cullen Jennings; Anant Narayanan. <a property="dc:requires" href="http://www.w3.org/TR/mediacapture-streams/"><cite>Media Capture and Streams</cite></a>. 14 April 2015. W3C Last Call Working Draft. URL: <a property="dc:requires" href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a>
 </dd><dt id="bib-webrtc">[webrtc]</dt><dd>Adam Bergkvist; Daniel Burnett; Cullen Jennings; Anant Narayanan. <a property="dc:requires" href="http://www.w3.org/TR/webrtc/"><cite>WebRTC 1.0: Real-time Communication Between Browsers</cite></a>. 10 February 2015. W3C Working Draft. URL: <a property="dc:requires" href="http://www.w3.org/TR/webrtc/">http://www.w3.org/TR/webrtc/</a>
-</dd></dl></section><section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references"><h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Informative references</span></h3><dl resource="" class="bibliography"><dt id="bib-2dcontext">[2dcontext]</dt><dd>Rik Cabanier; Jatinder Mann; Jay Munro; Tom Wiltzius; Ian Hickson. <a property="dc:references" href="http://www.w3.org/TR/2dcontext/"><cite>HTML Canvas 2D Context</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a>
+</dd></dl></section><section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references"><h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Informative references <button onclick="OpenOriginal('informative-references')">原文</button></span></h3><dl resource="" class="bibliography"><dt id="bib-2dcontext">[2dcontext]</dt><dd>Rik Cabanier; Jatinder Mann; Jay Munro; Tom Wiltzius; Ian Hickson. <a property="dc:references" href="http://www.w3.org/TR/2dcontext/"><cite>HTML Canvas 2D Context</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a>
 </dd><dt id="bib-WEBGL">[WEBGL]</dt><dd>Chris Marrin (Apple Inc.). <a property="dc:references" href="https://www.khronos.org/registry/webgl/specs/1.0/"><cite>WebGL Specification, Version 1.0</cite></a>. 10 February 2011. URL: <a property="dc:references" href="https://www.khronos.org/registry/webgl/specs/1.0/">https://www.khronos.org/registry/webgl/specs/1.0/</a>
 </dd><dt id="bib-XHR">[XHR]</dt><dd>Anne van Kesteren. <a property="dc:references" href="https://xhr.spec.whatwg.org/"><cite>XMLHttpRequest Standard</cite></a>. Living Standard. URL: <a property="dc:references" href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
 </dd><dt id="bib-mimesniff">[mimesniff]</dt><dd>Gordon P. Hemsley. <a property="dc:references" href="https://mimesniff.spec.whatwg.org/"><cite>MIME Sniffing Standard</cite></a>. Living Standard. URL: <a property="dc:references" href="https://mimesniff.spec.whatwg.org/">https://mimesniff.spec.whatwg.org/</a>
