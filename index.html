@@ -7099,23 +7099,27 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           例:
         </h3>
         <p>
-          For example, if a default <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> has
+<!--          For example, if a default <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> has
           two connected stereo inputs, the first and second input will be
           downmixed to mono respectively before merging. The output will be a
           6-channel stream whose first two channels are be filled with the
-          first two (downmixed) inputs and the rest of channels will be silent.
+          first two (downmixed) inputs and the rest of channels will be silent.-->
+          例えば、デフォルトの <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> に 2 つのステレオ入力を接続した時、1 番目と 2 番目の入力はそれぞれモノラルにダウンミックスされます。
+          出力は 6 チャンネルのストリームで最初の 2 チャンネルが 2 つの (ダウンミックスされた) 入力に割り当てられ、残りのチャンネルは無音になります。
         </p>
         <p>
-          Also the <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> can be used to arrange
+<!--          Also the <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> can be used to arrange
           multiple audio streams in a certain order for the multi-channel
           speaker array such as 5.1 surround set up. The merger does not
           interpret the channel identities (such as left, right, etc.), but
-          simply combines channels in the order that they are input.
+          simply combines channels in the order that they are input.-->
+          また、<a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> は複数のオーディオストリームを例えば 5.1 サラウンドシステムのような決まった順序のマルチチャンネルスピーカー配列に合わせて並べるのに使用する事ができます。
+          マージャーは(左、右等のような)チャンネルの識別を行わず、単純に入力された順序でチャンネルを組み合わせます。
         </p>
         <figure id="fig-a-diagram-of-channelmerger">
           <img alt="channel merger" src="images/channel-merger.png">
-          <figcaption>Fig. <span class="figno">7</span> <span class="fig-title">
-            A diagram of ChannelMerger
+          <figcaption>図. <span class="figno">7</span> <span class="fig-title">
+            チャンネルマージャーの構成図
           </span></figcaption>
         </figure>
         <pre class="idl"><span class="idlInterface" id="idl-def-ChannelMergerNode">interface <span class="idlInterfaceID">ChannelMergerNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
@@ -7123,22 +7127,27 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-dynamicscompressornode-interface" typeof="bibo:Chapter" id="the-dynamicscompressornode-interface">
         <h3 resource="#h-the-dynamicscompressornode-interface" id="h-the-dynamicscompressornode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.26 </span>
-          The DynamicsCompressorNode Interface <button onclick="OpenOriginal('the-dynamicscompressornode-interface')">原文</button>
+          DynamicsCompressorNode インターフェース <button onclick="OpenOriginal('the-dynamicscompressornode-interface')">原文</button>
         </span></h3>
         <p>
-          <a class="idlType" href="#idl-def-DynamicsCompressorNode"><code>DynamicsCompressorNode</code></a> is an
+<!--          <a class="idlType" href="#idl-def-DynamicsCompressorNode"><code>DynamicsCompressorNode</code></a> is an
           <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> processor implementing a dynamics
-          compression effect.
+          compression effect.-->
+          <a class="idlType" href="#idl-def-DynamicsCompressorNode"><code>DynamicsCompressorNode</code></a> はダイナミクス・コンプレッション効果を実装した <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> です。
         </p>
         <p>
-          Dynamics compression is very commonly used in musical production and
+<!--          Dynamics compression is very commonly used in musical production and
           game audio. It lowers the volume of the loudest parts of the signal
           and raises the volume of the softest parts. Overall, a louder,
           richer, and fuller sound can be achieved. It is especially important
           in games and musical applications where large numbers of individual
           sounds are played simultaneous to control the overall signal level
           and help avoid clipping (distorting) the audio output to the
-          speakers.
+          speakers.-->
+        ダイナミック・コンプレッションは音楽制作やゲーム・オーディオで非常に良く使用されるものです。
+         これは信号の音量が大きな部分を抑え、音量が小さな部分を持ち上げます。
+         全体として、より大きく、豊かで隙間のない音を作る事ができます。
+         これは特に、多くの個別サウンドを同時に再生するゲームと音楽アプリケーションで、全体の信号レベルを制御してスピーカーへの出力のクリッピング(歪み)を避けるために重要です。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
@@ -7154,30 +7163,37 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">float</span>      <span class="idlAttrName"><a href="#widl-DynamicsCompressorNode-reduction">reduction</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-DynamicsCompressorNode-attack">attack</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlAttrName"><a href="#widl-DynamicsCompressorNode-release">release</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-25" typeof="bibo:Chapter" id="attributes-25"><h4 resource="#h-attributes-25" id="h-attributes-25"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.26.1 </span>Attributes <button onclick="OpenOriginal('attributes-25')">原文</button></span></h4><dl class="attributes"><dt id="widl-DynamicsCompressorNode-attack"><code>attack</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The amount of time (in seconds) to reduce the gain by 10dB. Its
+};</span></pre><section property="bibo:hasPart" resource="#attributes-25" typeof="bibo:Chapter" id="attributes-25"><h4 resource="#h-attributes-25" id="h-attributes-25"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.26.1 </span>属性 <button onclick="OpenOriginal('attributes-25')">原文</button></span></h4><dl class="attributes"><dt id="widl-DynamicsCompressorNode-attack"><code>attack</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The amount of time (in seconds) to reduce the gain by 10dB. Its
             default <code>value</code> is 0.003, with a nominal range of 0 to
-            1.
-          </dd><dt id="widl-DynamicsCompressorNode-knee"><code>knee</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            A decibel value representing the range above the threshold where
+            1.-->
+            ゲインを 10dB 減衰させるために必要な時間 (秒) です。 これは名目上 0 から 1 の範囲を持ち、デフォルトの <code>value</code> は 0.003 です。
+          </dd><dt id="widl-DynamicsCompressorNode-knee"><code>knee</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            A decibel value representing the range above the threshold where
             the curve smoothly transitions to the "ratio" portion. Its default
-            <code>value</code> is 30, with a nominal range of 0 to 40.
-          </dd><dt id="widl-DynamicsCompressorNode-ratio"><code>ratio</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The amount of dB change in input for a 1 dB change in output. Its
-            default <code>value</code> is 12, with a nominal range of 1 to 20.
-          </dd><dt id="widl-DynamicsCompressorNode-reduction"><code>reduction</code> of type <span class="idlAttrType">float</span>, readonly       </dt><dd>
-            A read-only decibel value for metering purposes, representing the
+            <code>value</code> is 30, with a nominal range of 0 to 40.-->
+            threadhold を超えた部分の範囲を表すデシベル値で、この範囲ではカーブが "ratio" まで滑らかに変化します。 このデフォルトの <code>value</code> は 0 から 40 の範囲中、 30 になっています。
+          </dd><dt id="widl-DynamicsCompressorNode-ratio"><code>ratio</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The amount of dB change in input for a 1 dB change in output. Its
+            default <code>value</code> is 12, with a nominal range of 1 to 20.-->
+            出力が 1dB 変化するための入力の dB の変化量です。 このデフォルトの <code>value</code> は、 1 から 20 の範囲中 12 になっています。
+          </dd><dt id="widl-DynamicsCompressorNode-reduction"><code>reduction</code> <span class="idlAttrType">float</span> 型, readonly       </dt><dd>
+<!--            A read-only decibel value for metering purposes, representing the
             current amount of gain reduction that the compressor is applying to
             the signal. If fed no signal the value will be 0 (no gain
-            reduction).
-          </dd><dt id="widl-DynamicsCompressorNode-release"><code>release</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The amount of time (in seconds) to increase the gain by 10dB. Its
+            reduction).-->
+            メーターの表示のために使用するリードオンリーのデシベル値で、信号に対するコンプレッサーの動作による、現在のゲインの減衰量を表します。
+            もし信号が供給されていない場合この値は 0 (ゲイン減衰なし)になります。
+          </dd><dt id="widl-DynamicsCompressorNode-release"><code>release</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The amount of time (in seconds) to increase the gain by 10dB. Its
             default <code>value</code> is 0.250, with a nominal range of 0 to
-            1.
-          </dd><dt id="widl-DynamicsCompressorNode-threshold"><code>threshold</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The decibel value above which the compression will start taking
+            1.-->
+            ゲインを 10dB 増加させるために必要な時間 (秒) です。 これは名目上 0 から 1 の範囲を持ち、デフォルトの <code>value</code> は 0.250 です。
+          </dd><dt id="widl-DynamicsCompressorNode-threshold"><code>threshold</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The decibel value above which the compression will start taking
             effect. Its default <code>value</code> is -24, with a nominal range
-            of -100 to 0.
+            of -100 to 0.-->
+            これを超えた時にコンプレッション動作を開始するデシベル値です。 デフォルトの <code>value</code> は -100 から 0 の範囲中、 -24 になっています。
           </dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-biquadfilternode-interface" typeof="bibo:Chapter" id="the-biquadfilternode-interface">
