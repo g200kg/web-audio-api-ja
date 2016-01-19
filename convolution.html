@@ -31,7 +31,7 @@
 <!--    <em>This section is informative and may be helpful to implementors</em>-->
     <em>このセクションは、実装する際に役立つかも知れない参考情報です。</em>
 </p>
-   
+
 <p>
 <!--    A <a href="http://en.wikipedia.org/wiki/Convolution_reverb">convolution reverb</a> can be used to simulate an acoustic space with very high quality.
       It can also be used as the basis for creating a vast number of unique and interesting special effects.  This technique is widely used
@@ -51,11 +51,11 @@
   <!--<h4>Overlap-Add Convolution</h4>-->
   <h4>Overlap-Add コンボリューション</h4>
   <img src="http://upload.wikimedia.org/wikipedia/commons/7/77/Depiction_of_overlap-add_algorithm.png" alt="Depiction of overlap-add algorithm" />
-  
-  
-  
+
+
+
   <p>
-    
+
     <!--Direct convolution is far too computationally expensive due to the extremely long impulse responses typically used.  Therefore an approach using
     <a href="http://en.wikipedia.org/wiki/FFT">FFTs</a> must be used.  But naively doing a standard overlap-add FFT convolution using an FFT of size N with L=N/2, where N is chosen to be at least twice the length of the convolution kernel (zero-padding the kernel) to perform each convolution operation in the diagram above would incur a substantial input to output pipeline latency on the order of L samples.  Because of the enormous audible delay, this simple method cannot be used.  Aside from the enormous delay, the size N of the FFT could be extremely large.  For example, with an impulse response of 10 seconds at 44.1Khz, N would equal 1048576 (2^20).
       This would take a very long time to evaluate.  Furthermore, such large FFTs are not practical due to substantial phase errors.-->
@@ -86,7 +86,7 @@
     <!--<h4>Multi-channel convolution</h4>-->
     <h4>マルチチャンネル・コンボリューション</h4>
     <p>
-      <!--It should be noted that a convolution reverb typically involves two convolution operations, with separate impulse responses for the left and right channels in 
+      <!--It should be noted that a convolution reverb typically involves two convolution operations, with separate impulse responses for the left and right channels in
       the stereo case.  For 5.1 surround, at least five separate convolution operations are necessary to generate output for each of the five channels.-->
 
       コンボリューション・リバーブは、ステレオ信号の場合、通常左および右チャンネルの独立したインパルスレスポンスによる、2つのコンボリューション演算を行います。 5.1チャンネルサラウンドの場合ならば5チャンネルのそれぞれの出力を得るために少なくとも5つの独立したコンボリューション演算が必要になります。
@@ -97,7 +97,7 @@
     <p>
       <!--Similar to other assets such as JPEG images, WAV sound files, MP4 videos, shaders, and geometry, impulse responses can be considered as multi-media assets.  As with these other
       assets, they require work to produce, and the high-quality ones are considered valuable.  For example, a company called Audio Ease makes a fairly expensive ($500 - $1000)
-      product called <a href="http://www.audioease.com/Pages/Altiverb/AltiverbMain.html">Altiverb</a> 
+      product called <a href="http://www.audioease.com/Pages/Altiverb/AltiverbMain.html">Altiverb</a>
       containing several nicely recorded impulse responses along with a convolution reverb engine.-->
 
       例えばJPEGイメージ、WAV音声ファイル、MP4ビデオ、シェーダー、ジオメトリなどの他のリソースと同様に、インパルスレスポンスはマルチメディア・リソースの１つと考えられます。他のリソースと同じく、作成のためには作業が必要であり、高品質なものには価値があります。例えば、Audio Ease社ではかなり高価格($500～$1000)な<a href="http://www.audioease.com/Pages/Altiverb/AltiverbMain.html">Altiverb</a>と呼ばれる製品を開発しており、コンボリューション・エンジンと共に幾つかの良く録音されたインパルスレスポンスを含んでいます。
@@ -106,8 +106,8 @@
 
     <!--<h3>Convolution Engine Implementation</h3>-->
     <h3>コンボリューション・エンジンの実装</h3>
-    
-    
+
+
     <!--<h4>FFTConvolver (short convolutions)</h4>-->
     <h4>FFTコンボルバー (ショート・コンボリューション)</h4>
 
@@ -118,12 +118,12 @@
 
     <code>FFTコンボルバー</code>は、短時間のインパルスレスポンスに対して、少なくとも2倍の長さNのサイズのFFTを利用して短時間のコンボリューションを行う事ができます。この方法はN/2サンプルフレームのレイテンシーを招きます。このレイテンシーとパフォーマンス面を考慮すると長いコンボリューションには適しません。この構成のブロックのインスタンスを複数使用する事で極めて長いコンボリューションを実行する事が可能になります。
     </p>
-    
+
     <img src="images/fft-convolver.png" alt="description of FFT convolver" />
-    
+
 
     <!--<h4>ReverbConvolver (long convolutions)</h4> -->
-    <h4>リバーブ・コンボルバー (ロング・コンボリューション)</h4> 
+    <h4>リバーブ・コンボルバー (ロング・コンボリューション)</h4>
     <!--The <code>ReverbConvolver</code> is able to perform extremely long real-time convolutions on a single audio channel.
     It uses multiple <code>FFTConvolver</code> objects as well as an input buffer and an accumulation buffer.  Note that it's
     possible to get a multi-threaded implementation by exploiting the parallelism.  Also note that the leading sections of the long
@@ -134,12 +134,12 @@
     これは、入力バッファと積算バッファに加えて複数の<code>FFTコンボルバー</code>オブジェクトを使用します。
     特筆すべき点としては並列処理を活用するためマルチ・スレッド実装をする事も可能です。
     また、レイテンシーを最小化するために、長いインパルスレスポンスの先頭部分をリアルタイム・スレッドで処理する事も可能です。理論上は先頭のFFTコンボルバーを(FFTを使わない)直接コンボリューション演算に置き換える事によりゼロ・レイテンシーの処理も可能です。
-    
 
-    
-    <img src="images/reverb-convolver.png" alt="description of reverb convolver" /> 
 
-    
+
+    <img src="images/reverb-convolver.png" alt="description of reverb convolver" />
+
+
     <!--<h4>Reverb Effect (with matrixing)</h4>-->
     <h4>リバーブ・エフェクト (マトリックス使用)</h4>
     <img src="images/reverb-matrixing.png" alt="description of reverb matrixing" />
@@ -153,7 +153,7 @@
 
 
     <img src="images/impulse-response.png" alt="impulse-response waveforms" />
-    
+
 
     <p>
       <!--The most <a href="http://pcfarina.eng.unipr.it/Public/Papers/226-AES122.pdf">modern</a>
@@ -209,41 +209,5 @@
     % convolve -h
     Usage: convolve input_file impulse_response_file output_file
         </pre>
-
-
-
-
-    
-
-
-    <!--<h3>Recording Setup</h3>-->
-    <h3>レコーディング・セットアップ</h3>
-    <div>
-      <img src="images/recording-setup.png" alt="photograph of recording setup" />
-    
-<br/>
-    <!--Audio Interface: Metric Halo Mobile I/O 2882 -->
-    オーディオインターフェース: Metric Halo Mobile I/O 2882
-    
-
-
-    <img src="images/microphones-speaker.png" alt="microphones and speakers used" />
-    
-
-    <img src="images/microphone.png" alt="microphone used" />
-    <img src="images/speaker.png" alt="speakers used" /><br/>
-    
-    <!--Microphones: AKG 414s, Speaker: Mackie HR824-->
-    マイク: AKG 414s, Speaker: Mackie HR824
-
-    
-
-    <!--<h3>The Warehouse Space</h3>-->
-    <h3>倉庫空間</h3>
-
-    <img src="images/warehouse.png" alt="photo of the warehouse used" />
-    </div>
-
-
   </body>
   </html>

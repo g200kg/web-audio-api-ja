@@ -592,12 +592,11 @@ table.exceptions table {
 }</script></head>
   <body id="respecDocument" role="document" class="h-entry"><div id="respecHeader" role="contentinfo" class="head">
     <h1>Web Audio API (日本語訳)</h1>
-    <h1>---まだ翻訳作業中です---</h1>
-    <h1>翻訳が完了している前の版(2013年10月10日版)はこちらです</h1>
-    <b><a href="131010/index.html">Web Audio API」 W3C Working Draft 10 October 2013(日本語訳)</a></b><br/><br/>
     <div style="background-color: #ddf; border: 1px solid #668; padding:10px 20px">
-      <p>この文書は、W3Cの文書 "「Web Audio API」 W3C Working Draft 08 December 2015" の日本語訳です。
-      </p>
+      <p style="background-color: #ddf"><b>この文書は、W3Cの文書 "「Web Audio API」 W3C Working Draft 08 December 2015" の日本語訳です。</b></p>
+      旧版はこちら:
+      <b><a href="131010/index.html">「Web Audio API」 W3C Working Draft 10 October 2013(日本語訳)</a></b><br/><br/>
+      <hr/>
       <p>Web Audio APIの正式な文書は英語版のみであり、日本語訳には翻訳に起因する誤りが含まれている場合があります。<br/>
         正式な文書はW3Cのサイト : <a href="http://www.w3.org/TR/webaudio/">http://www.w3.org/TR/webaudio/</a>にあります。
       </p>
@@ -607,12 +606,13 @@ table.exceptions table {
         日本語訳GitHub : <b><a href="https://github.com/g200kg/web-audio-api-ja">https://github.com/g200kg/web-audio-api-ja</a></b><br/>
         日本語訳公開URL : <b><a href="http://g200kg.github.io/web-audio-api-ja/">http://g200kg.github.io/web-audio-api-ja/</a></b>
       </p>
+      <hr/>
       <img src="images/midiappy_small.png" alt="" style="float:left;margin:0px 10px"/>
       <p>Tatsuya Shinyagaito @ g200kg<br/>
         誤りその他があればGitHubページ、下のサイト経由などで連絡をお願いいたします。<br/>
         <b><a href="http://www.g200kg.com/">http://www.g200kg.com/</a></b><br/>
       </p>
-      <p>2016年1月17日</p>
+      <p>2016年1月20日</p>
     </div>
     <hr/>
 
@@ -1054,7 +1054,7 @@ table.exceptions table {
         </a></li><li class="tocline"><a class="tocxref" href="#audio-glitching"><span class="secno">8.4 </span>
           オーディオグリッジ
         </a></li><li class="tocline"><a class="tocxref" href="#JavaScriptPerformance"><span class="secno">8.5 </span>
-          リアルタイム処理と合成に関するJavascriptの課題:
+          リアルタイムの処理と合成に関するJavascriptの課題:
         </a></li></ul></li><li class="tocline"><a class="tocxref" href="#SecurityConsiderations"><span class="secno">9. </span>
           セキュリティに関する考察
       </a></li><li class="tocline"><a class="tocxref" href="#PrivacyConsiderations"><span class="secno">10. </span>
@@ -1872,7 +1872,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a></span>         <span class="idlMethName"><a href="#widl-BaseAudioContext-createOscillator-OscillatorNode">createOscillator</a></span> ();</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></span>           <span class="idlMethName"><a href="#widl-BaseAudioContext-createPeriodicWave-PeriodicWave-Float32Array-real-Float32Array-imag-PeriodicWaveConstraints-constraints">createPeriodicWave</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">real</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">imag</span></span>, <span class="idlParam">optional <span class="idlParamType"><a class="idlType" href="#idl-def-PeriodicWaveConstraints"><code>PeriodicWaveConstraints</code></a></span> <span class="idlParamName">constraints</span></span>);</span>
 };</span></pre><section property="bibo:hasPart" resource="#attributes" typeof="bibo:Chapter" id="attributes"><h4 resource="#h-attributes" id="h-attributes"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.1 </span>属性 <button onclick="OpenOriginal('h-attributes')">原文</button></span></h4>
-  <dl class="attributes"><dt id="widl-BaseAudioContext-currentTime"><code>currentTime</code> <span class="idlAttrType">double</span>型, readonly      </dt><dd>
+  <dl class="attributes"><dt id="widl-BaseAudioContext-currentTime"><code>currentTime</code> <span class="idlAttrType">double</span> 型, readonly      </dt><dd>
 <!--          <p>
               This is the time in seconds of the sample frame immediately
               following the last sample-frame in the block of audio most
@@ -1916,7 +1916,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </p>-->
             <p><a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> が <a href="#idl-def-AudioContextState.running"><code>running</code></a> 状態にある時、この属性は単調増加し、レンダリングスレッドにより128サンプルのブロックサイズに対応する均一な増分で更新されます。そのため動作中のコンテキストでは、 <code>currentTime</code> はシステムがオーディオブロックを処理するに従って徐々に増加し、常に次に処理されるオーディオブロックの先頭の時刻を表します。それはまた現在の状態に対する変更が効力を持つ最も早い時刻でもあります。
             </p>
-          </dd><dt id="widl-BaseAudioContext-destination"><code>destination</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a></span>型, readonly      </dt><dd>
+          </dd><dt id="widl-BaseAudioContext-destination"><code>destination</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioDestinationNode"><code>AudioDestinationNode</code></a></span> 型, readonly      </dt><dd>
 <!--            <p>
               An <a href="#AudioDestinationNode"><code>AudioDestinationNode</code></a>
               with a single input representing the final destination for all
@@ -1926,14 +1926,14 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </p>-->
             <p><a href="#AudioDestinationNode"><code>AudioDestinationNode</code></a> は単一の入力を持ち、全てのオーディオの最終的な出口を表しています。 通常これは実際のオーディオハードウェアを表します。 動作中のすべての <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は直接または間接的にこの destination に接続されます。
             </p>
-          </dd><dt id="widl-BaseAudioContext-listener"><code>listener</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a></span>型, readonly      </dt><dd>
+          </dd><dt id="widl-BaseAudioContext-listener"><code>listener</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a></span> 型, readonly      </dt><dd>
 <!--            <p>
               An <a href="#AudioListener"><code>AudioListener</code></a> which
               is used for 3D <a href="#Spatialization">spatialization</a>.
             </p>-->
             <p><a href="#AudioListener"><code>AudioListener</code></a>は3D <a href="#Spatialization">空間音響</a>で使用されます。
             </p>
-          </dd><dt id="widl-BaseAudioContext-onstatechange"><code>onstatechange</code> <span class="idlAttrType">EventHandler　型</span></dt><dd>
+          </dd><dt id="widl-BaseAudioContext-onstatechange"><code>onstatechange</code> <span class="idlAttrType">EventHandler</span> 型</dt><dd>
 <!--            <p>
             A property used to set the <code>EventHandler</code> for an event
             that is dispatched to <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> when the
@@ -1947,7 +1947,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
           </p>-->
             <p><a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> にAudioContext の状態が変化した時(例えば、対応する Promise がリゾルブされた時など)にディスパッチされるイベントの <code>EventHandler</code> を設定するために使用されるプロパティです。新たに作成された AudioContextは 常に "suspended" 状態から開始し、状態の変化イベントは異なる状態への遷移の度に発行されます。
             </p>
-          </dd><dt id="widl-BaseAudioContext-sampleRate"><code>sampleRate</code> <span class="idlAttrType">float</span>型, readonly      </dt><dd>
+          </dd><dt id="widl-BaseAudioContext-sampleRate"><code>sampleRate</code> <span class="idlAttrType">float</span> 型, readonly      </dt><dd>
 <!--            <p>
               The sample rate (in sample-frames per second) at which the
               <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> handles audio. It is assumed
@@ -1958,7 +1958,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             <p>
               <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> が扱うオーディオのサンプルレート(1秒あたりのサンプルフレーム数)です。 コンテキスト内のすべての <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> はこのレートで動作する事を想定しています。 これを想定するため、サンプレートコンバータや"可変速"処理はリアルタイム処理内ではサポートされません。
             </p>
-          </dd><dt id="widl-BaseAudioContext-state"><code>state</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioContextState"><code>AudioContextState</code></a></span>型, readonly     </dt><dd>
+          </dd><dt id="widl-BaseAudioContext-state"><code>state</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioContextState"><code>AudioContextState</code></a></span> 型, readonly     </dt><dd>
 <!--            <p>
               Describes the current state of this BaseAudioContext. The context
               state <em title="MUST" class="rfc2119">MUST</em> begin in "suspended", and transitions to "running" when
@@ -2035,7 +2035,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </dd>-->
                 <dd>
                   <a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a> オブジェクトを作成し、対応するスクリプトを <a class="idlType" href="#idl-def-AudioWorkerGlobalScope"><code>AudioWorkerGlobalScope</code></a> にロードして返却した Promise をリゾルブします。
-                <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">scriptURL</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+                <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">scriptURL</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                       このパラメータは<a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a>ノードファクトリとしてロードするスクリプトのURLを表します。
                       詳細は <a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a> セクションを参照してください。
                     </td></tr></tbody></table><div><em>戻り値: </em><code>Promise&lt;<a class="idlType" href="#idl-def-AudioWorker"><code>AudioWorker</code></a>&gt;</code></div></dd><dt id="widl-BaseAudioContext-createBiquadFilter-BiquadFilterNode"><code>createBiquadFilter</code></dt>
@@ -2068,7 +2068,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </dd>-->
             <dd>
               与えられたサイズの AudioBuffer を作成します。バッファ内のデータは0(無音)で初期化されます。 もし、引数のどれかが負、0または範囲外の場合、NotSupportedError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
-            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">numberOfChannels</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">numberOfChannels</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                   バッファが持つチャンネル数を指定します。 実装は少なくとも32チャンネルをサポートしなくてはなりません。
                 </td></tr><tr><td class="prmName">length</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                   バッファのサイズをサンプルフレーム数で指定します。
@@ -2102,7 +2102,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
           </dd>-->
           <dd>
             チャンネル結合器を表す <a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a> を作成します。 パラメータの値が無効の場合、IndexSizeError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">numberOfInputs</td><td class="prmType"><code>unsigned long = 6
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">numberOfInputs</td><td class="prmType"><code>unsigned long = 6
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
                 <dfn id="dfn-numberofinputs" data-dfn-type="dfn">numberOfInputs</dfn> は入力の数を指定します。値は32までサポートされなくてはなりません。 もし指定されない場合は6となります。
               </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-ChannelMergerNode"><code>ChannelMergerNode</code></a></code></div>
@@ -2120,7 +2120,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </dd>-->
             <dd>
               チャンネル分割器を表す <a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a> を作成します。 パラメータの値が無効の場合、IndexSizeError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">numberOfOutputs</td><td class="prmType"><code>unsigned long = 6
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">numberOfOutputs</td><td class="prmType"><code>unsigned long = 6
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
                 出力の数を指定します。32までサポートされなくてはなりません。 もし指定されない場合は6となります。
               </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-ChannelSplitterNode"><code>ChannelSplitterNode</code></a></code></div>
@@ -2150,7 +2150,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </dd>-->
             <dd>
               遅延時間が可変な遅延機能を表す <a class="idlType" href="#idl-def-DelayNode"><code>DelayNode</code></a>を作成します。 初期化時のデフォルト遅延時間は0秒です。
-            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">maxDelayTime</td><td class="prmType"><code>double = 1.0
+            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">maxDelayTime</td><td class="prmType"><code>double = 1.0
                 </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
                   <dfn id="dfn-maxdelaytime" data-dfn-type="dfn">maxDelayTime</dfn> パラメータはオプションであり、その遅延機能の遅延時間の最大値を秒で指定します。
                   もし指定する場合は、その値は0よりも大きく3分よりも小さくなければなりません(<em title="MUST" class="rfc2119">MUST</em>)。そうでない場合 NotSupportedError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
@@ -2196,7 +2196,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             </dd>-->
             <dd>
               一般的なIIRフィルターを表す<a class="idlType" href="#idl-def-IIRFilterNode"><code>IIRFilterNode</code></a> を作成します。
-              <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">feedforward</td><td class="prmType"><code>sequence&lt;double&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+              <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">feedforward</td><td class="prmType"><code>sequence&lt;double&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                   IIR フィルターの伝達関数のフィードフォワード(分子)の係数の配列です。
                   この配列の最大の長さは20です。もし全ての値が0の場合、InvalidStateError 例外を発生します<em title="MUST" class="rfc2119">MUST</em>。配列の長さが0または20より大きい場合は NotSupportedError 例外を発生します<em title="MUST" class="rfc2119">MUST</em>。
                   </td></tr><tr><td class="prmName">feedback</td><td class="prmType"><code>sequence&lt;double&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
@@ -2292,7 +2292,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
                   <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a> オブジェクトはこれらの配列をコピーして管理するため、<code>real</code> および <code>imag</code> パラメータとして使用した配列を <code>createPeriodicWave()</code> 呼び出し後に変更しても <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a> オブジェクトには反映されません。
                 </p>
 
-              <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">real</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+              <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">real</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                 <dfn data-dfn-type="dfn" id="dfn-real">real</dfn> パラメータは<code>コサイン</code>項(慣習的な言い方でA項)の配列を表します。 オーディオの用語では最初の要素(インデックス0)は周期波形の DC オフセットとなります。 2番目の要素(インデックス1)は基本周波数を表します。3番目の要素は最初の倍音を表し、それ以降も同様に続いてゆきます。
                 最初の要素は無視され、実装は内部的に0に設定しなくてはなりません。
                   </td></tr><tr><td class="prmName">imag</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
@@ -2350,7 +2350,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
               JavaScript を使ったオーディオデータ直接処理のための <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> を作成します。 もし、<a data-link-type="dfn" class="internalDFN" href="#dfn-buffersize"><code>bufferSize</code></a> または <a data-link-type="dfn" class="internalDFN" href="#dfn-numberofinputchannels"><code>numberOfInputChannels</code></a> または <a data-link-type="dfn" class="internalDFN" href="#dfn-numberofoutputchannels"><code>numberOfOutputChannels</code></a> が範囲外の場合、IndexSizeError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
 
               <a data-link-type="dfn" class="internalDFN" href="#dfn-numberofinputchannels"><code>numberOfInputChannels</code></a> と <a data-link-type="dfn" class="internalDFN" href="#dfn-numberofoutputchannels"><code>numberOfOutputChannels</code></a> の両方が0となるのは不正となります。この場合、IndexSizeError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">bufferSize</td><td class="prmType"><code>unsigned long = 0
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">bufferSize</td><td class="prmType"><code>unsigned long = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
                 <a data-link-type="dfn" class="internalDFN" href="#dfn-buffersize"><code>bufferSize</code></a>パラメータはサンプルフレーム数でバッファのサイズを指定します。 もしそれが渡されない場合、または値が0である場合、実装はノードのライフタイムを通して一定な、動作環境に最適な2の累乗のバッファサイズを選択します。 それ以外の場合は明示的にバッファサイズを指定します。それは次の値のどれかでなければなりません: 256、512、1024、2048、4096、8192、16384。 この値は <code>audioprocess</code> イベントが発生する頻度とそれぞれの呼び出しでどれだけのサンプルフレームを処理する必要があるかを制御します。 <a data-link-type="dfn" class="internalDFN" href="#dfn-buffersize"><code>bufferSize</code></a> が小さい値ならば <a href="#latency">レイテンシー</a> は低く(良く)なります。 オーディオが途切れ、<a href="#audio-glitching">グリッジ</a>が発生する事を避けるには大きな値が必要となります。 <a href="#latency">レイテンシー</a>とオーディオ品質の間のバランスを取るためには、プログラマはこのバッファサイズを指定せず、実装に最適なバッファサイズを選択させる事が推奨されます。
                 もしこのパラメータの値が上に示した許された2の累乗の値でない場合、IndexSizeError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。
@@ -2560,7 +2560,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
                 </ol>
               </li>
             </ol>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">audioData</td><td class="prmType"><code>ArrayBuffer</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">audioData</td><td class="prmType"><code>ArrayBuffer</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
               圧縮されたオーディオデータを含む ArrayBuffer です
               </td></tr><tr><td class="prmName">successCallback</td><td class="prmType"><code><a class="idlType" href="#idl-def-DecodeSuccessCallback"><code>DecodeSuccessCallback</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
                 デコードが完了した時に呼び出されるコールバック関数です。コールバック関数の引数は1つでデコードされた PCM オーディオデータをあらわす AudioBuffer になります。
@@ -2737,7 +2737,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
     与えられた HTMLMediaElement の <a href="#MediaElementAudioSourceNode">MediaElementAudioSourceNode</a> を作成します。
     このメソッドの呼び出しの結果、 HTMLMediaElement からのオーディオの再生は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の処理グラフにリルートされるようになります。
 
-  <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">mediaElement</td><td class="prmType"><code>HTMLMediaElement</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td>
+  <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">mediaElement</td><td class="prmType"><code>HTMLMediaElement</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td>
     <td class="prmDesc">
       リルートされるメディアエレメントです。
     </td>
@@ -2754,7 +2754,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
           </dd>
         <dt id="widl-AudioContext-createMediaStreamSource-MediaStreamAudioSourceNode-MediaStream-mediaStream"><code>createMediaStreamSource</code></dt><dd>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">mediaStream</td><td class="prmType"><code>MediaStream</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">mediaStream</td><td class="prmType"><code>MediaStream</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
               音源となるメディアストリームです。
             </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-MediaStreamAudioSourceNode"><code>MediaStreamAudioSourceNode</code></a></code></div></dd></dl></section>
       </section>
@@ -2977,7 +2977,7 @@ interface <span class="idlInterfaceID">OfflineAudioContext</span> : <span class=
               サスペンドの最大の精度はレンダリング処理の分割のサイズであり、指定されたサスペンド時刻は最も近い分割の境界に丸められる事に注意してください。このため、同じ分割フレーム内に複数のサスペンドをスケジューリングする事はできません。また、スケジューリングはコンテキストが高精度のサスペンドを保証しない実行を行っている間に行わなくてはなりません。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">suspendTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">suspendTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--            <p>Schedules a suspension of the rendering at the specified time,
               which is quantized and rounded down to the render quantum size.
               If the quantized frame number
@@ -3291,7 +3291,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
   は次のものと同じ効果になります。
 </p>
             <div class="example"><div class="example-title"><span>例 5</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="pln">nodeA</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">nodeB</span><span class="pun">);</span></pre></div>
-          <table class="parameters"><tbody><tr><th>例</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>例</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
             <!--<p>
               The <code>destination</code> parameter is the
             <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> to connect to. If the
@@ -3390,7 +3390,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
             <pre>      nodeA.connect(param);
 
 </pre>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The <code>destination</code> parameter is the
                 <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> to connect to. This method does
                 not return <code>destination</code>
@@ -3420,7 +3420,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の1つの出力から他の<a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>または<a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>オブジェクトへの接続を全て切断します。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">output</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">output</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                This parameter is an index describing which output of the
                 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> to disconnect. It disconnects all
                 outgoing connections from the given output. If this parameter
@@ -3434,7 +3434,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の全ての出力から特定の接続先となる <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> に繋がる接続を切断します。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The <code>destination</code> parameter is the
                 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> to disconnect. It disconnects all
                 outgoing connections to the given <code>destination</code>. If
@@ -3450,7 +3450,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の特定の出力から特定の <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> への接続を切断します。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The <code>destination</code> parameter is the
                 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> to disconnect. If there is no
                 connection to the <code>destination</code> from the given
@@ -3471,7 +3471,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               接続先 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の特定の入力への接続を切断します。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The <code>destination</code> parameter is the
                 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> to disconnect. If there is no
                 connection to the <code>destination</code> from the given
@@ -3502,7 +3502,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               この操作によって、この <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> からパラメータ値の計算への寄与は0となります。パラメータの固有値はこの操作に影響されません。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The <code>destination</code> parameter is the
                 <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> to disconnect. If there is no
                 connection to the <code>destination</code>, an
@@ -3520,7 +3520,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               この操作によって、この <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> からパラメータ値の計算への寄与は0となります。パラメータの固有値はこの操作に影響されません。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The <code>destination</code> parameter is the
                 <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> to disconnect. If there is no
                 connection to the <code>destination</code>, an
@@ -3851,7 +3851,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               (与えられた時間よりも小さな <code>startTime</code> を指定した) アクティブな <code>setTargetAtTime</code> オートメーション  もまたキャンセルされます。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The starting time at and after which any previously scheduled
                 parameter changes will be cancelled. It is a time in the same
                 time coordinate system as the
@@ -3903,7 +3903,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
                \(t \geq T_1\), \(v(t) = V_1\) となります。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The value the parameter will exponentially ramp to at the given
                 time. A NotSupportedError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if this
                 value is less than or equal to 0, or if the value at the time
@@ -3948,7 +3948,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               then for \(t \geq T_1\), \(v(t) = V_1\).-->
               もしこの LinearRampToValue イベント以降にイベントがない場合、 \(t \geq T_1\), \(v(t) = V_1\)　となります。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The value the parameter will linearly ramp to at the given
                 time.-->
                 与えられた時刻にパラメータが直線変化で到達する値です。
@@ -3991,7 +3991,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               \(\tau\) is the <code>timeConstant</code> parameter.-->
               ここで、 \(V_0\) は初期値 (\(T_0\) での <code>.value</code>属性の値)、\(V_1\) は <code>target</code> パラメータの値、そして  \(\tau\) は <code>timeConstant</code> パラメータです。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">target</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">target</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The value the parameter will <em>start</em> changing to at the
                 given time.-->
                 パラメータが指定の時刻から変化を<em>開始</em>する目標値です。
@@ -4061,7 +4061,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               linearRampToValueAtTime</a></code> または <code><a href="#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime">
               exponentialRampToValueAtTime</a></code> をそれぞれ参照してください。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The value the parameter will change to at the given time.-->
               指定の時刻にパラメータが変化する値です。
               </td></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
@@ -4108,7 +4108,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
               there is another automation event (if any).-->
               曲線の期間が終了した後、 (\(t \ge T_0 + T_D\)) に対して値は(もしあれば)別のオートメーションイベントまで、最後の曲線の値を保持します。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">values</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">values</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                A Float32Array representing a parameter value curve. These
                 values will apply starting at the given time and lasting for
                 the given duration. When this method is called, an internal
@@ -4409,7 +4409,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
             <code>destination</code> array.-->
             <code>copyFromChannel</code> メソッドは <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の指定されたチャンネルから <code>destination</code> で示される配列にサンプルをコピーします。
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">destination</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 
 <!--                The array the channel data will be copied to.-->
               チャンネルデータをコピーする先の配列です。
@@ -4432,7 +4432,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
             specified channel of the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, from the
             <code>source</code> array.-->
             <code>copyToChannel</code> メソッドは <code>source</code> で示される配列から <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> の指定されたチャンネルにサンプルをコピーします。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">source</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">source</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                The array the channel data will be copied from.-->
             チャンネルデータをコピーする元の配列です。
               </td></tr><tr><td class="prmName">channelNumber</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
@@ -4452,7 +4452,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
 <!--            Returns the <code>Float32Array</code> representing the PCM audio
             data for the specific channel.-->
               指定のチャンネルの PCM オーディオデータが格納された <code>Float32Array</code> を返します。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">channel</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">channel</td><td class="prmType"><code>unsigned long</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                This parameter is an index representing the particular channel
                 to get data for. An index value of 0 represents the first
                 channel. This index value <em title="MUST" class="rfc2119">MUST</em> be less than
@@ -4688,7 +4688,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
             指定の時刻に音の再生開始をスケジュールします。
             <code>start</code> は1回のみ呼びだす事ができ、呼び出すのは <code>stop</code> が呼ばれる前でなくてはなりません。
             そうでない場合、InvalidStateError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
 <!--                The <code>when</code> parameter describes at what time
                 (in seconds) the sound should start playing. It is in the same
@@ -4737,7 +4737,7 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
               </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioBufferSourceNode-stop-void-double-when"><code>stop</code></dt><dd>
 <!--            Schedules a sound to stop playback at an exact time.-->
                 指定の時刻に再生停止をスケジュールします。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0
               </code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc">
 <!--                The <code>when</code> parameter describes at what time
                 (in seconds) the sound should stop playing. It is in the same
@@ -5054,11 +5054,11 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
           <p>
             <a data-link-type="dfn" class="internalDFN" href="#dfn-defaultValue"><code>defaultValue</code></a> パラメータはその <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の value 属性のデフォルト値です。そのため、ワーカースクリプトでは(もしパラメータの書き換えや接続によって値が変わらなければ) Float32Array のデフォルトの値として現れます。
           </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">defaultValue</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioWorker-createNode-AudioWorkerNode-int-numberOfInputs-int-numberOfOutputs"><code>createNode</code></dt>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">defaultValue</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioWorker-createNode-AudioWorkerNode-int-numberOfInputs-int-numberOfOutputs"><code>createNode</code></dt>
           <dd>
             <!--<p>Creates a node instance in the audio worker.</p>-->
             オーディオワーカー内でノードのインスタンスを作成します。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">numberOfInputs</td><td class="prmType"><code>int</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">numberOfOutputs</td><td class="prmType"><code>int</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioWorkerNode"><code>AudioWorkerNode</code></a></code></div></dd><dt id="widl-AudioWorker-postMessage-void-any-message-sequence-Transferable--transfer"><code>postMessage</code></dt>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">numberOfInputs</td><td class="prmType"><code>int</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">numberOfOutputs</td><td class="prmType"><code>int</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioWorkerNode"><code>AudioWorkerNode</code></a></code></div></dd><dt id="widl-AudioWorker-postMessage-void-any-message-sequence-Transferable--transfer"><code>postMessage</code></dt>
           <dd>
 <!--            <p>
             postMessage may be called to send a message to the
@@ -5066,7 +5066,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
             [<cite><a href="#bib-Workers" class="bibref">Workers</a></cite>].
           </p>-->
             postMessage は [<cite><a href="#bib-Workers" class="bibref">Workers</a></cite>] で定義されているアルゴリズムと同様に、<a class="idlType" href="#idl-def-AudioWorkerGlobalScope"><code>AudioWorkerGlobalScope</code></a> にメッセージを送るために呼ばれます。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">message</td><td class="prmType"><code>any</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">transfer</td><td class="prmType"><code>sequence&lt;Transferable&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">message</td><td class="prmType"><code>any</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">transfer</td><td class="prmType"><code>sequence&lt;Transferable&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd>
           <dt id="widl-AudioWorker-removeParameter-void-DOMString-name"><code>removeParameter</code></dt><dd>
 <!--            <p>
               Removes a previously-added parameter named <code>name</code> from
@@ -5092,7 +5092,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
             <p>
               <code>name</code> は削除するパラメータを指定します。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioWorker-terminate-void"><code>terminate</code></dt>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioWorker-terminate-void"><code>terminate</code></dt>
 <!--          <dd>
             The terminate() method, when invoked, must cause the cessation of
             any <a class="idlType" href="#idl-def-AudioProcessEvent"><code>AudioProcessEvent</code></a>s being dispatched inside the
@@ -5209,7 +5209,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
       postMessage は AudioWorkerNodeProcessor に対して <a href="https://w3c.github.io/workers/#dom-worker-postmessage">the
       Worker specification</a> で定義されたアルゴリズムでメッセージを送るために呼び出されます。
       これは AudioWorkerGlobalScope に影響を与えるため、AudioWorker 自身で postMessage() を呼び出すのとは異なる事に注意してください。
-              <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">message</td><td class="prmType"><code>any</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">transfer</td><td class="prmType"><code>sequence&lt;Transferable&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div>
+              <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">message</td><td class="prmType"><code>any</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">transfer</td><td class="prmType"><code>sequence&lt;Transferable&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div>
       </dd>
   </dl></section>
 <!--  <p>
@@ -5402,7 +5402,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
 <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の value 属性のデフォルト値であり、また
               (もし他のパラメータ変更あるいは接続の影響がなければ) ワーカースクリプトの Float32Array にデフォルト値として表れます
               </p>
-            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">defaultValue</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioWorkerGlobalScope-removeParameter-void-DOMString-name"><code>removeParameter</code></dt>
+            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">defaultValue</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioWorkerGlobalScope-removeParameter-void-DOMString-name"><code>removeParameter</code></dt>
 <!--            <dd>
               <p>
                 Removes a previously-added parameter named <code>name</code>
@@ -5433,7 +5433,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
             <p>
               <code>name</code>は削除するパラメータを特定します。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">name</td><td class="prmType"><code>DOMString</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div>
         </dd>
         </dl></section>
         </section>
@@ -5481,7 +5481,7 @@ sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span
       postMesasge は <a href="https://w3c.github.io/workers/#dom-worker-postmessage">the
       Worker specification</a> で定義されるアルゴリズムを使って AudioWorkerNode にメッセージを送るために呼び出されます。
       これは AudioWorker 自身で PostMesage() を呼び出すのとは異なり、AudioWorkerGlobalScope にディスパッチされる事に注意してください。
-            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">message</td><td class="prmType"><code>any</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">transfer</td><td class="prmType"><code>sequence&lt;Transferable&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div>
+            <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">message</td><td class="prmType"><code>any</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">transfer</td><td class="prmType"><code>sequence&lt;Transferable&gt;</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div>
   </dd>
 </dl></section>
         </section>
@@ -6189,7 +6189,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <!--              The default value is (1,0,0)-->
               デフォルトの値は (1, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-PannerNode-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-PannerNode-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
             <p>
 <!--              Sets the position of the audio source relative to the
               <code>listener</code> attribute. A 3D cartesian coordinate
@@ -6206,7 +6206,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <!--              The default value is (0,0,0)-->
               デフォルトの値は (1, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-PannerNode-setVelocity-void-float-x-float-y-float-z"><code>setVelocity</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-PannerNode-setVelocity-void-float-x-float-y-float-z"><code>setVelocity</code></dt><dd>
             <p>
 <!--              Sets the velocity vector of the audio source. This vector
               controls both the direction of travel and the speed in 3D space.
@@ -6227,7 +6227,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <!--              The default value is (0,0,0)-->
               デフォルトの値は (0, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#panner-channel-limitations" typeof="bibo:Chapter" class="informative">
           <h4 resource="#panner-channel-limitations" id="panner-channel-limitations"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.3 </span>
             チャンネル制限 <button onclick="OpenOriginal('panner-channel-limitations')">原文</button>
@@ -6285,7 +6285,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               (0,1,0).-->
               <code>xUp, yUp, zUp</code> パラメータは 3D 空間中の <b>up</b> 方向ベクトルであり、デフォルトの値は (0, 1, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">xUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">yUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">zUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioListener-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">xUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">yUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">zUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioListener-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
             <p>
 <!--              Sets the position of the listener in a 3D cartesian coordinate
               space. <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> objects use this position
@@ -6302,7 +6302,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <!--              The default value is (0,0,0)-->
               デフォルトの値は (0, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-spatialpannernode-interface" typeof="bibo:Chapter" id="the-spatialpannernode-interface">
         <h3 resource="#h-the-spatialpannernode-interface" id="h-the-spatialpannernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.19 </span>
@@ -6948,7 +6948,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               ここで、\(\mbox{dB}_{min}\) は <code><a data-link-type="dfn" class="internalDFN" href="#minDecibels">minDecibels</a></code>、\(\mbox{dB}_{max}\)は <code><a data-link-type="dfn" class="internalDFN" href="#maxDecibels">maxDecibels</a></code> です。 もし、\(b[k]\) が 0 から 255 の範囲外の場合、\(b[k]\) はこの範囲内にクリップされます。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Uint8Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Uint8Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                This parameter is where the frequency-domain analysis data will
                 be copied.-->
                 このパラメータは周波数領域の分析データをコピーする場所を示します。
@@ -6984,7 +6984,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             <p>もし \(b[k]\) が 0 から 255 の範囲外の場合、\(b[k]\) は範囲内にクリップされます。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Uint8Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Uint8Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                 <!--This parameter is where the time-domain sample data will be
                 copied.-->
                 このパラメータは時間領域のサンプルデータをコピーする場所を示します。
@@ -7005,7 +7005,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             <p>周波数データの単位はdBです。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                This parameter is where the frequency-domain analysis data will
                 be copied.-->
                 このパラメータは周波数領域の分析データをコピーする場所を示します。
@@ -7021,7 +7021,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               現在のダウンミックスされた時間領域(波形)データを渡された浮動小数配列にコピーします。もし配列が <code>fftSize</code> よりも小さい場合、余った要素は捨てられます。もし配列が <code>fftSize</code> よりも大きい場合、余剰の要素は無視されます。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">array</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td>
             <td class="prmDesc">
 <!--                This parameter is where the time-domain sample data will be
                 copied.-->
@@ -7778,7 +7778,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               周波数応答は、現在の処理ブロックに対応した <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> によって計算されて返されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
             </p>
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                 <p>
 <!--                  This parameter specifies an array of frequencies at which the
                   response values will be calculated.-->
@@ -8099,7 +8099,7 @@ $$
     与えられた現在のフィルターの設定で、指定の周波数における周波数応答を計算します。
   </p>
 
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>省略可</th><th>Description</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
 <!--                This parameter specifies an array of frequencies at which the
                 response values will be calculated.-->
                 このパラメータは応答を計算する周波数の配列を指定します。
@@ -8459,15 +8459,15 @@ $$
 <!--            Sets an arbitrary custom periodic waveform given a
             <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>.-->
             <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a> で与えられる任意のカスタム周期波形を設定します。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">periodicWave</td><td class="prmType"><code><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-start-void-double-when"><code>start</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">periodicWave</td><td class="prmType"><code><a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a></code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-start-void-double-when"><code>start</code></dt><dd>
 <!--            Defined the same as the <code>when</code> parameter of the
             <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>-->
             <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> で定義されている <code>when</code> と同じです。(<span class="annotate">訳注:少し文章がおかしいですが、メソッドの機能自体も<a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>と同じです</span>)
 
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-stop-void-double-when"><code>stop</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-OscillatorNode-stop-void-double-when"><code>stop</code></dt><dd>
 <!--            Defined as in <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>.-->
             <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> で定義されているものと同じです。
-          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>省略可</th><th>説明</th></tr><tr><td class="prmName">when</td><td class="prmType"><code>double = 0</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptTrue"><span role="img" aria-label="True">✔</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#basic-waveform-phase" typeof="bibo:Chapter" id="basic-waveform-phase">
           <h4 resource="#h-basic-waveform-phase" id="h-basic-waveform-phase"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.30.3 </span>
             基本波形の位相 <button onclick="OpenOriginal('basic-waveform-phase')">原文</button>
@@ -9546,30 +9546,35 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
         </p>
         <section property="bibo:hasPart" resource="#Spatialzation-equal-power-panning" typeof="bibo:Chapter">
           <h4 resource="#Spatialzation-equal-power-panning" id="Spatialzation-equal-power-panning"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3.1 </span>
-            Equal-power panning <button onclick="OpenOriginal('Spatialzation-equal-power-panning')">原文</button>
+            等価パワーバンニング <button onclick="OpenOriginal('Spatialzation-equal-power-panning')">原文</button>
           </span></h4>
           <p>
-            This is a simple and relatively inexpensive algorithm which
+<!--            This is a simple and relatively inexpensive algorithm which
             provides basic, but reasonable results. It is used for the
             <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a>, and for the
             <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> when the <a href="#widl-PannerNode-panningModel"><code>panningModel</code></a>
             attribute is set to <code>"equalpower"</code>, in which case the
-            the <em>elevation</em> value is ignored.
+            the <em>elevation</em> value is ignored.-->
+            これは基本的な、簡単で比較的コストの低いアルゴリズムですが、妥当な結果が得られます。
+            <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a> と <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> で <a href="#widl-PannerNode-panningModel"><code>panningModel</code></a> 属性が <code>"equalpower"</code> に設定されている場合、に使用されます。<em>elevation</em> の値は無視されます。
           </p>
           <p>
-            For a <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>, the following algorithm <em title="MUST" class="rfc2119">MUST</em>
-            be implemented.
+<!--            For a <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>, the following algorithm <em title="MUST" class="rfc2119">MUST</em>
+            be implemented.-->
+             <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> は次のアルゴリズムが実装されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
           </p>
           <ol>
             <li>
               <p>
-                Let <em>azimuth</em> be the value computed in the <a href="#azimuth-elevation">azimuth and elevation</a> section.
+<!--                Let <em>azimuth</em> be the value computed in the <a href="#azimuth-elevation">azimuth and elevation</a> section.-->
+                <a href="#azimuth-elevation">アジマスとエレベーション</a>セクションで説明されている <em>azimuth</em> の値を計算します。
               </p>
             </li>
             <li>
               <p>
-                The <em>azimuth</em> value is first contained to be within the
-                range [-90, 90] according to:
+<!--                The <em>azimuth</em> value is first contained to be within the
+                range [-90, 90] according to:-->
+                次のようにして <em>azimuth</em> の値を [-90, 90] の範囲内にします:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  </span><span class="com">// First, clamp azimuth to allowed range of [-180, 180].</span><span class="pln">
   azimuth </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(-</span><span class="lit">180</span><span class="pun">,</span><span class="pln"> azimuth</span><span class="pun">);</span><span class="pln">
@@ -9584,13 +9589,15 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
             </li>
             <li>
               <p>
-                A normalized value <em>x</em> is calculated from
-                <em>azimuth</em> for a mono input as:
+<!--                A normalized value <em>x</em> is calculated from
+                <em>azimuth</em> for a mono input as:-->
+                モノ入力用に <em>azimuth</em> から正規化された値 <em>x</em> を計算します:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  x </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">azimuth </span><span class="pun">+</span><span class="pln"> </span><span class="lit">90</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">180</span><span class="pun">;</span><span class="pln">
         </span></pre>
               <p>
-                Or for a stereo input as:
+<!--                Or for a stereo input as:-->
+                ステレオ入力用には次のようになります:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">azimuth </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">// -90 ~ 0</span><span class="pln">
     </span><span class="com">// Transform the azimuth value from [-90, 0] degrees into the range [-90, 90].</span><span class="pln">
@@ -9603,20 +9610,22 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
             </li>
           </ol>
           <p>
-            For a <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a>, the following algorithm
-            <em title="MUST" class="rfc2119">MUST</em> be implemented.
+<!--            For a <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a>, the following algorithm
+            <em title="MUST" class="rfc2119">MUST</em> be implemented.-->
+             <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a> では次のアルゴリズムが実装されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
           </p>
           <ol>
             <li>
               <p>
-                Let <em>pan</em> be the <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> of the
+<!--                Let <em>pan</em> be the <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> of the
                 <code>pan</code> <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> of this
-                <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a>.
+                <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a>.-->
+                <em>pan</em> をこの <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a> の <code>pan</code> <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> とします。
               </p>
             </li>
             <li>
               <p>
-                Clamp <em>pan</em> to [-1, 1].
+                 <em>pan</em> を [-1, 1] の範囲に制限します。
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">pan </span><span class="pun">=</span><span class="pln"> max</span><span class="pun">(-</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> pan</span><span class="pun">);</span><span class="pln">
 pan </span><span class="pun">=</span><span class="pln"> min</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> pan</span><span class="pun">);</span><span class="pln">
@@ -9624,13 +9633,15 @@ pan </span><span class="pun">=</span><span class="pln"> min</span><span class="p
             </li>
             <li>
               <p>
-                Calculate <em>x</em> by normalizing <em>pan</em> value to [0,
-                1]. For mono input:
+<!--                Calculate <em>x</em> by normalizing <em>pan</em> value to [0,
+                1]. For mono input:-->
+                モノ入力用に <em>pan</em> の値を [0, 1] の範囲に正規化した <em>x</em> を計算します:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">x </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">pan </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
         </span></pre>
               <p>
-                For stereo input:
+<!--                For stereo input:-->
+                ステレオ入力用は次のようになります:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">pan </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
   x </span><span class="pun">=</span><span class="pln"> pan </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
@@ -9640,12 +9651,14 @@ pan </span><span class="pun">=</span><span class="pln"> min</span><span class="p
             </li>
           </ol>
           <p>
-            Then following steps are used to achieve equal-power panning:
+<!--            Then following steps are used to achieve equal-power panning:-->
+            等価パワーバンニングを行うために次のステップが使用されます:
           </p>
           <ol>
             <li>
               <p>
-                Left and right gain values are calculated as:
+<!--                Left and right gain values are calculated as:-->
+                左および右のゲイン値を次のように計算します:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">gainL </span><span class="pun">=</span><span class="pln"> cos</span><span class="pun">(</span><span class="pln">x </span><span class="pun">*</span><span class="pln"> </span><span class="typ">Math</span><span class="pun">.</span><span class="pln">PI </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">);</span><span class="pln">
 gainR </span><span class="pun">=</span><span class="pln"> sin</span><span class="pun">(</span><span class="pln">x </span><span class="pun">*</span><span class="pln"> </span><span class="typ">Math</span><span class="pun">.</span><span class="pln">PI </span><span class="pun">/</span><span class="pln"> </span><span class="lit">2</span><span class="pun">);</span><span class="pln">
@@ -9653,13 +9666,15 @@ gainR </span><span class="pun">=</span><span class="pln"> sin</span><span class=
             </li>
             <li>
               <p>
-                For mono input, the stereo output is calculated as:
+<!--                For mono input, the stereo output is calculated as:-->
+                モノ入力の場合のステレオの出力は次のように計算します:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">outputL </span><span class="pun">=</span><span class="pln"> input </span><span class="pun">*</span><span class="pln"> gainL</span><span class="pun">;</span><span class="pln">
 outputR </span><span class="pun">=</span><span class="pln"> input </span><span class="pun">*</span><span class="pln"> gainR</span><span class="pun">;</span><span class="pln">
         </span></pre>
               <p>
-                Else for stereo input, the output is calculated as:
+<!--                Else for stereo input, the output is calculated as:-->
+                ステレオ入力の場合の計算は次のようになります:
               </p>
               <pre style="" class="highlight prettyprint prettyprinted"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">pan </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// Pass through inputL to outputL and equal-power pan inputR as in mono case.</span><span class="pln">
@@ -9676,37 +9691,41 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
         </section>
         <section property="bibo:hasPart" resource="#hrtf-panning-stereo-only" typeof="bibo:Chapter" id="hrtf-panning-stereo-only">
           <h4 resource="#h-hrtf-panning-stereo-only" id="h-hrtf-panning-stereo-only"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3.2 </span>
-            HRTF panning (stereo only) <button onclick="OpenOriginal('hrtf-panning-stereo-only')">原文</button>
+            HRTF バンニング (ステレオのみ) <button onclick="OpenOriginal('hrtf-panning-stereo-only')">原文</button>
           </span></h4>
           <p>
-            This requires a set of <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>
+<!--            This requires a set of <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a>
             (Head-related Transfer Function) impulse responses recorded at a
             variety of azimuths and elevations. The implementation requires a
             highly optimized convolution function. It is somewhat more costly
             than "equalpower", but provides more perceptually spatialized
-            sound.
+            sound.-->
+            この処理には様々な azimuth と elevation で記録された <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a> (Head-related Transfer Function) インパルスレスポンスのセットが必要です。
+            実装には高度に最適化されたコンボリューション機能が必要になります。 これは "equalpower" よりもコストが必要ですが、より空間的な音を得る事ができます。
           </p>
           <figure id="fig-a-diagram-showing-the-process-of-panning-a-source-using-hrtf.x">
             <img alt="HRTF panner" src="images/HRTF_panner.png">
             <figcaption>Fig. <span class="figno">12</span> <span class="fig-title">
-              A diagram showing the process of panning a source using HRTF.
+              HRTF を用いたバンニング処理の図
             </span></figcaption>
           </figure>
         </section>
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-distance-effects" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-distance-effects" id="Spatialization-distance-effects"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.4 </span>
-          Distance Effects <button onclick="OpenOriginal('Spatialization-distance-effects')">原文</button>
+          距離効果 <button onclick="OpenOriginal('Spatialization-distance-effects')">原文</button>
         </span></h3>
         <p>
-          Sounds which are closer are louder, while sounds further away are
+<!--          Sounds which are closer are louder, while sounds further away are
           quieter. Exactly <em>how</em> a sound's volume changes according to
           distance from the listener depends on the <em>distanceModel</em>
-          attribute.
+          attribute.-->
+          近くの音は大きく、遠くの音は小さくなります。 リスナーからの距離に対して正確に<em>どれだけ</em>音量が変化するのかは、<em>distanceModel</em> 属性に依存します。
         </p>
         <p>
-          During audio rendering, a <em>distance</em> value will be calculated
-          based on the panner and listener positions according to:
+<!--          During audio rendering, a <em>distance</em> value will be calculated
+          based on the panner and listener positions according to:-->
+          オーディオレンダリングの間、 <em>distance</em> 値がパンナーとリスナーの位置を基に次のように計算されます:
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  </span><span class="kwd">function</span><span class="pln"> dotProduct</span><span class="pun">(</span><span class="pln">v1</span><span class="pun">,</span><span class="pln"> v2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> d </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
@@ -9718,36 +9737,41 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
   </span><span class="kwd">var</span><span class="pln"> distance </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Math</span><span class="pun">.</span><span class="pln">sqrt</span><span class="pun">(</span><span class="pln">dotProduct</span><span class="pun">(</span><span class="pln">v</span><span class="pun">,</span><span class="pln"> v</span><span class="pun">));</span><span class="pln">
   </span></pre>
         <p>
-          <em>distance</em> will then be used to calculate
+<!--          <em>distance</em> will then be used to calculate
           <em>distanceGain</em> which depends on the <em>distanceModel</em>
           attribute. See the <a href="#idl-def-DistanceModelType">distanceModel</a> section for details of
           how this is calculated for each distance model. The value computed by
           the <a href="#idl-def-DistanceModelType">distanceModel</a> equations
-          are to be clamped to [0, 1].
+          are to be clamped to [0, 1].-->
+          そして、 <em>distance</em> を使って <em>distanceModel</em> 属性に依存した <em>distanceGain</em> が計算されます。 それぞれの距離モデルについて、これがどのように計算されるかの詳細は <a href="#idl-def-DistanceModelType">distanceModel</a> セクションを参照してください。
+           <a href="#idl-def-DistanceModelType">distanceModel</a> 式によって計算された値は [0, 1] の範囲に制限されます。
         </p>
         <p>
-          As part of its processing, the <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>
+<!--          As part of its processing, the <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>
           scales/multiplies the input audio signal by <em>distanceGain</em> to
-          make distant sounds quieter and nearer ones louder.
+          make distant sounds quieter and nearer ones louder.-->
+          この処理の一部として、 <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> は入力されるオーディオ信号を <em>distanceGain</em> でスケーリング/増幅し、遠くの音は小さく近ければ大きくします。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-sound-cones" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-sound-cones" id="Spatialization-sound-cones"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.5 </span>
-          Sound Cones <button onclick="OpenOriginal('Spatialization-sound-cones')">原文</button>
+          サウンドコーン <button onclick="OpenOriginal('Spatialization-sound-cones')">原文</button>
         </span></h3>
         <p>
-          The listener and each sound source have an orientation vector
+<!--          The listener and each sound source have an orientation vector
           describing which way they are facing. Each sound source's sound
           projection characteristics are described by an inner and outer "cone"
           describing the sound intensity as a function of the source/listener
           angle from the source's orientation vector. Thus, a sound source
           pointing directly at the listener will be louder than if it is
-          pointed off-axis. Sound sources can also be omni-directional.
+          pointed off-axis. Sound sources can also be omni-directional.-->
+          リスナーとそれぞれの音源はそれがどの方向を向いているかを表す方向ベクトルを持っています。 それぞれの音源の音の放射特性は、音源の方向ベクトルに対してソース/リスナー間の角度の関数で音の大きさを表した内部および外部の "コーン" で表現されます。 つまり、直接リスナーの方を向いた音源は、違う方向を向いた音源よりも大きく聴こえます。 音源はまた、無指向性に設定する事も可能です。
         </p>
         <p>
-          The following algorithm must be used to calculate the gain
+<!--          The following algorithm must be used to calculate the gain
           contribution due to the cone effect, given the source (the
-          <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>) and the listener:
+          <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>) and the listener:-->
+          あるソース(<a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>))とリスナーに対して、コーン効果によるゲインへの影響を計算するためには、次のアルゴリズムを使用しなくてはなりません:
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  </span><span class="kwd">function</span><span class="pln"> dotProduct</span><span class="pun">(</span><span class="pln">v1</span><span class="pun">,</span><span class="pln"> v2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> d </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
@@ -9801,21 +9825,26 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-doppler-shift" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-doppler-shift" id="Spatialization-doppler-shift"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.6 </span>
-          Doppler Shift <button onclick="OpenOriginal('Spatialization-doppler-shift')">原文</button>
+          ドップラー効果 <button onclick="OpenOriginal('Spatialization-doppler-shift')">原文</button>
         </span></h3>
         <ul>
-          <li>Introduces a pitch shift which can realistically simulate moving
-          sources.
+          <li>
+<!--            Introduces a pitch shift which can realistically simulate moving
+          sources.-->
+          移動する音源を現実的にシミュレートしたピッチ変化をもたらします。
           </li>
-          <li>Depends on: source / listener velocity vectors, speed of sound,
-          doppler factor.
+          <li>
+<!--            Depends on: source / listener velocity vectors, speed of sound,
+          doppler factor.-->
+          音源とリスナーの移動ベクトル、音速、ドップラー係数に依存します。
           </li>
         </ul>
         <p>
-          The following algorithm must be used to calculate the doppler shift
+<!--          The following algorithm must be used to calculate the doppler shift
           value which is used as an additional playback rate scalar for all
           <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>s connecting directly or
-          indirectly to the <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>:
+          indirectly to the <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>:-->
+           <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> に直接または間接的に接続されている全ての <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> に対する付加的な再生速度係数として使用される、ドップラー効果の変化量を計算するため、次のアルゴリズムが使用されなくてはなりません:
         </p>
         <pre style="" class="highlight prettyprint prettyprinted"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> dopplerShift </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"> </span><span class="com">// Initialize to default value</span><span class="pln">
   </span><span class="kwd">var</span><span class="pln"> dopplerFactor </span><span class="pun">=</span><span class="pln"> listener</span><span class="pun">.</span><span class="pln">dopplerFactor</span><span class="pun">;</span><span class="pln">
@@ -9853,25 +9882,27 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#Performance" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#Performance" id="Performance"><span property="xhv:role" resource="xhv:heading"><span class="secno">8. </span>
-        Performance Considerations <button onclick="OpenOriginal('Performance')">原文</button>
+        パフォーマンスについての考察 <button onclick="OpenOriginal('Performance')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#latency" typeof="bibo:Chapter" id="latency" class="informative">
         <h3 resource="#h-latency" id="h-latency"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.1 </span>
-          Latency <button onclick="OpenOriginal('latency')">原文</button>
-        </span></h3><p><em>This section is non-normative.</em></p>
+          レイテンシー <button onclick="OpenOriginal('latency')">原文</button>
+        </span></h3><p><em>このセクションは参考情報です。</em></p>
         <figure id="fig-use-cases-in-which-the-latency-can-be-important">
           <img alt="latency" src="images/latency.png">
-          <figcaption>Fig. <span class="figno">13</span> <span class="fig-title">
-            Use cases in which the latency can be important
+          <figcaption>図. <span class="figno">13</span> <span class="fig-title">
+<!--            Use cases in which the latency can be important-->
+            レイテンシーが重要となるユースケース
           </span></figcaption>
         </figure>
         <p>
-          For web applications, the time delay between mouse and keyboard
+<!--          For web applications, the time delay between mouse and keyboard
           events (keydown, mousedown, etc.) and a sound being heard is
-          important.
+          important.-->
+          Web アプリケーションでは、マウスとキーボードのイベント (keydown、mousedown等) と聴こえる音の間のディレイタイムは重要です。
         </p>
         <p>
-          This time delay is called latency and is caused by several factors
+<!--          This time delay is called latency and is caused by several factors
           (input device latency, internal buffering latency, DSP processing
           latency, output device latency, distance of user's ears from
           speakers, etc.), and is cumulative. The larger this latency is, the
@@ -9883,26 +9914,30 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
           precision of gameplay. For interactive applications, it generally
           cheapens the users experience much in the same way that very low
           animation frame-rates do. Depending on the application, a reasonable
-          latency can be from as low as 3-6 milliseconds to 25-50 milliseconds.
+          latency can be from as low as 3-6 milliseconds to 25-50 milliseconds.-->
+          この時間の遅れはレイテンシーと呼ばれ、幾つかの要因 (入力デバイスのレイテンシー、内部バッファのレイテンシー、DSP処理のレイテンシー、出力デバイスのレイテンシー、スピーカーとユーザーの耳の距離、など) によって引き起こされ、累積されてゆきます。 レイテンシーが大きいとユーザー体験の満足度は下がります。 極端な場合、それは音楽制作やゲームプレイを不可能にする事もあります。 ある程度のレベルになるとそれはタイミングに影響し、音が遅れている、あるいはゲームが反応しないなどの印象を与えます。 音楽アプリケーションではタイミングの問題はリズムに影響します。 ゲームではタイミングの問題はゲームプレイの精度に影響します。 インタラクティブなアプリケーションでは、それは一般的にアニメーションのフレームレートがとても低いのと同じようにユーザー体験を非常に安っぽくします。 満足できるレイテンシーはアプリケーションによって異なり、 3 ～ 6 ミリ秒から 25 ～ 50 ミリ秒程度です。
         </p>
         <p>
-          Implementations will generally seek to minimize overall latency.
+<!--          Implementations will generally seek to minimize overall latency.-->
+          実装は一般的に全体的なレイテンシーを最小化する事を目指します。
         </p>
         <p>
-          Along with minimizing overall latency, implementations will generally
+<!--          Along with minimizing overall latency, implementations will generally
           seek to minimize the difference between an
           <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <code>currentTime</code> and an
           <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a>'s <code>playbackTime</code>.
           Deprecation of <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> will make this
-          consideration less important over time.
+          consideration less important over time.-->
+          全体的なレイテンシーの最小化とあわせて、実装は一般的に <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <code>currentTime</code> と <a class="idlType" href="#idl-def-AudioProcessingEvent"><code>AudioProcessingEvent</code></a> の <code>playbackTime</code> の差を最小化する事を目指します。
+           <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> が廃止予定となった事でこの考慮はその内問題とならなくなるでしょう。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#audio-buffer-copying" typeof="bibo:Chapter" id="audio-buffer-copying">
         <h3 resource="#h-audio-buffer-copying" id="h-audio-buffer-copying"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.2 </span>
-          Audio Buffer Copying <button onclick="OpenOriginal('audio-buffer-copying')">原文</button>
+          オーディオバッファのコピー <button onclick="OpenOriginal('audio-buffer-copying')">原文</button>
         </span></h3>
         <p>
-          When an <a href="#acquire-the-content">acquire the content</a>
+<!--          When an <a href="#acquire-the-content">acquire the content</a>
           operation is performed on an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, the entire operation
           can usually be implemented without copying channel data. In
           particular, the last step should be performed lazily at the next
@@ -9913,103 +9948,140 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
           <code>getChannelData</code></a> (e.g. multiple
           <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>s playing the same
           <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>) can be implemented with no
-          allocations or copying.
+          allocations or copying.-->
+           <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> に対して <a href="#acquire-the-content">内容の取得</a>処理が行われる時、処理全体は通常チャンネルデータのコピーをする事なく実装する事ができます。
+           特に、最後のステップは次の<a href="#widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel">
+           <code>getChannelData</code></a> の呼び出しまで先延ばしにするべきです。
+           それは (例えば、複数の<a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>が同じ<a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>を再生するような) 絶え間ない<a href="#widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel">
+           <code>getChannelData</code></a>による、連続した<a href="#acquire-the-content">内容の取得</a>処理がアロケーションやコピーをする事なく実装できる事を意味します。
         </p>
         <p>
-          Implementations can perform an additional optimization: if <a href="#widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel">
+<!--          Implementations can perform an additional optimization: if <a href="#widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel">
           getChannelData</a> is called on an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>, fresh
           <code>ArrayBuffer</code>s have not yet been allocated, but all
           invokers of previous <a href="#acquire-the-content">acquire the
           content</a> operations on an <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> have stopped using
           the <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>'s data, the raw data buffers can be recycled
           for use with new <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>s, avoiding any reallocation or
-          copying of the channel data.
+          copying of the channel data.-->
+
+          実装は更に追加の最適化をする事も可能です:
+          <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>に新しい<code>ArrayBuffer</code>が割り当てられておらず、しかし以前の<a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>に対する<a href="#acquire-the-content">内容の取得</a>処理の呼び出し元の全てが <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> のデータ使用を止めている場合に、
+          その<a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>に対する<a href="#widl-AudioBuffer-getChannelData-Float32Array-unsigned-long-channel">
+          getChannelData</a>呼び出しがあった時、再割り当てやチャンネルデータのコピーを避けてデータバッファの再利用が可能です。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#audioparam-transitions" typeof="bibo:Chapter" id="audioparam-transitions" class="informative">
         <h3 resource="#h-audioparam-transitions" id="h-audioparam-transitions"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.3 </span>
-          AudioParam Transitions <button onclick="OpenOriginal('audioparam-transitions')">原文</button>
-        </span></h3><p><em>This section is non-normative.</em></p>
+          AudioParam の遷移 <button onclick="OpenOriginal('audioparam-transitions')">原文</button>
+        </span></h3><p><em>このセクションは参考情報です。</em></p>
         <p>
-          While no automatic smoothing is done when directly setting the
+<!--          While no automatic smoothing is done when directly setting the
           <a href="#widl-AudioParam-value"><code>value</code></a> attribute of
           an <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>, for certain parameters, smooth
-          transition are preferable to directly setting the value.
+          transition are preferable to directly setting the value.-->
+          属性に直接値を設定した際、自動的な平滑化が行われない一方で、幾つかのパラメータは直接的な値の設定に対して滑らかな変化が望まれます。
         </p>
         <p>
-          Using the <a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">
+<!--          Using the <a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">
           <code>setTargetAtTime</code></a> method with a low
           <code>timeConstant</code> allows authors to perform a smooth
-          transition.
+          transition.-->
+          <a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">
+         <code>setTargetAtTime</code></a> メソッドを低い <code>timeConstant</code> で使う事で滑らかな変化を実現する事ができます。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#audio-glitching" typeof="bibo:Chapter" id="audio-glitching">
         <h3 resource="#h-audio-glitching" id="h-audio-glitching"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.4 </span>
-          Audio Glitching <button onclick="OpenOriginal('audio-glitching')">原文</button>
+          オーディオグリッジ <button onclick="OpenOriginal('audio-glitching')">原文</button>
         </span></h3>
         <p>
-          Audio glitches are caused by an interruption of the normal continuous
+<!--          Audio glitches are caused by an interruption of the normal continuous
           audio stream, resulting in loud clicks and pops. It is considered to
           be a catastrophic failure of a multi-media system and must be
           avoided. It can be caused by problems with the threads responsible
           for delivering the audio stream to the hardware, such as scheduling
           latencies caused by threads not having the proper priority and
           time-constraints. It can also be caused by the audio DSP trying to do
-          more work than is possible in real-time given the CPU's speed.
+          more work than is possible in real-time given the CPU's speed.-->
+          オーディオグリッジは正常な連続したオーディオストリームが途切れる事で発生し、大きなクリックノイズやポップノイズを引き起こします。 それはマルチメディアシステムでは最悪の失敗と考えられ、絶対に避けなければなりません。 それは適切な優先度を持っていなかったり時間的制約から起こるスケジューリングの遅延のような事が原因で、オーディオストリームをハードウェアに供給するスレッドの反応速度の問題によって引き起こされる事があります。 また、それはオーディオDSPが与えられたCPUの速度ではリアルタイムで処理できないような多量の仕事をしようとする事で起こる場合もあります。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#JavaScriptPerformance" typeof="bibo:Chapter">
         <h3 resource="#JavaScriptPerformance" id="JavaScriptPerformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.5 </span>
-          JavaScript Issues with Real-Time Processing and Synthesis: <button onclick="OpenOriginal('JavaScriptPerformance')">原文</button>
-        </span></h3>While processing audio in JavaScript, it is extremely challenging
+          リアルタイムの処理と合成に関するJavascriptの課題: <button onclick="OpenOriginal('JavaScriptPerformance')">原文</button>
+        </span></h3>
+<!--        While processing audio in JavaScript, it is extremely challenging
         to get reliable, glitch-free audio while achieving a reasonably
-        low-latency, especially under heavy processor load.
+        low-latency, especially under heavy processor load.-->
+        JavsScript でオーディオを処理する際に、妥当な低レイテンシーでオーディオにグリッジが無く、信頼性を確保するのは、
+        特にCPU負荷が高い状況においては極めてチャレンジングな事です。
         <ul>
-          <li>JavaScript is very much slower than heavily optimized C++ code
+          <li>
+<!--            JavaScript is very much slower than heavily optimized C++ code
           and is not able to take advantage of SSE optimizations and
           multi-threading which is critical for getting good performance on
           today's processors. Optimized native code can be on the order of
           twenty times faster for processing FFTs as compared with JavaScript.
           It is not efficient enough for heavy-duty processing of audio such as
-          convolution and 3D spatialization of large numbers of audio sources.
+          convolution and 3D spatialization of large numbers of audio sources.-->
+          JavaScriptは良く最適化されたC++コードに比べると非常に低速であり、近年のプロセッサで高いパフォーマンスを得るために必須の SSE とマルチスレッディングを利用する事ができません。 最適化されたネイティブコードは JavaScript に比べ、 FFT を 20 倍程度高速に実行できます。 それはコンボリューションや 3D 空間音響や大量のオーディオソースのようなオーディオのヘビーデューティーな処理を行えるほど効率的ではありません。
           </li>
-          <li>setInterval() and XHR handling will steal time from the audio
+          <li>
+<!--            setInterval() and XHR handling will steal time from the audio
           processing. In a reasonably complex game, some JavaScript resources
           will be needed for game physics and graphics. This creates challenges
           because audio rendering is deadline driven (to avoid glitches and get
-          low enough latency).
+          low enough latency).-->
+          setInterval() と XHR ハンドリングはオーディオ処理から時間を奪います。 ある程度複雑なゲームでは、ゲームの物理モデルとグラフィックスのために幾つかの JavaScript のリソースが必要になります。 オーディオレングリングは、 (グリッジを避けつつ充分にレイテンシーを低くするため) デッドライン・ドリブンであるため、これが課題になります。
           </li>
-          <li>JavaScript does not run in a real-time processing thread and thus
-          can be pre-empted by many other threads running on the system.
+          <li>
+<!--            JavaScript does not run in a real-time processing thread and thus
+          can be pre-empted by many other threads running on the system.-->
+          JavaScript はリアルタイム処理スレッドでは動作せず、
+          そのためシステム中で走っている他の多くのスレッドによってプリエンプトされる事があります。
           </li>
-          <li>Garbage Collection (and autorelease pools on Mac OS X) can cause
-          unpredictable delay on a JavaScript thread.
+          <li>
+<!--            Garbage Collection (and autorelease pools on Mac OS X) can cause
+          unpredictable delay on a JavaScript thread.-->
+          ガベージコレクション (そして Mac OS X のオートリリースプールも) は、
+          JavaScript スレッドに予測不能な遅延を引き起こす事があります。
           </li>
-          <li>Multiple JavaScript contexts can be running on the main thread,
-          stealing time from the context doing the processing.
+          <li>
+<!--            Multiple JavaScript contexts can be running on the main thread,
+          stealing time from the context doing the processing.-->
+          複数の JavaScript コンテキストがメインスレッド上で走る事が可能で、
+          処理を行っているコンテキストから時間を奪います。
           </li>
-          <li>Other code (other than JavaScript) such as page rendering runs on
-          the main thread.
+          <li>
+<!--            Other code (other than JavaScript) such as page rendering runs on
+          the main thread.-->
+          ページレンダリングのような (JavaScript 以外の) 他のコードがメインスレッド上で動作します。
           </li>
-          <li>Locks can be taken and memory is allocated on the JavaScript
-          thread. This can cause additional thread preemption.
+          <li>
+<!--            Locks can be taken and memory is allocated on the JavaScript
+          thread. This can cause additional thread preemption.-->
+          JavaScript スレッド上でロックを取り、メモリをアロケーションする事ができます。
+          これは余計なスレッドのプリエンプションを引き起こす事があります。
           </li>
-        </ul>The problems are even more difficult with today's generation of
+        </ul>
+<!--        The problems are even more difficult with today's generation of
         mobile devices which have processors with relatively poor performance
-        and power consumption / battery-life issues.
+        and power consumption / battery-life issues.-->
+        比較的非力なパフォーマンスと消費電力/バッテリー寿命問題を抱える今日のモバイルデバイスでは、問題はさらに難しくなります。
       </section>
     </section>
     <section property="bibo:hasPart" resource="#SecurityConsiderations" typeof="bibo:Chapter" class="informative">
       <!--OddPage--><h2 resource="#SecurityConsiderations" id="SecurityConsiderations"><span property="xhv:role" resource="xhv:heading"><span class="secno">9. </span>
-        Security Considerations <button onclick="OpenOriginal('SecurityConsiderations')">原文</button>
-      </span></h2><p><em>This section is non-normative.</em></p>
+        セキュリティに関する考察 <button onclick="OpenOriginal('SecurityConsiderations')">原文</button>
+      </span></h2><p><em>このセクションは参考情報です。</em></p>
     </section>
     <section property="bibo:hasPart" resource="#PrivacyConsiderations" typeof="bibo:Chapter" class="informative">
       <!--OddPage--><h2 resource="#PrivacyConsiderations" id="PrivacyConsiderations"><span property="xhv:role" resource="xhv:heading"><span class="secno">10. </span>
-        Privacy Considerations <button onclick="OpenOriginal('PrivacyConsiderations')">原文</button>
-      </span></h2><p><em>This section is non-normative.</em></p>
+        プライバシーに関する考察 <button onclick="OpenOriginal('PrivacyConsiderations')">原文</button>
+      </span></h2><p><em>このセクションは参考情報です。</em></p>
       <p>
-        When giving various information on available
+<!--        When giving various information on available
         <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s, the Web Audio <abbr title="Application Programming Interface">API</abbr> potentially exposes
         information on characteristic features of the client (such as audio
         hardware sample-rate) to any page that makes use of the
@@ -10017,22 +10089,27 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
         information can be collected through the
         <a class="idlType" href="#idl-def-AnalyserNode"><code>AnalyserNode</code></a> or
         <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> interface. The information
-        could subsequently be used to create a fingerprint of the client.
+        could subsequently be used to create a fingerprint of the client.-->
+      <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> が持っている様々な情報から、Web Audio  <abbr title="Application Programming Interface">API</abbr> は潜在的に (オーディオハードウェアのサンプルレートのような) クライアントの特徴的な機能の情報を <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>  インータフェースを使うどんなページにでもさらけ出します。
+      更に、<a class="idlType" href="#idl-def-AnalyserNode"><code>AnalyserNode</code></a> や<a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a>のインターフェースからタイミングに関する情報も得られます。 情報はその後クライアントのフィンガープリントを作成するために使われるかも知れません。
       </p>
       <p>
-        Currently audio input is not specified in this document, but it will
+<!--        Currently audio input is not specified in this document, but it will
         involve gaining access to the client machine's audio input or
         microphone. This will require asking the user for permission in an
         appropriate way, probably via the <a href="https://w3c.github.io/mediacapture-main/#dom-mediadevices-getusermedia">
-        getUserMedia() <abbr title="Application Programming Interface">API</abbr></a>.
+        getUserMedia() <abbr title="Application Programming Interface">API</abbr></a>.-->
+        現在の所オーディオ入力についてはこの文書では規定していませんが、クライアント機器のオーディオ入力やマイクへのアクセスを得る事ができます。 これにはおそらく <a href="https://w3c.github.io/mediacapture-main/#dom-mediadevices-getusermedia">
+        getUserMedia() <abbr title="Application Programming Interface">API</abbr></a> が使われますが、ユーザーからの許可を適切に得る事が必要になります。
       </p>
     </section>
     <section property="bibo:hasPart" resource="#requirements" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#requirements" id="requirements"><span property="xhv:role" resource="xhv:heading"><span class="secno">11. </span>
-        Requirements and Use Cases <button onclick="OpenOriginal('requirements')">原文</button>
+        要求と使用例 <button onclick="OpenOriginal('requirements')">原文</button>
       </span></h2>
       <p>
-        Please see [<cite><a href="#bib-webaudio-usecases" class="bibref">webaudio-usecases</a></cite>].
+<!--        Please see [<cite><a href="#bib-webaudio-usecases" class="bibref">webaudio-usecases</a></cite>].-->
+        [<cite><a href="#bib-webaudio-usecases" class="bibref">webaudio-usecases</a></cite>] を参照してください。
       </p>
     </section>
     <section property="bibo:hasPart" resource="#acknowledgements" typeof="bibo:Chapter" id="acknowledgements">
@@ -10040,7 +10117,8 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
         承認 <button onclick="OpenOriginal('acknowledgements')">原文</button>
       </span></h2>
       <p>
-        This specification is the collective work of the <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/2011/audio/">Audio Working Group</a>.
+<!--        This specification is the collective work of the <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/2011/audio/">Audio Working Group</a>.-->
+        この仕様は <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/2011/audio/">Audio Working Group</a> の集合著作物です。
       </p>
       <p>
         Members of the Working Group are (at the time of writing, and by
@@ -10076,15 +10154,16 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#ChangeLog" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#ChangeLog" id="ChangeLog"><span property="xhv:role" resource="xhv:heading"><span class="secno">13. </span>
-        Web Audio <abbr title="Application Programming Interface">API</abbr> Change Log <button onclick="OpenOriginal('ChangeLog')">原文</button>
+        Web Audio <abbr title="Application Programming Interface">API</abbr> チェンジログ <button onclick="OpenOriginal('ChangeLog')">原文</button>
       </span></h2>
       <p>
-        See <a href="changelog.html">changelog.html</a>.
+<!--        See <a href="changelog.html">changelog.html</a>.-->
+        <a href="changelog.html">changelog.html</a> を参照してください。
       </p>
     </section>
 
 
-<section property="bibo:hasPart" resource="#references" typeof="bibo:Chapter" id="references" class="appendix"><!--OddPage--><h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>References <button onclick="OpenOriginal('references')">原文</button></span></h2><section property="bibo:hasPart" resource="#normative-references" typeof="bibo:Chapter" id="normative-references"><h3 resource="#h-normative-references" id="h-normative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>Normative references <button onclick="OpenOriginal('normative-references')">原文</button></span></h3><dl resource="" class="bibliography"><dt id="bib-DOM">[DOM]</dt><dd>Anne van Kesteren; Aryeh Gregor; Ms2ger; Alex Russell; Robin Berjon. <a property="dc:requires" href="http://www.w3.org/TR/dom/"><cite>W3C DOM4</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:requires" href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a>
+<section property="bibo:hasPart" resource="#references" typeof="bibo:Chapter" id="references" class="appendix"><!--OddPage--><h2 resource="#h-references" id="h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>リファレンス <button onclick="OpenOriginal('references')">原文</button></span></h2><section property="bibo:hasPart" resource="#normative-references" typeof="bibo:Chapter" id="normative-references"><h3 resource="#h-normative-references" id="h-normative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.1 </span>基準リファレンス <button onclick="OpenOriginal('normative-references')">原文</button></span></h3><dl resource="" class="bibliography"><dt id="bib-DOM">[DOM]</dt><dd>Anne van Kesteren; Aryeh Gregor; Ms2ger; Alex Russell; Robin Berjon. <a property="dc:requires" href="http://www.w3.org/TR/dom/"><cite>W3C DOM4</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:requires" href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a>
 </dd><dt id="bib-HTML">[HTML]</dt><dd>Ian Hickson. <a property="dc:requires" href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a property="dc:requires" href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
 </dd><dt id="bib-RFC2119">[RFC2119]</dt><dd>S. Bradner. <a property="dc:requires" href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a property="dc:requires" href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
 </dd><dt id="bib-TYPED-ARRAYS">[TYPED-ARRAYS]</dt><dd>David Herman; Kenneth Russell. <a property="dc:requires" href="https://www.khronos.org/registry/typedarray/specs/latest/"><cite>Typed Array Specification</cite></a>. 26 June 2013. Khronos Working Draft. URL: <a property="dc:requires" href="https://www.khronos.org/registry/typedarray/specs/latest/">https://www.khronos.org/registry/typedarray/specs/latest/</a>
@@ -10092,7 +10171,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
 </dd><dt id="bib-Workers">[Workers]</dt><dd>Ian Hickson. <a property="dc:requires" href="http://www.w3.org/TR/workers/"><cite>Web Workers</cite></a>. 24 September 2015. W3C Working Draft. URL: <a property="dc:requires" href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a>
 </dd><dt id="bib-mediacapture-streams">[mediacapture-streams]</dt><dd>Daniel Burnett; Adam Bergkvist; Cullen Jennings; Anant Narayanan. <a property="dc:requires" href="http://www.w3.org/TR/mediacapture-streams/"><cite>Media Capture and Streams</cite></a>. 14 April 2015. W3C Last Call Working Draft. URL: <a property="dc:requires" href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a>
 </dd><dt id="bib-webrtc">[webrtc]</dt><dd>Adam Bergkvist; Daniel Burnett; Cullen Jennings; Anant Narayanan. <a property="dc:requires" href="http://www.w3.org/TR/webrtc/"><cite>WebRTC 1.0: Real-time Communication Between Browsers</cite></a>. 10 February 2015. W3C Working Draft. URL: <a property="dc:requires" href="http://www.w3.org/TR/webrtc/">http://www.w3.org/TR/webrtc/</a>
-</dd></dl></section><section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references"><h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>Informative references <button onclick="OpenOriginal('informative-references')">原文</button></span></h3><dl resource="" class="bibliography"><dt id="bib-2dcontext">[2dcontext]</dt><dd>Rik Cabanier; Jatinder Mann; Jay Munro; Tom Wiltzius; Ian Hickson. <a property="dc:references" href="http://www.w3.org/TR/2dcontext/"><cite>HTML Canvas 2D Context</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a>
+</dd></dl></section><section property="bibo:hasPart" resource="#informative-references" typeof="bibo:Chapter" id="informative-references"><h3 resource="#h-informative-references" id="h-informative-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">A.2 </span>参考リファレンス <button onclick="OpenOriginal('informative-references')">原文</button></span></h3><dl resource="" class="bibliography"><dt id="bib-2dcontext">[2dcontext]</dt><dd>Rik Cabanier; Jatinder Mann; Jay Munro; Tom Wiltzius; Ian Hickson. <a property="dc:references" href="http://www.w3.org/TR/2dcontext/"><cite>HTML Canvas 2D Context</cite></a>. 19 November 2015. W3C Recommendation. URL: <a property="dc:references" href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a>
 </dd><dt id="bib-WEBGL">[WEBGL]</dt><dd>Chris Marrin (Apple Inc.). <a property="dc:references" href="https://www.khronos.org/registry/webgl/specs/1.0/"><cite>WebGL Specification, Version 1.0</cite></a>. 10 February 2011. URL: <a property="dc:references" href="https://www.khronos.org/registry/webgl/specs/1.0/">https://www.khronos.org/registry/webgl/specs/1.0/</a>
 </dd><dt id="bib-XHR">[XHR]</dt><dd>Anne van Kesteren. <a property="dc:references" href="https://xhr.spec.whatwg.org/"><cite>XMLHttpRequest Standard</cite></a>. Living Standard. URL: <a property="dc:references" href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
 </dd><dt id="bib-mimesniff">[mimesniff]</dt><dd>Gordon P. Hemsley. <a property="dc:references" href="https://mimesniff.spec.whatwg.org/"><cite>MIME Sniffing Standard</cite></a>. Living Standard. URL: <a property="dc:references" href="https://mimesniff.spec.whatwg.org/">https://mimesniff.spec.whatwg.org/</a>
