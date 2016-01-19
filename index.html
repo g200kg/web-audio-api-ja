@@ -910,11 +910,11 @@ table.exceptions table {
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#attributes-8"><span class="secno">2.9.1 </span>属性</a></li><li class="tocline"><a class="tocxref" href="#methods-5"><span class="secno">2.9.2 </span>メソッド</a></li></ul></li><li class="tocline"><a class="tocxref" href="#AudioBufferSourceNode"><span class="secno">2.10 </span>
           AudioBufferSourceNode インターフェース
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#attributes-9"><span class="secno">2.10.1 </span>属性</a></li><li class="tocline"><a class="tocxref" href="#methods-6"><span class="secno">2.10.2 </span>メソッド</a></li><li class="tocline"><a class="tocxref" href="#looping-AudioBufferSourceNode"><span class="secno">2.10.3 </span>
-            ルーピング
+            ループ再生
           </a></li></ul></li><li class="tocline"><a class="tocxref" href="#MediaElementAudioSourceNode"><span class="secno">2.11 </span>
           MediaElementAudioSourceNode インターフェース
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#security-with-mediaelementaudiosourcenode-and-cross-origin-resources"><span class="secno">2.11.1 </span>
-            MediaElementAudioSourceNode のセキュリティと クロスオリジン・リソース
+            MediaElementAudioSourceNode とクロスオリジン・リソースに関するセキュリティ
           </a></li></ul></li><li class="tocline"><a class="tocxref" href="#AudioWorker"><span class="secno">2.12 </span>
           <span data-dfn-type="dfn">AudioWorker</span> インターフェース
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#attributes-10"><span class="secno">2.12.1 </span>属性</a></li><li class="tocline"><a class="tocxref" href="#methods-7"><span class="secno">2.12.2 </span>メソッド</a></li><li class="tocline"><a class="tocxref" href="#AudioWorkerNode"><span class="secno">2.12.3 </span>
@@ -992,7 +992,7 @@ table.exceptions table {
           </a></li><li class="tocline"><a class="tocxref" href="#waveform-normalization"><span class="secno">2.31.3 </span>
             波形の正規化
           </a></li><li class="tocline"><a class="tocxref" href="#oscillator-coefficients"><span class="secno">2.31.4 </span>
-            オシレーター係数
+            オシレータ係数
           </a></li></ul></li><li class="tocline"><a class="tocxref" href="#MediaStreamAudioSourceNode"><span class="secno">2.32 </span>
           MediaStreamAudioSourceNode インターフェース
         </a></li><li class="tocline"><a class="tocxref" href="#the-mediastreamaudiodestinationnode-interface"><span class="secno">2.33 </span>
@@ -2643,7 +2643,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
           <div><em>パラメータなし</em></div><div><em>戻り値: </em><code>Promise&lt;void&gt;</code></div>
         </dd>
       </dl></section>
-        <section property="bibo:hasPart" resource="#callback-decodesuccesscallback-parameters" typeof="bibo:Chapter" id="callback-decodesuccesscallback-parameters"><h4 resource="#h-callback-decodesuccesscallback-parameters" id="h-callback-decodesuccesscallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>Callback <a href="#idl-def-DecodeSuccessCallback" class="idlType"><code>DecodeSuccessCallback</code></a> パラメータ <button onclick="OpenOriginal('h-callback-decodesuccesscallback-parameters')">原文</button></span></h4><dl class="callback-members"><dt id="widl-DecodeSuccessCallback-decodedData"><code>decodedData</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>型</dt>
+        <section property="bibo:hasPart" resource="#callback-decodesuccesscallback-parameters" typeof="bibo:Chapter" id="callback-decodesuccesscallback-parameters"><h4 resource="#h-callback-decodesuccesscallback-parameters" id="h-callback-decodesuccesscallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.3 </span>コールバック <a href="#idl-def-DecodeSuccessCallback" class="idlType"><code>DecodeSuccessCallback</code></a> パラメータ <button onclick="OpenOriginal('h-callback-decodesuccesscallback-parameters')">原文</button></span></h4><dl class="callback-members"><dt id="widl-DecodeSuccessCallback-decodedData"><code>decodedData</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a></span>型</dt>
 <!--          <dd>
             The AudioBuffer containing the decoded audio data.
           </dd>-->
@@ -2651,7 +2651,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             デコードされたオーディオデータを保持する AudioBuffer です。
           </dd>
         </dl></section>
-        <section property="bibo:hasPart" resource="#callback-decodeerrorcallback-parameters" typeof="bibo:Chapter" id="callback-decodeerrorcallback-parameters"><h4 resource="#h-callback-decodeerrorcallback-parameters" id="h-callback-decodeerrorcallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.4 </span>Callback <a href="#idl-def-DecodeErrorCallback" class="idlType"><code>DecodeErrorCallback</code></a> パラメータ <button onclick="OpenOriginal('callback-decodeerrorcallback-parameters')">原文</button></span></h4><dl class="callback-members"><dt id="widl-DecodeErrorCallback-error"><code>error</code> <span class="idlMemberType">DOMException　型</span></dt>
+        <section property="bibo:hasPart" resource="#callback-decodeerrorcallback-parameters" typeof="bibo:Chapter" id="callback-decodeerrorcallback-parameters"><h4 resource="#h-callback-decodeerrorcallback-parameters" id="h-callback-decodeerrorcallback-parameters"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.4 </span>コールバック <a href="#idl-def-DecodeErrorCallback" class="idlType"><code>DecodeErrorCallback</code></a> パラメータ <button onclick="OpenOriginal('callback-decodeerrorcallback-parameters')">原文</button></span></h4><dl class="callback-members"><dt id="widl-DecodeErrorCallback-error"><code>error</code> <span class="idlMemberType">DOMException　型</span></dt>
 <!--          <dd>
             The error that occurred while decoding.
           </dd>-->
@@ -2659,7 +2659,7 @@ interface <span class="idlInterfaceID">BaseAudioContext</span> : <span class="id
             デコード中に発生したエラーです。
           </dd>
         </dl></section>
-        <section property="bibo:hasPart" resource="#dictionary-audiocontextoptions-members" typeof="bibo:Chapter" id="dictionary-audiocontextoptions-members"><h4 resource="#h-dictionary-audiocontextoptions-members" id="h-dictionary-audiocontextoptions-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.5 </span>ディレクトリ <a href="#idl-def-AudioContextOptions" class="idlType"><code>AudioContextOptions</code></a> メンバー <button onclick="OpenOriginal('dictionary-audiocontextoptions-members')">原文</button></span></h4><dl class="dictionary-members"><dt id="widl-AudioContextOptions-playbackCategory"><code>playbackCategory</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioContextPlaybackCategory"><code>AudioContextPlaybackCategory　型</code></a></span>, デフォルトは <code>"interactive"</code></dt>
+        <section property="bibo:hasPart" resource="#dictionary-audiocontextoptions-members" typeof="bibo:Chapter" id="dictionary-audiocontextoptions-members"><h4 resource="#h-dictionary-audiocontextoptions-members" id="h-dictionary-audiocontextoptions-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1.5 </span>ディクショナリ <a href="#idl-def-AudioContextOptions" class="idlType"><code>AudioContextOptions</code></a> メンバー <button onclick="OpenOriginal('dictionary-audiocontextoptions-members')">原文</button></span></h4><dl class="dictionary-members"><dt id="widl-AudioContextOptions-playbackCategory"><code>playbackCategory</code> <span class="idlMemberType"><a class="idlType" href="#idl-def-AudioContextPlaybackCategory"><code>AudioContextPlaybackCategory　型</code></a></span>, デフォルトは <code>"interactive"</code></dt>
 <!--          <dd>
             Identify the type of playback, which affects tradeoffs between
             audio output latency and power consumption.
@@ -3695,10 +3695,10 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
       </section>
       <section property="bibo:hasPart" resource="#AudioParam" typeof="bibo:Chapter">
         <h3 resource="#AudioParam" id="AudioParam"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6 </span>
-          The AudioParam Interface <button onclick="OpenOriginal('AudioParam')">原文</button>
+          AudioParam インターフェース <button onclick="OpenOriginal('AudioParam')">原文</button>
         </span></h3>
         <p>
-          <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> controls an individual aspect of an
+<!--          <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> controls an individual aspect of an
           <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>'s functioning, such as volume. The
           parameter can be set immediately to a particular value using the
           <code>value</code> attribute. Or, value changes can be scheduled to
@@ -3709,10 +3709,12 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
           any <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>. Additionally, audio signals from
           the outputs of <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s can be connected to an
           <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>, summing with the <em>intrinsic</em>
-          parameter value.
+          parameter value.-->
+          <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> は <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の例えば音量のような個別の機能をコントロールします。 パラメータは <code>value</code> 属性を使って特定の値に即時にセットする事ができます。 あるいは(<a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性の時間軸で)　非常に高い時間精度で値の変化のスケジュールを組む事ができ、エンベロープ、音量のフェード、LFO、フィルタスイープ、グレイン窓、などに応用する事ができます。
+          このような方法で任意のタイムラインベースのオートメーション曲線をすべての <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> に対して設定する事が可能です。 また更に、 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> からの出力の音声信号を <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> に接続する事ができ、個別に持っているパラメータの<em>固有値</em>に加算する事ができます。
         </p>
         <p>
-          Some synthesis and processing <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s have
+<!--          Some synthesis and processing <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s have
           <code>AudioParams</code> as attributes whose values must be taken
           into account on a per-audio-sample basis. For other
           <code>AudioParams</code>, sample-accuracy is not important and the
@@ -3720,28 +3722,36 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
           <code>AudioParam</code> will specify that it is either an
           <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> parameter which means that its values must be taken
           into account on a per-audio-sample basis, or it is a <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a>
-          parameter.
+          parameter.-->
+          幾つかの合成や処理の <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> は、オーディオサンプル単位で反映されなくてはならない <code>AudioParams</code> 型の属性を持っています。 その他の <code>AudioParams</code> はサンプル単位の精度は重要ではなく、その値の変化はより粗く取り込まれます。 各 <code>AudioParam</code> は <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> パラメータつまりサンプル単位で反映されるか、それ以外の <a data-link-type="dfn" class="internalDFN" href="#k-rate">k-rate</a> パラメータかが指定されます。
         </p>
         <p>
-          Implementations must use block processing, with each
+<!--          Implementations must use block processing, with each
           <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> processing 128 sample-frames in each
-          block.
+          block.-->
+          実装はそれぞれの <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> について、128 サンプルフレーム毎のブロック単位の処理を行わなくてはなりません。
         </p>
         <p>
-          For each 128 sample-frame block, the value of a <dfn data-dfn-type="dfn" id="k-rate">k-rate</dfn> parameter must be sampled at the time of the
+<!--          For each 128 sample-frame block, the value of a <dfn data-dfn-type="dfn" id="k-rate">k-rate</dfn> parameter must be sampled at the time of the
           very first sample-frame, and that value must be used for the entire
           block. <dfn data-dfn-type="dfn" id="a-rate">a-rate</dfn> parameters must be sampled for
-          each sample-frame of the block.
+          each sample-frame of the block.-->
+          それぞれの 128 サンプルフレームのブロックに対して、 <dfn data-dfn-type="dfn" id="k-rate">k-rate</dfn> パラメータは最初のサンプルのタイミングで取り込まれ、その値は ブロック全体に対して使用されなくてはなりません。 <dfn data-dfn-type="dfn" id="a-rate">a-rate</dfn> パラメータはブロック内のサンプルフレーム毎に取り込まれなくてはなりません。
         </p>
         <p>
-          An <code>AudioParam</code> maintains a time-ordered event list which
+<!--          An <code>AudioParam</code> maintains a time-ordered event list which
           is initially empty. The times are in the time coordinate system of
           the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute. The
           events define a mapping from time to value. The following methods can
           change the event list by adding a new event into the list of a type
           specific to the method. Each event has a time associated with it, and
           the events will always be kept in time-order in the list. These
-          methods will be called <em>automation</em> methods:
+          methods will be called <em>automation</em> methods:-->
+          <code>AudioParam</code> は時間軸に沿ったイベントリストを保持し、その初期値は空になっています。
+          この時間は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性による時間軸を使用します。 イベントは時刻に対して値を割り付けるものです。
+          以降のメソッドはメソッド毎に固有のタイプのイベントをリストに新しく加える事でイベントリストを変更します。
+          それぞれのイベントは対応する時刻を持っており、リスト上で常に時刻順に保持されます。
+          これらのメソッドは<em>オートメーションメソッド</em>と呼ばれます:
         </p>
         <ul>
           <li>
@@ -3767,27 +3777,36 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
           </li>
         </ul>
         <p>
-          The following rules will apply when calling these methods:
+<!--          The following rules will apply when calling these methods:-->
+          これらのメソッドが呼ばれる時、次の規則が適用されます:
         </p>
         <ul>
-          <li>If one of these events is added at a time where there is already
+          <li>
+<!--            If one of these events is added at a time where there is already
           an event of the exact same type, then the new event will replace the
-          old one.
+          old one.-->
+          もし、これらのイベントを追加しようとした時、まったく同じ型のイベントが同じ時刻に既に存在している場合、新しいイベントは古いイベントを置き換えます。
           </li>
-          <li>If one of these events is added at a time where there is already
+          <li>
+<!--            If one of these events is added at a time where there is already
           one or more events of a different type, then it will be placed in the
-          list after them, but before events whose times are after the event.
+          list after them, but before events whose times are after the event.-->
+          もし、これらのイベントを追加しようとした時、同じ時刻に異なる型のイベントが 1 つ以上存在している場合、新しいイベントはそれら既にあるイベントの後ろで、時刻がより後ろのイベントの前に追加されます。
           </li>
-          <li>If setValueCurveAtTime() is called for time \(T\) and duration
+          <li>
+<!--            If setValueCurveAtTime() is called for time \(T\) and duration
           \(D\) and there are any events having a time greater than \(T\), but
           less than \(T + D\), then a NotSupportedError exception <em title="MUST" class="rfc2119">MUST</em> be
           thrown. In other words, it's not ok to schedule a value curve during
-          a time period containing other events.
+          a time period containing other events.-->
+          もし、setValueCurveAtTime() が time \(T\)、duration \(D\) で呼ばれた時、 \(T\) より後ろで \(T+D\) より手前に何らかのイベントが既に存在している場合、 NotSupportedError 例外を発生します(<em title="MUST" class="rfc2119">MUST</em>)。 別の言い方をすると、他のイベントを含んだ期間の値のカーブをスケジュールする事はできません。
           </li>
-          <li>Similarly a NotSupportedError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if any
+          <li>
+<!--            Similarly a NotSupportedError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if any
           <em>automation</em> method is called at a time which is inside of the
           time interval of a <em>SetValueCurve</em> event at time T and
-          duration D.
+          duration D.-->
+          同様に、 <em>SetValueCurve</em> イベントの time \(T\) と duration \(D\)  で示される期間内の時刻を指定して何らかの<em>オートメーション</em>メソッドを呼んだ場合、NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
           </li>
         </ul>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioParam">interface <span class="idlInterfaceID">AudioParam</span> {
@@ -3799,52 +3818,64 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlMethName"><a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">setTargetAtTime</a></span> (<span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">target</span></span>, <span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">startTime</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">timeConstant</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlMethName"><a href="#widl-AudioParam-setValueCurveAtTime-AudioParam-Float32Array-values-double-startTime-double-duration">setValueCurveAtTime</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">values</span></span>, <span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">startTime</span></span>, <span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">duration</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> <span class="idlMethName"><a href="#widl-AudioParam-cancelScheduledValues-AudioParam-double-startTime">cancelScheduledValues</a></span> (<span class="idlParam"><span class="idlParamType">double</span> <span class="idlParamName">startTime</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-5" typeof="bibo:Chapter" id="attributes-5"><h4 resource="#h-attributes-5" id="h-attributes-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.1 </span>Attributes  <button onclick="OpenOriginal('attributes-5')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioParam-defaultValue"><code>defaultValue</code> of type <span class="idlAttrType">float</span>, readonly       </dt><dd>
-            Initial value for the <code>value</code> attribute.
-          </dd><dt id="widl-AudioParam-value"><code>value</code> of type <span class="idlAttrType">float</span></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#attributes-5" typeof="bibo:Chapter" id="attributes-5"><h4 resource="#h-attributes-5" id="h-attributes-5"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.1 </span>属性  <button onclick="OpenOriginal('attributes-5')">原文</button></span></h4><dl class="attributes"><dt id="widl-AudioParam-defaultValue"><code>defaultValue</code> <span class="idlAttrType">float</span> 型, readonly       </dt><dd>
+<!--            Initial value for the <code>value</code> attribute.-->
+              <code>value</code> 属性の初期値です。
+          </dd><dt id="widl-AudioParam-value"><code>value</code> <span class="idlAttrType">float</span> 型</dt><dd>
             <p>
-              The parameter's floating-point value. This attribute is
+<!--              The parameter's floating-point value. This attribute is
               initialized to the <code>defaultValue</code>. If
               <code>value</code> is set during a time when there are any
               automation events scheduled then it will be ignored and no
-              exception will be thrown.
+              exception will be thrown.-->
+              浮動小数のパラメータの値です。
+              この属性の初期値は <code>defaultValue</code> です。 もし <code>value</code> がオートメーションイベントが設定されている期間中に設定された場合、それは無視され、例外は発生しません。
             </p>
             <p>
-              The effect of setting this attribute is equivalent to calling
+<!--              The effect of setting this attribute is equivalent to calling
               <code>setValueAtTime()</code> with the current
               <code>AudioContext</code>'s <code>currentTime</code> and the
               requested value. Subsequent accesses to this attribute's getter
-              will return the same value.
+              will return the same value.-->
+              この属性を設定した場合の効果は <code>setValueAtTime()</code> を現在の <code>AudioContext</code> の <code>currentTime</code> と値で呼び出すのと同じです。
+              それ以降のこの属性の値へのアクセスは同じ値を返します。
             </p>
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-4" typeof="bibo:Chapter" id="methods-4"><h4 resource="#h-methods-4" id="h-methods-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.2 </span>Methods <button onclick="OpenOriginal('methods-4')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioParam-cancelScheduledValues-AudioParam-double-startTime"><code>cancelScheduledValues</code></dt><dd>
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-4" typeof="bibo:Chapter" id="methods-4"><h4 resource="#h-methods-4" id="h-methods-4"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.2 </span>メソッド <button onclick="OpenOriginal('methods-4')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioParam-cancelScheduledValues-AudioParam-double-startTime"><code>cancelScheduledValues</code></dt><dd>
             <p>
-              Cancels all scheduled parameter changes with times greater than
+<!--              Cancels all scheduled parameter changes with times greater than
               or equal to <code>startTime</code>. Active
               <code>setTargetAtTime</code> automations (those with
               <code>startTime</code> less than the supplied time value) will
-              also be cancelled.
+              also be cancelled.-->
+              <code>startTime</code> と同じかそれ以降にスケジュールされているすべてのパラメータ変化をキャンセルします。
+              (与えられた時間よりも小さな <code>startTime</code> を指定した) アクティブな <code>setTargetAtTime</code> オートメーション  もまたキャンセルされます。
             </p>
 
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The starting time at and after which any previously scheduled
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                The starting time at and after which any previously scheduled
                 parameter changes will be cancelled. It is a time in the same
                 time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute.
                 A TypeError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if <code>startTime</code>
-                is negative or is not a finite number.
-              </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime"><code>exponentialRampToValueAtTime</code></dt><dd>
+                is negative or is not a finite number.-->
+                開始時間が同じかそれ以降に設定されていたパラメータ変化のスケジュールをキャンセルする時刻です。
+                これは <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> と同じ時間軸の時刻を使用します。
+                もし <code>startTime</code> が負の値あるいは有限数でない場合 TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+              </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime"><code>exponentialRampToValueAtTime</code></dt><dd>
             <p>
-              Schedules an exponential continuous change in parameter value
+<!--              Schedules an exponential continuous change in parameter value
               from the previous scheduled parameter value to the given value.
               Parameters representing filter frequencies and playback rate are
               best changed exponentially because of the way humans perceive
-              sound.
+              sound.-->
+              前にスケジュールされているバラメータ値から指定された値まで、指数的に連続して値を変化させる事をスケジュールします。 フィルタの周波数や再生スピードなどのパラメータは人間の聴覚特性のため、指数的変化が適しています。
             </p>
             <p>
-              The value during the time interval \(T_0 \leq t &lt; T_1\) (where
+<!--              The value during the time interval \(T_0 \leq t &lt; T_1\) (where
               \(T_0\) is the time of the previous event and \(T_1\) is the
               <code>endTime</code> parameter passed into this method) will be
-              calculated as:
+              calculated as:-->
+              時間範囲 \(T_0 \leq t &lt; T_1\) (ここで \(T_0\) は前のイベントの時刻で \(T_1\) はこのメソッドの <code>endTime</code>) パラメータです) に対して次のように計算されます:
             </p>
             <pre>              $$
                 v(t) = V_0 \left(\frac{V_1}{V_0}\right)^\frac{t - T_0}{T_1 - T_0}
@@ -3852,42 +3883,55 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 
 </pre>
             <p>
-              where \(V_0\) is the value at the time \(T_0\) and \(V_1\) is the
+<!--              where \(V_0\) is the value at the time \(T_0\) and \(V_1\) is the
               <code>value</code> parameter passed into this method. It is an
-              error if either \(V_0\) or \(V_1\) is not strictly positive.
+              error if either \(V_0\) or \(V_1\) is not strictly positive.-->
+              ここで \(V_0\) は時刻 \(T_0\) での値、 \(V_1\) はこのメソッドの <code>value</code> パラメータです。
+              もし \(V_0\) または \(V_1\) が真に正の値(<span class="annotate">訳注:0を含まない</span>)でない場合はエラーとなります。
             </p>
             <p>
-              This also implies an exponential ramp to 0 is not possible. A
+<!--              This also implies an exponential ramp to 0 is not possible. A
               good approximation can be achieved using <a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">
-              setTargetAtTime</a> with an appropriately chosen time constant.
+              setTargetAtTime</a> with an appropriately chosen time constant.-->
+              これはまた、0 に向かう指数カーブが不可能である事も示しています。 <a href="#widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant">
+              setTargetAtTime</a> で適当な時間定数を選択する事で良い近似を得る事ができます。
             </p>
             <p>
-              If there are no more events after this ExponentialRampToValue
-              event then for \(t \geq T_1\), \(v(t) = V_1\).
+<!--              If there are no more events after this ExponentialRampToValue
+              event then for \(t \geq T_1\), \(v(t) = V_1\).-->
+              もしこの ExponentialRampToValue イベント以降のイベントがない場合
+               \(t \geq T_1\), \(v(t) = V_1\) となります。
             </p>
 
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The value the parameter will exponentially ramp to at the given
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                The value the parameter will exponentially ramp to at the given
                 time. A NotSupportedError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if this
                 value is less than or equal to 0, or if the value at the time
-                of the previous event is less than or equal to 0.
+                of the previous event is less than or equal to 0.-->
+                パラメータが指数変化により指定された時刻に到達する値です。
+                この値が 0 より小さいまたは 0、または前のイベントで指定された値が 0 より小さいまたは 0 の場合、NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+
               </td></tr><tr><td class="prmName">endTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The time in the same time coordinate system as the
+<!--                The time in the same time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute
                 where the exponential ramp ends. A TypeError exception <em title="MUST" class="rfc2119">MUST</em> be
                 thrown if <code>endTime</code> is negative or is not a finite
-                number.
-              </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-linearRampToValueAtTime-AudioParam-float-value-double-endTime"><code>linearRampToValueAtTime</code></dt><dd>
+                number.-->
+                <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸で、指数変化が終了する時刻です。
+                もし <code>endTime</code> が負の値または有限数でない場合 TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+              </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-linearRampToValueAtTime-AudioParam-float-value-double-endTime"><code>linearRampToValueAtTime</code></dt><dd>
             <p>
-              Schedules a linear continuous change in parameter value from the
-              previous scheduled parameter value to the given value.
+<!--              Schedules a linear continuous change in parameter value from the
+              previous scheduled parameter value to the given value.-->
+              前にスケジュールされているパラメータ値から指定された値まで、直線的に連続して値を変化させる事をスケジュールします。
             </p>
 
             <p>
-              The value during the time interval \(T_0 \leq t &lt; T_1\) (where
+<!--              The value during the time interval \(T_0 \leq t &lt; T_1\) (where
               \(T_0\) is the time of the previous event and \(T_1\) is the
               <code>endTime</code> parameter passed into this method) will be
-              calculated as:
+              calculated as:-->
+              時間範囲 \(T_0 \leq t &lt; T_1\) (ここで \(T_0\) は前のイベントの時刻、 \(T_1\) はこのメソッドで指定された <code>endTime</code> です) の間の値は次のように計算されます:
             </p>
             <pre>              $$
                 v(t) = V_0 + (V_1 - V_0) \frac{t - T_0}{T_1 - T_0}
@@ -3895,37 +3939,45 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 
 </pre>
             <p>
-              Where \(V_0\) is the value at the time \(T_0\) and \(V_1\) is the
-              <code>value</code> parameter passed into this method.
+<!--              Where \(V_0\) is the value at the time \(T_0\) and \(V_1\) is the
+              <code>value</code> parameter passed into this method.-->
+              ここで \(V_0\) は時刻 \(T_0\) での値、 \(V_1\) はこのメソッドで指定された <code>value</code> です。
             </p>
             <p>
-              If there are no more events after this LinearRampToValue event
-              then for \(t \geq T_1\), \(v(t) = V_1\).
+<!--              If there are no more events after this LinearRampToValue event
+              then for \(t \geq T_1\), \(v(t) = V_1\).-->
+              もしこの LinearRampToValue イベント以降にイベントがない場合、 \(t \geq T_1\), \(v(t) = V_1\)　となります。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The value the parameter will linearly ramp to at the given
-                time.
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                The value the parameter will linearly ramp to at the given
+                time.-->
+                与えられた時刻にパラメータが直線変化で到達する値です。
               </td></tr><tr><td class="prmName">endTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The time in the same time coordinate system as the
+<!--                The time in the same time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute
                 at which the automation ends. A TypeError exception <em title="MUST" class="rfc2119">MUST</em> be
                 thrown if <code>endTime</code> is negative or is not a finite
-                number.
-              </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant"><code>setTargetAtTime</code></dt><dd>
+                number.-->
+                <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸で、オートメーション終了する時刻です。
+                もし <code>endTime</code> が負の値または有限数でない場合 TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+              </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-setTargetAtTime-AudioParam-float-target-double-startTime-float-timeConstant"><code>setTargetAtTime</code></dt><dd>
             <p>
-              Start exponentially approaching the target value at the given
+<!--              Start exponentially approaching the target value at the given
               time with a rate having the given time constant. Among other
               uses, this is useful for implementing the "decay" and "release"
               portions of an ADSR envelope. Please note that the parameter
               value does not immediately change to the target value at the
-              given time, but instead gradually changes to the target value.
+              given time, but instead gradually changes to the target value.-->
+              指定の時間から、指定の時定数によって指数的に目標の値に漸近を開始します。 様々な使い方がありますが、これはADSRエンベロープの"ディケイ"および"リリース"を実装する際に役立ちます。 値は指定の時間に即、目標値になるのではなく徐々に目標値に向かって変化する事に注意してください。
             </p>
 
             <p>
-              During the time interval: \(T_0 \leq t &lt; T_1\), where \(T_0\)
+<!--              During the time interval: \(T_0 \leq t &lt; T_1\), where \(T_0\)
               is the <code>startTime</code> parameter and \(T_1\) represents
               the time of the event following this event (or \(\infty\) if
-              there are no following events):
+              there are no following events):-->
+              時間範囲 : \(T_0 \leq t &lt; T_1\) 、ここで \(T_0\) は <code>startTime</code> パラメータの時刻、
+               \(T_1\) はこのイベントに続くイベントの時刻 (あるいは次のイベントがない場合は \(\infty\) ) として:
             </p>
             <pre>              $$
                 v(t) = V_1 + (V_0 - V_1)\, e^{-\left(\frac{t - T_0}{\tau}\right)}
@@ -3933,22 +3985,26 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 
 </pre>
             <p>
-              where \(V_0\) is the initial value (the <code>.value</code>
+<!--              where \(V_0\) is the initial value (the <code>.value</code>
               attribute) at \(T_0\) (the <code>startTime</code> parameter),
               \(V_1\) is equal to the <code>target</code> parameter, and
-              \(\tau\) is the <code>timeConstant</code> parameter.
+              \(\tau\) is the <code>timeConstant</code> parameter.-->
+              ここで、 \(V_0\) は初期値 (\(T_0\) での <code>.value</code>属性の値)、\(V_1\) は <code>target</code> パラメータの値、そして  \(\tau\) は <code>timeConstant</code> パラメータです。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">target</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The value the parameter will <em>start</em> changing to at the
-                given time.
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">target</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                The value the parameter will <em>start</em> changing to at the
+                given time.-->
+                パラメータが指定の時刻から変化を<em>開始</em>する目標値です。
               </td></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The time at which the exponential approach will begin, in the
+<!--                The time at which the exponential approach will begin, in the
                 same time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute.
                 A TypeError exception <em title="MUST" class="rfc2119">MUST</em> be thrown if <code>start</code> is
-                negative or is not a finite number.
+                negative or is not a finite number.-->
+                  <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸で指数的漸近を開始する時刻です。
+                  もし <code>start</code> が負の値または有限数でない場合は TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
               </td></tr><tr><td class="prmName">timeConstant</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The time-constant value of first-order filter (exponential)
+<!--                The time-constant value of first-order filter (exponential)
                 approach to the target value. The larger this value is, the
                 slower the transition will be. The value must be strictly
                 positive or a TypeError exception <em title="MUST" class="rfc2119">MUST</em> be thrown.
@@ -3957,24 +4013,33 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
                   first-order linear continuous time-invariant system to reach
                   the value \(1 - 1/e\) (around 63.2%) given a step input
                   response (transition from 0 to 1 value).
+                </p>-->
+                目標値に漸近する一次フィルター (指数) の時定数の値です。
+                この値が大きいと変化はゆっくりになります。値は真に正の値(<span class="annotate">訳注: 0 を含まない</span>)でなくてはなりません。そうでない場合 TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+                <p>
+                  より正確には、<em>timeConstant</em> は一次の線形時不変系でステップ応答(0 から 1 への変化) に対して \(1 - 1/e\) (約 63.2%) となる時間を指します。
                 </p>
-              </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-setValueAtTime-AudioParam-float-value-double-startTime"><code>setValueAtTime</code></dt><dd>
+              </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-setValueAtTime-AudioParam-float-value-double-startTime"><code>setValueAtTime</code></dt><dd>
             <p>
-              Schedules a parameter value change at the given time.
+<!--              Schedules a parameter value change at the given time.-->
+              指定の時刻になるとパラメータ値を変更するようにスケジュールします。
             </p>
 
             <p>
-              If there are no more events after this <em>SetValue</em> event,
+<!--              If there are no more events after this <em>SetValue</em> event,
               then for \(t \geq T_0\), \(v(t) = V\), where \(T_0\) is the
               <code>startTime</code> parameter and \(V\) is the
               <code>value</code> parameter. In other words, the value will
-              remain constant.
+              remain constant.-->
+              もしこの <em>SetValue</em> イベントの後にもうイベントがない場合、 \(t \geq T_0\) に対して \(v(t) = V\) ここで \(T_0\) は  <code>startTime</code> 、そして \(V\) は <code>value</code> パラメータの値です。
+              別の言い方をすれば、値は定数のまま保持されます。
             </p>
             <p>
-              If the next event (having time \(T_1\)) after this
+<!--              If the next event (having time \(T_1\)) after this
               <em>SetValue</em> event is not of type <em>LinearRampToValue</em>
               or <em>ExponentialRampToValue</em>, then, for \(T_0 \leq t &lt;
-              T_1\):
+              T_1\):-->
+              もしこの <em>SetValue</em> イベントの次のイベント ( 時刻は \(T_1\) ) が <em>LinearRampToValue</em> または <em>ExponentialRampToValue</em> でない場合、 \(T_0 \leq t &lt; T_1\) に対して:
             </p>
             <pre>              $$
                 v(t) = V
@@ -3982,36 +4047,49 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 
 </pre>
             <p>
-              In other words, the value will remain constant during this time
-              interval, allowing the creation of "step" functions.
+<!--              In other words, the value will remain constant during this time
+              interval, allowing the creation of "step" functions.-->
+              別の言い方をすれば、値に "ステップ" を作ってこの期間定数のまま保持されます。
             </p>
             <p>
-              If the next event after this <em>SetValue</em> event is of type
+<!--              If the next event after this <em>SetValue</em> event is of type
               <em>LinearRampToValue</em> or <em>ExponentialRampToValue</em>
               then please see <code><a href="#widl-AudioParam-linearRampToValueAtTime-AudioParam-float-value-double-endTime">
               linearRampToValueAtTime</a></code> or <code><a href="#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime">
-              exponentialRampToValueAtTime</a></code>, respectively.
+              exponentialRampToValueAtTime</a></code>, respectively.-->
+              もしこの <em>SetValue</em> イベントに続く次のイベントが <em>LinearRampToValue</em> または <em>ExponentialRampToValue</em>の場合、 <code><a href="#widl-AudioParam-linearRampToValueAtTime-AudioParam-float-value-double-endTime">
+              linearRampToValueAtTime</a></code> または <code><a href="#widl-AudioParam-exponentialRampToValueAtTime-AudioParam-float-value-double-endTime">
+              exponentialRampToValueAtTime</a></code> をそれぞれ参照してください。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The value the parameter will change to at the given time.
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">value</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                The value the parameter will change to at the given time.-->
+              指定の時刻にパラメータが変化する値です。
               </td></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The time in the same time coordinate system as the
+<!--                The time in the same time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute
                 at which the parameter changes to the given value. A TypeError
                 exception <em title="MUST" class="rfc2119">MUST</em> be thrown if <code>startTime</code> is negative
-                or is not a finite number.
-              </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-setValueCurveAtTime-AudioParam-Float32Array-values-double-startTime-double-duration"><code>setValueCurveAtTime</code></dt><dd>
+                or is not a finite number.-->
+                <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸で与えられた値に変化する時刻です。
+                もし <code>startTime</code> が負の値または有限数でない場合は TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+
+              </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd><dt id="widl-AudioParam-setValueCurveAtTime-AudioParam-Float32Array-values-double-startTime-double-duration"><code>setValueCurveAtTime</code></dt><dd>
             <p>
-              Sets an array of arbitrary parameter values starting at the given
+<!--              Sets an array of arbitrary parameter values starting at the given
               time for the given duration. The number of values will be scaled
-              to fit into the desired duration.
+              to fit into the desired duration.-->
+              指定の時刻と期間に対して、任意の値の配列を設定します。
+              値の個数は必要とされる期間に合うようにスケーリングされます。
             </p>
 
             <p>
-              Let \(T_0\) be <code>startTime</code>, \(T_D\) be
+<!--              Let \(T_0\) be <code>startTime</code>, \(T_D\) be
               <code>duration</code>, \(V\) be the <code>values</code> array,
               and \(N\) be the length of the <code>values</code> array. Then,
-              during the time interval: \(T_0 \le t &lt; T_0 + T_D\), let
+              during the time interval: \(T_0 \le t &lt; T_0 + T_D\), let-->
+               \(T_0\) を <code>startTime</code> 、 \(T_D\) を <code>duration</code> 、 \(V\) を <code>values</code> 配列、
+                \(N\) を <code>values</code> 配列の長さとします。
+              　期間  \(T_0 \le t &lt; T_0 + T_D\) の間次のようになります
             </p>
             <pre>              $$
                 \begin{align*} k &amp;= \left\lfloor \frac{N - 1}{T_D}(t-T_0) \right\rfloor \\
@@ -4020,43 +4098,54 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
 
 </pre>
             <p>
-              Then \(v(t)\) is computed by linearly interpolating between
-              \(V[k]\) and \(V[k+1]\),
+<!--              Then \(v(t)\) is computed by linearly interpolating between
+              \(V[k]\) and \(V[k+1]\),-->
+              そして、 \(v(t)\) は \(V[k]\) と \(V[k+1]\) の間で直線補間されます。
             </p>
             <p>
-              After the end of the curve time interval (\(t \ge T_0 + T_D\)),
+<!--              After the end of the curve time interval (\(t \ge T_0 + T_D\)),
               the value will remain constant at the final curve value, until
-              there is another automation event (if any).
+              there is another automation event (if any).-->
+              曲線の期間が終了した後、 (\(t \ge T_0 + T_D\)) に対して値は(もしあれば)別のオートメーションイベントまで、最後の曲線の値を保持します。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">values</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                A Float32Array representing a parameter value curve. These
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">values</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+<!--                A Float32Array representing a parameter value curve. These
                 values will apply starting at the given time and lasting for
                 the given duration. When this method is called, an internal
                 copy of the curve is created for automation purposes.
                 Subsequent modifications of the contents of the passed-in array
-                therefore have no effect on the the <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.
+                therefore have no effect on the the <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.-->
+                パラメータ値の曲線を表す Float32Array です。
+                これらの値は与えられた時刻から始まる期間に割り当てられます。
+                このメソッドが呼び出された時、オートメーションのために曲線の内部的なコピーが作成されます。
+                そのため、それ以降に渡した配列の中身を変更しても <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> に対する効果はありません。
               </td></tr><tr><td class="prmName">startTime</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The start time in the same time coordinate system as the
+<!--                The start time in the same time coordinate system as the
                 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a href="#widl-BaseAudioContext-currentTime">currentTime</a> attribute
                 at which the value curve will be applied. A TypeError exception
                 <em title="MUST" class="rfc2119">MUST</em> be thrown if <code>startTime</code> is negative or is not
-                a finite number.
+                a finite number.-->
+                  <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-currentTime">currentTime</a> 属性と同じ時間軸の曲線の適用を開始する時刻です。
+                  もし <code>startTime</code> が負の値または有限数でない場合 TypeError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
               </td></tr><tr><td class="prmName">duration</td><td class="prmType"><code>double</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
-                The amount of time in seconds (after the <em>time</em>
+<!--                The amount of time in seconds (after the <em>time</em>
                 parameter) where values will be calculated according to the
-                <em>values</em> parameter.
-              </td></tr></tbody></table><div><em>Return type: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd></dl></section>
+                <em>values</em> parameter.-->
+                ( <em>time</em> (<span class="annotate">訳注:startTime</span>)以降の) 秒で表される期間の長さであり、 この期間、値は <em>values</em> パラメータに従って計算されます。
+              </td></tr></tbody></table><div><em>戻り値: </em><code><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#computation-of-value" typeof="bibo:Chapter" id="computation-of-value">
           <h4 resource="#h-computation-of-value" id="h-computation-of-value"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.3 </span>
-            Computation of Value <button onclick="OpenOriginal('computation-of-value')">原文</button>
+            値の計算 <button onclick="OpenOriginal('computation-of-value')">原文</button>
           </span></h4>
           <p>
-            <dfn id="dfn-computedvalue" data-dfn-type="dfn">computedValue</dfn> is the final value controlling the audio
+<!--            <dfn id="dfn-computedvalue" data-dfn-type="dfn">computedValue</dfn> is the final value controlling the audio
             DSP and is computed by the audio rendering thread during each
-            rendering time quantum. It must be internally computed as follows:
+            rendering time quantum. It must be internally computed as follows:-->
+            <dfn id="dfn-computedvalue" data-dfn-type="dfn">computedValue</dfn> はオーディオDSPを制御する最終的な値であり、オーディオレンダリングスレッドがそれぞれのレンダリング時刻に計算します。 内部的には次のように計算されなくてはなりません:
           </p>
           <ol>
-            <li>An <em>intrinsic</em> parameter value will be calculated at
+            <li>
+<!--An <em>intrinsic</em> parameter value will be calculated at
             each time, which is either the value set directly to the
             <code>value</code> attribute, or, if there are any scheduled
             parameter changes (automation events) with times before or at this
@@ -4068,34 +4157,39 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
             are removed from a given time range, then the <em>intrinsic</em>
             value will remain unchanged and stay at its previous value until
             either the <code>value</code> attribute is directly set, or
-            automation events are added for the time range.
+            automation events are added for the time range.-->
+            <code>value</code> 属性に直接設定されるか、あらかじめ、またはこの時刻に値の変化スケジュールが設定(オートメーションイベント)されていればこれらのイベントから<em>固有</em>の値が計算されます。 もし、オートメーションイベントがスケジュールされた後に <code>value</code> 属性が設定された場合、これらのイベントは削除されます。 <code>value</code> 属性を読みだした場合は常に現在の固有の値を返します。 もしオートメーションイベントが与えられた期間から削除された場合、 <em>固有</em> の値は <code>value</code> 属性が直接設定されるか、その期間を対象にオートメーションイベントが追加されるまで、直前の値を保持したままになります。
             </li>
-            <li>An <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> will take the rendered audio
+            <li>
+<!--              An <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> will take the rendered audio
             data from any <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> output connected to it
             and <a href="#down-mix">convert it to mono</a> by down-mixing if it
             is not already mono, then mix it together with other such outputs.
             If there are no <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s connected to it,
             then this value is 0, having no effect on the
-            <em>computedValue</em>.
+            <em>computedValue</em>.-->
+            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> は <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の出力が接続されている場合、その出力がモノラルでなければダウンミックスして<a href="#down-mix">モノラルに変換</a>し、他の同様に接続されている出力とミックスします。 もし <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> が接続されていない場合はこの値は0となり、 <em>computedValue</em> には影響を及ぼしません。
             </li>
-            <li>The <em>computedValue</em> is the sum of the <em>intrinsic</em>
-            value and the value calculated from (2).
+<!--            <li>The <em>computedValue</em> is the sum of the <em>intrinsic</em>
+            value and the value calculated from (2).-->
+            <em>computedValue</em> は<em>固有</em>の値と(2)で計算された値の和となります。
             </li>
           </ol>
         </section>
         <section property="bibo:hasPart" resource="#example1-AudioParam" typeof="bibo:Chapter">
           <h4 resource="#example1-AudioParam" id="example1-AudioParam"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.6.4 </span>
-            AudioParam Automation Example <button onclick="OpenOriginal('example1-AudioParam')">原文</button>
+            AudioParam オートメーションの例 <button onclick="OpenOriginal('example1-AudioParam')">原文</button>
           </span></h4>
           <figure id="fig-an-example-of-parameter-automation.x">
             <!-- The image here was created from
   http://googlechrome.github.io/web-audio-samples/samples/audio/timeline.html -->
             <img alt="AudioParam automation" src="images/audioparam-automation1.png">
-            <figcaption>Fig. <span class="figno">4</span> <span class="fig-title">
-              An example of parameter automation.
+            <figcaption>図. <span class="figno">4</span> <span class="fig-title">
+<!--              An example of parameter automation.-->
+                パラメータオートメーションの例
             </span></figcaption>
           </figure>
-          <div class="example"><div class="example-title"><span>Example 6</span></div><pre class="code example"><code style="" class="es-code highlight prettyprint prettyprinted"><span class="pln">
+          <div class="example"><div class="example-title"><span>例 6</span></div><pre class="code example"><code style="" class="es-code highlight prettyprint prettyprinted"><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> curveLength </span><span class="pun">=</span><span class="pln"> </span><span class="lit">44100</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> curve </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Float32Array</span><span class="pun">(</span><span class="pln">curveLength</span><span class="pun">);</span><span class="pln">
 </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> curveLength</span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
@@ -4686,10 +4780,10 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
         </p>
         <section property="bibo:hasPart" resource="#looping-AudioBufferSourceNode" typeof="bibo:Chapter">
           <h4 resource="#looping-AudioBufferSourceNode" id="looping-AudioBufferSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.10.3 </span>
-            Looping <button onclick="OpenOriginal('looping-AudioBufferSourceNode')">原文</button>
+            ループ再生 <button onclick="OpenOriginal('looping-AudioBufferSourceNode')">原文</button>
           </span></h4>
           <p>
-            If the <code>loop</code> attribute is true when
+<!--            If the <code>loop</code> attribute is true when
             <code>start()</code> is called, then playback will continue
             indefinitely until <code>stop()</code> is called and the stop time
             is reached. We'll call this "loop" mode. Playback always starts at
@@ -4698,12 +4792,15 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
             continue playing until it reaches the <em>actualLoopEnd</em>
             position in the buffer (or the end of the buffer), at which point
             it will wrap back around to the <em>actualLoopStart</em> position
-            in the buffer, and continue playing according to this pattern.
+            in the buffer, and continue playing according to this pattern.-->
+            もし <code>start()</code> が呼ばれた時に <code>loop</code> 属性が true であれば、再生は <code>stop()</code> が呼ばれて停止時刻になるまで無限に継続します。
+            これを "ループ" モードと呼びます。 再生は常に <code>start()</code> の <code>offset</code> 引数で指定されたバッファ中の位置から開始され、<em>ループ</em>モード中、 <em>actualLoopEnd</em> のバッファ位置 (あるいはバッファの終端位置) まで再生され、 <em>actualLoopStart</em> のバッファ位置に戻る事が繰り返されます。
           </p>
           <p>
-            In <em>loop</em> mode then the <em>actual</em> loop points are
+<!--            In <em>loop</em> mode then the <em>actual</em> loop points are
             calculated as follows from the <code>loopStart</code> and
-            <code>loopEnd</code> attributes:
+           <code>loopStart</code> attributes:-->
+            <em>ループ</em>モードでは<em>実際の</em>ループ位置は <code>loopStart</code> および <code>loopStart</code>  属性から次のように計算されます:
           </p>
           <blockquote>
             <pre style="" class="highlight prettyprint prettyprinted"><span class="kwd">if</span><span class="pln"> </span><span class="pun">((</span><span class="pln">loopStart </span><span class="pun">||</span><span class="pln"> loopEnd</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> loopStart </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> loopEnd </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> loopStart </span><span class="pun">&lt;</span><span class="pln"> loopEnd</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -4715,61 +4812,69 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
 </span><span class="pun">}</span></pre>
           </blockquote>
           <p>
-            Note that the default <code>value</code>s for
+<!--            Note that the default <code>value</code>s for
             <code>loopStart</code> and <code>loopEnd</code> are both 0, which
             indicates that looping should occur from the very start to the very
-            end of the buffer.
+            end of the buffer.-->
+              <code>loopStart</code> および <code>loopEnd</code> のデフォルト値はどちらも 0 である事に注意が必要です。これはループがバッファの先頭から始まり、バッファの終端位置で終わる事を意味します。
           </p>
           <p>
-            Please note that as a low-level implementation detail, the
+<!--            Please note that as a low-level implementation detail, the
             AudioBuffer is at a specific sample-rate (usually the same as the
             <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> sample-rate), and that the loop
             times (in seconds) must be converted to the appropriate
-            sample-frame positions in the buffer according to this sample-rate.
+            sample-frame positions in the buffer according to this sample-rate.-->
+            低レベルの実装の詳細では、特定のサンプルレート (通常は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> のサンプルレートと同じですが) の AudioBuffer では、 ループの時間 (秒) がサンプルレートに従って適切なサンプルフレームの位置に変換されなくてはならない事に注意が必要です。
           </p>
           <p>
-            When scheduling the beginning and the end of playback using the
+<!--            When scheduling the beginning and the end of playback using the
             <code>start()</code> and <code>stop()</code> methods, the resulting
             start or stop time <em title="MUST" class="rfc2119">MUST</em> be rounded to the nearest sample-frame in
             the sample rate of the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>. That is,
-            no sub-sample scheduling is possible.
+            no sub-sample scheduling is possible.-->
+            <code>start()</code> と <code>stop()</code> メソッドを使用して再生の開始と停止をスケジュールした時、結果的に開始または停止の時間は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> のサンプルレートでの最も近いサンプルフレームの時刻に丸めなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
+            それはつまり、サブフレームでのスケジューリングは不可能である事を意味します。
           </p>
         </section>
       </section>
       <section property="bibo:hasPart" resource="#MediaElementAudioSourceNode" typeof="bibo:Chapter">
         <h3 resource="#MediaElementAudioSourceNode" id="MediaElementAudioSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.11 </span>
-          The MediaElementAudioSourceNode Interface <button onclick="OpenOriginal('MediaElementAudioSourceNode')">原文</button>
+          MediaElementAudioSourceNode インターフェース <button onclick="OpenOriginal('MediaElementAudioSourceNode')">原文</button>
         </span></h3>
         <p>
-          This interface represents an audio source from an <code>audio</code>
-          or <code>video</code> element.
+<!--          This interface represents an audio source from an <code>audio</code>
+          or <code>video</code> element.-->
+          このインターフェースは <code>audio</code> または <code>video</code> 要素からの音声ソースを表します。
         </p>
         <pre>  numberOfInputs  : 0
   numberOfOutputs : 1
 </pre>
         <p>
-          The number of channels of the output corresponds to the number of
+<!--          The number of channels of the output corresponds to the number of
           channels of the media referenced by the
           <code>HTMLMediaElement</code>. Thus, changes to the media element's
           .src attribute can change the number of channels output by this node.
           If the .src attribute is not set, then the number of channels output
-          will be one silent channel.
+          will be one silent channel.-->
+          出力のチャンネル数は <code>HTMLMediaElement</code> で参照されるメディアのチャンネル数に対応します。 そのため、メディア要素の .src 属性を変更する事によって、このノードの出力チャンネル数が変化します。 もし .src 属性が設定されていない場合、出力は 1 チャンネルの無音となります。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-MediaElementAudioSourceNode">interface <span class="idlInterfaceID">MediaElementAudioSourceNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 };</span></pre>
         <p>
-          A <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> is created given an
+<!--          A <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> is created given an
           <code>HTMLMediaElement</code> using the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>
-          <code>createMediaElementSource()</code> method.
+          <code>createMediaElementSource()</code> method.-->
+           <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> は <code>HTMLMediaElement</code> から<a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の  <code>createMediaElementSource()</code> メソッドを使用して作成されます。
         </p>
         <p>
-          The number of channels of the single output equals the number of
+<!--          The number of channels of the single output equals the number of
           channels of the audio referenced by the <code>HTMLMediaElement</code>
           passed in as the argument to <code>createMediaElementSource()</code>,
-          or is 1 if the <code>HTMLMediaElement</code> has no audio.
+          or is 1 if the <code>HTMLMediaElement</code> has no audio.-->
+          出力は１つでチャンネル数は <code>createMediaElementSource()</code> の引数として渡された <code>HTMLMediaElement</code> のオーディオのチャンネル数と同じになります。 もしその <code>HTMLMediaElement</code> がオーディオを持っていない場合、1となります。
         </p>
         <p>
-          The <code>HTMLMediaElement</code> must behave in an identical fashion
+<!--          The <code>HTMLMediaElement</code> must behave in an identical fashion
           after the <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> has been created,
           <em>except</em> that the rendered audio will no longer be heard
           directly, but instead will be heard as a consequence of the
@@ -4777,34 +4882,41 @@ param</span><span class="pun">.</span><span class="pln">setValueCurveAtTime</spa
           routing graph. Thus pausing, seeking, volume, <code>src</code>
           attribute changes, and other aspects of the
           <code>HTMLMediaElement</code> must behave as they normally would if
-          <em>not</em> used with a <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a>.
+          <em>not</em> used with a <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a>.-->
+           <code>HTMLMediaElement</code> は <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> が作成された後、オーディオが直接、音として再生されなくなる代わりに  <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> からルーティンググラフを通して再生されるようになる事を<em>除けば</em>、MediaElementAudioSourceNodeを使わない場合と全く同じように振る舞わなくてはなりません。
+           つまり、ポーズ、シーク、ボリューム、 <code>src</code> 属性の変更、その他 <code>HTMLMediaElement</code> としての見掛けは <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> を使用して<em>いない</em>場合と同様に通常どおり働かなくてはなりません。
         </p>
-        <div class="example"><div class="example-title"><span>Example 7</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="kwd">var</span><span class="pln"> mediaElement </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'mediaElementID'</span><span class="pun">);</span><span class="pln">
+        <div class="example"><div class="example-title"><span>例 7</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="kwd">var</span><span class="pln"> mediaElement </span><span class="pun">=</span><span class="pln"> document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">'mediaElementID'</span><span class="pun">);</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> sourceNode </span><span class="pun">=</span><span class="pln"> context</span><span class="pun">.</span><span class="pln">createMediaElementSource</span><span class="pun">(</span><span class="pln">mediaElement</span><span class="pun">);</span><span class="pln">
 sourceNode</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">filterNode</span><span class="pun">);</span></pre></div>
         <section property="bibo:hasPart" resource="#security-with-mediaelementaudiosourcenode-and-cross-origin-resources" typeof="bibo:Chapter" id="security-with-mediaelementaudiosourcenode-and-cross-origin-resources">
           <h4 resource="#h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources" id="h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.11.1 </span>
-            Security with MediaElementAudioSourceNode and cross-origin
-            resources <button onclick="OpenOriginal('h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources')">原文</button>
+            MediaElementAudioSourceNode と クロスオリジン・リソース に関するセキュリティ
+<!--            Security with MediaElementAudioSourceNode and cross-origin
+            resources --><button onclick="OpenOriginal('h-security-with-mediaelementaudiosourcenode-and-cross-origin-resources')">原文</button>
           </span></h4>
           <p>
-            <code>HTMLMediaElement</code> allows the playback of cross-origin
+<!--            <code>HTMLMediaElement</code> allows the playback of cross-origin
             resources. Because Web Audio can allows one to inspect the content
             of the resource (e.g. using a <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a>,
             and a <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> to read the samples), information
             leakage can occur if scripts from one <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">
             origin</a> inspect the content of a resource from another <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">
-            origin</a>.
+            origin</a>.-->
+              <code>HTMLMediaElement</code> はクロスオリジン・リソースの再生が可能です。 Web Audio はリソースの内容の検査が、
+              (例えば、 <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> や <a class="idlType" href="#idl-def-ScriptProcessorNode"><code>ScriptProcessorNode</code></a> を使ってサンプルを読む事で) 可能なので、もしある <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">
+              origin</a> からのスクリプトが別の <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">
+              origin</a> からのリソースの内容を検査する事で情報の漏洩が起こり得ます。
           </p>
           <p>
-            To prevent this, a <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> <em title="MUST" class="rfc2119">MUST</em> output
+<!--            To prevent this, a <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> <em title="MUST" class="rfc2119">MUST</em> output
             <em>silence</em> instead of the normal output of the
             <code>HTMLMediaElement</code> if it has been created using an
             <code>HTMLMediaElement</code> for which the execution of the
-            <!--a href=
-            "http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#cors-enabled-fetch"-->
             fetch algorithm labeled the resource as <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#cors-cross-origin">
-            CORS-cross-origin</a>.
+            CORS-cross-origin</a>.-->
+            これを防ぐため、 <a class="idlType" href="#idl-def-MediaElementAudioSourceNode"><code>MediaElementAudioSourceNode</code></a> は、もしその <code>HTMLMediaElement</code> がフェッチアルゴリズムの実行により <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#cors-cross-origin">
+            CORS-cross-origin</a> とラベルが付けられている場合、通常の <code>HTMLMediaElement</code> の出力の代わりに<em>無音</em>を出力しなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
           </p>
         </section>
       </section>
@@ -5826,7 +5938,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
       </section>
       <section property="bibo:hasPart" resource="#the-audioprocessingevent-interface---deprecated" typeof="bibo:Chapter" id="the-audioprocessingevent-interface---deprecated" class="informative">
         <h3 resource="#h-the-audioprocessingevent-interface---deprecated" id="h-the-audioprocessingevent-interface---deprecated"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.16 </span>
-          The AudioProcessingEvent Interface - DEPRECATED <button onclick="OpenOriginal('the-audioprocessingevent-interface---deprecated')">原文</button>
+          AudioProcessingEvent インターフェース - 廃止予定 <button onclick="OpenOriginal('the-audioprocessingevent-interface---deprecated')">原文</button>
         </span></h3><p><em>This section is non-normative.</em></p>
         <p>
           This is an <code>Event</code> object which is dispatched to
@@ -7267,11 +7379,12 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     "<a href="#idl-def-BiquadFilterType.allpass" class="idlEnumItem">allpass</a>"
 };</span></pre><table class="simple"><tbody><tr><th colspan="2">列挙値の説明</th></tr><tr><td><code id="idl-def-BiquadFilterType.lowpass">lowpass</code></td><td>
             <p>
-              A <a href="https://en.wikipedia.org/wiki/Low-pass_filter">lowpass
+<!--              A <a href="https://en.wikipedia.org/wiki/Low-pass_filter">lowpass
               filter</a> allows frequencies below the cutoff frequency to pass
               through and attenuates frequencies above the cutoff. It
               implements a standard second-order resonant lowpass filter with
-              12dB/octave rolloff.
+              12dB/octave rolloff.-->
+              <a href="https://en.wikipedia.org/wiki/Low-pass_filter">ローパスフィルタ</a>は カットオフ周波数より低い周波数をそのまま通し、カットオフよりも高い周波数を減衰させます。これは標準的な2次の レゾナントローパスフィルタの実装で、 12dB/オクターブ のロールオフを持ちます。
             </p>
             <blockquote>
               <dl>
@@ -7279,32 +7392,36 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The cutoff frequency
+<!--                  The cutoff frequency-->
+                  カットオフ周波数です。
                 </dd>
                 <dt>
                   Q
                 </dt>
                 <dd>
-                  Controls how peaked the response will be at the cutoff
+<!--                  Controls how peaked the response will be at the cutoff
                   frequency. A large value makes the response more peaked.
                   Please note that for this filter type, this value is not a
-                  traditional Q, but is a resonance value in decibels.
+                  traditional Q, but is a resonance value in decibels.-->
+                  カットオフ周波数にどれだけピークを付けて共振させるかを制御します。 大きな値はより強く共振させます。 このフィルタタイプではこの値は伝統的な従来の Q ではなく、デシベルで表される共振の値である事に注意してください。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  Not used in this filter type
+<!--                  Not used in this filter type-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.highpass">highpass</code></td><td>
             <p>
-              A <a href="https://en.wikipedia.org/wiki/High-pass_filter">highpass
+<!--              A <a href="https://en.wikipedia.org/wiki/High-pass_filter">highpass
               filter</a> is the opposite of a lowpass filter. Frequencies above
               the cutoff frequency are passed through, but frequencies below
               the cutoff are attenuated. It implements a standard second-order
-              resonant highpass filter with 12dB/octave rolloff.
+              resonant highpass filter with 12dB/octave rolloff.-->
+              <a href="https://en.wikipedia.org/wiki/High-pass_filter">ハイパスフィルタ</a>はローパスフィルタの反対の機能を持ちます。 カットオフ周波数よりも高い周波数をそのまま通し、カットオフよりも低い周波数を減衰させます。 これは標準的な2次レゾナントハイパスフィルタの実装で、 12dB/オクターブ のロールオフを持ちます。
             </p>
             <blockquote>
               <dl>
@@ -7312,32 +7429,36 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The cutoff frequency below which the frequencies are
-                  attenuated
+<!--                  The cutoff frequency below which the frequencies are
+                  attenuated-->
+                  これより低い周波数を減衰させるカットオフ周波数です。
                 </dd>
                 <dt>
                   Q
                 </dt>
                 <dd>
-                  Controls how peaked the response will be at the cutoff
+<!--                  Controls how peaked the response will be at the cutoff
                   frequency. A large value makes the response more peaked.
                   Please note that for this filter type, this value is not a
-                  traditional Q, but is a resonance value in decibels.
+                  traditional Q, but is a resonance value in decibels.-->
+                  カットオフ周波数にどれだけピークを付けて共振させるかを制御します。 大きな値はより強く共振させます。 このフィルタタイプではこの値は伝統的な従来の Q ではなく、デシベルで表される共振の値である事に注意してください。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  Not used in this filter type
+<!--                  Not used in this filter type-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.bandpass">bandpass</code></td><td>
             <p>
-              A <a href="https://en.wikipedia.org/wiki/Band-pass_filter">bandpass
+<!--              A <a href="https://en.wikipedia.org/wiki/Band-pass_filter">bandpass
               filter</a> allows a range of frequencies to pass through and
               attenuates the frequencies below and above this frequency range.
-              It implements a second-order bandpass filter.
+              It implements a second-order bandpass filter.-->
+              <a href="https://en.wikipedia.org/wiki/Band-pass_filter">バンドパスフィルタ</a>はある範囲の周波数をそのまま通し、この周波数範囲より上または下の周波数を減衰させます。 これは2次のバンドパスフィルタを実装しています。
             </p>
             <blockquote>
               <dl>
@@ -7345,28 +7466,32 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The center of the frequency band
+<!--                  The center of the frequency band-->
+                  周波数範囲の中心周波数です。
                 </dd>
                 <dt>
                   <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a>
                 </dt>
                 <dd>
-                  Controls the width of the band. The width becomes narrower as
-                  the Q value increases.
+<!--                  Controls the width of the band. The width becomes narrower as
+                  the Q value increases.-->
+                  周波数範囲の幅を制御します。この幅は Q の値が増加すると狭くなります。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  Not used in this filter type
+<!--                  Not used in this filter type-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.lowshelf">lowshelf</code></td><td>
             <p>
-              The lowshelf filter allows all frequencies through, but adds a
+<!--              The lowshelf filter allows all frequencies through, but adds a
               boost (or attenuation) to the lower frequencies. It implements a
-              second-order lowshelf filter.
+              second-order lowshelf filter.-->
+              ローシェルフフィルタは全ての周波数を通しますが、低い周波数だけを増幅(または減衰)させます。 これは2次のローシェルフフィルタを実装しています。
             </p>
             <blockquote>
               <dl>
@@ -7374,29 +7499,33 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The upper limit of the frequences where the boost (or
-                  attenuation) is applied.
+<!--                  The upper limit of the frequences where the boost (or
+                  attenuation) is applied.-->
+                  増幅(または減衰)させる上限の周波数です。
                 </dd>
                 <dt>
                   <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a>
                 </dt>
                 <dd>
-                  Not used in this filter type.
+<!--                  Not used in this filter type.-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  The boost, in dB, to be applied. If the value is negative,
-                  the frequencies are attenuated.
+<!--                  The boost, in dB, to be applied. If the value is negative,
+                  the frequencies are attenuated.-->
+                  dB で表した増幅率です。もしこの値が負ならばその周波数は減衰されます。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.highshelf">highshelf</code></td><td>
             <p>
-              The highshelf filter is the opposite of the lowshelf filter and
+<!--              The highshelf filter is the opposite of the lowshelf filter and
               allows all frequencies through, but adds a boost to the higher
-              frequencies. It implements a second-order highshelf filter
+              frequencies. It implements a second-order highshelf filter-->
+              ハイシェルフフィルタはローシェルフフィルタとは反対に、すべての周波数を通しますが高い周波数だけを増幅します。 これは2次のハイシェルフフィルタを実装しています。
             </p>
             <blockquote>
               <dl>
@@ -7404,28 +7533,32 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The lower limit of the frequences where the boost (or
-                  attenuation) is applied.
+<!--                  The lower limit of the frequences where the boost (or
+                  attenuation) is applied.-->
+                  増幅(または減衰)させる下限の周波数です。
                 </dd>
                 <dt>
                   <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a>
                 </dt>
                 <dd>
-                  Not used in this filter type.
+<!--                  Not used in this filter type.-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  The boost, in dB, to be applied. If the value is negative,
-                  the frequencies are attenuated.
+<!--                  The boost, in dB, to be applied. If the value is negative,
+                  the frequencies are attenuated.-->
+                  dB で表した増幅率です。もしこの値が負ならばその周波数は減衰されます。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.peaking">peaking</code></td><td>
             <p>
-              The peaking filter allows all frequencies through, but adds a
-              boost (or attenuation) to a range of frequencies.
+<!--              The peaking filter allows all frequencies through, but adds a
+              boost (or attenuation) to a range of frequencies.-->
+              ピーキングフィルタは全ての周波数を通しますが、ある周波数の範囲だけが増幅(または減衰)されます。
             </p>
             <blockquote>
               <dl>
@@ -7433,30 +7566,34 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The center frequency of where the boost is applied.
+<!--                  The center frequency of where the boost is applied.-->
+                  増幅される中心の周波数です。
                 </dd>
                 <dt>
                   <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a>
                 </dt>
                 <dd>
-                  Controls the width of the band of frequencies that are
-                  boosted. A large value implies a narrow width.
+<!--                  Controls the width of the band of frequencies that are
+                  boosted. A large value implies a narrow width.-->
+                  増幅される周波数の幅を制御します。値が大きいと幅は狭くなります。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  The boost, in dB, to be applied. If the value is negative,
-                  the frequencies are attenuated.
+<!--                  The boost, in dB, to be applied. If the value is negative,
+                  the frequencies are attenuated.-->
+                  dB で表した増幅率です。もしこの値が負ならばその周波数は減衰されます。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.notch">notch</code></td><td>
             <p>
-              The notch filter (also known as a <a href="https://en.wikipedia.org/wiki/Band-stop_filter">band-stop or
+<!--              The notch filter (also known as a <a href="https://en.wikipedia.org/wiki/Band-stop_filter">band-stop or
               band-rejection filter</a>) is the opposite of a bandpass filter.
               It allows all frequencies through, except for a set of
-              frequencies.
+              frequencies.-->
+              ノッチフィルタ (<a href="https://en.wikipedia.org/wiki/Band-stop_filter">バンドストップまたはバンドリジェクション・フィルタ</a>とも呼ばれます) は、バンドパスフィルタの逆の機能です。 ある周波数を除く全ての周波数を通します。
             </p>
             <blockquote>
               <dl>
@@ -7464,29 +7601,33 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The center frequency of where the notch is applied.
+<!--                  The center frequency of where the notch is applied.-->
+                  ノッチを適用する中心の周波数です。
                 </dd>
                 <dt>
                   <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a>
                 </dt>
                 <dd>
-                  Controls the width of the band of frequencies that are
-                  attenuated. A large value implies a narrow width.
+<!--                  Controls the width of the band of frequencies that are
+                  attenuated. A large value implies a narrow width.-->
+                  減衰させる周波数の幅を制御します。大きな値は幅が狭い事を意味します。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  Not used in this filter type.
+<!--                  Not used in this filter type.-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
               </dl>
             </blockquote>
           </td></tr><tr><td><code id="idl-def-BiquadFilterType.allpass">allpass</code></td><td>
             <p>
-              An <a href="https://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">
+<!--              An <a href="https://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">
               allpass filter</a> allows all frequencies through, but changes
               the phase relationship between the various frequencies. It
-              implements a second-order allpass filter
+              implements a second-order allpass filter-->
+              <a href="https://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation">オールパスフィルタ</a>は全ての周波数を通しますが、周波数の変化に対して位相が変化します。 これは2次のオールパスフィルタを実装しています。
             </p>
             <blockquote>
               <dl>
@@ -7494,30 +7635,34 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
                   frequency
                 </dt>
                 <dd>
-                  The frequency where the center of the phase transition
+<!--                  The frequency where the center of the phase transition
                   occurs. Viewed another way, this is the frequency with
-                  maximal <a href="https://en.wikipedia.org/wiki/Group_delay">group delay</a>.
+                  maximal <a href="https://en.wikipedia.org/wiki/Group_delay">group delay</a>.-->
+                  位相変化が発生する中心の周波数です。別の見方では<a href="https://en.wikipedia.org/wiki/Group_delay">群遅延</a>が最大になる周波数です。
                 </dd>
                 <dt>
                   <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a>
                 </dt>
                 <dd>
-                  Controls how sharp the phase transition is at the center
+<!--                  Controls how sharp the phase transition is at the center
                   frequency. A larger value implies a sharper transition and a
-                  larger group delay.
+                  larger group delay.-->
+                  中心周波数での位相変化がどれくらい急峻であるかを制御します。値が大きいと、より急峻な位相変化で大きな群遅延である事を意味します。
                 </dd>
                 <dt>
                   gain
                 </dt>
                 <dd>
-                  Not used in this filter type.
+<!--                  Not used in this filter type.-->
+                  このフィルタのタイプでは使用しません。
                 </dd>
               </dl>
             </blockquote>
           </td></tr></tbody></table>
         <p>
-          All attributes of the <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> are
-          <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.
+<!--          All attributes of the <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> are
+          <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.-->
+          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> の属性は全て <a data-link-type="dfn" class="internalDFN" href="#a-rate">a-rate</a> の <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> です。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-BiquadFilterNode">interface <span class="idlInterfaceID">BiquadFilterNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">                    attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-BiquadFilterType"><code>BiquadFilterType</code></a></span> <span class="idlAttrName"><a href="#widl-BiquadFilterNode-type">type</a></span>;</span>
@@ -7526,84 +7671,99 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>       <span class="idlAttrName"><a href="#widl-BiquadFilterNode-Q">Q</a></span>;</span>
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>       <span class="idlAttrName"><a href="#widl-BiquadFilterNode-gain">gain</a></span>;</span>
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-BiquadFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse">getFrequencyResponse</a></span> (<span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">frequencyHz</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">magResponse</span></span>, <span class="idlParam"><span class="idlParamType">Float32Array</span> <span class="idlParamName">phaseResponse</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-26" typeof="bibo:Chapter" id="attributes-26"><h4 resource="#h-attributes-26" id="h-attributes-26"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.1 </span>Attributes <button onclick="OpenOriginal('attributes-26')">原文</button></span></h4><dl class="attributes"><dt id="widl-BiquadFilterNode-Q"><code>Q</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a> factor
-            has a default value of 1, with a nominal range of 0.0001 to 1000.
-          </dd><dt id="widl-BiquadFilterNode-detune"><code>detune</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            A detune value, in cents, for the frequency. Its default value is
-            0.
-          </dd><dt id="widl-BiquadFilterNode-frequency"><code>frequency</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The frequency at which the <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>
-            will operate, in Hz. Its default value is 350Hz, and its nominal
-            range is from 10Hz to half the Nyquist frequency.
-          </dd><dt id="widl-BiquadFilterNode-gain"><code>gain</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span>, readonly       </dt><dd>
-            The gain has a default value of 0, with a nominal range of -40 to
-            40.
-          </dd><dt id="widl-BiquadFilterNode-type"><code>type</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-BiquadFilterType"><code>BiquadFilterType</code></a></span></dt><dd>
-            The type of this <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>. The exact
+};</span></pre><section property="bibo:hasPart" resource="#attributes-26" typeof="bibo:Chapter" id="attributes-26"><h4 resource="#h-attributes-26" id="h-attributes-26"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.1 </span>属性 <button onclick="OpenOriginal('attributes-26')">原文</button></span></h4><dl class="attributes"><dt id="widl-BiquadFilterNode-Q"><code>Q</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a> factor
+            has a default value of 1, with a nominal range of 0.0001 to 1000.-->
+            <a href="https://en.wikipedia.org/wiki/Q_factor">Q</a> ファクターはデフォルト値は 1 で名目上の範囲は 0.0001 から 1000 です。
+          </dd><dt id="widl-BiquadFilterNode-detune"><code>detune</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            A detune value, in cents, for the frequency. Its default value is
+            0.-->
+            デチューン値は周波数に対してセントで表され、デフォルト値は 0 です。
+          </dd><dt id="widl-BiquadFilterNode-frequency"><code>frequency</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The frequency at which the <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>
+              will operate, in Hz. Its default value is 350Hz, and its nominal
+            range is from 10Hz to half the Nyquist frequency.-->
+            <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> が働く周波数で Hz で表されます。デフォルト値は 350Hz で、名目上の範囲は 10Hz から ナイキスト周波数の半分になります。
+          </dd><dt id="widl-BiquadFilterNode-gain"><code>gain</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a></span> 型, readonly       </dt><dd>
+<!--            The gain has a default value of 0, with a nominal range of -40 to
+            40.-->
+            gain はデフォルト値は 0 で、名目上の範囲は -40 から 40 です。
+          </dd><dt id="widl-BiquadFilterNode-type"><code>type</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-BiquadFilterType"><code>BiquadFilterType</code></a></span> 型</dt><dd>
+<!--            The type of this <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>. The exact
             meaning of the other parameters depend on the value of the
-            <code>type</code> attribute.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-14" typeof="bibo:Chapter" id="methods-14"><h4 resource="#h-methods-14" id="h-methods-14"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.2 </span>Methods <button onclick="OpenOriginal('methods-14')">原文</button></span></h4><dl class="methods"><dt id="widl-BiquadFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
+            <code>type</code> attribute.-->
+             この <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> のタイプです。これ以外のパラメータの正確な意味は <code>type</code> の値に依存します。
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-14" typeof="bibo:Chapter" id="methods-14"><h4 resource="#h-methods-14" id="h-methods-14"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.2 </span>メソッド <button onclick="OpenOriginal('methods-14')">原文</button></span></h4><dl class="methods"><dt id="widl-BiquadFilterNode-getFrequencyResponse-void-Float32Array-frequencyHz-Float32Array-magResponse-Float32Array-phaseResponse"><code>getFrequencyResponse</code></dt><dd>
             <p>
-              Given the current filter parameter settings, calculates the
+<!--              Given the current filter parameter settings, calculates the
               frequency response for the specified frequencies. The three
               parameters <em title="MUST" class="rfc2119">MUST</em> be <code>Float32Array</code>s of the same length,
-              or an <code>InvalidAccessError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.
+              or an <code>InvalidAccessError</code> <em title="MUST" class="rfc2119">MUST</em> be thrown.-->
+              現在のフィルタパラメータの設定から指定の周波数に対する応答特性を計算します。
+              3 つのパラメータは同じ長さの <code>Float32Array</code> でなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。そうでない場合は <code>InvalidAccessError</code> 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
             </p>
             <p>
-              The frequency response returned <em title="MUST" class="rfc2119">MUST</em> be computed with the
+<!--              The frequency response returned <em title="MUST" class="rfc2119">MUST</em> be computed with the
               <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> sampled for the current processing
-              block.
+              block.-->
+              周波数応答は、現在の処理ブロックに対応した <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> によって計算されて返されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
             </p>
 
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">frequencyHz</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                 <p>
-                  This parameter specifies an array of frequencies at which the
-                  response values will be calculated.
+<!--                  This parameter specifies an array of frequencies at which the
+                  response values will be calculated.-->
+                  このパラメータは応答特性を計算する周波数の配列を指定します。
                 </p>
               </td></tr><tr><td class="prmName">magResponse</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                 <p>
-                  This parameter specifies an output array receiving the linear
-                  magnitude response values.
+<!--                  This parameter specifies an output array receiving the linear
+                  magnitude response values.-->
+                  パラメータはリニア振幅特性の値を受け取る配列を指定します。
                 </p>
                 <p>
-                  If a value in the <code>frequencyHz</code> parameter is not
+<!--                  If a value in the <code>frequencyHz</code> parameter is not
                   within [0; sampleRate/2], where <code>sampleRate</code> is
                   the value of the <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a>
                   property of the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>, the corresponding value
                   at the same index of the <code>magResponse</code> array <em title="MUST" class="rfc2119">MUST</em>
-                  be <code>NaN</code>.
+                  be <code>NaN</code>.-->
+                  もし <code>frequencyHz</code> パラメータが [0; sampleRate/2] の範囲にない場合 (ここで <code>sampleRate</code> は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a> 属性の値です)、対応する <code>magResponse</code> 配列の同じインデックスには <code>NaN</code> が格納されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
                 </p>
               </td></tr><tr><td class="prmName">phaseResponse</td><td class="prmType"><code>Float32Array</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc">
                 <p>
-                  This parameter specifies an output array receiving the phase
-                  response values in radians.
+<!--                  This parameter specifies an output array receiving the phase
+                  response values in radians.-->
+                  パラメータはラジアン単位の位相特性を受け取る配列を指定します。
                 </p>
                 <p>
-                  If a value in the <code>frequencyHz</code> parameter is not
+<!--                  If a value in the <code>frequencyHz</code> parameter is not
                   within [0; sampleRate/2], where <code>sampleRate</code> is
                   the value of the <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a>
                   property of the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>, the corresponding value
                   at the same index of the <code>phaseResponse</code> array
-                  <em title="MUST" class="rfc2119">MUST</em> be <code>NaN</code>.
+                  <em title="MUST" class="rfc2119">MUST</em> be <code>NaN</code>.-->
+                  もし <code>frequencyHz</code> パラメータが [0; sampleRate/2] の範囲にない場合 (ここで <code>sampleRate</code> は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a> 属性の値です)、対応する <code>phaseResponse</code> 配列の同じインデックスには <code>NaN</code> が格納されなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。
                 </p>
-              </td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
+              </td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#filters-characteristics" typeof="bibo:Chapter" id="filters-characteristics">
           <h4 resource="#h-filters-characteristics" id="h-filters-characteristics"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.27.3 </span>
-            Filters characteristics <button onclick="OpenOriginal('filters-characteristics')">原文</button>
+            フィルター特性 <button onclick="OpenOriginal('filters-characteristics')">原文</button>
           </span></h4>
           <p>
-            There are multiple ways of implementing the type of filters
+<!--            There are multiple ways of implementing the type of filters
             available through the <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> each
             having very different characteristics. The formulas in this section
             describe the filters that a <a data-link-type="dfn" class="internalDFN" href="#dfn-conforming-implementation">conforming implementation</a> <em title="MUST" class="rfc2119">MUST</em>
             implement, as they determine the characteristics of the different
             filter types. They are inspired by formulas found in the <a href="http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt">Audio EQ
-            Cookbook</a>.
+            Cookbook</a>.-->
+            <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> を実装する方法には複数あり、それぞれ非常に異なる特性を持っています。このセクションの式は、<a data-link-type="dfn" class="internalDFN" href="#dfn-conforming-implementation">「準拠した実装」</a>が実装すべきフィルターについて記述しています (<em title="MUST" class="rfc2119">MUST</em>)。これらの式は<a href="http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt">Audio EQ Cookbook</a>で見られる式を基にしています。
           </p>
           <p>
-            The transfer function for the filters implemented by the
-            <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> is:
+<!--            The transfer function for the filters implemented by the
+            <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> is:-->
+            <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> の実装によるフィルターの伝達関数は:
           </p>
           <pre>  $$
   H(z) = \frac{\frac{b_0}{a_0} + \frac{b_1}{a_0}z^{-1} + \frac{b_2}{a_0}z^{-2}}
@@ -7612,26 +7772,38 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
           <p>
-            The initial filter state is 0.
-          </p>The coefficients in the transfer function above are different for
+<!--            The initial filter state is 0.-->
+          フィルターの初期状態は 0 です。
+          </p>
+<!--          The coefficients in the transfer function above are different for
           each node type. The following intermediate variable are necessary for
           their computation, based on the <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> of the
           <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>s of the
-          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>.
+          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a>.-->
+          上記の伝達関数内の係数はそれぞれのノードタイプによって異なります。
+          <a class="idlType" href="#idl-def-BiquadFilterNode"><code>BiquadFilterNode</code></a> の <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の <a data-link-type="dfn" class="internalDFN" href="#dfn-computedvalue">computedValue</a> に基づいて次の中間変数が計算のために必要になります。
           <ul>
-            <li>Let \(F_s\) be the value of the <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a>
-            attribute for this <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>.
+            <li>
+<!--              Let \(F_s\) be the value of the <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a>
+            attribute for this <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>.-->
+             \(F_s\) をこの <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a href="#widl-BaseAudioContext-sampleRate"><code>sampleRate</code></a> の値とします。
             </li>
-            <li>Let \(f_0\) be the value of the
-            <a data-link-type="dfn" class="internalDFN" href="#computedFreq-biquad"><code>computedFrequency</code></a>.
+            <li>
+<!--              Let \(f_0\) be the value of the
+            <a data-link-type="dfn" class="internalDFN" href="#computedFreq-biquad"><code>computedFrequency</code></a>.-->
+            \(f_0\) を <a data-link-type="dfn" class="internalDFN" href="#computedFreq-biquad"><code>computedFrequency</code></a> の値とします。
             </li>
-            <li>Let \(G\) be the value of the <a href="#widl-BiquadFilterNode-gain"><code>gain</code></a>
-            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.
+            <li>
+<!--              Let \(G\) be the value of the <a href="#widl-BiquadFilterNode-gain"><code>gain</code></a>
+            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.-->
+            \(G\) を <a href="#widl-BiquadFilterNode-gain"><code>gain</code></a> <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の値とします。
             </li>
-            <li>Let \(Q\) be the value of the <a href="#widl-BiquadFilterNode-Q"><code>Q</code></a>
-            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.
+            <li>
+<!--              Let \(Q\) be the value of the <a href="#widl-BiquadFilterNode-Q"><code>Q</code></a>
+            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a>.-->
+            \(Q\) を<a href="#widl-BiquadFilterNode-Q"><code>Q</code></a>   <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> の値とします。
             </li>
-            <li>Finally let
+            <li>これらより
             <!-- Should \alpha_S be simplified since S is always 1?-->
               <pre>$$
 \begin{align*}
@@ -7646,8 +7818,10 @@ $$
 
 </pre>
             </li>
-          </ul>The six coefficients (\(b_0, b_1, b_2, a_0, a_1, a_2\)) for each
-          filter type, are:
+          </ul>
+<!--          The six coefficients (\(b_0, b_1, b_2, a_0, a_1, a_2\)) for each
+          filter type, are:-->
+          各フィルタータイプに対応する 6 つの係数 (\(b_0, b_1, b_2, a_0, a_1, a_2\)) は:
           <dl>
             <dt>
               <code>lowpass</code>
@@ -8098,7 +8272,7 @@ $$
 <!--          Oscillators are common foundational building blocks in audio
           synthesis. An OscillatorNode will start emitting sound at the time
           specified by the <code>start()</code> method.-->
-          オシレーターは音の合成において一般的な基本構成ブロックです。
+          オシレータは音の合成において一般的な基本構成ブロックです。
           OscillatorNode は <code>start()</code> メソッドで指定された時刻に音の発生を開始します。
         </p>
         <p>
@@ -8304,41 +8478,46 @@ odd function with period \(2\pi\).-->
       </section>
       <section property="bibo:hasPart" resource="#the-periodicwave-interface" typeof="bibo:Chapter" id="the-periodicwave-interface">
         <h3 resource="#h-the-periodicwave-interface" id="h-the-periodicwave-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31 </span>
-          The PeriodicWave Interface <button onclick="OpenOriginal('the-periodicwave-interface')">原文</button>
+          PeriodicWave インターフェース <button onclick="OpenOriginal('the-periodicwave-interface')">原文</button>
         </span></h3>
         <p>
-          PeriodicWave represents an arbitrary periodic waveform to be used
-          with an <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a>. Please see <!--a href=
-          "#widl-BaseAudioContext-createPeriodicWave-PeriodicWave-Float32Array-real-Float32Array-imag"-->
+<!--          PeriodicWave represents an arbitrary periodic waveform to be used
+          with an <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a>. Please see
           createPeriodicWave() and <a href="#widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave">
-          setPeriodicWave()</a> and for more details.
+          setPeriodicWave()</a> and for more details.-->
+          PeriodicWave は <a class="idlType" href="#idl-def-OscillatorNode"><code>OscillatorNode</code></a> で使用される任意の周期波形を表します。 詳細は createPeriodicWave() 、 および <a href="#widl-OscillatorNode-setPeriodicWave-void-PeriodicWave-periodicWave">
+          setPeriodicWave()</a> を参照してください。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-PeriodicWave">interface <span class="idlInterfaceID">PeriodicWave</span> {
 };</span></pre>
         <section property="bibo:hasPart" resource="#periodicwaveconstraints" typeof="bibo:Chapter" id="periodicwaveconstraints">
           <h4 resource="#h-periodicwaveconstraints" id="h-periodicwaveconstraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.1 </span>
             PeriodicWaveConstraints <button onclick="OpenOriginal('periodicwaveconstraints')">原文</button>
-          </span></h4>The <code>PeriodicWaveConstraints</code> dictionary is used to
-          specify how the waveform is normalized.
+          </span></h4>
+<!--          The <code>PeriodicWaveConstraints</code> dictionary is used to
+          specify how the waveform is normalized.-->
+           <code>PeriodicWaveConstraints</code> ディクショナリは波形が正規化されるかどうかを指定するために使用されます。
           <pre class="idl"><span class="idlDictionary" id="idl-def-PeriodicWaveConstraints">dictionary <span class="idlDictionaryID">PeriodicWaveConstraints</span> {
 <span class="idlMember">             <span class="idlMemberType">boolean</span> <span class="idlMemberName"><a href="#widl-PeriodicWaveConstraints-disableNormalization">disableNormalization</a></span> = <span class="idlMemberValue">false</span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#dictionary-periodicwaveconstraints-members" typeof="bibo:Chapter" id="dictionary-periodicwaveconstraints-members"><h5 resource="#h-dictionary-periodicwaveconstraints-members" id="h-dictionary-periodicwaveconstraints-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.1.1 </span>Dictionary <a href="#idl-def-PeriodicWaveConstraints" class="idlType"><code>PeriodicWaveConstraints</code></a> Members </span></h5><dl class="dictionary-members"><dt id="widl-PeriodicWaveConstraints-disableNormalization"><code>disableNormalization</code> of type <span class="idlMemberType">boolean</span>, defaulting to <code>false</code></dt><dd>
-              Controls whether the periodic wave is normalized or not. If
+};</span></pre><section property="bibo:hasPart" resource="#dictionary-periodicwaveconstraints-members" typeof="bibo:Chapter" id="dictionary-periodicwaveconstraints-members"><h5 resource="#h-dictionary-periodicwaveconstraints-members" id="h-dictionary-periodicwaveconstraints-members"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.1.1 </span>ディクショナリ <a href="#idl-def-PeriodicWaveConstraints" class="idlType"><code>PeriodicWaveConstraints</code></a> メンバー </span></h5><dl class="dictionary-members"><dt id="widl-PeriodicWaveConstraints-disableNormalization"><code>disableNormalization</code> <span class="idlMemberType">boolean</span> 型, デフォルト値は <code>false</code></dt><dd>
+<!--              Controls whether the periodic wave is normalized or not. If
               <code>true</code>, the waveform is not normalized; otherwise, the
-              waveform is normalized.
+              waveform is normalized.-->
+              周期波形が正規化されるかどうかを制御します。もし <code>true</code> ならば波形は正規化されません。そうでなければ波形は正規化されます。
             </dd></dl></section>
         </section>
         <section property="bibo:hasPart" resource="#waveform-generation" typeof="bibo:Chapter" id="waveform-generation">
           <h4 resource="#h-waveform-generation" id="h-waveform-generation"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.2 </span>
-            Waveform Generation <button onclick="OpenOriginal('waveform-generation')">原文</button>
+            波形の生成 <button onclick="OpenOriginal('waveform-generation')">原文</button>
           </span></h4>
           <p>
-            The <!--a href=
-            "#widl-BaseAudioContext-createPeriodicWave-PeriodicWave-Float32Array-real-Float32Array-imag"-->
-            createPeriodicWave() method takes two arrays to specify the
+<!--            The createPeriodicWave() method takes two arrays to specify the
             Fourier coefficients of the PeriodicWave. Let \(a\) and \(b\)
             represent the real and imaginary arrays of length \(L\). Then the
-            basic time-domain waveform, \(x(t)\), can be computed using:
+            basic time-domain waveform, \(x(t)\), can be computed using:-->
+            createPriodicWave() メソッドは PeriodicWave のフーリエ係数を指定する２つの配列を引数とします。
+             \(a\) と \(b\) を長さ \(L\) のリアルとイマジナリの配列とします。
+            そして時間領域の基本的な波形、 \(x(t)\) は次のように計算されます:
           </p>
           <pre>            $$
               x(t) = \sum_{k=1}^{L-1} \left(a[k]\cos2\pi k t + b[k]\sin2\pi k t\right)
@@ -8346,20 +8525,24 @@ odd function with period \(2\pi\).-->
 
 </pre>
           <p>
-            This is the basic (unnormalized) waveform.
+<!--            This is the basic (unnormalized) waveform.-->
+            これが基本的な (正規化されていない) 波形になります。
           </p>
         </section>
         <section property="bibo:hasPart" resource="#waveform-normalization" typeof="bibo:Chapter" id="waveform-normalization">
           <h4 resource="#h-waveform-normalization" id="h-waveform-normalization"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.3 </span>
-            Waveform Normalization <button onclick="OpenOriginal('waveform-normalization')">原文</button>
+            波形の正規化 <button onclick="OpenOriginal('waveform-normalization')">原文</button>
           </span></h4>
           <p>
-            By default, the waveform defined in the previous section is
+<!--            By default, the waveform defined in the previous section is
             normalized so that the maximum value is 1. The normalization is
-            done as follows.
+            done as follows.-->
+            デフォルトでは前のセクションで定義された波形は正規化され、最大値が 1 になります。
+            正規化は次のように行われます。
           </p>
           <p>
-            Let
+<!--            Let-->
+                まず以下を求めます。
           </p>
           <pre>          $$
             \tilde{x}(n) = \sum_{k=1}^{L-1} \left(a[k]\cos\frac{2\pi k n}{N} + b[k]\sin\frac{2\pi k n}{N}\right)
@@ -8367,9 +8550,11 @@ odd function with period \(2\pi\).-->
 
 </pre>
           <p>
-            where \(N\) is a power of two. (Note: \(\tilde{x}(n)\) can
+<!--            where \(N\) is a power of two. (Note: \(\tilde{x}(n)\) can
             conveniently be computed using an inverse FFT.) The fixed
-            normalization factor \(f\) is computed as follows:
+            normalization factor \(f\) is computed as follows:-->
+            ここで、 \(N\) は2の累乗です。(注:  \(\tilde{x}(n)\) は便宜上逆 FFT を使用して計算されています)
+            固定値の正規化係数 \(f\) は次のように計算されます:
           </p>
           <pre>            $$
               f = \max_{n = 0, \ldots, N - 1} |\tilde{x}(n)|
@@ -8377,7 +8562,8 @@ odd function with period \(2\pi\).-->
 
 </pre>
           <p>
-            Thus, the actual normalized waveform \(\hat{x}(n)\) is
+<!--            Thus, the actual normalized waveform \(\hat{x}(n)\) is-->
+            結果、実際の正規化された波形 \(\hat{x}(n)\) は
           </p>
           <pre>            $$
               \hat{x}(n) = \frac{\tilde{x}(n)}{f}
@@ -8385,29 +8571,33 @@ odd function with period \(2\pi\).-->
 
 </pre>
           <p>
-            This fixed normalization factor must be applied to all generated
-            waveforms.
+<!--            This fixed normalization factor must be applied to all generated
+            waveforms.-->
+            固定値の正規化係数は全ての生成された波形に適用しなくてはなりません。
           </p>
         </section>
         <section property="bibo:hasPart" resource="#oscillator-coefficients" typeof="bibo:Chapter" id="oscillator-coefficients">
           <h4 resource="#h-oscillator-coefficients" id="h-oscillator-coefficients"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.31.4 </span>
-            Oscillator Coefficients <button onclick="OpenOriginal('oscillator-coefficients')">原文</button>
+            オシレータ係数 <button onclick="OpenOriginal('oscillator-coefficients')">原文</button>
           </span></h4>
           <p>
-            The builtin oscillator types are created using <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>
+<!--            The builtin oscillator types are created using <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a>
             objects. For completeness the coefficients for the PeriodicWave for
             each of the builtin oscillator types is given here. This is useful
-            if a builtin type is desired but without the default normalization.
+            if a builtin type is desired but without the default normalization.-->
+            組み込み済みのオシレータタイプは <a class="idlType" href="#idl-def-PeriodicWave"><code>PeriodicWave</code></a> オブジェクトを使用して作られます。
+            完全性のため、それぞれの組み込みオシレータタイプのための PeriodicWave の係数をここに定めます。
           </p>
           <p>
-            In the following descriptions, let \(a\) be the array of real
+<!--            In the following descriptions, let \(a\) be the array of real
             coefficients and \(b\) be the array of imaginary coefficients for
-            <!--a href=
-            "#widl-BaseAudioContext-createPeriodicWave-PeriodicWave-Float32Array-real-Float32Array-imag"-->
             <code>createPeriodicWave()</code>. In all cases \(a[n] = 0\)
             for all \(n\) because the waveforms are odd functions. Also, \(b[0]
             = 0\) in all cases. Hence, only \(b[n]\) for \(n \ge 1\) is
-            specified below.
+            specified below.-->
+            次の記述において、 \(a\) は <code>createPeriodicWave()</code> で使用するリアル係数の配列で \(b\) はイマジナリ係数の配列です。
+            全てのケースで波形は奇関数のため、全ての \(n\) に対して \(a[n] = 0\) となります。
+            また、全てのケースで \(b[0] = 0\) です。そのため、 \(n \ge 1\) の \(b[n]\) だけが以下に規定されています。
           </p>
           <dl>
             <dt>
@@ -8458,33 +8648,36 @@ odd function with period \(2\pi\).-->
       </section>
       <section property="bibo:hasPart" resource="#MediaStreamAudioSourceNode" typeof="bibo:Chapter">
         <h3 resource="#MediaStreamAudioSourceNode" id="MediaStreamAudioSourceNode"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.32 </span>
-          The MediaStreamAudioSourceNode Interface <button onclick="OpenOriginal('MediaStreamAudioSourceNode')">原文</button>
+          MediaStreamAudioSourceNode インターフェース <button onclick="OpenOriginal('MediaStreamAudioSourceNode')">原文</button>
         </span></h3>
         <p>
-          This interface represents an audio source from a
+<!--          This interface represents an audio source from a
           <code>MediaStream</code>. The first
           <code>AudioMediaStreamTrack</code> from the <code>MediaStream</code>
           will be used as a source of audio. Those interfaces are described in
-          [<cite><a href="#bib-mediacapture-streams" class="bibref">mediacapture-streams</a></cite>].
+          [<cite><a href="#bib-mediacapture-streams" class="bibref">mediacapture-streams</a></cite>].-->
+          このインターフェースは <code>MediaStream</code> からのオーディオソースを表します。 <code>MediaStream</code> からの最初の <code>AudioMediaStreamTrack</code> がオーディオソースとして使用されます。
+          これらのインターフェースは [<cite><a href="#bib-mediacapture-streams" class="bibref">mediacapture-streams</a></cite>] に記述されています。
         </p>
         <pre>    numberOfInputs  : 0
     numberOfOutputs : 1
 </pre>
         <p>
-          The number of channels of the output corresponds to the number of
+<!--          The number of channels of the output corresponds to the number of
           channels of the <code>AudioMediaStreamTrack</code>. If there is no
           valid audio track, then the number of channels output will be one
-          silent channel.
+          silent channel.-->
+          出力のチャンネル数は、<code>AudioMediaStreamTrack</code> のチャンネル数に対応します。 もし有効なオーディオトラックがない場合、1 チャンネルの無音が出力されます。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-MediaStreamAudioSourceNode">interface <span class="idlInterfaceID">MediaStreamAudioSourceNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 };</span></pre>
       </section>
       <section property="bibo:hasPart" resource="#the-mediastreamaudiodestinationnode-interface" typeof="bibo:Chapter" id="the-mediastreamaudiodestinationnode-interface">
         <h3 resource="#h-the-mediastreamaudiodestinationnode-interface" id="h-the-mediastreamaudiodestinationnode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.33 </span>
-          The MediaStreamAudioDestinationNode Interface <button onclick="OpenOriginal('the-mediastreamaudiodestinationnode-interface')">原文</button>
+          MediaStreamAudioDestinationNode インターフェース <button onclick="OpenOriginal('the-mediastreamaudiodestinationnode-interface')">原文</button>
         </span></h3>
         <p>
-          This interface is an audio destination representing a
+<!--          This interface is an audio destination representing a
           <code>MediaStream</code> with a single
           <code>AudioMediaStreamTrack</code>. This MediaStream is created when
           the node is created and is accessible via the <dfn id="dfn-stream" data-dfn-type="dfn">stream</dfn>
@@ -8492,7 +8685,8 @@ odd function with period \(2\pi\).-->
           <code>MediaStream</code> obtained via <code>getUserMedia()</code>,
           and can, for example, be sent to a remote peer using the
           <code>RTCPeerConnection</code> (described in [<cite><a href="#bib-webrtc" class="bibref">webrtc</a></cite>])
-          <code>addStream()</code> method.
+          <code>addStream()</code> method.-->
+          このインターフェースは 1 つの <code>AudioMediaStreamTrack</code> を持つ <code>MediaStream</code> を表すオーディオの出力地点となります。 この MediaStream はノードが作成された時点で作られ、 <dfn id="dfn-stream" data-dfn-type="dfn">stream</dfn> 属性を通じてアクセスする事ができます。 このストリームは <code>getUserMedia()</code> によって得られた <code>MediaStream</code> と同様の方法で使う事ができ、 例えば、 <code>RTCPeerConnection</code> ([<cite><a href="#bib-webrtc" class="bibref">webrtc</a></cite>]で記述されています) の <code>addStream()</code> メソッドを使って、リモート・ピアに送る事ができます。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 0
@@ -8502,15 +8696,18 @@ odd function with period \(2\pi\).-->
     channelInterpretation = "speakers";
 </pre>
         <p>
-          The number of channels of the input is by default 2 (stereo). Any
+<!--          The number of channels of the input is by default 2 (stereo). Any
           connections to the input are up-mixed/down-mixed to the number of
-          channels of the input.
+          channels of the input.-->
+          入力のチャンネル数はデフォルトで 2 (ステレオ)です。
+          入力への全ての接続は入力チャンネル数にアップミックス/ダウンミックスされます。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-MediaStreamAudioDestinationNode">interface <span class="idlInterfaceID">MediaStreamAudioDestinationNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
 <span class="idlAttribute">    readonly        attribute <span class="idlAttrType">MediaStream</span> <span class="idlAttrName"><a href="#widl-MediaStreamAudioDestinationNode-stream">stream</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-29" typeof="bibo:Chapter" id="attributes-29"><h4 resource="#h-attributes-29" id="h-attributes-29"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.33.1 </span>Attributes <button onclick="OpenOriginal('attributes-29')">原文</button></span></h4><dl class="attributes"><dt id="widl-MediaStreamAudioDestinationNode-stream"><code>stream</code> of type <span class="idlAttrType">MediaStream</span>, readonly       </dt><dd>
-            A MediaStream containing a single AudioMediaStreamTrack with the
-            same number of channels as the node itself.
+};</span></pre><section property="bibo:hasPart" resource="#attributes-29" typeof="bibo:Chapter" id="attributes-29"><h4 resource="#h-attributes-29" id="h-attributes-29"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.33.1 </span>属性 <button onclick="OpenOriginal('attributes-29')">原文</button></span></h4><dl class="attributes"><dt id="widl-MediaStreamAudioDestinationNode-stream"><code>stream</code> <span class="idlAttrType">MediaStream</span> 型, readonly       </dt><dd>
+<!--            A MediaStream containing a single AudioMediaStreamTrack with the
+            same number of channels as the node itself.-->
+            ノード自身と同じチャンネル数の 1 つの AudioMediaStreamTrack を持つ MediaStream です。
           </dd></dl></section>
       </section>
     </section>
