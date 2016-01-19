@@ -998,31 +998,31 @@ table.exceptions table {
         </a></li><li class="tocline"><a class="tocxref" href="#the-mediastreamaudiodestinationnode-interface"><span class="secno">2.33 </span>
           MediaStreamAudioDestinationNode インターフェース
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#attributes-29"><span class="secno">2.33.1 </span>属性</a></li></ul></li></ul></li><li class="tocline"><a class="tocxref" href="#mixer-gain-structure"><span class="secno">3. </span>
-        ミキサーのゲイン構造
+        ミキサーゲイン構成
       </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#SummingJunction"><span class="secno">3.1 </span>
-          入力のサミング
+          サミング入力
         </a></li><li class="tocline"><a class="tocxref" href="#gain-control"><span class="secno">3.2 </span>
-          ゲイン・コントロール
+          ゲインコントロール
         </a></li><li class="tocline"><a class="tocxref" href="#Example-mixer-with-send-busses"><span class="secno">3.3 </span>
-          例: センドバス付きミキサー
+          例: センドバス付ミキサー
         </a></li></ul></li><li class="tocline"><a class="tocxref" href="#DynamicLifetime"><span class="secno">4. </span>
-        ダイナミック・ライフタイム
+        動的ライフタイム
       </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#background-1"><span class="secno">4.1 </span>
           背景
         </a></li><li class="tocline"><a class="tocxref" href="#example"><span class="secno">4.2 </span>
           例
         </a></li></ul></li><li class="tocline"><a class="tocxref" href="#channel-up-mixing-and-down-mixing"><span class="secno">5. </span>
-        チャンネルのアップミキシングとダウンミキシング
+        チャンネルのアップミックスとダウンミックス
       </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#ChannelLayouts"><span class="secno">5.1 </span>
-          スピーカー・チャンネル・レイアウト
+          スピーカーチャンネル配置
         </a></li><li class="tocline"><a class="tocxref" href="#ChannelOrdering"><span class="secno">5.2 </span>
           チャンネルの順序
         </a></li><li class="tocline"><a class="tocxref" href="#UpMix-sub"><span class="secno">5.3 </span>
-          アップミキシング・スピーカーレイアウト
+          アップミックススピーカー配置
         </a></li><li class="tocline"><a class="tocxref" href="#down-mix"><span class="secno">5.4 </span>
-          ダウンミキシング・スピーカーレイアウト
+          ダウンミックススピーカー配置
         </a></li><li class="tocline"><a class="tocxref" href="#ChannelRules-section"><span class="secno">5.5 </span>
-          チャンネルルールの例
+          チャンネル規則の例
         </a></li></ul></li><li class="tocline"><a class="tocxref" href="#audio-sample-values"><span class="secno">6. </span>
         オーディオ信号の値
       </a></li><li class="tocline"><a class="tocxref" href="#Spatialization"><span class="secno">7. </span>
@@ -1032,7 +1032,7 @@ table.exceptions table {
         </a></li><li class="tocline"><a class="tocxref" href="#azimuth-elevation"><span class="secno">7.2 </span>
           アジマスとエレベーション
         </a></li><li class="tocline"><a class="tocxref" href="#Spatialization-panning-algorithm"><span class="secno">7.3 </span>
-          バンニング・アルゴリズム
+          バンニングアルゴリズム
         </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#Spatialzation-equal-power-panning"><span class="secno">7.3.1 </span>
             Equal-power パンニング
           </a></li><li class="tocline"><a class="tocxref" href="#hrtf-panning-stereo-only"><span class="secno">7.3.2 </span>
@@ -1040,7 +1040,7 @@ table.exceptions table {
           </a></li></ul></li><li class="tocline"><a class="tocxref" href="#Spatialization-distance-effects"><span class="secno">7.4 </span>
           距離効果
         </a></li><li class="tocline"><a class="tocxref" href="#Spatialization-sound-cones"><span class="secno">7.5 </span>
-          サウンド・コーン
+          サウンドコーン
         </a></li><li class="tocline"><a class="tocxref" href="#Spatialization-doppler-shift"><span class="secno">7.6 </span>
           ドップラー効果
         </a></li></ul></li><li class="tocline"><a class="tocxref" href="#Performance"><span class="secno">8. </span>
@@ -1052,7 +1052,7 @@ table.exceptions table {
         </a></li><li class="tocline"><a class="tocxref" href="#audioparam-transitions"><span class="secno">8.3 </span>
           AudioParam の遷移
         </a></li><li class="tocline"><a class="tocxref" href="#audio-glitching"><span class="secno">8.4 </span>
-          オーディオ・グリッジ
+          オーディオグリッジ
         </a></li><li class="tocline"><a class="tocxref" href="#JavaScriptPerformance"><span class="secno">8.5 </span>
           リアルタイム処理と合成に関するJavascriptの課題:
         </a></li></ul></li><li class="tocline"><a class="tocxref" href="#SecurityConsiderations"><span class="secno">9. </span>
@@ -3151,7 +3151,7 @@ interface <span class="idlInterfaceID">AudioContext</span> : <span class="idlSup
 <!--        use <a href="#ChannelLayouts">up-down-mix equations for
             mono/stereo/quad/5.1</a>. In cases where the number of channels do
             not match any of these basic speaker layouts, revert to "discrete".-->
-             <a href="#ChannelLayouts">モノラル/ステレオ/クワッド/5.1のためのアップ・ダウンミックス式</a>を使用します。 チャンネル数がこれらのスピーカー基本レイアウトに一致しない場合、 "discrete" に戻します。
+             <a href="#ChannelLayouts">モノ/ステレオ/クワッド/5.1のためのアップ・ダウンミックス式</a>を使用します。 チャンネル数がこれらのスピーカー基本レイアウトに一致しない場合、 "discrete" に戻します。
           </td></tr><tr><td><code id="idl-def-ChannelInterpretation.discrete">discrete</code></td><td>
 <!--            <p>
             Up-mix by filling channels until they run out then zero out
@@ -3373,7 +3373,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
                 the parameter.
               </p>-->
               <p>
-                <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> はそれに接続されている <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の出力からレンダリングされたオーディオデータを取り出し、それがモノラルでなければ、ダウンミックスによって<a href="#down-mix">モノラルに変換</a>します。 そして接続されている各出力をミックスし、更に最終的にパラメータが持っているタイムラインの変化スケジュールを含む<em>固有</em>値( <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> に何も接続されていない状態での<code>値</code>)とミックスします。
+                <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> はそれに接続されている <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の出力からレンダリングされたオーディオデータを取り出し、それがモノでなければ、ダウンミックスによって<a href="#down-mix">モノに変換</a>します。 そして接続されている各出力をミックスし、更に最終的にパラメータが持っているタイムラインの変化スケジュールを含む<em>固有</em>値( <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> に何も接続されていない状態での<code>値</code>)とミックスします。
               </p>
 <!--              <p>
                 There can only be one connection between a given output of one
@@ -4168,7 +4168,7 @@ nodeA</span><span class="pun">.</span><span class="pln">connect</span><span clas
             If there are no <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s connected to it,
             then this value is 0, having no effect on the
             <em>computedValue</em>.-->
-            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> は <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の出力が接続されている場合、その出力がモノラルでなければダウンミックスして<a href="#down-mix">モノラルに変換</a>し、他の同様に接続されている出力とミックスします。 もし <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> が接続されていない場合はこの値は0となり、 <em>computedValue</em> には影響を及ぼしません。
+            <a class="idlType" href="#idl-def-AudioParam"><code>AudioParam</code></a> は <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の出力が接続されている場合、その出力がモノでなければダウンミックスして<a href="#down-mix">モノに変換</a>し、他の同様に接続されている出力とミックスします。 もし <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> が接続されていない場合はこの値は0となり、 <em>computedValue</em> には影響を及ぼしません。
             </li>
 <!--            <li>The <em>computedValue</em> is the sum of the <em>intrinsic</em>
             value and the value calculated from (2).-->
@@ -5989,10 +5989,11 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           PannerNode インターフェース <button onclick="OpenOriginal('the-pannernode-interface')">原文</button>
         </span></h3>
         <p>
-          This interface represents a processing node which <a href="#Spatialization">positions / spatializes</a> an incoming audio
+<!--          This interface represents a processing node which <a href="#Spatialization">positions / spatializes</a> an incoming audio
           stream in three-dimensional space. The spatialization is in relation
           to the <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a>'s <a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a>
-          (<code>listener</code> attribute).
+          (<code>listener</code> attribute).-->
+          このインターフェースは入力されるオーディオストリームの3D空間での <a href="#Spatialization">定位 / 空間音響</a>を処理するためのノードを表します。 空間音響は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> の <a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a> (<code>listener</code> 属性) に関連して処理されます。
         </p>
         <pre>    numberOfInputs  : 1
     numberOfOutputs : 1
@@ -6002,53 +6003,66 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
     channelInterpretation = "speakers";
 </pre>
         <p>
-          The input of this node is either mono (1 channel) or stereo (2
+<!--          The input of this node is either mono (1 channel) or stereo (2
           channels) and cannot be increased. Connections from nodes with fewer
           or more channels will be <a href="#channel-up-mixing-and-down-mixing">up-mixed or down-mixed
           appropriately</a>, but a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be thrown if an
           attempt is made to set channelCount to a value greater than 2 or if
-          channelCountMode is set to "max".
+          channelCountMode is set to "max".-->
+          このノードの入力はモノ (1 チャンネル) またはステレオ (2 チャンネル) となり、増やす事はできません。
+          より少ない、または多いチャンネル数のノードからの接続は<a href="#channel-up-mixing-and-down-mixing">適宜アップミックスまたはダウンミックス</a>されますが、もし、 channelCount を 2 以上に設定しようとしたり channelCountMode を "max" に設定しようとすると NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <p>
-          The output of this node is hard-coded to stereo (2 channels) and
-          cannot be configured.
+<!--          The output of this node is hard-coded to stereo (2 channels) and
+          cannot be configured.-->
+          このノードの出力はステレオ (2 チャンネル) にハードコードされており、変える事はできません。
         </p>
         <p>
-          The <a class="idlType" href="#idl-def-PanningModelType"><code>PanningModelType</code></a> enum determines which
+<!--          The <a class="idlType" href="#idl-def-PanningModelType"><code>PanningModelType</code></a> enum determines which
           spatialization algorithm will be used to position the audio in 3D
-          space. The default is <code>"equalpower"</code>.
+          space. The default is <code>"equalpower"</code>.-->
+           <a class="idlType" href="#idl-def-PanningModelType"><code>PanningModelType</code></a> 列挙値は 3D 空間でのオーディオの定位のアルゴリズムを決定します。 デフォルトは <code>"equalpower"</code>です。
         </p>
         <pre class="idl"><span class="idlEnum" id="idl-def-PanningModelType">enum <span class="idlEnumID">PanningModelType</span> {
     "<a href="#idl-def-PanningModelType.equalpower" class="idlEnumItem">equalpower</a>",
     "<a href="#idl-def-PanningModelType.xHRTF" class="idlEnumItem">HRTF</a>"
-};</span></pre><table class="simple"><tbody><tr><th colspan="2">Enumeration description</th></tr><tr><td><code id="idl-def-PanningModelType.equalpower">equalpower</code></td><td>
-            A simple and efficient spatialization algorithm using equal-power
-            panning.
+};</span></pre><table class="simple"><tbody><tr><th colspan="2">列挙値の説明</th></tr><tr><td><code id="idl-def-PanningModelType.equalpower">equalpower</code></td><td>
+<!--            A simple and efficient spatialization algorithm using equal-power
+            panning.-->
+            単純で効率的な空間音響アルゴリズムで、等価パワーによるパンニングを行います。
           </td></tr><tr><td><code id="idl-def-PanningModelType.xHRTF">HRTF</code></td><td>
-            A higher quality spatialization algorithm using a convolution with
+<!--            A higher quality spatialization algorithm using a convolution with
             measured impulse responses from human subjects. This panning method
-            renders stereo output.
+            renders stereo output.-->
+            高品質な空間音響アルゴリズムで、人体を使ったインパルスレスポンス測定からのコンボリューション処理を使用します。 このパンニング方法はステレオ出力にレンダリングされます。
           </td></tr></tbody></table>
         <p>
-          The <a class="idlType" href="#idl-def-DistanceModelType"><code>DistanceModelType</code></a> enum determines which
+<!--          The <a class="idlType" href="#idl-def-DistanceModelType"><code>DistanceModelType</code></a> enum determines which
           algorithm will be used to reduce the volume of an audio source as it
-          moves away from the listener. The default is "inverse".
+          moves away from the listener. The default is "inverse".-->
+           <a class="idlType" href="#idl-def-DistanceModelType"><code>DistanceModelType</code></a> 列挙値は
+          音源がリスナーから離れていった時、音量を減衰させるためにどのアルゴリズムを使用するかを決定します。 デフォルトは "inverse" です。
         </p>
         <p>
-          In the description of each distance model below, let \(d\) be the
+<!--          In the description of each distance model below, let \(d\) be the
           distance between the listener and the panner; \(d_{ref}\) be the
           value of the <code>refDistance</code> attribute; \(d_{max}\) be the
           value of the <code>maxDistance</code> attribute; and \(f\) be the
-          value of the <code>rolloffFactor</code> attribute.
+          value of the <code>rolloffFactor</code> attribute.-->
+          次のそれぞれの距離モデルの説明で、 \(d\) はリスナーとパンナーの距離、
+          \(d_{ref}\) は <code>refDistance</code> 属性の値、
+          \(d_{max}\) は <code>maxDistance</code> 属性の値、
+          \(f\) は <code>rolloffFactor</code> の値です。
         </p>
         <pre class="idl"><span class="idlEnum" id="idl-def-DistanceModelType">enum <span class="idlEnumID">DistanceModelType</span> {
     "<a href="#idl-def-DistanceModelType.linear" class="idlEnumItem">linear</a>",
     "<a href="#idl-def-DistanceModelType.inverse" class="idlEnumItem">inverse</a>",
     "<a href="#idl-def-DistanceModelType.exponential" class="idlEnumItem">exponential</a>"
-};</span></pre><table class="simple"><tbody><tr><th colspan="2">Enumeration description</th></tr><tr><td><code id="idl-def-DistanceModelType.linear">linear</code></td><td>
+};</span></pre><table class="simple"><tbody><tr><th colspan="2">列挙値の説明</th></tr><tr><td><code id="idl-def-DistanceModelType.linear">linear</code></td><td>
             <p>
-              A linear distance model which calculates <em>distanceGain</em>
-              according to:
+<!--              A linear distance model which calculates <em>distanceGain</em>
+              according to:-->
+               <em>distanceGain</em>を次のように計算する直線距離モデルです:
             </p>
             <pre>            $$
               1 - f\frac{\max(\min(d, d_{max}), d_{ref}) - d_{ref}}{d_{max} - d_{ref}}
@@ -6056,13 +6070,15 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
             <p>
-              That is, \(d\) is clamped to the interval \([d_{ref},\,
-              d_{max}]\).
+<!--              That is, \(d\) is clamped to the interval \([d_{ref},\,
+              d_{max}]\).-->
+              ここで \(d\) は \([d_{ref},\,  d_{max}]\) の範囲に制限されます。
             </p>
           </td></tr><tr><td><code id="idl-def-DistanceModelType.inverse">inverse</code></td><td>
             <p>
-              An inverse distance model which calculates <em>distanceGain</em>
-              according to:
+<!--              An inverse distance model which calculates <em>distanceGain</em>
+              according to:-->
+               <em>distanceGain</em> を次のように計算する逆数距離モデルです:
             </p>
             <pre>              $$
                 \frac{d_{ref}}{d_{ref} + f (\max(d, d_{ref}) - d_{ref})}
@@ -6070,13 +6086,15 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
             <p>
-              That is, \(d\) is clamped to the interval \([d_{ref},\,
-              \infty)\).
+<!--              That is, \(d\) is clamped to the interval \([d_{ref},\,
+              \infty)\).-->
+              ここで \(d\) は\([d_{ref},\,\infty)\)の範囲に制限されます。
             </p>
           </td></tr><tr><td><code id="idl-def-DistanceModelType.exponential">exponential</code></td><td>
             <p>
-              An exponential distance model which calculates
-              <em>distanceGain</em> according to:
+<!--              An exponential distance model which calculates
+              <em>distanceGain</em> according to:-->
+              <em>distanceGain</em> を次のように計算する指数距離モデルです:
             </p>
             <pre>              $$
                 \left(\frac{\max(d, d_{ref})}{d_{ref}}\right)^{-f}
@@ -6084,8 +6102,9 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 
 </pre>
             <p>
-              That is, \(d\) is clamped to the interval \([d_{ref},\,
-              \infty)\).
+<!--              That is, \(d\) is clamped to the interval \([d_{ref},\,
+              \infty)\).-->
+              ここで \(d\) は \([d_{ref},\,\infty)\) の範囲に制限されます。
             </p>
           </td></tr></tbody></table>
         <pre class="idl"><span class="idlInterface" id="idl-def-PannerNode">interface <span class="idlInterfaceID">PannerNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
@@ -6100,114 +6119,149 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-PannerNode-coneInnerAngle">coneInnerAngle</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-PannerNode-coneOuterAngle">coneOuterAngle</a></span>;</span>
 <span class="idlAttribute">                    attribute <span class="idlAttrType">float</span>             <span class="idlAttrName"><a href="#widl-PannerNode-coneOuterGain">coneOuterGain</a></span>;</span>
-};</span></pre><section property="bibo:hasPart" resource="#attributes-19" typeof="bibo:Chapter" id="attributes-19"><h4 resource="#h-attributes-19" id="h-attributes-19"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.1 </span>Attributes <button onclick="OpenOriginal('attributes-19')">原文</button></span></h4><dl class="attributes"><dt id="widl-PannerNode-coneInnerAngle"><code>coneInnerAngle</code> of type <span class="idlAttrType">float</span></dt><dd>
-            A parameter for directional audio sources, this is an angle, in
+};</span></pre><section property="bibo:hasPart" resource="#attributes-19" typeof="bibo:Chapter" id="attributes-19"><h4 resource="#h-attributes-19" id="h-attributes-19"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.1 </span>属性 <button onclick="OpenOriginal('attributes-19')">原文</button></span></h4><dl class="attributes"><dt id="widl-PannerNode-coneInnerAngle"><code>coneInnerAngle</code> <span class="idlAttrType">float</span> 型</dt><dd>
+<!--            A parameter for directional audio sources, this is an angle, in
             degrees, inside of which there will be no volume reduction. The
-            default value is 360, and the value is used modulo 360.
-          </dd><dt id="widl-PannerNode-coneOuterAngle"><code>coneOuterAngle</code> of type <span class="idlAttrType">float</span></dt><dd>
-            A parameter for directional audio sources, this is an angle, in
+            default value is 360, and the value is used modulo 360.-->
+            音源の指向性パラメータで、度で表す角度です。この角度の内部では音量減衰が生じません。
+            デフォルトの値は 360 で、値は 360 の剰余で扱われます。
+          </dd><dt id="widl-PannerNode-coneOuterAngle"><code>coneOuterAngle</code> <span class="idlAttrType">float</span> 型</dt><dd>
+<!--            A parameter for directional audio sources, this is an angle, in
             degrees, outside of which the volume will be reduced to a constant
             value of <code>coneOuterGain</code>. The default value is
-            360 and the value is used modulo 360.
-          </dd><dt id="widl-PannerNode-coneOuterGain"><code>coneOuterGain</code> of type <span class="idlAttrType">float</span></dt><dd>
-            A parameter for directional audio sources, this is the gain outside
+            360 and the value is used modulo 360.-->
+            音源の指向性パラメータで度で表す角度です。
+            この角度の外側では音量の減衰率が定数値の <code>coneOuterGain</code> となります。
+            デフォルトの値は360で、値は 360 の剰余で扱われます。
+          </dd><dt id="widl-PannerNode-coneOuterGain"><code>coneOuterGain</code> <span class="idlAttrType">float</span> 型</dt><dd>
+<!--            A parameter for directional audio sources, this is the gain outside
             of the <code>coneOuterAngle</code>. The default value is 0.
             It is a linear value (not dB) in the range [0, 1]. An
             InvalidStateError <em title="MUST" class="rfc2119">MUST</em> be thrown if the parameter is outside this
-            range.
-          </dd><dt id="widl-PannerNode-distanceModel"><code>distanceModel</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-DistanceModelType"><code>DistanceModelType</code></a></span></dt><dd>
-            Specifies the distance model used by this
+            range.-->
+            音源の指向性パラメータで、角度が <code>coneOuterAngle</code> の外側の場合の減衰率です。
+            デフォルトの値は0です。
+            これは (dBでなく) リニア値で　[0, 1] の範囲になります。
+            もしこのパラメータがこの範囲外の場合、 InvalidStateError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
+          </dd><dt id="widl-PannerNode-distanceModel"><code>distanceModel</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-DistanceModelType"><code>DistanceModelType</code></a></span> 型</dt><dd>
+<!--            Specifies the distance model used by this
             <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>. Defaults to
-            <code>"inverse"</code>.
-          </dd><dt id="widl-PannerNode-maxDistance"><code>maxDistance</code> of type <span class="idlAttrType">float</span></dt><dd>
-            The maximum distance between source and listener, after which the
-            volume will not be reduced any further. The default value is 10000.
-          </dd><dt id="widl-PannerNode-panningModel"><code>panningModel</code> of type <span class="idlAttrType"><a class="idlType" href="#idl-def-PanningModelType"><code>PanningModelType</code></a></span></dt><dd>
-            Specifies the panning model used by this
+            <code>"inverse"</code>.-->
+            この <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> で使用される距離モデルを指定します。
+            デフォルトは <code>"inverse"</code> です。
+          </dd><dt id="widl-PannerNode-maxDistance"><code>maxDistance</code> <span class="idlAttrType">float</span> 型</dt><dd>
+<!--            The maximum distance between source and listener, after which the
+            volume will not be reduced any further. The default value is 10000.-->
+            音源とリスナー間の最大距離で、これ以上音源とリスナー間が離れても音量が減衰しません。
+            デフォルトの値は10000です。
+          </dd><dt id="widl-PannerNode-panningModel"><code>panningModel</code> <span class="idlAttrType"><a class="idlType" href="#idl-def-PanningModelType"><code>PanningModelType</code></a></span> 型</dt><dd>
+<!--            Specifies the panning model used by this
             <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>. Defaults to
-            <code>"equalpower"</code>.
-          </dd><dt id="widl-PannerNode-refDistance"><code>refDistance</code> of type <span class="idlAttrType">float</span></dt><dd>
-            A reference distance for reducing volume as source move further
-            from the listener. The default value is 1.
-          </dd><dt id="widl-PannerNode-rolloffFactor"><code>rolloffFactor</code> of type <span class="idlAttrType">float</span></dt><dd>
-            Describes how quickly the volume is reduced as source moves away
-            from listener. The default value is 1.
-          </dd></dl></section><section property="bibo:hasPart" resource="#methods-11" typeof="bibo:Chapter" id="methods-11"><h4 resource="#h-methods-11" id="h-methods-11"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.2 </span>Methods <button onclick="OpenOriginal('methods-11')">原文</button></span></h4><dl class="methods"><dt id="widl-PannerNode-setOrientation-void-float-x-float-y-float-z"><code>setOrientation</code></dt><dd>
+            <code>"equalpower"</code>.-->
+            この <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> で使用されるバンニングモデルを指定します。
+            デフォルトは <code>"equalpower"</code> です。
+          </dd><dt id="widl-PannerNode-refDistance"><code>refDistance</code> <span class="idlAttrType">float</span> 型</dt><dd>
+<!--            A reference distance for reducing volume as source move further
+            from the listener. The default value is 1.-->
+            音源がリスナーから離れていった時の音量減衰の基準となる距離です。
+            デフォルトの値は 1 です。
+          </dd><dt id="widl-PannerNode-rolloffFactor"><code>rolloffFactor</code> <span class="idlAttrType">float</span> 型</dt><dd>
+<!--            Describes how quickly the volume is reduced as source moves away
+            from listener. The default value is 1.-->
+            音源がリスナーが離れていった時の音量減衰の速さを表します。
+            デフォルトの値は 1 です。
+          </dd></dl></section><section property="bibo:hasPart" resource="#methods-11" typeof="bibo:Chapter" id="methods-11"><h4 resource="#h-methods-11" id="h-methods-11"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.2 </span>メソッド <button onclick="OpenOriginal('methods-11')">原文</button></span></h4><dl class="methods"><dt id="widl-PannerNode-setOrientation-void-float-x-float-y-float-z"><code>setOrientation</code></dt><dd>
             <p>
-              Describes which direction the audio source is pointing in the 3D
+<!--              Describes which direction the audio source is pointing in the 3D
               cartesian coordinate space. Depending on how directional the
               sound is (controlled by the <b>cone</b> attributes), a sound
               pointing away from the listener can be very quiet or completely
-              silent.
+              silent.-->
+              3D 空間のデカルト座標系で音源の向いている方向を表します。
+              音がどれくらいの指向性 ( <b>cone</b> 属性で制御されます) を持っているかによって音が リスナーからはずれると小さくなったり全く聴こえなくなったりします。
             </p>
             <p>
-              The <code>x, y, z</code> parameters represent a direction vector
-              in 3D space.
+<!--              The <code>x, y, z</code> parameters represent a direction vector
+              in 3D space.-->
+              <code>x, y, z</code> パラメータは 3D 空間内での方向を表します。
             </p>
             <p>
-              The default value is (1,0,0)
+<!--              The default value is (1,0,0)-->
+              デフォルトの値は (1, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-PannerNode-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-PannerNode-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
             <p>
-              Sets the position of the audio source relative to the
+<!--              Sets the position of the audio source relative to the
               <code>listener</code> attribute. A 3D cartesian coordinate
-              system is used.
+              system is used.-->
+              <code>listener</code> 属性に相対する音源の位置を設定します。
+              3D のデカルト座標系が使用されます。
             </p>
             <p>
-              The <code>x, y, z</code> parameters represent the coordinates in
-              3D space.
+<!--              The <code>x, y, z</code> parameters represent the coordinates in
+              3D space.-->
+              <code>x, y, z</code> パラメータは 3D 空間中の座標を表します
             </p>
             <p>
-              The default value is (0,0,0)
+<!--              The default value is (0,0,0)-->
+              デフォルトの値は (1, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-PannerNode-setVelocity-void-float-x-float-y-float-z"><code>setVelocity</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-PannerNode-setVelocity-void-float-x-float-y-float-z"><code>setVelocity</code></dt><dd>
             <p>
-              Sets the velocity vector of the audio source. This vector
+<!--              Sets the velocity vector of the audio source. This vector
               controls both the direction of travel and the speed in 3D space.
               This velocity relative to the listener's velocity is used to
               determine how much doppler shift (pitch change) to apply. The
               units used for this vector is <em>meters / second</em> and is
               independent of the units used for position and orientation
-              vectors.
+              vectors.-->
+              音源の速度ベクトルを設定します。
+              このベクトルは 3D 空間内での移動する方向と速度の両方を制御します。 この速度とリスナーの速度の相対値によってどれくらいのドップラー効果 (ピッチの変化) が適用されるかが決定します。 このベクトルの単位は<em>メートル / 秒</em>で、位置や方向ベクトルで使われる単位とは独立しています。
             </p>
             <p>
-              The <code>x, y, z</code> parameters describe a direction vector
-              indicating direction of travel and intensity.
+<!--              The <code>x, y, z</code> parameters describe a direction vector
+              indicating direction of travel and intensity.-->
+              <code>x, y, z</code> パラメータは移動の方向と大きさを表すベクトルです。
             </p>
             <p>
-              The default value is (0,0,0)
+<!--              The default value is (0,0,0)-->
+              デフォルトの値は (0, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
         <section property="bibo:hasPart" resource="#panner-channel-limitations" typeof="bibo:Chapter" class="informative">
           <h4 resource="#panner-channel-limitations" id="panner-channel-limitations"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.17.3 </span>
-            Channel Limitations <button onclick="OpenOriginal('panner-channel-limitations')">原文</button>
-          </span></h4><p><em>This section is non-normative.</em></p>
+            チャンネル制限 <button onclick="OpenOriginal('panner-channel-limitations')">原文</button>
+          </span></h4><p><em>このセクションは参考情報です。</em></p>
           <p>
-            The set of <a href="#panner-channel-limitations">channel
+<!--            The set of <a href="#panner-channel-limitations">channel
             limitations</a> for <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a> also apply
-            to <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>.
+            to <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>.-->
+            <a class="idlType" href="#idl-def-StereoPannerNode"><code>StereoPannerNode</code></a> に対する<a href="#panner-channel-limitations">チャンネル制限</a>が <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>にも適用されます。
           </p>
         </section>
       </section>
       <section property="bibo:hasPart" resource="#AudioListener" typeof="bibo:Chapter">
         <h3 resource="#AudioListener" id="AudioListener"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.18 </span>
-          The AudioListener Interface <button onclick="OpenOriginal('AudioListener')">原文</button>
+          AudioListener インターフェース <button onclick="OpenOriginal('AudioListener')">原文</button>
         </span></h3>
         <p>
-          This interface is DEPRECATED, as it will be replaced by the
+<!--          This interface is DEPRECATED, as it will be replaced by the
           <a class="idlType" href="#idl-def-SpatialListener"><code>SpatialListener</code></a>. This interface represents the
           position and orientation of the person listening to the audio scene.
           All <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> objects spatialize in relation to
-          the <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a>'s <!--a href=
-          "widl-AudioContext-listener"--><code>listener</code>. See <a href="#Spatialization">the Spatialization/Panning section</a> for more
-          details about spatialization.
+          the <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a>'s <code>listener</code>. See <a href="#Spatialization">the Spatialization/Panning section</a> for more
+          details about spatialization.-->
+          このインターフェースは廃止予定です。
+          これは <a class="idlType" href="#idl-def-SpatialListener"><code>SpatialListener</code></a>  で置き替えられます。このインターフェースはオーディオシーンを聴く人の位置と方向を表します。
+          全ての <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> オブジェクトは <a class="idlType" href="#idl-def-BaseAudioContext"><code>BaseAudioContext</code></a> の <code>listener</code> との相対関係により空間処理されます。
+          空間処理の詳細については <a href="#Spatialization">空間配置 / バンニング セクション</a> を参照してください。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-AudioListener">interface <span class="idlInterfaceID">AudioListener</span> {
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-AudioListener-setPosition-void-float-x-float-y-float-z">setPosition</a></span> (<span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">x</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">y</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">z</span></span>);</span>
 <span class="idlMethod">    <span class="idlMethType">void</span> <span class="idlMethName"><a href="#widl-AudioListener-setOrientation-void-float-x-float-y-float-z-float-xUp-float-yUp-float-zUp">setOrientation</a></span> (<span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">x</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">y</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">z</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">xUp</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">yUp</span></span>, <span class="idlParam"><span class="idlParamType">float</span> <span class="idlParamName">zUp</span></span>);</span>
-};</span></pre><section property="bibo:hasPart" resource="#methods-12" typeof="bibo:Chapter" id="methods-12"><h4 resource="#h-methods-12" id="h-methods-12"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.18.1 </span>Methods <button onclick="OpenOriginal('methods-12')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioListener-setOrientation-void-float-x-float-y-float-z-float-xUp-float-yUp-float-zUp"><code>setOrientation</code></dt><dd>
+};</span></pre><section property="bibo:hasPart" resource="#methods-12" typeof="bibo:Chapter" id="methods-12"><h4 resource="#h-methods-12" id="h-methods-12"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.18.1 </span>メソッド <button onclick="OpenOriginal('methods-12')">原文</button></span></h4><dl class="methods"><dt id="widl-AudioListener-setOrientation-void-float-x-float-y-float-z-float-xUp-float-yUp-float-zUp"><code>setOrientation</code></dt><dd>
             <p>
-              Describes which direction the listener is pointing in the 3D
+<!--              Describes which direction the listener is pointing in the 3D
               cartesian coordinate space. Both a <b>front</b> vector and an
               <b>up</b> vector are provided. In simple human terms, the
               <b>front</b> vector represents which direction the person's nose
@@ -6215,32 +6269,40 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
               top of a person's head is pointing. These values are expected to
               be linearly independent (at right angles to each other). For
               normative requirements of how these values are to be interpreted,
-              see the <a href="#Spatialization">spatialization section</a>.
+              see the <a href="#Spatialization">spatialization section</a>.-->
+              3D デカルト座標空間でリスナーが向いている方向を表します。
+              <b>front</b> ベクトルと <b>up</b> ベクトルの両方が与えられます。 簡単のため人間について言えば、<b>front</b> ベクトルはその人の鼻が向いている方向を表します。 <b>up</b> ベクトルはその人の頭頂向いている方向です。 これらは線形独立 (互いに直角) の関係になります。 これらの値がどのように解釈されるかの基準としての要件は<a href="#Spatialization">空間配置 / バンニング セクション</a>を参照してください。
             </p>
             <p>
-              The <code>x, y, z</code> parameters represent a <b>front</b>
+<!--              The <code>x, y, z</code> parameters represent a <b>front</b>
               direction vector in 3D space, with the default value being
-              (0,0,-1).
+              (0,0,-1).-->
+              <code>x, y, z</code> パラメータは 3D 空間中の <b>front</b> 方向ベクトルであり、デフォルトの値は (0, 0, -1) です。
             </p>
             <p>
-              The <code>xUp, yUp, zUp</code> parameters represent an <b>up</b>
+<!--              The <code>xUp, yUp, zUp</code> parameters represent an <b>up</b>
               direction vector in 3D space, with the default value being
-              (0,1,0).
+              (0,1,0).-->
+              <code>xUp, yUp, zUp</code> パラメータは 3D 空間中の <b>up</b> 方向ベクトルであり、デフォルトの値は (0, 1, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">xUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">yUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">zUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd><dt id="widl-AudioListener-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">xUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">yUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">zUp</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd><dt id="widl-AudioListener-setPosition-void-float-x-float-y-float-z"><code>setPosition</code></dt><dd>
             <p>
-              Sets the position of the listener in a 3D cartesian coordinate
+<!--              Sets the position of the listener in a 3D cartesian coordinate
               space. <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> objects use this position
-              relative to individual audio sources for spatialization.
+              relative to individual audio sources for spatialization.-->
+              3D デカルト座標空間でのリスナーの位置を設定します。
+              <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> オブジェクトはこの位置と個別の音源との相対的な位置を空間音響のために使用します。
             </p>
             <p>
-              The <code>x, y, z</code> parameters represent the coordinates in
-              3D space.
+<!--              The <code>x, y, z</code> parameters represent the coordinates in
+              3D space.-->
+              <code>x, y, z</code> パラメータは 3D 空間内の座標を表します。
             </p>
             <p>
-              The default value is (0,0,0)
+<!--              The default value is (0,0,0)-->
+              デフォルトの値は (0, 0, 0) です。
             </p>
-          <table class="parameters"><tbody><tr><th>Parameter</th><th>Type</th><th>Nullable</th><th>Optional</th><th>Description</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>Return type: </em><code>void</code></div></dd></dl></section>
+          <table class="parameters"><tbody><tr><th>パラメータ</th><th>型</th><th>Null可</th><th>Optional</th><th>説明</th></tr><tr><td class="prmName">x</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">y</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr><tr><td class="prmName">z</td><td class="prmType"><code>float</code></td><td class="prmNullFalse"><span role="img" aria-label="False">✘</span></td><td class="prmOptFalse"><span role="img" aria-label="False">✘</span></td><td class="prmDesc"></td></tr></tbody></table><div><em>戻り値: </em><code>void</code></div></dd></dl></section>
       </section>
       <section property="bibo:hasPart" resource="#the-spatialpannernode-interface" typeof="bibo:Chapter" id="the-spatialpannernode-interface">
         <h3 resource="#h-the-spatialpannernode-interface" id="h-the-spatialpannernode-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.19 </span>
@@ -6278,7 +6340,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           channelCountMode is set to "max". The output of this node will be
           stereo (2 channels) and currently cannot be configured.
         </p>-->
-        <p>このノードへの入力はモノラル (1チャンネル) またはステレオ (2チャンネル) のどちらかで、増やす事はできません。より多くのチャンネルを持つノードからの接続は<a href="#channel-up-mixing-and-down-mixing">適宜アップミックスまたはダウンミックス</a>されますが、channelCount を2以上、あるいは channelCountMode を "max" に設定しようとすると NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。 このノードの出力はステレオ (2チャンネル) であり今のところ構成を変える事はできません。
+        <p>このノードへの入力はモノ (1チャンネル) またはステレオ (2チャンネル) のどちらかで、増やす事はできません。より多くのチャンネルを持つノードからの接続は<a href="#channel-up-mixing-and-down-mixing">適宜アップミックスまたはダウンミックス</a>されますが、channelCount を2以上、あるいは channelCountMode を "max" に設定しようとすると NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。 このノードの出力はステレオ (2チャンネル) であり今のところ構成を変える事はできません。
         </p>
 <!--        <p>
           The <a class="idlType" href="#idl-def-PanningModelType"><code>PanningModelType</code></a> enum determines which
@@ -6596,7 +6658,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           appropriately</a>, but a NotSupportedError <em title="MUST" class="rfc2119">MUST</em> be thrown if an
           attempt is made to set channelCount to a value great than 2 or if
           channelCountMode is set to "max".-->
-          このノードの入力はモノラル (1 チャンネル) またはステレオ (2 チャンネル) であり増やす事はできません。
+          このノードの入力はモノ (1 チャンネル) またはステレオ (2 チャンネル) であり増やす事はできません。
           より少ないチャンネル数または多いチャンネル数のノードからの接続は、<a href="#channel-up-mixing-and-down-mixing">適宜アップミックスまたはダウンミックス</a>されますが、channelCount を 2 以上の値、あるいは channelCountMode を "max" に設定しようとすると NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
         </p>
         <pre class="idl"><span class="idlInterface" id="idl-def-ConvolverNode">interface <span class="idlInterfaceID">ConvolverNode</span> : <span class="idlSuperclass"><a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a></span> {
@@ -6615,7 +6677,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
             <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a> with this impulse response having
             the given normalization. The initial value of this attribute is
             null.-->
-            <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>　で使用される(マルチチャンネルの場合もある)インパルスレスポンスを保持する モノラル、ステレオ、または4チャンネルの<a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>です。
+            <a class="idlType" href="#idl-def-ConvolverNode"><code>ConvolverNode</code></a>　で使用される(マルチチャンネルの場合もある)インパルスレスポンスを保持する モノ、ステレオ、または4チャンネルの<a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a>です。
             <code>AudioBuffer</code> は 1、2、または 4チャンネルでなくてはならずそうでない場合は NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
             この <a class="idlType" href="#idl-def-AudioBuffer"><code>AudioBuffer</code></a> は <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> と同じサンプルレートでなくてはなりません。
             そうでない場合は NotSupportedError 例外を発生します (<em title="MUST" class="rfc2119">MUST</em>)。
@@ -6995,7 +7057,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           </ol>
         -->
         <ol>
-          <li>時間領域の入力の全てのチャンネルをモノラルにダウンミックスします
+          <li>時間領域の入力の全てのチャンネルをモノにダウンミックスします
           </li>
           <li>
             時間領域の入力データに<a href="#blackman-window">ブラックマン窓</a>を適用します
@@ -7224,7 +7286,7 @@ audioContext</span><span class="pun">.</span><span class="pln">createAudioWorker
           unconnected input still counts as <b>one silent channel</b> in the
           output. Changing input streams does <b>not</b> affect the order of
           output channels.-->
-          複数の入力を１つの出力にまとめる時、それぞれの入力は指定のミキシングルールによって１チャンネル(モノラル)にダウンミックスされます。
+          複数の入力を１つの出力にまとめる時、それぞれの入力は指定のミキシングルールによって１チャンネル(モノ)にダウンミックスされます。
           接続されていない入力も<b>１チャンネルの無音</b>としてカウントされて出力されます。
           入力ストリームを変える事は出力のチャンネルの順序に影響しません。
         </p>
@@ -8720,101 +8782,114 @@ odd function with period \(2\pi\).-->
     </section>
     <section property="bibo:hasPart" resource="#mixer-gain-structure" typeof="bibo:Chapter" id="mixer-gain-structure" class="informative">
       <!--OddPage--><h2 resource="#h-mixer-gain-structure" id="h-mixer-gain-structure"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>
-        Mixer Gain Structure <button onclick="OpenOriginal('mixer-gain-structure')">原文</button>
-      </span></h2><p><em>This section is non-normative.</em></p>
+        ミキサーゲイン構成 <button onclick="OpenOriginal('mixer-gain-structure')">原文</button>
+      </span></h2><p><em>このセクションは参考情報です。</em></p>
       <h2 id="background">
-        Background
+        背景
       </h2>
       <p>
-        One of the most important considerations when dealing with audio
+<!--        One of the most important considerations when dealing with audio
         processing graphs is how to adjust the gain (volume) at various points.
         For example, in a standard mixing board model, each input bus has
         pre-gain, post-gain, and send-gains. Submix and master out busses also
         have gain control. The gain control described here can be used to
-        implement standard mixing boards as well as other architectures.
+        implement standard mixing boards as well as other architectures.-->
+        オーディオ処理グラフについて考える時に重要な事の1つが、各ポイントにおけるゲイン(音量)をどのように調整するかです。 例えば、標準的なミキサー卓モデルの場合、それぞれの入力バスは、プリゲイン、ポストゲイン、センドゲインを持っています。 サブミックスとマスター出力バスもまたゲインコントロールを持っています。 ここで述べるゲインコントロールは他のアーキテクチャーと同じように標準的なミキサー卓に使用する事ができます。
       </p>
       <section property="bibo:hasPart" resource="#SummingJunction" typeof="bibo:Chapter">
         <h3 resource="#SummingJunction" id="SummingJunction"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>
-          Summing Inputs <button onclick="OpenOriginal('SummingJunction')">原文</button>
+          サミング入力 <button onclick="OpenOriginal('SummingJunction')">原文</button>
         </span></h3>
         <p>
-          The inputs to <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s have the ability to
+<!--          The inputs to <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s have the ability to
           accept connections from multiple outputs. The input then acts as a
           unity gain summing junction with each output signal being added with
-          the others:
+          the others:-->
+          <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の入力は複数の出力からの接続を受け付ける能力を持っています。 入力はそれぞれの出力を他と足し合わせる、ユニティ・ゲインのサミング接続として振舞います(<span class="annotate">訳注:複数の信号をそのまま足し合わせる事を指します</span>)。:
         </p>
         <figure id="fig-a-graph-showing-source-1-and-source-2-output-summed-at-the-input-of-destination">
           <img alt="unity gain summing junction" src="images/unity-gain-summing-junction.png">
-          <figcaption>Fig. <span class="figno">8</span> <span class="fig-title">
-            A graph showing Source 1 and Source 2 output summed at the input of
-            Destination
+          <figcaption>図. <span class="figno">8</span> <span class="fig-title">
+<!--            A graph showing Source 1 and Source 2 output summed at the input of
+            Destination-->
+            ソース 1 とソース 2 がディスティネーションの入力で足し合わされて出力される図
           </span></figcaption>
         </figure>
         <p>
-          In cases where the channel layouts of the outputs do not match, a mix
-          (usually up-mix) will occur according to the <a href="#channel-up-mixing-and-down-mixing">mixing rules</a>.
+<!--          In cases where the channel layouts of the outputs do not match, a mix
+          (usually up-mix) will occur according to the <a href="#channel-up-mixing-and-down-mixing">mixing rules</a>.-->
+          各出力のチャンネルレイアウトが一致しない場合は、<a href="#channel-up-mixing-and-down-mixing">ミキシング規則</a>に従ってミックス(通常はアップミックス)が行われます。
         </p>
         <p>
-          No clipping is applied at the inputs or outputs of the
+<!--          No clipping is applied at the inputs or outputs of the
           <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> to allow a maximum of dynamic range
-          within the audio graph.
+          within the audio graph.-->
+          オーディオグラフ中のダイナミックレンジを最大化するため <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の入力または出力にクリッピングは適用されません。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#gain-control" typeof="bibo:Chapter" id="gain-control">
         <h3 resource="#h-gain-control" id="h-gain-control"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>
-          Gain Control <button onclick="OpenOriginal('gain-control')">原文</button>
+          ゲインコントロール <button onclick="OpenOriginal('gain-control')">原文</button>
         </span></h3>
         <p>
-          In many scenarios, it's important to be able to control the gain for
+<!--          In many scenarios, it's important to be able to control the gain for
           each of the output signals. The <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> gives
-          this control:
+          this control:-->
+          多くの場合、それぞれの出力信号のゲインを制御できる事が重要です。 <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> によってこのコントロールが可能です:
         </p>
         <figure id="fig-a-graph-featuring-volume-control-for-each-voice">
           <img alt="mixer architecture new" src="images/mixer-architecture-new.png">
-          <figcaption>Fig. <span class="figno">9</span> <span class="fig-title">
-            A graph featuring volume control for each voice
+          <figcaption>図. <span class="figno">9</span> <span class="fig-title">
+<!--            A graph featuring volume control for each voice-->
+            それぞれのボイスに音量制御を付加した図
           </span></figcaption>
         </figure>
         <p>
-          Using these two concepts of unity gain summing junctions and
+<!--          Using these two concepts of unity gain summing junctions and
           GainNodes, it's possible to construct simple or complex mixing
-          scenarios.
+          scenarios.-->
+          ユニティ・ゲイン・サミング接続と GainNode という2つの概念を使う事で、簡単な、あるいは複雑なミキシングのシナリオを構成する事が可能です。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#Example-mixer-with-send-busses" typeof="bibo:Chapter">
         <h3 resource="#Example-mixer-with-send-busses" id="Example-mixer-with-send-busses"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.3 </span>
-          Example: Mixer with Send Busses <button onclick="OpenOriginal('Example-mixer-with-send-busses')">原文</button>
+          例: センドバス付ミキサー <button onclick="OpenOriginal('Example-mixer-with-send-busses')">原文</button>
         </span></h3>
         <p>
-          In a routing scenario involving multiple sends and submixes, explicit
+<!--          In a routing scenario involving multiple sends and submixes, explicit
           control is needed over the volume or "gain" of each connection to a
           mixer. Such routing topologies are very common and exist in even the
           simplest of electronic gear sitting around in a basic recording
-          studio.
+          studio.-->
+          複数のセンドとサブミックスを含むルーティングのシナリオでは、ミキサーへのそれぞれの接続について音量または "ゲイン" のわかりやすい制御が必要です。 基本的なレコーディングスタジオに置かれている電子機器の一番単純なものでさえ、そのようなルーティング・トポロジーは非常に一般的に使われます。
         </p>
         <p>
-          Here's an example with two send mixers and a main mixer. Although
+<!--          Here's an example with two send mixers and a main mixer. Although
           possible, for simplicity's sake, pre-gain control and insert effects
-          are not illustrated:
+          are not illustrated:-->
+          これは 2 つのセンド・ミキサーと 1 つののメインミキサーの例です。 可能ではありますが、単純化のため、プリゲインコントロールとインサート・エフェクトは図示していません。:
         </p>
         <figure id="fig-a-graph-showing-a-full-mixer-with-send-busses.x">
           <img alt="mixer gain structure" src="images/mixer-gain-structure.png">
-          <figcaption>Fig. <span class="figno">10</span> <span class="fig-title">
-            A graph showing a full mixer with send busses.
+          <figcaption>図. <span class="figno">10</span> <span class="fig-title">
+<!--            A graph showing a full mixer with send busses.-->
+            センドバス付きミキサーの全体図
           </span></figcaption>
         </figure>
         <p>
-          This diagram is using a shorthand notation where "send 1", "send 2",
+<!--          This diagram is using a shorthand notation where "send 1", "send 2",
           and "main bus" are actually inputs to <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>s,
           but here are represented as summing busses, where the intersections
           g2_1, g3_1, etc. represent the "gain" or volume for the given source
           on the given mixer. In order to expose this gain, an
-          <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> is used:
+          <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> is used:-->
+          この図では省略した書き方を使っています。 "send 1"、"send 2"、"main bus" は実際には <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> に入力されますがここではサミングバスとして書かれており、交点にある g2_1、g3_1、などが、あるミキサー上のあるソースの "ゲイン" または音量を表します。 このゲインをコントロールするために <a class="idlType" href="#idl-def-GainNode"><code>GainNode</code></a> が使われます。:
         </p>
         <p>
-          Here's how the above diagram could be constructed in JavaScript:
+<!--          Here's how the above diagram could be constructed in JavaScript:-->
+          上の図を JavaScript で構築したものがこれになります:
         </p>
-        <div class="example"><div class="example-title"><span>Example 8</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="kwd">var</span><span class="pln"> context </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        <div class="example"><div class="example-title"><span>例 8</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="kwd">var</span><span class="pln"> context </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> compressor </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> reverb </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> delay </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
@@ -8894,28 +8969,33 @@ odd function with period \(2\pi\).-->
     </section>
     <section property="bibo:hasPart" resource="#DynamicLifetime" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#DynamicLifetime" id="DynamicLifetime"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>
-        Dynamic Lifetime <button onclick="OpenOriginal('DynamicLifetime')">原文</button>
+        動的ライフタイム <button onclick="OpenOriginal('DynamicLifetime')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#background-1" typeof="bibo:Chapter" id="background-1">
         <h3 resource="#h-background-1" id="h-background-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>
-          Background <button onclick="OpenOriginal('background-1')">原文</button>
+          背景 <button onclick="OpenOriginal('background-1')">原文</button>
         </span></h3>
         <p class="norm">
-          <em>This section is non-normative. Please see <a href="#lifetime-AudioContext">AudioContext lifetime</a> and <a href="#lifetime-AudioNode">AudioNode lifetime</a> for normative
-          requirements.</em>
+<!--          <em>This section is non-normative. Please see <a href="#lifetime-AudioContext">AudioContext lifetime</a> and <a href="#lifetime-AudioNode">AudioNode lifetime</a> for normative
+          requirements.</em>-->
+          <em>
+            このセクションは参考情報です。
+             基準情報としての要求事項については <a href="#lifetime-AudioContext">AudioContextのライフタイム</a> および <a href="#lifetime-AudioNode">AudioNodeのライムタイム</a> を参照してください。
+          </em>
         </p>
         <p>
-          In addition to allowing the creation of static routing
+<!--          In addition to allowing the creation of static routing
           configurations, it should also be possible to do custom effect
           routing on dynamically allocated voices which have a limited
           lifetime. For the purposes of this discussion, let's call these
           short-lived voices "notes". Many audio applications incorporate the
           ideas of notes, examples being drum machines, sequencers, and 3D
           games with many one-shot sounds being triggered according to game
-          play.
+          play.-->
+          静的なルーティング設定の構築が可能である事に加えて、動的に割り当てられて限られたライフタイムを持つ「ボイス」に対して特別なエフェクトのルーティングを行う事が可能である必要があります。 この議論のためにこれらの短期間だけ存在する音を "ノート" と呼びます。 多くのオーディオアプリケーションがこのノートという考え方を組み込んでおり、例として、ドラムマシン、シーケンサー、多くのワンショットの音がゲームプレイに従ってトリガーされる3Dゲームがあります。
         </p>
         <p>
-          In a traditional software synthesizer, notes are dynamically
+<!--          In a traditional software synthesizer, notes are dynamically
           allocated and released from a pool of available resources. The note
           is allocated when a MIDI note-on message is received. It is released
           when the note has finished playing either due to it having reached
@@ -8926,10 +9006,11 @@ odd function with period \(2\pi\).-->
           only when the release envelope phase has finished. At any given time,
           there can be a large number of notes playing but the set of notes is
           constantly changing as new notes are added into the routing graph,
-          and old ones are released.
+          and old ones are released.-->
+          従来のソフトウェアシンセサイザーでは、ノートは使用可能なリソースのプールから動的に割り当てられ、解放されます。 ノートは MIDI ノートオン・メッセージを受信すると割り当てられます。 それはそのノートが発音を終了するか、(もしループ再生でなければ)サンプルデータの終わりに達した時に解放されます。 それは、エンベロープで値が 0 のサスティンフェーズに達したり、 MIDI ノートオフ・メッセージによってエンベロープのリリースフェーズに達したりする事で発生します。 MIDI ノートオフの場合には、そのノートは即時ではなく、リリースエンベロープが終了した時点で解放されます。 どの時間においても、多数のノートが再生中であり、常に新しいノートがルーティンググラフに追加され、古いノートが解放されながらそのノートの組は常に変化しています。
         </p>
         <p>
-          The audio system automatically deals with tearing-down the part of
+<!--          The audio system automatically deals with tearing-down the part of
           the routing graph for individual "note" events. A "note" is
           represented by an <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a>, which
           can be directly connected to other processing nodes. When the note
@@ -8940,30 +9021,32 @@ odd function with period \(2\pi\).-->
           will be deleted when they have no more references. Nodes in the graph
           which are long-lived and shared between dynamic voices can be managed
           explicitly. Although it sounds complicated, this all happens
-          automatically with no extra JavaScript handling required.
+          automatically with no extra JavaScript handling required.-->
+          オーディオシステムはそれぞれの "ノート" イベントに対して、ルーティンググラフの一部分の切り落としを自動的に行います。 1 つの "ノート" は1つの <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> で表され、それは直接、他の処理ノードに接続さする事ができます。 ノートが再生を終了した時、コンテキストは自動的にその <a class="idlType" href="#idl-def-AudioBufferSourceNode"><code>AudioBufferSourceNode</code></a> への参照を解放します。 それによって、そのノードが接続されていた先の全てのノードへの参照が解放され、という風に続きます。 そのノードは自動的にグラフから切断され、全ての参照が無くなった時点で破棄されます。 グラフ内の、長時間存在して動的なボイスから共有されるノードは明示的に管理する事ができます。 複雑なように聞こえますが、これらは全て、特にJavaScriptでハンドリングする必要なく、自動的に行われます。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#example" typeof="bibo:Chapter" id="example">
         <h3 resource="#h-example" id="h-example"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>
-          Example <button onclick="OpenOriginal('example')">原文</button>
+          例 <button onclick="OpenOriginal('example')">原文</button>
         </span></h3>
         <figure id="fig-a-graph-featuring-a-subgraph-that-will-be-releases-early.x">
           <img alt="dynamic allocation" src="images/dynamic-allocation.png">
-          <figcaption>Fig. <span class="figno">11</span> <span class="fig-title">
-            A graph featuring a subgraph that will be releases early.
+          <figcaption>図. <span class="figno">11</span> <span class="fig-title">
+            グラフの一部が先にリリースされる図
           </span></figcaption>
         </figure>
         <p>
-          The low-pass filter, panner, and second gain nodes are directly
+<!--          The low-pass filter, panner, and second gain nodes are directly
           connected from the one-shot sound. So when it has finished playing
           the context will automatically release them (everything within the
           dotted line). If there are no longer any JavaScript references to the
           one-shot sound and connected nodes, then they will be immediately
           removed from the graph and deleted. The streaming source, has a
           global reference and will remain connected until it is explicitly
-          disconnected. Here's how it might look in JavaScript:
+          disconnected. Here's how it might look in JavaScript:-->
+          ローパスフィルタ、パンナー、 2 番目のゲインノードがワンショットの音から直接接続されています。 そのため再生が終わった時、コンテキストは自動的にそれら (点線内の全て) を解放します。 もし JavaScript からワンショットの音とそれに接続されているノードへの参照がもう無ければ、それらはすぐにグラフから外され破棄されます。 ストリーミングのソースはグローバルな参照を持っており、それが明示的に切断されるまで接続されたままで残ります。 JavaScript ではどうなるのかをここに示します:
         </p>
-        <div class="example"><div class="example-title"><span>Example 9</span></div><pre style="" class="example highlight prettyprint prettyprinted"><span class="kwd">var</span><span class="pln"> context </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+        <div class="example"><div class="example-title"><span>例 9</span></div><pre style="" class="example highlight prettyprint prettyprinted"><span class="kwd">var</span><span class="pln"> context </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> compressor </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> gainNode1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">var</span><span class="pln"> streamingAudioSource </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
@@ -9008,13 +9091,13 @@ odd function with period \(2\pi\).-->
     </section>
     <section property="bibo:hasPart" resource="#channel-up-mixing-and-down-mixing" typeof="bibo:Chapter" id="channel-up-mixing-and-down-mixing">
       <!--OddPage--><h2 resource="#h-channel-up-mixing-and-down-mixing" id="h-channel-up-mixing-and-down-mixing"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>
-        Channel up-mixing and down-mixing <button onclick="OpenOriginal('channel-up-mixing-and-down-mixing')">原文</button>
+        チャンネルのアップミックスとダウンミックス <button onclick="OpenOriginal('channel-up-mixing-and-down-mixing')">原文</button>
       </span></h2>
       <p class="norm">
-        This section is normative.
+        このセクションは基準情報です。
       </p>
       <p>
-        <a class="sec-ref" href="#mixer-gain-structure"><span class="secno">3.</span> <span class="sec-title">
+<!--        <a class="sec-ref" href="#mixer-gain-structure"><span class="secno">3.</span> <span class="sec-title">
         Mixer Gain Structure
       </span></a> describes how an input to an
         <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> can be connected from one or more outputs
@@ -9030,120 +9113,152 @@ odd function with period \(2\pi\).-->
         things "just work" without worrying too much about the details,
         especially in the very common case of mono and stereo streams. Of
         course, the rules can be changed for advanced use cases, especially
-        multi-channel.
+        multi-channel.-->
+        <a class="sec-ref" href="#mixer-gain-structure"><span class="secno">3.</span> <span class="sec-title">
+        ミキサーゲイン構成
+      </span></a>では、 <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の入力が 1 つ以上の <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の出力からどのように 接続されるかを記述しています。 これらの出力からの接続のそれぞれは、0 以外の特定のチャンネル数を持っています。 入力はそれら全ての接続のチャンネルを組み合わせるための<em>ミキシング規則</em>を持っています。 単純な例としては、もし入力がモノラル出力とステレオ出力から接続されている場合、そのモノラル接続は通常、ステレオにアップミックスされ、ステレオ接続と加算されます。 しかしもちろん、全ての <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の全ての入力について、その正確な<em>ミキシング規則</em>を定義する事が重要です。 全ての入力に対するデフォルトのミキシング規則は、特に非常に良く使われるモノラルとステレオのストリームに対しては、あまり詳細について煩わされる事なく "ちゃんと動作する" ように選ばれます。 しかし、高度な使用例、特にマルチチャンネルの場合にはその規則は変更する事が可能です。
       </p>
       <p>
-        To define some terms, <em>up-mixing</em> refers to the process of
+<!--        To define some terms, <em>up-mixing</em> refers to the process of
         taking a stream with a smaller number of channels and converting it to
         a stream with a larger number of channels. <em>down-mixing</em> refers
         to the process of taking a stream with a larger number of channels and
-        converting it to a stream with a smaller number of channels.
+        converting it to a stream with a smaller number of channels.-->
+        幾つかの用語の定義として、<em>アップミックス</em>は、小さなチャンネル数のストリームを受け取り、
+        大きなチャンネル数のストリームに変換する処理を指します。 <em>ダウンミックス</em>は、大きなチャンネル数のストリームを受け取り、
+        小さなチャンネル数のストリームに変換する処理を指します。
       </p>
       <p>
-        An <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> input use three basic pieces of
+<!--        An <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> input use three basic pieces of
         information to determine how to mix all the outputs connected to it. As
         part of this process it computes an internal value
         <dfn id="dfn-computednumberofchannels" data-dfn-type="dfn"><code>computedNumberOfChannels</code></dfn> representing the
-        actual number of channels of the input at any given time:
+        actual number of channels of the input at any given time:-->
+        <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の入力は全ての出力からの接続をどのようにミックスするかを決定するために、3 つの基本的な情報を使用します。 この処理の一部として、任意の時刻における、入力の実際のチャンネル数を表す内部的な値、 <dfn id="dfn-computednumberofchannels" data-dfn-type="dfn"><code>computedNumberOfChannels</code></dfn> を計算します:
       </p>
       <p>
-        The <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> attributes involved in channel
+<!--        The <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> attributes involved in channel
         up-mixing and down-mixing rules are defined <a href="#the-audionode-interface">above</a>. The following is a more precise
-        specification on what each of them mean.
+        specification on what each of them mean.-->
+        チャンネルのアップミックス、ダウンミックス規則に関わる <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> の属性は <a href="#the-audionode-interface">上</a>に定義されています。
+        以下はそのそれぞれが何を意味しているかの、より正確な仕様です。
       </p>
       <ul>
         <li>
-          <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
-          is used to help compute <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a>.
+<!--          <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
+          is used to help compute <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a>.-->
+            <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> は <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> を計算する補助として使用されます。
         </li>
         <li>
-          <a href="#widl-AudioNode-channelCountMode"><code>channelCountMode</code></a>
+<!--          <a href="#widl-AudioNode-channelCountMode"><code>channelCountMode</code></a>
           determines how <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> will be
           computed. Once this number is computed, all of the connections will
           be up or down-mixed to that many channels. For most nodes, the
-          default value is <a href="#idl-def-ChannelCountMode.max"><code>"max"</code></a>.
+          default value is <a href="#idl-def-ChannelCountMode.max"><code>"max"</code></a>.-->
+          <a href="#widl-AudioNode-channelCountMode"><code>channelCountMode</code></a> は <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> がどのように計算されるかを決定します。 この数が一度計算されると、その数のチャンネル数に全ての接続はアップまたはダウンミックスされます。 ほとんどのノードはデフォルトの値として <a href="#idl-def-ChannelCountMode.max"><code>"max"</code></a> を持ちます。
           <ul>
             <li>
               <a href="#idl-def-ChannelCountMode.max"><code>"max"</code></a>:
-              <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> is computed as the
+<!--              <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> is computed as the
               maximum of the number of channels of all connections. In this
               mode <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> is
-              ignored.
+              ignored.-->
+              <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> は全ての接続のチャンネル数の最大値として計算されます。 このモードでは <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> は無視されます。
             </li>
             <li>
               <a href="#idl-def-ChannelCountMode.clamped-max"><code>"clamped-max"</code></a>:
-              same as “max” up to a limit of the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
+<!--              same as “max” up to a limit of the <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>-->
+              "max" と同様ですが、 <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> を上限とします。
             </li>
             <li>
               <a href="#idl-def-ChannelCountMode.explicit"><code>"explicit"</code></a>:
-              <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> is the exact value
-              as specified in <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>
+<!--              <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> is the exact value
+              as specified in <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a>-->
+               <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> の正確な値が <a href="#widl-AudioNode-channelCount"><code>channelCount</code></a> で指定されます。
             </li>
           </ul>
         </li>
         <li>
-          <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>
+<!--          <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>
           determines how the individual channels will be treated. For example,
           will they be treated as speakers having a specific layout, or will
           they be treated as simple discrete channels? This value influences
           exactly how the up and down mixing is performed. The default value is
-          "speakers".
+          "speakers".-->
+          <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a> はそれぞれのチャンネルがどのように取り扱われるかを指定します。
+          例えば、特定の配置をされたスピーカーや、単なる別々のチャンネルがあります。 この値はまさにアップ、ダウンミックスがどのように行われるかに影響します。
+          デフォルトの値は "speakers" です。
           <ul>
             <li>
-              <a href="#idl-def-ChannelInterpretation.speakers"><code>“speakers”</code></a>:
+<!--              <a href="#idl-def-ChannelInterpretation.speakers"><code>“speakers”</code></a>:
               use <a href="#ChannelLayouts">up-down-mix equations for
               mono/stereo/quad/5.1</a>. In cases where the number of channels
               do not match any of these basic speaker layouts, revert to
-              "discrete".
+              "discrete".-->
+              <a href="#ChannelLayouts">モノ/ステレオ/クワッド/5.1のためのアップ・ダウンミックス式</a>
+              を使用します。 チャンネル数がこれらのスピーカー基本レイアウトに一致しない場合、"discrete" に移行します。
             </li>
             <li>
               <a href="#idl-def-ChannelInterpretation.discrete"><code>“discrete”</code></a>:
-              up-mix by filling channels until they run out then zero out
+<!--              up-mix by filling channels until they run out then zero out
               remaining channels. down-mix by filling as many channels as
-              possible, then dropping remaining channels
+              possible, then dropping remaining channels-->
+              アップミックスの場合、チャンネルを使い切るまで順に埋めて行き、余っているチャンネルには 0 を出力します。 ダウンミックスでは、可能な限りチャンネルを順に埋め、余ったチャンネルは捨てられます。
             </li>
           </ul>
         </li>
       </ul>
       <p>
-        For each input of an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>, an implementation
-        must:
+<!--        For each input of an <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a>, an implementation
+        must:-->
+         <a class="idlType" href="#idl-def-AudioNode"><code>AudioNode</code></a> のそれぞれの入力の実装は次のようにしなくてはなりません:
       </p>
       <ol>
-        <li>Compute <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a>.
+        <li>
+<!--          Compute <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a>.-->
+           <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> を計算します。
         </li>
-        <li>For each connection to the input:
+        <li>
+<!--          For each connection to the input:-->
+          入力への接続のそれぞれについて:
           <ul>
-            <li>up-mix or down-mix the connection to
+            <li>
+<!--              up-mix or down-mix the connection to
             <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> according to
-              <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>.
+              <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>.-->
+              接続を <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a> に従って <a data-link-type="dfn" class="internalDFN" href="#dfn-computednumberofchannels"><code><code>computedNumberOfChannels</code></code></a> にアップミックスまたはダウンミックスします。
             </li>
-            <li>Mix it together with all of the other mixed streams (from other
+            <li>
+<!--              Mix it together with all of the other mixed streams (from other
             connections). This is a straight-forward mixing together of each of
-            the corresponding channels from each connection.
+            the corresponding channels from each connection.-->
+            (他の接続からの) ミックスされたストリームとミックスします。
+            これは各接続の対応するそれぞれのチャンネルを素直にミックスします。
             </li>
           </ul>
         </li>
       </ol>
       <section property="bibo:hasPart" resource="#ChannelLayouts" typeof="bibo:Chapter">
         <h3 resource="#ChannelLayouts" id="ChannelLayouts"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.1 </span>
-          Speaker Channel Layouts <button onclick="OpenOriginal('ChannelLayouts')">原文</button>
+          スピーカーチャンネル配置 <button onclick="OpenOriginal('ChannelLayouts')">原文</button>
         </span></h3>
         <p>
-          When <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>
+<!--          When <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a>
           is <a href="#idl-def-ChannelInterpretation.speakers">"speakers"</a>
           then the up-mixing and down-mixing is defined for specific channel
-          layouts.
+          layouts.-->
+          <a href="#widl-AudioNode-channelInterpretation"><code>channelInterpretation</code></a> が "speakers" の場合、特定のチャンネル配置に対してのアップミックスおよびダウンミックスが定義されます。
         </p>
         <p>
-          Mono (one channel), stereo (two channels), quad (four channels), and
+<!--          Mono (one channel), stereo (two channels), quad (four channels), and
           5.1 (six channels) <em title="MUST" class="rfc2119">MUST</em> be supported. Other channel layout may be
-          supported in future version of this specification.
+          supported in future version of this specification.-->
+          モノ (1 チャンネル)、ステレオ (2 チャンネル)、クワッド (4 チャンネル) そして 5.1 (6 チャンネル) がサポートされなくてはなりません (<em title="MUST" class="rfc2119">MUST</em>)。それ以外のチャンネル配置についてはこの仕様で将来サポートされるかもしれません。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#ChannelOrdering" typeof="bibo:Chapter">
         <h3 resource="#ChannelOrdering" id="ChannelOrdering"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.2 </span>
-          Channel ordering <button onclick="OpenOriginal('ChannelOrdering')">原文</button>
+          チャンネルの順序 <button onclick="OpenOriginal('ChannelOrdering')">原文</button>
         </span></h3>
         <pre>    Mono
       0: M: mono
@@ -9171,7 +9286,7 @@ odd function with period \(2\pi\).-->
       </section>
       <section property="bibo:hasPart" resource="#UpMix-sub" typeof="bibo:Chapter">
         <h3 resource="#UpMix-sub" id="UpMix-sub"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.3 </span>
-          Up Mixing speaker layouts <button onclick="OpenOriginal('UpMix-sub')">原文</button>
+          アップミックスのスピーカー配置 <button onclick="OpenOriginal('UpMix-sub')">原文</button>
         </span></h3>
         <pre>Mono up-mix:
 
@@ -9222,7 +9337,7 @@ Quad up-mix:
       </section>
       <section property="bibo:hasPart" resource="#down-mix" typeof="bibo:Chapter">
         <h3 resource="#down-mix" id="down-mix"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span>
-          Down Mixing speaker layouts <button onclick="OpenOriginal('down-mix')">原文</button>
+          ダウンミックスのスピーカー配置 <button onclick="OpenOriginal('down-mix')">原文</button>
         </span></h3>
         <p>
           A down-mix will be necessary, for example, if processing 5.1 source
@@ -9263,9 +9378,9 @@ Quad up-mix:
       </section>
       <section property="bibo:hasPart" resource="#ChannelRules-section" typeof="bibo:Chapter" class="informative">
         <h3 resource="#ChannelRules-section" id="ChannelRules-section"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5 </span>
-          Channel Rules Examples <button onclick="OpenOriginal('ChannelRules-section')">原文</button>
-        </span></h3><p><em>This section is non-normative.</em></p>
-        <div class="example"><div class="example-title"><span>Example 10</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="com">// Set gain node to explicit 2-channels (stereo).</span><span class="pln">
+          チャンネル規則の例 <button onclick="OpenOriginal('ChannelRules-section')">原文</button>
+        </span></h3><p><em>このセクションは参考情報です。</em></p>
+        <div class="example"><div class="example-title"><span>例 10</span></div><pre style="" class="highlight example prettyprint prettyprinted"><span class="com">// Set gain node to explicit 2-channels (stereo).</span><span class="pln">
 gain</span><span class="pun">.</span><span class="pln">channelCount </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
 gain</span><span class="pun">.</span><span class="pln">channelCountMode </span><span class="pun">=</span><span class="pln"> </span><span class="str">"explicit"</span><span class="pun">;</span><span class="pln">
 gain</span><span class="pun">.</span><span class="pln">channelInterpretation </span><span class="pun">=</span><span class="pln"> </span><span class="str">"speakers"</span><span class="pun">;</span><span class="pln">
@@ -9294,31 +9409,34 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
     </section>
     <section property="bibo:hasPart" resource="#audio-sample-values" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#audio-sample-values" id="audio-sample-values"><span property="xhv:role" resource="xhv:heading"><span class="secno">6. </span>
-        Audio Signal Values <button onclick="OpenOriginal('audio-sample-values')">原文</button>
+        オーディオ信号の値 <button onclick="OpenOriginal('audio-sample-values')">原文</button>
       </span></h2>
       <p>
-        The nominal range of all audio signals at a destination node of any
+<!--        The nominal range of all audio signals at a destination node of any
         audio graph is [-1, 1]. The audio rendition of signal values outside
         this range, or of the values <code>NaN</code>, positive infinity or
-        negative infinity, is undefined by this specification.
+        negative infinity, is undefined by this specification.-->
+        どのようなオーディオグラフでも destination ノードにおける全てのオーディオ信号の名目上の範囲は [-1, 1] です。
+        この範囲外の値の信号、あるいは <code>NaN</code>、正の無限値、負の無限値のオーディオレンダリングはこの仕様では定義されていません。
       </p>
     </section>
     <section property="bibo:hasPart" resource="#Spatialization" typeof="bibo:Chapter">
       <!--OddPage--><h2 resource="#Spatialization" id="Spatialization"><span property="xhv:role" resource="xhv:heading"><span class="secno">7. </span>
-        Spatialization / Panning <button onclick="OpenOriginal('Spatialization')">原文</button>
+        空間配置 / バンニング <button onclick="OpenOriginal('Spatialization')">原文</button>
       </span></h2>
       <section property="bibo:hasPart" resource="#Spatialization-background" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-background" id="Spatialization-background"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.1 </span>
-          Background <button onclick="OpenOriginal('Spatialization-background')">原文</button>
+          背景 <button onclick="OpenOriginal('Spatialization-background')">原文</button>
         </span></h3>
         <p>
-          A common feature requirement for modern 3D games is the ability to
+<!--          A common feature requirement for modern 3D games is the ability to
           dynamically spatialize and move multiple audio sources in 3D space.
           Game audio engines such as OpenAL, FMOD, Creative's EAX, Microsoft's
-          XACT Audio, etc. have this ability.
+          XACT Audio, etc. have this ability.-->
+          最近の 3D ゲームで良く要求される機能として、動的な空間音響と複数の音源の 3D 空間での移動があります。 OpenAL、FMOD、クリエイティブ社の EAX、マイクロソフト社の XACT Audio などのようなゲームオーディオエンジンはこの機能を持っています。
         </p>
         <p>
-          Using an <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>, an audio stream can be
+<!--          Using an <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>, an audio stream can be
           spatialized or positioned in space relative to an
           <a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a>. An
           <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> will contain a single
@@ -9340,24 +9458,30 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
           the source stream and the listener can be moving, they both have a
           <em>velocity</em> vector representing both the speed and direction of
           movement. Taken together, these two velocities can be used to
-          generate a doppler shift effect which changes the pitch.
+          generate a doppler shift effect which changes the pitch.-->
+
+          <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> を使って、オーディオストリームを <a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a> に対する相対的な空間位置に配置し、定位させる事ができます。 <a class="idlType" href="#idl-def-AudioContext"><code>AudioContext</code></a> は単一の <a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a> を持っています。
+           パンナーとリスナーはどちらも右手系デカルト座標の 3D 空間内の位置を持っています。 エフェクトの計算で使われる座標系は、メートルやフィートのような特別な単位とは独立した不変の座標系になっているため、座標空間で使用される単位は定められておらず、その必要もありません。
+         (ソースストリームの) <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>  オブジェクトは音が放出される方向を示す <em>orientation</em> ベクトルを持っています。 加えてそれらは音の指向性の強さを示す<em>サウンドコーン</em>を持っています。 例えば、音が無指向性であれば、方向には関係なくどこからでも聴こえますが、指向性が強い場合、それがリスナーの方向を向いている場合にだけ聴こえます。 (人間の耳を表す) <a class="idlType" href="#idl-def-AudioListener"><code>AudioListener</code></a> オブジェクトは人間が向いている方向を表すために <em>orientation</em> と <em>up</em> のベクトルを持っています。 音源ストリームとリスナーの両方が移動できるため、それらはどちらも移動の速度と方向を表す <em>velocity</em> ベクトルを持っています。 これらを基にした2つの速度から、ピッチが変動するドップラー効果を作り出す事ができます。
         </p>
         <p>
-          During rendering, the <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> calculates an
+<!--          During rendering, the <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> calculates an
           <em>azimuth</em> and <em>elevation</em>. These values are used
           internally by the implementation in order to render the
           spatialization effect. See the <a href="#Spatialization-panning-algorithm">Panning Algorithm</a> section for
-          details of how these values are used.
+          details of how these values are used.-->
+          レンダリングの間、 <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> は <em>azimuth</em> と <em>elevation</em> を計算します。 これらの値は空間配置をレンダリングするために実装によって内部的に使用されます。 これらの値がどのように使われるかの詳細については、 <a href="#Spatialization-panning-algorithm">パンニングアルゴリズム</a> を参照してください。
         </p>
       </section>
       <section property="bibo:hasPart" resource="#azimuth-elevation" typeof="bibo:Chapter" id="azimuth-elevation">
         <h3 resource="#h-azimuth-elevation" id="h-azimuth-elevation"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.2 </span>
-          Azimuth and Elevation <button onclick="OpenOriginal('azimuth-elevation')">原文</button>
+          アジマスとエレベーション <button onclick="OpenOriginal('azimuth-elevation')">原文</button>
         </span></h3>
         <p>
-          The following algorithm must be used to calculate the
+<!--          The following algorithm must be used to calculate the
           <em>azimuth</em> and <em>elevation</em>: for the
-          <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>
+          <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a>-->
+          <a class="idlType" href="#idl-def-PannerNode"><code>PannerNode</code></a> の <em>azimuth</em>と <em>elevation</em> を計算するために次のアルゴリズムが使用されなくてはなりません:
         </p>
         <pre style="" class="code highlight prettyprint prettyprinted"><span class="pln">  </span><span class="com">// Calculate the source-listener vector.</span><span class="pln">
   vec3 sourceListener </span><span class="pun">=</span><span class="pln"> source</span><span class="pun">.</span><span class="pln">position </span><span class="pun">-</span><span class="pln"> listener</span><span class="pun">.</span><span class="pln">position</span><span class="pun">;</span><span class="pln">
@@ -9410,13 +9534,15 @@ gain</span><span class="pun">.</span><span class="pln">channelInterpretation </s
       </section>
       <section property="bibo:hasPart" resource="#Spatialization-panning-algorithm" typeof="bibo:Chapter">
         <h3 resource="#Spatialization-panning-algorithm" id="Spatialization-panning-algorithm"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3 </span>
-          Panning Algorithm <button onclick="OpenOriginal('Spatialization-panning-algorithm')">原文</button>
+          バンニングアルゴリズム <button onclick="OpenOriginal('Spatialization-panning-algorithm')">原文</button>
         </span></h3>
         <p>
-          <em>Mono-to-stereo</em> and <em>stereo-to-stereo</em> panning must be
+<!--          <em>Mono-to-stereo</em> and <em>stereo-to-stereo</em> panning must be
           supported. <em>Mono-to-stereo</em> processing is used when all
           connections to the input are mono. Otherwise
-          <em>stereo-to-stereo</em> processing is used.
+          <em>stereo-to-stereo</em> processing is used.-->
+          <em>モノからステレオ</em> と <em>ステレオからステレオ</em> のバンニングがサポートされなくてはなりません。
+          <em>モノからステレオ</em> の処理は入力への接続が全てモノの場合に使用されます。そうでない場合、は <em>ステレオからステレオ</em> の処理が使用されます。
         </p>
         <section property="bibo:hasPart" resource="#Spatialzation-equal-power-panning" typeof="bibo:Chapter">
           <h4 resource="#Spatialzation-equal-power-panning" id="Spatialzation-equal-power-panning"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.3.1 </span>
@@ -9911,7 +10037,7 @@ outputR </span><span class="pun">=</span><span class="pln"> input </span><span c
     </section>
     <section property="bibo:hasPart" resource="#acknowledgements" typeof="bibo:Chapter" id="acknowledgements">
       <!--OddPage--><h2 resource="#h-acknowledgements" id="h-acknowledgements"><span property="xhv:role" resource="xhv:heading"><span class="secno">12. </span>
-        Acknowledgements <button onclick="OpenOriginal('acknowledgements')">原文</button>
+        承認 <button onclick="OpenOriginal('acknowledgements')">原文</button>
       </span></h2>
       <p>
         This specification is the collective work of the <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/2011/audio/">Audio Working Group</a>.
