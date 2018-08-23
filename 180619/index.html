@@ -12229,55 +12229,47 @@ value to <var>value</var>.</p>-->
   
     <ol>
      <li data-md="">
-      <p>Let <var>processorPort</var> be <a data-link-type="abstract-op" href="https://html.spec.whatwg.org/multipage/structured-data.html#structureddeserializewithtransfer" id="ref-for-structureddeserializewithtransfer">StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
-the current Realm).</p>
-
-<p>processorPortをStructuredDeserializeWithTransfer（processorPortSerialization、現在のレルム）とします。</p>
-
-     <li data-md="">
-      <p>Let <var>options</var> be <a data-link-type="abstract-op" href="https://html.spec.whatwg.org/multipage/structured-data.html#structureddeserialize" id="ref-for-structureddeserialize">StructuredDeserialize</a>(<code>optionsSerialization</code>, the
-  current Realm).</p>
-
-  <p>オプションをStructuredDeserialize（optionsSerialization、現在のレルム）とします。</p>
+<!--      <p>Let <var>processorPort</var> be <a data-link-type="abstract-op" href="https://html.spec.whatwg.org/multipage/structured-data.html#structureddeserializewithtransfer" id="ref-for-structureddeserializewithtransfer">StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
+the current Realm).</p>-->
+<p><var>processorPort</var> を <a data-link-type="abstract-op" href="https://html.spec.whatwg.org/multipage/structured-data.html#structureddeserializewithtransfer" id="ref-for-structureddeserializewithtransfer">StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
+  currentRealm) とします。</p>
 
      <li data-md="">
-      <p>Let <var>processorConstructor</var> be the result of looking up <var>nodeName</var> on the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑤">AudioWorkletGlobalScope</a></code>'s <a data-link-type="dfn" href="#node-name-to-processor-definition-map" id="ref-for-node-name-to-processor-definition-map④">node
-name to processor definition map</a>.</p>
-
-<p>processorConstructorは、AudioWorkletGlobalScopeのノード名からプロセッサ定義マップへのnodeNameを参照した結果とします。</p>
-
-     <li data-md="">
-      <p>If <var>processorConstructor</var> is <code>undefined</code>,
-throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑧">NotSupportedError</a></code> DOMException.</p>
-
-<p>processorConstructorが未定義の場合は、NotSupportedError DOMExceptionをスローします。</p>
+<!--      <p>Let <var>options</var> be <a data-link-type="abstract-op" href="https://html.spec.whatwg.org/multipage/structured-data.html#structureddeserialize" id="ref-for-structureddeserialize">StructuredDeserialize</a>(<code>optionsSerialization</code>, the
+  current Realm).</p>-->
+  <p><var>options</var> を <a data-link-type="abstract-op" href="https://html.spec.whatwg.org/multipage/structured-data.html#structureddeserialize" id="ref-for-structureddeserialize">StructuredDeserialize</a>(<code>optionsSerialization</code>, currentRealm)とします。</p>
 
      <li data-md="">
-      <p>Let <var>processor</var> be the result of
-Construct(<var>processorConstructor</var>, « <var>options</var> »).</p>
-
-<p.processorをConstruct（processorConstructor、«options»）の結果とします。</p>
-
-     <li data-md="">
-      <p>If <var>processor</var> does not implement the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> interface, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③③">InvalidStateError</a></code> DOMException.</p>
-
-      <p>プロセッサがAudioWorkletProcessorインタフェースを実装していない場合は、InvalidStateError DOMExceptionをスローします。</p>
+<!--      <p>Let <var>processorConstructor</var> be the result of looking up <var>nodeName</var> on the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑤">AudioWorkletGlobalScope</a></code>'s <a data-link-type="dfn" href="#node-name-to-processor-definition-map" id="ref-for-node-name-to-processor-definition-map④">node
+name to processor definition map</a>.</p>-->
+<p><var>processorConstructor</var> を、<code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑤">AudioWorkletGlobalScope</a></code> の<a data-link-type="dfn" href="#node-name-to-processor-definition-map" id="ref-for-node-name-to-processor-definition-map④">ノード名-プロセッサ記述子マップ</a>で <var>nodeName</var> を参照した結果とします。</p>
 
      <li data-md="">
-      <p>Set <var>processor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port①">port</a></code> to <var>processorPort</var>.</p>
-
-      <p>プロセッサのポートをprocessorPortに設定します。</p>
+<!--      <p>If <var>processorConstructor</var> is <code>undefined</code>,
+throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑧">NotSupportedError</a></code> DOMException.</p>-->
+<p><var>processorConstructor</var> が <code>undefined</code> の場合は、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑧">NotSupportedError</a></code> DOM 例外を発生します。</p>
 
      <li data-md="">
-      <p>Set <var>processor</var>’s <a data-link-type="dfn" href="#node-reference" id="ref-for-node-reference">node reference</a> to <var>node</var>.</p>
+<!--      <p>Let <var>processor</var> be the result of
+Construct(<var>processorConstructor</var>, « <var>options</var> »).</p>-->
+<p><var>processor</var> を Construct(<var>processorConstructor</var>, « <var>options</var> ») の結果とします。</p>
 
-      <p>プロセッサのノード参照をノードに設定します。
+     <li data-md="">
+<!--      <p>If <var>processor</var> does not implement the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> interface, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③③">InvalidStateError</a></code> DOMException.</p>-->
+      <p><var>processor</var> が <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> インタフェースを実装していない場合は、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③③">InvalidStateError</a></code> DOM 例外を発生します。</p>
+
+     <li data-md="">
+<!--      <p>Set <var>processor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port①">port</a></code> to <var>processorPort</var>.</p>-->
+      <p><var>processor</var> の <code class="idl"><a data-link-type="idl" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port①">port</a></code> を <var>processorPort</var> に設定します。</p>
+
+     <li data-md="">
+<!--      <p>Set <var>processor</var>’s <a data-link-type="dfn" href="#node-reference" id="ref-for-node-reference">node reference</a> to <var>node</var>.</p>-->
+      <p><var>processor</var> の<a data-link-type="dfn" href="#node-reference" id="ref-for-node-reference">ノード参照</a>を <var>node</var> に設定します。
 </p>
 
      <li data-md="">
-      <p>Set <var>node</var>’s <a data-link-type="dfn" href="#processor-reference" id="ref-for-processor-reference">processor reference</a> to <var>processor</var>.</p>
-
-      <p>ノードのプロセッサー参照をプロセッサーに設定します。</p>
+<!--      <p>Set <var>node</var>’s <a data-link-type="dfn" href="#processor-reference" id="ref-for-processor-reference">processor reference</a> to <var>processor</var>.</p>-->
+      <p><var>node</var> の<a data-link-type="dfn" href="#processor-reference" id="ref-for-processor-reference">プロセッサー参照</a>を <var>processor</var> に設定します。</p>
 
      <li data-md="">
 <!--      <p>Queue a task the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑤">control thread</a> to set the associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑨">AudioWorkletNode</a></code>'s state to <code>running</code>, then fire
