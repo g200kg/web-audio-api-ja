@@ -1657,7 +1657,7 @@ body {
     <hr/>
     <img src="images/midiappy_small.png" alt="" style="float:left;margin:0px 10px"/>
     <p>Tatsuya Shinyagaito @ g200kg<br/>
-      誤りその他があればGitHubページ、下のサイト経由などで連絡をお願いいたします。<br/>
+      誤りその他があればGitHub経由などで連絡をお願いいたします。<br/>
       <b><a href="https://www.g200kg.com/">https://www.g200kg.com/</a></b><br/>
     </p>
     <p>2018年8月18日</p>
@@ -2576,7 +2576,7 @@ representing a single node instance inside an audio worker.</p>-->
 <p><code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor">AudioWorkletProcessor</a></code> インターフェースは、 Audio ワーカー内の1つのノードのインスタンスを表します。</p>
 
     <li data-md="">
-     <p>A <code class="idl"><a data-link-type="idl" href="#biquadfilternode" id="ref-for-biquadfilternode">BiquadFilterNode</a></code> interface, an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①③">AudioNode</a></code> for common low-order filters such as:</p>
+<!--     <p>A <code class="idl"><a data-link-type="idl" href="#biquadfilternode" id="ref-for-biquadfilternode">BiquadFilterNode</a></code> interface, an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①③">AudioNode</a></code> for common low-order filters such as:</p>-->
 <p><code class="idl"><a data-link-type="idl" href="#biquadfilternode" id="ref-for-biquadfilternode">BiquadFilterNode</a></code> インターフェースは、 次のような一般的な低次のフィルタの <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①③">AudioNode</a></code> です:</p>
 
      <ul>
@@ -3439,7 +3439,7 @@ returning <var>promise</var>.</p>-->
 <!--        <p>If the <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-state" id="ref-for-dom-baseaudiocontext-state①">state</a></code> attribute of the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨">BaseAudioContext</a></code> is already
 "<code class="idl"><a data-link-type="idl" href="#dom-audiocontextstate-running" id="ref-for-dom-audiocontextstate-running②">running</a></code>", resolve <var>promise</var>, return it, and
 abort these steps.</p>-->
-<p>もし <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-state" id="ref-for-dom-baseaudiocontext-state①">state</a></code> attribute of the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨">BaseAudioContext</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-state" id="ref-for-dom-baseaudiocontext-state①">state</a></code> 属性が既に "<code class="idl"><a data-link-type="idl" href="#dom-audiocontextstate-running" id="ref-for-dom-audiocontextstate-running②">running</a></code>" であれば、 <var>promise</var> をリゾルブして返し、以降の手順は中止します。
+<p>もし <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨">BaseAudioContext</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-state" id="ref-for-dom-baseaudiocontext-state①">state</a></code> 属性が既に "<code class="idl"><a data-link-type="idl" href="#dom-audiocontextstate-running" id="ref-for-dom-audiocontextstate-running②">running</a></code>" であれば、 <var>promise</var> をリゾルブして返し、以降の手順は中止します。
 </p>
 <!--       <li data-md="">
         <p>If the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext①⓪">BaseAudioContext</a></code> is not <a data-link-type="dfn" href="#allowed-to-start" id="ref-for-allowed-to-start">allowed to
@@ -3933,7 +3933,7 @@ re-routed into the processing graph of the <code class="idl"><a data-link-type="
      <div> <em><!--Return type:-->戻り値:</em> <code class="idl"><a data-link-type="idl" href="#mediaelementaudiosourcenode" id="ref-for-mediaelementaudiosourcenode④">MediaElementAudioSourceNode</a></code> </div>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioContext" data-dfn-type="method" data-export="" id="dom-audiocontext-createmediastreamdestination"><code>createMediaStreamDestination()</code></dfn>
     <dd data-md="">
-     <p>Creates a <code class="idl"><a data-link-type="idl" href="#mediastreamaudiodestinationnode" id="ref-for-mediastreamaudiodestinationnode③">MediaStreamAudioDestinationNode</a></code></p>
+<!--     <p>Creates a <code class="idl"><a data-link-type="idl" href="#mediastreamaudiodestinationnode" id="ref-for-mediastreamaudiodestinationnode③">MediaStreamAudioDestinationNode</a></code></p>-->
      <p><code class="idl"><a data-link-type="idl" href="#mediastreamaudiodestinationnode" id="ref-for-mediastreamaudiodestinationnode③">MediaStreamAudioDestinationNode</a></code> を作成します。
      </p>
      <div> <em><!--No parameters.-->パラメータなし</em> </div>
@@ -4432,8 +4432,7 @@ precise suspension.</p>-->
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
         <td>
-         Schedules a suspension of the rendering at the specified time, which is quantized and rounded down to the <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑤">render quantum</a> size. If the quantized frame number
-
+<!--         Schedules a suspension of the rendering at the specified time, which is quantized and rounded down to the <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑤">render quantum</a> size. If the quantized frame number-->
 指定された時刻にレンダリングのサスペンドをスケジューリングします。時刻は<a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑤">レンダリング量子</a>のサイズで量子化されて丸められます。
 量子化されたフレーム番号が
 
@@ -4564,8 +4563,7 @@ in the constructor to the internal slots <code class="idl"><a data-link-type="id
 <p><var>b</var> を新しい <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑦">AudioBuffer</a></code> オブジェクトとします。 コンストラクタで渡された <code class="idl"><a data-link-type="idl" href="#dictdef-audiobufferoptions" id="ref-for-dictdef-audiobufferoptions①">AudioBufferOptions</a></code> の属性 <code class="idl"><a data-link-type="idl" href="#dom-audiobufferoptions-numberofchannels" id="ref-for-dom-audiobufferoptions-numberofchannels">numberOfChannels</a></code>、<code class="idl"><a data-link-type="idl" href="#dom-audiobufferoptions-length" id="ref-for-dom-audiobufferoptions-length">length</a></code>、<code class="idl"><a data-link-type="idl" href="#dom-audiobufferoptions-samplerate" id="ref-for-dom-audiobufferoptions-samplerate">sampleRate</a></code> の値をそれぞれ内部スロット <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot">[[number of channels]]</a></code>、<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot">[[length]]</a></code>、<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot">[[sample rate]]</a></code> に割り当てます。
 </p>
 
-     <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock</code></a><code>(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of channels]]</a></code>)</code>.</p>
-
+<!--     <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock</code></a><code>(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of channels]]</a></code>)</code>.</p>-->
      <p>この <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> の内部スロット <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> を <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock</code></a><code>(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of channels]]</a></code>)</code> を呼び出した結果に設定します。</p>
 
 <!--     <p class="note" role="note"><span>Note:</span> This initializes the underlying storage to zero.</p>-->
@@ -4799,7 +4797,7 @@ nothing is played.</p>-->
 <!--     <p>When a <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode④">ConvolverNode</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-convolvernode-buffer" id="ref-for-dom-convolvernode-buffer">buffer</a></code> is set to an <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑤">AudioBuffer</a></code> while the node is connected to an output node, or
 a <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode⑤">ConvolverNode</a></code> is connected to an output node while the <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode⑥">ConvolverNode</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-convolvernode-buffer" id="ref-for-dom-convolvernode-buffer①">buffer</a></code> is set to an <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑥">AudioBuffer</a></code>, it <a href="#acquire-the-content" id="ref-for-acquire-the-content⑥">acquires the
 content</a> of the <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑦">AudioBuffer</a></code>.</p>-->
-<p>ノードが出力ノードに接続されている状態で <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode④">ConvolverNode</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-convolvernode-buffer" id="ref-for-dom-convolvernode-buffer">buffer</a></code> がある <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑤">AudioBuffer</a></code> に設定された時、または <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode⑤">ConvolverNode</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-convolvernode-buffer" id="ref-for-dom-convolvernode-buffer①">buffer</a></code> がある <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑥">AudioBuffer</a></code> に設定されている状態で <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode⑤">ConvolverNode</a></code> が出力ノードに接続された時に、<code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑦">AudioBuffer</a></code> の「<a href="#acquire-the-content" id="ref-for-acquire-the-content⑥">内容の取得</a>」が行われます。</p>
+<p>ノードが出力ノードに接続されている状態で <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode④">ConvolverNode</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-convolvernode-buffer" id="ref-for-dom-convolvernode-buffer">buffer</a></code> がある <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑤">AudioBuffer</a></code> に設定された時、または <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode⑤">ConvolverNode</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-convolvernode-buffer" id="ref-for-dom-convolvernode-buffer①">buffer</a></code> がある <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑥">AudioBuffer</a></code> に設定されている状態で <code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode⑥">ConvolverNode</a></code> が出力ノードに接続された時に、<code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer④⑦">AudioBuffer</a></code> の「<a href="#acquire-the-content" id="ref-for-acquire-the-content⑥">内容の取得</a>」が行われます。</p>
 
 <li data-md="">
 <!--     <p>When the dispatch of an <code class="idl"><a data-link-type="idl" href="#audioprocessingevent" id="ref-for-audioprocessingevent①">AudioProcessingEvent</a></code> completes, it <a href="#acquire-the-content" id="ref-for-acquire-the-content⑦">acquires the contents</a> of its <code class="idl"><a data-link-type="idl" href="#dom-audioprocessingevent-outputbuffer" id="ref-for-dom-audioprocessingevent-outputbuffer">outputBuffer</a></code>.</p>-->
@@ -5149,7 +5147,7 @@ value greater than two.</span></p>-->
       <dd data-md="">
 <!--       <p>The channel count cannot be greater than two, and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①②">NotSupportedError</a></code> exception MUST be thrown for any attempt to change the to a
 value greater than two.</span></p>-->
-<p>チャネル数は 2 より大きくすることはできません。2 より大きな値に変更しようとすると <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①①">NotSupportedError</a></code> 例外を発生します(MUST)。</span></p>
+<p>チャネル数は 2 より大きくすることはできません。2 より大きな値に変更しようとすると <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①②">NotSupportedError</a></code> 例外を発生します(MUST)。</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode⑦">ScriptProcessorNode</a></code>
       <dd data-md="">
 <!--       <p>The channel count cannot be changed, and an <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①②">InvalidStateError</a></code> exception MUST
@@ -5194,7 +5192,7 @@ value.</span></p>-->
 <!--       <p>The channel count mode cannot be changed from "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit②">explicit</a></code>" and
 an <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑤">InvalidStateError</a></code> exception MUST be thrown for any attempt to change the
 value.</span></p>-->
-<p>チャンネル数モードは "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit①">explicit</a></code>" から変更できません。値を変更しようとすると <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①④">InvalidStateError</a></code> 例外を発生します(MUST)。</span></p>
+<p>チャンネル数モードは "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit②">explicit</a></code>" から変更できません。値を変更しようとすると <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑤">InvalidStateError</a></code> 例外を発生します(MUST)。</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode①⓪">ConvolverNode</a></code>
       <dd data-md="">
 <!--       <p>The channel count mode cannot be changed from "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max①">clamped-max</a></code>",
@@ -5213,7 +5211,7 @@ be thrown for any attempt to change the value.</span></p>-->
       <dd data-md="">
 <!--       <p>The channel count mode cannot be set to "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑤">max</a></code>", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑥">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
 "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑥">max</a></code>".</span></p>-->
-<p>チャンネル数モードを "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max③">max</a></code>" に設定することはできません。 "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max④">max</a></code>" に設定しようとすると　NotSupportedError　例外を発生します。</span>
+<p>チャンネル数モードを "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑤">max</a></code>" に設定することはできません。 "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑥">max</a></code>" に設定しようとすると　NotSupportedError　例外を発生します。</span>
 </p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode⑧">ScriptProcessorNode</a></code>
       <dd data-md="">
@@ -5636,7 +5634,7 @@ continues to play even after receiving silent input (think about
 clapping your hands in a large concert hall and continuing to hear
 the sound reverberate throughout the hall). Some <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⓪">AudioNode</a></code>s have this property. Please see
 details for specific nodes.</p>-->
-<P><em><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="tail-time">tail-time</dfn></em> による参照。<code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①①⑨">AudioNode</a></code> は何かしらの内部プロセスで未出力の状態がある間、自分自身を維持します。 例えば、<code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode①①">ConvolverNode</a></code> は無音の入力を受けた後でも再生し続ける余韻を持ちます  (大きなコンサートホールで柏手を打つと、ホール中に響きわたる音が聞こえるのをイメージして下さい)。いくつかの <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⓪">AudioNode</a></code> は、この特性を持ちます。 各ノードの詳細を見てください。
+<P><em><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="tail-time">tail-time</dfn></em> による参照。<code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①①⑨">AudioNode</a></code> は何かしらの内部プロセスで未出力の状態がある間、自分自身を維持します。 例えば、<code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode①①">ConvolverNode</a></code> は無音の入力を受けた後でも再生し続ける余韻を持ちます  (大きなコンサートホールで手を叩くと、ホール中に響きわたる音が聞こえるのをイメージして下さい)。いくつかの <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⓪">AudioNode</a></code> は、この特性を持ちます。 各ノードの詳細を見てください。
 </P>
     <li data-md="">
 <!--     <p><a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a>s keep a <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑤">MediaStreamAudioSourceNode</a></code> alive as long as the underlying <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a> that is playing through the <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑥">MediaStreamAudioSourceNode</a></code> has not <a href="https://w3c.github.io/mediacapture-main/#track-ended">ended</a> (as per <a data-link-type="biblio" href="#biblio-mediacapture-streams">[mediacapture-streams]</a>).</p>-->
@@ -5674,19 +5672,26 @@ nodes.</p>-->
 the <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑤">AudioNode</a></code> will be deleted when its <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑥">AudioContext</a></code> is deleted.</p>-->
 <p>上記の参照の種類に関わらず、ノードの <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑥">AudioContext</a></code> が削除された時には、<code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑤">AudioNode</a></code> は削除されます。
 </p>
-   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.6" data-lt="AudioParam" id="AudioParam"><span class="secno">1.6. </span><span class="content"> The <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②③">AudioParam</a></code> Interface</span></h3>
-   <p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②④">AudioParam</a></code> controls an individual aspect of an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑥">AudioNode</a></code>'s functioning, such as volume. The
+   <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.6" data-lt="AudioParam" id="AudioParam"><span class="secno">1.6. </span><span class="content"> <!--The--> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②③">AudioParam</a></code> <!--Interface-->インターフェース</span> <button onclick="OpenOriginal('AudioParam')">原文</button></h3>
+
+<!--   <p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②④">AudioParam</a></code> controls an individual aspect of an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑥">AudioNode</a></code>'s functioning, such as volume. The
 parameter can be set immediately to a particular value using the <code>value</code> attribute. Or, value changes can be scheduled to
 happen at very precise times (in the coordinate system of <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑦">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①②">currentTime</a></code> attribute), for envelopes, volume
 fades, LFOs, filter sweeps, grain windows, etc. In this way,
 arbitrary timeline-based automation curves can be set on any <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑤">AudioParam</a></code>. Additionally, audio signals from the
-outputs of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑦">AudioNode</a></code>s can be connected to an <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑥">AudioParam</a></code>, summing with the <em>intrinsic</em> parameter value.</p>
-   <p>Some synthesis and processing <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑧">AudioNode</a></code>s have <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑦">AudioParam</a></code>s as attributes whose values MUST be taken
+outputs of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑦">AudioNode</a></code>s can be connected to an <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑥">AudioParam</a></code>, summing with the <em>intrinsic</em> parameter value.</p>-->
+<p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②④">AudioParam</a></code> は <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑥">AudioNode</a></code> の例えば音量のような個別の機能をコントロールします。 パラメータは <code>value</code> 属性を使って特定の値に即時にセットする事ができます。 あるいは(<code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑦">AudioContext</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①②">currentTime</a></code> 属性の時間軸で)　非常に高い時間精度で値の変化のスケジュールを組む事ができ、エンベロープ、音量のフェード、LFO、フィルタスイープ、グレイン窓、などに応用する事ができます。 このような方法で任意のタイムラインベースのオートメーション曲線をすべての <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑤">AudioParam</a></code> に対して設定する事が可能です。 また更に、 <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑦">AudioNode</a></code> からの出力の音声信号を <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑥">AudioParam</a></code> に接続する事ができ、個別に持っているパラメータの<em>固有</em>値に加算する事ができます。</p>
+
+<!--   <p>Some synthesis and processing <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑧">AudioNode</a></code>s have <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑦">AudioParam</a></code>s as attributes whose values MUST be taken
 into account on a per-audio-sample basis. For other <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑧">AudioParam</a></code>s, sample-accuracy is not important and the
 value changes can be sampled more coarsely. Each individual <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑨">AudioParam</a></code> will specify that it is either an <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate">a-rate</a> parameter which means that its values MUST be taken
-into account on a per-audio-sample basis, or it is a <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate">k-rate</a> parameter.</p>
-   <p>Implementations MUST use block processing, with each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑨">AudioNode</a></code> processing one <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑥">render quantum</a>.</p>
-   <p>For each <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑦">render quantum</a>,
+into account on a per-audio-sample basis, or it is a <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate">k-rate</a> parameter.</p>-->
+<p>幾つかの合成や処理の <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑧">AudioNode</a></code> は、オーディオサンプル単位で反映されなくてはならない <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑦">AudioParam</a></code> 型の属性を持っています。 その他の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑧">AudioParam</a></code> はサンプル単位の精度は重要ではなく、その値の変化はより粗く取り込まれます。 各 <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam②⑨">AudioParam</a></code> は <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate">a-rate</a> パラメータつまりサンプル単位で反映されるか、それ以外の <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate">k-rate</a> パラメータかが指定されます。</p>
+
+<!--   <p>Implementations MUST use block processing, with each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑨">AudioNode</a></code> processing one <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑥">render quantum</a>.</p>-->
+<p>実装はそれぞれの <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⑨">AudioNode</a></code> について、1 <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑥">レンダリング量子</a>毎のブロック単位の処理を行わなくてはなりません。</p>
+
+<!--   <p>For each <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑦">render quantum</a>,
 the value of a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="k-rate">k-rate</dfn> parameter MUST be sampled at the time of the
 very first sample-frame, and that value MUST be used for the entire
 block. <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="a-rate">a-rate</dfn> parameters MUST be sampled for
@@ -5695,11 +5700,19 @@ Depending on the <code class="idl"><a data-link-type="idl" href="#AudioParam" id
 the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate">automationRate</a></code> attribute to either
 "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate">a-rate</a></code>" or "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate">k-rate</a></code>".  See the
 description of the individual <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③①">AudioParam</a></code>s for further details.</p>
-   <p>Each <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③②">AudioParam</a></code> includes <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue">minValue</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue">maxValue</a></code> attributes that together form
+-->
+<p>それぞれの<a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum⑦">レンダリング量子</a>に対して、 <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="k-rate">k-rate</dfn> パラメータは最初のサンプルのタイミングで取り込まれ、その値はブロック全体に対して使用されなくてはなりません。 <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="a-rate">a-rate</dfn> パラメータはブロック内のサンプルフレーム毎に取り込まれなくてはなりません。
+
+<code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⓪">AudioParam</a></code> によっては、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate">automationRate</a></code> 属性を "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate">a-rate</a></code>" または "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate">k-rate</a></code>" のいずれかに設定することによって、レートを制御できます。 詳細については、個々の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③①">AudioParam</a></code> の説明を参照してください。
+</p>
+
+<!--   <p>Each <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③②">AudioParam</a></code> includes <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue">minValue</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue">maxValue</a></code> attributes that together form
 the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="simple-nominal-range">simple nominal range</dfn> for the parameter. In effect,
 value of the parameter is clamped to the range \([\mathrm{minValue},
-\mathrm{maxValue}]\). See <a href="#computation-of-value">§1.6.3 Computation of Value</a> for full details.</p>
-   <p>For many <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③③">AudioParam</a></code>s the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue①">minValue</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue①">maxValue</a></code> is intended to be set to the maximum
+\mathrm{maxValue}]\). See <a href="#computation-of-value">§1.6.3 Computation of Value</a> for full details.</p>-->
+<p>各 <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③②">AudioParam</a></code> は <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue">minValue</a></code> および <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue">maxValue</a></code> 属性を持っており、それがパラメータの<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="simple-nominal-range">単純な公称範囲</dfn>となっています。 実際のパラメータの値は \([\mathrm{minValue}, \mathrm{maxValue}]\) の範囲に制限されます。 詳細は、<a href="#computation-of-value">「§ 1.6.3値の計算」</a>を参照してください。</p>
+
+<!--   <p>For many <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③③">AudioParam</a></code>s the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue①">minValue</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue①">maxValue</a></code> is intended to be set to the maximum
 possible range. In this case, <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue②">maxValue</a></code> should be set to the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="most-positive-single-float">most-positive-single-float</dfn> value, which is 3.4028235e38.
 (However, in JavaScript which only supports IEEE-754 double precision
 float values, this must be written as 3.4028234663852886e38.)
@@ -5707,17 +5720,25 @@ Similarly, <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minva
 to the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="most-negative-single-float">most-negative-single-float</dfn> value, which is the
 negative of the <a data-link-type="dfn" href="#most-positive-single-float" id="ref-for-most-positive-single-float">most-positive-single-float</a>: -3.4028235e38.
 (Similarly, this must be written in JavaScript as
--3.4028234663852886e38.)</p>
-   <p>An <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③④">AudioParam</a></code> maintains a list of zero or more <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="dfn-automation-event">automation events</dfn>. Each automation event
+-3.4028234663852886e38.)</p>-->
+<p>多くの <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③③">AudioParam</a></code> では、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue①">minValue</a></code> と <code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue①">maxValue</a></code> は可能な最大限の範囲に設定されています。 この場合、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-maxvalue" id="ref-for-dom-audioparam-maxvalue②">maxValue</a></code> は、<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="most-positive-single-float">最も正の単精度浮動小数点値</dfn>（3.4028235e38）となります。（ただし、JavaScript では IEEE-754 倍精度浮動小数点値のみをサポートするため、これは 3.4028234663852886e38 と書かなくてはなりません）同様に、 <code class="idl"><a data-link-type="idl" href="#dom-audioparam-minvalue" id="ref-for-dom-audioparam-minvalue②">minValue</a></code> は<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="most-negative-single-float">最も負の単精度浮動小数点値</dfn>、つまり <a data-link-type="dfn" href="#most-positive-single-float" id="ref-for-most-positive-single-float">最も正の単精度浮動小数点値</a>の符号を負にしたもの: -3.4028235e38 となります。（同様に、これは JavaScript では -3.4028234663852886e38 として記述する必要があります）。</p>
+
+<!--   <p>An <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③④">AudioParam</a></code> maintains a list of zero or more <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="dfn-automation-event">automation events</dfn>. Each automation event
 specifies changes to the parameter’s value over a specific time
 range, in relation to its <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="automation-event-time">automation event time</dfn> in the
 time coordinate system of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑧">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①③">currentTime</a></code> attribute. The
 list of automation events is maintained in ascending order of
-automation event time.</p>
-   <p>The behavior of a given automation event is a function of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑨">AudioContext</a></code>'s current time, as well as the automation event
+automation event time.</p>-->
+<p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③④">AudioParam</a></code> は、0 個以上の<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="dfn-automation-event">オートメーションイベントのリスト</dfn>を保持しています。 各オートメーションイベントは、<code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑧">AudioContext</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①③">currentTime</a></code> 属性の時間軸における<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="automation-event-time">オートメーションイベント時刻</dfn>に関連して、特定の時間範囲にわたるパラメータ値の変更を指定します。 オートメーションイベントのリストは、オートメーションイベント時刻の昇順で管理されます。
+</p>
+
+<!--   <p>The behavior of a given automation event is a function of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑨">AudioContext</a></code>'s current time, as well as the automation event
 times of this event and of adjacent events in the list. The following <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="automation method" data-noexport="" id="dfn-automation-method">automation methods</dfn> change the
 event list by adding a new event to the event list, of a type
-specific to the method:</p>
+specific to the method:</p>-->
+<p>
+    オートメーションイベントの振る舞いは、<code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑦⑨">AudioContext</a></code> の現在の時刻とこのイベントのオートメーションイベント時刻とリスト内に隣接するイベントの関数になります。 以下の<dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="automation method" data-noexport="" id="dfn-automation-method">オートメーションメソッド</dfn>は、そのメソッドに固有のタイプの新しいイベントをイベントリストに追加し、変更します:
+</p>
    <ul>
     <li data-md="">
      <p><code class="idl"><a data-link-type="idl" href="#dom-audioparam-setvalueattime" id="ref-for-dom-audioparam-setvalueattime">setValueAtTime()</a></code> - <code>SetValue</code></p>
@@ -5730,33 +5751,44 @@ specific to the method:</p>
     <li data-md="">
      <p><code class="idl"><a data-link-type="idl" href="#dom-audioparam-setvaluecurveattime" id="ref-for-dom-audioparam-setvaluecurveattime">setValueCurveAtTime()</a></code> - <code>SetValueCurve</code></p>
    </ul>
-   <p>The following rules will apply when calling these methods:</p>
+<!--   <p>The following rules will apply when calling these methods:</p>-->
+   <p>これらのメソッドが呼ばれる時、次の規則が適用されます:</p>
    <ul>
     <li data-md="">
-     <p><a data-link-type="dfn" href="#automation-event-time" id="ref-for-automation-event-time">Automation event times</a> are
+<!--     <p><a data-link-type="dfn" href="#automation-event-time" id="ref-for-automation-event-time">Automation event times</a> are
 not quantized with respect to the prevailing sample rate. Formulas
 for determining curves and ramps are applied to the exact numerical
-times given when scheduling events.</p>
+times given when scheduling events.</p>-->
+<p><a data-link-type="dfn" href="#automation-event-time" id="ref-for-automation-event-time">オートメーションイベント時刻</a>は、使われるサンプルレートに対して量子化されません。 カーブと傾斜を決定する式では、イベントをスケジューリングするときに与えられた正確な時刻を使用されます。</p>
     <li data-md="">
-     <p>If one of these events is added at a time where there is already
+<!--     <p>If one of these events is added at a time where there is already
 one or more events, then it will be placed in the list after them,
-but before events whose times are after the event.</p>
+but before events whose times are after the event.</p>-->
+<p>これらのイベントが、リストの中で既に 1 つまたは複数のイベントが存在する時刻に追加された場合、そのイベントの後で、時刻がより後ろのイベントの前に追加されます。</p>
     <li data-md="">
-     <p><span class="synchronous">If <a data-link-type="functionish" href="#dom-audioparam-setvaluecurveattime" id="ref-for-dom-audioparam-setvaluecurveattime①">setValueCurveAtTime()</a> is called for time \(T\) and
+<!--     <p><span class="synchronous">If <a data-link-type="functionish" href="#dom-audioparam-setvaluecurveattime" id="ref-for-dom-audioparam-setvaluecurveattime①">setValueCurveAtTime()</a> is called for time \(T\) and
 duration \(D\) and there are any events having a time greater than
 \(T\), but less than \(T + D\), then a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑨">NotSupportedError</a></code> exception MUST be thrown.</span> In
 other words, it’s not ok to schedule a value curve during a time
-period containing other events.</p>
-    <li data-md="">
-     <p><span class="synchronous">Similarly a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror②⓪">NotSupportedError</a></code> exception MUST be thrown if any <a href="#dfn-automation-method" id="ref-for-dfn-automation-method">automation method</a> is called at
+period containing other events.</p>-->
+<p><span class="synchronous"><a data-link-type="functionish" href="#dom-audioparam-setvaluecurveattime" id="ref-for-dom-audioparam-setvaluecurveattime①">setValueCurveAtTime()</a> が時刻 \(T\) と持続時間 \(D\) を指定して呼ばれた時、\(T\) より後ろで \(T + D\) より手前に何らかのイベント既に存在している場合、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑨">NotSupportedError</a></code> 例外が発生します(MUST)。</span> 言い換えれば、他のイベントを含む期間に値のカーブをスケジュールする事はできません。</p>
+
+<li data-md="">
+<!--     <p><span class="synchronous">Similarly a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror②⓪">NotSupportedError</a></code> exception MUST be thrown if any <a href="#dfn-automation-method" id="ref-for-dfn-automation-method">automation method</a> is called at
 a time which is inside of the time interval of a <code>SetValueCurve</code> event at time \(T\) and duration
-\(D\).</span></p>
+\(D\).</span></p>-->
+<p><span class="synchronous">同様に、<code>SetValueCurve</code> イベントの時刻 \(T\) と 持続時間 \(D\) で示される期間内の時刻を指定して何らかの<a href="#dfn-automation-method" id="ref-for-dfn-automation-method">オートメーションメソッド</a>を呼んだ場合、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror②⓪">NotSupportedError</a></code> 例外を発生します(MUST)。</span>
+</p>
    </ul>
-   <p class="note" role="note"><span>Note:</span> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑤">AudioParam</a></code> attributes are read only, with the exception
-of the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-value" id="ref-for-dom-audioparam-value①">value</a></code> attribute.</p>
-   <p>The automation rate of an <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑥">AudioParam</a></code> can be selected setting the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate①">automationRate</a></code> attribute with one of the following
+<!--   <p class="note" role="note"><span>Note:</span> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑤">AudioParam</a></code> attributes are read only, with the exception
+of the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-value" id="ref-for-dom-audioparam-value①">value</a></code> attribute.</p>-->
+<p class="note" role="note"><span>注:</span><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑤">AudioParam</a></code> の属性は、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-value" id="ref-for-dom-audioparam-value①">value</a></code> 属性を除いて、読み取り専用です。
+</p>
+<!--   <p>The automation rate of an <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑥">AudioParam</a></code> can be selected setting the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate①">automationRate</a></code> attribute with one of the following
 values.  However, some <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑦">AudioParam</a></code>s have constraints on whether the
-automation rate can be changed.</p>
+automation rate can be changed.</p>-->
+<p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑥">AudioParam</a></code> のオートメーションレートは、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate①">automationRate</a></code> 属性を次のいずれかの値で設定して選択できます。 ただし、一部の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑦">AudioParam</a></code> では、オートメーションレートを変更できるかどうかに制約があります。</p>
+
 <pre class="idl highlight def"><span class="kt">enum</span> <dfn class="nv dfn-paneled idl-code" data-dfn-type="enum" data-export="" id="enumdef-automationrate"><code>AutomationRate</code></dfn> {
   <a class="s idl-code" data-link-type="enum-value" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate①">"a-rate"</a>,
   <a class="s idl-code" data-link-type="enum-value" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate①">"k-rate"</a>
@@ -5766,18 +5798,22 @@ automation rate can be changed.</p>
     <table class="simple">
      <thead>
       <tr>
-       <th colspan="2"> Enumeration description
+       <th colspan="2"> <!--Enumeration description-->列挙値の説明
      <tbody>
       <tr>
        <td> "<dfn class="dfn-paneled idl-code" data-dfn-for="AutomationRate" data-dfn-type="enum-value" data-export="" id="dom-automationrate-a-rate"><code>a-rate</code></dfn>"
-       <td> This <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑧">AudioParam</a></code> is set for <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate①">a-rate</a> processing.
+       <td><!-- This <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑧">AudioParam</a></code> is set for <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate①">a-rate</a> processing.-->
+        この <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑧">AudioParam</a></code> は、<a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate①">a-rate</a> での処理に設定されます。
       <tr>
        <td> "<dfn class="dfn-paneled idl-code" data-dfn-for="AutomationRate" data-dfn-type="enum-value" data-export="" id="dom-automationrate-k-rate"><code>k-rate</code></dfn>"
-       <td> This <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑨">AudioParam</a></code> is set for <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate①">k-rate</a> processing.
+       <td><!-- This <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑨">AudioParam</a></code> is set for <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate①">k-rate</a> processing.-->
+        この <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam③⑨">AudioParam</a></code> は、<a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate①">k-rate</a> での処理に設定されます。
     </table>
    </div>
-   <p>Each <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam④⓪">AudioParam</a></code> has an internal slot <dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-current-value-slot"><code>[[current value]]</code></dfn>,
-initially set to the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam④①">AudioParam</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-audioparam-defaultvalue" id="ref-for-dom-audioparam-defaultvalue">defaultValue</a></code>.</p>
+<!--   <p>Each <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam④⓪">AudioParam</a></code> has an internal slot <dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-current-value-slot"><code>[[current value]]</code></dfn>,
+initially set to the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam④①">AudioParam</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-audioparam-defaultvalue" id="ref-for-dom-audioparam-defaultvalue">defaultValue</a></code>.</p>-->
+<p>各 <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam④⓪">AudioParam</a></code> には内部スロット <dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-current-value-slot"><code>[[current value]]</code></dfn> があり、<code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam④①">AudioParam</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-audioparam-defaultvalue" id="ref-for-dom-audioparam-defaultvalue">defaultValue</a></code> に初期設定されています。</p>
+
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed⑥">Exposed</a>=<span class="n">Window</span>]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#AudioParam" id="ref-for-AudioParam④②">AudioParam</a> {
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float①④"><span class="kt">float</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="float" href="#dom-audioparam-value" id="ref-for-dom-audioparam-value②">value</a>;
@@ -5794,48 +5830,62 @@ initially set to the <code class="idl"><a data-link-type="idl" href="#AudioParam
   <a class="n" data-link-type="idl-name" href="#AudioParam" id="ref-for-AudioParam④⑨">AudioParam</a> <a class="nv idl-code" data-link-type="method" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime">cancelAndHoldAtTime</a> (<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②②"><span class="kt">double</span></a> <dfn class="nv idl-code" data-dfn-for="AudioParam/cancelAndHoldAtTime(cancelTime)" data-dfn-type="argument" data-export="" id="dom-audioparam-cancelandholdattime-canceltime-canceltime"><code>cancelTime</code><a class="self-link" href="#dom-audioparam-cancelandholdattime-canceltime-canceltime"></a></dfn>);
 };
 </pre>
-   <h4 class="heading settled" data-level="1.6.1" id="AudioParam-attributes"><span class="secno">1.6.1. </span><span class="content"> Attributes</span><a class="self-link" href="#AudioParam-attributes"></a></h4>
+   <h4 class="heading settled" data-level="1.6.1" id="AudioParam-attributes"><span class="secno">1.6.1. </span><span class="content"> <!--Attributes-->属性</span><a class="self-link" href="#AudioParam-attributes"></a> <button onclick="OpenOriginal('AudioParam-attributes')">原文</button></h4>
    <dl>
-    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-automationrate"><code>automationRate</code></dfn>, <span> of type <a data-link-type="idl-name" href="#enumdef-automationrate" id="ref-for-enumdef-automationrate①">AutomationRate</a></span>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-automationrate"><code>automationRate</code></dfn>, <span> <!--of type--> <a data-link-type="idl-name" href="#enumdef-automationrate" id="ref-for-enumdef-automationrate①">AutomationRate</a> 型</span>
     <dd data-md="">
-     <p>The automation rate for the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⓪">AudioParam</a></code>.  The
+<!--     <p>The automation rate for the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⓪">AudioParam</a></code>.  The
 default value depends on the actual <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤①">AudioParam</a></code>;
 see the description of the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤②">AudioParam</a></code> for the
-default value.</p>
-     <p>Some nodes have additional <dfn class="dfn-paneled" data-dfn-for="AudioParam" data-dfn-type="dfn" data-noexport="" id="audioparam-automation-rate-constraints">automation rate constraints</dfn> as follows:</p>
+default value.</p>-->
+<p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⓪">AudioParam</a></code> のオートメーションの速度です。 デフォルト値は実際の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤①">AudioParam</a></code> に依存します。 デフォルト値の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤②">AudioParam</a></code> の説明を参照してください。</p>
+<!--     <p>Some nodes have additional <dfn class="dfn-paneled" data-dfn-for="AudioParam" data-dfn-type="dfn" data-noexport="" id="audioparam-automation-rate-constraints">automation rate constraints</dfn> as follows:</p>-->
+     <p>いくつかのノードには、次のような追加の<dfn class="dfn-paneled" data-dfn-for="AudioParam" data-dfn-type="dfn" data-noexport="" id="audioparam-automation-rate-constraints">オートメーション速度の制約</dfn>があります:</p>
      <dl>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#AudioBufferSourceNode" id="ref-for-AudioBufferSourceNode⑥">AudioBufferSourceNode</a></code>
       <dd data-md="">
-       <p>The <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤③">AudioParam</a></code>s <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-playbackrate" id="ref-for-dom-audiobuffersourcenode-playbackrate">playbackRate</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-detune" id="ref-for-dom-audiobuffersourcenode-detune">detune</a></code> MUST be
+<!--       <p>The <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤③">AudioParam</a></code>s <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-playbackrate" id="ref-for-dom-audiobuffersourcenode-playbackrate">playbackRate</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-detune" id="ref-for-dom-audiobuffersourcenode-detune">detune</a></code> MUST be
 "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate②">k-rate</a></code>". <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑧">InvalidStateError</a></code> must be thrown if the rate is changed to
-"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate②">a-rate</a></code>"</span>.</p>
+"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate②">a-rate</a></code>"</span>.</p>-->
+<p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤③">AudioParam</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-playbackrate" id="ref-for-dom-audiobuffersourcenode-playbackrate">playbackRate</a></code> と <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-detune" id="ref-for-dom-audiobuffersourcenode-detune">detune</a></code> は "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate②">k-rate</a></code>" でなくてはなりません(MUST)。 <span class="synchronous">速度が "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate②">a-rate</a></code>" に変更された場合は、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑧">InvalidStateError</a></code> が発生します。</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#dynamicscompressornode" id="ref-for-dynamicscompressornode⑥">DynamicsCompressorNode</a></code>
       <dd data-md="">
-       <p>The <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤④">AudioParam</a></code>s <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-threshold" id="ref-for-dom-dynamicscompressornode-threshold">threshold</a></code> <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-knee" id="ref-for-dom-dynamicscompressornode-knee">knee</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-ratio" id="ref-for-dom-dynamicscompressornode-ratio">ratio</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-attack" id="ref-for-dom-dynamicscompressornode-attack">attack</a></code>, and <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-release" id="ref-for-dom-dynamicscompressornode-release">release</a></code> MUST be "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate③">k-rate</a></code>". <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑨">InvalidStateError</a></code> must be thrown if the rate is changed to
-"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate③">a-rate</a></code>"</span>.</p>
+
+<!--       <p>The <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤④">AudioParam</a></code>s <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-threshold" id="ref-for-dom-dynamicscompressornode-threshold">threshold</a></code> <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-knee" id="ref-for-dom-dynamicscompressornode-knee">knee</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-ratio" id="ref-for-dom-dynamicscompressornode-ratio">ratio</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-attack" id="ref-for-dom-dynamicscompressornode-attack">attack</a></code>, and <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-release" id="ref-for-dom-dynamicscompressornode-release">release</a></code> MUST be "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate③">k-rate</a></code>". <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑨">InvalidStateError</a></code> must be thrown if the rate is changed to
+"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate③">a-rate</a></code>"</span>.</p>-->
+<p><code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤④">AudioParam</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-threshold" id="ref-for-dom-dynamicscompressornode-threshold">threshold</a></code><!--<span class="annotate">(訳注:カンマ抜け)--></span> <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-knee" id="ref-for-dom-dynamicscompressornode-knee">knee</a></code>、<code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-ratio" id="ref-for-dom-dynamicscompressornode-ratio">ratio</a></code>、<code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-attack" id="ref-for-dom-dynamicscompressornode-attack">attack</a></code>、および <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-release" id="ref-for-dom-dynamicscompressornode-release">release</a></code> は、"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate③">k-rate</a></code>" でなければなりません(MUST)。 <span class="synchronous">速度が "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-a-rate" id="ref-for-dom-automationrate-a-rate③">a-rate</a></code>" に変更された場合、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑨">InvalidStateError</a></code> が発生します。</span></p>
+
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#pannernode" id="ref-for-pannernode⑦">PannerNode</a></code>
       <dd data-md="">
-       <p>If the <code class="idl"><a data-link-type="idl" href="#dom-pannernode-panningmodel" id="ref-for-dom-pannernode-panningmodel">panningModel</a></code> is
+
+<!--       <p>If the <code class="idl"><a data-link-type="idl" href="#dom-pannernode-panningmodel" id="ref-for-dom-pannernode-panningmodel">panningModel</a></code> is
 "<code class="idl"><a data-link-type="idl" href="#dom-panningmodeltype-hrtf" id="ref-for-dom-panningmodeltype-hrtf">HRTF</a></code>", the setting of
 the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate③">automationRate</a></code> for any <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑤">AudioParam</a></code> of the <code class="idl"><a data-link-type="idl" href="#pannernode" id="ref-for-pannernode⑧">PannerNode</a></code> is ignored.
 Likewise, the setting of the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate④">automationRate</a></code> for any <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑥">AudioParam</a></code> of the <code class="idl"><a data-link-type="idl" href="#audiolistener" id="ref-for-audiolistener④">AudioListener</a></code> is ignored.  In this
 case, the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑦">AudioParam</a></code> behaves as if the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate⑤">automationRate</a></code> were set to
-"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate④">k-rate</a></code>".</p>
+"<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate④">k-rate</a></code>".</p>-->
+<p>
+    <code class="idl"><a data-link-type="idl" href="#dom-pannernode-panningmodel" id="ref-for-dom-pannernode-panningmodel">panningModel</a></code> が "<code class="idl"><a data-link-type="idl" href="#dom-panningmodeltype-hrtf" id="ref-for-dom-panningmodeltype-hrtf">HRTF</a></code>" の場合、<code class="idl"><a data-link-type="idl" href="#pannernode" id="ref-for-pannernode⑧">PannerNode</a></code> の任意の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑤">AudioParam</a></code> に対する <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate③">automationRate</a></code> の設定は無視されます。 同様に、<code class="idl"><a data-link-type="idl" href="#audiolistener" id="ref-for-audiolistener④">AudioListener</a></code> の任意の <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑥">AudioParam</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate④">automationRate</a></code> の設定は無視されます。 この場合、<code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑦">AudioParam</a></code> は、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-automationrate" id="ref-for-dom-audioparam-automationrate⑤">automationRate</a></code>が "<code class="idl"><a data-link-type="idl" href="#dom-automationrate-k-rate" id="ref-for-dom-automationrate-k-rate④">k-rate</a></code>" に設定されているかのように動作します。
+</p>
+
      </dl>
-    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-defaultvalue"><code>defaultValue</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②④">float</a>, readonly</span>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-defaultvalue"><code>defaultValue</code></dfn>, <span> <!--of type--> <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②④">float</a> 型, readonly</span>
     <dd data-md="">
-     <p>Initial value for the <code>value</code> attribute.</p>
-    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-maxvalue"><code>maxValue</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②⑤">float</a>, readonly</span>
+<!--     <p>Initial value for the <code>value</code> attribute.</p>-->
+     <p><code>value</code> 属性の初期値です。</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-maxvalue"><code>maxValue</code></dfn>, <span> <!--of type--> <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②⑤">float</a> 型, readonly</span>
     <dd data-md="">
-     <p>The nominal maximum value that the parameter can take. Together
-with <code>minValue</code>, this forms the <a data-link-type="dfn" href="#nominal-range" id="ref-for-nominal-range">nominal range</a> for this parameter.</p>
-    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-minvalue"><code>minValue</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②⑥">float</a>, readonly</span>
+<!--     <p>The nominal maximum value that the parameter can take. Together
+with <code>minValue</code>, this forms the <a data-link-type="dfn" href="#nominal-range" id="ref-for-nominal-range">nominal range</a> for this parameter.</p>-->
+<p>パラメータが取ることができる名目上の最大値です。 <code>minValue</code> と組み合わせて、これはこのパラメータの<a data-link-type="dfn" href="#nominal-range" id="ref-for-nominal-range">公称範囲</a>となります。</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-minvalue"><code>minValue</code></dfn>, <span> <!--of type--> <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②⑥">float</a> 型, readonly</span>
     <dd data-md="">
-     <p>The nominal minimum value that the parameter can take. Together
-with <code>maxValue</code>, this forms the <a data-link-type="dfn" href="#nominal-range" id="ref-for-nominal-range①">nominal range</a> for this parameter.</p>
-    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-value"><code>value</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②⑦">float</a></span>
+<!--     <p>The nominal minimum value that the parameter can take. Together
+with <code>maxValue</code>, this forms the <a data-link-type="dfn" href="#nominal-range" id="ref-for-nominal-range①">nominal range</a> for this parameter.</p>-->
+<p>パラメータが取ることができる名目上の最小値です。 <code>maxValue</code> と組み合わせて、これはこのパラメータの<a data-link-type="dfn" href="#nominal-range" id="ref-for-nominal-range①">公称範囲</a>となります。</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="attribute" data-export="" id="dom-audioparam-value"><code>value</code></dfn>, <span> <!--of type--> <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②⑦">float</a> 型</span>
     <dd data-md="">
-     <p>The parameter’s floating-point value. This attribute is
+<!--     <p>The parameter’s floating-point value. This attribute is
 initialized to the <code>defaultValue</code>.</p>
      <p>Getting this attribute returns the contents of the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot">[[current value]]</a></code> slot, which maintains the value of
 this parameter at the conclusion of the most recent render
@@ -5845,125 +5895,162 @@ assigned value if no rendering has taken place.</p>
 requested value to the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot①">[[current value]]</a></code> slot, and
 calling the <a data-link-type="functionish" href="#dom-audioparam-setvalueattime" id="ref-for-dom-audioparam-setvalueattime②">setValueAtTime()</a> method with the current <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⓪">AudioContext</a></code>'s <code>currentTime</code> and <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot②">[[current value]]</a></code>. Any
 exceptions that would be thrown by <code>setValueAtTime()</code> will also be thrown by setting
-this attribute.</p>
+this attribute.</p>-->
+<p>パラメータの浮動小数点の値です。 この属性の初期値は <code>defaultValue</code> となります。</p>
+
+<p>
+  この属性を読み取ると、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot">[[current value]]</a></code> スロットの内容が返されます。これは、オーディオのレンダリングスレッドの最も直近のレンダリング量子の最後でのこのパラメータの値、あるいはレンダリングが行われていない場合は、最も直近に割り当てられた値を保持しています。
+</p>
+<p>
+この属性を設定すると、要求された値を <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot①">[[current value]]</a></code> スロットに割り当て、現在の <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⓪">AudioContext</a></code> の <code>currentTime</code> と <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot②">[[current value]]</a></code> を使って <a data-link-type="functionish" href="#dom-audioparam-setvalueattime" id="ref-for-dom-audioparam-setvalueattime②">setValueAtTime()</a> メソッドを呼び出す効果があります。この属性を設定することで <code>setValueAtTime()</code> による例外が発生する事もあります。
+</p>
    </dl>
-   <h4 class="heading settled" data-level="1.6.2" id="AudioParam-methods"><span class="secno">1.6.2. </span><span class="content"> Methods</span><a class="self-link" href="#AudioParam-methods"></a></h4>
+   <h4 class="heading settled" data-level="1.6.2" id="AudioParam-methods"><span class="secno">1.6.2. </span><span class="content"> <!--Methods-->メソッド</span><a class="self-link" href="#AudioParam-methods"></a> <button onclick="OpenOriginal('AudioParam-methods')">原文</button></h4>
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="method" data-export="" id="dom-audioparam-cancelandholdattime"><code>cancelAndHoldAtTime(cancelTime)</code></dfn>
     <dd data-md="">
-     <p>This is similar to <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelscheduledvalues" id="ref-for-dom-audioparam-cancelscheduledvalues①">cancelScheduledValues()</a></code> in that it cancels all
+<!--     <p>This is similar to <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelscheduledvalues" id="ref-for-dom-audioparam-cancelscheduledvalues①">cancelScheduledValues()</a></code> in that it cancels all
 scheduled parameter changes with times greater than or equal to <code>cancelTime</code>. However, in addition, the automation
 value that would have happened at <code>cancelTime</code> is
 then proprogated for all future time until other automation
-events are introduced.</p>
-     <p>The behavior of the timeline in the face of <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime①">cancelAndHoldAtTime()</a></code> when automations are running
+events are introduced.</p>-->
+<p>これは <code>cancelTime</code> と同じかそれ以降の時刻のスケジュールされたすべてのパラメータの変化をキャンセルするという点で <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelscheduledvalues" id="ref-for-dom-audioparam-cancelscheduledvalues①">cancelScheduledValues()</a></code> と似ていますが、<code>cancelTime</code> の時点でのオートメーション値が、他のオートメーションイベントが起こるまで、保持されます。</p>
+
+<!--     <p>The behavior of the timeline in the face of <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime①">cancelAndHoldAtTime()</a></code> when automations are running
 and can be introduced at any time after calling <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime②">cancelAndHoldAtTime()</a></code> and before <code>cancelTime</code> is reached is quite complicated. The
 behavior of <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime③">cancelAndHoldAtTime()</a></code> is therefore
-specified in the following algorithm.</p>
+specified in the following algorithm.</p>-->
+<p>オートメーションが動作中に <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime②">cancelAndHoldAtTime()</a></code> を呼び出してから <code>cancelTime</code> に達するまでの任意の時間の <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime①">cancelAndHoldAtTime()</a></code> に対するタイムラインの動作は非常に複雑です。<code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime③">cancelAndHoldAtTime()</a></code> の動作は、次のアルゴリズムで定義されます。</p>
+
      <div class="algorithm" data-algorithm="cancel and hold">
-       Let \(t_c\) be the value of <code>cancelTime</code>. Then
+<!--       Let \(t_c\) be the value of <code>cancelTime</code>. Then-->\(t_c\) を  <code>cancelTime</code> の値とします。 そして、
       <ol>
        <li data-md="">
-        <p>Let \(E_1\) be the event (if any) at time \(t_1\) where
-\(t_1\) is the largest number satisfying \(t_1 \le t_c\).</p>
+<!--        <p>Let \(E_1\) be the event (if any) at time \(t_1\) where
+\(t_1\) is the largest number satisfying \(t_1 \le t_c\).</p>-->
+<p>時刻 \(t_1\) におけるイベントを（存在すれば） \(E_1\) とし、\(t_1\) が \(t_1 \le t_c\) を満たす最大の数であるとします。</p>
        <li data-md="">
-        <p>Let \(E_2\) be the event (if any) at time \(t_2\) where
-\(t_2\) is the smallest number satisfying \(t_c \lt t_2\).</p>
+<!--        <p>Let \(E_2\) be the event (if any) at time \(t_2\) where
+\(t_2\) is the smallest number satisfying \(t_c \lt t_2\).</p>-->
+<p>時間 \(t_2\) におけるイベントを（存在すれば） \(E_2\) とし、t2が \(t_c \lt t_2\) を満たす最小の数であるとします。</p>
        <li data-md="">
-        <p>If \(E_2\) exists:</p>
+        <!--<p>If \(E_2\) exists:</p>-->
+        <p>もし \(E_2\) が存在すれば:</p>
         <ol>
          <li data-md="">
-          <p>If \(E_2\) is a linear or exponential ramp,</p>
+          <!--<p>If \(E_2\) is a linear or exponential ramp,</p>-->
+          <p>もし、\(E_2\) が linear または exponential ramp の場合、</p>
           <ol>
            <li data-md="">
-            <p>Effectively rewrite \(E_2\) to be the same kind of
+            <p><!--Effectively rewrite \(E_2\) to be the same kind of
 ramp ending at time \(t_c\) with an end value that
 would be the value of the original ramp at time
-\(t_c\). <img alt="Graphical representation of calling cancelAndHoldAtTime when linearRampToValueAtTime has been called at this time." src="images/cancel-linear.svg" style="height:75%;width:75%"></p>
+\(t_c\). --><p> \(E_2\) を書き換えて、時刻 \(t_c\) に終了し、最終値が元の傾斜の \(t_c\) の時点の値とである同じ種類の傾斜とします。</p>
+<img alt="Graphical representation of calling cancelAndHoldAtTime when linearRampToValueAtTime has been called at this time." src="images/cancel-linear.svg" style="height:75%;width:75%"></p>
+
            <li data-md="">
-            <p>Go to step 5.</p>
+            <!--<p>Go to step 5.</p>-->
+            <p>ステップ 5. に行きます。</p>
           </ol>
          <li data-md="">
-          <p>Otherwise, go to step 4.</p>
+          <!--<p>Otherwise, go to step 4.</p>-->
+          <p>そうでなければ ステップ 4. に行きます。</p>
         </ol>
        <li data-md="">
-        <p>If \(E_1\) exists:</p>
+<!--        <p>If \(E_1\) exists:</p>-->
+        <p>もし \(E_1\) が存在すれば:</p>
         <ol>
          <li data-md="">
-          <p>If \(E_1\) is a <code>setTarget</code> event,</p>
+<!--          <p>If \(E_1\) is a <code>setTarget</code> event,</p>-->
+          <p>もし \(E_1\) が <code>setTarget</code> イベントの場合、</p>
           <ol>
            <li data-md="">
-            <p>Implicitly insert a <code>setValueAtTime</code> event at time \(t_c\) with the value that the <code>setTarget</code> would have at time
-\(t_c\). <img alt="Graphical representation of calling cancelAndHoldAtTime when setTargetAtTime has been called at this time" src="images/cancel-setTarget.svg" style="height:75%;width:75%"></p>
+            <p>
+<!--Implicitly insert a <code>setValueAtTime</code> event at time \(t_c\) with the value that the <code>setTarget</code> would have at time \(t_c\). -->
+<p>時刻 \(t_c\) に <code>setValueAtTime</code> イベントを暗黙的に挿入し、<code>setTarget</code> が時刻 \(t_c\) に持つであろう値とします。</p>
+<img alt="Graphical representation of calling cancelAndHoldAtTime when setTargetAtTime has been called at this time" src="images/cancel-setTarget.svg" style="height:75%;width:75%"></p>
            <li data-md="">
-            <p>Go to step 5.</p>
+            <!--<p>Go to step 5.</p>-->
+            <p>ステップ 5. に行きます。</p>
           </ol>
          <li data-md="">
-          <p>If \(E_1\) is a <code>setValueCurve</code> with a start
-time of \(t_3\) and a duration of \(d\)</p>
+<!--          <p>If \(E_1\) is a <code>setValueCurve</code> with a start
+time of \(t_3\) and a duration of \(d\)</p>-->
+<p>もし \(E_1\) が <code>setValueCurve</code> で、開始時刻が \(t_3\) 、持続時間が \(d\) の場合<p>
           <ol>
            <li data-md="">
-            <p>If \(t_c \gt t_3 + d\), go to step 5.</p>
+<!--            <p>If \(t_c \gt t_3 + d\), go to step 5.</p>-->
+            <p>もし \(t_c \gt t_3 + d\) ならば ステップ 5. に行きます。</p>
            <li data-md="">
-            <p>Otherwise,</p>
+            <!--<p>Otherwise,</p>-->
+            <p>そうでなければ、</p>
             <ol>
              <li data-md="">
-              <p>Effectively replace this event with a <code>setValueCurve</code> event with a start time
+              <p><!--Effectively replace this event with a <code>setValueCurve</code> event with a start time
 of \(t_3\) and a new duration of \(t_c-t_3\).
 However, this is not a true replacement; this
 automation MUST take care to produce the same
 output as the original, and not one computed using
 a different duration. (That would cause sampling of
 the value curve in a slightly different way,
-producing different results.) <img alt="Graphical representation of calling cancelAndHoldAtTime when setValueCurve has been called at this time" src="images/cancel-setValueCurve.svg" style="height:75%;width:75%"></p>
+producing different results.)-->
+<p>このイベントを、開始時刻が \(t_3\)、新しい持続時間が \(t_c-t_3\) の <code>setValueCurve</code> イベントで置き換えます。 しかしながら、これは単なる置き換えではありません。 このオートメーションは、オリジナルと同じ出力を生成するために留意しなくてはならず(MUST)、ただ異なる持続時間を使用して計算された出力ではありません。（これだと、値の曲線を少し違う方法でサンプリングして、異なる結果を生じることになります）。</p>
+<img alt="Graphical representation of calling cancelAndHoldAtTime when setValueCurve has been called at this time" src="images/cancel-setValueCurve.svg" style="height:75%;width:75%"></p>
              <li data-md="">
-              <p>Go to step 5.</p>
+<!--              <p>Go to step 5.</p>-->
+              <p>ステップ 5. に行きます。</p>
             </ol>
           </ol>
         </ol>
        <li data-md="">
-        <p>Remove all events with time greater than \(t_c\).</p>
+<!--        <p>Remove all events with time greater than \(t_c\).</p>-->
+        <p>時刻 \(t_c\) より後ろのすべてのイベントを削除します。</p>
       </ol>
-      <p>If no events are added, then the automation value after <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime④">cancelAndHoldAtTime()</a></code> is the constant value that
-	the original timeline would have had at time \(t_c\).</p>
+<!--      <p>If no events are added, then the automation value after <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime④">cancelAndHoldAtTime()</a></code> is the constant value that
+  the original timeline would have had at time \(t_c\).</p>-->
+  <p>イベントが追加されない場合は、<code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime④">cancelAndHoldAtTime()</a></code> の後のオートメーション値は、元のタイムラインが時刻 \(t_c\) に持つ定数値となります。</p>
      </div>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime⑤">AudioParam.cancelAndHoldAtTime()</a> method.</caption>
+<!--      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime⑤">AudioParam.cancelAndHoldAtTime()</a> method.</caption>-->
+      <caption><a class="idl-code" data-link-type="method" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime⑤">AudioParam.cancelAndHoldAtTime()</a> メソッドの引数</caption>
       <thead>
        <tr>
-        <th>Parameter
-        <th>Type
-        <th>Nullable
-        <th>Optional
-        <th>Description
+        <th><!--Parameter-->パラメータ
+        <th><!--Type-->型
+        <th><!--Nullable-->Null可
+        <th><!--Optional-->省略可
+        <th><!--Description-->説明
       <tbody>
        <tr>
         <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam/cancelAndHoldAtTime()" data-dfn-type="argument" data-export="" id="dom-audioparam-cancelandholdattime-canceltime"><code>cancelTime</code></dfn>
         <td> double
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
-        <td>The time after which any previously scheduled parameter changes will be cancelled. It is a time in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧①">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①④">currentTime</a></code> attribute. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror">RangeError</a></code> exception MUST be thrown if <code>cancelTime</code> is negative or is not a finite number.</span> If <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime-canceltime" id="ref-for-dom-audioparam-cancelandholdattime-canceltime">cancelTime</a></code> is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①⑤">currentTime</a></code>, it is clamped to <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①⑥">currentTime</a></code>.
+        <td><!--The time after which any previously scheduled parameter changes will be cancelled. It is a time in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧①">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①④">currentTime</a></code> attribute. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror">RangeError</a></code> exception MUST be thrown if <code>cancelTime</code> is negative or is not a finite number.</span> If <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime-canceltime" id="ref-for-dom-audioparam-cancelandholdattime-canceltime">cancelTime</a></code> is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①⑤">currentTime</a></code>, it is clamped to <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①⑥">currentTime</a></code>.-->
+        この時刻以降の以前スケジュールされたパラメータの変化はキャンセルされます。 これは、<code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧①">AudioContext</a></code> の <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①④">currentTime</a></code> 属性と同じ時間軸の時刻です。 <span class="synchronous">もし <code>cancelTime</code> が負であるか、有限数でない場合、<code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror">RangeError</a></code> 例外が発生します(MUST)。</span> <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime-canceltime" id="ref-for-dom-audioparam-cancelandholdattime-canceltime">cancelTime</a></code> が <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①⑤">currentTime</a></code> より小さい場合は、<code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime①⑥">currentTime</a></code> にクランプされます。
      </table>
-     <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑧">AudioParam</a></code> </div>
+     <div> <em><!--Return type:-->戻り値:</em> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑧">AudioParam</a></code> </div>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam" data-dfn-type="method" data-export="" id="dom-audioparam-cancelscheduledvalues"><code>cancelScheduledValues(cancelTime)</code></dfn>
     <dd data-md="">
-     <p>Cancels all scheduled parameter changes with times greater than
+<!--     <p>Cancels all scheduled parameter changes with times greater than
 or equal to <code>cancelTime</code>. Cancelling a scheduled
 parameter change means removing the scheduled event from the
 event list. Any active automations whose <a data-link-type="dfn" href="#automation-event-time" id="ref-for-automation-event-time①">automation event time</a> is less
 than <code>cancelTime</code> are also cancelled, and such
 cancellations may cause discontinuities because the original
 value (from before such automation) is restored immediately. Any
-hold values scheduled by <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime⑥">cancelAndHoldAtTime()</a></code> are also removed if the hold time occurs after <code>cancelTime</code>.</p>
+hold values scheduled by <code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime⑥">cancelAndHoldAtTime()</a></code> are also removed if the hold time occurs after <code>cancelTime</code>.</p>-->
+<p><code>cancelTime</code> と同じか後ろの時刻にスケジュールされたすべてのパラメータ変化を取り消します。 スケジュールされたパラメータ変化を取り消すという事は、スケジュールされたイベントをイベントリストから削除することを意味します。<a data-link-type="dfn" href="#automation-event-time" id="ref-for-automation-event-time①">オートメーションイベントの時刻</a>が <code>cancelTime</code> 未満の現在動作中のオートメーションも取り消され、(そのオートメーション以前の)直前の値が直ちに復元されるため、このような取り消しは不連続を引き起こす可能性があります。<code class="idl"><a data-link-type="idl" href="#dom-audioparam-cancelandholdattime" id="ref-for-dom-audioparam-cancelandholdattime⑥">cancelAndHoldAtTime()</a></code> によってスケジュールされたすべてのホールド値で、<code>cancelTime</code> の後ろにホールドの時刻が発生した場合にもまた削除されます。</p>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioparam-cancelscheduledvalues" id="ref-for-dom-audioparam-cancelscheduledvalues②">AudioParam.cancelScheduledValues()</a> method.</caption>
+<!--      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioparam-cancelscheduledvalues" id="ref-for-dom-audioparam-cancelscheduledvalues②">AudioParam.cancelScheduledValues()</a> method.</caption>-->
+      <caption><a class="idl-code" data-link-type="method" href="#dom-audioparam-cancelscheduledvalues" id="ref-for-dom-audioparam-cancelscheduledvalues②">AudioParam.cancelScheduledValues()</a> メソッドの引数</caption>
       <thead>
        <tr>
-        <th>Parameter
-        <th>Type
-        <th>Nullable
-        <th>Optional
-        <th>Description
+        <th><!--Parameter-->パラメータ
+        <th><!--Type-->型
+        <th><!--Nullable-->Null可
+        <th><!--Optional-->省略可
+        <th><!--Description-->説明
       <tbody>
        <tr>
         <td><dfn class="idl-code" data-dfn-for="AudioParam/cancelScheduledValues()" data-dfn-type="argument" data-export="" id="dom-audioparam-cancelscheduledvalues-canceltime"><code>cancelTime</code><a class="self-link" href="#dom-audioparam-cancelscheduledvalues-canceltime"></a></dfn>
