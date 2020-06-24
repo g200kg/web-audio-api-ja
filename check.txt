@@ -54,15 +54,3 @@ curve attribute set steps:
   
 1.33.6
 Figure 17, "processor definition map" => "processor constructor map"
-
-FMオペレーターのセルフフィードバックを使いたいと思っています。
-古い仕様ではディレイを含まない循環は例外をスローすると明記されていましたがその記述が無くなった事に気が付きました。
-しかし、一方で"2.4. Rendering an Audio Graph" のレンダリングループの説明の中で循環の中のノードはミュートされると書いています。
-
-ctx=new AudioContext();
-osc=new OscillatorNode(ctx);
-gain=new GainNode(ctx);
-gain.gain.value=1000;
-osc.connect(gain).connect(osc.frequency);
-osc.connect(ctx.destination);
-osc.start();
