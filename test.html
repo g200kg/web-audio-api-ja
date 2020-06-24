@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+actx = new AudioContext();
+osc = new OscillatorNode(actx);
+osc.connect(actx.destination);
+
+function start(){
+  osc.start();
+  osc.frequency.value=100;
+  starttime = actx.currentTime;
+//  osc.frequency.setTargetAtTime(1000, starttime+1, 0.91);
+  osc.frequency.linearRampToValueAtTime(1000, starttime+10);
+}
+function cancel(){
+  osc.frequency.cancelScheduledValues(starttime+5)
+}
+setInterval(()=>{console.log(osc.frequency.value)},100);
+</script>
+</head>
+<body>
+  <button onclick="start()">start</button>
+  <button onclick="cancel()">cancel</button>
+</body>
+</html>

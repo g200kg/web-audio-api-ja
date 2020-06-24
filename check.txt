@@ -1,0 +1,68 @@
+Mixed 'MUST' 'must' 'MUST'with link to rfc2119
+
+ex, 1.1.2
+
+createScriptProcessor(buffersize, numberOfInputChannels, numberOfOutputChannels)
+numberofOnputChannels 
+	A NotSupportedError must be thrown if the number of channels is not supported.
+(MUST)?
+
+numberOfOutputChannels
+	A NotSupportedError must be thrown if the number of channels is not supported.
+(MUST)?
+
+----
+decodeAudioData(audioData, successCallback, errorCallback)
+  Detach the audioData ArrayBuffer. This operation is described in [ECMASCRIPT]. If this operations throws, jump to the step 3.
+
+throws (exception?)
+
+getChannelData(channel)
+A UnknownError may be thrown if the [[internal data]] or the new Float32Array cannot be created.
+
+=>A UnknownError may be thrown if the [[internal data]] cannot be read or the new Float32Array cannot be created.
+
+1.1.3.  1.1.4.  1.5.  1.5.6.  1.6.  1.7.  1.8.  1.8.4.  1.9.  1.9.4.  1.10.  1.11.  1.12.  1.12.2.  1.13.  1.13.4.  1.14.  1.14.2.  1.15.  1.15.2.  1.16.  1.16.3.  1.17.  1.17.3.  1.18.  1.18.3.  1.19.  1.19.3.  1.20.  1.20.3.  1.21.  1.21.3.  1.22.  1.22.3.  1.23.  1.24.  1.24.3.  1.25.  1.25.2.  1.26.  1.26.4  1.27.   1.27.4.  1.28.   1.28.2.  1.28.3.   1.29.  1.30.   1.30.3.   1.31.   1.31.3.  1.32.  1.32.2.  1.32.3.  1.32.3.3.  1.32.4.  1.32.4.4.  
+lacking self-link (§)
+
+----
+1.7.2 methods
+ start(when)
+  5. Send a control message to the associated AudioContext to run it in the rendering thread only when the following conditions are met:
+ 1. The context’s control thread state is suspended.
+ 2. The context is allowed to start.
+ 3. [[suspended by user]] flag is false.
+
+これらの条件はcontextがサスペンド状態? AudioScheduledSourceNodeと関係なさそうなのに。
+
+1.15. ChannelSplitterNode
+'There are always a total number of N outputs (determined by the numberOfOutputs parameter to the AudioContext method createChannelSplitter())' => lacking description about constructor.
+
+1.17.2. 
+In Convolver buffer attribue, 
+"if the sample-rate of the buffer is not the same as the sample-rate of its associated BaseAudioContext, a NotSupportedError MUST be thrown."
+is this real? => decodeAudioData時にリサンプリングしてるようだ
+
+1.28.3. PeriodicWaveOptions
+The other is treated as if it were an array of all zeroes of the same length, as specified below in description of the dictionary members. 
+=> not described in dictionary members?
+ (but described in 1.28.1. constructor)
+
+1.31.2 
+waveshaper attribute
+curve attribute set steps:
+  
+1.33.6
+Figure 17, "processor definition map" => "processor constructor map"
+
+FMオペレーターのセルフフィードバックを使いたいと思っています。
+古い仕様ではディレイを含まない循環は例外をスローすると明記されていましたがその記述が無くなった事に気が付きました。
+しかし、一方で"2.4. Rendering an Audio Graph" のレンダリングループの説明の中で循環の中のノードはミュートされると書いています。
+
+ctx=new AudioContext();
+osc=new OscillatorNode(ctx);
+gain=new GainNode(ctx);
+gain.gain.value=1000;
+osc.connect(gain).connect(osc.frequency);
+osc.connect(ctx.destination);
+osc.start();
