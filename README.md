@@ -2,7 +2,7 @@
 Web Audio API 日本語訳
 ================
 
-この文書は、W3Cの文書 "Web Audio API, W3C Working Draft, 19 June 2018" の日本語訳です。
+この文書は、W3Cの文書 "Web Audio API, W3C Candidate Recommendation, 11 June 2020" の日本語訳です。
 Web Audio APIの正式な文書は英語版のみであり、日本語訳には翻訳に起因する誤りが含まれている場合があります。  
 正式な文書はW3Cのサイト : [http://www.w3.org/TR/webaudio/](http://www.w3.org/TR/webaudio/)にあります。
 
